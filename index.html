@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MAXIMAX MULTI SERVICES</title>
 
   <style>
-    bod<!-- SERVICES SECTION -->
-  <section id="services" style="padding:60px 0; text-align:center; color:#ff7a00;">
-    ... tout services yo ...
-  </section>
-
-</body>y {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #ff7a00;
     }
-    a { color: #ff7a00; text-decoration: none; }
-    h2 { font-size: 2.4rem; font-weight: 900; }
-    h3 { font-size: 1.3rem; font-weight: 700; }
+
+    a {
+      color: #ff7a00;
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
     .box {
       padding: 25px;
       border: 2px solid #ff7a00;
       border-radius: 14px;
+      background: rgba(255, 122, 0, 0.03);
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -32,51 +61,77 @@
       max-width: 1100px;
       margin: 0 auto;
     }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .lang-toggle {
+      text-align: right;
+      padding: 20px;
+    }
+
+    .lang-toggle span {
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      opacity: 0.7;
+    }
   </style>
 </head>
-
-<div id="lang-toggle" style="text-align:right; padding:20px; color:#ff7a00;">
-  <span style="cursor:pointer; margin-right:10px;">ENG</span>
-  <span style="cursor:pointer; margin-right:10px;">ESP</span>
-  <span style="cursor:pointer;">FRA</span>
-</div><body>
+<body>
 
   <!-- LANGUAGE TOGGLE -->
-  <div style="text-align:right; padding:20px;">
-    <span style="cursor:pointer; margin-right:10px;">ENG</span>
-    <span style="cursor:pointer; margin-right:10px;">ESP</span>
-    <span style="cursor:pointer;">FRA</span>
+  <div class="lang-toggle">
+    <span>ENG</span>
+    <span>ESP</span>
+    <span>FRA</span>
   </div>
 
   <!-- HERO -->
-  <section style="padding:80px 20px; text-align:center;">
-    <h1 style="font-size:3rem; font-weight:900; margin-bottom:10px;">
-      MAXIMAX MULTI SERVICES
-    </h1>
-    <p style="font-size:1.2rem; opacity:0.9;">
-      ALWAYS MAXIMIZE — PRO‑MAX SERVICES FOR EVERY COMMUNITY
-    </p>
+  <section class="hero">
+    <h1 id="title">MAXIMAX MULTI SERVICES</h1>
+    <p id="subtitle">ALWAYS MAXIMIZE — PRO-MAX SERVICES FOR EVERY COMMUNITY</p>
   </section>
 
-  <!-- SERVICES SECTION #1 -->
-  <section id="services" style="padding:60px 20px; text-align:center;">
-    <h2>SERVICES NOU YO</h2>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2 id="services-title">SERVICES NOU YO</h2>
 
     <div class="grid">
-
       <div class="box">
         <h3>Tax Services</h3>
-        <p>Filing, ITIN, W‑2, 1099, Amendments, Business Taxes.</p>
+        <p>Filing, ITIN, W-2, 1099, Amendments, Business Taxes.</p>
       </div>
 
       <div class="box">
         <h3>Immigration Assistance</h3>
-        <p>I‑130, I‑485, I‑765, N‑400, I‑90, FOIA, elatriye.</p>
+        <p>I-130, I-485, I-765, N-400, I-90, FOIA, elatriye.</p>
       </div>
 
       <div class="box">
         <h3>Passport & Travel</h3>
-        <p>DS‑11, DS‑82, DS‑64, DS‑3053, DS‑5525.</p>
+        <p>DS-11, DS-82, DS-64, DS-3053, DS-5525.</p>
       </div>
 
       <div class="box">
@@ -95,7 +150,7 @@
       </div>
 
       <div class="box">
-        <h3>Divorce Non‑Contested</h3>
+        <h3>Divorce Non-Contested</h3>
         <p>Simplified Divorce, Settlement, Affidavits, Templates.</p>
       </div>
 
@@ -103,133 +158,102 @@
         <h3>DMV Services</h3>
         <p>ID, License, Registration, Title Transfer.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- FORMS SECTION -->
-  <section id="forms" style="padding:60px 20px; text-align:center;">
+  <!-- FORMS -->
+  <section id="forms" class="section">
     <h2>TOUT FÒM GOUVÈNMAN YO</h2>
 
-    <div class="grid">
+    <div class="forms-grid">
 
-      <h3>TAX FORMS (IRS)</h3>
-      <a href="https://www.irs.gov/pub/irs-pdf/f1040.pdf">Form 1040</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/fw4.pdf">Form W‑4</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf">Form W‑9</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/f1099nec.pdf">Form 1099‑NEC</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/f4868.pdf">Form 4868</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/f940.pdf">Form 940</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/f941.pdf">Form 941</a>
-      <a href="https://www.irs.gov/pub/irs-pdf/fw7.pdf">Form W‑7 (ITIN)</a>
+      <div class="box">
+        <h3>TAX FORMS (IRS)</h3>
+        <a href="https://www.irs.gov/pub/irs-pdf/f1040.pdf" target="_blank">Form 1040</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/fw4.pdf" target="_blank">Form W-4</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank">Form W-9</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/f1099nec.pdf" target="_blank">Form 1099-NEC</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/f4868.pdf" target="_blank">Form 4868</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/f940.pdf" target="_blank">Form 940</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/f941.pdf" target="_blank">Form 941</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/fw7.pdf" target="_blank">Form W-7 (ITIN)</a>
+      </div>
 
-      <h3>PASSPORT FORMS</h3>
-      <a href="https://eforms.state.gov/Forms/ds11.pdf">DS‑11</a>
-      <a href="https://eforms.state.gov/Forms/ds82.pdf">DS‑82</a>
-      <a href="https://eforms.state.gov/Forms/ds64.pdf">DS‑64</a>
-      <a href="https://eforms.state.gov/Forms/ds3053.pdf">DS‑3053</a>
-      <a href="https://eforms.state.gov/Forms/ds5525.pdf">DS‑5525</a>
+      <div class="box">
+        <h3>PASSPORT FORMS</h3>
+        <a href="https://eforms.state.gov/Forms/ds11.pdf" target="_blank">DS-11</a>
+        <a href="https://eforms.state.gov/Forms/ds82.pdf" target="_blank">DS-82</a>
+        <a href="https://eforms.state.gov/Forms/ds64.pdf" target="_blank">DS-64</a>
+        <a href="https://eforms.state.gov/Forms/ds3053.pdf" target="_blank">DS-3053</a>
+        <a href="https://eforms.state.gov/Forms/ds5525.pdf" target="_blank">DS-5525</a>
+      </div>
 
-      <h3>SNAP / FOOD STAMPS</h3>
-      <a href="https://www.myflfamilies.com/">SNAP Application</a>
-      <a href="https://www.myflfamilies.com/">Recertification</a>
-      <a href="https://www.myflfamilies.com/">Change Report</a>
-      <a href="https://www.myflfamilies.com/">EBT Replacement</a>
+      <div class="box">
+        <h3>SNAP / FOOD STAMPS</h3>
+        <a href="https://www.myflfamilies.com/" target="_blank">SNAP Application</a>
+        <a href="https://www.myflfamilies.com/" target="_blank">Recertification</a>
+        <a href="https://www.myflfamilies.com/" target="_blank">Change Report</a>
+        <a href="https://www.myflfamilies.com/" target="_blank">EBT Replacement</a>
+      </div>
 
-      <h3>UNEMPLOYMENT</h3>
-      <a href="https://www.floridajobs.org/">Initial Claim</a>
-      <a href="https://www.floridajobs.org/">Weekly Certification</a>
-      <a href="https://www.floridajobs.org/">Appeal Request</a>
-      <a href="https://www.floridajobs.org/">Identity Verification</a>
+      <div class="box">
+        <h3>UNEMPLOYMENT</h3>
+        <a href="https://www.floridajobs.org/" target="_blank">Initial Claim</a>
+        <a href="https://www.floridajobs.org/" target="_blank">Weekly Certification</a>
+        <a href="https://www.floridajobs.org/" target="_blank">Appeal Request</a>
+        <a href="https://www.floridajobs.org/" target="_blank">Identity Verification</a>
+      </div>
 
-      <h3>CHILD SUPPORT</h3>
-      <a href="https://childsupport.floridarevenue.com/">Application</a>
-      <a href="https://childsupport.floridarevenue.com/">Payment Agreement</a>
-      <a href="https://childsupport.floridarevenue.com/">Modification Request</a>
-      <a href="https://childsupport.floridarevenue.com/">Paternity Forms</a>
+      <div class="box">
+        <h3>CHILD SUPPORT</h3>
+        <a href="https://childsupport.floridarevenue.com/" target="_blank">Application</a>
+        <a href="https://childsupport.floridarevenue.com/" target="_blank">Payment Agreement</a>
+        <a href="https://childsupport.floridarevenue.com/" target="_blank">Modification Request</a>
+        <a href="https://childsupport.floridarevenue.com/" target="_blank">Paternity Forms</a>
+      </div>
 
-      <h3>DIVORCE NON‑CONTESTED</h3>
-      <a href="https://www.flcourts.gov/">Simplified Divorce Petition</a>
-      <a href="https://www.flcourts.gov/">Financial Affidavit</a>
-      <a href="https://www.flcourts.gov/">Marital Settlement Agreement</a>
-      <a href="https://www.flcourts.gov/">Final Judgment Templates</a>
+      <div class="box">
+        <h3>DIVORCE NON-CONTESTED</h3>
+        <a href="https://www.flcourts.gov/" target="_blank">Simplified Divorce Petition</a>
+        <a href="https://www.flcourts.gov/" target="_blank">Financial Affidavit</a>
+        <a href="https://www.flcourts.gov/" target="_blank">Marital Settlement Agreement</a>
+        <a href="https://www.flcourts.gov/" target="_blank">Final Judgment Templates</a>
+      </div>
 
-      <h3>SOCIAL SECURITY (SSA)</h3>
-      <a href="https://www.ssa.gov/forms/ss-5.pdf">SS‑5</a>
-      <a href="https://www.ssa.gov/forms/ssa-16.pdf">SSA‑16</a>
-      <a href="https://www.ssa.gov/forms/ssa-44.pdf">SSA‑44</a>
-      <a href="https://www.ssa.gov/forms/ssa-89.pdf">SSA‑89</a>
+      <div class="box">
+        <h3>SOCIAL SECURITY (SSA)</h3>
+        <a href="https://www.ssa.gov/forms/ss-5.pdf" target="_blank">SS-5</a>
+        <a href="https://www.ssa.gov/forms/ssa-16.pdf" target="_blank">SSA-16</a>
+        <a href="https://www.ssa.gov/forms/ssa-44.pdf" target="_blank">SSA-44</a>
+        <a href="https://www.ssa.gov/forms/ssa-89.pdf" target="_blank">SSA-89</a>
+      </div>
 
-      <h3>DMV FORMS</h3>
-      <a href="https://www.flhsmv.gov/">ID Card Application</a>
-      <a href="https://www.flhsmv.gov/">Driver License Renewal</a>
-      <a href="https://www.flhsmv.gov/">Vehicle Registration</a>
-      <a href="https://www.flhsmv.gov/">Title Transfer</a>
+      <div class="box">
+        <h3>DMV FORMS</h3>
+        <a href="https://www.flhsmv.gov/" target="_blank">ID Card Application</a>
+        <a href="https://www.flhsmv.gov/" target="_blank">Driver License Renewal</a>
+        <a href="https://www.flhsmv.gov/" target="_blank">Vehicle Registration</a>
+        <a href="https://www.flhsmv.gov/" target="_blank">Title Transfer</a>
+      </div>
 
-      <h3>IMMIGRATION FORMS</h3>
-      <a href="https://www.uscis.gov/i-130">I‑130</a>
-      <a href="https://www.uscis.gov/i-485">I‑485</a>
-      <a href="https://www.uscis.gov/i-765">I‑765</a>
-      <a href="https://www.uscis.gov/i-864">I‑864</a>
-      <a href="https://www.uscis.gov/n-400">N‑400</a>
-      <a href="https://www.uscis.gov/i-90">I‑90</a>
-      <a href="https://www.uscis.gov/records">FOIA Request</a>
+      <div class="box">
+        <h3>IMMIGRATION FORMS</h3>
+        <a href="https://www.uscis.gov/i-130" target="_blank">I-130</a>
+        <a href="https://www.uscis.gov/i-485" target="_blank">I-485</a>
+        <a href="https://www.uscis.gov/i-765" target="_blank">I-765</a>
+        <a href="https://www.uscis.gov/i-864" target="_blank">I-864</a>
+        <a href="https://www.uscis.gov/n-400" target="_blank">N-400</a>
+        <a href="https://www.uscis.gov/i-90" target="_blank">I-90</a>
+        <a href="https://www.uscis.gov/records" target="_blank">FOIA Request</a>
+      </div>
 
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer style="padding:40px; text-align:center; opacity:0.7;">
+  <footer>
     © 2026 MAXIMAX MULTI SERVICES — ALWAYS MAXIMIZE
   </footer>
 
-<section id="services" style="padding:60px 0; text-align:center; color:#ff7a00;">
-  <h2 style="font-size:2rem; font-weight:900; margin-bottom:30px;">
-    SERVICES NOU YO
-  </h2>
-
-  <div style="display:grid; gap:20px; max-width:800px; margin:0 auto;">
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Tax Services</h3>
-      <p style="opacity:0.8;">Filing, ITIN, W‑2, 1099, Amendments, Business Taxes.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Immigration Assistance</h3>
-      <p style="opacity:0.8;">I‑130, I‑485, I‑765, N‑400, I‑90, FOIA, elatriye.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Passport & Travel</h3>
-      <p style="opacity:0.8;">DS‑11, DS‑82, DS‑64, DS‑3053, DS‑5525.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">SNAP / Benefits</h3>
-      <p style="opacity:0.8;">SNAP, EBT, Medicaid, Recertification, Change Report.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Unemployment</h3>
-      <p style="opacity:0.8;">Initial Claim, Weekly Claim, Appeal, ID Verification.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Child Support</h3>
-      <p style="opacity:0.8;">Application, Modification, Payment Setup, Paternity.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">Divorce Non‑Contested</h3>
-      <p style="opacity:0.8;">Simplified Divorce, Settlement, Affidavits, Templates.</p>
-    </div>
-
-    <div style="padding:20px; border:1px solid #ff7a00; border-radius:12px;">
-      <h3 style="margin-bottom:10px;">DMV Services</h3>
-      <p style="opacity:0.8;">ID, License, Registration, Title Transfer.</p>
-    </div>
-
-  </div>
-</section></body>
+</body>
 </html>
