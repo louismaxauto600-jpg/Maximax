@@ -1,567 +1,185 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TEST</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXIMAX MULTI SERVICES</title>
   <style>
     body {
-      background: #000000;
-      color: #ff7a00;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      padding-top: 80px;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>SITE LA AP MACHÉ 🔥</h1>
-</body>
-</html><!DOCTYPE html>
-<html lang="ht">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAXIMAX MULTI SERVICES • BSS STYLE</title>
-
-  <style>
-    :root {
-      --orange: #ff7a00;
-      --orange-light: #ff9a2f;
-      --orange-glow: rgba(255, 122, 0, 0.35);
-      --black: #000000;
-      --black-soft: #0d0d0d;
-      --black-card: rgba(0, 0, 0, 0.72);
-      --white: #ffffff;
-      --border: rgba(255, 122, 0, 0.22);
-      --shadow: 0 0 24px rgba(255, 122, 0, 0.18);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --max-width: 1180px;
-      --transition: 0.3s ease;
-    }
-
-    * {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #ff7a00;
     }
-
-    html {
-      scroll-behavior: smooth;
+    a { color: #ff7a00; text-decoration: none; }
+    h2 { font-size: 2rem; font-weight: 900; }
+    h3 { font-weight: 700; }
+    .box {
+      padding: 20px;
+      border: 1px solid #ff7a00;
+      border-radius: 12px;
     }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--white);
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(255, 122, 0, 0.28) 0%, rgba(255, 122, 0, 0.08) 18%, transparent 38%),
-        linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #1a0d00 62%, #ff7a00 100%);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--max-width));
+    .grid {
+      display: grid;
+      gap: 20px;
+      max-width: 800px;
       margin: 0 auto;
     }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(12px);
-      background: rgba(0, 0, 0, 0.88);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    }
-
-    .header-wrap {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .brand-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--orange);
-      text-transform: uppercase;
-    }
-
-    .brand-subtitle {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.82);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    nav a {
-      padding: 10px 14px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: var(--orange);
-      transition: var(--transition);
-    }
-
-    nav a:hover {
-      background: rgba(255, 122, 0, 0.1);
-      border-color: var(--border);
-      transform: translateY(-1px);
-    }
-
-    .hero {
-      padding: 90px 0 50px;
-      position: relative;
-      isolation: isolate;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.16) 100%);
-      z-index: -1;
-    }
-
-    .hero-box {
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.72), rgba(15, 15, 15, 0.58));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 42px 24px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      padding: 8px 14px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 122, 0, 0.08);
-      color: var(--orange-light);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-      text-shadow: 0 0 18px rgba(255, 122, 0, 0.18);
-    }
-
-    .hero-title span {
-      color: var(--orange);
-    }
-
-    .hero-sub {
-      max-width: 760px;
-      margin: 0 auto 24px;
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.88);
-    }
-
-    .cta-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-      transition: var(--transition);
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
-      color: #000;
-      box-shadow: 0 0 22px rgba(255, 122, 0, 0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 28px rgba(255, 122, 0, 0.42);
-    }
-
-    .btn-outline {
-      border-color: var(--orange);
-      color: var(--orange);
-      background: rgba(0, 0, 0, 0.25);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255, 122, 0, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .section {
-      padding: 38px 0;
-    }
-
-    .section-title {
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--orange);
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.78), rgba(18, 18, 18, 0.62));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .badge-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .badge-box,
-    .info-box {
-      padding: 22px;
-    }
-
-    .badge-box {
-      text-align: center;
-    }
-
-    .badge-box h3 {
-      font-size: 1.2rem;
-      color: var(--orange);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .badge-image {
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      box-shadow: 0 0 20px rgba(255, 122, 0, 0.18);
-      overflow: hidden;
-    }
-
-    .badge-slogan {
-      font-size: 1rem;
-      font-weight: 900;
-      color: var(--orange-light);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .mini-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 122, 0, 0.14);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-    }
-
-    .mini-card strong {
-      display: block;
-      color: var(--orange);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    .services-grid,
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .service-box,
-    .about-box {
-      padding: 18px;
-      transition: var(--transition);
-    }
-
-    .service-box:hover,
-    .about-box:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 122, 0, 0.34);
-    }
-
-    .service-title,
-    .about-box strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--orange);
-      font-size: 1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .contact-card {
-      padding: 24px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    .contact-item {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 122, 0, 0.14);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: var(--orange);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .contact-item a {
-      color: #fff;
-      word-break: break-word;
-    }
-
-    .contact-item a:hover {
-      color: var(--orange);
-    }
-
-    footer {
-      margin-top: 22px;
-      padding: 22px 0 28px;
-      border-top: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.78);
-      text-align: center;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 980px) {
-      .badge-wrap,
-      .services-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .header-wrap {
-        justify-content: center;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .badge-wrap,
-      .services-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 70px;
-      }
-
-      .hero-box {
-        padding: 34px 18px;
-      }
-
-      .section {
-        padding: 30px 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        width: min(100% - 20px, var(--max-width));
-      }
-
-      .brand-title {
-        font-size: 1rem;
-      }
-
-      nav a {
-        font-size: 0.78rem;
-        padding: 8px 12px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .cta-row {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 
-<body>
 <body>
 
   <!-- LANGUAGE TOGGLE (ANWO TOUT BAGAY) -->
-  <div id="lang-toggle" style="text-align:right; padding:20px; color:#ff7a00;">
+  <div id="lang-toggle" style="text-align:right; padding:20px;">
     <span style="cursor:pointer; margin-right:10px;">ENG</span>
     <span style="cursor:pointer; margin-right:10px;">ESP</span>
     <span style="cursor:pointer;">FRA</span>
   </div>
-  <header>
-    <div class="container header-wrap">
-      <div class="brand">
-        <div class="brand-title">MAXIMAX MULTI SERVICES</div>
-        <div class="brand-subtitle">Always Maximize • BSS1815 Style</div>
+
+  <!-- HERO SECTION -->
+  <section style="padding:80px 20px; text-align:center;">
+    <h1 style="font-size:3rem; font-weight:900; margin-bottom:10px;">
+      MAXIMAX MULTI SERVICES
+    </h1>
+    <p style="font-size:1.2rem; opacity:0.9;">
+      ALWAYS MAXIMIZE — PRO‑MAX SERVICES FOR EVERY COMMUNITY
+    </p>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" style="padding:60px 0; text-align:center;">
+    <h2>SERVICES NOU YO</h2>
+
+    <div class="grid">
+
+      <div class="box">
+        <h3>Tax Services</h3>
+        <p>Filing, ITIN, W‑2, 1099, Amendments, Business Taxes.</p>
       </div>
 
-      <nav>
-        <a href="#badge">BADGE</a>
-        <a href="#services">SERVICES</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <div class="hero-box card">
-        <div class="hero-tag">Orange • Black • Fade • BSS Style</div>
-        <h1 class="hero-title">
-          <span>MAXIMAX</span> MULTI SERVICES
-        </h1>
-        <p class="hero-sub">
-          Travay pwòp, serye, ak presi. Yon prezans ofisyèl ki mache ak disiplin, estetik, ak enpak vizyèl
-          nan vrè orange and black fade BSS style.
-        </p>
-
-        <div class="cta-row">
-          <a href="tel:+13175381150" class="btn btn-primary">CALL NOW • (317) 538-1150</a>
-          <a href="#contact" class="btn btn-outline">FULL CONTACT</a>
-        </div>
+      <div class="box">
+        <h3>Immigration Assistance</h3>
+        <p>I‑130, I‑485, I‑765, N‑400, I‑90, FOIA, elatriye.</p>
       </div>
+
+      <div class="box">
+        <h3>Passport & Travel</h3>
+        <p>DS‑11, DS‑82, DS‑64, DS‑3053, DS‑5525.</p>
+      </div>
+
+      <div class="box">
+        <h3>SNAP / Benefits</h3>
+        <p>SNAP, EBT, Medicaid, Recertification, Change Report.</p>
+      </div>
+
+      <div class="box">
+        <h3>Unemployment</h3>
+        <p>Initial Claim, Weekly Claim, Appeal, ID Verification.</p>
+      </div>
+
+      <div class="box">
+        <h3>Child Support</h3>
+        <p>Application, Modification, Payment Setup, Paternity.</p>
+      </div>
+
+      <div class="box">
+        <h3>Divorce Non‑Contested</h3>
+        <p>Simplified Divorce, Settlement, Affidavits, Templates.</p>
+      </div>
+
+      <div class="box">
+        <h3>DMV Services</h3>
+        <p>ID, License, Registration, Title Transfer.</p>
+      </div>
+
     </div>
   </section>
 
-  <section class="section" id="badge">
-    <div class="container">
-      <h2 class="section-title">Super Admin Badge</h2>
-      <p class="section-intro">
-        Men espas badge ofisyèl la ak menm idantite vizyèl la: nwa, orange, glow, ak prezans BSS style.
-      </p>
+  <!-- FORMS SECTION -->
+  <section id="forms" style="padding:60px 0; text-align:center;">
+    <h2>TOUT FÒM GOUVÈNMAN YO</h2>
 
-      <div class="badge-wrap">
-        <div class="badge-box card">
-          <h3>Official Badge</h3>
-          <div class="badge-image">
-            <img src="super-admin-badge.jpeg" alt="Super Admin Badge">
-          </div>
-          <div class="badge-slogan">Always Maximize</div>
-        </div>
+    <div class="grid">
 
-        <div class="info-box card">
-          <div class="info-grid">
-            <div class="mini-card">
-              <strong>Badge Style</strong>
-              Shield look, orange and black fade only, glossy visual impact, ak yon prezans ki santi l ofisyèl.
-            </div>
+      <!-- TAX FORMS -->
+      <h3 style="margin-top:30px;">TAX FORMS (IRS)</h3>
+      <a href="https://www.irs.gov/pub/irs-pdf/f1040.pdf">Form 1040</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/fw4.pdf">Form W‑4</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf">Form W‑9</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/f1099nec.pdf">Form 1099‑NEC</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/f4868.pdf">Form 4868</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/f940.pdf">Form 940</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/f941.pdf">Form 941</a>
+      <a href="https://www.irs.gov/pub/irs-pdf/fw7.pdf">Form W‑7 (ITIN)</a>
 
-            <div class="mini-card">
-              <strong>Brand Identity</strong>
-              MAXIMAX MULTI SERVICES nan sant idantite a, ak slogan ALWAYS MAXIMIZE byen klè, byen pwòp, byen fò.
-            </div>
+      <!-- PASSPORT -->
+      <h3 style="margin-top:30px;">PASSPORT FORMS</h3>
+      <a href="https://eforms.state.gov/Forms/ds11.pdf">DS‑11</a>
+      <a href="https://eforms.state.gov/Forms/ds82.pdf">DS‑82</a>
+      <a href="https://eforms.state.gov/Forms/ds64.pdf">DS‑64</a>
+      <a href="https://eforms.state.gov/Forms/ds3053.pdf">DS‑3053</a>
+      <a href="https://eforms.state.gov/Forms/ds5525.pdf">DS‑5525</a>
 
-            <div class="mini-card">
-              <strong>Official Presence</strong>
-              BSS style la dwe rete disipline, estriktire, pwisan, san koulè ki pa nesesè, san dezòd nan layout la.
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- SNAP -->
+      <h3 style="margin-top:30px;">SNAP / FOOD STAMPS</h3>
+      <a href="https://www.myflfamilies.com/">SNAP Application</a>
+      <a href="https://www.myflfamilies.com/">Recertification</a>
+      <a href="https://www.myflfamilies.com/">Change Report</a>
+      <a href="https://www.myflfamilies.com/">EBT Replacement</a>
+
+      <!-- UNEMPLOYMENT -->
+      <h3 style="margin-top:30px;">UNEMPLOYMENT</h3>
+      <a href="https://www.floridajobs.org/">Initial Claim</a>
+      <a href="https://www.floridajobs.org/">Weekly Certification</a>
+      <a href="https://www.floridajobs.org/">Appeal Request</a>
+      <a href="https://www.floridajobs.org/">Identity Verification</a>
+
+      <!-- CHILD SUPPORT -->
+      <h3 style="margin-top:30px;">CHILD SUPPORT</h3>
+      <a href="https://childsupport.floridarevenue.com/">Application</a>
+      <a href="https://childsupport.floridarevenue.com/">Payment Agreement</a>
+      <a href="https://childsupport.floridarevenue.com/">Modification Request</a>
+      <a href="https://childsupport.floridarevenue.com/">Paternity Forms</a>
+
+      <!-- DIVORCE -->
+      <h3 style="margin-top:30px;">DIVORCE NON‑CONTESTED</h3>
+      <a href="https://www.flcourts.gov/">Simplified Divorce Petition</a>
+      <a href="https://www.flcourts.gov/">Financial Affidavit</a>
+      <a href="https://www.flcourts.gov/">Marital Settlement Agreement</a>
+      <a href="https://www.flcourts.gov/">Final Judgment Templates</a>
+
+      <!-- SSA -->
+      <h3 style="margin-top:30px;">SOCIAL SECURITY (SSA)</h3>
+      <a href="https://www.ssa.gov/forms/ss-5.pdf">SS‑5</a>
+      <a href="https://www.ssa.gov/forms/ssa-16.pdf">SSA‑16</a>
+      <a href="https://www.ssa.gov/forms/ssa-44.pdf">SSA‑44</a>
+      <a href="https://www.ssa.gov/forms/ssa-89.pdf">SSA‑89</a>
+
+      <!-- DMV -->
+      <h3 style="margin-top:30px;">DMV FORMS</h3>
+      <a href="https://www.flhsmv.gov/">ID Card Application</a>
+      <a href="https://www.flhsmv.gov/">Driver License Renewal</a>
+      <a href="https://www.flhsmv.gov/">Vehicle Registration</a>
+      <a href="https://www.flhsmv.gov/">Title Transfer</a>
+
+      <!-- IMMIGRATION -->
+      <h3 style="margin-top:30px;">IMMIGRATION FORMS</h3>
+      <a href="https://www.uscis.gov/i-130">I‑130</a>
+      <a href="https://www.uscis.gov/i-485">I‑485</a>
+      <a href="https://www.uscis.gov/i-765">I‑765</a>
+      <a href="https://www.uscis.gov/i-864">I‑864</a>
+      <a href="https://www.uscis.gov/n-400">N‑400</a>
+      <a href="https://www.uscis.gov/i-90">I‑90</a>
+      <a href="https://www.uscis.gov/records">FOIA Request</a>
+
     </div>
   </section>
 
-  <section class="section" id="services">
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <p class="section-intro">
-        Chak sèvis prezante nan yon layout net, modèn, ak pwòp pou kenbe menm enèji pwofesyonèl la.
-      </p>
+  <!-- FOOTER -->
+  <footer style="padding:40px; text-align:center; opacity:0.7;">
+    © 2026 MAXIMAX MULTI SERVICES — ALWAYS MAXIMIZE
+  </footer>
 
-      <div class="services-grid">
-        <div class="service
+</body>
+</html>
