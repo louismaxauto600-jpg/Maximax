@@ -1,81 +1,234 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAXIMAX Multi Services</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MAXIMAX Multi Services - Immigration, Taxes, Forms and Document Assistance">
+<title>MAXIMAX Multi Services</title>
 
-<body style="
+<style>
+*{
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, sans-serif;
-    background:#000000;
-    color:white;
-">
+    background:#000;
+    color:#fff;
+    line-height:1.6;
+}
 
-    <!-- HEADER -->
-    <header style="background:#ff8c42; padding:20px; text-align:center;">
-        <h1 style="margin:0; font-size:28px; color:black;">MAXIMAX Multi Services</h1>
-        <p style="margin:0; font-size:16px; color:black;">MAXIMAX ALWAYS MAXIMIZED</p>
+header{
+    background:#ff8c42;
+    text-align:center;
+    padding:20px;
+}
 
-        <nav style="margin-top:15px;">
-            <a href="services.html" style="margin:0 15px; color:black; font-weight:bold; text-decoration:none;">Services</a>
-            <a href="about.html" style="margin:0 15px; color:black; font-weight:bold; text-decoration:none;">About</a>
-            <a href="contact.html" style="margin:0 15px; color:black; font-weight:bold; text-decoration:none;">Contact</a>
-        </nav>
-    </header>
+header h1{
+    color:#000;
+    font-size:2rem;
+}
 
-    <!-- HERO -->
-    <section style="padding:40px 20px; text-align:center;">
-        <h2 style="font-size:22px; margin-bottom:10px;">Immigration • Taxes • Forms</h2>
+header p{
+    color:#000;
+    font-weight:bold;
+}
 
-        <p style="font-size:16px; max-width:600px; margin:auto;">
-            Nou ede w ranpli fòm yo, prepare dokiman yo, epi mete tout bagay an òd.
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    margin:0 15px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    color:#ff8c42;
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin:10px 5px;
+    padding:12px 25px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-primary{
+    background:#ff8c42;
+    color:#000;
+}
+
+.btn-secondary{
+    background:#fff;
+    color:#000;
+}
+
+.section{
+    padding:60px 20px;
+}
+
+.dark{
+    background:#111;
+}
+
+.section h2{
+    color:#ff8c42;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card h3{
+    color:#ff8c42;
+    margin-bottom:10px;
+}
+
+.about,
+.contact{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact a{
+    color:#ff8c42;
+    text-decoration:none;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MAXIMAX Multi Services</h1>
+    <p>MAXIMAX ALWAYS MAXIMIZED</p>
+
+    <nav>
+        #servicesServices</a>
+        #aboutAbout</a>
+        #contactContact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Immigration • Taxes • Forms</h2>
+
+    <p>
+        Nou ede w ranpli fòm yo, prepare dokiman yo, epi mete tout bagay an òd
+        avèk sèvis rapid, serye, ak pwofesyonèl.
+    </p>
+
+    <div style="margin-top:25px;">
+        #contactBook / Contact</a>
+        #servicesView Services</a>
+    </div>
+</section>
+
+<section id="services" class="section dark">
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Immigration Services</h3>
+            <p>Asistans pou aplikasyon ak dokiman imigrasyon.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tax Preparation</h3>
+            <p>Preparasyon taks pou moun ak biznis.</p>
+        </div>
+
+        <div class="card">
+            <h3>Form Assistance</h3>
+            <p>SNAP, SSA, DMV ak lòt aplikasyon enpòtan.</p>
+        </div>
+
+        <div class="card">
+            <h3>Document Services</h3>
+            <p>Upload, enprime, eskane ak òganizasyon dokiman.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="about">
+        <h2>About Us</h2>
+        <p>
+            MAXIMAX Multi Services bay sèvis pwofesyonèl pou ede kliyan yo
+            jere dokiman, taks ak bezwen administratif yo avèk konfyans.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="section dark">
+    <div class="contact">
+        <h2>Contact Us</h2>
+
+        <p>
+            Email:
+            <a href="mailto:maximaxmultiservices@gmail.com">
+                maximaxmultiservices@gmail.com
+            </a>
         </p>
 
-        <div style="margin-top:20px;">
-            <a href="contact.html" 
-               style="padding:12px 25px; background:#ff8c42; color:black; font-weight:bold; text-decoration:none; border-radius:5px; margin-right:10px;">
-               Book / Contact
+        <p>
+            Phone:
+            tel:+13175381150
+                (317) 538-1150
             </a>
+        </p>
+    </div>
+</section>
 
-            <a href="services.html" 
-               style="padding:12px 25px; background:white; color:black; font-weight:bold; text-decoration:none; border-radius:5px;">
-               View Services
-            </a>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section style="padding:30px 20px; background:#111;">
-        <h2 style="color:#ff8c42;">Services</h2>
-
-        <ul style="list-style:none; padding:0; font-size:16px; line-height:30px;">
-            <li>Immigration Services</li>
-            <li>Tax Preparation</li>
-            <li>Form Assistance (SNAP, SSA, DMV, elatriye)</li>
-            <li>Document Upload & Receipts (pita)</li>
-        </ul>
-    </section>
-
-    <!-- ABOUT -->
-    <section style="padding:30px 20px;">
-        <h2 style="color:#ff8c42;">About</h2>
-        <p>MAXIMAX Multi Services — sèvis rapid, pwòp, e serye.</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section style="padding:30px 20px; background:#111;">
-        <h2 style="color:#ff8c42;">Contact</h2>
-        <p>Email: maximaxmultiservices@gmail.com</p>
-        <p>Phone: (317) 538-1150</p>
-    </section>
-
-    <!-- FOOTER -->
-    <footer style="padding:20px; text-align:center; background:#000;">
-        <p>© 2026 MAXIMAX Multi Services</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 MAXIMAX Multi Services. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
