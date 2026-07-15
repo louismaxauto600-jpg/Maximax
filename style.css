@@ -11,7 +11,12 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-body{
+body{<link rel="stylesheet" href="style.css">
+<style>
+body{background:#222!important;color:#fff!important;margin:0!important}
+.module-header{background:#000;border-bottom:2px solid #f09d22;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.module-header img{width:48px;height:48px;object-fit:contain;border:1px solid #f09d22;border-radius:8px;padding:3px;background:#111}
+</style>
   font-family: Arial, sans-serif;
   background-color: var(--black);
   color: var(--text);
