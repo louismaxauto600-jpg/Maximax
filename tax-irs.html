@@ -1,27 +1,66 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>IRS / Tax & ITIN — MAXIMAX</title>
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAX SERVICES - Maximax</title>
 <style>
-body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial;background:#070b14;color:#eaf0ff}
-.wrap{max-width:980px;margin:0 auto;padding:18px 16px 50px}
-h1{margin:0 0 8px} p{color:#aeb9da;line-height:1.55;margin:0 0 14px}
-a{display:inline-flex;align-items:center;justify-content:center;margin:6px 8px 0 0;
-padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16);
-background:rgba(255,255,255,.05);color:#eaf0ff;text-decoration:none;font-weight:800}
-a:hover{border-color:rgba(244,162,97,.75)}
-.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;
-padding:14px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(0,0,0,.18)}
-.small{font-size:12.5px;color:rgba(255,255,255,.6)}
-</style></head><body>
-<div class="wrap">
-  <div class="top">
-    <div><h1>IRS / Tax & ITIN</h1><div class="small">Official IRS links</div></div>
-    <a href="index.html">← Back Home</a>
-  </div>
-  <p>All buttons open official IRS pages directly.</p>
-  <a target="_blank" rel="noopener" href="https://www.irs.gov/">IRS Home</a>
-  <a target="_blank" rel="noopener" href="https://www.irs.gov/forms-pubs">Forms & Publications</a>
-  <a target="_blank" rel="noopener" href="https://www.irs.gov/individuals/international-taxpayers/individual-taxpayer-identification-number-itin">ITIN Info</a>
-  <a target="_blank" rel="noopener" href="https://www.irs.gov/refunds">Where's My Refund</a>
-  <a target="_blank" rel="noopener" href="https://www.irs.gov/individuals/get-transcript">Get Transcript</a>
-</div></body></html>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:radial-gradient(ellipse at 15% 0%, rgba(240,157,34,0.32) 0%, transparent 50%),linear-gradient(180deg,#000 0%,#111 100%)!important;background-attachment:fixed!important;color:#fff!important;font-family:Arial;min-height:100vh}
+.header{background:#000!important;border-bottom:2px solid #f09d22!important;padding:10px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;flex-wrap:wrap;gap:10px}
+.header img{width:58px;height:58px;background:#111;border:1px solid #f09d22;border-radius:12px;padding:4px}
+.lang button{background:#222!important;color:#fff!important;border:1px solid #444!important;padding:6px 12px!important;border-radius:15px!important;font-weight:900;cursor:pointer}
+.lang button.active{background:#f09d22!important;color:#000!important}
+.hero{background:linear-gradient(180deg, rgba(240,157,34,0.12) 0%, transparent 100%)!important;padding:60px 20px;text-align:center}
+.hero h1{color:#f09d22!important;font-size:2.5rem}
+.box{max-width:850px;margin:30px auto;background:linear-gradient(145deg,#2a2a2a 0%,#1f1f1f 100%)!important;border:1px solid #333!important;border-left:4px solid #f09d22!important;border-radius:14px!important;padding:32px!important}
+.btn{background:#f09d22!important;color:#000!important;padding:11px 20px!important;border-radius:25px!important;font-weight:900!important;text-decoration:none!important;display:inline-block!important}
+.social{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:15px}
+.social a{background:#151515!important;border:1px solid #333!important;padding:8px 13px!important;border-radius:20px!important;color:#f09d22!important}
+</style>
+</head>
+<body>
+<div class="header">
+<a href="index.html" style="display:flex;align-items:center;gap:10px;color:#f09d22;text-decoration:none;font-weight:900"><img src="maximax-multi-services-logo.jpg" onerror="this.src='logo.png'">MAXIMAX</a>
+<div style="display:flex;gap:10px;align-items:center">
+<div class="lang">
+<button id="b-en" onclick="setLang('en')">ENG</button>
+<button id="b-kre" onclick="setLang('kre')" class="active">KRE</button>
+<button id="b-fra" onclick="setLang('fra')">FRA</button>
+</div>
+<a href="index.html" id="homeBtn" style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;text-decoration:none">Akèy</a>
+</div>
+</div>
+<div class="hero">
+<h1 id="t1">SÈVIS TAKS</h1>
+<p id="d1" style="color:#bbb;margin-top:10px">Preparasyon Taks - IRS - ITIN - Tout Eta</p>
+</div>
+<div class="box">
+<h3 id="t2" style="color:#f09d22">SÈVIS TAKS</h3>
+<p id="list" style="color:#ccc;margin-top:15px;line-height:1.9">✓ Taks Endividyèl & Biznis<br>✓ Aplikasyon ITIN<br>✓ Èd Lèt IRS<br>✓ Taks An Reta<br>✓ Ranbousman Maksimòm<br><br>📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494</p>
+<br><br>
+<a href="index.html" class="btn" id="backBtn">⬅ Retounen Akèy</a>
+</div>
+<div style="text-align:center;padding:35px;background:#000;border-top:3px solid #f09d22;margin-top:50px">
+<p style="color:#f09d22;font-weight:900">REZO SOSYAL - TOUT 9:</p>
+<div class="social"><a>Facebook</a><a>WhatsApp</a><a>YouTube</a><a>Spotify</a><a>Instagram</a><a>True Social</a><a>Telegram</a><a>TikTok</a><a>X/Twitter</a></div>
+<p style="margin-top:15px;color:#888">maximaxmultiservices.com | maximaxmultiservices@gmail.com<br>(407) 640-5166 | (317) 538-1150 | (516) 216-8494</p>
+</div>
+<script>
+const L={
+ en:{t1:"TAX SERVICES",d1:"Tax Preparation - IRS - ITIN - All States",list:"✓ Individual & Business Tax<br>✓ ITIN Application<br>✓ IRS Letter Help<br>✓ Back Taxes<br>✓ Max Refund",home:"Home",back:"⬅ Back Home"},
+ kre:{t1:"SÈVIS TAKS",d1:"Preparasyon Taks - IRS - ITIN - Tout Eta",list:"✓ Taks Endividyèl & Biznis<br>✓ Aplikasyon ITIN<br>✓ Èd Lèt IRS<br>✓ Taks An Reta<br>✓ Ranbousman Maksimòm",home:"Akèy",back:"⬅ Retounen Akèy"},
+ fra:{t1:"SERVICES FISCAUX",d1:"Préparation Impôts - IRS - ITIN - Tous États",list:"✓ Impôts Individuels & Entreprise<br>✓ Demande ITIN<br>✓ Aide Lettre IRS<br>✓ Arriérés<br>✓ Remboursement Max",home:"Accueil",back:"⬅ Retour Accueil"}
+};
+function setLang(l){
+ document.getElementById('t1').innerHTML=L[l].t1;
+ document.getElementById('t2').innerHTML=L[l].t1;
+ document.getElementById('d1').innerHTML=L[l].d1;
+ document.getElementById('list').innerHTML=L[l].list+"<br><br>📍 Pine Hills, FL 32818<br>📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494<br>📧 maximaxmultiservices@gmail.com";
+ document.getElementById('homeBtn').innerHTML=L[l].home;
+ document.getElementById('backBtn').innerHTML=L[l].back;
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
+ document.getElementById('b-'+l).classList.add('active');
+}
+</script>
+</body>
+</html>
