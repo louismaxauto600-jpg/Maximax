@@ -1,88 +1,108 @@
-<style>
-    /* Basic Styles for the Form */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-        background-color: #222; /* Black background for the whole page */
-        color: #fff; /* White text color */
-    }
+/* === MAXIMAX MULTI SERVICES - STYLE.CSS KORIJE === */
+:root{
+  --orange:#f09d22;
+  --orange-dark:#e0891c;
+  --black:#222;
+  --black-soft:#333;
+  --input-bg:#444;
+  --input-light:#555;
+  --text:#fff;
+  --muted:#bbb;
+}
 
-    h1, h2 {
-        text-align: center;
-        color: #f09d22; /* Apricot orange color for headings */
-    }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: Arial, sans-serif;
+  background-color: var(--black);
+  color: var(--text);
+  line-height:1.6;
+  margin:0;
+  padding:0;
+}
 
-    /* Form container styling */
-    .form-container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #333; /* Dark background for the form */
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+h1,h2{
+  text-align:center;
+  color:var(--orange);
+}
 
-    /* Input fields styling */
-    input, textarea, select {
-        padding: 10px;
-        margin: 10px 0;
-        width: 100%;
-        box-sizing: border-box;
-        border: 1px solid #555; /* Light grey border */
-        background-color: #444; /* Dark background for input fields */
-        color: #fff; /* White text inside input fields */
-    }
+/* HEADER - pa kite a global la kraze l */
+.site-header, .header{
+  background:#000!important;
+  border-bottom:2px solid var(--orange);
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+.site-header a, .header a{
+  background:transparent!important;
+  display:inline-flex!important;
+  padding:6px 12px!important;
+  margin:0!important;
+}
 
-    /* Lighten input fields for better contrast */
-    input[type="text"], input[type="email"], select, textarea {
-        background-color: #555; /* Slightly lighter background for inputs */
-    }
+/* FORM - kenbe style ou te genyen an */
+.form-container{
+  max-width:600px;
+  margin:30px auto;
+  padding:20px;
+  background-color: var(--black-soft);
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(0,0,0,0.3);
+  border:1px solid rgba(240,157,34,0.3);
+}
 
-    /* Button styling */
-    button {
-        padding: 10px;
-        background-color: #f09d22; /* Apricot orange for the button */
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+input, textarea, select{
+  padding:10px;
+  margin:10px 0;
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid #555;
+  background-color: var(--input-bg);
+  color:#fff;
+  border-radius:4px;
+}
 
-    /* Button hover effect */
-    button:hover {
-        background-color: #e0891c; /* Darker orange on hover */
-    }
+input[type="text"], input[type="email"], select, textarea{
+  background-color: var(--input-light);
+}
 
-    /* Adjust select box styling */
-    select {
-        padding: 10px;
-        background-color: #555;
-        color: white;
-        border: 1px solid #555;
-    }
+button{
+  padding:10px 18px;
+  background-color: var(--orange);
+  color:white;
+  border:none;
+  cursor:pointer;
+  border-radius:4px;
+  font-weight:900;
+}
 
-    /* Links styling */
-    a {
-        color: #f09d22; /* Apricot orange links */
-        text-decoration: none;
-        padding: 8px;
-        display: block;
-        margin: 5px 0;
-        background-color: #333; /* Dark background for links */
-        border-radius: 5px;
-    }
+button:hover{
+  background-color: var(--orange-dark);
+}
 
-    a:hover {
-        background-color: #444; /* Hover effect for links */
-    }
+/* LYEN - SÈLMAN pou sa ki andedan kontni, PA pou header */
+.content a, .form-container a, .form-section a{
+  color: var(--orange);
+  text-decoration:none;
+  padding:8px;
+  display:block;
+  margin:5px 0;
+  background-color: var(--black-soft);
+  border-radius:5px;
+}
 
-    /* Form section background */
-    .form-section, .federal-register-section {
-        margin-bottom: 20px;
-        padding: 20px;
-        background-color: #333; /* Dark background for form sections */
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+.content a:hover, .form-container a:hover{
+  background-color: #444;
+}
 
-</style>
+.form-section, .federal-register-section{
+  margin-bottom:20px;
+  padding:20px;
+  background-color: var(--black-soft);
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
