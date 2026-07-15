@@ -3,31 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maximax Multi Services</title>
+<title>MAXIMAX MULTI SERVICES - Pine Hills FL</title>
 <link rel="stylesheet" href="style.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#222!important;color:#fff!important;font-family:Arial,sans-serif;margin:0}
+body{background:#222!important;color:#fff!important;font-family:Arial,sans-serif}
 .header{background:#000!important;border-bottom:2px solid #f09d22;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}
 .header img{width:56px;height:56px;object-fit:contain;background:#111;border:1px solid #f09d22;border-radius:12px;padding:4px}
+.grid{max-width:1200px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:0 20px}
+.card{background:#333;border:1px solid #444;border-radius:10px;padding:20px;text-align:center;transition:.3s}
+.card:hover{border-color:#f09d22;transform:translateY(-3px)}
+.card a{color:#f09d22;text-decoration:none;font-weight:900}
+.btn{background:#f09d22;color:#000;padding:8px 15px;border-radius:20px;font-weight:900;text-decoration:none;display:inline-block;margin-top:10px}
 </style>
 </head>
 <body>
 
 <div class="header">
 <a href="index.html" style="display:flex;align-items:center;gap:12px;color:#f09d22;text-decoration:none;font-weight:900">
-<img src="maximax-multi-services-logo.jpg" alt="MAXIMAX" onerror="this.src='logo.png'">
-<span>MAXIMAX MULTI SERVICES</span>
+<img src="maximax-multi-services-logo.jpg" alt="MAXIMAX" onerror="this.src='logo.png'; this.onerror=function(){this.src='maximax.jpeg'}">
+MAXIMAX MULTI SERVICES
 </a>
-<div style="display:flex;gap:8px">
-<a href="index.html" style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;text-decoration:none">Akèy</a>
+<div style="display:flex;gap:10px">
+<a href="#services" style="color:#fff;text-decoration:none">Sèvis</a>
+<a href="#contact" style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;text-decoration:none">Kontak</a>
 </div>
 </div>
 
-<div style="padding:80px 20px;text-align:center;background:#000">
-<h1 style="color:#fff;font-size:2.5rem">SOLISYON <b style="color:#f09d22">PWOEFESYONEL</b></h1>
-<p style="color:#bbb;margin-top:15px">Logo a kounye a se maximax-multi-services-logo.jpg</p>
-<p style="margin-top:20px"><a href="gov_services.html" style="background:#f09d22;color:#000;padding:12px 20px;border-radius:25px;font-weight:900;text-decoration:none">Gade Sèvis yo</a></p>
+<div style="text-align:center;padding:60px 20px;background:#000">
+<h1 style="font-size:2.8rem">SOLISYON <span style="color:#f09d22">PWOEFESYONEL</span> POU TOUT BEZWEN OU</h1>
+<p style="color:#bbb;margin-top:15px">40+ Sèvis - Gov, Immigration, Paspò, DMV, Tax, Notary</p>
+<a href="#services" class="btn" style="margin-top:20px">Gade Tout Sèvis</a>
+</div>
+
+<div id="services" class="grid">
+<div class="card"><h3>Gov Services</h3><p style="color:#bbb;font-size:.9rem">Sèvis gouvènman</p><a href="gov_services.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Immigration</h3><p style="color:#bbb;font-size:.9rem">Immigration & USCIS</p><a href="immigration.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Paspò</h3><p style="color:#bbb;font-size:.9rem">Paspò Ayisyen & US</p><a href="passport.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>DMV Services</h3><p style="color:#bbb;font-size:.9rem">Lis, Tag, Title</p><a href="dmv.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Child Support</h3><p style="color:#bbb;font-size:.9rem">Sipò timoun</p><a href="child_support.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Notary</h3><p style="color:#bbb;font-size:.9rem">Notè piblik</p><a href="notary.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Translation</h3><p style="color:#bbb;font-size:.9rem">Tradiksyon</p><a href="translation.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Tax Services</h3><p style="color:#bbb;font-size:.9rem">Taks & IRS</p><a href="tax.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Business</h3><p style="color:#bbb;font-size:.9rem">LLC, EIN, Biznis</p><a href="business.html" class="btn">Ouvè</a></div>
+<div class="card"><h3>Insurance</h3><p style="color:#bbb;font-size:.9rem">Asirans</p><a href="insurance.html" class="btn">Ouvè</a></div>
+</div>
+
+<div id="contact" style="text-align:center;padding:40px 20px;background:#111;margin-top:30px;border-top:2px solid #f09d22">
+<h2 style="color:#f09d22">Kontakte Nou</h2>
+<p style="margin-top:10px">Pine Hills, Florida 32818</p>
+<p>📞 407-XXX-XXXX</p>
 </div>
 
 </body>
