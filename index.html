@@ -6,75 +6,94 @@
 <title>MAXIMAX MULTI SERVICES - Pine Hills FL</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:#000;color:#fff;font-family:Inter,Arial,sans-serif;
-  min-height:100vh;overflow-x:hidden;position:relative
-}
-body::before{
-  content:"";position:fixed;inset:0;
-  background:
-    radial-gradient(800px 500px at 20% -10%, rgba(240,157,34,0.22), transparent 60%),
-    radial-gradient(700px 500px at 90% 0%, rgba(240,157,34,0.18), transparent 60%),
-    radial-gradient(900px 700px at 50% 120%, rgba(240,157,34,0.15), transparent 70%),
-    linear-gradient(180deg, #0a0a0a 0%, #000 35%, #0f0800 70%, #000 100%);
-  pointer-events:none;z-index:-1
-}
-.header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border-bottom:3px solid #f09d22;padding:14px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{color:#f09d22;text-decoration:none;font-weight:900;font-size:1.1rem}
-.kontak{background:#f09d22;color:#000;padding:8px 16px;border-radius:999px;font-weight:900;text-decoration:none}
-.kontak:hover{background:#fff}
-.hero{padding:85px 20px 55px;text-align:center;background:radial-gradient(600px 300px at 50% 0%, rgba(240,157,34,0.18), transparent 70%)}
-.hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:900;line-height:1.15}
-.hero h1 span{color:#f09d22;text-shadow:0 0 22px rgba(240,157,34,0.45)}
-.hero p{color:#b9b9b9;margin-top:14px;font-size:1.08rem;max-width:720px;margin:0 auto;margin-top:14px}
-.grid{max-width:1280px;margin:38px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;padding:0 20px}
-.card{background:linear-gradient(180deg,#171717,#121212);border:1px solid #262626;border-left:4px solid #f09d22;border-radius:14px;padding:22px 18px;text-align:center;transition:.25s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.5),0 0 18px rgba(240,157,34,0.18)}
-.card h3{color:#f09d22;font-size:1.15rem;margin-bottom:6px}
-.card p{color:#a8a8a8;font-size:.95rem;margin-bottom:14px}
-.card.featured{border:2px solid #f09d22;background:linear-gradient(180deg,#1e1400,#15100a);box-shadow:0 0 22px rgba(240,157,34,0.12)}
-.btn{background:#f09d22;color:#000;padding:9px 18px;border-radius:999px;font-weight:900;text-decoration:none;display:inline-block;font-size:.9rem}
-.btn:hover{background:#fff}
-.btn.white{background:#fff}.btn.white:hover{background:#f09d22}
-.footer{background:linear-gradient(180deg,#000,#0c0700);border-top:3px solid #f09d22;padding:48px 20px;margin-top:56px;text-align:center}
-.footer h2{color:#f09d22;font-size:2rem}
+html{scroll-behavior:smooth}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(900px 500px at 15% -10%, rgba(240,157,34,0.24), transparent 65%),radial-gradient(700px 500px at 85% 0%, rgba(240,157,34,0.16), transparent 65%),linear-gradient(180deg,#0a0a0a,#000 40%,#0f0800 100%);pointer-events:none;z-index:-1}
+.header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);border-bottom:3px solid #f09d22;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{color:#f09d22;text-decoration:none;font-weight:900;font-size:1.25rem}
+.btn-kontak{background:#f09d22;color:#000;padding:8px 18px;border-radius:999px;font-weight:900;text-decoration:none}
+.hero{padding:90px 20px 60px;text-align:center}
+.hero h1{font-size:2.8rem;font-weight:900;line-height:1.1}
+.hero h1 span{color:#f09d22}
+.hero p{color:#bbb;margin:16px auto;max-width:720px;font-size:1.1rem}
+.cta{display:inline-block;background:#f09d22;color:#000;padding:13px 28px;border-radius:999px;font-weight:900;text-decoration:none;margin-top:10px}
+.grid{max-width:1300px;margin:40px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;padding:0 20px}
+.card{background:#171717;border:1px solid #2a2a2a;border-left:4px solid #f09d22;border-radius:16px;padding:24px 18px;text-align:center;transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(0,0,0,.6),0 0 20px rgba(240,157,34,.18)}
+.card.featured{border:2px solid #f09d22;background:#201600}
+.card h3{color:#f09d22;margin-bottom:8px}
+.card p{color:#aaa;margin-bottom:14px}
+.card button{background:#f09d22;color:#000;border:0;padding:9px 20px;border-radius:999px;font-weight:900;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:18px}
+.modal.active{display:flex}
+.modal-box{background:#1a1a1a;border-top:4px solid #f09d22;border-radius:18px;max-width:560px;width:100%;padding:28px;position:relative}
+.close{position:absolute;top:12px;right:14px;background:#222;color:#fff;border:0;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px}
+.modal-box h2{color:#f09d22;margin-bottom:8px}
+.modal-box ul{list-style:none;margin:16px 0}
+.modal-box li{padding:8px 0;border-bottom:1px solid #222;color:#ccc}
+.modal-box li::before{content:"✔ ";color:#f09d22;font-weight:900}
+.btn-call{background:#f09d22;color:#000;padding:11px 20px;border-radius:999px;font-weight:900;text-decoration:none;display:inline-block;flex:1;text-align:center}
+.btn-wa{background:#25D366;color:#000;padding:11px 20px;border-radius:999px;font-weight:900;text-decoration:none;display:inline-block;flex:1;text-align:center}
+.footer{background:#000;border-top:3px solid #f09d22;padding:50px 20px;margin-top:60px;text-align:center}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <a href="index.html" class="logo">MAXIMAX MULTI SERVICES</a>
-  <a href="#contact" class="kontak">KONTAK</a>
+<a class="logo" href="#">MAXIMAX MULTI SERVICES</a>
+<a class="btn-kontak" href="#contact">KONTAK</a>
 </div>
 
 <div class="hero">
-  <h1>Byenveni nan <span>MAXIMAX MULTI SERVICES</span></h1>
-  <p>Sèvis pwofesyonèl, rapid ak fyab pou kominote a nan Pine Hills ak tout Florid</p>
+<h1>Byenveni nan <span>MAXIMAX MULTI SERVICES</span></h1>
+<p>Sèvis pwofesyonèl, rapid ak fyab - Tout sou yon sèl paj, pa gen lyen kase!</p>
+<a href="#services" class="cta">Gade Tout Sèvis ↓</a>
 </div>
 
-<div class="grid">
-  <div class="card"><h3>Gov Services</h3><p>Sèvis gouvènman rapid</p><a href="gov_services.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Immigration</h3><p>USCIS - Tout aplikasyon</p><a href="immigration.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Paspò</h3><p>Paspò Ayisyen & Ameriken</p><a href="passport.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>DMV Services</h3><p>Lis, Tag, Title, Reg</p><a href="dmv.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Child Support</h3><p>Sipò timoun</p><a href="child_support.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Notary Services</h3><p>Notè piblik 7/7</p><a href="notary.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Translation</h3><p>Tradiksyon sètifye USCIS</p><a href="translation.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Tax Services</h3><p>Preparasyon taks 2025</p><a href="tax.html" class="btn">Gade Sèvis</a></div>
-  <div class="card featured"><h3>Business LLC</h3><p style="color:#f09d22">Kreyasyon LLC & EIN 24h</p><a href="business.html" class="btn white">⭐ Gade Sèvis</a></div>
-  <div class="card"><h3>Insurance</h3><p>Asirans oto, kay, lavi</p><a href="insurance.html" class="btn">Gade Sèvis</a></div>
-  <div class="card featured"><h3>⭐ Federal Register</h3><p style="color:#f09d22">SAM.gov, UEI, CAGE - NOUVO</p><a href="federal_register.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Resume Services</h3><p>CV pwofesyonèl + Cover Letter</p><a href="resume.html" class="btn">Gade Sèvis</a></div>
-  <div class="card"><h3>Credit Repair</h3><p>Netwayaj kredi + Dispute</p><a href="credit_repair.html" class="btn">Gade Sèvis</a></div>
+<div id="services" class="grid">
+<div class="card" onclick="openModal('gov')"><h3>Gov Services</h3><p>Sèvis gouvènman rapid</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('immigration')"><h3>Immigration</h3><p>USCIS - Tout aplikasyon</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('passport')"><h3>Paspò</h3><p>Ayisyen & Ameriken</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('dmv')"><h3>DMV Services</h3><p>Lis, Tag, Title</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('child')"><h3>Child Support</h3><p>Sipò timoun</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('notary')"><h3>Notary 7/7</h3><p>Notè piblik</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('translation')"><h3>Translation</h3><p>Sètifye USCIS</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('tax')"><h3>Tax Services</h3><p>Taks 2025</p><button>Gade Sèvis</button></div>
+<div class="card featured" onclick="openModal('llc')"><h3>Business LLC</h3><p style="color:#f09d22">LLC & EIN 24h</p><button>⭐ Gade Sèvis</button></div>
+<div class="card" onclick="openModal('insurance')"><h3>Insurance</h3><p>Oto, Kay, Lavi</p><button>Gade Sèvis</button></div>
+<div class="card featured" onclick="openModal('federal')"><h3>⭐ Federal Register</h3><p style="color:#f09d22">SAM.gov NOUVO</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('resume')"><h3>Resume</h3><p>CV + Cover Letter</p><button>Gade Sèvis</button></div>
+<div class="card" onclick="openModal('credit')"><h3>Credit Repair</h3><p>Netwayaj kredi</p><button>Gade Sèvis</button></div>
 </div>
+
+<div id="modal" class="modal" onclick="if(event.target==this)closeModal()"><div class="modal-box" id="box"></div></div>
 
 <div id="contact" class="footer">
-  <h2>Kontakte Nou Jodia</h2>
-  <p style="margin-top:12px">🌐 maximaxmultiservices.com | 📧 maximaxmultiservices@gmail.com</p>
-  <p style="color:#fff;font-size:1.18rem;margin:14px 0;font-weight:700">📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494</p>
-  <p>📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
-  <p style="color:#f09d22;margin-top:22px;font-weight:900;letter-spacing:1px">11 MODIL - NÈT - PA GEN WOUJ - PA GEN FUZZY</p>
+<h2 style="color:#f09d22;font-size:2rem">Kontakte Nou</h2>
+<p style="margin-top:12px">🌐 maximaxmultiservices.com | 📧 maximaxmultiservices@gmail.com</p>
+<p style="color:#fff;font-size:1.2rem;margin:14px 0;font-weight:800">📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494</p>
+<p>📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
+<p style="color:#f09d22;margin-top:20px;font-weight:900">TOUT MODIL TRAVAY - ORANGE + BLACK FADE</p>
 </div>
 
+<script>
+const data={
+gov:{t:"Gov Services",d:"Sèvis gouvènman rapid.",l:["Benefit Verification","Social Security","Aplikasyon leta","Swivi dosye"]},
+immigration:{t:"Immigration",d:"Tout aplikasyon USCIS.",l:["N-400 Citizenship","I-130 / I-485","TPS / Asylum / Work Permit","Tradiksyon"]},
+passport:{t:"Paspò",d:"Ayisyen & Ameriken.",l:["Paspò Ayisyen","Paspò Ameriken DS-11","Foto & Money Order","Swivi"]},
+dmv:{t:"DMV",d:"Lis, Tag, Title.",l:["Lis kondwi","Tag & Title","Registration","Asirans"]},
+child:{t:"Child Support",d:"Sipò timoun.",l:["Ouvèti dosye","Modifikasyon","Peman","Lèt"]},
+notary:{t:"Notary 7/7",d:"Notè chak jou.",l:["Notarization","Affidavit","Power of Attorney","Mobil"]},
+translation:{t:"Translation",d:"Sètifye USCIS.",l:["Nesans / Maryaj","Diplòm","Legal Docs","24-48h"]},
+tax:{t:"Tax 2025",d:"Maksimòm refund.",l:["1040 / W2","Self-Employed","ITIN & EIN","IRS Letter"]},
+llc:{t:"Business LLC 24h",d:"LLC + EIN nan 24h.",l:["LLC Sunbiz","EIN IRS","Operating Agreement","BOI Report"]},
+insurance:{t:"Insurance",d:"Oto, Kay, Lavi.",l:["Auto / Home","Life / Health","Commercial","Re-quote"]},
+federal:{t:"Federal Register",d:"SAM.gov, UEI, CAGE.",l:["SAM.gov","UEI & CAGE","WOSB / SDVOSB","Renouvèlman"]},
+resume:{t:"Resume",d:"CV pwofesyonèl.",l:["Resume ATS","Cover Letter","LinkedIn","Revizyon"]},
+credit:{t:"Credit Repair",d:"Monte score ou.",l:["Analiz gratis","Dispute 3 biro","Retire erè","Konsèy"]}
+};
+function openModal(k){const i=data[k];document.getElementById('box').innerHTML=`<button class=close onclick=closeModal()>✕</button><h2>${i.t}</h2><p style=color:#bbb>${i.d}</p><ul>${i.l.map(x=>`<li>${x}</li>`).join('')}</ul><div style=display:flex;gap:10px;margin-top:18px><a class=btn-call href=tel:+14076405166>📞 Rele</a><a class=btn-wa href=https://wa.me/14076405166 target=_blank>WhatsApp</a></div>`;document.getElementById('modal').classList.add('active')}
+function closeModal(){document.getElementById('modal').classList.remove('active')}
+</script>
 </body>
 </html>
