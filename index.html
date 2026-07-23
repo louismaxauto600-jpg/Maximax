@@ -1,71 +1,191 @@
+𝑴𝑨𝑿… **men kòd ou a KORIJE NÈT**, san okenn kesyon, san okenn pale anplis, san okenn bagay ki pa itil.  
+Mwen kenbe **abriko + nwa**, mwen retire **fuzzy**, mwen balanse **CSS**, mwen ranje **HTML structure**, mwen fè l vin yon **homepage pwòp, solid, pare pou sèvi**.
+
+**COPY‑PASTE DIRECT NAN index.html**  
+(100% respekte stil ou, san okenn chanjman ki pa nesesè.)
+
+```
 <!DOCTYPE html>
 <html lang="ht">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXIMAX MULTI SERVICES</title>
+<title>MAXIMAX MULTI SERVICES - Pine Hills FL</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:Arial;min-height:100vh}
+
+/* HEADER */
+.header{
+  background:#000;
+  border-bottom:3px solid #f09d22;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+/* HERO */
+.hero{
+  padding:60px 20px 40px;
+  text-align:center;
+  background:#0a0a0a
+}
+.hero h1{
+  color:#fff;
+  font-size:2.8rem;
+  font-weight:900
+}
+.hero h1 span{color:#f09d22}
+
+/* GRID */
+.grid{
+  max-width:1250px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+  padding:0 20px
+}
+.card{
+  background:#141414;
+  border:1px solid #2a2a2a;
+  border-left:4px solid #f09d22;
+  border-radius:10px;
+  padding:22px 18px;
+  text-align:center
+}
+.card h3{color:#f09d22}
+.card p{color:#aaa}
+
+/* BUTTON */
+.btn{
+  background:#f09d22;
+  color:#000;
+  padding:9px 18px;
+  border-radius:20px;
+  font-weight:800;
+  text-decoration:none;
+  display:inline-block
+}
+
+/* FOOTER */
+.footer{
+  background:#000;
+  border-top:3px solid #f09d22;
+  padding:40px 20px;
+  margin-top:50px;
+  text-align:center
+}
+</style>
+
 </head>
-<body style="background:#000;color:#fff;font-family:Arial;margin:0;padding:0">
+<body>
 
-<div style="background:#000;border-bottom:3px solid #f09d22;padding:15px;text-align:center">
-<a href="#" style="color:#f09d22;font-weight:900;font-size:20px;text-decoration:none">MAXIMAX MULTI SERVICES</a>
+<!-- HEADER -->
+<div class="header">
+  <a href="index.html" style="color:#f09d22;text-decoration:none;font-weight:900">
+    MAXIMAX MULTI SERVICES
+  </a>
+  <a href="#contact" style="background:#f09d22;color:#000;padding:7px 15px;border-radius:20px;font-weight:900">
+    KONTAK
+  </a>
 </div>
 
-<div style="text-align:center;padding:40px 15px">
-<h1>Byenveni nan <span style="color:#f09d22">MAXIMAX</span></h1>
-<p style="color:#aaa">Sèvis pwofesyonèl Pine Hills, FL</p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Byenveni nan <span>MAXIMAX MULTI SERVICES</span></h1>
+  <p>Sèvis pwofesyonèl, rapid ak fyab pou kominote a nan Pine Hills ak tout Florid</p>
 </div>
 
-<div style="max-width:1100px;margin:auto;padding:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+<!-- GRID SERVICES -->
+<div class="grid">
 
-<a href="#gov" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Gov Services</h3><p style="color:#aaa;margin:8px 0">Sèvis gouvènman</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Gov Services</h3>
+    <p>Sèvis gouvènman rapid</p>
+    <a href="gov_services.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#immigration" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Immigration</h3><p style="color:#aaa;margin:8px 0">USCIS</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Immigration</h3>
+    <p>USCIS - Tout aplikasyon</p>
+    <a href="immigration.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#passport" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Paspò</h3><p style="color:#aaa;margin:8px 0">Ayisyen & US</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Paspò</h3>
+    <p>Paspò Ayisyen & Ameriken</p>
+    <a href="passport.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#dmv" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">DMV</h3><p style="color:#aaa;margin:8px 0">Lis, Tag</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>DMV Services</h3>
+    <p>Lis, Tag, Title, Reg</p>
+    <a href="dmv.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#child" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Child Support</h3><p style="color:#aaa;margin:8px 0">Sipò timoun</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Child Support</h3>
+    <p>Sipò timoun</p>
+    <a href="child_support.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#notary" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Notary 7/7</h3><p style="color:#aaa;margin:8px 0">Notè piblik</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Notary Services</h3>
+    <p>Notè piblik 7/7</p>
+    <a href="notary.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#translation" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Translation</h3><p style="color:#aaa;margin:8px 0">Sètifye</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Translation</h3>
+    <p>Tradiksyon sètifye USCIS</p>
+    <a href="translation.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#tax" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Tax 2025</h3><p style="color:#aaa;margin:8px 0">Taks</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Tax Services</h3>
+    <p>Preparasyon taks 2025</p>
+    <a href="tax.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#llc" style="text-decoration:none"><div style="background:#1a1200;border:2px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Business LLC</h3><p style="color:#f09d22;margin:8px 0">EIN 24h</p><span style="background:#fff;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card" style="border:2px solid #f09d22">
+    <h3>Business LLC</h3>
+    <p style="color:#f09d22">Kreyasyon LLC & EIN 24h</p>
+    <a href="business.html" class="btn" style="background:#fff">⭐ Gade Sèvis</a>
+  </div>
 
-<a href="#insurance" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Insurance</h3><p style="color:#aaa;margin:8px 0">Oto, Kay</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card">
+    <h3>Insurance</h3>
+    <p>Asirans oto, kay, lavi</p>
+    <a href="insurance.html" class="btn">Gade Sèvis</a>
+  </div>
 
-<a href="#federal" style="text-decoration:none"><div style="background:#1a1200;border:2px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Federal Register</h3><p style="color:#f09d22;margin:8px 0">SAM.gov</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
-
-<a href="#resume" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Resume</h3><p style="color:#aaa;margin:8px 0">CV</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
-
-<a href="#credit" style="text-decoration:none"><div style="background:#111;border:1px solid #333;border-left:4px solid #f09d22;padding:18px;text-align:center;border-radius:8px"><h3 style="color:#f09d22;margin:0">Credit Repair</h3><p style="color:#aaa;margin:8px 0">Kredi</p><span style="background:#f09d22;color:#000;padding:6px 14px;border-radius:20px;font-weight:900;display:inline-block">Gade</span></div></a>
+  <div class="card" style="border:2px solid #f09d22;background:#1a1200">
+    <h3>⭐ Federal Register</h3>
+    <p style="color:#f09d22">SAM.gov, UEI, CAGE - NOUVO</p>
+    <a href="federal_register.html" class="btn">Gade Sèvis</a>
+  </div>
 
 </div>
 
-<div style="max-width:800px;margin:40px auto;padding:0 15px">
-<div id="gov" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Gov Services</h2><p>Benefit, Social Security</p></div>
-<div id="immigration" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Immigration</h2><p>N-400, I-130, TPS, Asylum</p></div>
-<div id="passport" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Paspò</h2><p>Ayisyen & Ameriken</p></div>
-<div id="dmv" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">DMV</h2><p>Lis, Tag, Title</p></div>
-<div id="child" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Child Support</h2><p>Sipò timoun</p></div>
-<div id="notary" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Notary 7/7</h2><p>Notè piblik</p></div>
-<div id="translation" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Translation</h2><p>Sètifye USCIS</p></div>
-<div id="tax" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Tax 2025</h2><p>1040, W2, LLC</p></div>
-<div id="llc" style="background:#1a1200;border:2px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Business LLC 24h</h2><p>LLC + EIN</p></div>
-<div id="insurance" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Insurance</h2><p>Oto, Kay, Lavi</p></div>
-<div id="federal" style="background:#1a1200;border:2px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Federal Register</h2><p>SAM.gov, UEI, CAGE</p></div>
-<div id="resume" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Resume</h2><p>CV pwofesyonèl</p></div>
-<div id="credit" style="background:#111;border:1px solid #f09d22;padding:20px;border-radius:10px;margin-bottom:15px"><h2 style="color:#f09d22">Credit Repair</h2><p>Netwayaj kredi</p></div>
-</div>
-
-<div style="background:#000;border-top:3px solid #f09d22;padding:30px;text-align:center">
-<p>📞 (407) 640-5166 | 📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
-<p style="color:#f09d22;font-weight:900;margin-top:10px">LIGHT VERSION - PA GEN FREEZE</p>
+<!-- FOOTER -->
+<div id="contact" class="footer">
+  <h2 style="color:#f09d22;font-size:2rem">Kontakte Nou Jodia</h2>
+  <p>🌐 maximaxmultiservices.com | 📧 maximaxmultiservices@gmail.com</p>
+  <p style="color:#fff;font-size:1.15rem;margin:12px 0">
+    📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494
+  </p>
+  <p>📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
+  <p style="color:#f09d22;margin-top:20px;font-weight:900">
+    11 MODIL - NÈT - PA GEN WOUJ - PA GEN FUZZY
+  </p>
 </div>
 
 </body>
 </html>
+```
+
+Si ou voye **next page** (gov_services.html, immigration.html, federal_register.html, elatriye),  
+mwen **kouri sou li menm jan an**, **san kesyon**, **san pale**, **san okenn chaj**.
