@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Immigration OS | Maximax Multi Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255, 140, 0, 0.35), transparent 35%),
+        linear-gradient(135deg, #000000 0%, #151515 45%, #ff7a00 100%);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 22px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 2px solid #ff7a00;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #ff8c00;
+    }
+
+    .language-btn {
+      text-decoration: none;
+      color: #ffffff;
+      border: 1px solid #ff8c00;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .language-btn:hover {
+      background: #ff8c00;
+      color: #000000;
+    }
+
+    .hero {
+      min-height: 70vh;
+      padding: 90px 8% 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255, 140, 0, 0.16);
+      border: 1px solid #ff8c00;
+      color: #ff9d2e;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #ff8c00;
+    }
+
+    .subtitle {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 700;
+      max-width: 900px;
+      margin-bottom: 26px;
+    }
+
+    .intro {
+      max-width: 900px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #dddddd;
+    }
+
+    .section {
+      padding: 70px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2.3rem;
+      margin-bottom: 30px;
+      color: #ff8c00;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.68);
+      border: 1px solid rgba(255, 140, 0, 0.45);
+      border-radius: 20px;
+      padding: 24px;
+      transition: 0.3s ease;
+      min-height: 135px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #ff8c00;
+      box-shadow: 0 12px 35px rgba(255, 122, 0, 0.18);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ff9d2e;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: #dddddd;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      background: rgba(0, 0, 0, 0.82);
+      border-left: 5px solid #ff8c00;
+      border-radius: 16px;
+      padding: 25px;
+      line-height: 1.75;
+      color: #e5e5e5;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 70px 8%;
+    }
+
+    .cta h2 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #dddddd;
+      margin-bottom: 25px;
+    }
+
+    .cta a {
+      display: inline-block;
+      text-decoration: none;
+      background: #ff8c00;
+      color: #000000;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 900;
+      transition: 0.3s ease;
+    }
+
+    .cta a:hover {
+      transform: scale(1.04);
+      background: #ffa733;
+    }
+
+    footer {
+      background: #000000;
+      border-top: 1px solid #ff8c00;
+      padding: 28px 6%;
+      text-align: center;
+      color: #aaaaaa;
+    }
+
+    footer strong {
+      color: #ff8c00;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      MAXIMAX <span>MULTI SERVICES</span>
+    </div>
+
+    <a class="language-btn" href="immigration-os-fr.html">
+      🇫🇷 FRANÇAIS
+    </a>
+  </header>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="badge">
+        PLATFÒM DIJITAL IMIGRASYON
+      </div>
+
+      <h1>
+        IMMIGRATION <span>OS</span>
+      </h1>
+
+      <div class="subtitle">
+        Sistèm dijital pou jesyon sèvis imigrasyon
+      </div>
+
+      <p class="intro">
+        Immigration OS se yon platfòm dijital santralize ki fèt pou
+        senplifye, òganize epi modènize fason Maximax Multi Services
+        jere sèvis asistans imigrasyon li yo.
+
+        Platfòm nan mete jesyon kliyan, dosye, dokiman, dat limit,
+        randevou, kominikasyon ak notifikasyon ansanm nan yon sèl
+        espas dijital ki byen òganize.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>Fonksyon prensipal yo</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>👤 Pòtal kliyan</h3>
+          <p>
+            Kliyan yo kapab gen yon pwofil epi jwenn aksè ak enfòmasyon ki konsène dosye yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📁 Jesyon dosye</h3>
+          <p>
+            Ouvri, klase, òganize epi swiv dosye kliyan yo pi fasil.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📄 Sant dokiman</h3>
+          <p>
+            Telechaje, konsève epi òganize dokiman enpòtan kliyan yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>✅ Lis dokiman</h3>
+          <p>
+            Kreye lis dokiman kliyan bezwen bay pou chak sèvis oswa dosye.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📅 Randevou</h3>
+          <p>
+            Jere randevou, dat enpòtan ak lòt aktivite administratif.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🔔 Rapèl otomatik</h3>
+          <p>
+            Voye rapèl pou randevou, dokiman ki manke ak dat limit enpòtan.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>💬 Sant kominikasyon</h3>
+          <p>
+            Santralize mesaj ak kominikasyon ant sèvis la ak kliyan yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📱 SMS & WhatsApp</h3>
+          <p>
+            Voye mesaj ak notifikasyon atravè sistèm kominikasyon ki entegre yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>💳 Peman & fakti</h3>
+          <p>
+            Òganize peman sèvis yo, fakti ak istwa tranzaksyon kliyan yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📝 Dokiman & lèt</h3>
+          <p>
+            Kreye lèt, avi ak dokiman administratif nan yon fason pi rapid.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🌐 Plizyè lang</h3>
+          <p>
+            Sipò ak kontni kapab disponib nan plizyè lang.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🤖 Asistan AI</h3>
+          <p>
+            Ede ekri, tradui, rezime epi òganize enfòmasyon administratif yo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📊 Dashboard</h3>
+          <p>
+            Gade kliyan, dosye, randevou, travay ak aktivite yo nan yon sèl espas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📈 Rapò & estatistik</h3>
+          <p>
+            Jenere rapò pou ede ekip la konprann epi amelyore operasyon sèvis yo.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>Enfòmasyon enpòtan</h2>
+
+      <div class="notice">
+        Immigration OS pa ranplase sistèm ofisyèl otorite gouvènman yo
+        epi li pa pran okenn desizyon sou dosye imigrasyon.
+
+        Se yon platfòm jesyon ki fèt pou ede Maximax Multi Services
+        òganize epi fasilite sèvis asistans administratif li yo nan
+        domèn imigrasyon.
+      </div>
+
+    </section>
+
+
+    <section class="cta">
+
+      <h2>MAXIMAX MULTI SERVICES — IMMIGRATION OS</h2>
+
+      <p>
+        Yon sèl platfòm. Dosye pi byen òganize. Sèvis pi entèlijan.
+      </p>
+
+      <a href="index.html">
+        RETOUNEN SOU AKÈY
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 <strong>Maximax Multi Services</strong> — Immigration OS
+  </footer>
+
+</body>
+</html>
