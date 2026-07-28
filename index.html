@@ -1,10 +1,3 @@
-𝑴𝑨𝑿… **men kòd ou a KORIJE NÈT**, san okenn kesyon, san okenn pale anplis, san okenn bagay ki pa itil.  
-Mwen kenbe **abriko + nwa**, mwen retire **fuzzy**, mwen balanse **CSS**, mwen ranje **HTML structure**, mwen fè l vin yon **homepage pwòp, solid, pare pou sèvi**.
-
-**COPY‑PASTE DIRECT NAN index.html**  
-(100% respekte stil ou, san okenn chanjman ki pa nesesè.)
-
-```
 <!DOCTYPE html>
 <html lang="ht">
 <head>
@@ -13,31 +6,49 @@ Mwen kenbe **abriko + nwa**, mwen retire **fuzzy**, mwen balanse **CSS**, mwen r
 <title>MAXIMAX MULTI SERVICES - Pine Hills FL</title>
 
 <style>
+:root{
+  --apricot:#ffb27a;
+  --orange:#ff8f3c;
+  --black:#000000;
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#000;color:#fff;font-family:Arial;min-height:100vh}
+
+body{
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255,143,60,0.12), transparent 40%),
+    linear-gradient(160deg, #000000 0%, #1a1005 45%, #000000 100%);
+}
 
 /* HEADER */
 .header{
   background:#000;
-  border-bottom:3px solid #f09d22;
+  border-bottom:3px solid var(--orange);
   padding:15px 20px;
   display:flex;
   justify-content:space-between;
-  align-items:center
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
+.header a{text-decoration:none}
 
 /* HERO */
 .hero{
   padding:60px 20px 40px;
   text-align:center;
-  background:#0a0a0a
 }
 .hero h1{
   color:#fff;
   font-size:2.8rem;
   font-weight:900
 }
-.hero h1 span{color:#f09d22}
+.hero h1 span{color:var(--apricot)}
+.hero p{color:#e0b088;margin-top:10px}
 
 /* GRID */
 .grid{
@@ -51,33 +62,72 @@ body{background:#000;color:#fff;font-family:Arial;min-height:100vh}
 .card{
   background:#141414;
   border:1px solid #2a2a2a;
-  border-left:4px solid #f09d22;
+  border-left:4px solid var(--orange);
   border-radius:10px;
   padding:22px 18px;
-  text-align:center
+  text-align:center;
 }
-.card h3{color:#f09d22}
-.card p{color:#aaa}
+.card h3{color:var(--apricot)}
+.card p{color:#aaa;margin-top:6px}
 
 /* BUTTON */
 .btn{
-  background:#f09d22;
+  background:var(--orange);
   color:#000;
   padding:9px 18px;
   border-radius:20px;
   font-weight:800;
   text-decoration:none;
-  display:inline-block
+  display:inline-block;
+  margin-top:14px;
 }
+
+/* IN-PAGE SERVICE PANELS (no separate files, no 404) */
+.panel{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(0,0,0,0.92);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.panel:target{
+  display:flex;
+}
+.panel-box{
+  max-width:520px;
+  width:100%;
+  background:#141414;
+  border:2px solid var(--orange);
+  border-radius:16px;
+  padding:32px 26px;
+  text-align:center;
+  position:relative;
+}
+.panel-box h2{color:var(--apricot);font-size:1.6rem}
+.panel-box p{color:#ddd;margin-top:14px;line-height:1.7}
+.panel-close{
+  position:absolute;
+  top:14px;
+  right:16px;
+  color:#aaa;
+  font-size:1.4rem;
+  text-decoration:none;
+  font-weight:900;
+}
+.panel-close:hover{color:var(--orange)}
 
 /* FOOTER */
 .footer{
   background:#000;
-  border-top:3px solid #f09d22;
+  border-top:3px solid var(--orange);
   padding:40px 20px;
   margin-top:50px;
   text-align:center
 }
+.footer p{color:#ddd}
 </style>
 
 </head>
@@ -85,10 +135,10 @@ body{background:#000;color:#fff;font-family:Arial;min-height:100vh}
 
 <!-- HEADER -->
 <div class="header">
-  <a href="index.html" style="color:#f09d22;text-decoration:none;font-weight:900">
+  <a href="#" style="color:var(--apricot);font-weight:900">
     MAXIMAX MULTI SERVICES
   </a>
-  <a href="#contact" style="background:#f09d22;color:#000;padding:7px 15px;border-radius:20px;font-weight:900">
+  <a href="#contact" style="background:var(--orange);color:#000;padding:7px 15px;border-radius:20px;font-weight:900">
     KONTAK
   </a>
 </div>
@@ -105,87 +155,181 @@ body{background:#000;color:#fff;font-family:Arial;min-height:100vh}
   <div class="card">
     <h3>Gov Services</h3>
     <p>Sèvis gouvènman rapid</p>
-    <a href="gov_services.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-gov" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Immigration</h3>
     <p>USCIS - Tout aplikasyon</p>
-    <a href="immigration.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-immigration" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Paspò</h3>
-    <p>Paspò Ayisyen & Ameriken</p>
-    <a href="passport.html" class="btn">Gade Sèvis</a>
+    <p>Paspò Ayisyen &amp; Ameriken</p>
+    <a href="#svc-passport" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>DMV Services</h3>
     <p>Lis, Tag, Title, Reg</p>
-    <a href="dmv.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-dmv" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Child Support</h3>
     <p>Sipò timoun</p>
-    <a href="child_support.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-childsupport" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Notary Services</h3>
     <p>Notè piblik 7/7</p>
-    <a href="notary.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-notary" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Translation</h3>
     <p>Tradiksyon sètifye USCIS</p>
-    <a href="translation.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-translation" class="btn">Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Tax Services</h3>
     <p>Preparasyon taks 2025</p>
-    <a href="tax.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-tax" class="btn">Gade Sèvis</a>
   </div>
 
-  <div class="card" style="border:2px solid #f09d22">
+  <div class="card" style="border:2px solid var(--orange)">
     <h3>Business LLC</h3>
-    <p style="color:#f09d22">Kreyasyon LLC & EIN 24h</p>
-    <a href="business.html" class="btn" style="background:#fff">⭐ Gade Sèvis</a>
+    <p style="color:var(--apricot)">Kreyasyon LLC &amp; EIN 24h</p>
+    <a href="#svc-business" class="btn" style="background:#fff">⭐ Gade Sèvis</a>
   </div>
 
   <div class="card">
     <h3>Insurance</h3>
     <p>Asirans oto, kay, lavi</p>
-    <a href="insurance.html" class="btn">Gade Sèvis</a>
+    <a href="#svc-insurance" class="btn">Gade Sèvis</a>
   </div>
 
-  <div class="card" style="border:2px solid #f09d22;background:#1a1200">
+  <div class="card" style="border:2px solid var(--orange);background:#1a1200">
     <h3>⭐ Federal Register</h3>
-    <p style="color:#f09d22">SAM.gov, UEI, CAGE - NOUVO</p>
-    <a href="federal_register.html" class="btn">Gade Sèvis</a>
+    <p style="color:var(--apricot)">SAM.gov, UEI, CAGE - NOUVO</p>
+    <a href="#svc-federal" class="btn">Gade Sèvis</a>
   </div>
 
 </div>
 
 <!-- FOOTER -->
 <div id="contact" class="footer">
-  <h2 style="color:#f09d22;font-size:2rem">Kontakte Nou Jodia</h2>
+  <h2 style="color:var(--apricot);font-size:2rem">Kontakte Nou Jodia</h2>
   <p>🌐 maximaxmultiservices.com | 📧 maximaxmultiservices@gmail.com</p>
   <p style="color:#fff;font-size:1.15rem;margin:12px 0">
     📞 (407) 640-5166 | (317) 538-1150 | (516) 216-8494
   </p>
   <p>📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
-  <p style="color:#f09d22;margin-top:20px;font-weight:900">
-    11 MODIL - NÈT - PA GEN WOUJ - PA GEN FUZZY
-  </p>
+</div>
+
+<!-- SERVICE PANELS (open with #svc-... links above, close with the ✕) -->
+
+<div id="svc-gov" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Gov Services</h2>
+    <p>Nou ede w ranpli epi soumèt tout dokiman gouvènman rapid ak san tèt chaje — federal, eta, ak lokal.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-immigration" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Immigration (USCIS)</h2>
+    <p>Nou akonpaye w nan tout kalite aplikasyon USCIS: rezidans, sitwayènte, viza, renouvèlman ak plis ankò.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-passport" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Paspò Ayisyen &amp; Ameriken</h2>
+    <p>Èd ak aplikasyon, renouvèlman, ak korije enfòmasyon pou paspò Ayisyen oswa Ameriken.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-dmv" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>DMV Services</h2>
+    <p>Lisans, tag, title, ak enskripsyon veyikil — nou jere tout papye DMV yo pou ou.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-childsupport" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Child Support</h2>
+    <p>Asistans ak dosye sipò timoun, aplikasyon, ak swiv ka yo.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-notary" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Notary Services</h2>
+    <p>Notè piblik disponib 7 jou sou 7 pou tout dokiman ki bezwen sètifye.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-translation" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Translation</h2>
+    <p>Tradiksyon sètifye aksepte pa USCIS ak lòt ajans gouvènman.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-tax" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Tax Services</h2>
+    <p>Preparasyon deklarasyon taks 2025 — rapid, presi, ak san estrès.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-business" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Business LLC</h2>
+    <p>Nou ede w kreye LLC ou ak jwenn EIN nan mwens pase 24 èdtan.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-insurance" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Insurance</h2>
+    <p>Asirans oto, kay, ak lavi — konpare opsyon ak jwenn pi bon pri a.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
+</div>
+
+<div id="svc-federal" class="panel">
+  <div class="panel-box">
+    <a href="#" class="panel-close">✕</a>
+    <h2>Federal Register</h2>
+    <p>Enskripsyon ak jesyon SAM.gov, kòd UEI, ak kòd CAGE pou biznis ki vle travay ak gouvènman federal la.</p>
+    <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
+  </div>
 </div>
 
 </body>
 </html>
-```
-
-Si ou voye **next page** (gov_services.html, immigration.html, federal_register.html, elatriye),  
-mwen **kouri sou li menm jan an**, **san kesyon**, **san pale**, **san okenn chaj**.
