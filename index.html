@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ht">
 <head>
@@ -77,43 +76,6 @@ body{
   margin-top:14px;
 }
 
-/* IN-PAGE SERVICE PANELS (no separate files, no 404) */
-.panel{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:rgba(0,0,0,0.92);
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-.panel:target{
-  display:flex;
-}
-.panel-box{
-  max-width:520px;
-  width:100%;
-  background:#141414;
-  border:2px solid #ff8f3c;
-  border-radius:16px;
-  padding:32px 26px;
-  text-align:center;
-  position:relative;
-}
-.panel-box h2{color:#ffb27a;font-size:1.6rem}
-.panel-box p{color:#ddd;margin-top:14px;line-height:1.7}
-.panel-close{
-  position:absolute;
-  top:14px;
-  right:16px;
-  color:#aaa;
-  font-size:1.4rem;
-  text-decoration:none;
-  font-weight:900;
-}
-.panel-close:hover{color:#ff8f3c}
-
 /* FOOTER */
 .footer{
   background:#000;
@@ -123,6 +85,30 @@ body{
   text-align:center
 }
 .footer p{color:#ddd}
+
+/* SERVICE DETAILS (always visible, no click-to-reveal needed) */
+.details{
+  max-width:900px;
+  margin:60px auto 0;
+  padding:0 20px;
+}
+.details h2{
+  color:#ffb27a;
+  text-align:center;
+  font-size:1.7rem;
+  margin-bottom:30px;
+}
+.detail-block{
+  background:#141414;
+  border:1px solid #2a2a2a;
+  border-left:4px solid #ff8f3c;
+  border-radius:10px;
+  padding:24px 20px;
+  margin-bottom:16px;
+  scroll-margin-top:90px;
+}
+.detail-block h3{color:#ffb27a;font-size:1.3rem}
+.detail-block p{color:#ccc;margin-top:10px;line-height:1.6}
 </style>
 
 </head>
@@ -228,105 +214,76 @@ body{
   <p>📍 4434 W Colonial Dr, Pine Hills, FL 32818</p>
 </div>
 
-<!-- SERVICE PANELS (open with #svc-... links above, close with the ✕) -->
+<!-- SERVICE DETAILS (always visible, scroll down to reach them) -->
+<div class="details">
+  <h2>Detay Sèvis Yo</h2>
 
-<div id="svc-gov" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Gov Services</h2>
+  <div id="svc-gov" class="detail-block">
+    <h3>Gov Services</h3>
     <p>Nou ede w ranpli epi soumèt tout dokiman gouvènman rapid ak san tèt chaje — federal, eta, ak lokal.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-immigration" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Immigration (USCIS)</h2>
+  <div id="svc-immigration" class="detail-block">
+    <h3>Immigration (USCIS)</h3>
     <p>Nou akonpaye w nan tout kalite aplikasyon USCIS: rezidans, sitwayènte, viza, renouvèlman ak plis ankò.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-passport" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Paspò Ayisyen &amp; Ameriken</h2>
+  <div id="svc-passport" class="detail-block">
+    <h3>Paspò Ayisyen &amp; Ameriken</h3>
     <p>Èd ak aplikasyon, renouvèlman, ak korije enfòmasyon pou paspò Ayisyen oswa Ameriken.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-dmv" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>DMV Services</h2>
+  <div id="svc-dmv" class="detail-block">
+    <h3>DMV Services</h3>
     <p>Lisans, tag, title, ak enskripsyon veyikil — nou jere tout papye DMV yo pou ou.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-childsupport" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Child Support</h2>
+  <div id="svc-childsupport" class="detail-block">
+    <h3>Child Support</h3>
     <p>Asistans ak dosye sipò timoun, aplikasyon, ak swiv ka yo.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-notary" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Notary Services</h2>
+  <div id="svc-notary" class="detail-block">
+    <h3>Notary Services</h3>
     <p>Notè piblik disponib 7 jou sou 7 pou tout dokiman ki bezwen sètifye.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-translation" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Translation</h2>
+  <div id="svc-translation" class="detail-block">
+    <h3>Translation</h3>
     <p>Tradiksyon sètifye aksepte pa USCIS ak lòt ajans gouvènman.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-tax" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Tax Services</h2>
+  <div id="svc-tax" class="detail-block">
+    <h3>Tax Services</h3>
     <p>Preparasyon deklarasyon taks 2025 — rapid, presi, ak san estrès.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-business" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Business LLC</h2>
+  <div id="svc-business" class="detail-block">
+    <h3>Business LLC</h3>
     <p>Nou ede w kreye LLC ou ak jwenn EIN nan mwens pase 24 èdtan.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-insurance" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Insurance</h2>
+  <div id="svc-insurance" class="detail-block">
+    <h3>Insurance</h3>
     <p>Asirans oto, kay, ak lavi — konpare opsyon ak jwenn pi bon pri a.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
-</div>
 
-<div id="svc-federal" class="panel">
-  <div class="panel-box">
-    <a href="#" class="panel-close">✕</a>
-    <h2>Federal Register</h2>
+  <div id="svc-federal" class="detail-block">
+    <h3>Federal Register</h3>
     <p>Enskripsyon ak jesyon SAM.gov, kòd UEI, ak kòd CAGE pou biznis ki vle travay ak gouvènman federal la.</p>
     <a href="tel:+14076405166" class="btn">📞 Rele Nou Kounye a</a>
   </div>
+
 </div>
 
 </body>
