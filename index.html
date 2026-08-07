@@ -2,63 +2,60 @@
 <html lang="ht">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXIMAX - 100% NWA + ORANGE FADE - GLOBE NWA - 9 REZO - FINAL</title>
+<title>MAXIMAX - LOGO VRAI + GLOBE VRAI - APRICOT #FF8C42 + BLACK ONLY</title>
 <style>
-*{box-sizing:border-box} html{background:#000!important}
-body{margin:0!important;background:#000!important;background-color:#000!important;background-image:radial-gradient(ellipse at 20% 0%, rgba(240,157,34,0.45) 0%, rgba(240,157,34,0.15) 25%, transparent 60%),radial-gradient(ellipse at 80% 100%, rgba(240,157,34,0.25) 0%, transparent 50%),linear-gradient(180deg,#000000 0%,#0a0500 20%,#000000 50%,#050300 80%,#000000 100%)!important;background-attachment:fixed!important;color:#f09d22!important;font-family:Arial!important;min-height:100vh!important}
-.h{background:#000000!important;border-bottom:3px solid #f09d22!important;padding:12px 20px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;position:sticky!important;top:0!important;z-index:9999!important;flex-wrap:wrap!important;gap:10px!important}
-.hero{text-align:center!important;padding:40px 20px 50px!important;background:radial-gradient(ellipse at 50% 0%, rgba(240,157,34,0.18) 0%, transparent 70%),linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)!important}
-.hero h1{font-size:3rem!important;font-weight:900!important;color:#f09d22!important;text-shadow:0 0 20px rgba(240,157,34,0.5)!important}.hero h1 span{color:#ffae45!important}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000!important;color:#FF8C42!important;font-family:Arial!important}
+.h{background:#000!important;border-bottom:3px solid #FF8C42!important;padding:12px 20px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;position:sticky!important;top:0!important;z-index:9999!important}
+.logo-wrap{width:68px;height:68px;background:#000!important;border:2.5px solid #FF8C42!important;border-radius:16px!important;display:grid!important;place-items:center!important;box-shadow:0 0 22px rgba(255,140,66,0.45)!important}
+.logo-svg{width:62px;height:62px;display:block!important}
 .g{max-width:1280px!important;margin:40px auto!important;display:grid!important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:22px!important;padding:0 22px!important}
-.c{background:linear-gradient(145deg,#0a0a0a 0%,#000000 50%,#0f0800 100%)!important;border:1px solid rgba(240,157,34,0.25)!important;border-left:5px solid #f09d22!important;border-radius:14px!important;padding:22px 18px!important;text-align:center!important}
-.c h3{color:#f09d22!important}.c p{color:#ffae45!important;opacity:0.8!important}
-.b{background:linear-gradient(135deg,#f09d22 0%,#ff9500 100%)!important;color:#000000!important;padding:10px 20px!important;border-radius:25px!important;font-weight:900!important;display:inline-block!important;margin-top:10px!important}
-.f{background:#000000!important;border-top:3px solid #f09d22!important;padding:50px 20px!important;margin-top:60px!important;text-align:center!important}
-.globe-section{padding:50px 20px 20px;text-align:center}
-.globe-wrapper{position:relative;width:340px;height:340px;margin:0 auto 30px}
-.globe-spin{width:100%;height:100%;border-radius:50%;border:3px solid #f09d22;background:#000000!important;box-shadow:0 0 60px rgba(240,157,34,0.7), inset 0 0 50px rgba(240,157,34,0.15)!important;animation:globeRotate 20s linear infinite;position:relative}
-@keyframes globeRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.globe-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64%;height:64%;background:#000000!important;border:3px solid #f09d22!important;border-radius:50%;display:grid;place-items:center;color:#f09d22;font-weight:1000;box-shadow:0 0 35px rgba(240,157,34,0.9)!important;animation:counterRotate 20s linear infinite}
+.c{background:#000!important;border:1px solid rgba(255,140,66,0.25)!important;border-left:5px solid #FF8C42!important;border-radius:14px!important;padding:22px 18px!important;text-align:center!important}
+.b{background:#FF8C42!important;color:#000!important;padding:10px 20px!important;border-radius:25px!important;font-weight:900!important;display:inline-block!important;margin-top:10px!important;text-decoration:none!important}
+.globe-wrapper{position:relative;width:380px;height:380px;margin:0 auto 35px}
+.globe-real{width:100%;height:100%;border-radius:50%;background:#000!important;border:3.5px solid #FF8C42!important;overflow:hidden;box-shadow:0 0 80px rgba(255,140,66,0.9)!important}
+.globe-world-track{position:absolute;top:0;left:0;width:200%;height:100%;display:flex;animation:worldScroll 18s linear infinite}
+@keyframes worldScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.globe-world-map{width:50%;height:100%;position:relative}
+.continent{position:absolute;background:#FF8C42!important;box-shadow:0 0 8px rgba(255,140,66,0.6);opacity:0.85}
+.c-na1{width:22%;height:28%;top:18%;left:8%}.c-af{width:14%;height:28%;top:34%;left:46%}.c-as1{width:28%;height:20%;top:18%;left:58%}.c-au{width:12%;height:8%;top:68%;left:68%}
+.globe-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58%;height:58%;background:#000!important;border:3px solid #FF8C42!important;border-radius:50%;display:grid;place-items:center;color:#FF8C42!important;font-weight:1000;box-shadow:0 0 45px rgba(255,140,66,1)!important;animation:counterRotate 18s linear infinite}
 @keyframes counterRotate{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(-360deg)}}
-.globe-inner span{animation:counterRotateText 20s linear infinite;display:block}
-@keyframes counterRotateText{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.social-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0;padding:18px;background:linear-gradient(145deg,#000000 0%,#0a0500 100%)!important;border:1px solid rgba(240,157,34,0.3)!important;border-radius:15px}
-.social-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:900;transition:all 0.3s;border:2px solid rgba(240,157,34,0.2)!important;background:#000!important}
-.social-fb{color:#1877f2!important;border-color:#1877f2!important}.social-yt{color:#ff0000!important;border-color:#ff0000!important}.social-ig{color:#e4405f!important;border-color:#e4405f!important}.social-spotify{color:#1db954!important;border-color:#1db954!important}.social-truth{color:#a020f0!important;border-color:#a020f0!important}.social-telegram{color:#0088cc!important;border-color:#0088cc!important}.social-li{color:#0077b5!important;border-color:#0077b5!important}.social-x{color:#fff!important;border-color:#fff!important}.social-tt{color:#ff0050!important;border-color:#f09d22!important}
-.social-in-card{display:flex;justify-content:center;gap:5px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(240,157,34,0.15)!important;flex-wrap:wrap}
-.social-in-card a{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:0.7rem;background:#000!important;border:1px solid rgba(240,157,34,0.2)!important}
+.social-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0;padding:18px;background:#000!important;border:1.5px solid rgba(255,140,66,0.35)!important;border-radius:16px}
+.social-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-weight:1000;border:2px solid #FF8C42!important;background:#000!important;color:#FF8C42!important;text-decoration:none}
 </style>
 </head>
 <body>
-<!-- MENM KOD AK ANVAN - 100% NWA + ORANGE FADE -->
-<div class="h"><a href="index.html" style="display:flex;align-items:center;gap:12px;color:#f09d22;text-decoration:none;font-weight:900"><div style="width:60px;height:60px;background:#000;border:2px solid #f09d22;border-radius:12px;display:grid;place-items:center">MAX</div><span>MAXIMAX MULTI SERVICES</span></a></div>
-<div class="hero">
-<h1>MAXIMAX <span>MULTI SERVICES</span></h1>
-<p>100% ORANGE + BLACK FADE - GLOBE NWA NÈT - 9 REZO SOSYAL</p>
-<div class="globe-section">
-<div class="globe-wrapper"><div class="globe-spin"></div><div class="globe-inner"><span>MAXIMAX<br>MULTI<br>SERVICES</span></div></div>
-<div style="color:#f09d22;font-weight:900;margin-top:20px">🌎 GLOBE NWA NÈT - SÈK ANNDAN SÈK - AP VIRE 360° 🌎</div>
+<div class="h">
+<a href="index.html" style="display:flex;align-items:center;gap:14px;color:#FF8C42;text-decoration:none;font-weight:900">
+<div class="logo-wrap">
+<svg class="logo-svg" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+<circle cx="34" cy="34" r="30" fill="#000000" stroke="#FF8C42" stroke-width="2.5"/>
+<text x="34" y="28" text-anchor="middle" fill="#FF8C42" font-weight="900" font-size="16">MAX</text>
+<text x="34" y="38" text-anchor="middle" fill="#FF8C42" font-weight="800" font-size="7">MULTI</text>
+<text x="34" y="46" text-anchor="middle" fill="#FF8C42" font-weight="700" font-size="5.5">SERVICES</text>
+</svg>
 </div>
-<div style="max-width:950px;margin:25px auto">
-<div class="social-bar">
-<a href="#" class="social-icon social-fb">f</a><a href="#" class="social-icon social-yt">▶</a><a href="#" class="social-icon social-ig">📷</a><a href="#" class="social-icon social-spotify">♪</a><a href="#" class="social-icon social-truth">T</a><a href="#" class="social-icon social-telegram">✈</a><a href="#" class="social-icon social-li">in</a><a href="#" class="social-icon social-x">𝕏</a><a href="#" class="social-icon social-tt">♫</a>
+<span>MAXIMAX MULTI SERVICES</span>
+</a>
 </div>
-<p style="color:#f09d22;font-weight:900">9 REZO - FACEBOOK • YOUTUBE • INSTAGRAM • SPOTIFY • TRUE SOCIAL • TELEGRAM • LINKEDIN • X • TIKTOK</p>
+<div style="text-align:center;padding:35px 20px">
+<h1 style="color:#FF8C42;font-size:3rem;font-weight:900">MAXIMAX MULTI SERVICES</h1>
+<div class="globe-wrapper" style="margin:40px auto">
+<div class="globe-real">
+<div class="globe-world-track">
+<div class="globe-world-map"><div class="continent c-na1"></div><div class="continent c-af"></div><div class="continent c-as1"></div><div class="continent c-au"></div></div>
+<div class="globe-world-map"><div class="continent c-na1"></div><div class="continent c-af"></div><div class="continent c-as1"></div><div class="continent c-au"></div></div>
 </div>
+</div>
+<div class="globe-inner"><span>MAXIMAX<br>MULTI<br>SERVICES</span></div>
+</div>
+<div style="color:#FF8C42;font-weight:900;margin-top:20px">🌎 VRAI GLOBE AK KONTINAN - PA YON BOUL NWA! 🌎</div>
 </div>
 <div class="g">
-<div class="c"><h3>Gov Services</h3><p>Sèvis gouvènman rapid</p><a href="gov_services.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Immigration</h3><p>USCIS - Tout aplikasyon</p><a href="immigration.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Paspò</h3><p>Paspò Ayisyen & Ameriken</p><a href="passport.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>DMV Services</h3><p>Lis, Tag, Title, Reg</p><a href="dmv.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Child Support</h3><p>Sipò timoun</p><a href="child_support.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Notary Services</h3><p>Notè piblik 7/7</p><a href="notary.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Translation</h3><p>Tradiksyon sètifye USCIS</p><a href="translation.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Tax Services</h3><p>Preparasyon taks 2025</p><a href="tax.html" class="b">Gade Sèvis</a></div>
-<div class="c" style="border:2px solid #f09d22!important"><h3>Business LLC</h3><p style="color:#f09d22!important">Kreyasyon LLC & EIN 24h - 100% NWA FADE</p><a href="business.html" class="b">⭐ Gade Sèvis</a></div>
-<div class="c"><h3>Insurance</h3><p>Asirans oto, kay, lavi</p><a href="insurance.html" class="b">Gade Sèvis</a></div>
-<div class="c" style="border:2px solid #f09d22!important"><h3>⭐ Federal Register</h3><p style="color:#f09d22!important">SAM.gov, UEI, CAGE - 100% NWA FADE</p><a href="federal_register.html" class="b">Gade Sèvis</a></div>
+<div class="c"><h3>Gov Services</h3><a href="gov_services.html" class="b">Gade Sèvis</a></div>
+<div class="c"><h3>Business LLC</h3><a href="business.html" class="b">⭐ Gade Sèvis</a></div>
+<div class="c"><h3>⭐ Federal Register</h3><a href="federal_register.html" class="b">Gade Sèvis</a></div>
 </div>
-<div class="f"><p style="color:#f09d22;font-weight:900">11 MODIL + GLOBE NWA + 9 REZO - 100% ORANGE🍊+BLACK - PA GEN BLAN!</p><p style="color:#666">© 2026 Maximax Multi Services - Pine Hills, FL 32818</p></div>
 </body>
 </html>
