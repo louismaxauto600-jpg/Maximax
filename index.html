@@ -1,159 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXIMAX MULTI SERVICES - Orlando FL 32811</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#050505;color:#FF8C33;overflow-x:hidden}
-.top-lang{background:#000;border-bottom:1px solid rgba(255,122,0,0.25);display:flex;justify-content:center;gap:10px;padding:8px}
-.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.35);color:#FF8C33;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer}
-.top-lang button.active{background:#FF7A00;color:#000}
-.header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#000;border-bottom:2px solid #FF7A00;position:sticky;top:0;z-index:100}
-.logo-wrap{display:flex;align-items:center;gap:12px}
-.logo-img{width:70px;height:70px;border-radius:50%;border:3px solid #FF7A00;box-shadow:0 0 20px rgba(255,122,0,0.6);object-fit:cover;background:#000}
-.logo-text{color:#FF7A00;font-weight:900;font-size:18px}
-.btn-contact{background:#FF7A00;color:#000;padding:10px 22px;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px}
-.hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px}
-.badge{display:inline-block;background:rgba(255,122,0,0.14);border:1px solid #FF7A00;color:#FF7A00;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:800;margin-bottom:18px}
-.hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:#FF7A00;line-height:0.9;margin-bottom:16px}
-.hero-desc{color:#FFB26A;max-width:720px;margin:0 auto 20px;font-size:18px}
-.globe-wrap{position:relative;width:520px;height:520px;margin:20px auto;max-width:90vw}
-#globeCanvas{width:100%;height:100%;display:block;border-radius:50%}
-.circle-text{position:absolute;top:-30px;left:-30px;width:580px;height:580px;max-width:108%;pointer-events:none;animation:rotateText 20s linear infinite}
-@keyframes rotateText{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;padding:20px;max-width:1300px;margin:0 auto}
-.card{background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.28);border-left:4px solid #FF7A00;border-radius:16px;padding:22px}
-.card h3{color:#FF7A00;font-size:18px;margin-bottom:6px}
-.card .meta{color:#FF8C33;font-size:11px;font-weight:800;margin-bottom:10px}
-.card p{color:#CC7A30;font-size:14px;margin-bottom:14px}
-.card a{display:inline-block;background:#FF7A00;color:#000;padding:10px 20px;border-radius:20px;font-weight:800;text-decoration:none;cursor:pointer}
-.social-footer{background:#1A0A00;border-top:2px solid #FF7A00;padding:22px 10px;text-align:center}
-.social-title{color:#FF7A00;font-weight:900;letter-spacing:2px;font-size:13px;margin-bottom:16px}
-.soc{display:inline-block;margin:5px;text-decoration:none}
-.soc-circle{width:50px;height:50px;background:#FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
-.soc-label{color:#FF7A00;font-size:8px;margin-top:5px;font-weight:800}
-.footer-bottom{margin-top:18px;color:#FF8C33;font-size:11px;border-top:1px solid rgba(255,122,0,0.2);padding-top:12px}
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px}
-.modal-overlay.active{display:flex}
-.modal-content{background:#1A0A00;border:3px solid #FF7A00;border-radius:18px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;position:relative}
-.modal-close{position:absolute;top:12px;right:14px;background:#FF7A00;color:#000;width:32px;height:32px;border-radius:50%;border:none;font-weight:900;font-size:18px;cursor:pointer}
-.modal-content h2{color:#FF7A00;font-size:28px;margin-bottom:8px}
-.modal-content li,.modal-content p{color:#CC7A30;line-height:1.6;font-size:14px}
-.modal-content .price{margin-top:18px;padding:14px;background:rgba(255,122,0,0.12);border:1px solid #FF7A00;border-radius:12px;color:#FF7A00;font-weight:900;text-align:center}
-</style>
-<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
-</head>
-<body>
-<div class="top-lang">
-<button class="active" onclick="setLang('en')">ENG</button>
-<button onclick="setLang('fr')">FRA</button>
-<button onclick="setLang('ht')">KREYOL</button>
-</div>
-<header class="header">
-<div class="logo-wrap">
-<!-- ORIJINAL LOGO - maximax-multi-services-logo.jpg -->
-<img src="maximax-multi-services-logo.jpg" class="logo-img" alt="MAXIMAX MULTI SERVICES ORIGINAL LOGO">
-<div class="logo-text">MAXIMAX MULTI SERVICES</div>
-</div>
-<a href="#contact" class="btn-contact">CONTACT</a>
-</header>
-<section class="hero">
-<div class="badge">• REAL GLOBE • REAL CONTINENTS • ORIGINAL LOGO • ORLANDO FL 32811</div>
-<h1 class="hero-title">MAXIMAX<br>MULTI<br>SERVICES</h1>
-<p class="hero-desc">Professional services - Orlando, Florida 32811 - Trusted across USA with ORIGINAL LOGO on all pages</p>
-<div class="globe-wrap">
-<svg class="circle-text" viewBox="0 0 580 580"><defs><path id="circlePath" d="M 290,290 m -250,0 a 250,250 0 1,1 500,0 a 250,250 0 1,1 -500,0"/></defs><text fill="#FF7A00" font-size="18" font-weight="900" letter-spacing="3"><textPath href="#circlePath">MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • </textPath></text></svg>
-<canvas id="globeCanvas"></canvas>
-</div>
-</section>
-<div style="text-align:center;padding:20px"><h2 style="color:#FF7A00;font-size:32px">Our 11 Professional Services - Orlando FL 32811</h2><p style="color:#FF8C33">Click View Services - With Content - No 404 Blank Page!</p></div>
-<div class="grid" id="grid"></div>
-<div class="social-footer">
-<div class="social-title">SUIVEZ-NOUS - ORLANDO FLORIDA 32811</div>
-<div>
-<a class="soc" href="#"><div class="soc-circle">f</div><div class="soc-label">FACEBOOK</div></a>
-<a class="soc" href="#"><div class="soc-circle">◎</div><div class="soc-label">INSTAGRAM</div></a>
-<a class="soc" href="#"><div class="soc-circle">W</div><div class="soc-label">WHATSAPP</div></a>
-<a class="soc" href="#"><div class="soc-circle">X</div><div class="soc-label">TWITTER</div></a>
-</div>
-<div class="footer-bottom">
-❝ ENSEMBLE, NOUS CONSTRUISONS • ENSEMBLE, NOUS GRANDISSONS ❞<br><br>
-© 2026 MAXIMAX MULTI SERVICES - ORLANDO, FLORIDA 32811 - ORIGINAL LOGO: maximax-multi-services-logo.jpg<br>
-📍 Orlando, FL 32811 | 📞 Contact: Orlando Florida | 🌐 Orlando HQ
-</div>
+<!-- 9 REZO SOSYAL ALIYEN - FACEBOOK, WHATSAPP, INSTAGRAM, TIKTOK, LINKEDIN, YOUTUBE, SPOTIFY, TELEGRAM, TRUE SOCIAL, X/TWITTER -->
+<div class="social-footer" style="background:#000;border-top:3px solid #FF7A00;padding:20px 10px;text-align:center">
+<div style="color:#FF8C33;font-weight:900;letter-spacing:2px;font-size:12px;margin-bottom:6px">SUIV MWEN SOU <span style="color:#FF7A00">TOUT REZO SOSYAL YO</span></div>
+<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;max-width:1000px;margin:12px auto;background:rgba(255,122,0,0.05);border:1px solid rgba(255,122,0,0.2);border-radius:12px;padding:12px">
+
+<!-- 1 FACEBOOK -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:20px;margin:0 auto;border:2px solid #FF7A00">f</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">FACEBOOK</div>
+</a>
+
+<!-- 2 TIKTOK -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;margin:0 auto;border:2px solid #FF7A00">♪</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">TIKTOK</div>
+</a>
+
+<!-- 3 INSTAGRAM -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;margin:0 auto;border:2px solid #FF7A00">◎</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">INSTAGRAM</div>
+</a>
+
+<!-- 4 WHATSAPP -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:20px;margin:0 auto;border:2px solid #FF7A00">W</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">WHATSAPP</div>
+</a>
+
+<!-- 5 X/TWITTER -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:16px;margin:0 auto;border:2px solid #FF7A00">X</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">X/TWITTER</div>
+</a>
+
+<!-- 6 TELEGRAM -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#0088cc;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;margin:0 auto;border:2px solid #FF7A00">✈</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">TELEGRAM</div>
+</a>
+
+<!-- 7 TRUTH SOCIAL -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#5448ee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:16px;margin:0 auto;border:2px solid #FF7A00">T</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">TRUTH SOCIAL</div>
+</a>
+
+<!-- 8 YOUTUBE -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#FF0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:16px;margin:0 auto;border:2px solid #FF7A00">▶</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">YOUTUBE</div>
+</a>
+
+<!-- 9 LINKEDIN -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#0077B5;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px;margin:0 auto;border:2px solid #FF7A00">in</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">LINKEDIN</div>
+</a>
+
+<!-- 10 SPOTIFY (si ou vle ajoute l) -->
+<a href="#" style="text-decoration:none;text-align:center;width:70px">
+<div style="width:48px;height:48px;background:#1DB954;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;margin:0 auto;border:2px solid #FF7A00">♫</div>
+<div style="color:#FF8C33;font-size:8px;margin-top:4px;font-weight:800">SPOTIFY</div>
+</a>
+
 </div>
 
-<script type="module">
-import * as THREE from 'three';
-const canvas=document.getElementById('globeCanvas');
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(45,1,0.1,1000);camera.position.z=2.8;
-const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-renderer.setPixelRatio(window.devicePixelRatio);
-function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
-window.addEventListener('resize',resize);resize();
-const loader=new THREE.TextureLoader();
-const tex=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
-const earth=new THREE.Mesh(new THREE.SphereGeometry(1,64,64),new THREE.MeshPhongMaterial({map:tex}));
-scene.add(earth);scene.add(new THREE.AmbientLight(0xffffff,0.7));
-const light=new THREE.DirectionalLight(0xffffff,1);light.position.set(2,1,2);scene.add(light);
-let rot=0;function animate(){requestAnimationFrame(animate);rot+=0.003;earth.rotation.y=rot;renderer.render(scene,camera);}animate();
-</script>
-<script>
-const services=[
-["Government Services","OFFICIAL • CERTIFIED • ORLANDO 32811","Passport, tax filing, licenses, certificates & all government docs."],
-["Business LLC & Corp","STARTUP • ORLANDO 32811","LLC registration, Corp, business setup, branding & corporate legal."],
-["Federal Registration","SAM.GOV • ORLANDO 32811","SAM.gov, UEI, CAGE code, federal contractor setup."],
-["Tax, EIN & ITIN","IRS • ORLANDO 32811","EIN, ITIN, tax filing, IRS compliance."],
-["Immigration & Passport","VISA • ORLANDO 32811","Immigration filing, passport renewal, visa assistance."],
-["Notary & Translation","CERTIFIED • ORLANDO 32811","Notary public, apostille, certified translation ENG/FRA/KREYOL."],
-["Licenses & Permits","STATE • ORLANDO 32811","Business licenses, permits, compliance for 50 states."],
-["Trademark & Copyright","PROTECTED • ORLANDO 32811","Trademark registration, copyright, brand protection."],
-["Website & Marketing","DIGITAL • ORLANDO 32811","Website design, SEO, social media, Google Business."],
-["Insurance & Compliance","SECURE • ORLANDO 32811","Business insurance, compliance, annual reports, BOI."],
-["State & Federal Filings","ALL STATES • ORLANDO 32811","Annual reports, amendments, reinstatements, state filings."]
-];
-const details=[
-"Passport Application & Renewal US & Haiti, Birth Marriage Death Certificates, Tax Filing, Driver License, Social Security - Starting $49 - Orlando FL 32811",
-"LLC Formation Any State $0+state fee, Corporation S-Corp C-Corp, Non-Profit 501c3, Operating Agreement, EIN & Tax Setup - LLC from $49+Fee - Orlando FL 32811",
-"SAM.gov Registration & Renewal, UEI Number, CAGE Code, Capability Statement - $199 Registration $99 Renewal - Orlando FL 32811",
-"EIN Same Day $49, ITIN W-7 $149, Tax 1040 1120 1065 from $99, Sales Tax Permit, IRS Letter Response - Orlando FL 32811",
-"Family Petition I-130, Green Card Application & Renewal, Work Permit I-765, Citizenship N-400, Visa Assistance, Passport US & Haitian - Consultation $75 - Orlando FL 32811",
-"Notary Public All Documents $10/signature, Apostille Service, Certified Translation ENG/FRA/KREYOL $25/page, Power of Attorney - Orlando FL 32811",
-"Business License All States From $79+Fees, Seller's Permit, Professional License, Health & Safety Permits, Compliance Check - Orlando FL 32811",
-"Trademark Search, Trademark Registration USPTO $199+USPTO Fee, Copyright Registration $99, Brand Protection - Orlando FL 32811",
-"Professional Website Design from $299, Google Business Profile $99, SEO Rank on Google, Social Media Setup, Business Cards - Orlando FL 32811",
-"Business Insurance Quote, BOI Report Filing FinCEN $49, Annual Report Filing from $79, Registered Agent, Compliance Calendar - Orlando FL 32811",
-"Annual Reports All States From $79+Fee, Amendments & Changes, Reinstatements, Certificate of Good Standing, Dissolution - No 404 Blank Page - Orlando FL 32811"
-];
-function render(){
-const grid=document.getElementById('grid');grid.innerHTML='';
-services.forEach((s,i)=>{
-const div=document.createElement('div');div.className='card';
-div.innerHTML=`<h3>${s[0]}</h3><div class="meta">${s[1]}</div><p>${s[2]}</p><a onclick="openModal(${i})">View Services → With Content</a>`;
-grid.appendChild(div);
-});
-}
-function openModal(id){document.getElementById('modal-'+id).classList.add('active');}
-function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');}
-function setLang(l){render();}
-render();
-</script>
+<div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:12px auto 0;padding-top:12px;border-top:1px solid rgba(255,122,0,0.2)">
+<div style="text-align:left;color:#FFB26A;font-size:11px;line-height:1.4">
+DEVAN DEVAN NÈT.<br>
+<span style="color:#FF7A00;font-weight:900">BATI POU JODI A.</span><br>
+PARE POU DEMEN.
+</div>
+<div style="color:#FF7A00;font-size:28px">✝</div>
+</div>
 
-<div id="modal-0" class="modal-overlay" onclick="if(event.target===this)closeModal(0)"><div class="modal-content"><button class="modal-close" onclick="closeModal(0)">×</button><h2>Government Services - Orlando FL 32811</h2><p style="white-space:pre-line">Passport Application & Renewal&#10;Birth Certificates&#10;Tax Filing&#10;Starting $49 - Orlando FL 32811</p></div></div>
-<div id="modal-1" class="modal-overlay" onclick="if(event.target===this)closeModal(1)"><div class="modal-content"><button class="modal-close" onclick="closeModal(1)">×</button><h2>Business LLC & Corp - Orlando FL 32811</h2><p>LLC from $49+Fee - Original Logo maximax-multi-services-logo.jpg on all pages - Orlando 32811</p></div></div>
-<div id="modal-2" class="modal-overlay" onclick="if(event.target===this)closeModal(2)"><div class="modal-content"><button class="modal-close" onclick="closeModal(2)">×</button><h2>Federal Registration - Orlando FL 32811</h2><p>SAM.gov $199 | Renewal $99 - Orlando 32811</p></div></div>
-<div id="modal-3" class="modal-overlay" onclick="if(event.target===this)closeModal(3)"><div class="modal-content"><button class="modal-close" onclick="closeModal(3)">×</button><h2>Tax EIN ITIN - Orlando FL 32811</h2><p>EIN $49 Same Day | ITIN $149 - Orlando 32811</p></div></div>
-<div id="modal-4" class="modal-overlay" onclick="if(event.target===this)closeModal(4)"><div class="modal-content"><button class="modal-close" onclick="closeModal(4)">×</button><h2>Immigration - Orlando FL 32811</h2><p>Consultation $75 - Orlando FL 32811</p></div></div>
-<div id="modal-5" class="modal-overlay" onclick="if(event.target===this)closeModal(5)"><div class="modal-content"><button class="modal-close" onclick="closeModal(5)">×</button><h2>Notary - Orlando FL 32811</h2><p>Notary $10 | Translation $25/page - Orlando 32811</p></div></div>
-<div id="modal-6" class="modal-overlay" onclick="if(event.target===this)closeModal(6)"><div class="modal-content"><button class="modal-close" onclick="closeModal(6)">×</button><h2>Licenses - Orlando FL 32811</h2><p>From $79+Fees - Orlando 32811</p></div></div>
-<div id="modal-7" class="modal-overlay" onclick="if(event.target===this)closeModal(7)"><div class="modal-content"><button class="modal-close" onclick="closeModal(7)">×</button><h2>Trademark - Orlando FL 32811</h2><p>Trademark $199+Fee - Orlando 32811</p></div></div>
-<div id="modal-8" class="modal-overlay" onclick="if(event.target===this)closeModal(8)"><div class="modal-content"><button class="modal-close" onclick="closeModal(8)">×</button><h2>Website - Orlando FL 32811</h2><p>Website from $299 - Orlando 32811</p></div></div>
-<div id="modal-9" class="modal-overlay" onclick="if(event.target===this)closeModal(9)"><div class="modal-content"><button class="modal-close" onclick="closeModal(9)">×</button><h2>Insurance - Orlando FL 32811</h2><p>BOI $49 - Orlando 32811</p></div></div>
-<div id="modal-10" class="modal-overlay" onclick="if(event.target===this)closeModal(10)"><div class="modal-content"><button class="modal-close" onclick="closeModal(10)">×</button><h2>State Filings - Orlando FL 32811</h2><p>From $79+Fee - No 404 Blank Page - Orlando FL 32811 - Original Logo</p></div></div>
-
-</body>
-                                                                                            </html>
+<div style="color:#8B5A2B;font-size:10px;margin-top:12px;letter-spacing:1px">
+TOGETHER WE BUILD • TOGETHER WE RISE<br><br>
+© 2026 MAXIMAX MULTI SERVICES - ORLANDO, FLORIDA 32811 - maximax-multi-services-logo.jpg
+</div>
+</div>
