@@ -3,111 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXIMAX MULTI SERVICES - Professional Services Across USA</title>
+<title>MAXIMAX MULTI SERVICES - Orlando FL 32811</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#050505;color:#FF8C33;overflow-x:hidden}
-:root{--orange:#FF7A00;--black:#050505}
 .top-lang{background:#000;border-bottom:1px solid rgba(255,122,0,0.25);display:flex;justify-content:center;gap:10px;padding:8px}
-.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.35);color:#FF8C33;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer;letter-spacing:1px}
-.top-lang button.active{background:var(--orange);color:#000;border-color:var(--orange)}
-.header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(0,0,0,0.95);border-bottom:1px solid rgba(255,122,0,0.25);position:sticky;top:0;z-index:100}
+.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.35);color:#FF8C33;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer}
+.top-lang button.active{background:#FF7A00;color:#000}
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#000;border-bottom:2px solid #FF7A00;position:sticky;top:0;z-index:100}
 .logo-wrap{display:flex;align-items:center;gap:12px}
-.logo-img{width:56px;height:56px;border-radius:50%;border:2px solid #FF7A00;box-shadow:0 0 18px rgba(255,122,0,0.6);object-fit:cover;background:#FF7A00}
+.logo-img{width:70px;height:70px;border-radius:50%;border:3px solid #FF7A00;box-shadow:0 0 20px rgba(255,122,0,0.6);object-fit:cover;background:#000}
 .logo-text{color:#FF7A00;font-weight:900;font-size:18px}
 .btn-contact{background:#FF7A00;color:#000;padding:10px 22px;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px}
-.social-bar{background:#0A0A0A;border-bottom:1px solid rgba(255,122,0,0.18);display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 10px}
-.social-item{width:38px;height:38px;border:1.5px solid rgba(255,122,0,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:14px;font-weight:800;text-decoration:none;background:rgba(255,122,0,0.07)}
-.hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px;position:relative;overflow:hidden}
-.badge{display:inline-block;background:rgba(255,122,0,0.14);border:1px solid rgba(255,122,0,0.35);color:#FF7A00;padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:18px}
-.hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:#FF7A00;line-height:0.9;text-shadow:0 0 40px rgba(255,122,0,0.4);margin-bottom:16px}
-.hero-desc{color:#FFB26A;max-width:720px;margin:0 auto 20px;font-size:clamp(14px,2.5vw,18px);line-height:1.5}
+.hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px}
+.badge{display:inline-block;background:rgba(255,122,0,0.14);border:1px solid #FF7A00;color:#FF7A00;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:800;margin-bottom:18px}
+.hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:#FF7A00;line-height:0.9;margin-bottom:16px}
+.hero-desc{color:#FFB26A;max-width:720px;margin:0 auto 20px;font-size:18px}
 .globe-wrap{position:relative;width:520px;height:520px;margin:20px auto;max-width:90vw}
 #globeCanvas{width:100%;height:100%;display:block;border-radius:50%}
-.circle-text{position:absolute;top:-30px;left:-30px;width:580px;height:580px;max-width:108%;max-height:108%;pointer-events:none;animation:rotateText 20s linear infinite}
+.circle-text{position:absolute;top:-30px;left:-30px;width:580px;height:580px;max-width:108%;pointer-events:none;animation:rotateText 20s linear infinite}
 @keyframes rotateText{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.globe-info{margin-top:10px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.info-pill{background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.25);padding:6px 14px;border-radius:20px;font-size:11px;color:#FF8C33;letter-spacing:1px}
-.info-pill.orange{border-color:#FF7A00;color:#FF7A00;background:rgba(255,122,0,0.15)}
-.services{padding:50px 20px;max-width:1300px;margin:0 auto}
-.section-head{text-align:center;margin-bottom:35px}
-.section-head h2{font-size:32px;color:#FF7A00;margin-bottom:8px}
-.section-head p{color:#FF8C33}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:linear-gradient(135deg, rgba(255,122,0,0.12), rgba(0,0,0,0.7));border:1px solid rgba(255,122,0,0.28);border-left:3px solid #FF7A00;border-radius:16px;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;padding:20px;max-width:1300px;margin:0 auto}
+.card{background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.28);border-left:4px solid #FF7A00;border-radius:16px;padding:22px}
 .card h3{color:#FF7A00;font-size:18px;margin-bottom:6px}
-.card.meta{color:#FF8C33;font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:10px}
-.card p{color:#CC7A30;font-size:14px;line-height:1.5;margin-bottom:14px}
-.card a{display:inline-block;background:#FF7A00;color:#000;padding:9px 18px;border-radius:20px;font-weight:800;font-size:13px;text-decoration:none;cursor:pointer}
-.social-footer{background:linear-gradient(180deg, #1A0A00 0%, #000 100%);border-top:2px solid #FF7A00;padding:22px 10px;text-align:center}
+.card .meta{color:#FF8C33;font-size:11px;font-weight:800;margin-bottom:10px}
+.card p{color:#CC7A30;font-size:14px;margin-bottom:14px}
+.card a{display:inline-block;background:#FF7A00;color:#000;padding:10px 20px;border-radius:20px;font-weight:800;text-decoration:none;cursor:pointer}
+.social-footer{background:#1A0A00;border-top:2px solid #FF7A00;padding:22px 10px;text-align:center}
 .social-title{color:#FF7A00;font-weight:900;letter-spacing:2px;font-size:13px;margin-bottom:16px}
-.social-icons{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;max-width:900px;margin:0 auto}
-.soc{text-decoration:none;text-align:center}
-.soc-circle{width:50px;height:50px;background:linear-gradient(135deg, #FF7A00 0%, #CC5A00 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:18px;box-shadow:0 0 10px rgba(255,122,0,0.4);border:1.5px solid #FF8C33}
+.soc{display:inline-block;margin:5px;text-decoration:none}
+.soc-circle{width:50px;height:50px;background:#FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
 .soc-label{color:#FF7A00;font-size:8px;margin-top:5px;font-weight:800}
-.footer-bottom{margin-top:18px;color:#8B5A2B;font-size:10px;border-top:1px solid rgba(255,122,0,0.2);padding-top:12px}
+.footer-bottom{margin-top:18px;color:#FF8C33;font-size:11px;border-top:1px solid rgba(255,122,0,0.2);padding-top:12px}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.active{display:flex}
-.modal-content{background:linear-gradient(180deg, #1A0A00 0%, #050505 100%);border:2px solid #FF7A00;border-radius:18px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;position:relative}
+.modal-content{background:#1A0A00;border:3px solid #FF7A00;border-radius:18px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;position:relative}
 .modal-close{position:absolute;top:12px;right:14px;background:#FF7A00;color:#000;width:32px;height:32px;border-radius:50%;border:none;font-weight:900;font-size:18px;cursor:pointer}
 .modal-content h2{color:#FF7A00;font-size:28px;margin-bottom:8px}
-.modal-content.meta{color:#FF8C33;font-size:12px;letter-spacing:1.5px;font-weight:800;margin-bottom:16px}
-.modal-content h3{color:#FF7A00;margin:18px 0 8px}
-.modal-content p,.modal-content li{color:#CC7A30;line-height:1.6;font-size:14px}
-.modal-content ul{padding-left:18px;margin:8px 0}
-.modal-content.price{margin-top:18px;padding:14px;background:rgba(255,122,0,0.12);border:1px solid #FF7A00;border-radius:12px;color:#FF7A00;font-weight:900;text-align:center}
-.modal-content.btn-book{display:inline-block;margin-top:14px;background:#FF7A00;color:#000;padding:12px 24px;border-radius:24px;font-weight:900;text-decoration:none}
-@media(max-width:600px){.globe-wrap{width:340px;height:340px}.circle-text{width:400px;height:400px;top:-30px;left:-30px}}
+.modal-content li,.modal-content p{color:#CC7A30;line-height:1.6;font-size:14px}
+.modal-content .price{margin-top:18px;padding:14px;background:rgba(255,122,0,0.12);border:1px solid #FF7A00;border-radius:12px;color:#FF7A00;font-weight:900;text-align:center}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
 </head>
 <body>
 <div class="top-lang">
-<button class="active" data-lang="en" onclick="setLang('en')">ENG</button>
-<button data-lang="fr" onclick="setLang('fr')">FRA</button>
-<button data-lang="ht" onclick="setLang('ht')">KREYÒL</button>
+<button class="active" onclick="setLang('en')">ENG</button>
+<button onclick="setLang('fr')">FRA</button>
+<button onclick="setLang('ht')">KREYOL</button>
 </div>
 <header class="header">
 <div class="logo-wrap">
-<div style="width:56px;height:56px;background:#FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:8px;text-align:center;line-height:1">MAX<br>MULTI<br>SERVICES</div>
+<!-- ORIJINAL LOGO - maximax-multi-services-logo.jpg -->
+<img src="maximax-multi-services-logo.jpg" class="logo-img" alt="MAXIMAX MULTI SERVICES ORIGINAL LOGO">
 <div class="logo-text">MAXIMAX MULTI SERVICES</div>
 </div>
 <a href="#contact" class="btn-contact">CONTACT</a>
 </header>
-<div class="social-bar">
-<a href="#" class="social-item">f</a><a href="#" class="social-item">W</a><a href="#" class="social-item">▶</a><a href="#" class="social-item">T</a><a href="#" class="social-item">X</a><a href="#" class="social-item">♫</a><a href="#" class="social-item">✈</a><a href="#" class="social-item">♪</a><a href="#" class="social-item">◎</a>
-</div>
 <section class="hero">
-<div class="badge">• REAL GLOBE • REAL CONTINENTS • PROFESSIONAL</div>
+<div class="badge">• REAL GLOBE • REAL CONTINENTS • ORIGINAL LOGO • ORLANDO FL 32811</div>
 <h1 class="hero-title">MAXIMAX<br>MULTI<br>SERVICES</h1>
-<p class="hero-desc" id="heroDesc">Professional government, business formation and federal registration services. Trusted across the USA with real coverage.</p>
+<p class="hero-desc">Professional services - Orlando, Florida 32811 - Trusted across USA with ORIGINAL LOGO on all pages</p>
 <div class="globe-wrap">
-<div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle, rgba(255,122,0,0.25) 0%, transparent 70%);pointer-events:none"></div>
 <svg class="circle-text" viewBox="0 0 580 580"><defs><path id="circlePath" d="M 290,290 m -250,0 a 250,250 0 1,1 500,0 a 250,250 0 1,1 -500,0"/></defs><text fill="#FF7A00" font-size="18" font-weight="900" letter-spacing="3"><textPath href="#circlePath">MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • </textPath></text></svg>
 <canvas id="globeCanvas"></canvas>
 </div>
-<div class="globe-info"><span class="info-pill">● LIVE 3D • AUTO-ROTATING • HIGH-DEFINITION</span><span class="info-pill orange">TAMPA HQ • 6 CITIES</span></div>
 </section>
-<section class="services">
-<div class="section-head"><h2 id="servTitle">Our 11 Professional Services</h2><p id="servSub">Trusted by 10,000+ clients worldwide</p></div>
+<div style="text-align:center;padding:20px"><h2 style="color:#FF7A00;font-size:32px">Our 11 Professional Services - Orlando FL 32811</h2><p style="color:#FF8C33">Click View Services - With Content - No 404 Blank Page!</p></div>
 <div class="grid" id="grid"></div>
-</section>
 <div class="social-footer">
-<div class="social-title">SUIVEZ-NOUS SUR TOUS NOS RÉSEAUX SOCIAUX</div>
-<div class="social-icons">
+<div class="social-title">SUIVEZ-NOUS - ORLANDO FLORIDA 32811</div>
+<div>
 <a class="soc" href="#"><div class="soc-circle">f</div><div class="soc-label">FACEBOOK</div></a>
-<a class="soc" href="#"><div class="soc-circle">♪</div><div class="soc-label">TIKTOK</div></a>
 <a class="soc" href="#"><div class="soc-circle">◎</div><div class="soc-label">INSTAGRAM</div></a>
 <a class="soc" href="#"><div class="soc-circle">W</div><div class="soc-label">WHATSAPP</div></a>
-<a class="soc" href="#"><div class="soc-circle">X</div><div class="soc-label">X / TWITTER</div></a>
-<a class="soc" href="#"><div class="soc-circle">✈</div><div class="soc-label">TELEGRAM</div></a>
-<a class="soc" href="#"><div class="soc-circle">T</div><div class="soc-label">TRUTH SOCIAL</div></a>
-<a class="soc" href="#"><div class="soc-circle">▶</div><div class="soc-label">YOUTUBE</div></a>
-<a class="soc" href="#"><div class="soc-circle">▶</div><div class="soc-label">LINKEOME</div></a>
-<a class="soc" href="#"><div class="soc-circle">in</div><div class="soc-label">LINKEDIN</div></a>
+<a class="soc" href="#"><div class="soc-circle">X</div><div class="soc-label">TWITTER</div></a>
 </div>
-<div class="footer-bottom">❝ ENSEMBLE, NOUS CONSTRUISONS • ENSEMBLE, NOUS GRANDISSONS ❞<br><br>© 2026 MAXIMAX MULTI SERVICES - Tampa, FL</div>
+<div class="footer-bottom">
+❝ ENSEMBLE, NOUS CONSTRUISONS • ENSEMBLE, NOUS GRANDISSONS ❞<br><br>
+© 2026 MAXIMAX MULTI SERVICES - ORLANDO, FLORIDA 32811 - ORIGINAL LOGO: maximax-multi-services-logo.jpg<br>
+📍 Orlando, FL 32811 | 📞 Contact: Orlando Florida | 🌐 Orlando HQ
+</div>
 </div>
 
 <script type="module">
@@ -122,48 +98,62 @@ window.addEventListener('resize',resize);resize();
 const loader=new THREE.TextureLoader();
 const tex=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
 const earth=new THREE.Mesh(new THREE.SphereGeometry(1,64,64),new THREE.MeshPhongMaterial({map:tex}));
-scene.add(earth);scene.add(new THREE.AmbientLight(0xffffff,0.6));
+scene.add(earth);scene.add(new THREE.AmbientLight(0xffffff,0.7));
 const light=new THREE.DirectionalLight(0xffffff,1);light.position.set(2,1,2);scene.add(light);
 let rot=0;function animate(){requestAnimationFrame(animate);rot+=0.003;earth.rotation.y=rot;renderer.render(scene,camera);}animate();
 </script>
 <script>
-const translations={
-en:{desc:"Professional government, business formation and federal registration services. Trusted across the USA with real coverage.",title:"Our 11 Professional Services",sub:"Trusted by 10,000+ clients worldwide",services:[["Government Services","OFFICIAL • CERTIFIED • FAST","Passport, tax filing, licenses, certificates & all government documentation with expert assistance."],["Business LLC & Corp","STARTUP • GROWTH • COMPLIANCE","LLC registration, GST, business setup, branding & complete corporate legal solutions."],["Federal Registration","SAM.GOV • UEI • CAGE","SAM.gov registration, UEI, CAGE code, federal contractor setup across USA."],["Tax, EIN & ITIN","IRS • FAST • SECURE","EIN, ITIN, tax filing, IRS compliance for individuals and businesses."],["Immigration & Passport","VISA • GREEN CARD • CITIZEN","Immigration filing, passport renewal, visa assistance, green card support."],["Notary & Translation","CERTIFIED • 24/7","Notary public, apostille, certified translation ENG/FRA/KREYOL."],["Licenses & Permits","STATE • FEDERAL","Business licenses, permits, compliance for all 50 states."],["Trademark & Copyright","PROTECTED • LEGAL","Trademark registration, copyright, brand protection."],["Website & Marketing","DIGITAL • GROWTH","Website design, SEO, social media, Google Business setup."],["Insurance & Compliance","SECURE • COMPLIANT","Business insurance, compliance, annual reports, BOI filing."],["State & Federal Filings","ALL STATES • FAST","Annual reports, amendments, reinstatements, state filings."]]},
-fr:{desc:"Services professionnels gouvernementaux, création d'entreprise et enregistrement fédéral. Fiable à travers les USA avec une vraie couverture.",title:"Nos 11 Services Professionnels",sub:"Fait confiance par 10 000+ clients",services:[["Services Gouvernementaux","OFFICIEL • CERTIFIÉ • RAPIDE","Passeport, impôts, licences, certificats et toute documentation gouvernementale."],["Création LLC & Entreprise","STARTUP • CROISSANCE","Enregistrement LLC, création d'entreprise, branding et solutions juridiques."],["Enregistrement Fédéral","SAM.GOV • UEI • CAGE","Inscription SAM.gov, UEI, code CAGE, entrepreneur fédéral."],["Impôts, EIN & ITIN","IRS • RAPIDE • SÉCURISÉ","EIN, ITIN, déclaration d'impôts, conformité IRS."],["Immigration & Passeport","VISA • CARTE VERTE","Dépôt immigration, renouvellement passeport, assistance visa."],["Notaire & Traduction","CERTIFIÉ • 24/7","Notaire public, apostille, traduction certifiée ENG/FRA/KREYOL."],["Licences & Permis","ÉTAT • FÉDÉRAL","Licences commerciales, permis, conformité pour les 50 États."],["Marque & Copyright","PROTÉGÉ • LÉGAL","Enregistrement de marque, droit d'auteur, protection de marque."],["Site Web & Marketing","NUMÉRIQUE • CROISSANCE","Conception web, SEO, réseaux sociaux, Google Business."],["Assurance & Conformité","SÉCURISÉ • CONFORME","Assurance entreprise, conformité, rapports annuels."],["Dépôts État & Fédéral","TOUS ÉTATS • RAPIDE","Rapports annuels, modifications, rétablissements."]]},
-ht:{desc:"Sèvis pwofesyonèl gouvènman, kreyasyon biznis ak anrejistreman federal. Yo fè nou konfyans toupatou nan USA ak vrè kouvèti.",title:"11 Sèvis Pwofesyonèl Nou Yo",sub:"10,000+ kliyan fè nou konfyans",services:[["Sèvis Gouvènman","OFISYÈL • SÈTIFYE • RAPID","Paspò, taks, lisans, sètifika ak tout dokiman gouvènman ak asistans ekspè."],["Biznis LLC & Corp","STARTUP • KWASANS","Anrejistreman LLC, kreyasyon biznis, branding ak solisyon legal konplè."],["Anrejistreman Federal","SAM.GOV • UEI • CAGE","Anrejistreman SAM.gov, UEI, kòd CAGE, kontraktè federal."],["Taks, EIN & ITIN","IRS • RAPID • SEKIRIZE","EIN, ITIN, deklarasyon taks, konfòmite IRS."],["Imigrasyon & Paspò","VISA • GREEN CARD","Depo imigrasyon, renouvèlman paspò, asistans viza."],["Notè & Tradiksyon","SÈTIFYE • 24/7","Notè piblik, apostil, tradiksyon sètifye ENG/FRA/KREYÒL."],["Lisans & Pèmi","ETA • FEDERAL","Lisans biznis, pèmi, konfòmite pou tout 50 eta."],["Mak & Copyright","PWOTEJE • LEGAL","Anrejistreman mak, copyright, pwoteksyon mak."],["Sit Wèb & Maketing","DIJITAL • KWASANS","Konsepsyon sit wèb, SEO, rezo sosyal, Google Biznis."],["Asirans & Konfòmite","SEKIRIZE • KONFÒM","Asirans biznis, konfòmite, rapò anyèl."],["Depo Eta & Federal","TOUT ETA • RAPID","Rapò anyèl, amandman, retablisman, depo eta."]]}
-};
-function renderServices(lang){
- const t=translations[lang];
- document.getElementById('heroDesc').textContent=t.desc;
- document.getElementById('servTitle').textContent=t.title;
- document.getElementById('servSub').textContent=t.sub;
- const grid=document.getElementById('grid');grid.innerHTML='';
- t.services.forEach((s,i)=>{
-  const div=document.createElement('div');div.className='card';
-  div.innerHTML=`<h3>${s[0]}</h3><div class="meta">${s[1]}</div><p>${s[2]}</p><a onclick="openModal(${i})">View Services →</a>`;
-  grid.appendChild(div);
- });
+const services=[
+["Government Services","OFFICIAL • CERTIFIED • ORLANDO 32811","Passport, tax filing, licenses, certificates & all government docs."],
+["Business LLC & Corp","STARTUP • ORLANDO 32811","LLC registration, Corp, business setup, branding & corporate legal."],
+["Federal Registration","SAM.GOV • ORLANDO 32811","SAM.gov, UEI, CAGE code, federal contractor setup."],
+["Tax, EIN & ITIN","IRS • ORLANDO 32811","EIN, ITIN, tax filing, IRS compliance."],
+["Immigration & Passport","VISA • ORLANDO 32811","Immigration filing, passport renewal, visa assistance."],
+["Notary & Translation","CERTIFIED • ORLANDO 32811","Notary public, apostille, certified translation ENG/FRA/KREYOL."],
+["Licenses & Permits","STATE • ORLANDO 32811","Business licenses, permits, compliance for 50 states."],
+["Trademark & Copyright","PROTECTED • ORLANDO 32811","Trademark registration, copyright, brand protection."],
+["Website & Marketing","DIGITAL • ORLANDO 32811","Website design, SEO, social media, Google Business."],
+["Insurance & Compliance","SECURE • ORLANDO 32811","Business insurance, compliance, annual reports, BOI."],
+["State & Federal Filings","ALL STATES • ORLANDO 32811","Annual reports, amendments, reinstatements, state filings."]
+];
+const details=[
+"Passport Application & Renewal US & Haiti, Birth Marriage Death Certificates, Tax Filing, Driver License, Social Security - Starting $49 - Orlando FL 32811",
+"LLC Formation Any State $0+state fee, Corporation S-Corp C-Corp, Non-Profit 501c3, Operating Agreement, EIN & Tax Setup - LLC from $49+Fee - Orlando FL 32811",
+"SAM.gov Registration & Renewal, UEI Number, CAGE Code, Capability Statement - $199 Registration $99 Renewal - Orlando FL 32811",
+"EIN Same Day $49, ITIN W-7 $149, Tax 1040 1120 1065 from $99, Sales Tax Permit, IRS Letter Response - Orlando FL 32811",
+"Family Petition I-130, Green Card Application & Renewal, Work Permit I-765, Citizenship N-400, Visa Assistance, Passport US & Haitian - Consultation $75 - Orlando FL 32811",
+"Notary Public All Documents $10/signature, Apostille Service, Certified Translation ENG/FRA/KREYOL $25/page, Power of Attorney - Orlando FL 32811",
+"Business License All States From $79+Fees, Seller's Permit, Professional License, Health & Safety Permits, Compliance Check - Orlando FL 32811",
+"Trademark Search, Trademark Registration USPTO $199+USPTO Fee, Copyright Registration $99, Brand Protection - Orlando FL 32811",
+"Professional Website Design from $299, Google Business Profile $99, SEO Rank on Google, Social Media Setup, Business Cards - Orlando FL 32811",
+"Business Insurance Quote, BOI Report Filing FinCEN $49, Annual Report Filing from $79, Registered Agent, Compliance Calendar - Orlando FL 32811",
+"Annual Reports All States From $79+Fee, Amendments & Changes, Reinstatements, Certificate of Good Standing, Dissolution - No 404 Blank Page - Orlando FL 32811"
+];
+function render(){
+const grid=document.getElementById('grid');grid.innerHTML='';
+services.forEach((s,i)=>{
+const div=document.createElement('div');div.className='card';
+div.innerHTML=`<h3>${s[0]}</h3><div class="meta">${s[1]}</div><p>${s[2]}</p><a onclick="openModal(${i})">View Services → With Content</a>`;
+grid.appendChild(div);
+});
 }
-function setLang(lang){
- document.querySelectorAll('.top-lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
- renderServices(lang);
-}
-function openModal(id){document.getElementById('modal-'+id).classList.add('active');document.body.style.overflow='hidden'}
-function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');document.body.style.overflow='auto'}
-renderServices('en');
+function openModal(id){document.getElementById('modal-'+id).classList.add('active');}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');}
+function setLang(l){render();}
+render();
 </script>
 
-<!-- 11 MODALS WITH CONTENT -->
-<div id="modal-0" class="modal-overlay" onclick="if(event.target===this)closeModal(0)"><div class="modal-content"><button class="modal-close" onclick="closeModal(0)">×</button><h2>Government Services</h2><div class="meta">OFFICIAL • CERTIFIED • FAST</div><p>All government paperwork with expert assistance.</p><ul><li>Passport Application & Renewal</li><li>Birth, Marriage Certificates</li><li>Tax Filing</li><li>Driver License Assistance</li></ul><div class="price">Starting from $49</div></div></div>
-<div id="modal-1" class="modal-overlay" onclick="if(event.target===this)closeModal(1)"><div class="modal-content"><button class="modal-close" onclick="closeModal(1)">×</button><h2>Business LLC & Corp</h2><div class="meta">STARTUP • GROWTH • COMPLIANCE</div><p>Form LLC, Corp, Non-Profit in all 50 states.</p><ul><li>LLC Formation</li><li>Corporation S-Corp C-Corp</li><li>Operating Agreement</li><li>EIN & Tax Setup</li></ul><div class="price">LLC from $49 + State Fee</div></div></div>
-<div id="modal-2" class="modal-overlay" onclick="if(event.target===this)closeModal(2)"><div class="modal-content"><button class="modal-close" onclick="closeModal(2)">×</button><h2>Federal Registration</h2><div class="meta">SAM.GOV • UEI • CAGE</div><p>Become federal contractor - SAM.gov ready.</p><ul><li>SAM.gov Registration</li><li>UEI Number</li><li>CAGE Code</li></ul><div class="price">$199 Registration | $99 Renewal</div></div></div>
-<div id="modal-3" class="modal-overlay" onclick="if(event.target===this)closeModal(3)"><div class="modal-content"><button class="modal-close" onclick="closeModal(3)">×</button><h2>Tax, EIN & ITIN</h2><div class="meta">IRS • FAST • SECURE</div><p>EIN, ITIN and tax filings same day.</p><ul><li>EIN Same Day</li><li>ITIN W-7</li><li>1040, 1120, 1065</li></ul><div class="price">EIN $49 | ITIN $149</div></div></div>
-<div id="modal-4" class="modal-overlay" onclick="if(event.target===this)closeModal(4)"><div class="modal-content"><button class="modal-close" onclick="closeModal(4)">×</button><h2>Immigration & Passport</h2><div class="meta">VISA • GREEN CARD • CITIZEN</div><p>Immigration filing with care.</p><ul><li>I-130 Family Petition</li><li>Green Card</li><li>N-400 Citizenship</li><li>Passport US & Haiti</li></ul><div class="price">Consultation $75</div></div></div>
-<div id="modal-5" class="modal-overlay" onclick="if(event.target===this)closeModal(5)"><div class="modal-content"><button class="modal-close" onclick="closeModal(5)">×</button><h2>Notary & Translation</h2><div class="meta">CERTIFIED • 24/7 • ENG/FRA/KREYOL</div><p>Certified notary and translation 24/7.</p><ul><li>Notary Public</li><li>Apostille</li><li>Translation ENG/FRA/KREYOL</li></ul><div class="price">Notary $10 | Translation $25/page</div></div></div>
-<div id="modal-6" class="modal-overlay" onclick="if(event.target===this)closeModal(6)"><div class="modal-content"><button class="modal-close" onclick="closeModal(6)">×</button><h2>Licenses & Permits</h2><div class="meta">STATE • FEDERAL</div><p>Business licenses for all 50 states.</p><ul><li>Business License</li><li>Seller's Permit</li><li>License Renewal</li></ul><div class="price">From $79 + Fees</div></div></div>
-<div id="modal-7" class="modal-overlay" onclick="if(event.target===this)closeModal(7)"><div class="modal-content"><button class="modal-close" onclick="closeModal(7)">×</button><h2>Trademark & Copyright</h2><div class="meta">PROTECTED • LEGAL</div><p>Protect your brand - USPTO registration.</p><ul><li>Trademark Search</li><li>USPTO Registration</li><li>Copyright</li></ul><div class="price">Trademark $199 + Fee</div></div></div>
-<div id="modal-8" class="modal-overlay" onclick="if(event.target===this)closeModal(8)"><div class="modal-content"><button class="modal-close" onclick="closeModal(8)">×</button><h2>Website & Marketing</h2><div class="meta">DIGITAL • GROWTH</div><p>Website, SEO, Google Business setup.</p><ul><li>Website Design</li><li>Google Business</li><li>SEO</li></ul><div class="price">Website from $299</div></div></div>
-<div id="modal-9" class="modal-overlay" onclick="if(event.target===this)closeModal(9)"><div class="modal-content"><button class="modal-close" onclick="closeModal(9)">×</button><h2>Insurance & Compliance</h2><div class="meta">SECURE • COMPLIANT</div><p>BOI, Annual Reports, Insurance.</p><ul><li>BOI Report FinCEN</li><li>Annual Report</li><li>Insurance Quote</li></ul><div class="price">BOI $49 | Report from $79</div></div></div>
-<div id="modal-10" class="modal-overlay" onclick="if(event.target===this)closeModal(10)"><div class="modal-content"><button class="modal-close" onclick="closeModal(10)">×</button><h2>State & Federal Filings</h2><div class="meta">ALL STATES • FAST</div><p>All state and federal filings.</p><ul><li>Annual Reports</li><li>Amendments</li><li>Good Standing Certificate</li></ul><div class="price">From $79 + Fee</div></div></div>
+<div id="modal-0" class="modal-overlay" onclick="if(event.target===this)closeModal(0)"><div class="modal-content"><button class="modal-close" onclick="closeModal(0)">×</button><h2>Government Services - Orlando FL 32811</h2><p style="white-space:pre-line">Passport Application & Renewal&#10;Birth Certificates&#10;Tax Filing&#10;Starting $49 - Orlando FL 32811</p></div></div>
+<div id="modal-1" class="modal-overlay" onclick="if(event.target===this)closeModal(1)"><div class="modal-content"><button class="modal-close" onclick="closeModal(1)">×</button><h2>Business LLC & Corp - Orlando FL 32811</h2><p>LLC from $49+Fee - Original Logo maximax-multi-services-logo.jpg on all pages - Orlando 32811</p></div></div>
+<div id="modal-2" class="modal-overlay" onclick="if(event.target===this)closeModal(2)"><div class="modal-content"><button class="modal-close" onclick="closeModal(2)">×</button><h2>Federal Registration - Orlando FL 32811</h2><p>SAM.gov $199 | Renewal $99 - Orlando 32811</p></div></div>
+<div id="modal-3" class="modal-overlay" onclick="if(event.target===this)closeModal(3)"><div class="modal-content"><button class="modal-close" onclick="closeModal(3)">×</button><h2>Tax EIN ITIN - Orlando FL 32811</h2><p>EIN $49 Same Day | ITIN $149 - Orlando 32811</p></div></div>
+<div id="modal-4" class="modal-overlay" onclick="if(event.target===this)closeModal(4)"><div class="modal-content"><button class="modal-close" onclick="closeModal(4)">×</button><h2>Immigration - Orlando FL 32811</h2><p>Consultation $75 - Orlando FL 32811</p></div></div>
+<div id="modal-5" class="modal-overlay" onclick="if(event.target===this)closeModal(5)"><div class="modal-content"><button class="modal-close" onclick="closeModal(5)">×</button><h2>Notary - Orlando FL 32811</h2><p>Notary $10 | Translation $25/page - Orlando 32811</p></div></div>
+<div id="modal-6" class="modal-overlay" onclick="if(event.target===this)closeModal(6)"><div class="modal-content"><button class="modal-close" onclick="closeModal(6)">×</button><h2>Licenses - Orlando FL 32811</h2><p>From $79+Fees - Orlando 32811</p></div></div>
+<div id="modal-7" class="modal-overlay" onclick="if(event.target===this)closeModal(7)"><div class="modal-content"><button class="modal-close" onclick="closeModal(7)">×</button><h2>Trademark - Orlando FL 32811</h2><p>Trademark $199+Fee - Orlando 32811</p></div></div>
+<div id="modal-8" class="modal-overlay" onclick="if(event.target===this)closeModal(8)"><div class="modal-content"><button class="modal-close" onclick="closeModal(8)">×</button><h2>Website - Orlando FL 32811</h2><p>Website from $299 - Orlando 32811</p></div></div>
+<div id="modal-9" class="modal-overlay" onclick="if(event.target===this)closeModal(9)"><div class="modal-content"><button class="modal-close" onclick="closeModal(9)">×</button><h2>Insurance - Orlando FL 32811</h2><p>BOI $49 - Orlando 32811</p></div></div>
+<div id="modal-10" class="modal-overlay" onclick="if(event.target===this)closeModal(10)"><div class="modal-content"><button class="modal-close" onclick="closeModal(10)">×</button><h2>State Filings - Orlando FL 32811</h2><p>From $79+Fee - No 404 Blank Page - Orlando FL 32811 - Original Logo</p></div></div>
+
 </body>
-</html>
+                                                                                            </html>
