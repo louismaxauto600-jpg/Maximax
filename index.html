@@ -1,61 +1,192 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXIMAX - LOGO VRAI + GLOBE VRAI - APRICOT #FF8C42 + BLACK ONLY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAXIMAX MULTI SERVICES - Professional Services Across USA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#000!important;color:#FF8C42!important;font-family:Arial!important}
-.h{background:#000!important;border-bottom:3px solid #FF8C42!important;padding:12px 20px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;position:sticky!important;top:0!important;z-index:9999!important}
-.logo-wrap{width:68px;height:68px;background:#000!important;border:2.5px solid #FF8C42!important;border-radius:16px!important;display:grid!important;place-items:center!important;box-shadow:0 0 22px rgba(255,140,66,0.45)!important}
-.logo-svg{width:62px;height:62px;display:block!important}
-.g{max-width:1280px!important;margin:40px auto!important;display:grid!important;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;gap:22px!important;padding:0 22px!important}
-.c{background:#000!important;border:1px solid rgba(255,140,66,0.25)!important;border-left:5px solid #FF8C42!important;border-radius:14px!important;padding:22px 18px!important;text-align:center!important}
-.b{background:#FF8C42!important;color:#000!important;padding:10px 20px!important;border-radius:25px!important;font-weight:900!important;display:inline-block!important;margin-top:10px!important;text-decoration:none!important}
-.globe-wrapper{position:relative;width:380px;height:380px;margin:0 auto 35px}
-.globe-real{width:100%;height:100%;border-radius:50%;background:#000!important;border:3.5px solid #FF8C42!important;overflow:hidden;box-shadow:0 0 80px rgba(255,140,66,0.9)!important}
-.globe-world-track{position:absolute;top:0;left:0;width:200%;height:100%;display:flex;animation:worldScroll 18s linear infinite}
-@keyframes worldScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.globe-world-map{width:50%;height:100%;position:relative}
-.continent{position:absolute;background:#FF8C42!important;box-shadow:0 0 8px rgba(255,140,66,0.6);opacity:0.85}
-.c-na1{width:22%;height:28%;top:18%;left:8%}.c-af{width:14%;height:28%;top:34%;left:46%}.c-as1{width:28%;height:20%;top:18%;left:58%}.c-au{width:12%;height:8%;top:68%;left:68%}
-.globe-inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58%;height:58%;background:#000!important;border:3px solid #FF8C42!important;border-radius:50%;display:grid;place-items:center;color:#FF8C42!important;font-weight:1000;box-shadow:0 0 45px rgba(255,140,66,1)!important;animation:counterRotate 18s linear infinite}
-@keyframes counterRotate{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(-360deg)}}
-.social-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0;padding:18px;background:#000!important;border:1.5px solid rgba(255,140,66,0.35)!important;border-radius:16px}
-.social-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-weight:1000;border:2px solid #FF8C42!important;background:#000!important;color:#FF8C42!important;text-decoration:none}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#050505;color:#fff;overflow-x:hidden}
+:root{--orange:#FF7A00;--black:#050505;--gray:#A0A0A0}
+.top-lang{background:#000;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;gap:10px;padding:8px}
+.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.3);color:#aaa;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer;letter-spacing:1px}
+.top-lang button.active{background:var(--orange);color:#000;border-color:var(--orange)}
+.header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,122,0,0.2);position:sticky;top:0;z-index:100}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-circle{width:48px;height:48px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:10px;text-align:center;line-height:0.9;box-shadow:0 0 20px rgba(255,122,0,0.5)}
+.logo-text{color:var(--orange);font-weight:900;font-size:18px;letter-spacing:0.5px}
+.btn-contact{background:var(--orange);color:#000;padding:10px 22px;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px}
+.social-bar{background:#0a0a0a;border-bottom:1px solid rgba(255,122,0,0.15);display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 10px}
+.social-item{width:38px;height:38px;border:1.5px solid rgba(255,122,0,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:14px;font-weight:800;text-decoration:none;transition:0.3s;background:rgba(255,122,0,0.05)}
+.social-item:hover{background:var(--orange);color:#000;box-shadow:0 0 15px var(--orange);transform:translateY(-2px)}
+.hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px;position:relative;overflow:hidden}
+.badge{display:inline-block;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--orange);padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:18px}
+.hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:var(--orange);line-height:0.9;text-shadow:0 0 40px rgba(255,122,0,0.4);margin-bottom:16px}
+.hero-desc{color:#ddd;max-width:720px;margin:0 auto 20px;font-size:clamp(14px,2.5vw,18px);line-height:1.5}
+.globe-wrap{position:relative;width:520px;height:520px;margin:20px auto;max-width:90vw}
+#globeCanvas{width:100%;height:100%;display:block;border-radius:50%}
+.globe-glow{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle, rgba(255,122,0,0.25) 0%, transparent 70%);pointer-events:none;z-index:-1}
+.circle-text{position:absolute;top:-30px;left:-30px;width:580px;height:580px;max-width:108%;max-height:108%;pointer-events:none;animation:rotateText 20s linear infinite}
+@keyframes rotateText{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.globe-info{margin-top:10px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.info-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:6px 14px;border-radius:20px;font-size:11px;color:#aaa;letter-spacing:1px}
+.info-pill.orange{border-color:var(--orange);color:var(--orange);background:rgba(255,122,0,0.1)}
+.services{padding:50px 20px;max-width:1300px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head h2{font-size:32px;color:#fff;margin-bottom:8px}
+.section-head p{color:var(--gray)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-left:3px solid var(--orange);border-radius:16px;padding:22px;transition:0.3s}
+.card:hover{transform:translateY(-4px);border-left-color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.card h3{color:#fff;font-size:18px;margin-bottom:6px}
+.card.meta{color:var(--orange);font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:10px}
+.card p{color:#aaa;font-size:14px;line-height:1.5;margin-bottom:14px}
+.card a{display:inline-block;background:var(--orange);color:#000;padding:9px 18px;border-radius:20px;font-weight:800;font-size:13px;text-decoration:none}
+footer{text-align:center;padding:30px;color:#666;border-top:1px solid rgba(255,255,255,0.05);margin-top:30px}
+@media(max-width:600px){.globe-wrap{width:340px;height:340px}.circle-text{width:400px;height:400px;top:-30px;left:-30px}.logo-text{font-size:14px}}
 </style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
 </head>
 <body>
-<div class="h">
-<a href="index.html" style="display:flex;align-items:center;gap:14px;color:#FF8C42;text-decoration:none;font-weight:900">
+<div class="top-lang">
+<button class="active" data-lang="en" onclick="setLang('en')">ENG</button>
+<button data-lang="fr" onclick="setLang('fr')">FRA</button>
+<button data-lang="ht" onclick="setLang('ht')">KREYÒL</button>
+</div>
+<header class="header">
 <div class="logo-wrap">
-<svg class="logo-svg" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
-<circle cx="34" cy="34" r="30" fill="#000000" stroke="#FF8C42" stroke-width="2.5"/>
-<text x="34" y="28" text-anchor="middle" fill="#FF8C42" font-weight="900" font-size="16">MAX</text>
-<text x="34" y="38" text-anchor="middle" fill="#FF8C42" font-weight="800" font-size="7">MULTI</text>
-<text x="34" y="46" text-anchor="middle" fill="#FF8C42" font-weight="700" font-size="5.5">SERVICES</text>
+<div class="logo-circle">MAX<br>MULTI<br>SERVICES</div>
+<div class="logo-text">MAXIMAX MULTI SERVICES</div>
+</div>
+<a href="#contact" class="btn-contact">CONTACT</a>
+</header>
+<div class="social-bar">
+<a href="#" class="social-item" title="Facebook">f</a>
+<a href="#" class="social-item" title="WhatsApp">W</a>
+<a href="#" class="social-item" title="YouTube">▶</a>
+<a href="#" class="social-item" title="True Social">T</a>
+<a href="#" class="social-item" title="X/Twitter">X</a>
+<a href="#" class="social-item" title="Spotify">♫</a>
+<a href="#" class="social-item" title="Telegram">✈</a>
+<a href="#" class="social-item" title="TikTok">♪</a>
+<a href="#" class="social-item" title="Instagram">◎</a>
+</div>
+<section class="hero">
+<div class="badge">• REAL GLOBE • REAL CONTINENTS • NO PLACEHOLDERS</div>
+<h1 class="hero-title">MAXIMAX<br>MULTI<br>SERVICES</h1>
+<p class="hero-desc" id="heroDesc">Professional government, business formation and federal registration services. Trusted across the USA with real coverage — not a black ball.</p>
+<div class="globe-wrap">
+<div class="globe-glow"></div>
+<svg class="circle-text" viewBox="0 0 580 580">
+<defs><path id="circlePath" d="M 290,290 m -250,0 a 250,250 0 1,1 500,0 a 250,250 0 1,1 -500,0"/></defs>
+<text fill="#FF7A00" font-size="18" font-weight="900" letter-spacing="3"><textPath href="#circlePath">MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • MAXIMAX MULTI SERVICES • </textPath></text>
 </svg>
+<canvas id="globeCanvas"></canvas>
 </div>
-<span>MAXIMAX MULTI SERVICES</span>
-</a>
+<div class="globe-info">
+<span class="info-pill">● LIVE 3D • AUTO-ROTATING • HIGH-DEFINITION EARTH</span>
+<span class="info-pill">USA MARKERS</span>
+<span class="info-pill orange">TAMPA HQ • 6 CITIES</span>
 </div>
-<div style="text-align:center;padding:35px 20px">
-<h1 style="color:#FF8C42;font-size:3rem;font-weight:900">MAXIMAX MULTI SERVICES</h1>
-<div class="globe-wrapper" style="margin:40px auto">
-<div class="globe-real">
-<div class="globe-world-track">
-<div class="globe-world-map"><div class="continent c-na1"></div><div class="continent c-af"></div><div class="continent c-as1"></div><div class="continent c-au"></div></div>
-<div class="globe-world-map"><div class="continent c-na1"></div><div class="continent c-af"></div><div class="continent c-as1"></div><div class="continent c-au"></div></div>
+</section>
+<section class="services" id="services">
+<div class="section-head">
+<h2 id="servTitle">Our 11 Professional Services</h2>
+<p id="servSub">Trusted by 10,000+ clients worldwide</p>
 </div>
-</div>
-<div class="globe-inner"><span>MAXIMAX<br>MULTI<br>SERVICES</span></div>
-</div>
-<div style="color:#FF8C42;font-weight:900;margin-top:20px">🌎 VRAI GLOBE AK KONTINAN - PA YON BOUL NWA! 🌎</div>
-</div>
-<div class="g">
-<div class="c"><h3>Gov Services</h3><a href="gov_services.html" class="b">Gade Sèvis</a></div>
-<div class="c"><h3>Business LLC</h3><a href="business.html" class="b">⭐ Gade Sèvis</a></div>
-<div class="c"><h3>⭐ Federal Register</h3><a href="federal_register.html" class="b">Gade Sèvis</a></div>
-</div>
+<div class="grid" id="grid"></div>
+</section>
+<footer>© 2026 MAXIMAX MULTI SERVICES - Tampa, FL • All Rights Reserved</footer>
+<script type="module">
+import * as THREE from 'three';
+const canvas = document.getElementById('globeCanvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+camera.position.z = 2.8;
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.setPixelRatio(window.devicePixelRatio);
+function resize(){ const w=canvas.clientWidth, h=canvas.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+window.addEventListener('resize', resize); resize();
+const loader = new THREE.TextureLoader();
+const earthTex = loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+const earth = new THREE.Mesh(new THREE.SphereGeometry(1,64,64), new THREE.MeshPhongMaterial({map: earthTex, shininess: 200}));
+scene.add(earth);
+const atmo = new THREE.Mesh(new THREE.SphereGeometry(1.08,64,64), new THREE.MeshBasicMaterial({color:0xFF7A00, transparent:true, opacity:0.08, side:THREE.BackSide}));
+scene.add(atmo);
+const light = new THREE.DirectionalLight(0xffffff,1.2); light.position.set(2,1,2); scene.add(light);
+scene.add(new THREE.AmbientLight(0xffffff,0.6));
+let dragging=false, lastX=0, rotY=0;
+canvas.addEventListener('pointerdown', e=>{dragging=true; lastX=e.clientX;});
+window.addEventListener('pointerup', ()=>dragging=false);
+window.addEventListener('pointermove', e=>{ if(dragging){ rotY+=(e.clientX-lastX)*0.01; lastX=e.clientX; }});
+function animate(){ requestAnimationFrame(animate); if(!dragging) rotY+=0.003; earth.rotation.y=rotY; earth.rotation.x=0.15; renderer.render(scene,camera); }
+animate();
+</script>
+<script>
+const translations = {
+ en:{desc:"Professional government, business formation and federal registration services. Trusted across the USA with real coverage — not a black ball.", title:"Our 11 Professional Services", sub:"Trusted by 10,000+ clients worldwide",
+  services:[
+   ["Government Services","OFFICIAL • CERTIFIED • FAST","Passport, tax filing, licenses, certificates & all government documentation with expert assistance."],
+   ["Business LLC & Corp","STARTUP • GROWTH • COMPLIANCE","LLC registration, GST, business setup, branding & complete corporate legal solutions."],
+   ["Federal Registration","SAM.GOV • UEI • CAGE","SAM.gov registration, UEI, CAGE code, federal contractor setup across USA."],
+   ["Tax, EIN & ITIN","IRS • FAST • SECURE","EIN, ITIN, tax filing, IRS compliance for individuals and businesses."],
+   ["Immigration & Passport","VISA • GREEN CARD • CITIZEN","Immigration filing, passport renewal, visa assistance, green card support."],
+   ["Notary & Translation","CERTIFIED • 24/7","Notary public, apostille, certified translation ENG/FRA/KREYOL."],
+   ["Licenses & Permits","STATE • FEDERAL","Business licenses, permits, compliance for all 50 states."],
+   ["Trademark & Copyright","PROTECTED • LEGAL","Trademark registration, copyright, brand protection."],
+   ["Website & Marketing","DIGITAL • GROWTH","Website design, SEO, social media, Google Business setup."],
+   ["Insurance & Compliance","SECURE • COMPLIANT","Business insurance, compliance, annual reports, BOI filing."],
+   ["State & Federal Filings","ALL STATES • FAST","Annual reports, amendments, reinstatements, state filings."]
+  ]},
+ fr:{desc:"Services professionnels gouvernementaux, création d'entreprise et enregistrement fédéral. Fiable à travers les USA avec une vraie couverture.", title:"Nos 11 Services Professionnels", sub:"Fait confiance par 10 000+ clients",
+  services:[
+   ["Services Gouvernementaux","OFFICIEL • CERTIFIÉ • RAPIDE","Passeport, impôts, licences, certificats et toute documentation gouvernementale."],
+   ["Création LLC & Entreprise","STARTUP • CROISSANCE","Enregistrement LLC, création d'entreprise, branding et solutions juridiques."],
+   ["Enregistrement Fédéral","SAM.GOV • UEI • CAGE","Inscription SAM.gov, UEI, code CAGE, entrepreneur fédéral."],
+   ["Impôts, EIN & ITIN","IRS • RAPIDE • SÉCURISÉ","EIN, ITIN, déclaration d'impôts, conformité IRS."],
+   ["Immigration & Passeport","VISA • CARTE VERTE","Dépôt immigration, renouvellement passeport, assistance visa."],
+   ["Notaire & Traduction","CERTIFIÉ • 24/7","Notaire public, apostille, traduction certifiée ENG/FRA/KREYOL."],
+   ["Licences & Permis","ÉTAT • FÉDÉRAL","Licences commerciales, permis, conformité pour les 50 États."],
+   ["Marque & Copyright","PROTÉGÉ • LÉGAL","Enregistrement de marque, droit d'auteur, protection de marque."],
+   ["Site Web & Marketing","NUMÉRIQUE • CROISSANCE","Conception web, SEO, réseaux sociaux, Google Business."],
+   ["Assurance & Conformité","SÉCURISÉ • CONFORME","Assurance entreprise, conformité, rapports annuels."],
+   ["Dépôts État & Fédéral","TOUS ÉTATS • RAPIDE","Rapports annuels, modifications, rétablissements."]
+  ]},
+ ht:{desc:"Sèvis pwofesyonèl gouvènman, kreyasyon biznis ak anrejistreman federal. Yo fè nou konfyans toupatou nan USA ak vrè kouvèti — pa yon boul nwa.", title:"11 Sèvis Pwofesyonèl Nou Yo", sub:"10,000+ kliyan fè nou konfyans",
+  services:[
+   ["Sèvis Gouvènman","OFISYÈL • SÈTIFYE • RAPID","Paspò, taks, lisans, sètifika ak tout dokiman gouvènman ak asistans ekspè."],
+   ["Biznis LLC & Corp","STARTUP • KWASANS","Anrejistreman LLC, kreyasyon biznis, branding ak solisyon legal konplè."],
+   ["Anrejistreman Federal","SAM.GOV • UEI • CAGE","Anrejistreman SAM.gov, UEI, kòd CAGE, kontraktè federal."],
+   ["Taks, EIN & ITIN","IRS • RAPID • SEKIRIZE","EIN, ITIN, deklarasyon taks, konfòmite IRS."],
+   ["Imigrasyon & Paspò","VISA • GREEN CARD","Depo imigrasyon, renouvèlman paspò, asistans viza."],
+   ["Notè & Tradiksyon","SÈTIFYE • 24/7","Notè piblik, apostil, tradiksyon sètifye ENG/FRA/KREYÒL."],
+   ["Lisans & Pèmi","ETA • FEDERAL","Lisans biznis, pèmi, konfòmite pou tout 50 eta."],
+   ["Mak & Copyright","PWOTEJE • LEGAL","Anrejistreman mak, copyright, pwoteksyon mak."],
+   ["Sit Wèb & Maketing","DIJITAL • KWASANS","Konsepsyon sit wèb, SEO, rezo sosyal, Google Biznis."],
+   ["Asirans & Konfòmite","SEKIRIZE • KONFÒM","Asirans biznis, konfòmite, rapò anyèl."],
+   ["Depo Eta & Federal","TOUT ETA • RAPID","Rapò anyèl, amandman, retablisman, depo eta."]
+  ]}
+};
+function renderServices(lang){
+ const t=translations[lang];
+ document.getElementById('heroDesc').textContent=t.desc;
+ document.getElementById('servTitle').textContent=t.title;
+ document.getElementById('servSub').textContent=t.sub;
+ const grid=document.getElementById('grid'); grid.innerHTML='';
+ t.services.forEach(s=>{
+  const div=document.createElement('div'); div.className='card';
+  div.innerHTML=`<h3>${s[0]}</h3><div class="meta">${s[1]}</div><p>${s[2]}</p><a href="#">View Services →</a>`;
+  grid.appendChild(div);
+ });
+}
+function setLang(lang){
+ document.querySelectorAll('.top-lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+ renderServices(lang);
+}
+renderServices('en');
+</script>
 </body>
 </html>
