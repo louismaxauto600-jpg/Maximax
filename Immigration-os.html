@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Immigration OS | Maximax Multi Services</title>
+
+<meta name="description"
+content="Immigration OS - Maximax Multi Services digital immigration service center.">
+
+<style>
+:root{
+  --orange:#ff7a00;
+  --orange2:#ff9d3d;
+  --black:#000000;
+  --black2:#0b0500;
+  --border:rgba(255,122,0,.40);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--orange2);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255,122,0,.20),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #000000,
+      #130600,
+      #000000
+    );
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1200px,calc(100% - 30px));
+  margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  border-bottom:1px solid var(--border);
+
+  background:rgba(0,0,0,.94);
+  backdrop-filter:blur(15px);
+}
+
+.header-inner{
+  min-height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.brand{
+  color:var(--orange);
+  font-weight:900;
+}
+
+.brand strong{
+  display:block;
+  font-size:20px;
+}
+
+.brand span{
+  display:block;
+  margin-top:4px;
+
+  color:var(--orange2);
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+.home-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:12px 18px;
+
+  border:2px solid var(--orange);
+  border-radius:12px;
+
+  color:#000;
+  background:var(--orange);
+
+  font-size:13px;
+  font-weight:900;
+
+  transition:.3s;
+}
+
+.home-btn:hover{
+  color:var(--orange);
+  background:#000;
+
+  box-shadow:
+    0 0 25px rgba(255,122,0,.30);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:100px 0 80px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+
+  padding:9px 18px;
+
+  border:1px solid var(--orange);
+  border-radius:50px;
+
+  color:var(--orange);
+  background:rgba(255,122,0,.08);
+
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  margin-top:25px;
+
+  color:var(--orange);
+
+  font-size:clamp(45px,9vw,85px);
+  line-height:.95;
+
+  text-transform:uppercase;
+}
+
+.hero h1 span{
+  display:block;
+
+  margin-top:14px;
+
+  color:var(--orange2);
+
+  font-size:.38em;
+  letter-spacing:3px;
+}
+
+.hero p{
+  max-width:800px;
+
+  margin:28px auto 0;
+
+  font-size:17px;
+  line-height:1.8;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+
+  gap:15px;
+
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:52px;
+
+  padding:14px 23px;
+
+  border:2px solid var(--orange);
+  border-radius:12px;
+
+  font-size:13px;
+  font-weight:900;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.btn-primary{
+  color:#000;
+  background:var(--orange);
+}
+
+.btn-secondary{
+  color:var(--orange);
+  background:#000;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(255,122,0,.20);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+  padding:80px 0;
+}
+
+.section-head{
+  max-width:780px;
+
+  margin:0 auto 45px;
+
+  text-align:center;
+}
+
+.section-head span{
+  color:var(--orange);
+
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.section-head h2{
+  margin-top:12px;
+
+  color:var(--orange);
+
+  font-size:clamp(30px,5vw,48px);
+
+  text-transform:uppercase;
+}
+
+.section-head p{
+  margin-top:15px;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   MODULES
+========================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:22px;
+}
+
+.card{
+  min-height:255px;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:27px;
+
+  border:1px solid var(--border);
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,122,0,.10),
+      #000 65%
+    );
+
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+
+  border-color:var(--orange);
+
+  box-shadow:
+    0 20px 45px rgba(255,122,0,.12);
+}
+
+.icon{
+  width:50px;
+  height:50px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:14px;
+
+  color:#000;
+  background:var(--orange);
+
+  font-size:19px;
+  font-weight:900;
+}
+
+.card h3{
+  margin-top:20px;
+
+  color:var(--orange);
+
+  font-size:19px;
+
+  text-transform:uppercase;
+}
+
+.card p{
+  flex:1;
+
+  margin-top:12px;
+
+  font-size:14px;
+  line-height:1.7;
+}
+
+.card a{
+  margin-top:20px;
+
+  color:var(--orange);
+
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+
+/* =========================
+   CASE CHECK
+========================= */
+
+.case-center{
+  padding:35px;
+
+  border:1px solid var(--orange);
+  border-radius:25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,122,0,.12),
+      #000
+    );
+}
+
+.case-center h2{
+  color:var(--orange);
+
+  font-size:30px;
+}
+
+.case-center p{
+  margin-top:12px;
+
+  line-height:1.7;
+}
+
+.case-form{
+  display:grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:12px;
+
+  margin-top:25px;
+}
+
+.case-form input{
+  width:100%;
+
+  min-height:52px;
+
+  padding:14px 16px;
+
+  border:1px solid var(--border);
+  border-radius:12px;
+
+  outline:none;
+
+  color:var(--orange2);
+  background:#000;
+}
+
+.case-form input:focus{
+  border-color:var(--orange);
+
+  box-shadow:
+    0 0 0 4px rgba(255,122,0,.08);
+}
+
+.case-result{
+  display:none;
+
+  margin-top:20px;
+
+  padding:17px;
+
+  border:1px solid var(--border);
+  border-radius:12px;
+
+  color:var(--orange);
+
+  background:#000;
+
+  line-height:1.6;
+}
+
+
+/* =========================
+   INTAKE FORM
+========================= */
+
+.intake{
+  padding:40px;
+
+  border:1px solid var(--border);
+  border-radius:25px;
+
+  background:#050200;
+}
+
+.form-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+  gap:18px;
+}
+
+.field{
+  display:grid;
+  gap:8px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:var(--orange);
+
+  font-size:12px;
+  font-weight:900;
+
+  text-transform:uppercase;
+}
+
+.control{
+  width:100%;
+
+  min-height:50px;
+
+  padding:13px 15px;
+
+  border:1px solid var(--border);
+  border-radius:11px;
+
+  outline:none;
+
+  color:var(--orange2);
+  background:#000;
+}
+
+.control:focus{
+  border-color:var(--orange);
+
+  box-shadow:
+    0 0 0 4px rgba(255,122,0,.08);
+}
+
+textarea.control{
+  min-height:140px;
+  resize:vertical;
+}
+
+.form-message{
+  display:none;
+
+  margin-top:20px;
+
+  padding:16px;
+
+  border:1px solid var(--orange);
+  border-radius:12px;
+
+  color:var(--orange);
+
+  background:rgba(255,122,0,.07);
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.notice{
+  padding:30px;
+
+  border:1px solid var(--orange);
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,122,0,.10),
+      #000
+    );
+}
+
+.notice h2{
+  color:var(--orange);
+}
+
+.notice p{
+  margin-top:12px;
+
+  font-size:14px;
+  line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  margin-top:50px;
+
+  padding:40px 15px;
+
+  border-top:1px solid var(--border);
+
+  text-align:center;
+
+  background:#000;
+}
+
+footer strong{
+  color:var(--orange);
+}
+
+footer p{
+  margin-top:8px;
+
+  font-size:12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:650px){
+
+  .header-inner{
+    min-height:72px;
+  }
+
+  .brand strong{
+    font-size:15px;
+  }
+
+  .brand span{
+    display:none;
+  }
+
+  .home-btn{
+    padding:10px 12px;
+    font-size:11px;
+  }
+
+  .hero{
+    padding:75px 0 55px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .case-form{
+    grid-template-columns:1fr;
+  }
+
+  .intake{
+    padding:25px 18px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand">
+
+      <strong>
+        MAXIMAX MULTI SERVICES
+      </strong>
+
+      <span>
+        IMMIGRATION SERVICES CENTER
+      </span>
+
+    </a>
+
+
+    <!--
+      Si homepage la nan menm folder ak
+      immigration-os.html,
+      chanje ../index.html pou ./index.html
+    -->
+
+    <a href="../index.html" class="home-btn">
+      ← HOMEPAGE
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="badge">
+      MAXIMAX MULTI SERVICES
+    </span>
+
+    <h1>
+      IMMIGRATION
+      <span>OPERATING SYSTEM</span>
+    </h1>
+
+    <p>
+      Yon sant dijital ki rasanble sèvis,
+      enfòmasyon, dokiman, resous ak zouti
+      pou ede kliyan yo òganize bezwen
+      imigrasyon yo nan yon sèl espas.
+    </p>
+
+
+    <div class="hero-buttons">
+
+      <a href="#services"
+         class="btn btn-primary">
+        OPEN SERVICE CENTER
+      </a>
+
+      <a href="#intake"
+         class="btn btn-secondary">
+        START CLIENT INTAKE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     IMMIGRATION MODULES
+===================================== -->
+
+<section class="section" id="services">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span>
+        IMMIGRATION OS
+      </span>
+
+      <h2>
+        Immigration Service Center
+      </h2>
+
+      <p>
+        Chwazi sèvis oswa zouti ou bezwen an.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <!-- 01 -->
+
+      <article class="card">
+
+        <div class="icon">
+          01
+        </div>
+
+        <h3>
+          Client Intake
+        </h3>
+
+        <p>
+          Kòmanse yon nouvo dosye epi
+          kolekte enfòmasyon debaz kliyan an.
+        </p>
+
+        <a href="#intake">
+          START INTAKE →
+        </a>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="card">
+
+        <div class="icon">
+          02
+        </div>
+
+        <h3>
+          Case Management
+        </h3>
+
+        <p>
+          Òganize dosye kliyan,
+          etap pwosesis, nòt ak mizajou.
+        </p>
+
+        <a href="#case-status">
+          OPEN CASE CENTER →
+        </a>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="card">
+
+        <div class="icon">
+          03
+        </div>
+
+        <h3>
+          Document Center
+        </h3>
+
+        <p>
+          Òganize lis dokiman,
+          lèt, deklarasyon ak lòt
+          dokiman administratif.
+        </p>
+
+        <a href="document-center.html">
+          OPEN DOCUMENT CENTER →
+        </a>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="card">
+
+        <div class="icon">
+          04
+        </div>
+
+        <h3>
+          USCIS Resources
+        </h3>
+
+        <p>
+          Aksè rapid ak resous piblik
+          ak enfòmasyon ofisyèl USCIS.
+        </p>
+
+        <a
+          href="https://www.uscis.gov/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OPEN USCIS →
+        </a>
+
+      </article>
+
+
+      <!-- 05 -->
+
+      <article class="card">
+
+        <div class="icon">
+          05
+        </div>
+
+        <h3>
+          Case Status
+        </h3>
+
+        <p>
+          Ale sou zouti ofisyèl USCIS
+          pou verifye estati yon dosye
+          ak receipt number.
+        </p>
+
+        <a
+          href="https://egov.uscis.gov/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CHECK STATUS →
+        </a>
+
+      </article>
+
+
+      <!-- 06 -->
+
+      <article class="card">
+
+        <div class="icon">
+          06
+        </div>
+
+        <h3>
+          Immigration Forms
+        </h3>
+
+        <p>
+          Jwenn fòm imigrasyon piblik
+          ak enstriksyon ofisyèl.
+        </p>
+
+        <a
+          href="https://www.uscis.gov/forms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VIEW FORMS →
+        </a>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="card">
+
+        <div class="icon">
+          07
+        </div>
+
+        <h3>
+          Appointment Center
+        </h3>
+
+        <p>
+          Jere demann randevou
+          ak konsiltasyon kliyan yo.
+        </p>
+
+        <a href="appointments.html">
+          OPEN APPOINTMENTS →
+        </a>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="card">
+
+        <div class="icon">
+          08
+        </div>
+
+        <h3>
+          Translation Center
+        </h3>
+
+        <p>
+          Sèvis tradiksyon pou
+          Kreyòl, Français ak English.
+        </p>
+
+        <a href="translation-services.html">
+          OPEN TRANSLATION →
+        </a>
+
+      </article>
+
+
+      <!-- 09 -->
+
+      <article class="card">
+
+        <div class="icon">
+          09
+        </div>
+
+        <h3>
+          E-Verify Center
+        </h3>
+
+        <p>
+          Resous sou employment
+          eligibility verification
+          ak sistèm E-Verify.
+        </p>
+
+        <a href="e-verify.html">
+          OPEN E-VERIFY →
+        </a>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article class="card">
+
+        <div class="icon">
+          10
+        </div>
+
+        <h3>
+          Client Portal
+        </h3>
+
+        <p>
+          Espas kliyan pou mesaj,
+          dokiman, randevou ak
+          mizajou sou sèvis.
+        </p>
+
+        <a href="client-portal.html">
+          OPEN CLIENT PORTAL →
+        </a>
+
+      </article>
+
+
+      <!-- 11 -->
+
+      <article class="card">
+
+        <div class="icon">
+          11
+        </div>
+
+        <h3>
+          Document Checklist
+        </h3>
+
+        <p>
+          Prepare lis dokiman
+          kliyan bezwen selon
+          sèvis li mande a.
+        </p>
+
+        <a href="forms-resources.html">
+          VIEW CHECKLIST →
+        </a>
+
+      </article>
+
+
+      <!-- 12 -->
+
+      <article class="card">
+
+        <div class="icon">
+          12
+        </div>
+
+        <h3>
+          Immigration News
+        </h3>
+
+        <p>
+          Sant enfòmasyon pou
+          mizajou ak nouvèl piblik
+          ki gen rapò ak imigrasyon.
+        </p>
+
+        <a href="immigration-news.html">
+          OPEN NEWS CENTER →
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     INTERNAL CASE REFERENCE LOOKUP
+===================================== -->
+
+<section class="section" id="case-status">
+
+  <div class="container">
+
+    <div class="case-center">
+
+      <h2>
+        MAXIMAX CASE TRACKER
+      </h2>
+
+      <p>
+        Antre nimewo referans Maximax kliyan an
+        pou jwenn aksè ak sistèm suivi entèn la.
+      </p>
+
+
+      <form
+        class="case-form"
+        id="caseForm"
+      >
+
+        <input
+          type="text"
+          id="caseNumber"
+          placeholder="Egzanp: MMS-2026-0001"
+          required
+        >
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          CHECK CASE
+        </button>
+
+      </form>
+
+
+      <div
+        class="case-result"
+        id="caseResult"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     CLIENT INTAKE
+===================================== -->
+
+<section class="section" id="intake">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span>
+        NEW CLIENT
+      </span>
+
+      <h2>
+        Immigration Intake
+      </h2>
+
+      <p>
+        Antre enfòmasyon preliminè kliyan an.
+      </p>
+
+    </div>
+
+
+    <form
+      class="intake"
+      id="intakeForm"
+    >
+
+      <div class="form-grid">
+
+
+        <div class="field">
+
+          <label for="firstName">
+            First Name
+          </label>
+
+          <input
+            type="text"
+            id="firstName"
+            class="control"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="lastName">
+            Last Name
+          </label>
+
+          <input
+            type="text"
+            id="lastName"
+            class="control"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            class="control"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="phone">
+            Phone
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            class="control"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="language">
+            Preferred Language
+          </label>
+
+          <select
+            id="language"
+            class="control"
+          >
+
+            <option value="ht">
+              Kreyòl
+            </option>
+
+            <option value="fr">
+              Français
+            </option>
+
+            <option value="en">
+              English
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="serviceType">
+            Service Requested
+          </label>
+
+          <select
+            id="serviceType"
+            class="control"
+            required
+          >
+
+            <option value="">
+              Select Service
+            </option>
+
+            <option>
+              Immigration Information
+            </option>
+
+            <option>
+              Document Preparation
+            </option>
+
+            <option>
+              Translation
+            </option>
+
+            <option>
+              Case Organization
+            </option>
+
+            <option>
+              Appointment
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label for="notes">
+            Client Notes
+          </label>
+
+          <textarea
+            id="notes"
+            class="control"
+            placeholder="Eksplike sèvis kliyan an bezwen..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+          >
+            CREATE INTAKE
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+      <div
+        class="form-message"
+        id="intakeMessage"
+      ></div>
+
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     DISCLAIMER
+===================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="notice">
+
+      <h2>
+        IMPORTANT IMMIGRATION NOTICE
+      </h2>
+
+      <p>
+        Maximax Multi Services bay sèvis
+        administratif ak enfòmasyon jeneral.
+        Enfòmasyon ki sou platfòm sa a pa
+        ranplase konsèy legal yon avoka ki
+        gen lisans. Pou yon dosye ki mande
+        konsèy legal oswa reprezantasyon
+        legal, kliyan an dwe konsilte yon
+        pwofesyonèl legal kalifye.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+  <strong>
+    MAXIMAX MULTI SERVICES
+  </strong>
+
+  <p>
+    IMMIGRATION OS
+  </p>
+
+  <p>
+    © <span id="year"></span>
+    Maximax Multi Services
+  </p>
+
+</footer>
+
+
+<script>
+
+"use strict";
+
+
+/* =====================================
+   YEAR
+===================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+/* =====================================
+   INTERNAL MAXIMAX CASE TRACKER
+===================================== */
+
+const caseForm =
+  document.getElementById("caseForm");
+
+const caseResult =
+  document.getElementById("caseResult");
+
+
+caseForm.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+    const number =
+      document
+      .getElementById("caseNumber")
+      .value
+      .trim();
+
+    if(!number){
+      return;
+    }
+
+    caseResult.style.display = "block";
+
+    caseResult.innerHTML =
+      "<strong>REFERENCE:</strong> " +
+      escapeHTML(number) +
+      "<br><br>" +
+      "Case Tracker la pare pou konekte " +
+      "ak bazdone Maximax la.";
+
+  }
+);
+
+
+/* =====================================
+   CLIENT INTAKE
+===================================== */
+
+const intakeForm =
+  document.getElementById("intakeForm");
+
+const intakeMessage =
+  document.getElementById("intakeMessage");
+
+
+intakeForm.addEventListener(
+  "submit",
+  function(event){
+
+    event.preventDefault();
+
+    if(!intakeForm.checkValidity()){
+
+      intakeForm.reportValidity();
+
+      return;
+
+    }
+
+    const reference =
+      createReferenceNumber();
+
+    intakeMessage.style.display = "block";
+
+    intakeMessage.innerHTML =
+      "<strong>INTAKE CREATED</strong>" +
+      "<br><br>" +
+      "MAXIMAX REFERENCE: " +
+      reference +
+      "<br><br>" +
+      "Fòm nan pare pou konekte " +
+      "ak Firebase Maximax la.";
+
+    intakeForm.reset();
+
+  }
+);
+
+
+/* =====================================
+   CREATE REFERENCE NUMBER
+===================================== */
+
+function createReferenceNumber(){
+
+  const year =
+    new Date().getFullYear();
+
+  const random =
+    Math.floor(
+      100000 +
+      Math.random() * 900000
+    );
+
+  return "MMS-" +
+    year +
+    "-" +
+    random;
+
+}
+
+
+/* =====================================
+   BASIC HTML PROTECTION
+===================================== */
+
+function escapeHTML(value){
+
+  const div =
+    document.createElement("div");
+
+  div.textContent = value;
+
+  return div.innerHTML;
+
+}
+
+</script>
+
+
+</body>
+</html>
