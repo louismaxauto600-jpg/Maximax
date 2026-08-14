@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#050505;color:#fff;overflow-x:hidden}
-:root{--orange:#FF7A00;--black:#050505}
+body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.15) 0%, transparent 60%), linear-gradient(180deg, #0a0500 0%, #000000 50%, #050505 100%);color:#ffae45;overflow-x:hidden}
+:root{--orange:#FF7A00}
 .top-lang{background:#000;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;gap:10px;padding:8px}
-.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.3);color:#aaa;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer}
+.top-lang button{background:transparent;border:1px solid rgba(255,122,0,0.3);color:#ffae45;padding:5px 14px;border-radius:20px;font-weight:800;font-size:12px;cursor:pointer}
 .top-lang button.active{background:var(--orange);color:#000;border-color:var(--orange)}
 .header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(0,0,0,0.9);border-bottom:1px solid rgba(255,122,0,0.2);position:sticky;top:0;z-index:100}
 .logo-wrap{display:flex;align-items:center;gap:12px}
 .logo-text{color:var(--orange);font-weight:900;font-size:18px}
 .btn-contact{background:var(--orange);color:#000;padding:10px 22px;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px}
+.social-bar{background:#0a0500;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:14px 10px}
+.social-item{width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08);transition:0.3s}
+.social-item:hover{background:#FF7A00;color:#000;box-shadow:0 0 15px #FF7A00;transform:translateY(-2px)}
 .hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px}
 .badge{display:inline-block;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--orange);padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:18px}
 .hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:var(--orange);line-height:0.9;text-shadow:0 0 40px rgba(255,122,0,0.4);margin-bottom:16px}
-.hero-desc{color:#ddd;max-width:720px;margin:0 auto 20px;font-size:clamp(14px,2.5vw,18px);line-height:1.5}
+.hero-desc{color:#ffae45;max-width:720px;margin:0 auto 20px;font-size:clamp(14px,2.5vw,18px);line-height:1.5}
 .globe-wrap{position:relative;width:520px;height:520px;margin:20px auto;max-width:90vw}
 #globeCanvas{width:100%;height:100%;display:block;border-radius:50%}
 .globe-glow{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle, rgba(255,122,0,0.25) 0%, transparent 70%);pointer-events:none;z-index:-1}
@@ -27,10 +29,9 @@ body{font-family:'Inter',sans-serif;background:#050505;color:#fff;overflow-x:hid
 @keyframes rotateText{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .services{padding:50px 20px;max-width:1300px;margin:0 auto}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-left:3px solid var(--orange);border-radius:16px;padding:22px}
-.card h3{color:#fff;font-size:18px;margin-bottom:6px}
-.card p{color:#aaa;font-size:14px;line-height:1.5;margin-bottom:14px}
-footer{text-align:center;padding:30px;color:#666;border-top:1px solid rgba(255,255,255,0.05);margin-top:30px}
+.card{background:linear-gradient(135deg, rgba(255,122,0,0.08), rgba(0,0,0,0.6));border:1px solid rgba(255,122,0,0.2);border-left:3px solid var(--orange);border-radius:16px;padding:22px}
+.card h3{color:#FF7A00;font-size:18px;margin-bottom:6px}
+.card p{color:#ffae45;font-size:14px;line-height:1.5;margin-bottom:14px}
 </style>
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
 </head>
@@ -45,10 +46,20 @@ footer{text-align:center;padding:30px;color:#666;border-top:1px solid rgba(255,2
 <img src="maximax-multi-services-logo.jpg" alt="MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE" style="width:58px;height:58px;border-radius:12px;object-fit:cover;border:2px solid #FF7A00;box-shadow:0 0 15px rgba(255,122,0,0.6)">
 <div class="logo-text">MAXIMAX MULTI SERVICES</div>
 </div>
-<a href="#contact" class="btn-contact">CONTACT</a>
+<a href="mailto:maximaxmultiservices@gmail.com" class="btn-contact">CONTACT</a>
 </header>
+<div class="social-bar" style="background:#0a0500;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:14px 10px">
+<a href="https://facebook.com/maximaxmultiservices" target="_blank" class="social-item" title="Facebook">f</a>
+<a href="https://wa.me/14076405166" target="_blank" class="social-item" title="WhatsApp">W</a>
+<a href="https://youtube.com/@maximaxmultiservices" target="_blank" class="social-item" title="YouTube">▶</a>
+<a href="https://tiktok.com/@maximaxmultiservices" target="_blank" class="social-item" title="TikTok">♪</a>
+<a href="https://truthsocial.com/@maximaxmultiservices" target="_blank" class="social-item" title="True Social">T</a>
+<a href="https://x.com/maximaxmultiservices" target="_blank" class="social-item" title="X/Twitter">𝕏</a>
+<a href="https://instagram.com/maximaxmultiservices" target="_blank" class="social-item" title="Instagram">◎</a>
+<a href="https://linkedin.com/company/maximaxmultiservices" target="_blank" class="social-item" title="LinkedIn">in</a>
+</div>
 <section class="hero">
-<div class="badge">• REAL GLOBE • REAL CONTINENTS • ALWAYS MAXIMIZE</div>
+<div class="badge">• REAL GLOBE • ALWAYS MAXIMIZE • ORLANDO FL 32811</div>
 <h1 class="hero-title">MAXIMAX<br>MULTI<br>SERVICES</h1>
 <p class="hero-desc" id="heroDesc">Professional government, business formation and federal registration services. Trusted across the USA with real coverage — not a black ball.</p>
 <div class="globe-wrap">
@@ -60,7 +71,15 @@ footer{text-align:center;padding:30px;color:#666;border-top:1px solid rgba(255,2
 <section class="services" id="services">
 <div class="grid" id="grid"></div>
 </section>
-<footer>© 2026 MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE - Orlando FL 32811 - Real Globe</footer>
+<footer style="text-align:center;padding:40px 20px;color:#ffae45;border-top:1px solid rgba(255,122,0,0.2);margin-top:30px;background:linear-gradient(180deg, transparent, rgba(255,122,0,0.05));">
+<div style="max-width:800px;margin:0 auto">
+<p style="color:#FF7A00;font-weight:900;font-size:18px;margin-bottom:12px">MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE</p>
+<p style="margin:8px 0"><span style="color:#FF7A00">🌐 Website:</span> <a href="https://maximaxmultiservices.com" style="color:#ffae45;text-decoration:none">maximaxmultiservices.com</a></p>
+<p style="margin:8px 0"><span style="color:#FF7A00">📧 Email:</span> <a href="mailto:maximaxmultiservices@gmail.com" style="color:#ffae45;text-decoration:none">maximaxmultiservices@gmail.com</a></p>
+<p style="margin:8px 0"><span style="color:#FF7A00">📞 Tel:</span> <a href="tel:+14076405166" style="color:#ffae45;text-decoration:none">(407) 640-5166</a> OR <a href="tel:+15162168494" style="color:#ffae45;text-decoration:none">(516) 216-8494</a></p>
+<p style="margin-top:20px;font-size:12px;opacity:0.7">© 2026 MAXIMAX MULTI SERVICES - Orlando FL 32811 - Real Globe 🌎</p>
+</div>
+</footer>
 <script type="module">
 import * as THREE from 'three';
 const canvas=document.getElementById('globeCanvas');
