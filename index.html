@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE</title>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.15) 0%, transparent 60%), linear-gradient(180deg, #0a0500 0%, #000000 50%, #050505 100%);color:#ffae45;overflow-x:hidden}
@@ -15,9 +16,6 @@ body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, 
 .logo-wrap{display:flex;align-items:center;gap:12px}
 .logo-text{color:var(--orange);font-weight:900;font-size:18px}
 .btn-contact{background:var(--orange);color:#000;padding:10px 22px;border-radius:30px;font-weight:900;text-decoration:none;font-size:13px}
-.social-bar{background:#0a0500;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:14px 10px}
-.social-item{width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08);transition:0.3s}
-.social-item:hover{background:#FF7A00;color:#000;box-shadow:0 0 15px #FF7A00;transform:translateY(-2px)}
 .hero{background:radial-gradient(ellipse at 50% 0%, rgba(255,122,0,0.25) 0%, transparent 60%), linear-gradient(180deg, #120800 0%, #050505 100%);text-align:center;padding:30px 20px 40px}
 .badge{display:inline-block;background:rgba(255,122,0,0.12);border:1px solid rgba(255,122,0,0.3);color:var(--orange);padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:1.5px;font-weight:800;margin-bottom:18px}
 .hero-title{font-size:clamp(36px,9vw,72px);font-weight:900;color:var(--orange);line-height:0.9;text-shadow:0 0 40px rgba(255,122,0,0.4);margin-bottom:16px}
@@ -29,11 +27,19 @@ body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, 
 @keyframes rotateText{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .services{padding:50px 20px;max-width:1300px;margin:0 auto}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:linear-gradient(135deg, rgba(255,122,0,0.08), rgba(0,0,0,0.6));border:1px solid rgba(255,122,0,0.2);border-left:3px solid var(--orange);border-radius:16px;padding:22px}
+.card{background:linear-gradient(135deg, rgba(255,122,0,0.08), rgba(0,0,0,0.6));border:1px solid rgba(255,122,0,0.2);border-left:3px solid var(--orange);border-radius:16px;padding:22px;transition:0.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,122,0,0.15)}
 .card h3{color:#FF7A00;font-size:18px;margin-bottom:6px}
 .card p{color:#ffae45;font-size:14px;line-height:1.5;margin-bottom:14px}
+/* MODAL SELMAN - PA CHANJE HOMEPAGE */
+.module-overlay{position:fixed;inset:0;z-index:4000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px)}
+.module-overlay.open{display:flex}
+.module-box{position:relative;width:min(650px,100%);max-height:85vh;overflow-y:auto;padding:40px;border:2px solid #FF7A00;border-radius:22px;background:radial-gradient(circle at 20% 20%, rgba(255,122,0,0.15), #000 60%);box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+.module-close{position:absolute;top:15px;right:15px;width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,122,0,0.3);border-radius:50%;background:rgba(255,122,0,0.1);color:#FF7A00;cursor:pointer;font-size:18px;font-weight:900}
+.module-box h2{color:#FF7A00;font-size:28px;text-transform:uppercase;margin-bottom:10px}
+.module-box p{color:#ffae45;line-height:1.7;margin-bottom:12px}
+.module-price{margin-top:20px;padding:14px;border:1px solid #FF7A00;border-radius:12px;background:rgba(255,122,0,0.1);color:#FF7A00;font-weight:900;text-align:center}
 </style>
-<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
 </head>
 <body>
 <div class="top-lang">
@@ -43,20 +49,20 @@ body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, 
 </div>
 <header class="header">
 <div class="logo-wrap">
-<img src="maximax-multi-services-logo.jpg" alt="MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE" style="width:58px;height:58px;border-radius:12px;object-fit:cover;border:2px solid #FF7A00;box-shadow:0 0 15px rgba(255,122,0,0.6)">
+<img src="maximax-multi-services-logo.jpg" alt="MAXIMAX MULTI SERVICES" style="width:58px;height:58px;border-radius:12px;object-fit:cover;border:2px solid #FF7A00;box-shadow:0 0 15px rgba(255,122,0,0.6)">
 <div class="logo-text">MAXIMAX MULTI SERVICES</div>
 </div>
 <a href="mailto:maximaxmultiservices@gmail.com" class="btn-contact">CONTACT</a>
 </header>
 <div class="social-bar" style="background:#0a0500;border-bottom:1px solid rgba(255,122,0,0.2);display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:14px 10px">
-<a href="https://facebook.com/maximaxmultiservices" target="_blank" class="social-item" title="Facebook">f</a>
-<a href="https://wa.me/14076405166" target="_blank" class="social-item" title="WhatsApp">W</a>
-<a href="https://youtube.com/@maximaxmultiservices" target="_blank" class="social-item" title="YouTube">▶</a>
-<a href="https://tiktok.com/@maximaxmultiservices" target="_blank" class="social-item" title="TikTok">♪</a>
-<a href="https://truthsocial.com/@maximaxmultiservices" target="_blank" class="social-item" title="True Social">T</a>
-<a href="https://x.com/maximaxmultiservices" target="_blank" class="social-item" title="X/Twitter">𝕏</a>
-<a href="https://instagram.com/maximaxmultiservices" target="_blank" class="social-item" title="Instagram">◎</a>
-<a href="https://linkedin.com/company/maximaxmultiservices" target="_blank" class="social-item" title="LinkedIn">in</a>
+<a href="https://facebook.com/maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">f</a>
+<a href="https://wa.me/14076405166" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">W</a>
+<a href="https://youtube.com/@maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:14px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">▶</a>
+<a href="https://tiktok.com/@maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">♪</a>
+<a href="https://truthsocial.com/@maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:14px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">T</a>
+<a href="https://x.com/maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:14px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">𝕏</a>
+<a href="https://instagram.com/maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:16px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">◎</a>
+<a href="https://linkedin.com/company/maximaxmultiservices" target="_blank" style="width:42px;height:42px;border:2px solid #FF7A00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FF7A00;font-size:14px;font-weight:900;text-decoration:none;background:rgba(255,122,0,0.08)">in</a>
 </div>
 <section class="hero">
 <div class="badge">• REAL GLOBE • ALWAYS MAXIMIZE • ORLANDO FL 32811</div>
@@ -74,12 +80,23 @@ body{font-family:Arial,sans-serif;background:radial-gradient(ellipse at 50% 0%, 
 <footer style="text-align:center;padding:40px 20px;color:#ffae45;border-top:1px solid rgba(255,122,0,0.2);margin-top:30px;background:linear-gradient(180deg, transparent, rgba(255,122,0,0.05));">
 <div style="max-width:800px;margin:0 auto">
 <p style="color:#FF7A00;font-weight:900;font-size:18px;margin-bottom:12px">MAXIMAX MULTI SERVICES - ALWAYS MAXIMIZE</p>
-<p style="margin:8px 0"><span style="color:#FF7A00">🌐 Website:</span> <a href="https://maximaxmultiservices.com" style="color:#ffae45;text-decoration:none">maximaxmultiservices.com</a></p>
-<p style="margin:8px 0"><span style="color:#FF7A00">📧 Email:</span> <a href="mailto:maximaxmultiservices@gmail.com" style="color:#ffae45;text-decoration:none">maximaxmultiservices@gmail.com</a></p>
-<p style="margin:8px 0"><span style="color:#FF7A00">📞 Tel:</span> <a href="tel:+14076405166" style="color:#ffae45;text-decoration:none">(407) 640-5166</a> OR <a href="tel:+15162168494" style="color:#ffae45;text-decoration:none">(516) 216-8494</a></p>
-<p style="margin-top:20px;font-size:12px;opacity:0.7">© 2026 MAXIMAX MULTI SERVICES - Orlando FL 32811 - Real Globe 🌎</p>
+<p style="margin:8px 0">🌐 maximaxmultiservices.com</p>
+<p style="margin:8px 0">📧 maximaxmultiservices@gmail.com</p>
+<p style="margin:8px 0">📞 (407) 640-5166 OR (516) 216-8494</p>
+<p style="margin-top:20px;font-size:12px;opacity:0.7">© 2026 MAXIMAX MULTI SERVICES - Real Globe 🌎</p>
 </div>
 </footer>
+<!-- MODAL POU MODIL YO SELMAN -->
+<div class="module-overlay" id="moduleOverlay">
+<div class="module-box">
+<button class="module-close" onclick="closeModule()">✕</button>
+<h2 id="moduleTitle"></h2>
+<p id="moduleText"></p>
+<p id="moduleDesc"></p>
+<div class="module-price" id="modulePrice"></div>
+<div style="margin-top:20px"><a href="mailto:maximaxmultiservices@gmail.com" style="background:#FF7A00;color:#000;padding:12px 22px;border-radius:25px;font-weight:900;text-decoration:none">CONTACT US →</a></div>
+</div>
+</div>
 <script type="module">
 import * as THREE from 'three';
 const canvas=document.getElementById('globeCanvas');
@@ -95,8 +112,25 @@ const dl=new THREE.DirectionalLight(0xffffff,1.2);dl.position.set(2,1,2);scene.a
 let rot=0;function animate(){requestAnimationFrame(animate);rot+=0.003;earth.rotation.y=rot;earth.rotation.x=0.15;renderer.render(scene,camera);}animate();
 </script>
 <script>
+const serviceDetails={
+0:{title:"Government Services",text:"Passport, tax filing, licenses, certificates & all government documentation.",price:"Starting at $49 - Orlando FL 32811",desc:"We handle passport renewal, tax filing, business licenses, birth certificates, and all government paperwork."},
+1:{title:"Business LLC & Corp",text:"LLC registration, business setup, branding & corporate legal solutions.",price:"LLC $49 + State Fee - EIN $49 Same Day",desc:"Form your LLC, Corporation, or Non-Profit in any state."},
+2:{title:"Federal Registration",text:"SAM.gov registration, UEI, CAGE code, federal contractor setup.",price:"SAM.gov $199 - UEI & CAGE Included",desc:"Get your business ready for federal contracts."},
+3:{title:"Tax, EIN & ITIN",text:"EIN, ITIN, tax filing, IRS compliance.",price:"EIN $49 Same Day - ITIN $149",desc:"IRS services: EIN, ITIN, tax filing, and compliance."},
+4:{title:"Immigration & Passport",text:"Immigration filing, passport renewal, visa assistance.",price:"I-130 $535 - I-485 $1140 - N-400 $760",desc:"Immigration OS: I-130, I-485, I-90, I-765, N-400, and passport services."},
+5:{title:"Notary & Translation",text:"Notary public, apostille, certified translation.",price:"Translation $25/page - Notary $15",desc:"Certified translation Kreyòl/Français/English, notary public, apostille."},
+6:{title:"Licenses & Permits",text:"Business licenses, permits, compliance.",price:"Business License $99 + State Fee",desc:"Get licensed in all 50 states."},
+7:{title:"Trademark & Copyright",text:"Trademark registration, copyright, brand protection.",price:"Trademark $199 + $350 USPTO",desc:"Protect your brand: trademark search, registration, copyright."},
+8:{title:"Website & Marketing",text:"Website design, SEO, social media, Google Business.",price:"Website $299 - Google Business $99",desc:"Starter website $299, business website $599, Google Business Profile."},
+9:{title:"Insurance & Compliance",text:"Business insurance, compliance, annual reports.",price:"BOI Filing $49 - Annual Report $49 + Fee",desc:"Stay compliant: BOI filing, annual reports, business insurance."},
+10:{title:"State & Federal Filings",text:"Annual reports, amendments, reinstatements.",price:"Annual Report $49 + Fee - Amendment $99",desc:"All state filings: annual reports, amendments, reinstatements."}
+};
 const translations={en:{desc:"Professional government, business formation and federal registration services. Trusted across the USA with real coverage — not a black ball.",services:[["Government Services","Passport, tax filing, licenses"],["Business LLC & Corp","LLC registration"],["Federal Registration","SAM.gov, UEI, CAGE"],["Tax, EIN & ITIN","EIN, ITIN"],["Immigration & Passport","Immigration filing"],["Notary & Translation","Notary public"],["Licenses & Permits","Business licenses"],["Trademark & Copyright","Trademark"],["Website & Marketing","Website design"],["Insurance & Compliance","Insurance"],["State & Federal Filings","Annual reports"]]},fr:{desc:"Services professionnels gouvernementaux.",services:[["Services Gouvernementaux","Passeport"],["Création LLC","LLC"],["Enregistrement Fédéral","SAM.gov"],["Impôts, EIN & ITIN","EIN"],["Immigration & Passeport","Immigration"],["Notaire & Traduction","Notaire"],["Licences & Permis","Licences"],["Marque & Copyright","Marque"],["Site Web & Marketing","Site"],["Assurance & Conformité","Assurance"],["Dépôts État & Fédéral","Rapports"]]},ht:{desc:"Sèvis pwofesyonèl gouvènman, kreyasyon biznis.",services:[["Sèvis Gouvènman","Paspò"],["Biznis LLC & Corp","LLC"],["Anrejistreman Federal","SAM.gov"],["Taks, EIN & ITIN","EIN"],["Imigrasyon & Paspò","Imigrasyon"],["Notè & Tradiksyon","Notè"],["Lisans & Pèmi","Lisans"],["Mak & Copyright","Mak"],["Sit Wèb & Maketing","Sit"],["Asirans & Konfòmite","Asirans"],["Depo Eta & Federal","Rapò"]]}};
-function renderServices(lang){const t=translations[lang];document.getElementById('heroDesc').textContent=t.desc;const grid=document.getElementById('grid');grid.innerHTML='';t.services.forEach(s=>{const div=document.createElement('div');div.className='card';div.innerHTML=`<h3>${s[0]}</h3><p>${s[1]}</p><a href="#" style="background:#FF7A00;color:#000;padding:9px 18px;border-radius:20px;font-weight:800;font-size:13px;text-decoration:none">View →</a>`;grid.appendChild(div);});}
+function renderServices(lang){const t=translations[lang];document.getElementById('heroDesc').textContent=t.desc;const grid=document.getElementById('grid');grid.innerHTML='';t.services.forEach((s,i)=>{const div=document.createElement('div');div.className='card';div.innerHTML=`<h3>${s[0]}</h3><p>${s[1]}</p><a href="#" onclick="openModule(${i}); return false;" style="background:#FF7A00;color:#000;padding:9px 18px;border-radius:20px;font-weight:800;font-size:13px;text-decoration:none;display:inline-block;margin-top:10px">View Services →</a>`;grid.appendChild(div);});}
+function openModule(i){const d=serviceDetails[i];document.getElementById('moduleTitle').textContent=d.title;document.getElementById('moduleText').textContent=d.text;document.getElementById('moduleDesc').textContent=d.desc;document.getElementById('modulePrice').textContent=d.price;document.getElementById('moduleOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModule(){document.getElementById('moduleOverlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModule();});
+document.getElementById('moduleOverlay').addEventListener('click',e=>{if(e.target.id==='moduleOverlay')closeModule();});
 function setLang(lang){document.querySelectorAll('.top-lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));renderServices(lang);}
 renderServices('en');
 </script>
