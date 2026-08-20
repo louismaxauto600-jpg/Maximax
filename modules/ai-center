@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Center | Maximax Multi Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --black:#000000;
+  --orange:#FF6A00;
+  --orange-light:#FFA347;
+  --orange-deep:#B34700;
+  --text:#FFC98A;
+  --line:rgba(255,163,71,.34);
+  --panel:rgba(0,0,0,.68);
+  --panel2:rgba(255,106,0,.08);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:'Public Sans',sans-serif;
+  color:var(--text);
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(255,106,0,.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(179,71,0,.30),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #000 0%,
+      #000 18%,
+      #421800 45%,
+      #FF6A00 72%,
+      #000 100%
+    );
+
+  background-attachment:fixed;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+h1,
+h2,
+h3{
+  font-family:'Fraunces',serif;
+  margin:0;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(0,0,0,.84);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:0 auto;
+
+  padding:12px 22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.logo{
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border:2px solid var(--orange-light);
+
+  background:#000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+}
+
+.logo video{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:none;
+
+  z-index:2;
+}
+
+.logo video.loaded{
+  display:block;
+}
+
+.logo-fallback{
+  position:relative;
+
+  z-index:1;
+
+  color:var(--orange-light);
+
+  font-family:'Fraunces',serif;
+
+  font-weight:700;
+
+  font-size:18px;
+}
+
+.brand-text strong{
+  display:block;
+
+  font-family:'Fraunces',serif;
+
+  font-size:17px;
+
+  color:var(--orange-light);
+}
+
+.brand-text span{
+  display:block;
+
+  margin-top:2px;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:9px;
+
+  letter-spacing:.15em;
+}
+
+.header-actions{
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-end;
+}
+
+.back-btn{
+  padding:9px 14px;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  letter-spacing:.08em;
+
+  transition:.2s;
+
+  background:rgba(0,0,0,.5);
+}
+
+.back-btn:hover{
+  border-color:var(--orange-light);
+
+  color:var(--orange-light);
+}
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.lang-toggle{
+  display:flex;
+
+  gap:3px;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  padding:3px;
+
+  background:rgba(0,0,0,.45);
+}
+
+.lang-btn{
+  border:none;
+
+  background:none;
+
+  color:var(--text);
+
+  padding:7px 11px;
+
+  border-radius:18px;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  cursor:pointer;
+
+  opacity:.65;
+}
+
+.lang-btn.active{
+  background:var(--orange);
+
+  color:#140900;
+
+  font-weight:700;
+
+  opacity:1;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:72px 22px 48px;
+
+  display:grid;
+
+  grid-template-columns:1.2fr .8fr;
+
+  gap:40px;
+
+  align-items:center;
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+
+  color:var(--orange-light);
+
+  font-size:11px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.8rem);
+
+  line-height:.98;
+
+  font-weight:600;
+}
+
+.hero h1 span{
+  color:var(--orange-light);
+}
+
+.hero p{
+  max-width:650px;
+
+  margin:20px 0 0;
+
+  line-height:1.7;
+
+  font-size:16px;
+
+  opacity:.88;
+}
+
+.hero-buttons{
+  margin-top:28px;
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:45px;
+
+  padding:11px 20px;
+
+  border-radius:5px;
+
+  border:1px solid transparent;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:11px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.btn-primary{
+  background:var(--orange);
+
+  color:#180A00;
+}
+
+.btn-primary:hover{
+  background:var(--orange-light);
+}
+
+.btn-secondary{
+  border-color:var(--line);
+
+  background:rgba(0,0,0,.45);
+}
+
+.btn-secondary:hover{
+  border-color:var(--orange-light);
+
+  color:var(--orange-light);
+}
+
+.hero-orb{
+  width:280px;
+  height:280px;
+
+  justify-self:end;
+
+  position:relative;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,106,0,.30),
+      #000 68%
+    );
+
+  border:1px solid var(--orange-light);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  box-shadow:
+    0 0 70px rgba(255,106,0,.18),
+    inset 0 0 50px rgba(255,106,0,.12);
+}
+
+.hero-orb::before{
+  content:"";
+
+  position:absolute;
+
+  inset:17px;
+
+  border-radius:50%;
+
+  border:1px dashed rgba(255,163,71,.55);
+
+  animation:spin 16s linear infinite;
+}
+
+.hero-orb::after{
+  content:"AI";
+
+  font-family:'Fraunces',serif;
+
+  font-size:78px;
+
+  color:var(--orange-light);
+
+  font-weight:700;
+
+  text-shadow:0 0 28px rgba(255,106,0,.4);
+}
+
+@keyframes spin{
+  from{
+    transform:rotate(0);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@media(max-width:850px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-orb{
+    justify-self:center;
+
+    width:220px;
+
+    height:220px;
+  }
+
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:25px 22px 80px;
+}
+
+.section-heading{
+  margin-bottom:25px;
+}
+
+.section-heading .tag{
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  color:var(--orange-light);
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  margin-top:7px;
+
+  font-size:2rem;
+}
+
+/* =====================================================
+   AI MODULE CARDS
+===================================================== */
+
+.ai-grid{
+  display:grid;
+
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(250px,1fr)
+  );
+
+  gap:18px;
+}
+
+.ai-card{
+  position:relative;
+
+  border:1px solid var(--line);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0,0,0,.82),
+      rgba(40,14,0,.72)
+    );
+
+  border-radius:10px;
+
+  padding:22px;
+
+  min-height:225px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  transition:
+    transform .2s,
+    border-color .2s,
+    box-shadow .2s;
+}
+
+.ai-card:hover{
+  transform:translateY(-4px);
+
+  border-color:var(--orange-light);
+
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.ai-number{
+  width:34px;
+
+  height:34px;
+
+  border-radius:50%;
+
+  border:1px solid var(--orange-light);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:var(--orange-light);
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  margin-bottom:18px;
+}
+
+.ai-card h3{
+  color:var(--orange-light);
+
+  font-family:'Public Sans',sans-serif;
+
+  font-size:17px;
+
+  margin-bottom:10px;
+}
+
+.ai-card p{
+  margin:0 0 20px;
+
+  font-size:13px;
+
+  line-height:1.6;
+
+  opacity:.82;
+
+  flex:1;
+}
+
+.open-tool{
+  width:100%;
+
+  border:1px solid var(--line);
+
+  background:rgba(255,106,0,.08);
+
+  color:var(--orange-light);
+
+  border-radius:5px;
+
+  padding:10px;
+
+  cursor:pointer;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  transition:.2s;
+}
+
+.open-tool:hover{
+  background:var(--orange);
+
+  color:#000;
+
+  border-color:var(--orange);
+}
+
+/* =====================================================
+   TOOL PANEL
+===================================================== */
+
+.tool-panel{
+  margin-top:35px;
+
+  border:1px solid var(--line);
+
+  border-radius:10px;
+
+  padding:25px;
+
+  background:rgba(0,0,0,.75);
+
+  display:none;
+}
+
+.tool-panel.active{
+  display:block;
+}
+
+.tool-header{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-bottom:20px;
+}
+
+.tool-header h2{
+  font-size:1.7rem;
+
+  color:var(--orange-light);
+}
+
+.close-tool{
+  border:1px solid var(--line);
+
+  background:#000;
+
+  color:var(--orange-light);
+
+  width:38px;
+
+  height:38px;
+
+  border-radius:50%;
+
+  cursor:pointer;
+}
+
+.form-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:15px;
+}
+
+.field{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-family:'IBM Plex Mono',monospace;
+
+  color:var(--orange-light);
+
+  font-size:10px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+
+  background:#000;
+
+  color:var(--text);
+
+  border:1px solid var(--line);
+
+  border-radius:5px;
+
+  padding:12px;
+
+  outline:none;
+}
+
+.field textarea{
+  min-height:150px;
+
+  resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+  border-color:var(--orange-light);
+}
+
+.generate-row{
+  margin-top:18px;
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+}
+
+.output{
+  margin-top:22px;
+
+  min-height:150px;
+
+  padding:18px;
+
+  border:1px dashed var(--line);
+
+  background:rgba(255,106,0,.04);
+
+  border-radius:6px;
+
+  white-space:pre-wrap;
+
+  line-height:1.6;
+
+  font-size:14px;
+}
+
+@media(max-width:650px){
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =====================================================
+   DISCLAIMER
+===================================================== */
+
+.notice{
+  margin-top:35px;
+
+  padding:18px;
+
+  border-left:4px solid var(--orange);
+
+  background:rgba(0,0,0,.6);
+
+  font-size:12px;
+
+  line-height:1.6;
+
+  opacity:.85;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  border-top:1px solid var(--line);
+
+  background:rgba(0,0,0,.76);
+
+  padding:30px 22px;
+}
+
+.footer-inner{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  flex-wrap:wrap;
+
+  font-family:'IBM Plex Mono',monospace;
+
+  font-size:10px;
+
+  opacity:.72;
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    align-items:flex-start;
+  }
+
+  .brand-text span{
+    font-size:8px;
+  }
+
+  .header-actions{
+    gap:5px;
+  }
+
+  .back-btn{
+    padding:8px 10px;
+
+    font-size:8px;
+  }
+
+  .lang-btn{
+    padding:6px 8px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    animation:none!important;
+    transition:none!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header-inner">
+
+<div class="brand">
+
+<div class="logo">
+
+<video
+autoplay
+muted
+loop
+playsinline
+src="../../maximax-best-multi.mp4">
+</video>
+
+<span class="logo-fallback">
+M
+</span>
+
+</div>
+
+<div class="brand-text">
+
+<strong>
+MAXIMAX
+</strong>
+
+<span>
+MULTI SERVICES · AI CENTER
+</span>
+
+</div>
+
+</div>
+
+<div class="header-actions">
+
+<a
+href="../../index.html"
+class="back-btn"
+id="backHome">
+← HOMEPAGE
+</a>
+
+<div
+class="lang-toggle"
+id="langToggle">
+
+<button
+class="lang-btn active"
+data-lang="en">
+ENG
+</button>
+
+<button
+class="lang-btn"
+data-lang="fr">
+FRAN
+</button>
+
+<button
+class="lang-btn"
+data-lang="kr">
+KRE
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div>
+
+<div
+class="eyebrow"
+id="heroTag">
+</div>
+
+<h1
+id="heroTitle">
+</h1>
+
+<p
+id="heroDesc">
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#tools"
+class="btn btn-primary"
+id="exploreBtn">
+</a>
+
+<a
+href="../../index.html"
+class="btn btn-secondary"
+id="homeBtn">
+</a>
+
+</div>
+
+</div>
+
+<div
+class="hero-orb"
+aria-label="Artificial Intelligence">
+</div>
+
+</section>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+<section
+id="tools">
+
+<div class="section-heading">
+
+<div
+class="tag"
+id="toolTag">
+</div>
+
+<h2
+id="toolTitle">
+</h2>
+
+</div>
+
+<div
+class="ai-grid"
+id="aiGrid">
+</div>
+
+</section>
+
+<!-- =====================================================
+     ACTIVE TOOL
+===================================================== -->
+
+<section
+class="tool-panel"
+id="toolPanel">
+
+<div class="tool-header">
+
+<h2
+id="activeToolTitle">
+AI Tool
+</h2>
+
+<button
+class="close-tool"
+id="closeTool"
+aria-label="Close">
+✕
+</button>
+
+</div>
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label
+id="inputLabel">
+Your Information
+</label>
+
+<textarea
+id="userInput"
+placeholder="Enter your information here...">
+</textarea>
+
+</div>
+
+<div class="field">
+
+<label
+id="languageLabel">
+Output Language
+</label>
+
+<select id="outputLanguage">
+
+<option value="English">
+English
+</option>
+
+<option value="French">
+Français
+</option>
+
+<option value="Haitian Creole">
+Kreyòl Ayisyen
+</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label
+id="toneLabel">
+Style / Tone
+</label>
+
+<select id="toneSelect">
+
+<option value="Professional">
+Professional
+</option>
+
+<option value="Formal">
+Formal
+</option>
+
+<option value="Simple">
+Simple
+</option>
+
+<option value="Friendly">
+Friendly
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="generate-row">
+
+<button
+class="btn btn-primary"
+id="generateBtn">
+GENERATE
+</button>
+
+<button
+class="btn btn-secondary"
+id="clearBtn">
+CLEAR
+</button>
+
+<button
+class="btn btn-secondary"
+id="copyBtn">
+COPY
+</button>
+
+</div>
+
+<div
+class="output"
+id="outputBox">
+</div>
+
+</section>
+
+<div
+class="notice"
+id="notice">
+</div>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+<span>
+© 2026 Maximax Multi Services
+</span>
+
+<span>
+AI CENTER · DEVAN DEVAN NÈT
+</span>
+
+</div>
+
+</footer>
+
+<script>
+
+/* =====================================================
+   LANGUAGE CONTENT
+===================================================== */
+
+const UI={
+
+en:{
+
+heroTag:
+"MAXIMAX DIGITAL INTELLIGENCE",
+
+heroTitle:
+"AI <span>Center</span>",
+
+heroDesc:
+"One intelligent workspace for document preparation, translation, letters, forms, research, multilingual support, and everyday information assistance.",
+
+explore:
+"Explore AI Tools",
+
+home:
+"Return Home",
+
+back:
+"← Homepage",
+
+toolTag:
+"Artificial Intelligence",
+
+toolTitle:
+"Choose an AI Service",
+
+inputLabel:
+"Your Information",
+
+languageLabel:
+"Output Language",
+
+toneLabel:
+"Style / Tone",
+
+generate:
+"Generate",
+
+clear:
+"Clear",
+
+copy:
+"Copy",
+
+placeholder:
+"Enter the information, question, document details, or instructions you want the AI assistant to work with.",
+
+ready:
+"Select a tool above, enter your information, and press Generate.",
+
+notice:
+"Maximax Multi Services AI Center provides document-preparation, translation, information, research, and administrative assistance. AI-generated information should be reviewed before use. Immigration and legal matters may require review by a qualified attorney or accredited representative."
+
+},
+
+fr:{
+
+heroTag:
+"INTELLIGENCE NUMÉRIQUE MAXIMAX",
+
+heroTitle:
+"Centre <span>IA</span>",
+
+heroDesc:
+"Un espace intelligent unique pour la préparation de documents, la traduction, les lettres, les formulaires, la recherche, l'assistance multilingue et l'information quotidienne.",
+
+explore:
+"Explorer les outils IA",
+
+home:
+"Retour à l'accueil",
+
+back:
+"← Accueil",
+
+toolTag:
+"Intelligence artificielle",
+
+toolTitle:
+"Choisissez un service IA",
+
+inputLabel:
+"Vos informations",
+
+languageLabel:
+"Langue de sortie",
+
+toneLabel:
+"Style / Ton",
+
+generate:
+"Générer",
+
+clear:
+"Effacer",
+
+copy:
+"Copier",
+
+placeholder:
+"Entrez les informations, la question, les détails du document ou les instructions que vous souhaitez confier à l'assistant IA.",
+
+ready:
+"Sélectionnez un outil ci-dessus, saisissez vos informations et appuyez sur Générer.",
+
+notice:
+"Le Centre IA de Maximax Multi Services offre une assistance pour la préparation de documents, la traduction, l'information, la recherche et les tâches administratives. Les informations générées par l'IA doivent être vérifiées avant utilisation. Les questions juridiques ou d'immigration peuvent nécessiter l'examen d'un avocat qualifié ou d'un représentant accrédité."
+
+},
+
+kr:{
+
+heroTag:
+"ENTELIJANS DIJITAL MAXIMAX",
+
+heroTitle:
+"Sant <span>AI</span>",
+
+heroDesc:
+"Yon sèl espas entelijan pou prepare dokiman, tradiksyon, lèt, fòm, rechèch, asistans miltileng ak enfòmasyon chak jou.",
+
+explore:
+"Eksplore Zouti AI",
+
+home:
+"Retounen Akèy",
+
+back:
+"← Paj Akèy",
+
+toolTag:
+"Entèlijans Atifisyèl",
+
+toolTitle:
+"Chwazi yon Sèvis AI",
+
+inputLabel:
+"Enfòmasyon Ou",
+
+languageLabel:
+"Lang Rezilta",
+
+toneLabel:
+"Stil / Ton",
+
+generate:
+"Jenere",
+
+clear:
+"Efase",
+
+copy:
+"Kopye",
+
+placeholder:
+"Antre enfòmasyon, kesyon, detay dokiman oswa enstriksyon ou vle asistan AI a travay avèk yo.",
+
+ready:
+"Chwazi yon zouti anlè a, antre enfòmasyon ou epi peze Jenere.",
+
+notice:
+"Sant AI Maximax Multi Services bay asistans pou preparasyon dokiman, tradiksyon, enfòmasyon, rechèch ak sèvis administratif. Enfòmasyon AI jenere dwe verifye anvan yo itilize li. Dosye legal oswa imigrasyon ka bezwen revizyon yon avoka kalifye oswa yon reprezantan akredite."
+
+}
+
+};
+
+/* =====================================================
+   AI TOOL DATA
+===================================================== */
+
+const TOOLS=[
+
+{
+
+id:"document",
+
+number:"01",
+
+title:{
+
+en:"AI Document Writer",
+
+fr:"Rédacteur de documents IA",
+
+kr:"AI Ekriven Dokiman"
+
+},
+
+description:{
+
+en:"Prepare professional documents from the information you provide.",
+
+fr:"Préparez des documents professionnels à partir des informations que vous fournissez.",
+
+kr:"Prepare dokiman pwofesyonèl ak enfòmasyon ou bay."
+
+}
+
+},
+
+{
+
+id:"translation",
+
+number:"02",
+
+title:{
+
+en:"AI Translation",
+
+fr:"Traduction IA",
+
+kr:"AI Tradiksyon"
+
+},
+
+description:{
+
+en:"Translate documents and messages between English, French, and Haitian Creole.",
+
+fr:"Traduisez des documents et messages entre l'anglais, le français et le créole haïtien.",
+
+kr:"Tradui dokiman ak mesaj ant Anglè, Fransè ak Kreyòl Ayisyen."
+
+}
+
+},
+
+{
+
+id:"forms",
+
+number:"03",
+
+title:{
+
+en:"AI Form Guidance",
+
+fr:"Guide de formulaires IA",
+
+kr:"AI Gid pou Fòm"
+
+},
+
+description:{
+
+en:"Get step-by-step assistance understanding and preparing forms.",
+
+fr:"Obtenez une assistance étape par étape pour comprendre et préparer les formulaires.",
+
+kr:"Jwenn asistans etap pa etap pou konprann epi prepare fòm."
+
+}
+
+},
+
+{
+
+id:"letters",
+
+number:"04",
+
+title:{
+
+en:"AI Letter Writer",
+
+fr:"Rédacteur de lettres IA",
+
+kr:"AI Ekriven Lèt"
+
+},
+
+description:{
+
+en:"Create professional letters, verification letters, requests, and correspondence.",
+
+fr:"Créez des lettres professionnelles, lettres de vérification, demandes et correspondances.",
+
+kr:"Kreye lèt pwofesyonèl, lèt verifikasyon, demann ak korespondans."
+
+}
+
+},
+
+{
+
+id:"information",
+
+number:"05",
+
+title:{
+
+en:"AI Information Assistant",
+
+fr:"Assistant d'information IA",
+
+kr:"AI Asistan Enfòmasyon"
+
+},
+
+description:{
+
+en:"Get organized answers and explanations for everyday questions.",
+
+fr:"Obtenez des réponses organisées et des explications pour vos questions quotidiennes.",
+
+kr:"Jwenn repons òganize ak eksplikasyon pou kesyon chak jou."
+
+}
+
+},
+
+{
+
+id:"research",
+
+number:"06",
+
+title:{
+
+en:"AI Research Assistant",
+
+fr:"Assistant de recherche IA",
+
+kr:"AI Asistan Rechèch"
+
+},
+
+description:{
+
+en:"Organize background research, resources, topics, and case information.",
+
+fr:"Organisez les recherches, ressources, sujets et informations de dossier.",
+
+kr:"Òganize rechèch, resous, sijè ak enfòmasyon dosye."
+
+}
+
+},
+
+{
+
+id:"multilingual",
+
+number:"07",
+
+title:{
+
+en:"AI Multilingual Assistant",
+
+fr:"Assistant multilingue IA",
+
+kr:"AI Asistan Miltileng"
+
+},
+
+description:{
+
+en:"Work across English, French, and Haitian Creole from one assistant.",
+
+fr:"Travaillez en anglais, français et créole haïtien avec un seul assistant.",
+
+kr:"Travay an Anglè, Fransè ak Kreyòl Ayisyen ak yon sèl asistan."
+
+}
+
+}
+
+];
+
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
+
+let currentLang="en";
+
+let activeTool=null;
+
+/* =====================================================
+   RENDER TOOLS
+===================================================== */
+
+function renderTools(){
+
+const grid=
+document.getElementById("aiGrid");
+
+grid.innerHTML=
+
+TOOLS.map(tool=>`
+
+<div class="ai-card">
+
+<div class="ai-number">
+${tool.number}
+</div>
+
+<h3>
+${tool.title[currentLang]}
+</h3>
+
+<p>
+${tool.description[currentLang]}
+</p>
+
+<button
+class="open-tool"
+data-tool="${tool.id}">
+
+${currentLang==="en"
+?"OPEN TOOL"
+:currentLang==="fr"
+?"OUVRIR L'OUTIL"
+:"OUVRI ZOUTI"}
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+/* =====================================================
+   APPLY LANGUAGE
+===================================================== */
+
+function applyLanguage(){
+
+const t=
+UI[currentLang];
+
+document.getElementById("htmlRoot").lang=
+currentLang;
+
+document.getElementById("heroTag").textContent=
+t.heroTag;
+
+document.getElementById("heroTitle").innerHTML=
+t.heroTitle;
+
+document.getElementById("heroDesc").textContent=
+t.heroDesc;
+
+document.getElementById("exploreBtn").textContent=
+t.explore;
+
+document.getElementById("homeBtn").textContent=
+t.home;
+
+document.getElementById("backHome").textContent=
+t.back;
+
+document.getElementById("toolTag").textContent=
+t.toolTag;
+
+document.getElementById("toolTitle").textContent=
+t.toolTitle;
+
+document.getElementById("inputLabel").textContent=
+t.inputLabel;
+
+document.getElementById("languageLabel").textContent=
+t.languageLabel;
+
+document.getElementById("toneLabel").textContent=
+t.toneLabel;
+
+document.getElementById("generateBtn").textContent=
+t.generate;
+
+document.getElementById("clearBtn").textContent=
+t.clear;
+
+document.getElementById("copyBtn").textContent=
+t.copy;
+
+document.getElementById("userInput").placeholder=
+t.placeholder;
+
+document.getElementById("notice").textContent=
+t.notice;
+
+if(!activeTool){
+
+document.getElementById("outputBox").textContent=
+t.ready;
+
+}
+
+document
+.querySelectorAll(".lang-btn")
+.forEach(btn=>{
+
+btn.classList.toggle(
+"active",
+btn.dataset.lang===currentLang
+);
+
+});
+
+renderTools();
+
+if(activeTool){
+
+const tool=
+TOOLS.find(
+item=>item.id===activeTool
+);
+
+if(tool){
+
+document.getElementById("activeToolTitle").textContent=
+tool.title[currentLang];
+
+}
+
+}
+
+}
+
+/* =====================================================
+   OPEN TOOL
+===================================================== */
+
+document.addEventListener(
+"click",
+function(e){
+
+const button=
+e.target.closest(".open-tool");
+
+if(!button)return;
+
+activeTool=
+button.dataset.tool;
+
+const tool=
+TOOLS.find(
+item=>item.id===activeTool
+);
+
+if(!tool)return;
+
+document.getElementById("activeToolTitle").textContent=
+tool.title[currentLang];
+
+const panel=
+document.getElementById("toolPanel");
+
+panel.classList.add("active");
+
+panel.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+);
+
+/* =====================================================
+   CLOSE TOOL
+===================================================== */
+
+document
+.getElementById("closeTool")
+.addEventListener(
+"click",
+function(){
+
+document
+.getElementById("toolPanel")
+.classList.remove("active");
+
+activeTool=null;
+
+}
+);
+
+/* =====================================================
+   LANGUAGE SWITCHER
+===================================================== */
+
+document
+.getElementById("langToggle")
+.addEventListener(
+"click",
+function(e){
+
+const button=
+e.target.closest(".lang-btn");
+
+if(!button)return;
+
+currentLang=
+button.dataset.lang;
+
+applyLanguage();
+
+}
+);
+
+/* =====================================================
+   GENERATE DEMO RESULT
+===================================================== */
+
+document
+.getElementById("generateBtn")
+.addEventListener(
+"click",
+function(){
+
+const input=
+document
+.getElementById("userInput")
+.value
+.trim();
+
+const output=
+document.getElementById("outputBox");
+
+if(!activeTool){
+
+output.textContent=
+
+currentLang==="fr"
+?"Veuillez d'abord sélectionner un outil IA."
+:currentLang==="kr"
+?"Tanpri chwazi yon zouti AI anvan."
+:"Please select an AI tool first.";
+
+return;
+
+}
+
+if(!input){
+
+output.textContent=
+
+currentLang==="fr"
+?"Veuillez entrer vos informations."
+:currentLang==="kr"
+?"Tanpri antre enfòmasyon ou."
+:"Please enter your information.";
+
+return;
+
+}
+
+const tool=
+TOOLS.find(
+item=>item.id===activeTool
+);
+
+const language=
+document
+.getElementById("outputLanguage")
+.value;
+
+const tone=
+document
+.getElementById("toneSelect")
+.value;
+
+/*
+ IMPORTANT:
+ This section is ready for a future AI API connection.
+
+ At this stage the interface works locally and prepares
+ the user's request. Later we can connect this button
+ to your AI backend/API securely.
+*/
+
+output.textContent=
+
+`AI CENTER
+
+Tool:
+${tool.title[currentLang]}
+
+Requested language:
+${language}
+
+Style:
+${tone}
+
+Information received:
+${input}
+
+--------------------------------
+
+Your AI API connection will generate the final response here.`;
+
+}
+);
+
+/* =====================================================
+   CLEAR
+===================================================== */
+
+document
+.getElementById("clearBtn")
+.addEventListener(
+"click",
+function(){
+
+document.getElementById("userInput").value="";
+
+document.getElementById("outputBox").textContent=
+UI[currentLang].ready;
+
+}
+);
+
+/* =====================================================
+   COPY
+===================================================== */
+
+document
+.getElementById("copyBtn")
+.addEventListener(
+"click",
+async function(){
+
+const text=
+document.getElementById("outputBox").textContent;
+
+try{
+
+await navigator.clipboard.writeText(text);
+
+this.textContent=
+
+currentLang==="fr"
+?"COPIÉ"
+:currentLang==="kr"
+?"KOPYE"
+:"COPIED";
+
+const button=this;
+
+setTimeout(
+()=>{
+
+button.textContent=
+UI[currentLang].copy;
+
+},
+1500
+);
+
+}
+
+catch(error){
+
+console.error(
+"Copy failed:",
+error
+);
+
+}
+
+}
+);
+
+/* =====================================================
+   LOGO VIDEO
+===================================================== */
+
+document
+.querySelectorAll(
+'video[src="../../maximax-best-multi.mp4"]'
+)
+.forEach(video=>{
+
+const showVideo=()=>{
+
+video.classList.add("loaded");
+
+};
+
+const hideVideo=()=>{
+
+video.classList.remove("loaded");
+
+};
+
+video.addEventListener(
+"loadeddata",
+showVideo
+);
+
+video.addEventListener(
+"canplay",
+showVideo
+);
+
+video.addEventListener(
+"error",
+hideVideo
+);
+
+if(video.readyState>=2){
+
+showVideo();
+
+}
+
+});
+
+/* =====================================================
+   START
+===================================================== */
+
+applyLanguage();
+
+</script>
+
+</body>
+</html>
