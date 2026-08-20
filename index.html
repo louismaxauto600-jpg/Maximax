@@ -12,19 +12,21 @@
 <style>
 :root{
   --black:#000000;
-  --black2:#0A0502;
+  --black2:#080301;
   --orange:#FF6A00;
-  --orange-light:#FF9A3D;
-  --orange-deep:#8B2F00;
-  --white:#FFF3E8;
-  --line:rgba(255,106,0,0.32);
-  --panel:rgba(0,0,0,0.74);
+  --orange-light:#FFA24D;
+  --orange-deep:#8A2C00;
+  --white:#FFF4E8;
+  --line:rgba(255,106,0,.34);
+  --panel:rgba(0,0,0,.78);
   --panel-solid:#080402;
 }
 
 *{box-sizing:border-box;}
 
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -33,30 +35,27 @@ body{
   -webkit-font-smoothing:antialiased;
 
   background:
-    radial-gradient(
-      1200px 700px at 10% 0%,
-      rgba(255,106,0,0.40),
+    radial-gradient(1200px 750px at 8% -5%,
+      rgba(255,106,0,.42),
       transparent 58%
     ),
-    radial-gradient(
-      1000px 800px at 100% 48%,
-      rgba(255,106,0,0.28),
-      transparent 56%
+    radial-gradient(950px 750px at 100% 38%,
+      rgba(255,106,0,.30),
+      transparent 58%
     ),
-    radial-gradient(
-      900px 650px at 50% 100%,
-      rgba(255,75,0,0.22),
+    radial-gradient(900px 600px at 45% 100%,
+      rgba(255,85,0,.22),
       transparent 60%
     ),
     linear-gradient(
       160deg,
       #000000 0%,
-      #060301 18%,
-      #170700 34%,
-      #441500 52%,
-      #9B3300 67%,
-      #FF6A00 82%,
-      #2A0C00 92%,
+      #050201 17%,
+      #170600 33%,
+      #4A1400 50%,
+      #9D3000 66%,
+      #FF6A00 80%,
+      #2A0A00 92%,
       #000000 100%
     );
 
@@ -75,12 +74,12 @@ h1,h2,h3{
 }
 
 a{color:inherit;}
-
 video,img{max-width:100%;}
-
 button{font-family:inherit;}
 
-/* ================= LOGO ================= */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo-mark{
   width:44px;
@@ -100,15 +99,21 @@ button{font-family:inherit;}
   width:100%;
   height:100%;
   object-fit:cover;
+  position:relative;
+  z-index:2;
 }
 
 .logo-mark .fallback{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-family:'Fraunces',serif;
   font-weight:700;
   color:var(--orange-light);
   font-size:18px;
-  position:absolute;
-  z-index:-1;
+  z-index:1;
 }
 
 .seal{
@@ -140,6 +145,7 @@ button{font-family:inherit;}
   border-radius:50%;
   opacity:.6;
   pointer-events:none;
+  z-index:3;
 }
 
 .seal.small{
@@ -148,14 +154,16 @@ button{font-family:inherit;}
   border-width:1.5px;
 }
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER / NAV
+===================================================== */
 
 header{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(0,0,0,0.88);
-  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.88);
+  backdrop-filter:blur(9px);
   border-bottom:1px solid var(--line);
 }
 
@@ -202,7 +210,7 @@ nav.desktop-nav{
 nav.desktop-nav a{
   text-decoration:none;
   color:var(--white);
-  opacity:.8;
+  opacity:.82;
   padding:4px 0;
   border-bottom:1px solid transparent;
   transition:.2s;
@@ -240,7 +248,7 @@ nav.desktop-nav a:hover{
   background:var(--orange);
   color:#000;
   opacity:1;
-  font-weight:600;
+  font-weight:700;
 }
 
 .menu-btn{
@@ -279,7 +287,9 @@ nav.desktop-nav a:hover{
   .menu-btn{display:block;}
 }
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
   max-width:1180px;
@@ -316,11 +326,11 @@ nav.desktop-nav a:hover{
 
 .hero p.lede{
   margin-top:20px;
-  max-width:560px;
+  max-width:600px;
   font-size:16px;
   line-height:1.65;
   color:var(--white);
-  opacity:.88;
+  opacity:.9;
 }
 
 .hero .creole{
@@ -328,7 +338,7 @@ nav.desktop-nav a:hover{
   font-style:italic;
   color:var(--orange-light);
   font-size:14px;
-  opacity:.9;
+  opacity:.95;
 }
 
 .hero-cta{
@@ -365,6 +375,7 @@ nav.desktop-nav a:hover{
 .btn-ghost{
   border:1px solid var(--line);
   color:var(--white);
+  background:rgba(0,0,0,.25);
 }
 
 .btn-ghost:hover{
@@ -377,10 +388,12 @@ nav.desktop-nav a:hover{
   .hero-seal{display:none;}
 }
 
-/* ================= CATEGORY MAP ================= */
+/* =====================================================
+   CATEGORY MAP
+===================================================== */
 
 .catmap{
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.56);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:30px 24px;
@@ -406,13 +419,19 @@ nav.desktop-nav a:hover{
   text-decoration:none;
 }
 
+.catmap-item:hover{
+  color:var(--white);
+}
+
 .catmap-item b{
   color:var(--white);
-  opacity:.65;
+  opacity:.62;
   margin-right:6px;
 }
 
-/* ================= SERVICE MODULES ================= */
+/* =====================================================
+   SERVICE MODULES
+===================================================== */
 
 main{
   max-width:1180px;
@@ -424,13 +443,12 @@ main{
   background:
     linear-gradient(
       135deg,
-      rgba(0,0,0,0.94),
-      rgba(35,10,0,0.90),
-      rgba(0,0,0,0.95)
+      rgba(0,0,0,.96),
+      rgba(45,12,0,.91),
+      rgba(0,0,0,.96)
     );
-
   color:var(--white);
-  border:1px solid rgba(255,106,0,0.35);
+  border:1px solid rgba(255,106,0,.38);
   border-radius:6px;
   margin-bottom:26px;
   position:relative;
@@ -507,7 +525,7 @@ main{
 }
 
 .file.open .file-body{
-  max-height:1600px;
+  max-height:3500px;
 }
 
 .service-list{
@@ -542,7 +560,57 @@ main{
   .service-list{columns:1;}
 }
 
-/* ================= BANDS ================= */
+/* =====================================================
+   DIRECT LINKS
+===================================================== */
+
+.module-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+
+.module-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:11px 15px;
+  border:1px solid rgba(255,106,0,.55);
+  border-radius:4px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,106,0,.18),
+      rgba(0,0,0,.92)
+    );
+  color:var(--orange-light);
+  text-decoration:none;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.04em;
+  line-height:1.4;
+  transition:.2s;
+}
+
+.module-link:hover{
+  background:var(--orange);
+  border-color:var(--orange);
+  color:#000;
+}
+
+@media(max-width:640px){
+  .module-link{
+    width:100%;
+  }
+}
+
+/* =====================================================
+   NEWS / AI / CONTACT BANDS
+===================================================== */
 
 .band{
   padding:56px 24px;
@@ -559,13 +627,13 @@ main{
 }
 
 .band-ai{
-  background:rgba(0,0,0,.68);
+  background:rgba(0,0,0,.70);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
 
 .band-contact{
-  background:rgba(0,0,0,.76);
+  background:rgba(0,0,0,.78);
 }
 
 .band-head{
@@ -601,7 +669,7 @@ main{
   font-size:13px;
   color:var(--white);
   opacity:.92;
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,.48);
 }
 
 .ai-grid{
@@ -611,14 +679,14 @@ main{
 }
 
 .ai-card{
-  border:1px solid rgba(255,106,0,0.35);
+  border:1px solid rgba(255,106,0,.36);
   border-radius:6px;
   padding:20px;
   background:
     linear-gradient(
       135deg,
-      rgba(0,0,0,0.88),
-      rgba(255,106,0,0.10)
+      rgba(0,0,0,.90),
+      rgba(255,106,0,.10)
     );
 }
 
@@ -632,12 +700,10 @@ main{
 
 .ai-card p{
   font-size:13px;
-  opacity:.8;
+  opacity:.82;
   margin:0;
   line-height:1.5;
 }
-
-/* ================= CONTACT ================= */
 
 .contact-grid{
   display:grid;
@@ -647,14 +713,14 @@ main{
 }
 
 .contact-card{
-  border:1px solid rgba(255,106,0,0.35);
+  border:1px solid rgba(255,106,0,.36);
   border-radius:6px;
   padding:20px;
   background:
     linear-gradient(
       135deg,
-      rgba(0,0,0,0.90),
-      rgba(50,15,0,0.75)
+      rgba(0,0,0,.93),
+      rgba(55,15,0,.78)
     );
 }
 
@@ -703,10 +769,12 @@ main{
   color:var(--orange-light);
 }
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-  background:rgba(0,0,0,.84);
+  background:rgba(0,0,0,.86);
   padding:50px 24px 28px;
   border-top:1px solid var(--line);
 }
@@ -732,11 +800,16 @@ footer{
   gap:9px 22px;
   font-family:'IBM Plex Mono',monospace;
   font-size:11px;
-  opacity:.75;
+  opacity:.78;
+  max-width:650px;
 }
 
 .footer-cats a{
   text-decoration:none;
+}
+
+.footer-cats a:hover{
+  color:var(--orange-light);
 }
 
 .footer-bottom{
@@ -746,7 +819,7 @@ footer{
   flex-wrap:wrap;
   gap:10px;
   font-size:11.5px;
-  opacity:.6;
+  opacity:.65;
   font-family:'IBM Plex Mono',monospace;
 }
 
@@ -800,10 +873,11 @@ footer{
 
 
 <section class="hero">
-
   <div>
     <span class="eyebrow" id="heroEyebrow"></span>
+
     <h1 id="heroH1"></h1>
+
     <p class="lede" id="heroLede"></p>
 
     <p class="creole">
@@ -819,7 +893,6 @@ footer{
   <div class="hero-seal seal">
     <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
   </div>
-
 </section>
 
 
@@ -832,11 +905,9 @@ footer{
 
 
 <section class="band band-news" id="news">
-
   <div class="band-inner">
 
     <div class="band-head">
-
       <div class="seal small">
         <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
       </div>
@@ -845,21 +916,41 @@ footer{
         <div class="tag" id="newsTag"></div>
         <h2 id="newsTitle"></h2>
       </div>
-
     </div>
 
     <div class="chips" id="newsChips"></div>
+
+    <div class="module-links">
+      <a class="module-link"
+         href="https://www.cnn.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        CNN NEWS
+      </a>
+
+      <a class="module-link"
+         href="https://www.miamiherald.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        MIAMI HERALD
+      </a>
+
+      <a class="module-link"
+         href="https://www.rfi.fr/"
+         target="_blank"
+         rel="noopener noreferrer">
+        RFI
+      </a>
+    </div>
 
   </div>
 </section>
 
 
 <section class="band band-ai" id="ai">
-
   <div class="band-inner">
 
     <div class="band-head">
-
       <div class="seal small">
         <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
       </div>
@@ -868,21 +959,27 @@ footer{
         <div class="tag" id="aiTag"></div>
         <h2 id="aiTitle"></h2>
       </div>
-
     </div>
 
     <div class="ai-grid" id="aiGrid"></div>
+
+    <div class="module-links">
+      <a class="module-link"
+         href="https://www.maximaxmultiservices.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        MAXIMAX AI ASSISTANCE
+      </a>
+    </div>
 
   </div>
 </section>
 
 
 <section class="band band-contact" id="contact">
-
   <div class="band-inner">
 
     <div class="band-head">
-
       <div class="seal small">
         <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
       </div>
@@ -891,9 +988,7 @@ footer{
         <div class="tag" id="contactTag"></div>
         <h2 id="contactTitle"></h2>
       </div>
-
     </div>
-
 
     <div class="contact-grid">
 
@@ -906,7 +1001,6 @@ footer{
         </div>
       </div>
 
-
       <div class="contact-card">
         <div class="label" id="emailLabel"></div>
 
@@ -917,12 +1011,13 @@ footer{
         </div>
       </div>
 
-
       <div class="contact-card">
         <div class="label" id="webLabel"></div>
 
         <div class="value">
-          <a href="https://www.maximaxmultiservices.com" target="_blank" rel="noopener">
+          <a href="https://www.maximaxmultiservices.com/"
+             target="_blank"
+             rel="noopener noreferrer">
             www.maximaxmultiservices.com
           </a>
         </div>
@@ -930,20 +1025,18 @@ footer{
 
     </div>
 
-
     <div class="label" id="followLabel" style="margin-bottom:12px;"></div>
 
-
     <div class="social-row">
-      <a class="social-pill" href="#" target="_blank" rel="noopener">Facebook</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">Instagram</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">TikTok</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">YouTube</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">Spotify</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">True Social</a>
-      <a class="social-pill" href="#" target="_blank" rel="noopener">X / Twitter</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">Spotify</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">True Social</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener noreferrer">X / Twitter</a>
     </div>
 
   </div>
@@ -951,13 +1044,11 @@ footer{
 
 
 <footer>
-
   <div class="footer-inner">
 
     <div class="footer-top">
 
       <div>
-
         <div class="brand" style="margin-bottom:10px;">
 
           <div class="logo-mark">
@@ -973,21 +1064,21 @@ footer{
         </div>
 
         <p id="footerDesc"
-        style="max-width:340px;font-size:13px;opacity:.7;line-height:1.6;">
+           style="max-width:340px;font-size:13px;opacity:.7;line-height:1.6;">
         </p>
-
       </div>
 
       <div class="footer-cats" id="footerCats"></div>
 
     </div>
 
-
     <div class="footer-bottom">
       <span>© 2026 Maximax Multi Services</span>
 
       <span>
-        (954) 640-5166 · (516) 216-8494 · maximaxmultiservices@gmail.com
+        (954) 640-5166 ·
+        (516) 216-8494 ·
+        maximaxmultiservices@gmail.com
       </span>
     </div>
 
@@ -997,970 +1088,1190 @@ footer{
 
 <script>
 
-/* =========================================================
-   LANGUAGE UI
-========================================================= */
+/* =====================================================
+   LANGUAGE / TEXT
+===================================================== */
 
 const UI = {
 
-nav:{
-immigration:{en:"Immigration",fr:"Immigration",kr:"Imigrasyon"},
-documents:{en:"Documents",fr:"Documents",kr:"Dokiman"},
-translation:{en:"Translation",fr:"Traduction",kr:"Tradiksyon"},
-housing:{en:"Housing",fr:"Logement",kr:"Lojman"},
-employment:{en:"Employment",fr:"Emploi",kr:"Travay"},
-business:{en:"Business",fr:"Entreprise",kr:"Biznis"},
-digital:{en:"Digital",fr:"Numérique",kr:"Dijital"},
-community:{en:"Community",fr:"Communauté",kr:"Kominote"},
-federalRegister:{en:"Federal Register",fr:"Federal Register",kr:"Federal Register"},
-passport:{en:"Passport",fr:"Passeport",kr:"Paspò"},
-tax:{en:"US & HT Tax",fr:"Fiscalité USA & Haïti",kr:"Taks USA & Ayiti"},
-news:{en:"News",fr:"Actualités",kr:"Nouvèl"},
-ai:{en:"AI Assistance",fr:"Assistance IA",kr:"Asistans AI"},
-contact:{en:"Contact",fr:"Contact",kr:"Kontak"}
-},
+  nav:{
+    immigration:{en:"Immigration",fr:"Immigration",kr:"Imigrasyon"},
+    documents:{en:"Documents",fr:"Documents",kr:"Dokiman"},
+    translation:{en:"Translation",fr:"Traduction",kr:"Tradiksyon"},
+    housing:{en:"Housing",fr:"Logement",kr:"Lojman"},
+    employment:{en:"Employment",fr:"Emploi",kr:"Travay"},
+    business:{en:"Business",fr:"Entreprise",kr:"Biznis"},
+    digital:{en:"Digital",fr:"Numérique",kr:"Dijital"},
+    community:{en:"Community",fr:"Communauté",kr:"Kominote"},
+    news:{en:"News",fr:"Actualités",kr:"Nouvèl"},
+    ai:{en:"AI Assistance",fr:"Assistance IA",kr:"Asistans AI"},
+    contact:{en:"Contact",fr:"Contact",kr:"Kontak"}
+  },
 
-heroEyebrow:{
-en:"Case File No. 001 — Community Services Registry",
-fr:"Dossier n° 001 — Registre des services communautaires",
-kr:"Dosye No. 001 — Rejis Sèvis Kominotè"
-},
+  heroEyebrow:{
+    en:"Case File No. 001 — Community Services Registry",
+    fr:"Dossier n° 001 — Registre des services communautaires",
+    kr:"Dosye No. 001 — Rejis Sèvis Kominotè"
+  },
 
-heroH1:{
-en:"One office. <em>Every</em> document you need.",
-fr:"Un seul bureau. <em>Tous</em> les documents dont vous avez besoin.",
-kr:"Yon sèl biwo. <em>Tout</em> dokiman ou bezwen."
-},
+  heroH1:{
+    en:"One office. <em>Every</em> document you need.",
+    fr:"Un seul bureau. <em>Tous</em> les documents dont vous avez besoin.",
+    kr:"Yon sèl biwo. <em>Tout</em> dokiman ou bezwen."
+  },
 
-heroLede:{
-en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, housing, employment, translation, federal resources, passport services, tax services, and digital services — all under one roof.",
-fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises dans leurs démarches d'immigration, de logement, d'emploi, de traduction, de ressources fédérales, de passeport, de fiscalité et de services numériques — tout sous un même toit.",
-kr:"Maximax Multi Services ede endividi, fanmi, ak ti biznis jere papye imigrasyon, lojman, travay, tradiksyon, resous federal, sèvis paspò, sèvis taks, ak sèvis dijital — tout anba yon sèl twa."
-},
+  heroLede:{
+    en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, documents, translation, housing, employment, business, passport services, tax services, federal resources, community resources, and digital services — all under one roof.",
 
-ctaPrimary:{
-en:"Open Immigration Services",
-fr:"Ouvrir les services d'immigration",
-kr:"Ouvri Sèvis Imigrasyon"
-},
+    fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises dans les démarches d'immigration, les documents, la traduction, le logement, l'emploi, les entreprises, les passeports, les services fiscaux, les ressources fédérales, les ressources communautaires et les services numériques — tout sous un même toit.",
 
-ctaGhost:{
-en:"Browse All Resources",
-fr:"Parcourir toutes les ressources",
-kr:"Gade Tout Resous"
-},
+    kr:"Maximax Multi Services ede endividi, fanmi ak ti biznis ak imigrasyon, dokiman, tradiksyon, lojman, travay, biznis, paspò, taks, resous federal, resous kominotè ak sèvis dijital — tout anba yon sèl twa."
+  },
 
-newsTag:{
-en:"Wire Feed",
-fr:"Fil d'actualité",
-kr:"Fil Nouvèl"
-},
+  ctaPrimary:{
+    en:"Open Immigration Services",
+    fr:"Ouvrir les services d'immigration",
+    kr:"Ouvri Sèvis Imigrasyon"
+  },
 
-newsTitle:{
-en:"News & Information Center",
-fr:"Centre de nouvelles et d'information",
-kr:"Sant Nouvèl ak Enfòmasyon"
-},
+  ctaGhost:{
+    en:"Browse All Resources",
+    fr:"Parcourir toutes les ressources",
+    kr:"Gade Tout Resous"
+  },
 
-aiTag:{
-en:"Assisted Tools",
-fr:"Outils assistés",
-kr:"Zouti Asistans"
-},
+  newsTag:{
+    en:"Wire Feed",
+    fr:"Fil d'actualité",
+    kr:"Fil Nouvèl"
+  },
 
-aiTitle:{
-en:"AI Assistance",
-fr:"Assistance IA",
-kr:"Asistans AI"
-},
+  newsTitle:{
+    en:"News & Information Center",
+    fr:"Centre de nouvelles et d'information",
+    kr:"Sant Nouvèl ak Enfòmasyon"
+  },
 
-contactTag:{
-en:"Get In Touch",
-fr:"Nous contacter",
-kr:"Kontakte Nou"
-},
+  aiTag:{
+    en:"Assisted Tools",
+    fr:"Outils assistés",
+    kr:"Zouti Asistans"
+  },
 
-contactTitle:{
-en:"Contact & Social",
-fr:"Contact et réseaux sociaux",
-kr:"Kontak ak Rezo Sosyal"
-},
+  aiTitle:{
+    en:"AI Assistance",
+    fr:"Assistance IA",
+    kr:"Asistans AI"
+  },
 
-phoneLabel:{
-en:"Call Us",
-fr:"Appelez-nous",
-kr:"Rele Nou"
-},
+  contactTag:{
+    en:"Get In Touch",
+    fr:"Nous contacter",
+    kr:"Kontakte Nou"
+  },
 
-emailLabel:{
-en:"Email",
-fr:"Courriel",
-kr:"Imèl"
-},
+  contactTitle:{
+    en:"Contact & Social",
+    fr:"Contact et réseaux sociaux",
+    kr:"Kontak ak Rezo Sosyal"
+  },
 
-webLabel:{
-en:"Website",
-fr:"Site web",
-kr:"Sitwèb"
-},
+  phoneLabel:{
+    en:"Call Us",
+    fr:"Appelez-nous",
+    kr:"Rele Nou"
+  },
 
-followLabel:{
-en:"Follow Us",
-fr:"Suivez-nous",
-kr:"Swiv Nou"
-},
+  emailLabel:{
+    en:"Email",
+    fr:"Courriel",
+    kr:"Imèl"
+  },
 
-footerDesc:{
-en:"Immigration, documents, translation, housing, employment, business, Federal Register, passport, tax, and digital services — all in one place.",
-fr:"Services d'immigration, de documents, de traduction, de logement, d'emploi, d'entreprise, de Federal Register, de passeport, de fiscalité et de services numériques — tous au même endroit.",
-kr:"Sèvis Imigrasyon, Dokiman, Tradiksyon, Lojman, Travay, Biznis, Federal Register, Paspò, Taks, ak Sèvis Dijital — tout nan yon sèl kote."
-}
+  webLabel:{
+    en:"Website",
+    fr:"Site web",
+    kr:"Sitwèb"
+  },
+
+  followLabel:{
+    en:"Follow Us",
+    fr:"Suivez-nous",
+    kr:"Swiv Nou"
+  },
+
+  footerDesc:{
+    en:"Immigration, documents, translation, housing, employment, business, passport, tax, federal, community, media, AI and digital services — all in one place.",
+
+    fr:"Services d'immigration, documents, traduction, logement, emploi, entreprise, passeport, fiscalité, ressources fédérales, communautaires, médias, IA et numérique — tous au même endroit.",
+
+    kr:"Sèvis imigrasyon, dokiman, tradiksyon, lojman, travay, biznis, paspò, taks, federal, kominote, medya, AI ak dijital — tout nan yon sèl kote."
+  }
 
 };
 
 
-/* =========================================================
-   SERVICE MODULES
-========================================================= */
+/* =====================================================
+   ALL SERVICE MODULES + DIRECT LINKS
+===================================================== */
 
 const CATS = [
 
+/* 01 IMMIGRATION */
 {
-id:"immigration",
-num:"01",
-title:{
-en:"Immigration Services",
-fr:"Services d'immigration",
-kr:"Sèvis Imigrasyon"
-},
-sub:{
-en:"USCIS · Case Support · TPS · Naturalization",
-fr:"USCIS · Suivi de dossier · TPS · Naturalisation",
-kr:"USCIS · Sipò Dosye · TPS · Natiralizasyon"
-},
-items:{
-en:[
-"Immigration consultation support",
-"Immigration document preparation",
-"Immigration form assistance",
-"USCIS case support",
-"Immigration OS",
-"Case tracking",
-"Immigration document checklist",
-"Appointment preparation",
-"Translation support for immigration documents",
-"TPS information and assistance",
-"Work Permit / EAD assistance",
-"Adjustment of Status support",
-"Family Petition support",
-"Citizenship / Naturalization assistance",
-"Green Card renewal support",
-"Travel Document assistance",
-"Affidavit and supporting-document preparation",
-"Immigration news and updates",
-"E-Verify information and support"
-],
+  id:"immigration",
+  num:"01",
 
-fr:[
-"Accompagnement en consultation d'immigration",
-"Préparation de documents d'immigration",
-"Aide au remplissage des formulaires d'immigration",
-"Suivi de dossier USCIS",
-"Immigration OS",
-"Suivi de dossier",
-"Liste de vérification des documents d'immigration",
-"Préparation aux rendez-vous",
-"Aide à la traduction des documents d'immigration",
-"Information et assistance TPS",
-"Aide pour le permis de travail / EAD",
-"Aide pour l'ajustement de statut",
-"Aide pour la pétition familiale",
-"Aide à la citoyenneté / naturalisation",
-"Aide au renouvellement de la carte verte",
-"Aide pour les documents de voyage",
-"Préparation d'affidavits et de documents justificatifs",
-"Actualités et mises à jour sur l'immigration",
-"Informations et assistance E-Verify"
-],
+  title:{
+    en:"Immigration Services",
+    fr:"Services d'immigration",
+    kr:"Sèvis Imigrasyon"
+  },
 
-kr:[
-"Sipò konsiltasyon imigrasyon",
-"Preparasyon dokiman imigrasyon",
-"Èd pou ranpli fòm imigrasyon",
-"Sipò pou dosye USCIS",
-"Immigration OS",
-"Swiv dosye",
-"Lis verifikasyon dokiman imigrasyon",
-"Preparasyon pou randevou",
-"Sipò tradiksyon pou dokiman imigrasyon",
-"Enfòmasyon ak asistans TPS",
-"Asistans Pèmi Travay / EAD",
-"Sipò pou Ajisteman Estati",
-"Sipò pou Petisyon Familyal",
-"Asistans Sitwayènte / Natiralizasyon",
-"Sipò pou renouvèlman Green Card",
-"Asistans pou Dokiman Vwayaj",
-"Preparasyon Afidavi ak dokiman sipò",
-"Nouvèl ak dènye enfòmasyon sou imigrasyon",
-"Enfòmasyon ak sipò pou E-Verify"
-]
-}
+  sub:{
+    en:"USCIS · Case Support · TPS · Naturalization",
+    fr:"USCIS · Suivi de dossier · TPS · Naturalisation",
+    kr:"USCIS · Sipò Dosye · TPS · Natiralizasyon"
+  },
+
+  items:{
+    en:[
+      "Immigration consultation support",
+      "Immigration document preparation",
+      "Immigration form assistance",
+      "USCIS case support",
+      "Immigration OS",
+      "Case tracking",
+      "Immigration document checklist",
+      "Appointment preparation",
+      "Translation support for immigration documents",
+      "TPS information and assistance",
+      "Work Permit / EAD assistance",
+      "Adjustment of Status support",
+      "Family Petition support",
+      "Citizenship / Naturalization assistance",
+      "Green Card renewal support",
+      "Travel Document assistance",
+      "Affidavit and supporting-document preparation",
+      "Immigration news and updates",
+      "E-Verify information and support"
+    ],
+
+    fr:[
+      "Accompagnement en consultation d'immigration",
+      "Préparation de documents d'immigration",
+      "Aide au remplissage des formulaires d'immigration",
+      "Suivi de dossier USCIS",
+      "Immigration OS",
+      "Suivi de dossier",
+      "Liste de vérification des documents d'immigration",
+      "Préparation aux rendez-vous",
+      "Aide à la traduction des documents d'immigration",
+      "Information et assistance TPS",
+      "Aide pour le permis de travail / EAD",
+      "Aide pour l'ajustement de statut",
+      "Aide pour la pétition familiale",
+      "Aide à la citoyenneté / naturalisation",
+      "Aide au renouvellement de la carte verte",
+      "Aide pour les documents de voyage",
+      "Préparation d'affidavits et de documents justificatifs",
+      "Actualités et mises à jour sur l'immigration",
+      "Informations et assistance E-Verify"
+    ],
+
+    kr:[
+      "Sipò konsiltasyon imigrasyon",
+      "Preparasyon dokiman imigrasyon",
+      "Èd pou ranpli fòm imigrasyon",
+      "Sipò pou dosye USCIS",
+      "Immigration OS",
+      "Swiv dosye",
+      "Lis verifikasyon dokiman imigrasyon",
+      "Preparasyon pou randevou",
+      "Sipò tradiksyon pou dokiman imigrasyon",
+      "Enfòmasyon ak asistans TPS",
+      "Asistans Pèmi Travay / EAD",
+      "Sipò pou Ajisteman Estati",
+      "Sipò pou Petisyon Familyal",
+      "Asistans Sitwayènte / Natiralizasyon",
+      "Sipò pou renouvèlman Green Card",
+      "Asistans pou Dokiman Vwayaj",
+      "Preparasyon Afidavi ak dokiman sipò",
+      "Nouvèl ak dènye enfòmasyon sou imigrasyon",
+      "Enfòmasyon ak sipò pou E-Verify"
+    ]
+  },
+
+  links:[
+    {
+      label:"USCIS OFFICIAL WEBSITE",
+      url:"https://www.uscis.gov/"
+    },
+    {
+      label:"MYUSCIS",
+      url:"https://my.uscis.gov/"
+    },
+    {
+      label:"CHECK USCIS CASE STATUS",
+      url:"https://egov.uscis.gov/"
+    },
+    {
+      label:"E-VERIFY",
+      url:"https://www.e-verify.gov/"
+    }
+  ]
 },
 
+
+/* 02 DOCUMENTS */
 {
-id:"documents",
-num:"02",
-title:{
-en:"Document & Administrative Services",
-fr:"Services de documents et administratifs",
-kr:"Sèvis Dokiman ak Administratif"
-},
-sub:{
-en:"Letters · Forms · Filing",
-fr:"Lettres · Formulaires · Classement",
-kr:"Lèt · Fòm · Klasman"
-},
-items:{
-en:[
-"Document preparation",
-"Letter preparation",
-"Official letters",
-"Verification letters",
-"Affidavits",
-"Applications",
-"Forms",
-"PDF document preparation",
-"Scanning and document organization",
-"Printing support",
-"Digital file organization",
-"Resume preparation",
-"Cover letters",
-"Professional correspondence"
-],
+  id:"documents",
+  num:"02",
 
-fr:[
-"Préparation de documents",
-"Préparation de lettres",
-"Lettres officielles",
-"Lettres de vérification",
-"Affidavits",
-"Demandes / Applications",
-"Formulaires",
-"Préparation de documents PDF",
-"Numérisation et organisation de documents",
-"Aide à l'impression",
-"Organisation de fichiers numériques",
-"Préparation de CV",
-"Lettres de motivation",
-"Correspondance professionnelle"
-],
+  title:{
+    en:"Document & Administrative Services",
+    fr:"Services de documents et administratifs",
+    kr:"Sèvis Dokiman ak Administratif"
+  },
 
-kr:[
-"Preparasyon dokiman",
-"Preparasyon lèt",
-"Lèt ofisyèl",
-"Lèt verifikasyon",
-"Afidavi",
-"Aplikasyon",
-"Fòm",
-"Preparasyon dokiman PDF",
-"Eskane ak òganize dokiman",
-"Sipò enprime",
-"Òganizasyon fichye dijital",
-"Preparasyon rezime (CV)",
-"Lèt Kouvèti",
-"Korespondans pwofesyonèl"
-]
-}
+  sub:{
+    en:"Letters · Forms · Filing",
+    fr:"Lettres · Formulaires · Classement",
+    kr:"Lèt · Fòm · Klasman"
+  },
+
+  items:{
+    en:[
+      "Document preparation",
+      "Letter preparation",
+      "Official letters",
+      "Verification letters",
+      "Affidavits",
+      "Applications",
+      "Forms",
+      "PDF document preparation",
+      "Scanning and document organization",
+      "Printing support",
+      "Digital file organization",
+      "Resume preparation",
+      "Cover letters",
+      "Professional correspondence"
+    ],
+
+    fr:[
+      "Préparation de documents",
+      "Préparation de lettres",
+      "Lettres officielles",
+      "Lettres de vérification",
+      "Affidavits",
+      "Demandes / Applications",
+      "Formulaires",
+      "Préparation de documents PDF",
+      "Numérisation et organisation de documents",
+      "Aide à l'impression",
+      "Organisation de fichiers numériques",
+      "Préparation de CV",
+      "Lettres de motivation",
+      "Correspondance professionnelle"
+    ],
+
+    kr:[
+      "Preparasyon dokiman",
+      "Preparasyon lèt",
+      "Lèt ofisyèl",
+      "Lèt verifikasyon",
+      "Afidavi",
+      "Aplikasyon",
+      "Fòm",
+      "Preparasyon dokiman PDF",
+      "Eskane ak òganize dokiman",
+      "Sipò enprime",
+      "Òganizasyon fichye dijital",
+      "Preparasyon rezime (CV)",
+      "Lèt Kouvèti",
+      "Korespondans pwofesyonèl"
+    ]
+  },
+
+  links:[
+    {
+      label:"MAXIMAX DOCUMENT SERVICES",
+      url:"https://www.maximaxmultiservices.com/"
+    }
+  ]
 },
 
+
+/* 03 TRANSLATION */
 {
-id:"translation",
-num:"03",
-title:{
-en:"Translation Services",
-fr:"Services de traduction",
-kr:"Sèvis Tradiksyon"
-},
-sub:{
-en:"Haitian Creole · French · English",
-fr:"Créole haïtien · Français · Anglais",
-kr:"Kreyòl Ayisyen · Fransè · Anglè"
-},
-items:{
-en:[
-"Haitian Creole translation",
-"French translation",
-"English translation",
-"Document translation",
-"Letter translation",
-"Immigration-document translation",
-"Business correspondence translation"
-],
+  id:"translation",
+  num:"03",
 
-fr:[
-"Traduction créole haïtien",
-"Traduction française",
-"Traduction anglaise",
-"Traduction de documents",
-"Traduction de lettres",
-"Traduction de documents d'immigration",
-"Traduction de correspondance commerciale"
-],
+  title:{
+    en:"Translation Services",
+    fr:"Services de traduction",
+    kr:"Sèvis Tradiksyon"
+  },
 
-kr:[
-"Tradiksyon Kreyòl Ayisyen",
-"Tradiksyon Fransè",
-"Tradiksyon Anglè",
-"Tradiksyon dokiman",
-"Tradiksyon lèt",
-"Tradiksyon dokiman imigrasyon",
-"Tradiksyon korespondans biznis"
-]
-}
+  sub:{
+    en:"Haitian Creole · French · English",
+    fr:"Créole haïtien · Français · Anglais",
+    kr:"Kreyòl Ayisyen · Fransè · Anglè"
+  },
+
+  items:{
+    en:[
+      "Haitian Creole translation",
+      "French translation",
+      "English translation",
+      "Document translation",
+      "Letter translation",
+      "Immigration-document translation",
+      "Business correspondence translation"
+    ],
+
+    fr:[
+      "Traduction créole haïtien",
+      "Traduction française",
+      "Traduction anglaise",
+      "Traduction de documents",
+      "Traduction de lettres",
+      "Traduction de documents d'immigration",
+      "Traduction de correspondance commerciale"
+    ],
+
+    kr:[
+      "Tradiksyon Kreyòl Ayisyen",
+      "Tradiksyon Fransè",
+      "Tradiksyon Anglè",
+      "Tradiksyon dokiman",
+      "Tradiksyon lèt",
+      "Tradiksyon dokiman imigrasyon",
+      "Tradiksyon korespondans biznis"
+    ]
+  },
+
+  links:[
+    {
+      label:"MAXIMAX TRANSLATION SERVICES",
+      url:"https://www.maximaxmultiservices.com/"
+    }
+  ]
 },
 
+
+/* 04 HOUSING */
 {
-id:"housing",
-num:"04",
-title:{
-en:"Housing Services",
-fr:"Services de logement",
-kr:"Sèvis Lojman"
-},
-sub:{
-en:"Rentals · Section 8 · Affordable Housing",
-fr:"Locations · Section 8 · Logement abordable",
-kr:"Lokasyon · Seksyon 8 · Lojman Abòdab"
-},
-items:{
-en:[
-"Housing information",
-"Apartment search assistance",
-"House rental information",
-"Section 8 resources",
-"Low-Income Housing resources",
-"Affordable Housing information",
-"Housing application assistance",
-"Rental-document preparation"
-],
+  id:"housing",
+  num:"04",
 
-fr:[
-"Informations sur le logement",
-"Aide à la recherche d'appartement",
-"Informations sur la location de maison",
-"Ressources Section 8",
-"Ressources pour logement à faible revenu",
-"Informations sur le logement abordable",
-"Aide pour la demande de logement",
-"Préparation de documents de location"
-],
+  title:{
+    en:"Housing Services",
+    fr:"Services de logement",
+    kr:"Sèvis Lojman"
+  },
 
-kr:[
-"Enfòmasyon sou lojman",
-"Asistans pou chèche apatman",
-"Enfòmasyon sou lokasyon kay",
-"Resous Seksyon 8",
-"Resous Lojman pou Ti Revni",
-"Enfòmasyon sou Lojman Abòdab",
-"Asistans pou aplikasyon lojman",
-"Preparasyon dokiman lokasyon"
-]
-}
+  sub:{
+    en:"Rentals · Section 8 · Affordable Housing",
+    fr:"Locations · Section 8 · Logement abordable",
+    kr:"Lokasyon · Seksyon 8 · Lojman Abòdab"
+  },
+
+  items:{
+    en:[
+      "Housing information",
+      "Apartment search assistance",
+      "House rental information",
+      "Section 8 resources",
+      "Low-Income Housing resources",
+      "Affordable Housing information",
+      "Housing application assistance",
+      "Rental-document preparation"
+    ],
+
+    fr:[
+      "Informations sur le logement",
+      "Aide à la recherche d'appartement",
+      "Informations sur la location de maison",
+      "Ressources Section 8",
+      "Ressources pour logement à faible revenu",
+      "Informations sur le logement abordable",
+      "Aide pour la demande de logement",
+      "Préparation de documents de location"
+    ],
+
+    kr:[
+      "Enfòmasyon sou lojman",
+      "Asistans pou chèche apatman",
+      "Enfòmasyon sou lokasyon kay",
+      "Resous Seksyon 8",
+      "Resous Lojman pou Ti Revni",
+      "Enfòmasyon sou Lojman Abòdab",
+      "Asistans pou aplikasyon lojman",
+      "Preparasyon dokiman lokasyon"
+    ]
+  },
+
+  links:[
+    {
+      label:"HUD OFFICIAL WEBSITE",
+      url:"https://www.hud.gov/"
+    },
+    {
+      label:"SECTION 8 / HOUSING CHOICE VOUCHERS",
+      url:"https://www.hud.gov/helping-americans/housing-choice-vouchers"
+    }
+  ]
 },
 
+
+/* 05 EMPLOYMENT */
 {
-id:"employment",
-num:"05",
-title:{
-en:"Employment Services",
-fr:"Services d'emploi",
-kr:"Sèvis Travay"
-},
-sub:{
-en:"Resumes · Applications · Work Authorization",
-fr:"CV · Demandes · Autorisation de travail",
-kr:"Rezime · Aplikasyon · Otorizasyon Travay"
-},
-items:{
-en:[
-"Job-search assistance",
-"Resume support",
-"Employment applications",
-"Job-resource information",
-"E-Verify resources",
-"Employment-document assistance",
-"Work authorization information"
-],
+  id:"employment",
+  num:"05",
 
-fr:[
-"Aide à la recherche d'emploi",
-"Aide à la rédaction de CV",
-"Demandes d'emploi",
-"Informations sur les ressources d'emploi",
-"Ressources E-Verify",
-"Aide aux documents d'emploi",
-"Informations sur l'autorisation de travail"
-],
+  title:{
+    en:"Employment Services",
+    fr:"Services d'emploi",
+    kr:"Sèvis Travay"
+  },
 
-kr:[
-"Asistans pou chèche travay",
-"Sipò pou rezime",
-"Aplikasyon pou travay",
-"Enfòmasyon sou resous travay",
-"Resous E-Verify",
-"Asistans dokiman travay",
-"Enfòmasyon sou otorizasyon travay"
-]
-}
+  sub:{
+    en:"Resumes · Applications · Work Authorization",
+    fr:"CV · Demandes · Autorisation de travail",
+    kr:"Rezime · Aplikasyon · Otorizasyon Travay"
+  },
+
+  items:{
+    en:[
+      "Job-search assistance",
+      "Resume support",
+      "Employment applications",
+      "Job-resource information",
+      "E-Verify resources",
+      "Employment-document assistance",
+      "Work authorization information"
+    ],
+
+    fr:[
+      "Aide à la recherche d'emploi",
+      "Aide à la rédaction de CV",
+      "Demandes d'emploi",
+      "Informations sur les ressources d'emploi",
+      "Ressources E-Verify",
+      "Aide aux documents d'emploi",
+      "Informations sur l'autorisation de travail"
+    ],
+
+    kr:[
+      "Asistans pou chèche travay",
+      "Sipò pou rezime",
+      "Aplikasyon pou travay",
+      "Enfòmasyon sou resous travay",
+      "Resous E-Verify",
+      "Asistans dokiman travay",
+      "Enfòmasyon sou otorizasyon travay"
+    ]
+  },
+
+  links:[
+    {
+      label:"CAREERONESTOP",
+      url:"https://www.careeronestop.org/"
+    },
+    {
+      label:"USAJOBS",
+      url:"https://www.usajobs.gov/"
+    },
+    {
+      label:"E-VERIFY",
+      url:"https://www.e-verify.gov/"
+    }
+  ]
 },
 
+
+/* 06 BUSINESS */
 {
-id:"business",
-num:"06",
-title:{
-en:"Business Services",
-fr:"Services aux entreprises",
-kr:"Sèvis Biznis"
-},
-sub:{
-en:"Small Business · Branding · Admin Support",
-fr:"Petites entreprises · Image de marque · Soutien admin",
-kr:"Ti Biznis · Branding · Sipò Administratif"
-},
-items:{
-en:[
-"Business document preparation",
-"Small-business support",
-"Business letters",
-"Administrative assistance",
-"Digital business services",
-"Business information and resources",
-"Branding and business presentation support"
-],
+  id:"business",
+  num:"06",
 
-fr:[
-"Préparation de documents d'entreprise",
-"Soutien aux petites entreprises",
-"Lettres d'affaires",
-"Assistance administrative",
-"Services d'entreprise numériques",
-"Informations et ressources commerciales",
-"Soutien à l'image de marque et à la présentation"
-],
+  title:{
+    en:"Business Services",
+    fr:"Services aux entreprises",
+    kr:"Sèvis Biznis"
+  },
 
-kr:[
-"Preparasyon dokiman biznis",
-"Sipò pou ti biznis",
-"Lèt biznis",
-"Asistans administratif",
-"Sèvis biznis dijital",
-"Enfòmasyon ak resous biznis",
-"Sipò pou branding ak prezantasyon biznis"
-]
-}
+  sub:{
+    en:"Small Business · Branding · Admin Support",
+    fr:"Petites entreprises · Image de marque · Soutien admin",
+    kr:"Ti Biznis · Branding · Sipò Administratif"
+  },
+
+  items:{
+    en:[
+      "Business document preparation",
+      "Small-business support",
+      "Business letters",
+      "Administrative assistance",
+      "Digital business services",
+      "Business information and resources",
+      "Branding and business presentation support"
+    ],
+
+    fr:[
+      "Préparation de documents d'entreprise",
+      "Soutien aux petites entreprises",
+      "Lettres d'affaires",
+      "Assistance administrative",
+      "Services d'entreprise numériques",
+      "Informations et ressources commerciales",
+      "Soutien à l'image de marque et à la présentation"
+    ],
+
+    kr:[
+      "Preparasyon dokiman biznis",
+      "Sipò pou ti biznis",
+      "Lèt biznis",
+      "Asistans administratif",
+      "Sèvis biznis dijital",
+      "Enfòmasyon ak resous biznis",
+      "Sipò pou branding ak prezantasyon biznis"
+    ]
+  },
+
+  links:[
+    {
+      label:"U.S. SMALL BUSINESS ADMINISTRATION",
+      url:"https://www.sba.gov/"
+    },
+    {
+      label:"FLORIDA SUNBIZ",
+      url:"https://dos.fl.gov/sunbiz/"
+    },
+    {
+      label:"IRS EIN INFORMATION",
+      url:"https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers"
+    }
+  ]
 },
 
+
+/* 07 DIGITAL */
 {
-id:"digital",
-num:"07",
-title:{
-en:"Technology & Digital Services",
-fr:"Services technologiques et numériques",
-kr:"Sèvis Teknoloji ak Dijital"
-},
-sub:{
-en:"Online Forms · QR Codes · Digital Accounts",
-fr:"Formulaires en ligne · Codes QR · Comptes numériques",
-kr:"Fòm sou Entènèt · Kòd QR · Kont Dijital"
-},
-items:{
-en:[
-"Website assistance",
-"Digital forms",
-"Online applications",
-"AI-assisted document preparation",
-"Digital organization",
-"QR Code support",
-"Online resource navigation",
-"Digital account assistance",
-"Basic technology assistance"
-],
+  id:"digital",
+  num:"07",
 
-fr:[
-"Assistance pour site web",
-"Formulaires numériques",
-"Demandes en ligne",
-"Préparation de documents assistée par IA",
-"Organisation numérique",
-"Support pour codes QR",
-"Navigation dans les ressources en ligne",
-"Aide pour les comptes numériques",
-"Assistance technologique de base"
-],
+  title:{
+    en:"Technology & Digital Services",
+    fr:"Services technologiques et numériques",
+    kr:"Sèvis Teknoloji ak Dijital"
+  },
 
-kr:[
-"Asistans pou sitwèb",
-"Fòm dijital",
-"Aplikasyon sou entènèt",
-"Preparasyon dokiman ak èd AI",
-"Òganizasyon dijital",
-"Sipò pou Kòd QR",
-"Navigasyon nan resous sou entènèt",
-"Asistans kont dijital",
-"Asistans teknoloji debaz"
-]
-}
+  sub:{
+    en:"Online Forms · QR Codes · Digital Accounts",
+    fr:"Formulaires en ligne · Codes QR · Comptes numériques",
+    kr:"Fòm sou Entènèt · Kòd QR · Kont Dijital"
+  },
+
+  items:{
+    en:[
+      "Website assistance",
+      "Digital forms",
+      "Online applications",
+      "AI-assisted document preparation",
+      "Digital organization",
+      "QR Code support",
+      "Online resource navigation",
+      "Digital account assistance",
+      "Basic technology assistance"
+    ],
+
+    fr:[
+      "Assistance pour site web",
+      "Formulaires numériques",
+      "Demandes en ligne",
+      "Préparation de documents assistée par IA",
+      "Organisation numérique",
+      "Support pour codes QR",
+      "Navigation dans les ressources en ligne",
+      "Aide pour les comptes numériques",
+      "Assistance technologique de base"
+    ],
+
+    kr:[
+      "Asistans pou sitwèb",
+      "Fòm dijital",
+      "Aplikasyon sou entènèt",
+      "Preparasyon dokiman ak èd AI",
+      "Òganizasyon dijital",
+      "Sipò pou Kòd QR",
+      "Navigasyon nan resous sou entènèt",
+      "Asistans kont dijital",
+      "Asistans teknoloji debaz"
+    ]
+  },
+
+  links:[
+    {
+      label:"MAXIMAX DIGITAL SERVICES",
+      url:"https://www.maximaxmultiservices.com/"
+    }
+  ]
 },
 
+
+/* 08 MEDIA */
 {
-id:"media",
-num:"—",
-title:{
-en:"Communication & Media Services",
-fr:"Services de communication et médias",
-kr:"Sèvis Kominikasyon ak Medya"
-},
-sub:{
-en:"Flyers · Social Media · Presentations",
-fr:"Prospectus · Réseaux sociaux · Présentations",
-kr:"Flaye · Rezo Sosyal · Prezantasyon"
-},
-items:{
-en:[
-"Flyers",
-"Announcements",
-"Social-media content",
-"Promotional materials",
-"Community notices",
-"Professional messages",
-"Video and script preparation",
-"Digital presentations"
-],
+  id:"media",
+  num:"08",
 
-fr:[
-"Prospectus",
-"Annonces",
-"Contenu pour les réseaux sociaux",
-"Matériel promotionnel",
-"Avis communautaires",
-"Messages professionnels",
-"Préparation de vidéos et de scripts",
-"Présentations numériques"
-],
+  title:{
+    en:"Communication & Media Services",
+    fr:"Services de communication et médias",
+    kr:"Sèvis Kominikasyon ak Medya"
+  },
 
-kr:[
-"Flaye",
-"Anons",
-"Kontni pou rezo sosyal",
-"Materyèl pwomosyonèl",
-"Avi kominotè",
-"Mesaj pwofesyonèl",
-"Preparasyon videyo ak eskript",
-"Prezantasyon dijital"
-]
-}
+  sub:{
+    en:"Flyers · Social Media · Presentations",
+    fr:"Prospectus · Réseaux sociaux · Présentations",
+    kr:"Flaye · Rezo Sosyal · Prezantasyon"
+  },
+
+  items:{
+    en:[
+      "Flyers",
+      "Announcements",
+      "Social-media content",
+      "Promotional materials",
+      "Community notices",
+      "Professional messages",
+      "Video and script preparation",
+      "Digital presentations"
+    ],
+
+    fr:[
+      "Prospectus",
+      "Annonces",
+      "Contenu pour les réseaux sociaux",
+      "Matériel promotionnel",
+      "Avis communautaires",
+      "Messages professionnels",
+      "Préparation de vidéos et de scripts",
+      "Présentations numériques"
+    ],
+
+    kr:[
+      "Flaye",
+      "Anons",
+      "Kontni pou rezo sosyal",
+      "Materyèl pwomosyonèl",
+      "Avi kominotè",
+      "Mesaj pwofesyonèl",
+      "Preparasyon videyo ak eskript",
+      "Prezantasyon dijital"
+    ]
+  },
+
+  links:[
+    {
+      label:"MAXIMAX MEDIA SERVICES",
+      url:"https://www.maximaxmultiservices.com/"
+    }
+  ]
 },
 
+
+/* 09 COMMUNITY */
 {
-id:"community",
-num:"08",
-title:{
-en:"Community Resource Services",
-fr:"Services de ressources communautaires",
-kr:"Sèvis Resous Kominotè"
-},
-sub:{
-en:"Referrals · Government Navigation",
-fr:"Références · Navigation gouvernementale",
-kr:"Referans · Navigasyon Gouvènman"
-},
-items:{
-en:[
-"Community information",
-"Immigration resources",
-"Housing resources",
-"Employment resources",
-"Government-service navigation",
-"Local assistance resources",
-"Referral information"
-],
+  id:"community",
+  num:"09",
 
-fr:[
-"Informations communautaires",
-"Ressources en immigration",
-"Ressources en logement",
-"Ressources en emploi",
-"Navigation dans les services gouvernementaux",
-"Ressources d'aide locale",
-"Informations de référence"
-],
+  title:{
+    en:"Community Resource Services",
+    fr:"Services de ressources communautaires",
+    kr:"Sèvis Resous Kominotè"
+  },
 
-kr:[
-"Enfòmasyon kominotè",
-"Resous imigrasyon",
-"Resous lojman",
-"Resous travay",
-"Navigasyon nan sèvis gouvènman",
-"Resous asistans lokal",
-"Enfòmasyon referans"
-]
-}
+  sub:{
+    en:"Referrals · Government Navigation",
+    fr:"Références · Navigation gouvernementale",
+    kr:"Referans · Navigasyon Gouvènman"
+  },
+
+  items:{
+    en:[
+      "Community information",
+      "Immigration resources",
+      "Housing resources",
+      "Employment resources",
+      "Government-service navigation",
+      "Local assistance resources",
+      "Referral information"
+    ],
+
+    fr:[
+      "Informations communautaires",
+      "Ressources en immigration",
+      "Ressources en logement",
+      "Ressources en emploi",
+      "Navigation dans les services gouvernementaux",
+      "Ressources d'aide locale",
+      "Informations de référence"
+    ],
+
+    kr:[
+      "Enfòmasyon kominotè",
+      "Resous imigrasyon",
+      "Resous lojman",
+      "Resous travay",
+      "Navigasyon nan sèvis gouvènman",
+      "Resous asistans lokal",
+      "Enfòmasyon referans"
+    ]
+  },
+
+  links:[
+    {
+      label:"USA.GOV",
+      url:"https://www.usa.gov/"
+    },
+    {
+      label:"USA.GOV BENEFITS",
+      url:"https://www.usa.gov/benefits"
+    }
+  ]
 },
 
+
+/* 10 FEDERAL REGISTER */
 {
-id:"federal-register",
-num:"09",
-title:{
-en:"Federal Register Services",
-fr:"Services du Federal Register",
-kr:"Sèvis Federal Register"
-},
-sub:{
-en:"Notices · Publications · Federal Updates",
-fr:"Avis · Publications · Mises à jour fédérales",
-kr:"Avi · Piblikasyon · Mizajou Federal"
-},
-items:{
-en:[
-"Federal Register information",
-"Federal notices search assistance",
-"Federal rules and regulation updates",
-"Public notice assistance",
-"Government publication navigation",
-"Federal agency document search",
-"Public-comment information",
-"Official federal publication resources",
-"Federal compliance information",
-"Federal Register research assistance"
-],
+  id:"federal-register",
+  num:"10",
 
-fr:[
-"Informations sur le Federal Register",
-"Aide à la recherche d'avis fédéraux",
-"Mises à jour des règles et règlements fédéraux",
-"Aide concernant les avis publics",
-"Navigation dans les publications gouvernementales",
-"Recherche de documents des agences fédérales",
-"Informations sur les commentaires publics",
-"Ressources officielles de publications fédérales",
-"Informations sur la conformité fédérale",
-"Assistance à la recherche dans le Federal Register"
-],
+  title:{
+    en:"Federal Register Services",
+    fr:"Services du Federal Register",
+    kr:"Sèvis Federal Register"
+  },
 
-kr:[
-"Enfòmasyon sou Federal Register",
-"Asistans pou chèche avi federal",
-"Mizajou règ ak règleman federal",
-"Asistans pou avi piblik",
-"Navigasyon nan piblikasyon gouvènman",
-"Rechèch dokiman ajans federal",
-"Enfòmasyon sou kòmantè piblik",
-"Resous piblikasyon federal ofisyèl",
-"Enfòmasyon sou konfòmite federal",
-"Asistans rechèch Federal Register"
-]
-}
+  sub:{
+    en:"Notices · Regulations · Federal Publications",
+    fr:"Avis · Règlements · Publications fédérales",
+    kr:"Avi · Règleman · Piblikasyon Federal"
+  },
+
+  items:{
+    en:[
+      "Federal Register information",
+      "Federal notice search assistance",
+      "Federal rules and regulation updates",
+      "Public notice information",
+      "Federal agency document search",
+      "Government publication navigation",
+      "Public-comment information",
+      "Official federal publication resources",
+      "Federal compliance information",
+      "Federal Register research assistance"
+    ],
+
+    fr:[
+      "Informations sur le Federal Register",
+      "Aide à la recherche d'avis fédéraux",
+      "Mises à jour des règles et règlements fédéraux",
+      "Informations sur les avis publics",
+      "Recherche de documents des agences fédérales",
+      "Navigation dans les publications gouvernementales",
+      "Informations sur les commentaires publics",
+      "Ressources officielles de publications fédérales",
+      "Informations sur la conformité fédérale",
+      "Assistance à la recherche dans le Federal Register"
+    ],
+
+    kr:[
+      "Enfòmasyon sou Federal Register",
+      "Asistans pou chèche avi federal",
+      "Mizajou règ ak règleman federal",
+      "Enfòmasyon sou avi piblik",
+      "Rechèch dokiman ajans federal",
+      "Navigasyon nan piblikasyon gouvènman",
+      "Enfòmasyon sou kòmantè piblik",
+      "Resous piblikasyon federal ofisyèl",
+      "Enfòmasyon sou konfòmite federal",
+      "Asistans rechèch Federal Register"
+    ]
+  },
+
+  links:[
+    {
+      label:"FEDERAL REGISTER OFFICIAL WEBSITE",
+      url:"https://www.federalregister.gov/"
+    },
+    {
+      label:"GOVINFO",
+      url:"https://www.govinfo.gov/"
+    }
+  ]
 },
 
+
+/* 11 PASSPORT */
 {
-id:"passport",
-num:"10",
-title:{
-en:"Passport Services",
-fr:"Services de passeport",
-kr:"Sèvis Paspò"
-},
-sub:{
-en:"US Passport · Haitian Passport · Renewal",
-fr:"Passeport américain · Passeport haïtien · Renouvellement",
-kr:"Paspò Ameriken · Paspò Ayisyen · Renouvèlman"
-},
-items:{
-en:[
-"US passport application assistance",
-"US passport renewal assistance",
-"Haitian passport application support",
-"Haitian passport renewal support",
-"Passport form assistance",
-"Passport document checklist",
-"Passport appointment preparation",
-"Passport photo requirement guidance",
-"Lost or stolen passport information",
-"Expedited passport information",
-"Minor passport application support",
-"Travel-document preparation",
-"Passport status information",
-"General passport assistance"
-],
+  id:"passport",
+  num:"11",
 
-fr:[
-"Aide à la demande de passeport américain",
-"Aide au renouvellement du passeport américain",
-"Assistance pour la demande de passeport haïtien",
-"Assistance pour le renouvellement du passeport haïtien",
-"Aide aux formulaires de passeport",
-"Liste de vérification des documents de passeport",
-"Préparation aux rendez-vous de passeport",
-"Conseils sur les exigences de photo de passeport",
-"Informations sur les passeports perdus ou volés",
-"Informations sur les passeports accélérés",
-"Aide pour les demandes de passeport pour mineurs",
-"Préparation de documents de voyage",
-"Informations sur le statut du passeport",
-"Assistance générale pour les passeports"
-],
+  title:{
+    en:"Passport Services",
+    fr:"Services de passeport",
+    kr:"Sèvis Paspò"
+  },
 
-kr:[
-"Asistans aplikasyon paspò ameriken",
-"Asistans renouvèlman paspò ameriken",
-"Sipò aplikasyon paspò ayisyen",
-"Sipò renouvèlman paspò ayisyen",
-"Asistans pou fòm paspò",
-"Lis verifikasyon dokiman paspò",
-"Preparasyon pou randevou paspò",
-"Gid sou kondisyon foto paspò",
-"Enfòmasyon sou paspò pèdi oswa vòlè",
-"Enfòmasyon sou paspò rapid",
-"Sipò aplikasyon paspò pou timoun",
-"Preparasyon dokiman vwayaj",
-"Enfòmasyon sou estati paspò",
-"Asistans jeneral pou paspò"
-]
-}
+  sub:{
+    en:"US Passport · Haitian Passport · Renewal",
+    fr:"Passeport américain · Passeport haïtien · Renouvellement",
+    kr:"Paspò Ameriken · Paspò Ayisyen · Renouvèlman"
+  },
+
+  items:{
+    en:[
+      "US passport application assistance",
+      "US passport renewal assistance",
+      "Haitian passport application support",
+      "Haitian passport renewal support",
+      "Passport form assistance",
+      "Passport document checklist",
+      "Passport appointment preparation",
+      "Passport photo requirement guidance",
+      "Lost or stolen passport information",
+      "Expedited passport information",
+      "Minor passport application support",
+      "Travel-document preparation",
+      "Passport status information",
+      "General passport assistance"
+    ],
+
+    fr:[
+      "Aide à la demande de passeport américain",
+      "Aide au renouvellement du passeport américain",
+      "Assistance pour la demande de passeport haïtien",
+      "Assistance pour le renouvellement du passeport haïtien",
+      "Aide aux formulaires de passeport",
+      "Liste de vérification des documents de passeport",
+      "Préparation aux rendez-vous de passeport",
+      "Conseils sur les exigences de photo de passeport",
+      "Informations sur les passeports perdus ou volés",
+      "Informations sur les passeports accélérés",
+      "Aide pour les demandes de passeport pour mineurs",
+      "Préparation de documents de voyage",
+      "Informations sur le statut du passeport",
+      "Assistance générale pour les passeports"
+    ],
+
+    kr:[
+      "Asistans aplikasyon paspò ameriken",
+      "Asistans renouvèlman paspò ameriken",
+      "Sipò aplikasyon paspò ayisyen",
+      "Sipò renouvèlman paspò ayisyen",
+      "Asistans pou fòm paspò",
+      "Lis verifikasyon dokiman paspò",
+      "Preparasyon pou randevou paspò",
+      "Gid sou kondisyon foto paspò",
+      "Enfòmasyon sou paspò pèdi oswa vòlè",
+      "Enfòmasyon sou paspò rapid",
+      "Sipò aplikasyon paspò pou timoun",
+      "Preparasyon dokiman vwayaj",
+      "Enfòmasyon sou estati paspò",
+      "Asistans jeneral pou paspò"
+    ]
+  },
+
+  links:[
+    {
+      label:"U.S. PASSPORT — DEPARTMENT OF STATE",
+      url:"https://travel.state.gov/content/travel/en/passports.html"
+    },
+    {
+      label:"APPLY FOR U.S. PASSPORT",
+      url:"https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html"
+    },
+    {
+      label:"RENEW U.S. PASSPORT",
+      url:"https://travel.state.gov/content/travel/en/passports/have-passport/renew.html"
+    },
+    {
+      label:"HAITIAN PASSPORT — EMBASSY OF HAITI",
+      url:"https://www.haiti.org/passport-application/"
+    }
+  ]
 },
 
+
+/* 12 US & HT TAX */
 {
-id:"tax",
-num:"11",
-title:{
-en:"US & HT Tax Services",
-fr:"Services fiscaux USA & Haïti",
-kr:"Sèvis Taks USA & Ayiti"
-},
-sub:{
-en:"Tax Preparation · Filing · IRS · DGI",
-fr:"Préparation fiscale · Déclaration · IRS · DGI",
-kr:"Preparasyon Taks · Deklarasyon · IRS · DGI"
-},
-items:{
-en:[
-"US individual tax preparation",
-"US business tax preparation",
-"Federal tax filing assistance",
-"State tax filing assistance",
-"IRS document organization",
-"W-2 and 1099 tax document support",
-"Tax return preparation assistance",
-"Tax filing extension assistance",
-"IRS notice document assistance",
-"EIN information and assistance",
-"ITIN information and assistance",
-"Haiti tax information",
-"Haiti tax document preparation support",
-"DGI information and document support",
-"Tax-document translation support",
-"Tax record organization",
-"Prior-year tax document assistance",
-"General US and Haiti tax-resource assistance"
-],
+  id:"tax",
+  num:"12",
 
-fr:[
-"Préparation des impôts individuels aux États-Unis",
-"Préparation des impôts d'entreprise aux États-Unis",
-"Aide à la déclaration fiscale fédérale",
-"Aide à la déclaration fiscale de l'État",
-"Organisation des documents IRS",
-"Aide pour les documents fiscaux W-2 et 1099",
-"Aide à la préparation des déclarations fiscales",
-"Aide pour les prolongations de déclaration fiscale",
-"Aide concernant les avis de l'IRS",
-"Informations et assistance EIN",
-"Informations et assistance ITIN",
-"Informations fiscales sur Haïti",
-"Aide à la préparation de documents fiscaux haïtiens",
-"Informations et assistance documentaire DGI",
-"Aide à la traduction de documents fiscaux",
-"Organisation des dossiers fiscaux",
-"Aide pour les documents fiscaux des années précédentes",
-"Assistance générale sur les ressources fiscales USA et Haïti"
-],
+  title:{
+    en:"US & HT Tax Services",
+    fr:"Services fiscaux USA & Haïti",
+    kr:"Sèvis Taks USA & Ayiti"
+  },
 
-kr:[
-"Preparasyon taks endividyèl Ozetazini",
-"Preparasyon taks biznis Ozetazini",
-"Asistans pou deklarasyon taks federal",
-"Asistans pou deklarasyon taks eta",
-"Òganizasyon dokiman IRS",
-"Sipò pou dokiman taks W-2 ak 1099",
-"Asistans preparasyon deklarasyon taks",
-"Asistans pou ekstansyon deklarasyon taks",
-"Asistans pou dokiman avi IRS",
-"Enfòmasyon ak asistans EIN",
-"Enfòmasyon ak asistans ITIN",
-"Enfòmasyon sou taks Ayiti",
-"Sipò preparasyon dokiman taks Ayiti",
-"Enfòmasyon ak sipò dokiman DGI",
-"Sipò tradiksyon dokiman taks",
-"Òganizasyon dosye taks",
-"Asistans dokiman taks ane pase",
-"Asistans jeneral sou resous taks USA ak Ayiti"
-]
-}
+  sub:{
+    en:"IRS · Filing · Refunds · Payments · DGI",
+    fr:"IRS · Déclaration · Remboursements · Paiements · DGI",
+    kr:"IRS · Deklarasyon · Refund · Peman · DGI"
+  },
+
+  items:{
+    en:[
+      "US individual tax preparation",
+      "US business tax preparation",
+      "Federal tax filing assistance",
+      "State tax filing assistance",
+      "IRS document organization",
+      "W-2 and 1099 tax document support",
+      "Tax return preparation assistance",
+      "Tax filing extension assistance",
+      "IRS notice document assistance",
+      "EIN information and assistance",
+      "ITIN information and assistance",
+      "Haiti tax information",
+      "Haiti tax document preparation support",
+      "DGI information and document support",
+      "Tax-document translation support",
+      "Tax record organization",
+      "Prior-year tax document assistance",
+      "General US and Haiti tax-resource assistance"
+    ],
+
+    fr:[
+      "Préparation des impôts individuels aux États-Unis",
+      "Préparation des impôts d'entreprise aux États-Unis",
+      "Aide à la déclaration fiscale fédérale",
+      "Aide à la déclaration fiscale de l'État",
+      "Organisation des documents IRS",
+      "Aide pour les documents fiscaux W-2 et 1099",
+      "Aide à la préparation des déclarations fiscales",
+      "Aide pour les prolongations de déclaration fiscale",
+      "Aide concernant les avis de l'IRS",
+      "Informations et assistance EIN",
+      "Informations et assistance ITIN",
+      "Informations fiscales sur Haïti",
+      "Aide à la préparation de documents fiscaux haïtiens",
+      "Informations et assistance documentaire DGI",
+      "Aide à la traduction de documents fiscaux",
+      "Organisation des dossiers fiscaux",
+      "Aide pour les documents fiscaux des années précédentes",
+      "Assistance générale sur les ressources fiscales USA et Haïti"
+    ],
+
+    kr:[
+      "Preparasyon taks endividyèl Ozetazini",
+      "Preparasyon taks biznis Ozetazini",
+      "Asistans pou deklarasyon taks federal",
+      "Asistans pou deklarasyon taks eta",
+      "Òganizasyon dokiman IRS",
+      "Sipò pou dokiman taks W-2 ak 1099",
+      "Asistans preparasyon deklarasyon taks",
+      "Asistans pou ekstansyon deklarasyon taks",
+      "Asistans pou dokiman avi IRS",
+      "Enfòmasyon ak asistans EIN",
+      "Enfòmasyon ak asistans ITIN",
+      "Enfòmasyon sou taks Ayiti",
+      "Sipò preparasyon dokiman taks Ayiti",
+      "Enfòmasyon ak sipò dokiman DGI",
+      "Sipò tradiksyon dokiman taks",
+      "Òganizasyon dosye taks",
+      "Asistans dokiman taks ane pase",
+      "Asistans jeneral sou resous taks USA ak Ayiti"
+    ]
+  },
+
+  links:[
+    {
+      label:"US TAX SERVICES — IRS",
+      url:"https://www.irs.gov/"
+    },
+    {
+      label:"FILE YOUR US TAXES",
+      url:"https://www.irs.gov/filing"
+    },
+    {
+      label:"CHECK IRS REFUND",
+      url:"https://www.irs.gov/refunds"
+    },
+    {
+      label:"IRS PAYMENTS",
+      url:"https://www.irs.gov/payments"
+    },
+    {
+      label:"ITIN INFORMATION",
+      url:"https://www.irs.gov/individuals/individual-taxpayer-identification-number"
+    },
+    {
+      label:"EIN INFORMATION",
+      url:"https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers"
+    },
+    {
+      label:"HAITI TAX SERVICES — DGI",
+      url:"https://dgi.gouv.ht/"
+    }
+  ]
 }
 
 ];
 
 
-/* =========================================================
-   NEWS
-========================================================= */
+/* =====================================================
+   NEWS CENTER
+===================================================== */
 
 const NEWS_CHIPS = {
 
-en:[
-"Immigration news",
-"Community news",
-"CNN News module",
-"Miami Herald News module",
-"RFI News module",
-"Public-information updates"
-],
+  en:[
+    "Immigration news",
+    "Community news",
+    "CNN News module",
+    "Miami Herald News module",
+    "RFI News module",
+    "Public-information updates"
+  ],
 
-fr:[
-"Actualités sur l'immigration",
-"Actualités communautaires",
-"Module CNN News",
-"Module Miami Herald News",
-"Module RFI News",
-"Mises à jour d'information publique"
-],
+  fr:[
+    "Actualités sur l'immigration",
+    "Actualités communautaires",
+    "Module CNN News",
+    "Module Miami Herald News",
+    "Module RFI News",
+    "Mises à jour d'information publique"
+  ],
 
-kr:[
-"Nouvèl imigrasyon",
-"Nouvèl kominotè",
-"Modil Nouvèl CNN",
-"Modil Nouvèl Miami Herald",
-"Modil Nouvèl RFI",
-"Dènye enfòmasyon piblik"
-]
+  kr:[
+    "Nouvèl imigrasyon",
+    "Nouvèl kominotè",
+    "Modil Nouvèl CNN",
+    "Modil Nouvèl Miami Herald",
+    "Modil Nouvèl RFI",
+    "Dènye enfòmasyon piblik"
+  ]
 
 };
 
 
-/* =========================================================
-   AI CARDS
-========================================================= */
+/* =====================================================
+   AI CENTER
+===================================================== */
 
 const AI_CARDS = [
 
-{
-title:{
-en:"AI Document Writer",
-fr:"Rédacteur de documents IA",
-kr:"AI Ekriven Dokiman"
-},
-desc:{
-en:"Draft clean, ready-to-use documents from your information.",
-fr:"Rédigez des documents clairs et prêts à l'emploi à partir de vos informations.",
-kr:"Kreye dokiman klè, pare pou itilize, apati enfòmasyon ou bay."
-}
-},
+  {
+    title:{
+      en:"AI Document Writer",
+      fr:"Rédacteur de documents IA",
+      kr:"AI Ekriven Dokiman"
+    },
+    desc:{
+      en:"Draft clean, ready-to-use documents from your information.",
+      fr:"Rédigez des documents clairs et prêts à l'emploi à partir de vos informations.",
+      kr:"Kreye dokiman klè, pare pou itilize, apati enfòmasyon ou bay."
+    }
+  },
 
-{
-title:{
-en:"AI Translation Support",
-fr:"Assistance de traduction IA",
-kr:"AI Sipò Tradiksyon"
-},
-desc:{
-en:"Fast, accurate translation across Creole, French, and English.",
-fr:"Traduction rapide et précise entre créole, français et anglais.",
-kr:"Tradiksyon rapid e egzat ant Kreyòl, Fransè, ak Anglè."
-}
-},
+  {
+    title:{
+      en:"AI Translation Support",
+      fr:"Assistance de traduction IA",
+      kr:"AI Sipò Tradiksyon"
+    },
+    desc:{
+      en:"Fast translation support across Creole, French, and English.",
+      fr:"Assistance rapide de traduction entre créole, français et anglais.",
+      kr:"Sipò tradiksyon rapid ant Kreyòl, Fransè ak Anglè."
+    }
+  },
 
-{
-title:{
-en:"AI Form Guidance",
-fr:"Guide de formulaires IA",
-kr:"AI Gid pou Fòm"
-},
-desc:{
-en:"Step-by-step help completing official forms correctly.",
-fr:"Aide étape par étape pour remplir correctement les formulaires officiels.",
-kr:"Èd etap pa etap pou ranpli fòm ofisyèl kòrèkteman."
-}
-},
+  {
+    title:{
+      en:"AI Form Guidance",
+      fr:"Guide de formulaires IA",
+      kr:"AI Gid pou Fòm"
+    },
+    desc:{
+      en:"Step-by-step help understanding and organizing official forms.",
+      fr:"Aide étape par étape pour comprendre et organiser les formulaires officiels.",
+      kr:"Èd etap pa etap pou konprann ak òganize fòm ofisyèl."
+    }
+  },
 
-{
-title:{
-en:"AI Letter Preparation",
-fr:"Préparation de lettres IA",
-kr:"AI Preparasyon Lèt"
-},
-desc:{
-en:"Professional letters generated and refined in minutes.",
-fr:"Lettres professionnelles générées et peaufinées en quelques minutes.",
-kr:"Lèt pwofesyonèl kreye ak korije nan kèk minit."
-}
-},
+  {
+    title:{
+      en:"AI Letter Preparation",
+      fr:"Préparation de lettres IA",
+      kr:"AI Preparasyon Lèt"
+    },
+    desc:{
+      en:"Professional letters generated and refined in minutes.",
+      fr:"Lettres professionnelles générées et améliorées en quelques minutes.",
+      kr:"Lèt pwofesyonèl kreye ak amelyore nan kèk minit."
+    }
+  },
 
-{
-title:{
-en:"AI Information Assistant",
-fr:"Assistant d'information IA",
-kr:"AI Asistan Enfòmasyon"
-},
-desc:{
-en:"Quick, reliable answers to everyday questions.",
-fr:"Réponses rapides et fiables aux questions courantes.",
-kr:"Repons rapid e fyab pou kesyon chak jou."
-}
-},
+  {
+    title:{
+      en:"AI Information Assistant",
+      fr:"Assistant d'information IA",
+      kr:"AI Asistan Enfòmasyon"
+    },
+    desc:{
+      en:"Quick assistance finding and organizing everyday information.",
+      fr:"Assistance rapide pour trouver et organiser les informations courantes.",
+      kr:"Asistans rapid pou jwenn ak òganize enfòmasyon chak jou."
+    }
+  },
 
-{
-title:{
-en:"AI Research Assistance",
-fr:"Assistance de recherche IA",
-kr:"AI Sipò Rechèch"
-},
-desc:{
-en:"Background research to support your case or application.",
-fr:"Recherche de fond pour appuyer votre dossier ou votre demande.",
-kr:"Rechèch background pou soutni dosye oswa aplikasyon ou."
-}
-},
+  {
+    title:{
+      en:"AI Research Assistance",
+      fr:"Assistance de recherche IA",
+      kr:"AI Sipò Rechèch"
+    },
+    desc:{
+      en:"Research support for documents, applications, and public resources.",
+      fr:"Soutien de recherche pour les documents, demandes et ressources publiques.",
+      kr:"Sipò rechèch pou dokiman, aplikasyon ak resous piblik."
+    }
+  },
 
-{
-title:{
-en:"AI Multilingual Assistance",
-fr:"Assistance multilingue IA",
-kr:"AI Asistans Miltilenge"
-},
-desc:{
-en:"Support that meets you in the language you're comfortable in.",
-fr:"Un soutien dans la langue avec laquelle vous êtes à l'aise.",
-kr:"Sipò nan lang ou pi alèz avè l."
-}
-}
+  {
+    title:{
+      en:"AI Multilingual Assistance",
+      fr:"Assistance multilingue IA",
+      kr:"AI Asistans Miltileng"
+    },
+    desc:{
+      en:"Support in Haitian Creole, French, and English.",
+      fr:"Assistance en créole haïtien, français et anglais.",
+      kr:"Sipò an Kreyòl Ayisyen, Fransè ak Anglè."
+    }
+  }
 
 ];
 
 
-/* =========================================================
-   RENDER
-========================================================= */
+/* =====================================================
+   RENDER NAV
+===================================================== */
 
-let currentLang="en";
+let currentLang = "en";
 
 
 function renderNav(){
 
-  const desktop=document.getElementById("desktopNav");
-  const mobile=document.getElementById("mobileNav");
+  const desktop = document.getElementById("desktopNav");
+  const mobile = document.getElementById("mobileNav");
 
-  const desktopLinks=[
+  const links = [
     ["#immigration","immigration"],
     ["#documents","documents"],
     ["#translation","translation"],
@@ -1971,82 +2282,134 @@ function renderNav(){
     ["#community","community"]
   ];
 
-  desktop.innerHTML=desktopLinks.map(([href,key])=>
+  desktop.innerHTML = links.map(([href,key]) =>
     `<a href="${href}">${UI.nav[key][currentLang]}</a>`
   ).join("");
 
 
-  const mobileLinks=[
-    ["#immigration","immigration"],
-    ["#documents","documents"],
-    ["#translation","translation"],
-    ["#housing","housing"],
-    ["#employment","employment"],
-    ["#business","business"],
-    ["#digital","digital"],
-    ["#community","community"],
+  const mobileLinks = links.concat([
     ["#federal-register","federalRegister"],
     ["#passport","passport"],
     ["#tax","tax"],
     ["#news","news"],
     ["#ai","ai"],
     ["#contact","contact"]
-  ];
+  ]);
 
-  mobile.innerHTML=mobileLinks.map(([href,key])=>
-    `<a href="${href}">${UI.nav[key][currentLang]}</a>`
-  ).join("");
 
-  mobile.querySelectorAll("a").forEach(a=>{
-    a.addEventListener("click",()=>{
+  mobile.innerHTML = mobileLinks.map(([href,key]) => {
+
+    if(key === "federalRegister"){
+      return `<a href="${href}">Federal Register</a>`;
+    }
+
+    if(key === "passport"){
+      return `<a href="${href}">
+        ${currentLang==="fr" ? "Passeport" :
+          currentLang==="kr" ? "Paspò" : "Passport"}
+      </a>`;
+    }
+
+    if(key === "tax"){
+      return `<a href="${href}">
+        ${currentLang==="fr" ? "Fiscalité USA & Haïti" :
+          currentLang==="kr" ? "Taks USA & Ayiti" :
+          "US & HT Tax"}
+      </a>`;
+    }
+
+    return `<a href="${href}">${UI.nav[key][currentLang]}</a>`;
+
+  }).join("");
+
+
+  mobile.querySelectorAll("a").forEach(a => {
+
+    a.addEventListener("click", () => {
       mobile.classList.remove("open");
     });
+
   });
 
 }
 
 
+/* =====================================================
+   CATEGORY MAP
+===================================================== */
+
 function renderCatmap(){
 
-  document.getElementById("catmap").innerHTML=
-    CATS.map(c=>
-      `<a class="catmap-item" href="#${c.id}">
-        <b>${c.num}</b>${c.title[currentLang]}
-      </a>`
-    ).join("");
+  document.getElementById("catmap").innerHTML = CATS.map(c =>
+
+    `<a class="catmap-item" href="#${c.id}">
+      <b>${c.num}</b>${c.title[currentLang]}
+    </a>`
+
+  ).join("");
 
 }
 
 
+/* =====================================================
+   SERVICE MODULES
+===================================================== */
+
 function renderFiles(){
 
-  const container=document.getElementById("fileContainer");
+  const container = document.getElementById("fileContainer");
 
-  container.innerHTML=CATS.map((c,i)=>`
+  container.innerHTML = CATS.map((c,i) => {
 
-    <div class="file ${i===0?"open":""}" id="${c.id}">
+    const linksHTML = (c.links || []).map(link =>
+
+      `<a
+        class="module-link"
+        href="${link.url}"
+        target="_blank"
+        rel="noopener noreferrer">
+        ${link.label}
+      </a>`
+
+    ).join("");
+
+
+    return `
+
+    <div class="file ${i===0 ? "open" : ""}" id="${c.id}">
 
       <div class="file-tab" onclick="toggleFile(this)">
 
         <div class="file-tab-left">
 
-          <div class="file-num">${c.num}</div>
+          <div class="file-num">
+            ${c.num}
+          </div>
 
           <div>
-            <h2>${c.title[currentLang]}</h2>
-            <div class="sub">${c.sub[currentLang]}</div>
+
+            <h2>
+              ${c.title[currentLang]}
+            </h2>
+
+            <div class="sub">
+              ${c.sub[currentLang]}
+            </div>
+
           </div>
 
         </div>
+
 
         <svg
           class="chev"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-        >
+          stroke-width="2">
+
           <path d="M6 9l6 6 6-6"/>
+
         </svg>
 
       </div>
@@ -2057,8 +2420,21 @@ function renderFiles(){
         <div class="file-body-inner">
 
           <ul class="service-list">
-            ${c.items[currentLang].map(t=>`<li>${t}</li>`).join("")}
+
+            ${c.items[currentLang]
+              .map(t => `<li>${t}</li>`)
+              .join("")}
+
           </ul>
+
+
+          ${linksHTML ? `
+
+            <div class="module-links">
+              ${linksHTML}
+            </div>
+
+          ` : ""}
 
         </div>
 
@@ -2066,29 +2442,48 @@ function renderFiles(){
 
     </div>
 
-  `).join("");
+    `;
+
+  }).join("");
 
 }
 
 
+/* =====================================================
+   NEWS
+===================================================== */
+
 function renderNews(){
 
-  document.getElementById("newsChips").innerHTML=
+  document.getElementById("newsChips").innerHTML =
+
     NEWS_CHIPS[currentLang]
-    .map(t=>`<span class="chip">${t}</span>`)
+    .map(t => `<span class="chip">${t}</span>`)
     .join("");
 
 }
 
 
+/* =====================================================
+   AI
+===================================================== */
+
 function renderAI(){
 
-  document.getElementById("aiGrid").innerHTML=
-    AI_CARDS.map(c=>`
+  document.getElementById("aiGrid").innerHTML =
+
+    AI_CARDS.map(c => `
 
       <div class="ai-card">
-        <h3>${c.title[currentLang]}</h3>
-        <p>${c.desc[currentLang]}</p>
+
+        <h3>
+          ${c.title[currentLang]}
+        </h3>
+
+        <p>
+          ${c.desc[currentLang]}
+        </p>
+
       </div>
 
     `).join("");
@@ -2096,82 +2491,85 @@ function renderAI(){
 }
 
 
+/* =====================================================
+   FOOTER
+===================================================== */
+
 function renderFooterCats(){
 
-  const links=[
-    ["#immigration","immigration"],
-    ["#documents","documents"],
-    ["#translation","translation"],
-    ["#housing","housing"],
-    ["#employment","employment"],
-    ["#business","business"],
-    ["#digital","digital"],
-    ["#community","community"],
-    ["#federal-register","federalRegister"],
-    ["#passport","passport"],
-    ["#tax","tax"]
-  ];
+  document.getElementById("footerCats").innerHTML =
 
-  document.getElementById("footerCats").innerHTML=
-    links.map(([href,key])=>
-      `<a href="${href}">${UI.nav[key][currentLang]}</a>`
+    CATS.map(c =>
+
+      `<a href="#${c.id}">
+        ${c.title[currentLang]}
+      </a>`
+
     ).join("");
 
 }
 
 
+/* =====================================================
+   STATIC TEXT
+===================================================== */
+
 function applyStaticText(){
 
-  document.getElementById("heroEyebrow").textContent=
+  document.getElementById("heroEyebrow").textContent =
     UI.heroEyebrow[currentLang];
 
-  document.getElementById("heroH1").innerHTML=
+  document.getElementById("heroH1").innerHTML =
     UI.heroH1[currentLang];
 
-  document.getElementById("heroLede").textContent=
+  document.getElementById("heroLede").textContent =
     UI.heroLede[currentLang];
 
-  document.getElementById("ctaPrimary").textContent=
+  document.getElementById("ctaPrimary").textContent =
     UI.ctaPrimary[currentLang];
 
-  document.getElementById("ctaGhost").textContent=
+  document.getElementById("ctaGhost").textContent =
     UI.ctaGhost[currentLang];
 
-  document.getElementById("newsTag").textContent=
+  document.getElementById("newsTag").textContent =
     UI.newsTag[currentLang];
 
-  document.getElementById("newsTitle").textContent=
+  document.getElementById("newsTitle").textContent =
     UI.newsTitle[currentLang];
 
-  document.getElementById("aiTag").textContent=
+  document.getElementById("aiTag").textContent =
     UI.aiTag[currentLang];
 
-  document.getElementById("aiTitle").textContent=
+  document.getElementById("aiTitle").textContent =
     UI.aiTitle[currentLang];
 
-  document.getElementById("contactTag").textContent=
+  document.getElementById("contactTag").textContent =
     UI.contactTag[currentLang];
 
-  document.getElementById("contactTitle").textContent=
+  document.getElementById("contactTitle").textContent =
     UI.contactTitle[currentLang];
 
-  document.getElementById("phoneLabel").textContent=
+  document.getElementById("phoneLabel").textContent =
     UI.phoneLabel[currentLang];
 
-  document.getElementById("emailLabel").textContent=
+  document.getElementById("emailLabel").textContent =
     UI.emailLabel[currentLang];
 
-  document.getElementById("webLabel").textContent=
+  document.getElementById("webLabel").textContent =
     UI.webLabel[currentLang];
 
-  document.getElementById("followLabel").textContent=
+  document.getElementById("followLabel").textContent =
     UI.followLabel[currentLang];
 
-  document.getElementById("footerDesc").textContent=
+  document.getElementById("footerDesc").textContent =
     UI.footerDesc[currentLang];
 
 }
 
+
+/* =====================================================
+   FULL RENDER
+===================================================== */
 
 function renderAll(){
 
@@ -2189,49 +2587,85 @@ function renderAll(){
 
   renderFooterCats();
 
-  document.querySelectorAll(".lang-btn").forEach(b=>{
-    b.classList.toggle(
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+
+    btn.classList.toggle(
       "active",
-      b.dataset.lang===currentLang
+      btn.dataset.lang === currentLang
     );
+
   });
 
-  document.getElementById("htmlRoot").lang=
-    currentLang==="kr" ? "ht" : currentLang;
+
+  document.getElementById("htmlRoot").lang =
+    currentLang === "kr"
+    ? "ht"
+    : currentLang;
 
 }
 
+
+/* =====================================================
+   ACCORDION
+===================================================== */
 
 function toggleFile(tabEl){
+
   tabEl.parentElement.classList.toggle("open");
+
 }
 
 
-document
-.getElementById("langToggle")
-.addEventListener("click",(e)=>{
+/* =====================================================
+   LANGUAGE TOGGLE
+===================================================== */
 
-  const btn=e.target.closest(".lang-btn");
+document.getElementById("langToggle")
+.addEventListener("click", e => {
 
-  if(!btn)return;
+  const btn = e.target.closest(".lang-btn");
 
-  currentLang=btn.dataset.lang;
+  if(!btn) return;
+
+  currentLang = btn.dataset.lang;
 
   renderAll();
 
 });
 
 
-document
-.getElementById("menuBtn")
-.addEventListener("click",()=>{
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-  document
-  .getElementById("mobileNav")
+document.getElementById("menuBtn")
+.addEventListener("click", () => {
+
+  document.getElementById("mobileNav")
   .classList.toggle("open");
 
 });
 
+
+/* =====================================================
+   VIDEO FALLBACK
+===================================================== */
+
+document.querySelectorAll("video").forEach(video => {
+
+  video.addEventListener("error", () => {
+
+    video.style.display = "none";
+
+  });
+
+});
+
+
+/* =====================================================
+   START
+===================================================== */
 
 renderAll();
 
