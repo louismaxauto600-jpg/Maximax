@@ -4,24 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maximax Multi Services</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --black:#070502;
-  --black2:#150E07;
-  --orange:#FF7A1A;
-  --orange-light:#FFB066;
-  --orange-deep:#8A3400;
-  --white:#FFF7EE;
-  --line:rgba(255,176,102,0.28);
-  --panel:rgba(7,5,2,0.62);
-  --panel-solid:#0D0904;
+  --black:#000000;
+  --black2:#0A0502;
+  --orange:#FF6A00;
+  --orange-light:#FF9A3D;
+  --orange-deep:#8B2F00;
+  --white:#FFF3E8;
+  --line:rgba(255,106,0,0.32);
+  --panel:rgba(0,0,0,0.74);
+  --panel-solid:#080402;
 }
 
 *{box-sizing:border-box;}
+
 html{scroll-behavior:smooth;}
 
 body{
@@ -29,10 +31,35 @@ body{
   color:var(--white);
   font-family:'Public Sans',sans-serif;
   -webkit-font-smoothing:antialiased;
+
   background:
-    radial-gradient(1100px 700px at 15% -10%,rgba(255,122,26,.35),transparent 60%),
-    radial-gradient(1000px 800px at 100% 30%,rgba(255,122,26,.22),transparent 55%),
-    linear-gradient(175deg,#030201 0%,#150E07 16%,#3A1A02 42%,#B34C00 62%,#FF7A1A 78%,#1A0E05 100%);
+    radial-gradient(
+      1200px 700px at 10% 0%,
+      rgba(255,106,0,0.40),
+      transparent 58%
+    ),
+    radial-gradient(
+      1000px 800px at 100% 48%,
+      rgba(255,106,0,0.28),
+      transparent 56%
+    ),
+    radial-gradient(
+      900px 650px at 50% 100%,
+      rgba(255,75,0,0.22),
+      transparent 60%
+    ),
+    linear-gradient(
+      160deg,
+      #000000 0%,
+      #060301 18%,
+      #170700 34%,
+      #441500 52%,
+      #9B3300 67%,
+      #FF6A00 82%,
+      #2A0C00 92%,
+      #000000 100%
+    );
+
   background-attachment:fixed;
   background-size:cover;
 }
@@ -48,10 +75,13 @@ h1,h2,h3{
 }
 
 a{color:inherit;}
+
 video,img{max-width:100%;}
+
 button{font-family:inherit;}
 
-/* LOGO */
+/* ================= LOGO ================= */
+
 .logo-mark{
   width:44px;
   height:44px;
@@ -70,8 +100,6 @@ button{font-family:inherit;}
   width:100%;
   height:100%;
   object-fit:cover;
-  position:absolute;
-  inset:0;
 }
 
 .logo-mark .fallback{
@@ -79,11 +107,8 @@ button{font-family:inherit;}
   font-weight:700;
   color:var(--orange-light);
   font-size:18px;
-  z-index:0;
-}
-
-.logo-mark video + .fallback{
-  display:none;
+  position:absolute;
+  z-index:-1;
 }
 
 .seal{
@@ -123,12 +148,13 @@ button{font-family:inherit;}
   border-width:1.5px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(7,5,2,.82);
+  background:rgba(0,0,0,0.88);
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
@@ -212,7 +238,7 @@ nav.desktop-nav a:hover{
 
 .lang-btn.active{
   background:var(--orange);
-  color:#1A0E05;
+  color:#000;
   opacity:1;
   font-weight:600;
 }
@@ -244,14 +270,17 @@ nav.desktop-nav a:hover{
   border-bottom:1px solid var(--line);
 }
 
-.mobile-nav.open{display:flex;}
+.mobile-nav.open{
+  display:flex;
+}
 
 @media(max-width:900px){
   nav.desktop-nav{display:none;}
   .menu-btn{display:block;}
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
   max-width:1180px;
   margin:0 auto;
@@ -325,11 +354,13 @@ nav.desktop-nav a:hover{
 
 .btn-primary{
   background:var(--orange);
-  color:#1A0E05;
+  color:#000;
   border-color:var(--orange);
 }
 
-.btn-primary:hover{background:var(--orange-light);}
+.btn-primary:hover{
+  background:var(--orange-light);
+}
 
 .btn-ghost{
   border:1px solid var(--line);
@@ -346,9 +377,10 @@ nav.desktop-nav a:hover{
   .hero-seal{display:none;}
 }
 
-/* CATEGORY MAP */
+/* ================= CATEGORY MAP ================= */
+
 .catmap{
-  background:rgba(0,0,0,.35);
+  background:rgba(0,0,0,.55);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:30px 24px;
@@ -369,18 +401,19 @@ nav.desktop-nav a:hover{
   font-size:12px;
   letter-spacing:.05em;
   color:var(--orange-light);
-  opacity:.9;
+  opacity:.95;
   cursor:pointer;
   text-decoration:none;
 }
 
 .catmap-item b{
   color:var(--white);
-  opacity:.55;
+  opacity:.65;
   margin-right:6px;
 }
 
-/* SECTIONS */
+/* ================= SERVICE MODULES ================= */
+
 main{
   max-width:1180px;
   margin:0 auto;
@@ -388,9 +421,16 @@ main{
 }
 
 .file{
-  background:var(--panel);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,0.94),
+      rgba(35,10,0,0.90),
+      rgba(0,0,0,0.95)
+    );
+
   color:var(--white);
-  border:1px solid var(--line);
+  border:1px solid rgba(255,106,0,0.35);
   border-radius:6px;
   margin-bottom:26px;
   position:relative;
@@ -440,7 +480,7 @@ main{
   text-transform:uppercase;
   color:var(--orange-light);
   margin-top:3px;
-  opacity:.7;
+  opacity:.8;
 }
 
 .chev{
@@ -448,11 +488,13 @@ main{
   height:20px;
   flex-shrink:0;
   transition:transform .3s ease;
-  opacity:.7;
+  opacity:.8;
   color:var(--orange-light);
 }
 
-.file.open .chev{transform:rotate(180deg);}
+.file.open .chev{
+  transform:rotate(180deg);
+}
 
 .file-body{
   max-height:0;
@@ -465,7 +507,7 @@ main{
 }
 
 .file.open .file-body{
-  max-height:1400px;
+  max-height:1600px;
 }
 
 .service-list{
@@ -500,7 +542,8 @@ main{
   .service-list{columns:1;}
 }
 
-/* BANDS */
+/* ================= BANDS ================= */
+
 .band{
   padding:56px 24px;
 }
@@ -511,18 +554,18 @@ main{
 }
 
 .band-news{
-  background:rgba(0,0,0,.32);
+  background:rgba(0,0,0,.58);
   border-top:1px solid var(--line);
 }
 
 .band-ai{
-  background:rgba(0,0,0,.42);
+  background:rgba(0,0,0,.68);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
 
 .band-contact{
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.76);
 }
 
 .band-head{
@@ -558,7 +601,7 @@ main{
   font-size:13px;
   color:var(--white);
   opacity:.92;
-  background:rgba(0,0,0,.25);
+  background:rgba(0,0,0,.45);
 }
 
 .ai-grid{
@@ -568,10 +611,15 @@ main{
 }
 
 .ai-card{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,106,0,0.35);
   border-radius:6px;
   padding:20px;
-  background:rgba(255,122,26,.06);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,0.88),
+      rgba(255,106,0,0.10)
+    );
 }
 
 .ai-card h3{
@@ -589,7 +637,8 @@ main{
   line-height:1.5;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -598,10 +647,15 @@ main{
 }
 
 .contact-card{
-  border:1px solid var(--line);
+  border:1px solid rgba(255,106,0,0.35);
   border-radius:6px;
   padding:20px;
-  background:rgba(0,0,0,.3);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,0,0,0.90),
+      rgba(50,15,0,0.75)
+    );
 }
 
 .contact-card .label{
@@ -638,7 +692,7 @@ main{
   border-radius:20px;
   padding:9px 18px;
   font-size:13px;
-  background:rgba(255,122,26,.08);
+  background:rgba(255,106,0,.10);
   text-decoration:none;
   color:var(--white);
   transition:.2s;
@@ -649,9 +703,10 @@ main{
   color:var(--orange-light);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.84);
   padding:50px 24px 28px;
   border-top:1px solid var(--line);
 }
@@ -680,7 +735,9 @@ footer{
   opacity:.75;
 }
 
-.footer-cats a{text-decoration:none;}
+.footer-cats a{
+  text-decoration:none;
+}
 
 .footer-bottom{
   padding-top:20px;
@@ -710,65 +767,64 @@ footer{
 <body>
 
 <header>
-<div class="nav-wrap">
+  <div class="nav-wrap">
 
-<div class="brand">
-<div class="logo-mark">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-<div class="fallback">M</div>
-</div>
+    <div class="brand">
+      <div class="logo-mark">
+        <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+        <div class="fallback">M</div>
+      </div>
 
-<div class="brand-name">
-MAXIMAX
-<span>MULTI SERVICES</span>
-</div>
-</div>
+      <div class="brand-name">
+        MAXIMAX
+        <span>MULTI SERVICES</span>
+      </div>
+    </div>
 
-<nav class="desktop-nav" id="desktopNav"></nav>
+    <nav class="desktop-nav" id="desktopNav"></nav>
 
-<div style="display:flex;align-items:center;gap:10px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-toggle" id="langToggle">
+        <button class="lang-btn" data-lang="en">ENG</button>
+        <button class="lang-btn" data-lang="fr">FRAN</button>
+        <button class="lang-btn" data-lang="kr">KRE</button>
+      </div>
 
-<div class="lang-toggle" id="langToggle">
-<button class="lang-btn" data-lang="en">ENG</button>
-<button class="lang-btn" data-lang="fr">FRAN</button>
-<button class="lang-btn" data-lang="kr">KRE</button>
-</div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
 
-<button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
 
-</div>
-</div>
-
-<div class="mobile-nav" id="mobileNav"></div>
+  <div class="mobile-nav" id="mobileNav"></div>
 </header>
 
 
 <section class="hero">
 
-<div>
-<span class="eyebrow" id="heroEyebrow"></span>
-<h1 id="heroH1"></h1>
-<p class="lede" id="heroLede"></p>
+  <div>
+    <span class="eyebrow" id="heroEyebrow"></span>
+    <h1 id="heroH1"></h1>
+    <p class="lede" id="heroLede"></p>
 
-<p class="creole">
-Nou la pou ou · Nous sommes là pour vous · We are here for you
-</p>
+    <p class="creole">
+      Nou la pou ou · Nous sommes là pour vous · We are here for you
+    </p>
 
-<div class="hero-cta">
-<a href="#immigration" class="btn btn-primary" id="ctaPrimary"></a>
-<a href="#community" class="btn btn-ghost" id="ctaGhost"></a>
-</div>
-</div>
+    <div class="hero-cta">
+      <a href="#immigration" class="btn btn-primary" id="ctaPrimary"></a>
+      <a href="#community" class="btn btn-ghost" id="ctaGhost"></a>
+    </div>
+  </div>
 
-<div class="hero-seal seal">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-</div>
+  <div class="hero-seal seal">
+    <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+  </div>
 
 </section>
 
 
 <div class="catmap">
-<div class="catmap-inner" id="catmap"></div>
+  <div class="catmap-inner" id="catmap"></div>
 </div>
 
 
@@ -777,161 +833,176 @@ Nou la pou ou · Nous sommes là pour vous · We are here for you
 
 <section class="band band-news" id="news">
 
-<div class="band-inner">
+  <div class="band-inner">
 
-<div class="band-head">
+    <div class="band-head">
 
-<div class="seal small">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-</div>
+      <div class="seal small">
+        <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+      </div>
 
-<div>
-<div class="tag" id="newsTag"></div>
-<h2 id="newsTitle"></h2>
-</div>
+      <div>
+        <div class="tag" id="newsTag"></div>
+        <h2 id="newsTitle"></h2>
+      </div>
 
-</div>
+    </div>
 
-<div class="chips" id="newsChips"></div>
+    <div class="chips" id="newsChips"></div>
 
-</div>
+  </div>
 </section>
 
 
 <section class="band band-ai" id="ai">
 
-<div class="band-inner">
+  <div class="band-inner">
 
-<div class="band-head">
+    <div class="band-head">
 
-<div class="seal small">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-</div>
+      <div class="seal small">
+        <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+      </div>
 
-<div>
-<div class="tag" id="aiTag"></div>
-<h2 id="aiTitle"></h2>
-</div>
+      <div>
+        <div class="tag" id="aiTag"></div>
+        <h2 id="aiTitle"></h2>
+      </div>
 
-</div>
+    </div>
 
-<div class="ai-grid" id="aiGrid"></div>
+    <div class="ai-grid" id="aiGrid"></div>
 
-</div>
+  </div>
 </section>
 
 
 <section class="band band-contact" id="contact">
 
-<div class="band-inner">
+  <div class="band-inner">
 
-<div class="band-head">
+    <div class="band-head">
 
-<div class="seal small">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-</div>
+      <div class="seal small">
+        <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+      </div>
 
-<div>
-<div class="tag" id="contactTag"></div>
-<h2 id="contactTitle"></h2>
-</div>
+      <div>
+        <div class="tag" id="contactTag"></div>
+        <h2 id="contactTitle"></h2>
+      </div>
 
-</div>
+    </div>
 
-<div class="contact-grid">
 
-<div class="contact-card">
-<div class="label" id="phoneLabel"></div>
-<div class="value">
-<a href="tel:+19546405166">(954) 640-5166</a><br>
-<a href="tel:+15162168494">(516) 216-8494</a>
-</div>
-</div>
+    <div class="contact-grid">
 
-<div class="contact-card">
-<div class="label" id="emailLabel"></div>
-<div class="value">
-<a href="mailto:maximaxmultiservices@gmail.com">
-maximaxmultiservices@gmail.com
-</a>
-</div>
-</div>
+      <div class="contact-card">
+        <div class="label" id="phoneLabel"></div>
 
-<div class="contact-card">
-<div class="label" id="webLabel"></div>
-<div class="value">
-<a href="https://www.maximaxmultiservices.com" target="_blank" rel="noopener">
-www.maximaxmultiservices.com
-</a>
-</div>
-</div>
+        <div class="value">
+          <a href="tel:+19546405166">(954) 640-5166</a><br>
+          <a href="tel:+15162168494">(516) 216-8494</a>
+        </div>
+      </div>
 
-</div>
 
-<div class="label" id="followLabel" style="margin-bottom:12px;"></div>
+      <div class="contact-card">
+        <div class="label" id="emailLabel"></div>
 
-<div class="social-row">
-<a class="social-pill" href="#">Facebook</a>
-<a class="social-pill" href="#">WhatsApp</a>
-<a class="social-pill" href="#">Instagram</a>
-<a class="social-pill" href="#">TikTok</a>
-<a class="social-pill" href="#">YouTube</a>
-<a class="social-pill" href="#">Spotify</a>
-<a class="social-pill" href="#">LinkedIn</a>
-<a class="social-pill" href="#">True Social</a>
-<a class="social-pill" href="#">X / Twitter</a>
-</div>
+        <div class="value">
+          <a href="mailto:maximaxmultiservices@gmail.com">
+            maximaxmultiservices@gmail.com
+          </a>
+        </div>
+      </div>
 
-</div>
+
+      <div class="contact-card">
+        <div class="label" id="webLabel"></div>
+
+        <div class="value">
+          <a href="https://www.maximaxmultiservices.com" target="_blank" rel="noopener">
+            www.maximaxmultiservices.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="label" id="followLabel" style="margin-bottom:12px;"></div>
+
+
+    <div class="social-row">
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">TikTok</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">YouTube</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Spotify</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">True Social</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+
+  </div>
 </section>
 
 
 <footer>
 
-<div class="footer-inner">
+  <div class="footer-inner">
 
-<div class="footer-top">
+    <div class="footer-top">
 
-<div>
+      <div>
 
-<div class="brand" style="margin-bottom:10px;">
+        <div class="brand" style="margin-bottom:10px;">
 
-<div class="logo-mark">
-<video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
-<div class="fallback">M</div>
-</div>
+          <div class="logo-mark">
+            <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+            <div class="fallback">M</div>
+          </div>
 
-<div class="brand-name">
-MAXIMAX
-<span>MULTI SERVICES</span>
-</div>
+          <div class="brand-name">
+            MAXIMAX
+            <span>MULTI SERVICES</span>
+          </div>
 
-</div>
+        </div>
 
-<p id="footerDesc"
-style="max-width:340px;font-size:13px;opacity:.7;line-height:1.6;">
-</p>
+        <p id="footerDesc"
+        style="max-width:340px;font-size:13px;opacity:.7;line-height:1.6;">
+        </p>
 
-</div>
+      </div>
 
-<div class="footer-cats" id="footerCats"></div>
+      <div class="footer-cats" id="footerCats"></div>
 
-</div>
+    </div>
 
-<div class="footer-bottom">
-<span>© 2026 Maximax Multi Services</span>
-<span>
-(954) 640-5166 · (516) 216-8494 · maximaxmultiservices@gmail.com
-</span>
-</div>
 
-</div>
+    <div class="footer-bottom">
+      <span>© 2026 Maximax Multi Services</span>
+
+      <span>
+        (954) 640-5166 · (516) 216-8494 · maximaxmultiservices@gmail.com
+      </span>
+    </div>
+
+  </div>
 </footer>
 
 
 <script>
 
+/* =========================================================
+   LANGUAGE UI
+========================================================= */
+
 const UI = {
+
 nav:{
 immigration:{en:"Immigration",fr:"Immigration",kr:"Imigrasyon"},
 documents:{en:"Documents",fr:"Documents",kr:"Dokiman"},
@@ -941,6 +1012,9 @@ employment:{en:"Employment",fr:"Emploi",kr:"Travay"},
 business:{en:"Business",fr:"Entreprise",kr:"Biznis"},
 digital:{en:"Digital",fr:"Numérique",kr:"Dijital"},
 community:{en:"Community",fr:"Communauté",kr:"Kominote"},
+federalRegister:{en:"Federal Register",fr:"Federal Register",kr:"Federal Register"},
+passport:{en:"Passport",fr:"Passeport",kr:"Paspò"},
+tax:{en:"US & HT Tax",fr:"Fiscalité USA & Haïti",kr:"Taks USA & Ayiti"},
 news:{en:"News",fr:"Actualités",kr:"Nouvèl"},
 ai:{en:"AI Assistance",fr:"Assistance IA",kr:"Asistans AI"},
 contact:{en:"Contact",fr:"Contact",kr:"Kontak"}
@@ -959,9 +1033,9 @@ kr:"Yon sèl biwo. <em>Tout</em> dokiman ou bezwen."
 },
 
 heroLede:{
-en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, housing, employment, translation, and digital services — all under one roof.",
-fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises à gérer les démarches d'immigration, le logement, l'emploi, la traduction et les services numériques — tout sous un même toit.",
-kr:"Maximax Multi Services ede endividi, fanmi, ak ti biznis jere papye imigrasyon, lojman, travay, tradiksyon, ak sèvis dijital — tout anba yon sèl twa."
+en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, housing, employment, translation, federal resources, passport services, tax services, and digital services — all under one roof.",
+fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises dans leurs démarches d'immigration, de logement, d'emploi, de traduction, de ressources fédérales, de passeport, de fiscalité et de services numériques — tout sous un même toit.",
+kr:"Maximax Multi Services ede endividi, fanmi, ak ti biznis jere papye imigrasyon, lojman, travay, tradiksyon, resous federal, sèvis paspò, sèvis taks, ak sèvis dijital — tout anba yon sèl twa."
 },
 
 ctaPrimary:{
@@ -1037,12 +1111,17 @@ kr:"Swiv Nou"
 },
 
 footerDesc:{
-en:"Immigration, document, translation, housing, employment, business, and digital services — all in one place.",
-fr:"Services d'immigration, de documents, de traduction, de logement, d'emploi, d'entreprise et de services numériques — tous au même endroit.",
-kr:"Sèvis Imigrasyon, Dokiman, Tradiksyon, Lojman, Travay, Biznis, ak Sèvis Dijital — tout nan yon sèl kote."
+en:"Immigration, documents, translation, housing, employment, business, Federal Register, passport, tax, and digital services — all in one place.",
+fr:"Services d'immigration, de documents, de traduction, de logement, d'emploi, d'entreprise, de Federal Register, de passeport, de fiscalité et de services numériques — tous au même endroit.",
+kr:"Sèvis Imigrasyon, Dokiman, Tradiksyon, Lojman, Travay, Biznis, Federal Register, Paspò, Taks, ak Sèvis Dijital — tout nan yon sèl kote."
 }
+
 };
 
+
+/* =========================================================
+   SERVICE MODULES
+========================================================= */
 
 const CATS = [
 
@@ -1158,6 +1237,7 @@ en:[
 "Cover letters",
 "Professional correspondence"
 ],
+
 fr:[
 "Préparation de documents",
 "Préparation de lettres",
@@ -1174,6 +1254,7 @@ fr:[
 "Lettres de motivation",
 "Correspondance professionnelle"
 ],
+
 kr:[
 "Preparasyon dokiman",
 "Preparasyon lèt",
@@ -1216,6 +1297,7 @@ en:[
 "Immigration-document translation",
 "Business correspondence translation"
 ],
+
 fr:[
 "Traduction créole haïtien",
 "Traduction française",
@@ -1225,6 +1307,7 @@ fr:[
 "Traduction de documents d'immigration",
 "Traduction de correspondance commerciale"
 ],
+
 kr:[
 "Tradiksyon Kreyòl Ayisyen",
 "Tradiksyon Fransè",
@@ -1261,6 +1344,7 @@ en:[
 "Housing application assistance",
 "Rental-document preparation"
 ],
+
 fr:[
 "Informations sur le logement",
 "Aide à la recherche d'appartement",
@@ -1271,6 +1355,7 @@ fr:[
 "Aide pour la demande de logement",
 "Préparation de documents de location"
 ],
+
 kr:[
 "Enfòmasyon sou lojman",
 "Asistans pou chèche apatman",
@@ -1307,6 +1392,7 @@ en:[
 "Employment-document assistance",
 "Work authorization information"
 ],
+
 fr:[
 "Aide à la recherche d'emploi",
 "Aide à la rédaction de CV",
@@ -1316,6 +1402,7 @@ fr:[
 "Aide aux documents d'emploi",
 "Informations sur l'autorisation de travail"
 ],
+
 kr:[
 "Asistans pou chèche travay",
 "Sipò pou rezime",
@@ -1351,6 +1438,7 @@ en:[
 "Business information and resources",
 "Branding and business presentation support"
 ],
+
 fr:[
 "Préparation de documents d'entreprise",
 "Soutien aux petites entreprises",
@@ -1360,6 +1448,7 @@ fr:[
 "Informations et ressources commerciales",
 "Soutien à l'image de marque et à la présentation"
 ],
+
 kr:[
 "Preparasyon dokiman biznis",
 "Sipò pou ti biznis",
@@ -1397,6 +1486,7 @@ en:[
 "Digital account assistance",
 "Basic technology assistance"
 ],
+
 fr:[
 "Assistance pour site web",
 "Formulaires numériques",
@@ -1408,6 +1498,7 @@ fr:[
 "Aide pour les comptes numériques",
 "Assistance technologique de base"
 ],
+
 kr:[
 "Asistans pou sitwèb",
 "Fòm dijital",
@@ -1446,6 +1537,7 @@ en:[
 "Video and script preparation",
 "Digital presentations"
 ],
+
 fr:[
 "Prospectus",
 "Annonces",
@@ -1456,6 +1548,7 @@ fr:[
 "Préparation de vidéos et de scripts",
 "Présentations numériques"
 ],
+
 kr:[
 "Flaye",
 "Anons",
@@ -1492,6 +1585,7 @@ en:[
 "Local assistance resources",
 "Referral information"
 ],
+
 fr:[
 "Informations communautaires",
 "Ressources en immigration",
@@ -1501,6 +1595,7 @@ fr:[
 "Ressources d'aide locale",
 "Informations de référence"
 ],
+
 kr:[
 "Enfòmasyon kominotè",
 "Resous imigrasyon",
@@ -1511,12 +1606,218 @@ kr:[
 "Enfòmasyon referans"
 ]
 }
+},
+
+{
+id:"federal-register",
+num:"09",
+title:{
+en:"Federal Register Services",
+fr:"Services du Federal Register",
+kr:"Sèvis Federal Register"
+},
+sub:{
+en:"Notices · Publications · Federal Updates",
+fr:"Avis · Publications · Mises à jour fédérales",
+kr:"Avi · Piblikasyon · Mizajou Federal"
+},
+items:{
+en:[
+"Federal Register information",
+"Federal notices search assistance",
+"Federal rules and regulation updates",
+"Public notice assistance",
+"Government publication navigation",
+"Federal agency document search",
+"Public-comment information",
+"Official federal publication resources",
+"Federal compliance information",
+"Federal Register research assistance"
+],
+
+fr:[
+"Informations sur le Federal Register",
+"Aide à la recherche d'avis fédéraux",
+"Mises à jour des règles et règlements fédéraux",
+"Aide concernant les avis publics",
+"Navigation dans les publications gouvernementales",
+"Recherche de documents des agences fédérales",
+"Informations sur les commentaires publics",
+"Ressources officielles de publications fédérales",
+"Informations sur la conformité fédérale",
+"Assistance à la recherche dans le Federal Register"
+],
+
+kr:[
+"Enfòmasyon sou Federal Register",
+"Asistans pou chèche avi federal",
+"Mizajou règ ak règleman federal",
+"Asistans pou avi piblik",
+"Navigasyon nan piblikasyon gouvènman",
+"Rechèch dokiman ajans federal",
+"Enfòmasyon sou kòmantè piblik",
+"Resous piblikasyon federal ofisyèl",
+"Enfòmasyon sou konfòmite federal",
+"Asistans rechèch Federal Register"
+]
+}
+},
+
+{
+id:"passport",
+num:"10",
+title:{
+en:"Passport Services",
+fr:"Services de passeport",
+kr:"Sèvis Paspò"
+},
+sub:{
+en:"US Passport · Haitian Passport · Renewal",
+fr:"Passeport américain · Passeport haïtien · Renouvellement",
+kr:"Paspò Ameriken · Paspò Ayisyen · Renouvèlman"
+},
+items:{
+en:[
+"US passport application assistance",
+"US passport renewal assistance",
+"Haitian passport application support",
+"Haitian passport renewal support",
+"Passport form assistance",
+"Passport document checklist",
+"Passport appointment preparation",
+"Passport photo requirement guidance",
+"Lost or stolen passport information",
+"Expedited passport information",
+"Minor passport application support",
+"Travel-document preparation",
+"Passport status information",
+"General passport assistance"
+],
+
+fr:[
+"Aide à la demande de passeport américain",
+"Aide au renouvellement du passeport américain",
+"Assistance pour la demande de passeport haïtien",
+"Assistance pour le renouvellement du passeport haïtien",
+"Aide aux formulaires de passeport",
+"Liste de vérification des documents de passeport",
+"Préparation aux rendez-vous de passeport",
+"Conseils sur les exigences de photo de passeport",
+"Informations sur les passeports perdus ou volés",
+"Informations sur les passeports accélérés",
+"Aide pour les demandes de passeport pour mineurs",
+"Préparation de documents de voyage",
+"Informations sur le statut du passeport",
+"Assistance générale pour les passeports"
+],
+
+kr:[
+"Asistans aplikasyon paspò ameriken",
+"Asistans renouvèlman paspò ameriken",
+"Sipò aplikasyon paspò ayisyen",
+"Sipò renouvèlman paspò ayisyen",
+"Asistans pou fòm paspò",
+"Lis verifikasyon dokiman paspò",
+"Preparasyon pou randevou paspò",
+"Gid sou kondisyon foto paspò",
+"Enfòmasyon sou paspò pèdi oswa vòlè",
+"Enfòmasyon sou paspò rapid",
+"Sipò aplikasyon paspò pou timoun",
+"Preparasyon dokiman vwayaj",
+"Enfòmasyon sou estati paspò",
+"Asistans jeneral pou paspò"
+]
+}
+},
+
+{
+id:"tax",
+num:"11",
+title:{
+en:"US & HT Tax Services",
+fr:"Services fiscaux USA & Haïti",
+kr:"Sèvis Taks USA & Ayiti"
+},
+sub:{
+en:"Tax Preparation · Filing · IRS · DGI",
+fr:"Préparation fiscale · Déclaration · IRS · DGI",
+kr:"Preparasyon Taks · Deklarasyon · IRS · DGI"
+},
+items:{
+en:[
+"US individual tax preparation",
+"US business tax preparation",
+"Federal tax filing assistance",
+"State tax filing assistance",
+"IRS document organization",
+"W-2 and 1099 tax document support",
+"Tax return preparation assistance",
+"Tax filing extension assistance",
+"IRS notice document assistance",
+"EIN information and assistance",
+"ITIN information and assistance",
+"Haiti tax information",
+"Haiti tax document preparation support",
+"DGI information and document support",
+"Tax-document translation support",
+"Tax record organization",
+"Prior-year tax document assistance",
+"General US and Haiti tax-resource assistance"
+],
+
+fr:[
+"Préparation des impôts individuels aux États-Unis",
+"Préparation des impôts d'entreprise aux États-Unis",
+"Aide à la déclaration fiscale fédérale",
+"Aide à la déclaration fiscale de l'État",
+"Organisation des documents IRS",
+"Aide pour les documents fiscaux W-2 et 1099",
+"Aide à la préparation des déclarations fiscales",
+"Aide pour les prolongations de déclaration fiscale",
+"Aide concernant les avis de l'IRS",
+"Informations et assistance EIN",
+"Informations et assistance ITIN",
+"Informations fiscales sur Haïti",
+"Aide à la préparation de documents fiscaux haïtiens",
+"Informations et assistance documentaire DGI",
+"Aide à la traduction de documents fiscaux",
+"Organisation des dossiers fiscaux",
+"Aide pour les documents fiscaux des années précédentes",
+"Assistance générale sur les ressources fiscales USA et Haïti"
+],
+
+kr:[
+"Preparasyon taks endividyèl Ozetazini",
+"Preparasyon taks biznis Ozetazini",
+"Asistans pou deklarasyon taks federal",
+"Asistans pou deklarasyon taks eta",
+"Òganizasyon dokiman IRS",
+"Sipò pou dokiman taks W-2 ak 1099",
+"Asistans preparasyon deklarasyon taks",
+"Asistans pou ekstansyon deklarasyon taks",
+"Asistans pou dokiman avi IRS",
+"Enfòmasyon ak asistans EIN",
+"Enfòmasyon ak asistans ITIN",
+"Enfòmasyon sou taks Ayiti",
+"Sipò preparasyon dokiman taks Ayiti",
+"Enfòmasyon ak sipò dokiman DGI",
+"Sipò tradiksyon dokiman taks",
+"Òganizasyon dosye taks",
+"Asistans dokiman taks ane pase",
+"Asistans jeneral sou resous taks USA ak Ayiti"
+]
+}
 }
 
 ];
 
 
+/* =========================================================
+   NEWS
+========================================================= */
+
 const NEWS_CHIPS = {
+
 en:[
 "Immigration news",
 "Community news",
@@ -1525,6 +1826,7 @@ en:[
 "RFI News module",
 "Public-information updates"
 ],
+
 fr:[
 "Actualités sur l'immigration",
 "Actualités communautaires",
@@ -1533,6 +1835,7 @@ fr:[
 "Module RFI News",
 "Mises à jour d'information publique"
 ],
+
 kr:[
 "Nouvèl imigrasyon",
 "Nouvèl kominotè",
@@ -1541,8 +1844,13 @@ kr:[
 "Modil Nouvèl RFI",
 "Dènye enfòmasyon piblik"
 ]
+
 };
 
+
+/* =========================================================
+   AI CARDS
+========================================================= */
 
 const AI_CARDS = [
 
@@ -1640,261 +1948,287 @@ kr:"Sipò nan lang ou pi alèz avè l."
 ];
 
 
+/* =========================================================
+   RENDER
+========================================================= */
+
 let currentLang="en";
 
 
 function renderNav(){
 
-const desktop=document.getElementById("desktopNav");
-const mobile=document.getElementById("mobileNav");
+  const desktop=document.getElementById("desktopNav");
+  const mobile=document.getElementById("mobileNav");
 
-const links=[
-["#immigration","immigration"],
-["#documents","documents"],
-["#translation","translation"],
-["#housing","housing"],
-["#employment","employment"],
-["#business","business"],
-["#digital","digital"],
-["#community","community"]
-];
+  const desktopLinks=[
+    ["#immigration","immigration"],
+    ["#documents","documents"],
+    ["#translation","translation"],
+    ["#housing","housing"],
+    ["#employment","employment"],
+    ["#business","business"],
+    ["#digital","digital"],
+    ["#community","community"]
+  ];
 
-desktop.innerHTML=links.map(([href,key])=>
-`<a href="${href}">${UI.nav[key][currentLang]}</a>`
-).join("");
+  desktop.innerHTML=desktopLinks.map(([href,key])=>
+    `<a href="${href}">${UI.nav[key][currentLang]}</a>`
+  ).join("");
 
-const mobileLinks=links.concat([
-["#news","news"],
-["#ai","ai"],
-["#contact","contact"]
-]);
 
-mobile.innerHTML=mobileLinks.map(([href,key])=>
-`<a href="${href}">${UI.nav[key][currentLang]}</a>`
-).join("");
+  const mobileLinks=[
+    ["#immigration","immigration"],
+    ["#documents","documents"],
+    ["#translation","translation"],
+    ["#housing","housing"],
+    ["#employment","employment"],
+    ["#business","business"],
+    ["#digital","digital"],
+    ["#community","community"],
+    ["#federal-register","federalRegister"],
+    ["#passport","passport"],
+    ["#tax","tax"],
+    ["#news","news"],
+    ["#ai","ai"],
+    ["#contact","contact"]
+  ];
 
-mobile.querySelectorAll("a").forEach(a=>{
-a.addEventListener("click",()=>{
-mobile.classList.remove("open");
-});
-});
+  mobile.innerHTML=mobileLinks.map(([href,key])=>
+    `<a href="${href}">${UI.nav[key][currentLang]}</a>`
+  ).join("");
+
+  mobile.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      mobile.classList.remove("open");
+    });
+  });
 
 }
 
 
 function renderCatmap(){
 
-document.getElementById("catmap").innerHTML=CATS.map(c=>
-`<a class="catmap-item" href="#${c.id}">
-<b>${c.num}</b>${c.title[currentLang]}
-</a>`
-).join("");
+  document.getElementById("catmap").innerHTML=
+    CATS.map(c=>
+      `<a class="catmap-item" href="#${c.id}">
+        <b>${c.num}</b>${c.title[currentLang]}
+      </a>`
+    ).join("");
 
 }
 
 
 function renderFiles(){
 
-const container=document.getElementById("fileContainer");
+  const container=document.getElementById("fileContainer");
 
-container.innerHTML=CATS.map((c,i)=>`
+  container.innerHTML=CATS.map((c,i)=>`
 
-<div class="file ${i===0?"open":""}" id="${c.id}">
+    <div class="file ${i===0?"open":""}" id="${c.id}">
 
-<div class="file-tab" onclick="toggleFile(this)">
+      <div class="file-tab" onclick="toggleFile(this)">
 
-<div class="file-tab-left">
+        <div class="file-tab-left">
 
-<div class="file-num">${c.num}</div>
+          <div class="file-num">${c.num}</div>
 
-<div>
-<h2>${c.title[currentLang]}</h2>
-<div class="sub">${c.sub[currentLang]}</div>
-</div>
+          <div>
+            <h2>${c.title[currentLang]}</h2>
+            <div class="sub">${c.sub[currentLang]}</div>
+          </div>
 
-</div>
+        </div>
 
-<svg class="chev"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2">
-<path d="M6 9l6 6 6-6"/>
-</svg>
+        <svg
+          class="chev"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
 
-</div>
+      </div>
 
-<div class="file-body">
 
-<div class="file-body-inner">
+      <div class="file-body">
 
-<ul class="service-list">
-${c.items[currentLang].map(t=>`<li>${t}</li>`).join("")}
-</ul>
+        <div class="file-body-inner">
 
-</div>
+          <ul class="service-list">
+            ${c.items[currentLang].map(t=>`<li>${t}</li>`).join("")}
+          </ul>
 
-</div>
+        </div>
 
-</div>
+      </div>
 
-`).join("");
+    </div>
+
+  `).join("");
 
 }
 
 
 function renderNews(){
 
-document.getElementById("newsChips").innerHTML=
-NEWS_CHIPS[currentLang]
-.map(t=>`<span class="chip">${t}</span>`)
-.join("");
+  document.getElementById("newsChips").innerHTML=
+    NEWS_CHIPS[currentLang]
+    .map(t=>`<span class="chip">${t}</span>`)
+    .join("");
 
 }
 
 
 function renderAI(){
 
-document.getElementById("aiGrid").innerHTML=
-AI_CARDS.map(c=>`
+  document.getElementById("aiGrid").innerHTML=
+    AI_CARDS.map(c=>`
 
-<div class="ai-card">
-<h3>${c.title[currentLang]}</h3>
-<p>${c.desc[currentLang]}</p>
-</div>
+      <div class="ai-card">
+        <h3>${c.title[currentLang]}</h3>
+        <p>${c.desc[currentLang]}</p>
+      </div>
 
-`).join("");
+    `).join("");
 
 }
 
 
 function renderFooterCats(){
 
-const links=[
-["#immigration","immigration"],
-["#documents","documents"],
-["#translation","translation"],
-["#housing","housing"],
-["#employment","employment"],
-["#business","business"],
-["#digital","digital"],
-["#community","community"]
-];
+  const links=[
+    ["#immigration","immigration"],
+    ["#documents","documents"],
+    ["#translation","translation"],
+    ["#housing","housing"],
+    ["#employment","employment"],
+    ["#business","business"],
+    ["#digital","digital"],
+    ["#community","community"],
+    ["#federal-register","federalRegister"],
+    ["#passport","passport"],
+    ["#tax","tax"]
+  ];
 
-document.getElementById("footerCats").innerHTML=
-links.map(([href,key])=>
-`<a href="${href}">${UI.nav[key][currentLang]}</a>`
-).join("");
+  document.getElementById("footerCats").innerHTML=
+    links.map(([href,key])=>
+      `<a href="${href}">${UI.nav[key][currentLang]}</a>`
+    ).join("");
 
 }
 
 
 function applyStaticText(){
 
-document.getElementById("heroEyebrow").textContent=
-UI.heroEyebrow[currentLang];
+  document.getElementById("heroEyebrow").textContent=
+    UI.heroEyebrow[currentLang];
 
-document.getElementById("heroH1").innerHTML=
-UI.heroH1[currentLang];
+  document.getElementById("heroH1").innerHTML=
+    UI.heroH1[currentLang];
 
-document.getElementById("heroLede").textContent=
-UI.heroLede[currentLang];
+  document.getElementById("heroLede").textContent=
+    UI.heroLede[currentLang];
 
-document.getElementById("ctaPrimary").textContent=
-UI.ctaPrimary[currentLang];
+  document.getElementById("ctaPrimary").textContent=
+    UI.ctaPrimary[currentLang];
 
-document.getElementById("ctaGhost").textContent=
-UI.ctaGhost[currentLang];
+  document.getElementById("ctaGhost").textContent=
+    UI.ctaGhost[currentLang];
 
-document.getElementById("newsTag").textContent=
-UI.newsTag[currentLang];
+  document.getElementById("newsTag").textContent=
+    UI.newsTag[currentLang];
 
-document.getElementById("newsTitle").textContent=
-UI.newsTitle[currentLang];
+  document.getElementById("newsTitle").textContent=
+    UI.newsTitle[currentLang];
 
-document.getElementById("aiTag").textContent=
-UI.aiTag[currentLang];
+  document.getElementById("aiTag").textContent=
+    UI.aiTag[currentLang];
 
-document.getElementById("aiTitle").textContent=
-UI.aiTitle[currentLang];
+  document.getElementById("aiTitle").textContent=
+    UI.aiTitle[currentLang];
 
-document.getElementById("contactTag").textContent=
-UI.contactTag[currentLang];
+  document.getElementById("contactTag").textContent=
+    UI.contactTag[currentLang];
 
-document.getElementById("contactTitle").textContent=
-UI.contactTitle[currentLang];
+  document.getElementById("contactTitle").textContent=
+    UI.contactTitle[currentLang];
 
-document.getElementById("phoneLabel").textContent=
-UI.phoneLabel[currentLang];
+  document.getElementById("phoneLabel").textContent=
+    UI.phoneLabel[currentLang];
 
-document.getElementById("emailLabel").textContent=
-UI.emailLabel[currentLang];
+  document.getElementById("emailLabel").textContent=
+    UI.emailLabel[currentLang];
 
-document.getElementById("webLabel").textContent=
-UI.webLabel[currentLang];
+  document.getElementById("webLabel").textContent=
+    UI.webLabel[currentLang];
 
-document.getElementById("followLabel").textContent=
-UI.followLabel[currentLang];
+  document.getElementById("followLabel").textContent=
+    UI.followLabel[currentLang];
 
-document.getElementById("footerDesc").textContent=
-UI.footerDesc[currentLang];
+  document.getElementById("footerDesc").textContent=
+    UI.footerDesc[currentLang];
 
 }
 
 
 function renderAll(){
 
-applyStaticText();
+  applyStaticText();
 
-renderNav();
+  renderNav();
 
-renderCatmap();
+  renderCatmap();
 
-renderFiles();
+  renderFiles();
 
-renderNews();
+  renderNews();
 
-renderAI();
+  renderAI();
 
-renderFooterCats();
+  renderFooterCats();
 
-document.querySelectorAll(".lang-btn").forEach(b=>{
-b.classList.toggle(
-"active",
-b.dataset.lang===currentLang
-);
-});
+  document.querySelectorAll(".lang-btn").forEach(b=>{
+    b.classList.toggle(
+      "active",
+      b.dataset.lang===currentLang
+    );
+  });
 
-document.getElementById("htmlRoot").lang=
-currentLang==="kr"?"ht":currentLang;
+  document.getElementById("htmlRoot").lang=
+    currentLang==="kr" ? "ht" : currentLang;
 
 }
 
 
 function toggleFile(tabEl){
-tabEl.parentElement.classList.toggle("open");
+  tabEl.parentElement.classList.toggle("open");
 }
 
 
-document.getElementById("langToggle")
+document
+.getElementById("langToggle")
 .addEventListener("click",(e)=>{
 
-const btn=e.target.closest(".lang-btn");
+  const btn=e.target.closest(".lang-btn");
 
-if(!btn)return;
+  if(!btn)return;
 
-currentLang=btn.dataset.lang;
+  currentLang=btn.dataset.lang;
 
-renderAll();
+  renderAll();
 
 });
 
 
-document.getElementById("menuBtn")
+document
+.getElementById("menuBtn")
 .addEventListener("click",()=>{
 
-document.getElementById("mobileNav")
-.classList.toggle("open");
+  document
+  .getElementById("mobileNav")
+  .classList.toggle("open");
 
 });
 
