@@ -1,300 +1,618 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRO-MAX ACADÉMIE | Apprendre. Évoluer. Réussir.</title>
-<meta name="description" content="PRO-MAX Académie — plateforme numérique moderne de formation, cours en ligne, AI Tutor, examens, progression et certifications.">
+<title>Maximax Multi Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--black:#000000;--black-soft:#080400;--black-card:#0d0702;--orange:#ff7a00;--orange-dark:#b84200;--orange-light:#ffa24a;--orange-glow:rgba(255,122,0,0.35);--border:rgba(255,122,0,0.38);--radius:22px;--header-height:84px}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{min-height:100vh;overflow-x:hidden;font-family:Arial,Helvetica,sans-serif;color:var(--orange-light);background:radial-gradient(circle at 12% 10%, rgba(255,122,0,0.17), transparent 28%),radial-gradient(circle at 88% 28%, rgba(184,66,0,0.15), transparent 30%),linear-gradient(145deg,#000000,#0b0400 50%,#000000)}
-body.menu-open{overflow:hidden}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-button{cursor:pointer}
-img{max-width:100%;display:block}
-.container{width:min(1200px,calc(100% - 34px));margin:auto}
-.section{padding:90px 0}
-.section-header{max-width:800px;margin:0 auto 48px;text-align:center}
-.section-label{display:inline-block;padding:8px 16px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,122,0,0.06);font-size:0.75rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase}
-.section-title{margin-top:16px;color:var(--orange);font-size:clamp(2rem,5vw,3.7rem);line-height:1.05;text-transform:uppercase}
-.section-description{margin-top:17px;color:var(--orange-light);font-size:1rem;line-height:1.75;opacity:0.88}
-header{position:fixed;top:0;left:0;z-index:2000;width:100%;min-height:var(--header-height);border-bottom:1px solid var(--border);background:rgba(0,0,0,0.92);backdrop-filter:blur(16px);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
-.header-inner{min-height:var(--header-height);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:13px;min-width:0}
-.brand-logo{width:58px;height:58px;flex:0 0 58px;object-fit:cover;border:2px solid var(--orange);border-radius:50%;background:#000;box-shadow:0 0 24px var(--orange-glow)}
-.brand-name{display:block;color:var(--orange);font-size:1.02rem;font-weight:950;letter-spacing:0.04em;text-transform:uppercase}
-.brand-subtitle{display:block;margin-top:4px;color:var(--orange-light);font-size:0.66rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase}
-.desktop-nav{display:flex;align-items:center;gap:3px}
-.nav-link{padding:11px 9px;color:var(--orange-light);font-size:0.76rem;font-weight:900;text-transform:uppercase;transition:0.3s}
-.nav-link:hover{color:var(--orange)}
-.language-switcher{display:flex;gap:2px;padding:4px;margin-left:6px;border:1px solid var(--border);border-radius:999px;background:#050200}
-.language-button{min-width:42px;padding:8px 8px;border:0;border-radius:999px;color:var(--orange-light);background:transparent;font-size:0.68rem;font-weight:950}
-.language-button.active,.language-button:hover{color:#000;background:var(--orange)}
-.menu-button{display:none;width:48px;height:48px;padding:10px;border:1px solid var(--border);border-radius:12px;background:#050200}
-.menu-button span{display:block;height:3px;margin:5px 0;border-radius:8px;background:var(--orange);transition:0.3s}
-.menu-button.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.menu-button.active span:nth-child(2){opacity:0}
-.menu-button.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.mobile-menu{display:none}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-height) + 80px) 0 80px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,0,0,0.97),rgba(0,0,0,0.86) 50%,rgba(255,122,0,0.09))}
-.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:65px}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid var(--border);border-radius:999px;color:var(--orange);background:rgba(255,122,0,0.06);font-size:0.78rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase}
-.hero-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px var(--orange)}
-.hero-title{margin-top:24px;color:var(--orange);font-size:clamp(3.2rem,7.7vw,6.7rem);line-height:0.93;letter-spacing:-0.045em;text-transform:uppercase}
-.hero-title span{display:block;margin-top:15px;color:var(--orange-light);font-size:0.44em;letter-spacing:0.04em}
-.hero-slogan{margin-top:22px;color:var(--orange);font-size:clamp(1rem,2vw,1.35rem);font-weight:950;letter-spacing:0.1em;text-transform:uppercase}
-.hero-description{max-width:760px;margin-top:22px;color:var(--orange-light);font-size:1.06rem;line-height:1.8;opacity:0.88}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-.btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:2px solid var(--orange);border-radius:13px;font-size:0.82rem;font-weight:950;letter-spacing:0.05em;text-transform:uppercase;transition:0.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,122,0,0.18)}
-.btn-primary{color:#000;background:linear-gradient(135deg,var(--orange),var(--orange-light))}
-.btn-secondary{color:var(--orange);background:#000}
-.btn-secondary:hover{color:#000;background:var(--orange)}
-.hero-visual{min-height:510px;display:flex;align-items:center;justify-content:center}
-.academy-video-wrap{width:min(100%,560px);overflow:hidden;border:2px solid var(--orange);border-radius:26px;background:#000;box-shadow:0 0 65px rgba(255,122,0,0.28),0 30px 70px rgba(0,0,0,0.55)}
-.academy-main-video{width:100%;height:auto;display:block;object-fit:cover;background:#000}
-.identity-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
-.identity-card{min-height:165px;display:flex;flex-direction:column;justify-content:center;padding:22px 16px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(145deg,rgba(255,122,0,0.08),#000);text-align:center;transition:0.3s}
-.identity-card:hover{transform:translateY(-6px);border-color:var(--orange)}
-.identity-number{color:var(--orange);font-size:1.7rem;font-weight:950}
-.identity-card h3{margin-top:13px;color:var(--orange);font-size:0.9rem;text-transform:uppercase}
-.identity-card p{margin-top:8px;font-size:0.78rem;line-height:1.5;opacity:0.8}
-.course-search{display:grid;grid-template-columns:1fr auto;max-width:850px;margin:0 auto;padding:8px;border:1px solid var(--border);border-radius:16px;background:#050200}
-.course-search input{min-height:52px;padding:12px 16px;border:0;outline:0;color:var(--orange-light);background:transparent}
-.course-search input::placeholder{color:rgba(255,162,74,0.48)}
-.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.category-card{position:relative;min-height:215px;display:flex;flex-direction:column;padding:25px;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,122,0,0.1),#000 60%);transition:0.3s}
-.category-card::before{content:"";position:absolute;top:-45px;right:-45px;width:120px;height:120px;border:1px solid var(--border);border-radius:50%}
-.category-card:hover{transform:translateY(-7px);border-color:var(--orange);box-shadow:0 22px 45px rgba(255,122,0,0.11)}
-.category-number{width:49px;height:49px;display:grid;place-items:center;border-radius:13px;color:#000;background:var(--orange);font-weight:950}
-.category-card h3{margin-top:20px;color:var(--orange);font-size:1.05rem;text-transform:uppercase}
-.category-card p{flex:1;margin-top:10px;font-size:0.82rem;line-height:1.65;opacity:0.82}
-.category-card span{margin-top:18px;color:var(--orange);font-size:0.73rem;font-weight:950;text-transform:uppercase}
-.course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.course-card{overflow:hidden;border:1px solid var(--border);border-radius:24px;background:#050200;transition:0.3s}
-.course-card:hover{transform:translateY(-7px);border-color:var(--orange)}
-.course-image{height:190px;display:grid;place-items:center;background:radial-gradient(circle,rgba(255,122,0,0.3),rgba(0,0,0,0.95))}
-.course-image span{color:var(--orange);font-size:2.5rem;font-weight:950}
-.course-body{padding:24px}
-.course-badge{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--orange);font-size:0.66rem;font-weight:900;text-transform:uppercase}
-.course-body h3{margin-top:15px;color:var(--orange);font-size:1.12rem;line-height:1.35;text-transform:uppercase}
-.course-body p{margin-top:10px;font-size:0.83rem;line-height:1.65;opacity:0.82}
-.course-meta{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:0.72rem;font-weight:800}
-.course-link{display:inline-flex;margin-top:18px;color:var(--orange);font-size:0.75rem;font-weight:950;text-transform:uppercase}
-.ai-section{position:relative;overflow:hidden}
-.ai-box{display:grid;grid-template-columns:0.9fr 1.1fr;align-items:center;gap:50px;padding:55px;border:1px solid var(--orange);border-radius:32px;background:radial-gradient(circle at 15% 20%,rgba(255,122,0,0.26),transparent 35%),linear-gradient(135deg,#190800,#000 65%)}
-.ai-visual{min-height:340px;display:grid;place-items:center}
-.ai-circle{width:260px;height:260px;display:grid;place-items:center;border:2px solid var(--orange);border-radius:50%;color:var(--orange);background:rgba(0,0,0,0.8);box-shadow:0 0 60px rgba(255,122,0,0.22),inset 0 0 40px rgba(255,122,0,0.12);font-size:4.6rem;font-weight:950}
-.ai-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase}
-.ai-content p{margin-top:18px;line-height:1.8;opacity:0.88}
-.ai-list{display:grid;gap:10px;margin-top:24px}
-.ai-item{padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:rgba(255,122,0,0.04);font-size:0.85rem}
-.ai-content.btn{margin-top:27px}
-.steps-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
-.step-card{padding:25px 18px;border:1px solid var(--border);border-radius:19px;background:#080400;text-align:center}
-.step-number{width:58px;height:58px;display:grid;place-items:center;margin:0 auto;border:2px solid var(--orange);border-radius:50%;color:#000;background:var(--orange);font-weight:950}
-.step-card h3{margin-top:17px;color:var(--orange);font-size:0.88rem;text-transform:uppercase}
-.step-card p{margin-top:9px;font-size:0.78rem;line-height:1.55;opacity:0.8}
-.certificate-box{display:grid;grid-template-columns:1.15fr 0.85fr;gap:45px;align-items:center;padding:48px;border:1px solid var(--border);border-radius:30px;background:linear-gradient(145deg,rgba(255,122,0,0.1),#000 65%)}
-.certificate-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.3rem);text-transform:uppercase}
-.certificate-content p{margin-top:18px;line-height:1.8;opacity:0.86}
-.certificate-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.certificate-demo{min-height:300px;display:grid;place-items:center;padding:25px;border:2px solid var(--orange);border-radius:18px;background:radial-gradient(circle,rgba(255,122,0,0.12),#000);text-align:center}
-.certificate-demo h3{color:var(--orange);font-size:1.5rem}
-.certificate-demo p{margin-top:12px;font-size:0.84rem;line-height:1.6}
-.certificate-seal{width:85px;height:85px;display:grid;place-items:center;margin:20px auto 0;border:2px solid var(--orange);border-radius:50%;color:var(--orange);font-weight:950}
-.training-box{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:45px;border:1px solid var(--orange);border-radius:30px;background:radial-gradient(circle at 80% 20%,rgba(255,122,0,0.18),transparent 35%),#050200}
-.training-content h2{color:var(--orange);font-size:clamp(2rem,5vw,3.1rem);text-transform:uppercase}
-.training-content p{margin-top:17px;line-height:1.75;opacity:0.86}
-.training-features{display:grid;gap:12px}
-.training-feature{padding:15px;border:1px solid var(--border);border-radius:13px;background:rgba(255,122,0,0.04)}
-.training-feature strong{display:block;color:var(--orange);font-size:0.85rem;text-transform:uppercase}
-.training-feature p{margin-top:5px;font-size:0.8rem;line-height:1.5}
-.portal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.portal-card{min-height:280px;display:flex;flex-direction:column;padding:34px;border:1px solid var(--border);border-radius:25px;background:linear-gradient(145deg,rgba(255,122,0,0.1),#000)}
-.portal-card h3{color:var(--orange);font-size:1.6rem;text-transform:uppercase}
-.portal-card p{flex:1;margin-top:14px;line-height:1.7;opacity:0.84}
-.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.stat-card{padding:30px 18px;border:1px solid var(--border);border-radius:20px;background:#070300;text-align:center}
-.stat-card strong{display:block;color:var(--orange);font-size:clamp(2.2rem,5vw,3.5rem)}
-.stat-card span{display:block;margin-top:8px;font-size:0.8rem;font-weight:900;text-transform:uppercase}
-.announcement-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.announcement-card{padding:25px;border:1px solid var(--border);border-radius:20px;background:#080400}
-.announcement-date{color:var(--orange);font-size:0.7rem;font-weight:900;text-transform:uppercase}
-.announcement-card h3{margin-top:12px;color:var(--orange);font-size:1rem;text-transform:uppercase}
-.announcement-card p{margin-top:10px;font-size:0.82rem;line-height:1.65;opacity:0.82}
-.cta-box{position:relative;overflow:hidden;padding:60px 30px;border:1px solid var(--orange);border-radius:32px;background:radial-gradient(circle at 80% 20%,rgba(255,122,0,0.26),transparent 32%),linear-gradient(135deg,#190800,#000 62%);text-align:center}
-.cta-box h2{color:var(--orange);font-size:clamp(2rem,5vw,3.6rem);text-transform:uppercase}
-.cta-box p{max-width:760px;margin:18px auto 0;line-height:1.75;opacity:0.87}
-.cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:28px}
-footer{border-top:1px solid var(--border);background:#000}
-.footer-main{display:grid;grid-template-columns:1.2fr 0.7fr 0.7fr 0.7fr;gap:35px;padding:60px 0 40px}
-.footer-brand{display:flex;align-items:center;gap:13px}
-.footer-brand img{width:65px;height:65px;object-fit:cover;border:2px solid var(--orange);border-radius:50%}
-.footer-brand h3{color:var(--orange);font-size:1.05rem;text-transform:uppercase}
-.footer-brand p{margin-top:6px;font-size:0.72rem;text-transform:uppercase}
-.footer-description{margin-top:18px;max-width:480px;font-size:0.85rem;line-height:1.7;opacity:0.8}
-.footer-column h4{margin-bottom:15px;color:var(--orange);font-size:0.82rem;text-transform:uppercase}
-.footer-links{display:grid;gap:10px}
-.footer-links a{font-size:0.82rem;opacity:0.78;transition:0.3s}
-.footer-links a:hover{color:var(--orange);opacity:1;transform:translateX(4px)}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--border);font-size:0.74rem;opacity:0.78}
-@media (max-width:1100px){
-.desktop-nav{display:none}
-.menu-button{display:block}
-.mobile-menu{position:fixed;top:var(--header-height);right:0;bottom:0;z-index:1900;width:min(370px,88%);display:flex;flex-direction:column;gap:10px;padding:28px;border-left:1px solid var(--border);background:rgba(0,0,0,0.98);transform:translateX(105%);transition:0.3s}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu.nav-link{padding:14px;border:1px solid var(--border);border-radius:11px}
-.mobile-menu.language-switcher{width:max-content;margin-top:8px}
-.hero-grid{grid-template-columns:1fr}
-.hero-content{text-align:center}
-.hero-description{margin-inline:auto}
-.hero-actions{justify-content:center}
-.identity-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.ai-box,.certificate-box,.training-box{grid-template-columns:1fr}
-.steps-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.footer-main{grid-template-columns:repeat(2,minmax(0,1fr))}
-.footer-main>:first-child{grid-column:1 / -1}
-}
-@media (max-width:700px){
-:root{--header-height:74px}
-.container{width:min(100% - 24px,1200px)}
-.section{padding:68px 0}
-.brand-logo{width:48px;height:48px;flex-basis:48px}
-.brand-name{font-size:0.8rem}
-.brand-subtitle{display:none}
-.hero{padding-top:calc(var(--header-height) + 55px)}
-.hero-title{font-size:clamp(2.8rem,15vw,4.8rem)}
-.hero-actions{display:grid}
-.hero-actions.btn{width:100%}
-.hero-visual{min-height:auto}
-.academy-video-wrap{width:100%;border-radius:20px}
-.identity-grid,.category-grid,.course-grid,.steps-grid,.portal-grid,.stats-grid,.announcement-grid,.footer-main{grid-template-columns:1fr}
-.footer-main>:first-child{grid-column:auto}
-.course-search{grid-template-columns:1fr}
-.course-search.btn{width:100%}
-.ai-box,.certificate-box,.training-box{padding:30px 20px}
-.ai-circle{width:210px;height:210px;font-size:3.7rem}
-.certificate-actions,.cta-actions{display:grid}
-.certificate-actions.btn,.cta-actions.btn{width:100%}
-.footer-bottom{flex-direction:column;text-align:center}
-}
+  :root{
+    --black:#070502;
+    --black2:#150E07;
+    --orange:#FF7A1A;
+    --orange-light:#FFB066;
+    --orange-deep:#8A3400;
+    --white:#FFF7EE;
+    --line: rgba(255,176,102,0.28);
+    --panel: rgba(7,5,2,0.62);
+    --panel-solid:#0D0904;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    color:var(--white);
+    font-family:'Public Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(1100px 700px at 15% -10%, rgba(255,122,26,0.35), transparent 60%),
+      radial-gradient(1000px 800px at 100% 30%, rgba(255,122,26,0.22), transparent 55%),
+      linear-gradient(175deg, #030201 0%, #150E07 16%, #3A1A02 42%, #B34C00 62%, #FF7A1A 78%, #1A0E05 100%);
+    background-attachment:fixed;
+    background-size:cover;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0;}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:.06em;}
+  a{color:inherit;}
+  video,img{max-width:100%;}
+  button{font-family:inherit;}
+
+  /* ---------- LOGO ---------- */
+  .logo-mark{
+    width:44px;height:44px;border-radius:50%;
+    overflow:hidden; border:2px solid var(--orange-light);
+    flex-shrink:0; background:var(--black2);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .logo-mark video{width:100%;height:100%;object-fit:cover;}
+  .logo-mark .fallback{font-family:'Fraunces',serif;font-weight:700;color:var(--orange-light);font-size:18px;}
+
+  .seal{
+    position:relative;
+    width:112px; height:112px;
+    border-radius:50%;
+    border:2px solid var(--orange-light);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    background:var(--black2);
+    overflow:hidden;
+  }
+  .seal video{width:100%;height:100%;object-fit:cover; border-radius:50%;}
+  .seal::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px dashed var(--orange-light);
+    border-radius:50%;
+    opacity:.6; pointer-events:none;
+  }
+  .seal.small{width:46px;height:46px;border-width:1.5px;}
+
+  /* ---------- HEADER / NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(7,5,2,0.82);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 24px; gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-name{font-family:'Fraunces', serif; font-weight:600; font-size:16px; letter-spacing:.02em;}
+  .brand-name span{display:block; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:var(--orange-light); font-weight:400; margin-top:2px;}
+
+  nav.desktop-nav{display:flex; gap:18px; font-size:13px; align-items:center;}
+  nav.desktop-nav a{
+    text-decoration:none; color:var(--white); opacity:.8;
+    padding:4px 0; border-bottom:1px solid transparent;
+    transition:.2s; white-space:nowrap;
+  }
+  nav.desktop-nav a:hover{opacity:1; border-color:var(--orange-light);}
+
+  .lang-toggle{display:flex; gap:4px; border:1px solid var(--line); border-radius:20px; padding:3px;}
+  .lang-btn{
+    background:none; border:none; color:var(--white); opacity:.6;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em;
+    padding:6px 11px; border-radius:16px; cursor:pointer; transition:.2s;
+  }
+  .lang-btn.active{background:var(--orange); color:#1A0E05; opacity:1; font-weight:600;}
+
+  .menu-btn{display:none; background:none; border:1px solid var(--line); color:var(--white); width:38px;height:38px;border-radius:6px; cursor:pointer; font-size:16px;}
+  .mobile-nav{display:none; flex-direction:column; padding:0 24px 18px; gap:2px;}
+  .mobile-nav a{color:var(--white); text-decoration:none; padding:9px 6px; font-size:14px; border-bottom:1px solid var(--line);}
+  .mobile-nav.open{display:flex;}
+
+  @media (max-width:900px){
+    nav.desktop-nav{display:none;}
+    .menu-btn{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:1180px; margin:0 auto;
+    padding:72px 24px 60px;
+    display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.2em;
+    color:var(--orange-light); text-transform:uppercase; margin-bottom:18px; display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 5.2vw, 3.9rem);
+    font-weight:600; line-height:1.06; letter-spacing:-.01em;
+  }
+  .hero h1 em{font-style:italic; font-weight:500; color:var(--orange-light);}
+  .hero p.lede{
+    margin-top:20px; max-width:560px; font-size:16px; line-height:1.65; color:var(--white); opacity:.88;
+  }
+  .hero .creole{
+    margin-top:10px; font-style:italic; color:var(--orange-light); font-size:14px; opacity:.9;
+  }
+  .hero-cta{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    padding:13px 22px; border-radius:3px; text-decoration:none; display:inline-block; transition:.2s; cursor:pointer; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--orange); color:#1A0E05; border-color:var(--orange);}
+  .btn-primary:hover{background:var(--orange-light);}
+  .btn-ghost{border:1px solid var(--line); color:var(--white);}
+  .btn-ghost:hover{border-color:var(--orange-light); color:var(--orange-light);}
+
+  @media (max-width:860px){ .hero{grid-template-columns:1fr;} .hero-seal{display:none;} }
+
+  /* ---------- CATEGORY MAP ---------- */
+  .catmap{
+    background:rgba(0,0,0,0.35);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:30px 24px;
+  }
+  .catmap-inner{max-width:1180px;margin:0 auto; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center; justify-content:center;}
+  .catmap-item{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em; color:var(--orange-light); opacity:.9; cursor:pointer; text-decoration:none;}
+  .catmap-item b{color:var(--white); opacity:.55; margin-right:6px;}
+
+  /* ---------- SECTIONS ---------- */
+  main{max-width:1180px; margin:0 auto; padding:64px 24px;}
+  .file{
+    background:var(--panel); color:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    margin-bottom:26px;
+    position:relative;
+    backdrop-filter:blur(6px);
+    overflow:hidden;
+  }
+  .file-tab{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+    padding:22px 26px;
+    cursor:pointer;
+    border-bottom:1px solid var(--line);
+  }
+  .file-tab-left{display:flex; align-items:center; gap:16px;}
+  .file-num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--orange-light);
+    border:1px solid var(--orange-light); border-radius:50%;
+    width:34px;height:34px; display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .file-tab h2{font-size:1.35rem; font-weight:600;}
+  .file-tab .sub{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--orange-light); margin-top:3px; opacity:.7;}
+  .chev{width:20px;height:20px; flex-shrink:0; transition:transform .3s ease; opacity:.7; color:var(--orange-light);}
+  .file.open .chev{transform:rotate(180deg);}
+
+  .file-body{max-height:0; overflow:hidden; transition:max-height .45s ease;}
+  .file-body-inner{padding:6px 26px 28px;}
+  .file.open .file-body{max-height:1200px;}
+
+  .service-list{columns:2; column-gap:30px; list-style:none; margin:0; padding:0;}
+  .service-list li{
+    break-inside:avoid;
+    display:flex; gap:10px; align-items:flex-start;
+    padding:8px 0; border-bottom:1px dotted var(--line);
+    font-size:14px; line-height:1.4;
+  }
+  .service-list li::before{content:"✓"; color:var(--orange-light); font-size:12px; margin-top:2px; font-weight:700; flex-shrink:0;}
+  @media (max-width:640px){ .service-list{columns:1;} }
+
+  /* ---------- BANDS ---------- */
+  .band{padding:56px 24px;}
+  .band-inner{max-width:1180px; margin:0 auto;}
+  .band-news{background:rgba(0,0,0,0.32); border-top:1px solid var(--line);}
+  .band-ai{background:rgba(0,0,0,0.42); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .band-contact{background:rgba(0,0,0,0.5);}
+  .band-head{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+  .band-head h2{font-size:1.75rem; font-weight:600;}
+  .band-head .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange-light); letter-spacing:.14em; text-transform:uppercase;}
+  .chips{display:flex; flex-wrap:wrap; gap:10px;}
+  .chip{border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:13px; color:var(--white); opacity:.92; background:rgba(0,0,0,0.25);}
+  .ai-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;}
+  .ai-card{border:1px solid var(--line); border-radius:6px; padding:20px; background:rgba(255,122,26,0.06);}
+  .ai-card h3{font-size:15px; color:var(--orange-light); font-weight:600; margin-bottom:8px; font-family:'Public Sans',sans-serif;}
+  .ai-card p{font-size:13px; opacity:.8; margin:0; line-height:1.5;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-bottom:30px;}
+  .contact-card{border:1px solid var(--line); border-radius:6px; padding:20px; background:rgba(0,0,0,0.3);}
+  .contact-card .label{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--orange-light); margin-bottom:8px;}
+  .contact-card .value{font-size:15px; line-height:1.6;}
+  .contact-card a{text-decoration:none; color:var(--white);}
+  .contact-card a:hover{color:var(--orange-light);}
+  .social-row{display:flex; flex-wrap:wrap; gap:10px;}
+  .social-pill{
+    border:1px solid var(--line); border-radius:20px; padding:9px 18px; font-size:13px;
+    background:rgba(255,122,26,0.08); text-decoration:none; color:var(--white); transition:.2s;
+  }
+  .social-pill:hover{border-color:var(--orange-light); color:var(--orange-light);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px solid var(--line);}
+  .footer-inner{max-width:1180px; margin:0 auto;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; padding-bottom:30px; border-bottom:1px solid var(--line);}
+  .footer-cats{display:flex; flex-wrap:wrap; gap:9px 22px; font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:.75;}
+  .footer-cats a{text-decoration:none;}
+  .footer-bottom{padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:11.5px; opacity:.6; font-family:'IBM Plex Mono',monospace;}
+
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+  :focus-visible{outline:2px solid var(--orange-light); outline-offset:2px;}
 </style>
 </head>
 <body>
+
 <header>
-<div class="container header-inner">
-<a href="#home" class="brand">
-<img src="pro-max-academie-logo-final.png" alt="PRO-MAX ACADÉMIE - APPRENDRE • ÉVOLUER • RÉUSSIR" class="brand-logo" onerror="this.src='assets/images/pro-max-academie-logo.png'">
-<span>
-<span class="brand-name">PRO-MAX ACADÉMIE</span>
-<span class="brand-subtitle" data-i18n="brandSubtitle">Apprendre • Évoluer • Réussir</span>
-</span>
-</a>
-<nav class="desktop-nav">
-<a href="#home" class="nav-link" data-i18n="navHome">Akèy</a>
-<a href="courses.html" class="nav-link" data-i18n="navCourses">Kou</a>
-<a href="#categories" class="nav-link" data-i18n="navCategories">Kategori</a>
-<a href="ai/ai-tutor.html" class="nav-link">AI Tutor</a>
-<a href="certificates.html" class="nav-link" data-i18n="navCertificates">Sètifika</a>
-<a href="about.html" class="nav-link" data-i18n="navAbout">Konsènan</a>
-<a href="contact.html" class="nav-link" data-i18n="navContact">Kontakte</a>
-<a href="login.html" class="nav-link" data-i18n="navLogin">Login</a>
-<div class="language-switcher">
-<button class="language-button active" data-language="ht">KRE</button>
-<button class="language-button" data-language="fr">FRA</button>
-<button class="language-button" data-language="en">ENG</button>
-</div>
-</nav>
-<button type="button" class="menu-button" id="menuButton" aria-label="Open Menu"><span></span><span></span><span></span></button>
-</div>
+  <div class="nav-wrap">
+    <div class="brand">
+      <div class="logo-mark">
+        <video autoplay muted loop playsinline src="maximax-best-multi.mp4">
+        </video>
+        <div class="fallback">M</div>
+      </div>
+      <div class="brand-name">MAXIMAX<span>MULTI SERVICES</span></div>
+    </div>
+    <nav class="desktop-nav" id="desktopNav"></nav>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div class="lang-toggle" id="langToggle">
+        <button class="lang-btn" data-lang="en">ENG</button>
+        <button class="lang-btn" data-lang="fr">FRAN</button>
+        <button class="lang-btn" data-lang="kr">KRE</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav"></div>
 </header>
-<nav class="mobile-menu" id="mobileMenu">
-<a href="#home" class="nav-link mobile-link" data-i18n="navHome">Akèy</a>
-<a href="courses.html" class="nav-link" data-i18n="navCourses">Kou</a>
-<a href="#categories" class="nav-link mobile-link" data-i18n="navCategories">Kategori</a>
-<a href="ai/ai-tutor.html" class="nav-link">AI Tutor</a>
-<a href="certificates.html" class="nav-link" data-i18n="navCertificates">Sètifika</a>
-<a href="login.html" class="nav-link" data-i18n="navLogin">Login</a>
-<a href="register.html" class="nav-link" data-i18n="navRegister">Enskri</a>
-<div class="language-switcher">
-<button class="language-button active" data-language="ht">KRE</button>
-<button class="language-button" data-language="fr">FRA</button>
-<button class="language-button" data-language="en">ENG</button>
-</div>
-</nav>
-<main>
-<section class="hero" id="home">
-<div class="container hero-grid">
-<div class="hero-content">
-<div class="hero-badge" data-i18n="heroBadge">Platfòm edikasyon dijital</div>
-<h1 class="hero-title">PRO-MAX<span>ACADÉMIE</span></h1>
-<div class="hero-slogan" data-i18n="heroSlogan">APPRENDRE. ÉVOLUER. RÉUSSIR.</div>
-<p class="hero-description" data-i18n="heroDescription">Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.</p>
-<div class="hero-actions">
-<a href="courses.html" class="btn btn-primary" data-i18n="exploreCourses">Explore Courses</a>
-<a href="register.html" class="btn btn-secondary" data-i18n="startLearning">Start Learning</a>
-<a href="login.html" class="btn btn-secondary" data-i18n="studentLogin">Student Login</a>
-</div>
-</div>
-<div class="hero-visual">
-<div class="academy-video-wrap">
-<video id="academyMainVideo" class="academy-main-video" autoplay muted loop playsinline preload="auto" poster="pro-max-academie-logo-final.png">
-<source src="pro-max-academie.mp4" type="video/mp4">
-<source src="./pro-max-academie.mp4" type="video/mp4">
-</video>
-</div>
-</div>
-</div>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow" id="heroEyebrow"></span>
+    <h1 id="heroH1"></h1>
+    <p class="lede" id="heroLede"></p>
+    <p class="creole">Nou la pou ou · Nous sommes là pour vous · We are here for you</p>
+    <div class="hero-cta">
+      <a href="#immigration" class="btn btn-primary" id="ctaPrimary"></a>
+      <a href="#community" class="btn btn-ghost" id="ctaGhost"></a>
+    </div>
+  </div>
+  <div class="hero-seal seal">
+    <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+  </div>
 </section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="identityLabel">Idantite Académie a</span><h2 class="section-title" data-i18n="identityTitle">Yon sistèm aprantisaj konplè</h2><p class="section-description" data-i18n="identityDescription">PRO-MAX Académie fèt pou mete teknoloji, edikasyon ak sètifikasyon nan yon sèl sistèm.</p></div><div class="identity-grid"><div class="identity-card"><div class="identity-number">3</div><h3 data-i18n="languagesTitle">Lang</h3><p>KRE • FRA • ENG</p></div><div class="identity-card"><div class="identity-number">AI</div><h3>AI Tutor</h3><p data-i18n="aiIdentityText">Asistans aprantisaj entèlijan</p></div><div class="identity-card"><div class="identity-number">✓</div><h3 data-i18n="certIdentityTitle">Certification</h3><p data-i18n="certIdentityText">Sètifika ak verification</p></div><div class="identity-card"><div class="identity-number">%</div><h3 data-i18n="progressTitle">Progress</h3><p data-i18n="progressText">Suivi pwogrè elèv</p></div><div class="identity-card"><div class="identity-number">I</div><h3 data-i18n="instructorTitle">Instructor</h3><p data-i18n="instructorText">Instructor Portal konplè</p></div><div class="identity-card"><div class="identity-number">24/7</div><h3 data-i18n="learningTitle">Learning</h3><p data-i18n="learningText">Aprann nenpòt lè</p></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label">COURSE SEARCH</span><h2 class="section-title" data-i18n="searchTitle">Chèche yon kou</h2></div><form class="course-search" action="courses.html" method="get"><input type="search" name="search" placeholder="Search courses..." data-i18n-placeholder="searchPlaceholder"><button class="btn btn-primary" type="submit" data-i18n="searchButton">Search</button></form></div></section>
-<section class="section" id="categories"><div class="container"><div class="section-header"><span class="section-label" data-i18n="categoryLabel">Course Categories</span><h2 class="section-title" data-i18n="categoryTitle">Chwazi domèn ou</h2><p class="section-description" data-i18n="categoryDescription">Devlope nouvo kapasite atravè kou pwofesyonèl, teknoloji, administrasyon ak fòmasyon kominotè.</p></div><div class="category-grid"><a href="courses.html?category=digital-skills" class="category-card"><div class="category-number">01</div><h3>Digital Skills</h3><p data-i18n="digitalSkillsText">Konpetans dijital pou travay ak teknoloji modèn.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=leadership" class="category-card"><div class="category-number">02</div><h3>Leadership</h3><p data-i18n="leadershipText">Devlope kapasite lidèchip ak jesyon ekip.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=communication" class="category-card"><div class="category-number">03</div><h3>Communication</h3><p data-i18n="communicationText">Kominikasyon pwofesyonèl ak relasyon imen.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=immigration-education" class="category-card"><div class="category-number">04</div><h3>Immigration Education</h3><p data-i18n="immigrationEducationText">Fòmasyon enfòmatif sou pwosesis ak resous imigrasyon.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=admin-training" class="category-card"><div class="category-number">05</div><h3>Admin Training</h3><p data-i18n="adminTrainingText">Fòmasyon espesyal pou Administratè BSS1815.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=technology" class="category-card"><div class="category-number">06</div><h3>Technology</h3><p data-i18n="technologyText">Teknoloji, AI ak zouti dijital modèn.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html?category=professional" class="category-card"><div class="category-number">07</div><h3>Professional Training</h3><p data-i18n="professionalText">Preparasyon ak kapasite pou anviwònman pwofesyonèl.</p><span data-i18n="viewCourses">View Courses →</span></a><a href="courses.html" class="category-card"><div class="category-number">08</div><h3>All Courses</h3><p data-i18n="allCoursesText">Eksplore tout pwogram fòmasyon Académie a.</p><span data-i18n="viewCourses">View Courses →</span></a></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="featuredLabel">Featured Courses</span><h2 class="section-title" data-i18n="featuredTitle">Kou rekòmande</h2></div><div class="course-grid"><article class="course-card"><div class="course-image"><span>AI</span></div><div class="course-body"><span class="course-badge">TECHNOLOGY</span><h3 data-i18n="courseOneTitle">Introduction à l'Intelligence Artificielle</h3><p data-i18n="courseOneText">Aprann baz AI, itilizasyon responsab ak zouti entèlijan pou travay ak aprantisaj.</p><div class="course-meta"><span>12 Lessons</span><span>Certificate</span></div><a href="course-details.html?course=ai-introduction" class="course-link" data-i18n="openCourse">Open Course →</a></div></article><article class="course-card"><div class="course-image"><span>ADM</span></div><div class="course-body"><span class="course-badge">ADMIN TRAINING</span><h3 data-i18n="courseTwoTitle">BSS1815 Admin Professional Training</h3><p data-i18n="courseTwoText">Leadership, communication, PRO-MAX DMP, security ak jesyon dijital.</p><div class="course-meta"><span>10 Modules</span><span>Certificate + Badge</span></div><a href="course-details.html?course=bss1815-admin" class="course-link" data-i18n="openCourse">Open Course →</a></div></article><article class="course-card"><div class="course-image"><span>DS</span></div><div class="course-body"><span class="course-badge">DIGITAL SKILLS</span><h3 data-i18n="courseThreeTitle">Digital Skills Fundamentals</h3><p data-i18n="courseThreeText">Devlope konpetans dijital pou travay, kominikasyon ak jesyon enfòmasyon.</p><div class="course-meta"><span>14 Lessons</span><span>Certificate</span></div><a href="course-details.html?course=digital-skills" class="course-link" data-i18n="openCourse">Open Course →</a></div></article></div></div></section>
-<section class="section ai-section"><div class="container"><div class="ai-box"><div class="ai-visual"><div class="ai-circle">AI</div></div><div class="ai-content"><span class="section-label">PRO-MAX AI TUTOR</span><h2 data-i18n="aiTitle">Yon pwofesè dijital ki toujou disponib</h2><p data-i18n="aiDescription">AI Tutor la ede elèv konprann leson, prepare egzamen, jwenn eksplikasyon, fè pratik epi aprann nan Kreyòl, Français ak English.</p><div class="ai-list"><div class="ai-item" data-i18n="aiFeatureOne">Eksplike lesson ak konsèp difisil</div><div class="ai-item" data-i18n="aiFeatureTwo">Kreye practice questions</div><div class="ai-item" data-i18n="aiFeatureThree">Prepare student pou quiz ak exam</div><div class="ai-item" data-i18n="aiFeatureFour">Tradui ak rezime materyèl</div></div><a href="ai/ai-tutor.html" class="btn btn-primary" data-i18n="askTutor">Ask AI Tutor</a></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="howLabel">How It Works</span><h2 class="section-title" data-i18n="howTitle">Senk etap pou reyisi</h2></div><div class="steps-grid"><div class="step-card"><div class="step-number">01</div><h3 data-i18n="stepOneTitle">Create Account</h3><p data-i18n="stepOneText">Kreye pwofil student ou.</p></div><div class="step-card"><div class="step-number">02</div><h3 data-i18n="stepTwoTitle">Choose Course</h3><p data-i18n="stepTwoText">Chwazi fòmasyon ki enterese w.</p></div><div class="step-card"><div class="step-number">03</div><h3 data-i18n="stepThreeTitle">Learn</h3><p data-i18n="stepThreeText">Suiv lessons ak materyèl yo.</p></div><div class="step-card"><div class="step-number">04</div><h3 data-i18n="stepFourTitle">Take Exam</h3><p data-i18n="stepFourText">Fè quiz ak final exam.</p></div><div class="step-card"><div class="step-number">05</div><h3 data-i18n="stepFiveTitle">Get Certified</h3><p data-i18n="stepFiveText">Resevwa certificate ou.</p></div></div></div></section>
-<section class="section"><div class="container"><div class="certificate-box"><div class="certificate-content"><span class="section-label">CERTIFICATE CENTER</span><h2 data-i18n="certificateTitle">Fòmasyon ki mennen nan sètifikasyon</h2><p data-i18n="certificateDescription">Lè yon student fini yon kou epi li satisfè kondisyon yo, PRO-MAX Académie kapab emèt yon certificate ak nimewo verification ak QR Code.</p><div class="certificate-actions"><a href="certificates.html" class="btn btn-primary" data-i18n="viewCertificates">View Certificates</a><a href="certificate-verification.html" class="btn btn-secondary" data-i18n="verifyCertificate">Verify Certificate</a></div></div><div class="certificate-demo"><div><h3>PRO-MAX ACADÉMIE</h3><p data-i18n="certificateDemoText">Certificate of Completion</p><div class="certificate-seal">PMA</div><p>PMA-CERT-2026-XXXXXX</p></div></div></div></div></section>
-<section class="section"><div class="container"><div class="training-box"><div class="training-content"><span class="section-label">BSS1815 ADMIN TRAINING</span><h2 data-i18n="trainingTitle">Fòmasyon espesyal pou administratè yo</h2><p data-i18n="trainingDescription">Yon pwogram espesyal pou fòme administratè BSS1815 nan leadership, communication, PRO-MAX DMP, digital management, security ak AI tools.</p><a href="course-details.html?course=bss1815-admin" class="btn btn-primary" style="margin-top:25px;" data-i18n="openTraining">Open Admin Training</a></div><div class="training-features"><div class="training-feature"><strong>Leadership</strong><p data-i18n="trainingFeatureOne">Devlope kapasite dirije ekip.</p></div><div class="training-feature"><strong>PRO-MAX DMP</strong><p data-i18n="trainingFeatureTwo">Aprann sistèm administrasyon santral la.</p></div><div class="training-feature"><strong>Certificate</strong><p data-i18n="trainingFeatureThree">Certificate apre kou a fini.</p></div><div class="training-feature"><strong>★ Badge</strong><p data-i18n="trainingFeatureFour">Admin ki pase fòmasyon an resevwa Star Badge.</p></div></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="portalLabel">Academy Portals</span><h2 class="section-title" data-i18n="portalTitle">Aksè pèsonalize</h2></div><div class="portal-grid"><div class="portal-card"><h3 data-i18n="studentPortalTitle">Student Portal</h3><p data-i18n="studentPortalText">Student la kapab wè kou li yo, pwogrè, exams, grades, certificates, messages ak AI Tutor.</p><a href="student/dashboard.html" class="btn btn-primary" data-i18n="openStudentPortal">Open Student Portal</a></div><div class="portal-card"><h3 data-i18n="instructorPortalTitle">Instructor Portal</h3><p data-i18n="instructorPortalText">Instructor la kapab kreye kou, lessons, quizzes, exams, grades ak announcements.</p><a href="instructor/dashboard.html" class="btn btn-secondary" data-i18n="openInstructorPortal">Open Instructor Portal</a></div></div></div></section>
-<section class="section"><div class="container"><div class="stats-grid"><div class="stat-card"><strong>0+</strong><span data-i18n="coursesStat">Courses</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="studentsStat">Students</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="certificatesStat">Certificates</span></div><div class="stat-card"><strong>0+</strong><span data-i18n="instructorsStat">Instructors</span></div></div></div></section>
-<section class="section"><div class="container"><div class="section-header"><span class="section-label" data-i18n="announcementLabel">Academy Updates</span><h2 class="section-title" data-i18n="announcementTitle">Announcements</h2></div><div class="announcement-grid"><article class="announcement-card"><span class="announcement-date">PRO-MAX ACADÉMIE</span><h3 data-i18n="announcementOneTitle">Academy Launch</h3><p data-i18n="announcementOneText">Nouvo kou ak pwogram pral parèt isit la pandan Académie a ap devlope.</p></article><article class="announcement-card"><span class="announcement-date">AI TUTOR</span><h3 data-i18n="announcementTwoTitle">AI Learning Center</h3><p data-i18n="announcementTwoText">Student yo pral kapab jwenn asistans entèlijan pandan yo ap aprann.</p></article><article class="announcement-card"><span class="announcement-date">CERTIFICATION</span><h3 data-i18n="announcementThreeTitle">Certificate System</h3><p data-i18n="announcementThreeText">Certificates pral genyen verification number ak QR verification.</p></article></div></div></section>
-<section class="section"><div class="container"><div class="cta-box"><h2 data-i18n="ctaTitle">Start Your Learning Journey</h2><p data-i18n="ctaDescription">Antre nan PRO-MAX Académie, devlope nouvo kapasite, aprann ak AI epi prepare tèt ou pou demen.</p><div class="cta-actions"><a href="register.html" class="btn btn-primary" data-i18n="registerNow">Register Now</a><a href="courses.html" class="btn btn-secondary" data-i18n="exploreAllCourses">Explore Courses</a></div></div></div></section>
-</main>
+
+<div class="catmap">
+  <div class="catmap-inner" id="catmap"></div>
+</div>
+
+<main id="fileContainer"></main>
+
+<section class="band band-news" id="news">
+  <div class="band-inner">
+    <div class="band-head">
+      <div class="seal small"><video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video></div>
+      <div>
+        <div class="tag" id="newsTag"></div>
+        <h2 id="newsTitle"></h2>
+      </div>
+    </div>
+    <div class="chips" id="newsChips"></div>
+  </div>
+</section>
+
+<section class="band band-ai" id="ai">
+  <div class="band-inner">
+    <div class="band-head">
+      <div class="seal small"><video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video></div>
+      <div>
+        <div class="tag" id="aiTag"></div>
+        <h2 id="aiTitle"></h2>
+      </div>
+    </div>
+    <div class="ai-grid" id="aiGrid"></div>
+  </div>
+</section>
+
+<section class="band band-contact" id="contact">
+  <div class="band-inner">
+    <div class="band-head">
+      <div class="seal small"><video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video></div>
+      <div>
+        <div class="tag" id="contactTag"></div>
+        <h2 id="contactTitle"></h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="label" id="phoneLabel"></div>
+        <div class="value">
+          <a href="tel:+19546405166">(954) 640-5166</a><br>
+          <a href="tel:+15162168494">(516) 216-8494</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="label" id="emailLabel"></div>
+        <div class="value"><a href="mailto:maximaxmultiservices@gmail.com">maximaxmultiservices@gmail.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="label" id="webLabel"></div>
+        <div class="value"><a href="https://www.maximaxmultiservices.com" target="_blank" rel="noopener">www.maximaxmultiservices.com</a></div>
+      </div>
+    </div>
+    <div class="label" id="followLabel" style="margin-bottom:12px;"></div>
+    <div class="social-row">
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">TikTok</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">YouTube</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">Spotify</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">True Social</a>
+      <a class="social-pill" href="#" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+  </div>
+</section>
+
 <footer>
-<div class="container footer-main">
-<div>
-<div class="footer-brand">
-<img src="pro-max-academie-logo-final.png" alt="PRO-MAX ACADÉMIE" style="width:65px;height:65px;object-fit:cover;border:2px solid #ff7a00;border-radius:50%" onerror="this.src='assets/images/pro-max-academie-logo.png'">
-<div><h3>PRO-MAX ACADÉMIE</h3><p>APPRENDRE • ÉVOLUER • RÉUSSIR</p></div>
-</div>
-<p class="footer-description" data-i18n="footerDescription">Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.</p>
-</div>
-<div class="footer-column"><h4 data-i18n="quickLinksTitle">Quick Links</h4><div class="footer-links"><a href="#home">Home</a><a href="courses.html">Courses</a><a href="certificates.html">Certificates</a><a href="about.html">About</a></div></div>
-<div class="footer-column"><h4 data-i18n="academyLinksTitle">Academy</h4><div class="footer-links"><a href="student/dashboard.html">Student Portal</a><a href="instructor/dashboard.html">Instructor Portal</a><a href="ai/ai-tutor.html">AI Tutor</a><a href="certificate-verification.html">Verify Certificate</a></div></div>
-<div class="footer-column"><h4 data-i18n="supportTitle">Support</h4><div class="footer-links"><a href="help.html">Help Center</a><a href="contact.html">Contact</a><a href="login.html">Login</a><a href="register.html">Register</a></div></div>
-</div>
-<div class="container footer-bottom"><p>© <span id="year"></span> PRO-MAX ACADÉMIE. <span data-i18n="rights">Tout dwa rezève.</span></p><p>BSS1815 PRO-MAX DMP</p></div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="brand" style="margin-bottom:10px;">
+          <div class="logo-mark">
+            <video autoplay muted loop playsinline src="maximax-best-multi.mp4"></video>
+            <div class="fallback">M</div>
+          </div>
+          <div class="brand-name">MAXIMAX<span>MULTI SERVICES</span></div>
+        </div>
+        <p id="footerDesc" style="max-width:340px; font-size:13px; opacity:.7; line-height:1.6;"></p>
+      </div>
+      <div class="footer-cats" id="footerCats"></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maximax Multi Services</span>
+      <span>(954) 640-5166 · (516) 216-8494 · maximaxmultiservices@gmail.com</span>
+    </div>
+  </div>
 </footer>
+
 <script>
-"use strict";
-const menuButton=document.getElementById("menuButton");
-const mobileMenu=document.getElementById("mobileMenu");
-if(menuButton&&mobileMenu){menuButton.addEventListener("click",function(){mobileMenu.classList.toggle("open");menuButton.classList.toggle("active");document.body.classList.toggle("menu-open");});}
-document.querySelectorAll(".mobile-link").forEach(function(link){link.addEventListener("click",function(){mobileMenu.classList.remove("open");menuButton.classList.remove("active");document.body.classList.remove("menu-open");});});
-const academyMainVideo=document.getElementById("academyMainVideo");
-if(academyMainVideo){academyMainVideo.muted=true;const playPromise=academyMainVideo.play();if(playPromise!==undefined){playPromise.catch(function(){});}}
-const translations={ht:{brandSubtitle:"Aprann • Evolye • Reyisi",navHome:"Akèy",navCourses:"Kou",navCategories:"Kategori",navCertificates:"Sètifika",navAbout:"Konsènan",navContact:"Kontakte",navLogin:"Login",navRegister:"Enskri",heroBadge:"Platfòm edikasyon dijital",heroSlogan:"APRANN. EVOLYE. REYISI.",heroDescription:"Yon platfòm edikasyon dijital modèn pou aprann, devlope kapasite, suiv kou, pase egzamen, sèvi ak AI Tutor epi resevwa sètifikasyon.",exploreCourses:"Eksplore Kou",startLearning:"Kòmanse Aprann",studentLogin:"Student Login",identityLabel:"Idantite Académie a",identityTitle:"Yon sistèm aprantisaj konplè",identityDescription:"PRO-MAX Académie fèt pou mete teknoloji, edikasyon ak sètifikasyon nan yon sèl sistèm.",languagesTitle:"Lang",aiIdentityText:"Asistans aprantisaj entèlijan",certIdentityTitle:"Sètifikasyon",certIdentityText:"Sètifika ak verification",progressTitle:"Pwogrè",progressText:"Suivi pwogrè elèv",instructorTitle:"Enstriktè",instructorText:"Instructor Portal konplè",learningTitle:"Aprantisaj",learningText:"Aprann nenpòt lè",searchTitle:"Chèche yon kou",searchPlaceholder:"Chèche kou...",searchButton:"Chèche",categoryLabel:"Kategori Kou",categoryTitle:"Chwazi domèn ou",categoryDescription:"Devlope nouvo kapasite atravè kou pwofesyonèl, teknoloji, administrasyon ak fòmasyon kominotè.",digitalSkillsText:"Konpetans dijital pou travay ak teknoloji modèn.",leadershipText:"Devlope kapasite lidèchip ak jesyon ekip.",communicationText:"Kominikasyon pwofesyonèl ak relasyon imen.",immigrationEducationText:"Fòmasyon enfòmatif sou pwosesis ak resous imigrasyon.",adminTrainingText:"Fòmasyon espesyal pou Administratè BSS1815.",technologyText:"Teknoloji, AI ak zouti dijital modèn.",professionalText:"Preparasyon ak kapasite pou anviwònman pwofesyonèl.",allCoursesText:"Eksplore tout pwogram fòmasyon Académie a.",viewCourses:"Gade Kou →",featuredLabel:"Kou Rekòmande",featuredTitle:"Kou seleksyone",courseOneTitle:"Entwodiksyon nan Entèlijans Atifisyèl",courseOneText:"Aprann baz AI, itilizasyon responsab ak zouti entèlijan pou travay ak aprantisaj.",courseTwoTitle:"BSS1815 Admin Professional Training",courseTwoText:"Leadership, communication, PRO-MAX DMP, security ak jesyon dijital.",courseThreeTitle:"Digital Skills Fundamentals",courseThreeText:"Devlope konpetans dijital pou travay, kominikasyon ak jesyon enfòmasyon.",openCourse:"Louvri Kou →",aiTitle:"Yon pwofesè dijital ki toujou disponib",aiDescription:"AI Tutor la ede elèv konprann leson, prepare egzamen, jwenn eksplikasyon, fè pratik epi aprann nan Kreyòl, Français ak English.",aiFeatureOne:"Eksplike lesson ak konsèp difisil",aiFeatureTwo:"Kreye practice questions",aiFeatureThree:"Prepare student pou quiz ak exam",aiFeatureFour:"Tradui ak rezime materyèl",askTutor:"Pale ak AI Tutor",howLabel:"Kijan Sa Mache",howTitle:"Senk etap pou reyisi",stepOneTitle:"Kreye Kont",stepOneText:"Kreye pwofil student ou.",stepTwoTitle:"Chwazi Kou",stepTwoText:"Chwazi fòmasyon ki enterese w.",stepThreeTitle:"Aprann",stepThreeText:"Suiv lessons ak materyèl yo.",stepFourTitle:"Fè Egzamen",stepFourText:"Fè quiz ak final exam.",stepFiveTitle:"Jwenn Sètifika",stepFiveText:"Resevwa certificate ou.",certificateTitle:"Fòmasyon ki mennen nan sètifikasyon",certificateDescription:"Lè yon student fini yon kou epi li satisfè kondisyon yo, PRO-MAX Académie kapab emèt yon certificate ak nimewo verification ak QR Code.",viewCertificates:"Gade Sètifika",verifyCertificate:"Verifye Sètifika",certificateDemoText:"Sètifika Fòmasyon",trainingTitle:"Fòmasyon espesyal pou administratè yo",trainingDescription:"Yon pwogram espesyal pou fòme administratè BSS1815 nan leadership, communication, PRO-MAX DMP, digital management, security ak AI tools.",openTraining:"Louvri Admin Training",trainingFeatureOne:"Devlope kapasite dirije ekip.",trainingFeatureTwo:"Aprann sistèm administrasyon santral la.",trainingFeatureThree:"Certificate apre kou a fini.",trainingFeatureFour:"Admin ki pase fòmasyon an resevwa Star Badge.",portalLabel:"Pòtal Académie",portalTitle:"Aksè pèsonalize",studentPortalTitle:"Student Portal",studentPortalText:"Student la kapab wè kou li yo, pwogrè, exams, grades, certificates, messages ak AI Tutor.",openStudentPortal:"Louvri Student Portal",instructorPortalTitle:"Instructor Portal",instructorPortalText:"Instructor la kapab kreye kou, lessons, quizzes, exams, grades ak announcements.",openInstructorPortal:"Louvri Instructor Portal",coursesStat:"Kou",studentsStat:"Elèv",certificatesStat:"Sètifika",instructorsStat:"Enstriktè",announcementLabel:"Mizajou Académie",announcementTitle:"Anons",announcementOneTitle:"Lansman Académie",announcementOneText:"Nouvo kou ak pwogram pral parèt isit la pandan Académie a ap devlope.",announcementTwoTitle:"AI Learning Center",announcementTwoText:"Student yo pral kapab jwenn asistans entèlijan pandan yo ap aprann.",announcementThreeTitle:"Certificate System",announcementThreeText:"Certificates pral genyen verification number ak QR verification.",ctaTitle:"Kòmanse Vwayaj Aprantisaj Ou",ctaDescription:"Antre nan PRO-MAX Académie, devlope nouvo kapasite, aprann ak AI epi prepare tèt ou pou demen.",registerNow:"Enskri Kounye A",exploreAllCourses:"Eksplore Kou",footerDescription:"Yon platfòm edikasyon dijital pou fòmasyon, AI learning, exams, progress ak certifications.",quickLinksTitle:"Lyen Rapid",academyLinksTitle:"Académie",supportTitle:"Sipò",rights:"Tout dwa rezève."},fr:{brandSubtitle:"Apprendre • Évoluer • Réussir",navHome:"Accueil",navCourses:"Cours",navCategories:"Catégories",navCertificates:"Certificats",navAbout:"À propos",navContact:"Contact",navLogin:"Connexion",navRegister:"Inscription",heroBadge:"Plateforme numérique d'apprentissage",heroSlogan:"APPRENDRE. ÉVOLUER. RÉUSSIR.",heroDescription:"Une plateforme éducative numérique moderne permettant d'apprendre, développer des compétences, suivre des cours, passer des examens, utiliser un AI Tutor et obtenir des certifications.",exploreCourses:"Explorer les cours",startLearning:"Commencer",studentLogin:"Connexion Étudiant",identityLabel:"Identité de l'Académie",identityTitle:"Un système complet d'apprentissage",identityDescription:"PRO-MAX Académie réunit technologie, éducation et certification dans un seul environnement.",languagesTitle:"Langues",aiIdentityText:"Assistance intelligente",certIdentityTitle:"Certification",certIdentityText:"Certificats avec vérification",progressTitle:"Progression",progressText:"Suivi de la progression",instructorTitle:"Formateurs",instructorText:"Portail formateur complet",learningTitle:"Apprentissage",learningText:"Apprendre à tout moment",searchTitle:"Rechercher un cours",searchPlaceholder:"Rechercher un cours...",searchButton:"Rechercher",categoryLabel:"Catégories",categoryTitle:"Choisissez votre domaine",categoryDescription:"Développez de nouvelles compétences grâce à des formations professionnelles, technologiques, administratives et communautaires.",digitalSkillsText:"Compétences numériques adaptées au monde moderne.",leadershipText:"Leadership et gestion d'équipe.",communicationText:"Communication professionnelle et relations humaines.",immigrationEducationText:"Formation informative sur les processus et ressources d'immigration.",adminTrainingText:"Formation spécialisée pour les administrateurs BSS1815.",technologyText:"Technologie, intelligence artificielle et outils numériques.",professionalText:"Compétences et préparation professionnelle.",allCoursesText:"Explorer tous les programmes disponibles.",viewCourses:"Voir les cours →",featuredLabel:"Cours en vedette",featuredTitle:"Cours recommandés",courseOneTitle:"Introduction à l'Intelligence Artificielle",courseOneText:"Découvrez les bases de l'IA et son utilisation responsable dans le travail et l'apprentissage.",courseTwoTitle:"Formation Professionnelle Admin BSS1815",courseTwoText:"Leadership, communication, PRO-MAX DMP, sécurité et gestion numérique.",courseThreeTitle:"Fondamentaux des compétences numériques",courseThreeText:"Développez des compétences numériques utiles au travail et à la communication.",openCourse:"Ouvrir le cours →",aiTitle:"Un professeur numérique toujours disponible",aiDescription:"AI Tutor aide les étudiants à comprendre les leçons, préparer les examens, pratiquer et apprendre en créole, français et anglais.",aiFeatureOne:"Expliquer les concepts difficiles",aiFeatureTwo:"Créer des questions d'entraînement",aiFeatureThree:"Préparer les quiz et examens",aiFeatureFour:"Traduire et résumer les contenus",askTutor:"Demander à AI Tutor",howLabel:"Comment ça marche",howTitle:"Cinq étapes pour réussir",stepOneTitle:"Créer un compte",stepOneText:"Créez votre profil étudiant.",stepTwoTitle:"Choisir un cours",stepTwoText:"Sélectionnez votre formation.",stepThreeTitle:"Apprendre",stepThreeText:"Suivez les leçons et ressources.",stepFourTitle:"Passer l'examen",stepFourText:"Complétez les quiz et examens.",stepFiveTitle:"Être certifié",stepFiveText:"Recevez votre certificat.",certificateTitle:"Des formations menant à la certification",certificateDescription:"Après avoir terminé une formation et satisfait aux critères, l'étudiant peut recevoir un certificat PRO-MAX Académie avec numéro de vérification et QR Code.",viewCertificates:"Voir les certificats",verifyCertificate:"Vérifier un certificat",certificateDemoText:"Certificat de formation",trainingTitle:"Formation spécialisée pour les administrateurs",trainingDescription:"Programme spécial destiné aux administrateurs BSS1815 couvrant leadership, communication, PRO-MAX DMP, gestion numérique, sécurité et outils IA.",openTraining:"Ouvrir la formation",trainingFeatureOne:"Développer les compétences de leadership.",trainingFeatureTwo:"Maîtriser le système PRO-MAX DMP.",trainingFeatureThree:"Certificat après réussite.",trainingFeatureFour:"Badge étoile après certification.",portalLabel:"Portails Académie",portalTitle:"Accès personnalisé",studentPortalTitle:"Portail Étudiant",studentPortalText:"L'étudiant consulte ses cours, progression, examens, notes, certificats, messages et AI Tutor.",openStudentPortal:"Ouvrir le portail étudiant",instructorPortalTitle:"Portail Formateur",instructorPortalText:"Le formateur peut créer des cours, leçons, quiz, examens, notes et annonces.",openInstructorPortal:"Ouvrir le portail formateur",coursesStat:"Cours",studentsStat:"Étudiants",certificatesStat:"Certificats",instructorsStat:"Formateurs",announcementLabel:"Actualités Académie",announcementTitle:"Annonces",announcementOneTitle:"Lancement de l'Académie",announcementOneText:"Les nouveaux cours et programmes apparaîtront ici pendant le développement de la plateforme.",announcementTwoTitle:"Centre d'apprentissage IA",announcementTwoText:"Les étudiants pourront obtenir une assistance intelligente pendant leur apprentissage.",announcementThreeTitle:"Système de certificats",announcementThreeText:"Les certificats disposeront d'un numéro et d'un QR Code de vérification.",ctaTitle:"Commencez votre parcours d'apprentissage",ctaDescription:"Rejoignez PRO-MAX Académie, développez de nouvelles compétences et préparez-vous pour demain.",registerNow:"S'inscrire",exploreAllCourses:"Explorer les cours",footerDescription:"Une plateforme éducative numérique pour la formation, l'IA, les examens, la progression et les certifications.",quickLinksTitle:"Liens rapides",academyLinksTitle:"Académie",supportTitle:"Support",rights:"Tous droits réservés."},en:{brandSubtitle:"Learn • Evolve • Succeed",navHome:"Home",navCourses:"Courses",navCategories:"Categories",navCertificates:"Certificates",navAbout:"About",navContact:"Contact",navLogin:"Login",navRegister:"Register",heroBadge:"Digital Learning Platform",heroSlogan:"LEARN. EVOLVE. SUCCEED.",heroDescription:"A modern digital education platform for learning, building skills, taking courses and exams, using an AI Tutor and earning certifications.",exploreCourses:"Explore Courses",startLearning:"Start Learning",studentLogin:"Student Login",identityLabel:"Academy Identity",identityTitle:"A complete learning system",identityDescription:"PRO-MAX Academy brings technology, education and certification together in one environment.",languagesTitle:"Languages",aiIdentityText:"Intelligent learning assistance",certIdentityTitle:"Certification",certIdentityText:"Verified certificates",progressTitle:"Progress",progressText:"Student progress tracking",instructorTitle:"Instructor",instructorText:"Complete Instructor Portal",learningTitle:"Learning",learningText:"Learn anytime",searchTitle:"Find a course",searchPlaceholder:"Search courses...",searchButton:"Search",categoryLabel:"Course Categories",categoryTitle:"Choose your field",categoryDescription:"Build new skills through professional, technology, administrative and community training.",digitalSkillsText:"Digital skills for today's technology environment.",leadershipText:"Leadership and team management.",communicationText:"Professional communication and human relations.",immigrationEducationText:"Informational education about immigration processes and resources.",adminTrainingText:"Specialized training for BSS1815 administrators.",technologyText:"Technology, AI and modern digital tools.",professionalText:"Professional preparation and workplace skills.",allCoursesText:"Explore all Academy training programs.",viewCourses:"View Courses →",featuredLabel:"Featured Courses",featuredTitle:"Recommended Courses",courseOneTitle:"Introduction to Artificial Intelligence",courseOneText:"Learn the foundations of AI and responsible use of intelligent tools for work and learning.",courseTwoTitle:"BSS1815 Admin Professional Training",courseTwoText:"Leadership, communication, PRO-MAX DMP, security and digital management.",courseThreeTitle:"Digital Skills Fundamentals",courseThreeText:"Build digital skills for work, communication and information management.",openCourse:"Open Course →",aiTitle:"A digital tutor that is always available",aiDescription:"AI Tutor helps students understand lessons, prepare for exams, practice and learn in Haitian Creole, French and English.",aiFeatureOne:"Explain difficult lessons and concepts",aiFeatureTwo:"Create practice questions",aiFeatureThree:"Prepare for quizzes and exams",aiFeatureFour:"Translate and summarize learning materials",askTutor:"Ask AI Tutor",howLabel:"How It Works",howTitle:"Five steps to success",stepOneTitle:"Create Account",stepOneText:"Create your student profile.",stepTwoTitle:"Choose Course",stepTwoText:"Select your training program.",stepThreeTitle:"Learn",stepThreeText:"Complete lessons and learning materials.",stepFourTitle:"Take Exam",stepFourText:"Complete quizzes and final exams.",stepFiveTitle:"Get Certified",stepFiveText:"Receive your certificate.",certificateTitle:"Training that leads to certification",certificateDescription:"After completing a course and meeting its requirements, a student may receive a PRO-MAX Academy certificate with a verification number and QR Code.",viewCertificates:"View Certificates",verifyCertificate:"Verify Certificate",certificateDemoText:"Certificate of Completion",trainingTitle:"Specialized administrator training",trainingDescription:"A dedicated BSS1815 administrator program covering leadership, communication, PRO-MAX DMP, digital management, security and AI tools.",openTraining:"Open Admin Training",trainingFeatureOne:"Develop leadership skills.",trainingFeatureTwo:"Learn the PRO-MAX DMP system.",trainingFeatureThree:"Certificate after completion.",trainingFeatureFour:"Star Badge after certification.",portalLabel:"Academy Portals",portalTitle:"Personalized access",studentPortalTitle:"Student Portal",studentPortalText:"Students can view courses, progress, exams, grades, certificates, messages and AI Tutor.",openStudentPortal:"Open Student Portal",instructorPortalTitle:"Instructor Portal",instructorPortalText:"Instructors can create courses, lessons, quizzes, exams, grades and announcements.",openInstructorPortal:"Open Instructor Portal",coursesStat:"Courses",studentsStat:"Students",certificatesStat:"Certificates",instructorsStat:"Instructors",announcementLabel:"Academy Updates",announcementTitle:"Announcements",announcementOneTitle:"Academy Launch",announcementOneText:"New courses and programs will appear here as the Academy develops.",announcementTwoTitle:"AI Learning Center",announcementTwoText:"Students will have intelligent learning assistance while completing their courses.",announcementThreeTitle:"Certificate System",announcementThreeText:"Certificates will include a verification number and QR verification.",ctaTitle:"Start Your Learning Journey",ctaDescription:"Join PRO-MAX Academy, build new skills, learn with AI and prepare yourself for tomorrow.",registerNow:"Register Now",exploreAllCourses:"Explore Courses",footerDescription:"A digital education platform for training, AI learning, exams, progress and certifications.",quickLinksTitle:"Quick Links",academyLinksTitle:"Academy",supportTitle:"Support",rights:"All rights reserved."}};
-function changeLanguage(language){if(!translations[language]){return;}document.documentElement.lang=language;document.querySelectorAll("[data-i18n]").forEach(function(element){const key=element.dataset.i18n;if(translations[language][key]!==undefined){element.textContent=translations[language][key];}});document.querySelectorAll("[data-i18n-placeholder]").forEach(function(element){const key=element.dataset.i18nPlaceholder;if(translations[language][key]!==undefined){element.placeholder=translations[language][key];}});document.querySelectorAll(".language-button").forEach(function(button){button.classList.toggle("active",button.dataset.language===language);});try{localStorage.setItem("proMaxAcademieLanguage",language);}catch(error){}}
-document.querySelectorAll(".language-button").forEach(function(button){button.addEventListener("click",function(){changeLanguage(button.dataset.language);});});
-let savedLanguage="ht";try{savedLanguage=localStorage.getItem("proMaxAcademieLanguage") || "ht";}catch(error){}
-changeLanguage(savedLanguage);
-const yearElement=document.getElementById("year");if(yearElement){yearElement.textContent=new Date().getFullYear();}
+/* ================= DATA ================= */
+const UI = {
+  nav: {
+    immigration:{en:"Immigration",fr:"Immigration",kr:"Imigrasyon"},
+    documents:{en:"Documents",fr:"Documents",kr:"Dokiman"},
+    translation:{en:"Translation",fr:"Traduction",kr:"Tradiksyon"},
+    housing:{en:"Housing",fr:"Logement",kr:"Lojman"},
+    employment:{en:"Employment",fr:"Emploi",kr:"Travay"},
+    business:{en:"Business",fr:"Entreprise",kr:"Biznis"},
+    digital:{en:"Digital",fr:"Numérique",kr:"Dijital"},
+    community:{en:"Community",fr:"Communauté",kr:"Kominote"},
+    news:{en:"News",fr:"Actualités",kr:"Nouvèl"},
+    ai:{en:"AI Assistance",fr:"Assistance IA",kr:"Asistans AI"},
+    contact:{en:"Contact",fr:"Contact",kr:"Kontak"}
+  },
+  heroEyebrow:{en:"Case File No. 001 — Community Services Registry", fr:"Dossier n° 001 — Registre des services communautaires", kr:"Dosye No. 001 — Rejis Sèvis Kominotè"},
+  heroH1:{en:"One office. <em>Every</em> document you need.", fr:"Un seul bureau. <em>Tous</em> les documents dont vous avez besoin.", kr:"Yon sèl biwo. <em>Tout</em> dokiman ou bezwen."},
+  heroLede:{en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, housing, employment, translation, and digital services — all under one roof.",
+            fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises à gérer les démarches d'immigration, le logement, l'emploi, la traduction et les services numériques — tout sous un même toit.",
+            kr:"Maximax Multi Services ede endividi, fanmi, ak ti biznis jere papye imigrasyon, lojman, travay, tradiksyon, ak sèvis dijital — tout anba yon sèl twa."},
+  ctaPrimary:{en:"Open Immigration Services", fr:"Ouvrir les services d'immigration", kr:"Ouvri Sèvis Imigrasyon"},
+  ctaGhost:{en:"Browse All Resources", fr:"Parcourir toutes les ressources", kr:"Gade Tout Resous"},
+  newsTag:{en:"Wire Feed", fr:"Fil d'actualité", kr:"Fil Nouvèl"},
+  newsTitle:{en:"News & Information Center", fr:"Centre de nouvelles et d'information", kr:"Sant Nouvèl ak Enfòmasyon"},
+  aiTag:{en:"Assisted Tools", fr:"Outils assistés", kr:"Zouti Asistans"},
+  aiTitle:{en:"AI Assistance", fr:"Assistance IA", kr:"Asistans AI"},
+  contactTag:{en:"Get In Touch", fr:"Nous contacter", kr:"Kontakte Nou"},
+  contactTitle:{en:"Contact & Social", fr:"Contact et réseaux sociaux", kr:"Kontak ak Rezo Sosyal"},
+  phoneLabel:{en:"Call Us", fr:"Appelez-nous", kr:"Rele Nou"},
+  emailLabel:{en:"Email", fr:"Courriel", kr:"Imèl"},
+  webLabel:{en:"Website", fr:"Site web", kr:"Sitwèb"},
+  followLabel:{en:"Follow Us", fr:"Suivez-nous", kr:"Swiv Nou"},
+  footerDesc:{en:"Immigration, document, translation, housing, employment, business, and digital services — all in one place.",
+              fr:"Services d'immigration, de documents, de traduction, de logement, d'emploi, d'entreprise et de services numériques — tous au même endroit.",
+              kr:"Sèvis Imigrasyon, Dokiman, Tradiksyon, Lojman, Travay, Biznis, ak Sèvis Dijital — tout nan yon sèl kote."}
+};
+
+const CATS = [
+  {id:"immigration", num:"01",
+    title:{en:"Immigration Services",fr:"Services d'immigration",kr:"Sèvis Imigrasyon"},
+    sub:{en:"USCIS · Case Support · TPS · Naturalization", fr:"USCIS · Suivi de dossier · TPS · Naturalisation", kr:"USCIS · Sipò Dosye · TPS · Natiralizasyon"},
+    items:{
+      en:["Immigration consultation support","Immigration document preparation","Immigration form assistance","USCIS case support","Immigration OS","Case tracking","Immigration document checklist","Appointment preparation","Translation support for immigration documents","TPS information and assistance","Work Permit / EAD assistance","Adjustment of Status support","Family Petition support","Citizenship / Naturalization assistance","Green Card renewal support","Travel Document assistance","Affidavit and supporting-document preparation","Immigration news and updates","E-Verify information and support"],
+      fr:["Accompagnement en consultation d'immigration","Préparation de documents d'immigration","Aide au remplissage des formulaires d'immigration","Suivi de dossier USCIS","Immigration OS","Suivi de dossier","Liste de vérification des documents d'immigration","Préparation aux rendez-vous","Aide à la traduction des documents d'immigration","Information et assistance TPS","Aide pour le permis de travail / EAD","Aide pour l'ajustement de statut","Aide pour la pétition familiale","Aide à la citoyenneté / naturalisation","Aide au renouvellement de la carte verte","Aide pour les documents de voyage","Préparation d'affidavits et de documents justificatifs","Actualités et mises à jour sur l'immigration","Informations et assistance E-Verify"],
+      kr:["Sipò konsiltasyon imigrasyon","Preparasyon dokiman imigrasyon","Èd pou ranpli fòm imigrasyon","Sipò pou dosye USCIS","Immigration OS","Swiv dosye","Lis verifikasyon dokiman imigrasyon","Preparasyon pou randevou","Sipò tradiksyon pou dokiman imigrasyon","Enfòmasyon ak asistans TPS","Asistans Pèmi Travay / EAD","Sipò pou Ajisteman Estati","Sipò pou Petisyon Familyal","Asistans Sitwayènte / Natiralizasyon","Sipò pou renouvèlman Green Card","Asistans pou Dokiman Vwayaj","Preparasyon Afidavi ak dokiman sipò","Nouvèl ak dènye enfòmasyon sou imigrasyon","Enfòmasyon ak sipò pou E-Verify"]
+    }},
+  {id:"documents", num:"02",
+    title:{en:"Document & Administrative Services",fr:"Services de documents et administratifs",kr:"Sèvis Dokiman ak Administratif"},
+    sub:{en:"Letters · Forms · Filing", fr:"Lettres · Formulaires · Classement", kr:"Lèt · Fòm · Klasman"},
+    items:{
+      en:["Document preparation","Letter preparation","Official letters","Verification letters","Affidavits","Applications","Forms","PDF document preparation","Scanning and document organization","Printing support","Digital file organization","Resume preparation","Cover letters","Professional correspondence"],
+      fr:["Préparation de documents","Préparation de lettres","Lettres officielles","Lettres de vérification","Affidavits","Demandes / Applications","Formulaires","Préparation de documents PDF","Numérisation et organisation de documents","Aide à l'impression","Organisation de fichiers numériques","Préparation de CV","Lettres de motivation","Correspondance professionnelle"],
+      kr:["Preparasyon dokiman","Preparasyon lèt","Lèt ofisyèl","Lèt verifikasyon","Afidavi","Aplikasyon","Fòm","Preparasyon dokiman PDF","Eskane ak òganize dokiman","Sipò enprime","Òganizasyon fichye dijital","Preparasyon rezime (CV)","Lèt Kouvèti","Korespondans pwofesyonèl"]
+    }},
+  {id:"translation", num:"03",
+    title:{en:"Translation Services",fr:"Services de traduction",kr:"Sèvis Tradiksyon"},
+    sub:{en:"Haitian Creole · French · English", fr:"Créole haïtien · Français · Anglais", kr:"Kreyòl Ayisyen · Fransè · Anglè"},
+    items:{
+      en:["Haitian Creole translation","French translation","English translation","Document translation","Letter translation","Immigration-document translation","Business correspondence translation"],
+      fr:["Traduction créole haïtien","Traduction française","Traduction anglaise","Traduction de documents","Traduction de lettres","Traduction de documents d'immigration","Traduction de correspondance commerciale"],
+      kr:["Tradiksyon Kreyòl Ayisyen","Tradiksyon Fransè","Tradiksyon Anglè","Tradiksyon dokiman","Tradiksyon lèt","Tradiksyon dokiman imigrasyon","Tradiksyon korespondans biznis"]
+    }},
+  {id:"housing", num:"04",
+    title:{en:"Housing Services",fr:"Services de logement",kr:"Sèvis Lojman"},
+    sub:{en:"Rentals · Section 8 · Affordable Housing", fr:"Locations · Section 8 · Logement abordable", kr:"Lokasyon · Seksyon 8 · Lojman Abòdab"},
+    items:{
+      en:["Housing information","Apartment search assistance","House rental information","Section 8 resources","Low-Income Housing resources","Affordable Housing information","Housing application assistance","Rental-document preparation"],
+      fr:["Informations sur le logement","Aide à la recherche d'appartement","Informations sur la location de maison","Ressources Section 8","Ressources pour logement à faible revenu","Informations sur le logement abordable","Aide pour la demande de logement","Préparation de documents de location"],
+      kr:["Enfòmasyon sou lojman","Asistans pou chèche apatman","Enfòmasyon sou lokasyon kay","Resous Seksyon 8","Resous Lojman pou Ti Revni","Enfòmasyon sou Lojman Abòdab","Asistans pou aplikasyon lojman","Preparasyon dokiman lokasyon"]
+    }},
+  {id:"employment", num:"05",
+    title:{en:"Employment Services",fr:"Services d'emploi",kr:"Sèvis Travay"},
+    sub:{en:"Resumes · Applications · Work Authorization", fr:"CV · Demandes · Autorisation de travail", kr:"Rezime · Aplikasyon · Otorizasyon Travay"},
+    items:{
+      en:["Job-search assistance","Resume support","Employment applications","Job-resource information","E-Verify resources","Employment-document assistance","Work authorization information"],
+      fr:["Aide à la recherche d'emploi","Aide à la rédaction de CV","Demandes d'emploi","Informations sur les ressources d'emploi","Ressources E-Verify","Aide aux documents d'emploi","Informations sur l'autorisation de travail"],
+      kr:["Asistans pou chèche travay","Sipò pou rezime","Aplikasyon pou travay","Enfòmasyon sou resous travay","Resous E-Verify","Asistans dokiman travay","Enfòmasyon sou otorizasyon travay"]
+    }},
+  {id:"business", num:"06",
+    title:{en:"Business Services",fr:"Services aux entreprises",kr:"Sèvis Biznis"},
+    sub:{en:"Small Business · Branding · Admin Support", fr:"Petites entreprises · Image de marque · Soutien admin", kr:"Ti Biznis · Branding · Sipò Administratif"},
+    items:{
+      en:["Business document preparation","Small-business support","Business letters","Administrative assistance","Digital business services","Business information and resources","Branding and business presentation support"],
+      fr:["Préparation de documents d'entreprise","Soutien aux petites entreprises","Lettres d'affaires","Assistance administrative","Services d'entreprise numériques","Informations et ressources commerciales","Soutien à l'image de marque et à la présentation"],
+      kr:["Preparasyon dokiman biznis","Sipò pou ti biznis","Lèt biznis","Asistans administratif","Sèvis biznis dijital","Enfòmasyon ak resous biznis","Sipò pou branding ak prezantasyon biznis"]
+    }},
+  {id:"digital", num:"07",
+    title:{en:"Technology & Digital Services",fr:"Services technologiques et numériques",kr:"Sèvis Teknoloji ak Dijital"},
+    sub:{en:"Online Forms · QR Codes · Digital Accounts", fr:"Formulaires en ligne · Codes QR · Comptes numériques", kr:"Fòm sou Entènèt · Kòd QR · Kont Dijital"},
+    items:{
+      en:["Website assistance","Digital forms","Online applications","AI-assisted document preparation","Digital organization","QR Code support","Online resource navigation","Digital account assistance","Basic technology assistance"],
+      fr:["Assistance pour site web","Formulaires numériques","Demandes en ligne","Préparation de documents assistée par IA","Organisation numérique","Support pour codes QR","Navigation dans les ressources en ligne","Aide pour les comptes numériques","Assistance technologique de base"],
+      kr:["Asistans pou sitwèb","Fòm dijital","Aplikasyon sou entènèt","Preparasyon dokiman ak èd AI","Òganizasyon dijital","Sipò pou Kòd QR","Navigasyon nan resous sou entènèt","Asistans kont dijital","Asistans teknoloji debaz"]
+    }},
+  {id:"media", num:"—",
+    title:{en:"Communication & Media Services",fr:"Services de communication et médias",kr:"Sèvis Kominikasyon ak Medya"},
+    sub:{en:"Flyers · Social Media · Presentations", fr:"Prospectus · Réseaux sociaux · Présentations", kr:"Flaye · Rezo Sosyal · Prezantasyon"},
+    items:{
+      en:["Flyers","Announcements","Social-media content","Promotional materials","Community notices","Professional messages","Video and script preparation","Digital presentations"],
+      fr:["Prospectus","Annonces","Contenu pour les réseaux sociaux","Matériel promotionnel","Avis communautaires","Messages professionnels","Préparation de vidéos et de scripts","Présentations numériques"],
+      kr:["Flaye","Anons","Kontni pou rezo sosyal","Materyèl pwomosyonèl","Avi kominotè","Mesaj pwofesyonèl","Preparasyon videyo ak eskript","Prezantasyon dijital"]
+    }},
+  {id:"community", num:"08",
+    title:{en:"Community Resource Services",fr:"Services de ressources communautaires",kr:"Sèvis Resous Kominotè"},
+    sub:{en:"Referrals · Government Navigation", fr:"Références · Navigation gouvernementale", kr:"Referans · Navigasyon Gouvènman"},
+    items:{
+      en:["Community information","Immigration resources","Housing resources","Employment resources","Government-service navigation","Local assistance resources","Referral information"],
+      fr:["Informations communautaires","Ressources en immigration","Ressources en logement","Ressources en emploi","Navigation dans les services gouvernementaux","Ressources d'aide locale","Informations de référence"],
+      kr:["Enfòmasyon kominotè","Resous imigrasyon","Resous lojman","Resous travay","Navigasyon nan sèvis gouvènman","Resous asistans lokal","Enfòmasyon referans"]
+    }}
+];
+
+const NEWS_CHIPS = {
+  en:["Immigration news","Community news","CNN News module","Miami Herald News module","RFI News module","Public-information updates"],
+  fr:["Actualités sur l'immigration","Actualités communautaires","Module CNN News","Module Miami Herald News","Module RFI News","Mises à jour d'information publique"],
+  kr:["Nouvèl imigrasyon","Nouvèl kominotè","Modil Nouvèl CNN","Modil Nouvèl Miami Herald","Modil Nouvèl RFI","Dènye enfòmasyon piblik"]
+};
+
+const AI_CARDS = [
+  {title:{en:"AI Document Writer",fr:"Rédacteur de documents IA",kr:"AI Ekriven Dokiman"}, desc:{en:"Draft clean, ready-to-use documents from your information.",fr:"Rédigez des documents clairs et prêts à l'emploi à partir de vos informations.",kr:"Kreye dokiman klè, pare pou itilize, apati enfòmasyon ou bay."}},
+  {title:{en:"AI Translation Support",fr:"Assistance de traduction IA",kr:"AI Sipò Tradiksyon"}, desc:{en:"Fast, accurate translation across Creole, French, and English.",fr:"Traduction rapide et précise entre créole, français et anglais.",kr:"Tradiksyon rapid e egzat ant Kreyòl, Fransè, ak Anglè."}},
+  {title:{en:"AI Form Guidance",fr:"Guide de formulaires IA",kr:"AI Gid pou Fòm"}, desc:{en:"Step-by-step help completing official forms correctly.",fr:"Aide étape par étape pour remplir correctement les formulaires officiels.",kr:"Èd etap pa etap pou ranpli fòm ofisyèl kòrèkteman."}},
+  {title:{en:"AI Letter Preparation",fr:"Préparation de lettres IA",kr:"AI Preparasyon Lèt"}, desc:{en:"Professional letters generated and refined in minutes.",fr:"Lettres professionnelles générées et peaufinées en quelques minutes.",kr:"Lèt pwofesyonèl kreye ak korije nan kèk minit."}},
+  {title:{en:"AI Information Assistant",fr:"Assistant d'information IA",kr:"AI Asistan Enfòmasyon"}, desc:{en:"Quick, reliable answers to everyday questions.",fr:"Réponses rapides et fiables aux questions courantes.",kr:"Repons rapid e fyab pou kesyon chak jou."}},
+  {title:{en:"AI Research Assistance",fr:"Assistance de recherche IA",kr:"AI Sipò Rechèch"}, desc:{en:"Background research to support your case or application.",fr:"Recherche de fond pour appuyer votre dossier ou votre demande.",kr:"Rechèch background pou soutni dosye oswa aplikasyon ou."}},
+  {title:{en:"AI Multilingual Assistance",fr:"Assistance multilingue IA",kr:"AI Asistans Miltilenge"}, desc:{en:"Support that meets you in the language you're comfortable in.",fr:"Un soutien dans la langue avec laquelle vous êtes à l'aise.",kr:"Sipò nan lang ou pi alèz avè l."}}
+];
+
+/* ================= RENDER ================= */
+let currentLang = "en";
+
+function renderNav(){
+  const desktop = document.getElementById('desktopNav');
+  const mobile = document.getElementById('mobileNav');
+  const links = [
+    ["#immigration","immigration"],["#documents","documents"],["#translation","translation"],
+    ["#housing","housing"],["#employment","employment"],["#business","business"],
+    ["#digital","digital"],["#community","community"]
+  ];
+  desktop.innerHTML = links.map(([href,key]) => `<a href="${href}">${UI.nav[key][currentLang]}</a>`).join("");
+  const mobileLinks = links.concat([["#news","news"],["#ai","ai"],["#contact","contact"]]);
+  mobile.innerHTML = mobileLinks.map(([href,key]) => `<a href="${href}">${UI.nav[key][currentLang]}</a>`).join("");
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+}
+
+function renderCatmap(){
+  document.getElementById('catmap').innerHTML = CATS.map(c =>
+    `<a class="catmap-item" href="#${c.id}"><b>${c.num}</b>${c.title[currentLang]}</a>`
+  ).join("");
+}
+
+function renderFiles(){
+  const container = document.getElementById('fileContainer');
+  container.innerHTML = CATS.map((c,i) => `
+    <div class="file ${i===0?'open':''}" id="${c.id}">
+      <div class="file-tab" onclick="toggleFile(this)">
+        <div class="file-tab-left">
+          <div class="file-num">${c.num}</div>
+          <div><h2>${c.title[currentLang]}</h2><div class="sub">${c.sub[currentLang]}</div></div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="file-body"><div class="file-body-inner">
+        <ul class="service-list">${c.items[currentLang].map(t => `<li>${t}</li>`).join("")}</ul>
+      </div></div>
+    </div>
+  `).join("");
+}
+
+function renderNews(){
+  document.getElementById('newsChips').innerHTML = NEWS_CHIPS[currentLang].map(t => `<span class="chip">${t}</span>`).join("");
+}
+
+function renderAI(){
+  document.getElementById('aiGrid').innerHTML = AI_CARDS.map(c => `
+    <div class="ai-card"><h3>${c.title[currentLang]}</h3><p>${c.desc[currentLang]}</p></div>
+  `).join("");
+}
+
+function renderFooterCats(){
+  const links = [
+    ["#immigration","immigration"],["#documents","documents"],["#translation","translation"],
+    ["#housing","housing"],["#employment","employment"],["#business","business"],
+    ["#digital","digital"],["#community","community"]
+  ];
+  document.getElementById('footerCats').innerHTML = links.map(([href,key]) => `<a href="${href}">${UI.nav[key][currentLang]}</a>`).join("");
+}
+
+function applyStaticText(){
+  document.getElementById('heroEyebrow').textContent = UI.heroEyebrow[currentLang];
+  document.getElementById('heroH1').innerHTML = UI.heroH1[currentLang];
+  document.getElementById('heroLede').textContent = UI.heroLede[currentLang];
+  document.getElementById('ctaPrimary').textContent = UI.ctaPrimary[currentLang];
+  document.getElementById('ctaGhost').textContent = UI.ctaGhost[currentLang];
+  document.getElementById('newsTag').textContent = UI.newsTag[currentLang];
+  document.getElementById('newsTitle').textContent = UI.newsTitle[currentLang];
+  document.getElementById('aiTag').textContent = UI.aiTag[currentLang];
+  document.getElementById('aiTitle').textContent = UI.aiTitle[currentLang];
+  document.getElementById('contactTag').textContent = UI.contactTag[currentLang];
+  document.getElementById('contactTitle').textContent = UI.contactTitle[currentLang];
+  document.getElementById('phoneLabel').textContent = UI.phoneLabel[currentLang];
+  document.getElementById('emailLabel').textContent = UI.emailLabel[currentLang];
+  document.getElementById('webLabel').textContent = UI.webLabel[currentLang];
+  document.getElementById('followLabel').textContent = UI.followLabel[currentLang];
+  document.getElementById('footerDesc').textContent = UI.footerDesc[currentLang];
+}
+
+function renderAll(){
+  applyStaticText();
+  renderNav();
+  renderCatmap();
+  renderFiles();
+  renderNews();
+  renderAI();
+  renderFooterCats();
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
+  document.getElementById('htmlRoot').lang = currentLang;
+}
+
+function toggleFile(tabEl){
+  tabEl.parentElement.classList.toggle('open');
+}
+
+document.getElementById('langToggle').addEventListener('click', (e) => {
+  const btn = e.target.closest('.lang-btn');
+  if(!btn) return;
+  currentLang = btn.dataset.lang;
+  renderAll();
+});
+
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobileNav').classList.toggle('open');
+});
+
+renderAll();
 </script>
+
 </body>
 </html>
