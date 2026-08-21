@@ -3,104 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Center | Maximax Multi Services</title>
+<title>Maximax Multi Services</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
   --black:#000000;
+  --black2:#000000;
   --orange:#FF6A00;
   --orange-light:#FFA347;
   --orange-deep:#B34700;
-  --text:#FFC98A;
-  --line:rgba(255,163,71,.34);
-  --panel:rgba(0,0,0,.72);
+  --white:#FFC98A;
+  --line: rgba(255,163,71,0.35);
+  --panel: rgba(0,0,0,0.68);
+  --panel-solid:#000000;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
   margin:0;
-  min-height:100vh;
-  font-family:'Public Sans',sans-serif;
-  color:var(--text);
-
-  background:
-    radial-gradient(
-      circle at 20% 15%,
-      rgba(255,106,0,.25),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 85% 45%,
-      rgba(179,71,0,.30),
-      transparent 40%
-    ),
-    linear-gradient(
-      145deg,
-      #000000 0%,
-      #000000 18%,
-      #421800 45%,
-      #FF6A00 72%,
-      #000000 100%
-    );
-
+  color:var(--white);
+  font-family:'Public Sans', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  background:linear-gradient(
+    150deg,
+    #000000 0%,
+    #000000 14%,
+    #7A2E00 46%,
+    #FF6A00 68%,
+    #000000 100%
+  );
   background-attachment:fixed;
+  background-size:cover;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button,
-input,
-textarea,
-select{
-  font:inherit;
-}
-
-h1,
-h2,
-h3{
-  font-family:'Fraunces',serif;
+h1,h2,h3{
+  font-family:'Fraunces', serif;
   margin:0;
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
+.mono{
+  font-family:'IBM Plex Mono', monospace;
+  letter-spacing:.06em;
+}
+
+a{color:inherit;}
+
+video,img{max-width:100%;}
+
+button{font-family:inherit;}
+
+
+/* ---------- LOGO ---------- */
+
+.logo-mark{
+  position:relative;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--orange-light);
+  flex-shrink:0;
+  background:var(--black2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo-mark video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:2;
+  display:none;
+}
+
+.logo-mark video.loaded{
+  display:block;
+}
+
+.logo-mark .fallback{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  color:var(--orange-light);
+  font-size:16px;
+  z-index:1;
+  letter-spacing:.02em;
+}
+
+.seal{
+  position:relative;
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  border:2px solid var(--orange-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  background:var(--black2);
+  overflow:hidden;
+}
+
+.seal video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  z-index:2;
+  display:none;
+}
+
+.seal video.loaded{
+  display:block;
+}
+
+.seal .seal-fallback{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--orange-light);
+  text-transform:uppercase;
+  z-index:1;
+  text-align:center;
+}
+
+.seal::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px dashed var(--orange-light);
+  border-radius:50%;
+  opacity:.6;
+  pointer-events:none;
+  z-index:3;
+}
+
+.seal.small{
+  width:46px;
+  height:46px;
+  border-width:1.5px;
+}
+
+
+/* ---------- HEADER / NAV ---------- */
 
 header{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(0,0,0,.84);
-  backdrop-filter:blur(12px);
+  z-index:50;
+  background:rgba(7,5,2,0.82);
+  backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);
 }
 
-.header-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:12px 22px;
-
+.nav-wrap{
+  max-width:1180px;
+  margin:0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
+  padding:12px 24px;
+  gap:16px;
 }
 
 .brand{
@@ -109,946 +184,704 @@ header{
   gap:12px;
 }
 
-.logo{
-  width:48px;
-  height:48px;
-
-  border-radius:50%;
-  position:relative;
-  overflow:hidden;
-
-  border:2px solid var(--orange-light);
-  background:#000;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  flex-shrink:0;
+.brand-name{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:16px;
+  letter-spacing:.02em;
 }
 
-.logo video{
-  position:absolute;
-  inset:0;
-
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  display:none;
-
-  z-index:2;
-}
-
-.logo video.loaded{
+.brand-name span{
   display:block;
-}
-
-.logo-fallback{
-  z-index:1;
-
-  color:var(--orange-light);
-
-  font-family:'Fraunces';
-  font-weight:700;
-  font-size:18px;
-}
-
-.brand-text strong{
-  display:block;
-
-  font-family:'Fraunces';
-
-  font-size:17px;
-
-  color:var(--orange-light);
-}
-
-.brand-text span{
-  display:block;
-
-  margin-top:2px;
-
-  font-family:'IBM Plex Mono';
-
+  font-family:'IBM Plex Mono',monospace;
   font-size:9px;
-
-  letter-spacing:.15em;
-}
-
-.header-actions{
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  flex-wrap:wrap;
-}
-
-.back-btn{
-  padding:9px 14px;
-
-  border:1px solid var(--line);
-
-  border-radius:22px;
-
-  font-family:'IBM Plex Mono';
-
-  font-size:10px;
-
-  background:rgba(0,0,0,.5);
-}
-
-.back-btn:hover{
-  border-color:var(--orange-light);
-
+  letter-spacing:.16em;
   color:var(--orange-light);
+  font-weight:400;
+  margin-top:2px;
 }
 
-/* =====================================================
-   LANGUAGE
-===================================================== */
+nav.desktop-nav{
+  display:flex;
+  gap:18px;
+  font-size:13px;
+  align-items:center;
+}
+
+nav.desktop-nav a{
+  text-decoration:none;
+  color:var(--white);
+  opacity:.8;
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+  transition:.2s;
+  white-space:nowrap;
+}
+
+nav.desktop-nav a:hover{
+  opacity:1;
+  border-color:var(--orange-light);
+}
 
 .lang-toggle{
   display:flex;
-
-  gap:3px;
-
+  gap:4px;
   border:1px solid var(--line);
-
-  border-radius:22px;
-
+  border-radius:20px;
   padding:3px;
 }
 
 .lang-btn{
-  border:0;
-
   background:none;
-
-  color:var(--text);
-
-  padding:7px 11px;
-
-  border-radius:18px;
-
-  font-family:'IBM Plex Mono';
-
-  font-size:10px;
-
+  border:none;
+  color:var(--white);
+  opacity:.6;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.06em;
+  padding:6px 11px;
+  border-radius:16px;
   cursor:pointer;
-
-  opacity:.65;
+  transition:.2s;
 }
 
 .lang-btn.active{
   background:var(--orange);
-
-  color:#140900;
-
-  font-weight:700;
-
+  color:#1A0E05;
   opacity:1;
+  font-weight:600;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+.menu-btn{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  color:var(--white);
+  width:38px;
+  height:38px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  padding:0 24px 18px;
+  gap:2px;
+}
+
+.mobile-nav a{
+  color:var(--white);
+  text-decoration:none;
+  padding:9px 6px;
+  font-size:14px;
+  border-bottom:1px solid var(--line);
+}
+
+.mobile-nav.open{
+  display:flex;
+}
+
+@media (max-width:900px){
+
+  nav.desktop-nav{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+}
+
+
+/* ---------- HERO ---------- */
 
 .hero{
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:72px 22px 48px;
-
+  max-width:1180px;
+  margin:0 auto;
+  padding:72px 24px 60px;
   display:grid;
-
-  grid-template-columns:1.2fr .8fr;
-
+  grid-template-columns:1fr auto;
   gap:40px;
-
   align-items:center;
 }
 
 .eyebrow{
-  font-family:'IBM Plex Mono';
-
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  letter-spacing:.2em;
   color:var(--orange-light);
-
-  font-size:11px;
-
-  letter-spacing:.18em;
-
   text-transform:uppercase;
-
-  margin-bottom:15px;
+  margin-bottom:18px;
+  display:inline-block;
 }
 
 .hero h1{
-  font-size:clamp(2.5rem,6vw,4.8rem);
-
-  line-height:.98;
-
+  font-size:clamp(2.2rem, 5.2vw, 3.9rem);
   font-weight:600;
+  line-height:1.06;
+  letter-spacing:-.01em;
 }
 
-.hero h1 span{
+.hero h1 em{
+  font-style:italic;
+  font-weight:500;
   color:var(--orange-light);
 }
 
-.hero p{
-  max-width:650px;
-
-  margin:20px 0 0;
-
-  line-height:1.7;
-
+.hero p.lede{
+  margin-top:20px;
+  max-width:560px;
   font-size:16px;
-
+  line-height:1.65;
+  color:var(--white);
   opacity:.88;
 }
 
-.hero-buttons{
+.hero .creole{
+  margin-top:10px;
+  font-style:italic;
+  color:var(--orange-light);
+  font-size:14px;
+  opacity:.9;
+}
+
+.hero-cta{
   margin-top:28px;
-
   display:flex;
-
-  gap:12px;
-
+  gap:14px;
   flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  min-height:45px;
-
-  padding:11px 20px;
-
-  border-radius:5px;
-
-  border:1px solid transparent;
-
-  font-family:'IBM Plex Mono';
-
-  font-size:11px;
-
-  text-transform:uppercase;
-
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;
   letter-spacing:.08em;
-
+  text-transform:uppercase;
+  padding:13px 22px;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  transition:.2s;
   cursor:pointer;
+  border:1px solid transparent;
 }
 
 .btn-primary{
   background:var(--orange);
-
-  color:#180A00;
+  color:#1A0E05;
+  border-color:var(--orange);
 }
 
 .btn-primary:hover{
   background:var(--orange-light);
 }
 
-.btn-secondary{
-  border-color:var(--line);
-
-  background:rgba(0,0,0,.45);
-}
-
-.btn-secondary:hover{
-  border-color:var(--orange-light);
-
-  color:var(--orange-light);
-}
-
-/* =====================================================
-   HERO AI ORB
-===================================================== */
-
-.hero-orb{
-  width:280px;
-
-  height:280px;
-
-  justify-self:end;
-
-  position:relative;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,106,0,.30),
-      #000 68%
-    );
-
-  border:1px solid var(--orange-light);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  box-shadow:
-    0 0 70px rgba(255,106,0,.18);
-}
-
-.hero-orb:before{
-  content:"";
-
-  position:absolute;
-
-  inset:17px;
-
-  border-radius:50%;
-
-  border:
-    1px dashed rgba(255,163,71,.55);
-
-  animation:
-    spin 16s linear infinite;
-}
-
-.hero-orb:after{
-  content:"AI";
-
-  font-family:'Fraunces';
-
-  font-size:78px;
-
-  color:var(--orange-light);
-
-  font-weight:700;
-}
-
-@keyframes spin{
-  to{
-    transform:rotate(360deg);
-  }
-}
-
-/* =====================================================
-   MAIN
-===================================================== */
-
-main{
-  max-width:1200px;
-
-  margin:auto;
-
-  padding:25px 22px 80px;
-}
-
-.section-heading{
-  margin-bottom:25px;
-}
-
-.section-heading .tag{
-  font-family:'IBM Plex Mono';
-
-  font-size:10px;
-
-  color:var(--orange-light);
-
-  letter-spacing:.15em;
-
-  text-transform:uppercase;
-}
-
-.section-heading h2{
-  margin-top:7px;
-
-  font-size:2rem;
-}
-
-/* =====================================================
-   AI GRID
-===================================================== */
-
-.ai-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(250px,1fr)
-    );
-
-  gap:18px;
-}
-
-.ai-card{
+.btn-ghost{
   border:1px solid var(--line);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0,0,0,.82),
-      rgba(40,14,0,.72)
-    );
-
-  border-radius:10px;
-
-  padding:22px;
-
-  min-height:225px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  transition:.2s;
+  color:var(--white);
 }
 
-.ai-card:hover{
-  transform:translateY(-4px);
-
+.btn-ghost:hover{
   border-color:var(--orange-light);
-}
-
-.ai-card.myaccess{
-  border-color:
-    rgba(255,163,71,.65);
-
-  box-shadow:
-    inset 0 0 28px rgba(255,106,0,.08);
-}
-
-.ai-number{
-  width:34px;
-
-  height:34px;
-
-  border-radius:50%;
-
-  border:
-    1px solid var(--orange-light);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
   color:var(--orange-light);
-
-  font-family:'IBM Plex Mono';
-
-  font-size:10px;
-
-  margin-bottom:18px;
 }
 
-.ai-card h3{
-  color:var(--orange-light);
-
-  font-family:'Public Sans';
-
-  font-size:17px;
-
-  margin-bottom:10px;
-}
-
-.ai-card p{
-  margin:0 0 20px;
-
-  font-size:13px;
-
-  line-height:1.6;
-
-  opacity:.82;
-
-  flex:1;
-}
-
-.open-tool{
-  width:100%;
-
-  border:
-    1px solid var(--line);
-
-  background:
-    rgba(255,106,0,.08);
-
-  color:
-    var(--orange-light);
-
-  border-radius:5px;
-
-  padding:10px;
-
-  cursor:pointer;
-
-  font-family:
-    'IBM Plex Mono';
-
-  font-size:10px;
-
-  letter-spacing:.08em;
-}
-
-.open-tool:hover{
-  background:
-    var(--orange);
-
-  color:#000;
-}
-
-.government-badge{
-  display:inline-block;
-
-  margin-bottom:12px;
-
-  padding:5px 9px;
-
-  border-radius:20px;
-
-  border:
-    1px solid var(--line);
-
-  font-family:
-    'IBM Plex Mono';
-
-  font-size:8px;
-
-  letter-spacing:.08em;
-
-  color:
-    var(--orange-light);
-
-  width:max-content;
-}
-
-/* =====================================================
-   TOOL PANEL
-===================================================== */
-
-.tool-panel{
-  margin-top:35px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius:10px;
-
-  padding:25px;
-
-  background:
-    rgba(0,0,0,.75);
-
-  display:none;
-}
-
-.tool-panel.active{
-  display:block;
-}
-
-.tool-header{
-  display:flex;
-
-  justify-content:
-    space-between;
-
-  align-items:center;
-
-  margin-bottom:20px;
-}
-
-.tool-header h2{
-  font-size:1.7rem;
-
-  color:
-    var(--orange-light);
-}
-
-.close-tool{
-  border:
-    1px solid var(--line);
-
-  background:#000;
-
-  color:
-    var(--orange-light);
-
-  width:38px;
-
-  height:38px;
-
-  border-radius:50%;
-
-  cursor:pointer;
-}
-
-.form-grid{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:15px;
-}
-
-.field{
-  display:flex;
-
-  flex-direction:column;
-
-  gap:7px;
-}
-
-.field.full{
-  grid-column:1/-1;
-}
-
-.field label{
-  font-family:
-    'IBM Plex Mono';
-
-  color:
-    var(--orange-light);
-
-  font-size:10px;
-
-  letter-spacing:.08em;
-
-  text-transform:uppercase;
-}
-
-.field input,
-.field textarea,
-.field select{
-  width:100%;
-
-  background:#000;
-
-  color:
-    var(--text);
-
-  border:
-    1px solid var(--line);
-
-  border-radius:5px;
-
-  padding:12px;
-
-  outline:none;
-}
-
-.field textarea{
-  min-height:150px;
-
-  resize:vertical;
-}
-
-.generate-row{
-  margin-top:18px;
-
-  display:flex;
-
-  gap:12px;
-
-  flex-wrap:wrap;
-}
-
-.output{
-  margin-top:22px;
-
-  min-height:150px;
-
-  padding:18px;
-
-  border:
-    1px dashed var(--line);
-
-  background:
-    rgba(255,106,0,.04);
-
-  border-radius:6px;
-
-  white-space:pre-wrap;
-
-  line-height:1.6;
-}
-
-/* =====================================================
-   MYACCESS PANEL
-===================================================== */
-
-.myaccess-panel{
-  margin-top:35px;
-
-  border:
-    1px solid var(--orange-light);
-
-  border-radius:10px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0,0,0,.90),
-      rgba(85,30,0,.72)
-    );
-
-  padding:25px;
-
-  display:none;
-}
-
-.myaccess-panel.active{
-  display:block;
-}
-
-.myaccess-panel h2{
-  color:
-    var(--orange-light);
-
-  font-size:1.8rem;
-}
-
-.myaccess-panel p{
-  line-height:1.7;
-
-  opacity:.9;
-}
-
-.myaccess-services{
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(190px,1fr)
-    );
-
-  gap:10px;
-
-  margin:22px 0;
-}
-
-.myaccess-service{
-  padding:13px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius:6px;
-
-  background:
-    rgba(0,0,0,.50);
-
-  font-size:12px;
-}
-
-.official-button{
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  padding:14px 22px;
-
-  background:
-    var(--orange);
-
-  color:#000;
-
-  border-radius:5px;
-
-  font-family:
-    'IBM Plex Mono';
-
-  font-size:11px;
-
-  letter-spacing:.07em;
-
-  font-weight:700;
-
-  text-transform:uppercase;
-}
-
-.official-button:hover{
-  background:
-    var(--orange-light);
-}
-
-/* =====================================================
-   NOTICE
-===================================================== */
-
-.notice{
-  margin-top:35px;
-
-  padding:18px;
-
-  border-left:
-    4px solid var(--orange);
-
-  background:
-    rgba(0,0,0,.6);
-
-  font-size:12px;
-
-  line-height:1.6;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-  border-top:
-    1px solid var(--line);
-
-  background:
-    rgba(0,0,0,.76);
-
-  padding:30px 22px;
-}
-
-.footer-inner{
-  max-width:1200px;
-
-  margin:auto;
-
-  display:flex;
-
-  justify-content:
-    space-between;
-
-  flex-wrap:wrap;
-
-  gap:15px;
-
-  font-family:
-    'IBM Plex Mono';
-
-  font-size:10px;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:850px){
+@media (max-width:860px){
 
   .hero{
     grid-template-columns:1fr;
   }
 
-  .hero-orb{
-    justify-self:center;
-
-    width:220px;
-
-    height:220px;
+  .hero-seal{
+    display:none;
   }
 
 }
 
-@media(max-width:650px){
 
-  .form-grid{
-    grid-template-columns:1fr;
+/* ---------- CATEGORY MAP ---------- */
+
+.catmap{
+  background:rgba(0,0,0,0.35);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:30px 24px;
+}
+
+.catmap-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 26px;
+  align-items:center;
+  justify-content:center;
+}
+
+.catmap-item{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  letter-spacing:.05em;
+  color:var(--orange-light);
+  opacity:.9;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.catmap-item b{
+  color:var(--white);
+  opacity:.55;
+  margin-right:6px;
+}
+
+
+/* ---------- SECTIONS ---------- */
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:64px 24px;
+}
+
+.file{
+  scroll-margin-top:84px;
+  background:var(--panel);
+  color:var(--white);
+  border:1px solid var(--line);
+  border-radius:6px;
+  margin-bottom:26px;
+  position:relative;
+  backdrop-filter:blur(6px);
+  overflow:hidden;
+}
+
+.file-tab{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:22px 26px;
+  cursor:pointer;
+  border-bottom:1px solid var(--line);
+}
+
+.file-tab-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.file-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:var(--orange-light);
+  border:1px solid var(--orange-light);
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.file-tab h2{
+  font-size:1.35rem;
+  font-weight:600;
+}
+
+.file-tab .sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--orange-light);
+  margin-top:3px;
+  opacity:.7;
+}
+
+.chev{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  transition:transform .3s ease;
+  opacity:.7;
+  color:var(--orange-light);
+}
+
+.file.open .chev{
+  transform:rotate(180deg);
+}
+
+.file-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .45s ease;
+}
+
+.file-body-inner{
+  padding:6px 26px 28px;
+}
+
+.file.open .file-body{
+  max-height:1200px;
+}
+
+.service-list{
+  columns:2;
+  column-gap:30px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.service-list li{
+  break-inside:avoid;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:8px 0;
+  border-bottom:1px dotted var(--line);
+  font-size:14px;
+  line-height:1.4;
+}
+
+.service-list li::before{
+  content:"✓";
+  color:var(--orange-light);
+  font-size:12px;
+  margin-top:2px;
+  font-weight:700;
+  flex-shrink:0;
+}
+
+@media (max-width:640px){
+
+  .service-list{
+    columns:1;
   }
 
-  .header-inner{
-    align-items:flex-start;
+}
+
+
+/* ---------- MYACCESS FLORIDA ---------- */
+
+.myaccess-btn-wrap{
+  margin-top:22px;
+}
+
+.myaccess-btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:4px;
+  background:var(--orange);
+  color:#160900;
+  text-decoration:none;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  border:1px solid var(--orange);
+  transition:.2s;
+}
+
+.myaccess-btn:hover{
+  background:var(--orange-light);
+  border-color:var(--orange-light);
+}
+
+
+/* ---------- BANDS ---------- */
+
+.band{
+  padding:56px 24px;
+  scroll-margin-top:70px;
+}
+
+.band-inner{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.band-news{
+  background:rgba(0,0,0,0.32);
+  border-top:1px solid var(--line);
+}
+
+.band-ai{
+  background:rgba(0,0,0,0.42);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.band-contact{
+  background:rgba(0,0,0,0.5);
+}
+
+.band-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:26px;
+}
+
+.band-head h2{
+  font-size:1.75rem;
+  font-weight:600;
+}
+
+.band-head .tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--orange-light);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.chip{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:9px 16px;
+  font-size:13px;
+  color:var(--white);
+  opacity:.92;
+  background:rgba(0,0,0,0.25);
+}
+
+.ai-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.ai-card{
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:20px;
+  background:rgba(255,122,26,0.06);
+}
+
+.ai-card h3{
+  font-size:15px;
+  color:var(--orange-light);
+  font-weight:600;
+  margin-bottom:8px;
+  font-family:'Public Sans',sans-serif;
+}
+
+.ai-card p{
+  font-size:13px;
+  opacity:.8;
+  margin:0;
+  line-height:1.5;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+  margin-bottom:30px;
+}
+
+.contact-card{
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:20px;
+  background:rgba(0,0,0,0.3);
+}
+
+.contact-card .label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--orange-light);
+  margin-bottom:8px;
+}
+
+.contact-card .value{
+  font-size:15px;
+  line-height:1.6;
+}
+
+.contact-card a{
+  text-decoration:none;
+  color:var(--white);
+}
+
+.contact-card a:hover{
+  color:var(--orange-light);
+}
+
+.social-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.social-pill{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:9px 18px;
+  font-size:13px;
+  background:rgba(255,122,26,0.08);
+  text-decoration:none;
+  color:var(--white);
+  transition:.2s;
+}
+
+.social-pill:hover{
+  border-color:var(--orange-light);
+  color:var(--orange-light);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer{
+  background:rgba(0,0,0,0.65);
+  padding:50px 24px 28px;
+  border-top:1px solid var(--line);
+}
+
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  flex-wrap:wrap;
+  padding-bottom:30px;
+  border-bottom:1px solid var(--line);
+}
+
+.footer-cats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px 22px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  opacity:.75;
+}
+
+.footer-cats a{
+  text-decoration:none;
+}
+
+.footer-bottom{
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:11.5px;
+  opacity:.6;
+  font-family:'IBM Plex Mono',monospace;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+  *{
+    animation:none !important;
+    transition:none !important;
   }
 
+}
+
+:focus-visible{
+  outline:2px solid var(--orange-light);
+  outline-offset:2px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
 
-<div class="header-inner">
+<div class="nav-wrap">
 
 <div class="brand">
 
-<div class="logo">
+<div class="logo-mark">
 
-<video
-autoplay
-muted
-loop
-playsinline
-src="../../maximax-best-multi.mp4">
+<video autoplay muted loop playsinline src="maximax-best-multi.mp4">
 </video>
 
-<span class="logo-fallback">
+<div class="fallback">
 M
-</span>
+</div>
 
 </div>
 
-<div class="brand-text">
+<div class="brand-name">
 
-<strong>
 MAXIMAX
-</strong>
 
 <span>
-MULTI SERVICES · AI CENTER
+MULTI SERVICES
 </span>
 
 </div>
 
 </div>
 
-<div class="header-actions">
+<nav
+class="desktop-nav"
+id="desktopNav">
+</nav>
 
-<a
-href="../../index.html"
-class="back-btn"
-id="backHome">
-
-← HOMEPAGE
-
-</a>
+<div style="display:flex; align-items:center; gap:10px;">
 
 <div
 class="lang-toggle"
 id="langToggle">
 
 <button
-class="lang-btn active"
+class="lang-btn"
 data-lang="en">
-
 ENG
-
 </button>
 
 <button
 class="lang-btn"
 data-lang="fr">
-
 FRAN
-
 </button>
 
 <button
 class="lang-btn"
 data-lang="kr">
-
 KRE
+</button>
+
+</div>
+
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="Open menu">
+
+☰
 
 </button>
 
@@ -1056,74 +889,180 @@ KRE
 
 </div>
 
+<div
+class="mobile-nav"
+id="mobileNav">
 </div>
 
 </header>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero">
 
 <div>
 
-<div
+<span
 class="eyebrow"
-id="heroTag">
-</div>
+id="heroEyebrow">
+</span>
 
 <h1
-id="heroTitle">
+id="heroH1">
 </h1>
 
 <p
-id="heroDesc">
+class="lede"
+id="heroLede">
 </p>
 
-<div class="hero-buttons">
+<p class="creole">
+
+Nou la pou ou ·
+Nous sommes là pour vous ·
+We are here for you
+
+</p>
+
+<div class="hero-cta">
 
 <a
-href="#tools"
+href="#immigration"
 class="btn btn-primary"
-id="exploreBtn">
+id="ctaPrimary">
 </a>
 
 <a
-href="../../index.html"
-class="btn btn-secondary"
-id="homeBtn">
+href="#community"
+class="btn btn-ghost"
+id="ctaGhost">
 </a>
 
 </div>
 
 </div>
 
-<div
-class="hero-orb"
-aria-label="Artificial Intelligence">
+<div class="hero-seal seal">
+
+<video
+autoplay
+muted
+loop
+playsinline
+src="maximax-best-multi.mp4">
+</video>
+
+<span class="seal-fallback">
+
+MAXIMAX<br>
+MULTI<br>
+SERVICES
+
+</span>
+
 </div>
 
 </section>
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
 
-<main>
+<div class="catmap">
 
-<section id="tools">
+<div
+class="catmap-inner"
+id="catmap">
+</div>
 
-<div class="section-heading">
+</div>
+
+
+<main id="fileContainer">
+</main>
+
+
+<section
+class="band band-news"
+id="news">
+
+<div class="band-inner">
+
+<div class="band-head">
+
+<div class="seal small">
+
+<video
+autoplay
+muted
+loop
+playsinline
+src="maximax-best-multi.mp4">
+</video>
+
+<span class="seal-fallback">
+M
+</span>
+
+</div>
+
+<div>
 
 <div
 class="tag"
-id="toolTag">
+id="newsTag">
 </div>
 
 <h2
-id="toolTitle">
+id="newsTitle">
 </h2>
+
+</div>
+
+</div>
+
+<div
+class="chips"
+id="newsChips">
+</div>
+
+</div>
+
+</section>
+
+
+<section
+class="band band-ai"
+id="ai">
+
+<div class="band-inner">
+
+<div class="band-head">
+
+<div class="seal small">
+
+<video
+autoplay
+muted
+loop
+playsinline
+src="maximax-best-multi.mp4">
+</video>
+
+<span class="seal-fallback">
+M
+</span>
+
+</div>
+
+<div>
+
+<div
+class="tag"
+id="aiTag">
+</div>
+
+<h2
+id="aiTitle">
+</h2>
+
+</div>
 
 </div>
 
@@ -1132,1112 +1071,1845 @@ class="ai-grid"
 id="aiGrid">
 </div>
 
+</div>
+
 </section>
 
-<!-- =====================================================
-     REGULAR AI TOOL PANEL
-===================================================== -->
 
 <section
-class="tool-panel"
-id="toolPanel">
+class="band band-contact"
+id="contact">
 
-<div class="tool-header">
+<div class="band-inner">
 
-<h2 id="activeToolTitle">
-AI Tool
-</h2>
+<div class="band-head">
 
-<button
-class="close-tool"
-id="closeTool">
+<div class="seal small">
 
-✕
+<video
+autoplay
+muted
+loop
+playsinline
+src="maximax-best-multi.mp4">
+</video>
 
-</button>
-
-</div>
-
-<div class="form-grid">
-
-<div class="field full">
-
-<label id="inputLabel">
-</label>
-
-<textarea
-id="userInput">
-</textarea>
+<span class="seal-fallback">
+M
+</span>
 
 </div>
 
-<div class="field">
-
-<label id="languageLabel">
-</label>
-
-<select id="outputLanguage">
-
-<option value="English">
-English
-</option>
-
-<option value="French">
-Français
-</option>
-
-<option value="Haitian Creole">
-Kreyòl Ayisyen
-</option>
-
-</select>
-
-</div>
-
-<div class="field">
-
-<label id="toneLabel">
-</label>
-
-<select id="toneSelect">
-
-<option>
-Professional
-</option>
-
-<option>
-Formal
-</option>
-
-<option>
-Simple
-</option>
-
-<option>
-Friendly
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div class="generate-row">
-
-<button
-class="btn btn-primary"
-id="generateBtn">
-</button>
-
-<button
-class="btn btn-secondary"
-id="clearBtn">
-</button>
-
-<button
-class="btn btn-secondary"
-id="copyBtn">
-</button>
-
-</div>
+<div>
 
 <div
-class="output"
-id="outputBox">
+class="tag"
+id="contactTag">
 </div>
 
-</section>
-
-<!-- =====================================================
-     MYACCESS FLORIDA PANEL
-===================================================== -->
-
-<section
-class="myaccess-panel"
-id="myaccessPanel">
-
-<div class="tool-header">
-
-<h2 id="myaccessTitle">
-MyACCESS Florida
+<h2
+id="contactTitle">
 </h2>
 
-<button
-class="close-tool"
-id="closeMyAccess">
-
-✕
-
-</button>
-
-</div>
-
-<p id="myaccessDescription">
-</p>
-
-<div class="myaccess-services">
-
-<div class="myaccess-service">
-SNAP / Food Assistance
-</div>
-
-<div class="myaccess-service">
-Medicaid
-</div>
-
-<div class="myaccess-service">
-TCA / Cash Assistance
-</div>
-
-<div class="myaccess-service">
-Application Status
-</div>
-
-<div class="myaccess-service">
-Renew Benefits
-</div>
-
-<div class="myaccess-service">
-Upload Documents
-</div>
-
-<div class="myaccess-service">
-Create Account
-</div>
-
-<div class="myaccess-service">
-Login / Manage Benefits
 </div>
 
 </div>
 
-<a
-href="https://myaccess.myflfamilies.com/"
-target="_blank"
-rel="noopener noreferrer"
-class="official-button"
-id="myaccessOfficialButton">
+<div class="contact-grid">
 
-OPEN OFFICIAL MYACCESS FLORIDA
+<div class="contact-card">
+
+<div
+class="label"
+id="phoneLabel">
+</div>
+
+<div class="value">
+
+<a href="tel:+19546405166">
+(954) 640-5166
+</a>
+
+<br>
+
+<a href="tel:+15162168494">
+(516) 216-8494
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<div
+class="label"
+id="emailLabel">
+</div>
+
+<div class="value">
+
+<a href="mailto:maximaxmultiservices@gmail.com">
+
+maximaxmultiservices@gmail.com
 
 </a>
 
-</section>
-
-<div
-class="notice"
-id="notice">
 </div>
 
-</main>
+</div>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+
+<div class="contact-card">
+
+<div
+class="label"
+id="webLabel">
+</div>
+
+<div class="value">
+
+<a
+href="https://www.maximaxmultiservices.com"
+target="_blank"
+rel="noopener">
+
+www.maximaxmultiservices.com
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="label"
+id="followLabel"
+style="margin-bottom:12px;">
+</div>
+
+
+<div class="social-row">
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+Facebook
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+WhatsApp
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+Instagram
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+TikTok
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+YouTube
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+Spotify
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+LinkedIn
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+True Social
+
+</a>
+
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener">
+
+X / Twitter
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 
 <footer>
 
 <div class="footer-inner">
+
+<div class="footer-top">
+
+<div>
+
+<div
+class="brand"
+style="margin-bottom:10px;">
+
+<div class="logo-mark">
+
+<video
+autoplay
+muted
+loop
+playsinline
+src="maximax-best-multi.mp4">
+</video>
+
+<div class="fallback">
+M
+</div>
+
+</div>
+
+<div class="brand-name">
+
+MAXIMAX
+
+<span>
+MULTI SERVICES
+</span>
+
+</div>
+
+</div>
+
+<p
+id="footerDesc"
+style="
+max-width:340px;
+font-size:13px;
+opacity:.7;
+line-height:1.6;">
+</p>
+
+</div>
+
+<div
+class="footer-cats"
+id="footerCats">
+</div>
+
+</div>
+
+<div class="footer-bottom">
 
 <span>
 © 2026 Maximax Multi Services
 </span>
 
 <span>
-AI CENTER · MYACCESS FLORIDA · DEVAN DEVAN NÈT
+
+(954) 640-5166 ·
+(516) 216-8494 ·
+maximaxmultiservices@gmail.com
+
 </span>
+
+</div>
 
 </div>
 
 </footer>
 
+
 <script>
 
-/* =====================================================
-   LANGUAGE TEXT
-===================================================== */
+/* ================= DATA ================= */
 
-const UI={
+const UI = {
 
-en:{
+nav: {
 
-heroTag:
-"MAXIMAX DIGITAL INTELLIGENCE",
+immigration:{
+en:"Immigration",
+fr:"Immigration",
+kr:"Imigrasyon"
+},
 
-heroTitle:
-'AI <span>Center</span>',
+documents:{
+en:"Documents",
+fr:"Documents",
+kr:"Dokiman"
+},
 
-heroDesc:
-"One intelligent workspace for document preparation, translation, letters, forms, research, multilingual support, MyACCESS Florida access, and everyday information assistance.",
+translation:{
+en:"Translation",
+fr:"Traduction",
+kr:"Tradiksyon"
+},
 
-explore:
-"Explore AI Tools",
+housing:{
+en:"Housing",
+fr:"Logement",
+kr:"Lojman"
+},
 
-home:
-"Return Home",
+employment:{
+en:"Employment",
+fr:"Emploi",
+kr:"Travay"
+},
 
-back:
-"← Homepage",
+business:{
+en:"Business",
+fr:"Entreprise",
+kr:"Biznis"
+},
 
-toolTag:
-"Artificial Intelligence",
+digital:{
+en:"Digital",
+fr:"Numérique",
+kr:"Dijital"
+},
 
-toolTitle:
-"Choose an AI Service",
+community:{
+en:"Community",
+fr:"Communauté",
+kr:"Kominote"
+},
 
-inputLabel:
-"Your Information",
+myaccess:{
+en:"MyACCESS Florida",
+fr:"MyACCESS Florida",
+kr:"MyACCESS Florida"
+},
 
-languageLabel:
-"Output Language",
+news:{
+en:"News",
+fr:"Actualités",
+kr:"Nouvèl"
+},
 
-toneLabel:
-"Style / Tone",
+ai:{
+en:"AI Assistance",
+fr:"Assistance IA",
+kr:"Asistans AI"
+},
 
-generate:
-"Generate",
-
-clear:
-"Clear",
-
-copy:
-"Copy",
-
-placeholder:
-"Enter the information, question, document details, or instructions you want the AI assistant to work with.",
-
-ready:
-"Select a tool above, enter your information, and press Generate.",
-
-myaccessDescription:
-"Access the official State of Florida MyACCESS portal for SNAP food assistance, Medicaid, Temporary Cash Assistance, application status, renewals, document upload, account creation, and benefit management.",
-
-myaccessButton:
-"Open Official MyACCESS Florida",
-
-notice:
-"Maximax Multi Services AI Center provides document-preparation, translation, information, research and administrative assistance. MyACCESS Florida links connect users to the official State of Florida portal. AI-generated information should be reviewed before use. Immigration and legal matters may require review by a qualified attorney or accredited representative."
+contact:{
+en:"Contact",
+fr:"Contact",
+kr:"Kontak"
+}
 
 },
 
-fr:{
+heroEyebrow:{
+en:"Case File No. 001 — Community Services Registry",
+fr:"Dossier n° 001 — Registre des services communautaires",
+kr:"Dosye No. 001 — Rejis Sèvis Kominotè"
+},
 
-heroTag:
-"INTELLIGENCE NUMÉRIQUE MAXIMAX",
+heroH1:{
+en:"One office. <em>Every</em> document you need.",
+fr:"Un seul bureau. <em>Tous</em> les documents dont vous avez besoin.",
+kr:"Yon sèl biwo. <em>Tout</em> dokiman ou bezwen."
+},
 
-heroTitle:
-'Centre <span>IA</span>',
+heroLede:{
 
-heroDesc:
-"Un espace intelligent unique pour la préparation de documents, la traduction, les lettres, les formulaires, la recherche, l'assistance multilingue, MyACCESS Florida et l'information quotidienne.",
+en:"Maximax Multi Services helps individuals, families, and small businesses navigate immigration paperwork, housing, employment, translation, and digital services — all under one roof.",
 
-explore:
-"Explorer les outils IA",
+fr:"Maximax Multi Services aide les particuliers, les familles et les petites entreprises à gérer les démarches d'immigration, le logement, l'emploi, la traduction et les services numériques — tout sous un même toit.",
 
-home:
-"Retour à l'accueil",
-
-back:
-"← Accueil",
-
-toolTag:
-"Intelligence artificielle",
-
-toolTitle:
-"Choisissez un service IA",
-
-inputLabel:
-"Vos informations",
-
-languageLabel:
-"Langue de sortie",
-
-toneLabel:
-"Style / Ton",
-
-generate:
-"Générer",
-
-clear:
-"Effacer",
-
-copy:
-"Copier",
-
-placeholder:
-"Entrez les informations, la question, les détails du document ou les instructions.",
-
-ready:
-"Sélectionnez un outil, saisissez vos informations et appuyez sur Générer.",
-
-myaccessDescription:
-"Accédez au portail officiel MyACCESS de l'État de Floride pour SNAP, Medicaid, l'aide financière temporaire, le suivi des demandes, les renouvellements, le téléchargement de documents et la gestion des prestations.",
-
-myaccessButton:
-"Ouvrir MyACCESS Florida officiel",
-
-notice:
-"Le Centre IA de Maximax Multi Services offre une assistance pour les documents, la traduction, l'information, la recherche et les tâches administratives. Les liens MyACCESS Florida dirigent les utilisateurs vers le portail officiel de l'État de Floride. Les informations générées par l'IA doivent être vérifiées avant utilisation."
+kr:"Maximax Multi Services ede endividi, fanmi, ak ti biznis jere papye imigrasyon, lojman, travay, tradiksyon, ak sèvis dijital — tout anba yon sèl twa."
 
 },
 
-kr:{
+ctaPrimary:{
+en:"Open Immigration Services",
+fr:"Ouvrir les services d'immigration",
+kr:"Ouvri Sèvis Imigrasyon"
+},
 
-heroTag:
-"ENTELIJANS DIJITAL MAXIMAX",
+ctaGhost:{
+en:"Browse All Resources",
+fr:"Parcourir toutes les ressources",
+kr:"Gade Tout Resous"
+},
 
-heroTitle:
-'Sant <span>AI</span>',
+newsTag:{
+en:"Wire Feed",
+fr:"Fil d'actualité",
+kr:"Fil Nouvèl"
+},
 
-heroDesc:
-"Yon sèl espas entelijan pou prepare dokiman, tradiksyon, lèt, fòm, rechèch, asistans miltileng, MyACCESS Florida ak enfòmasyon chak jou.",
+newsTitle:{
+en:"News & Information Center",
+fr:"Centre de nouvelles et d'information",
+kr:"Sant Nouvèl ak Enfòmasyon"
+},
 
-explore:
-"Eksplore Zouti AI",
+aiTag:{
+en:"Assisted Tools",
+fr:"Outils assistés",
+kr:"Zouti Asistans"
+},
 
-home:
-"Retounen Akèy",
+aiTitle:{
+en:"AI Assistance",
+fr:"Assistance IA",
+kr:"Asistans AI"
+},
 
-back:
-"← Paj Akèy",
+contactTag:{
+en:"Get In Touch",
+fr:"Nous contacter",
+kr:"Kontakte Nou"
+},
 
-toolTag:
-"Entèlijans Atifisyèl",
+contactTitle:{
+en:"Contact & Social",
+fr:"Contact et réseaux sociaux",
+kr:"Kontak ak Rezo Sosyal"
+},
 
-toolTitle:
-"Chwazi yon Sèvis AI",
+phoneLabel:{
+en:"Call Us",
+fr:"Appelez-nous",
+kr:"Rele Nou"
+},
 
-inputLabel:
-"Enfòmasyon Ou",
+emailLabel:{
+en:"Email",
+fr:"Courriel",
+kr:"Imèl"
+},
 
-languageLabel:
-"Lang Rezilta",
+webLabel:{
+en:"Website",
+fr:"Site web",
+kr:"Sitwèb"
+},
 
-toneLabel:
-"Stil / Ton",
+followLabel:{
+en:"Follow Us",
+fr:"Suivez-nous",
+kr:"Swiv Nou"
+},
 
-generate:
-"Jenere",
+footerDesc:{
 
-clear:
-"Efase",
+en:"Immigration, document, translation, housing, employment, business, and digital services — all in one place.",
 
-copy:
-"Kopye",
+fr:"Services d'immigration, de documents, de traduction, de logement, d'emploi, d'entreprise et de services numériques — tous au même endroit.",
 
-placeholder:
-"Antre enfòmasyon, kesyon, detay dokiman oswa enstriksyon ou vle AI a travay avèk yo.",
-
-ready:
-"Chwazi yon zouti, antre enfòmasyon ou epi peze Jenere.",
-
-myaccessDescription:
-"Aksede pòtal ofisyèl MyACCESS Eta Florida pou SNAP, Medicaid, asistans lajan TCA, swiv aplikasyon, renouvle benefis, upload dokiman, kreye kont ak jere benefis.",
-
-myaccessButton:
-"Ouvri MyACCESS Florida Ofisyèl",
-
-notice:
-"Sant AI Maximax Multi Services bay asistans pou preparasyon dokiman, tradiksyon, enfòmasyon, rechèch ak sèvis administratif. Lyen MyACCESS Florida yo mennen itilizatè yo sou pòtal ofisyèl Eta Florida. Enfòmasyon AI jenere dwe verifye anvan yo itilize li."
+kr:"Sèvis Imigrasyon, Dokiman, Tradiksyon, Lojman, Travay, Biznis, ak Sèvis Dijital — tout nan yon sèl kote."
 
 }
 
 };
 
+
+const CATS = [
+
+{
+id:"immigration",
+num:"01",
+
+title:{
+en:"Immigration Services",
+fr:"Services d'immigration",
+kr:"Sèvis Imigrasyon"
+},
+
+sub:{
+en:"USCIS · Case Support · TPS · Naturalization",
+fr:"USCIS · Suivi de dossier · TPS · Naturalisation",
+kr:"USCIS · Sipò Dosye · TPS · Natiralizasyon"
+},
+
+items:{
+
+en:[
+"Immigration consultation support",
+"Immigration document preparation",
+"Immigration form assistance",
+"USCIS case support",
+"Immigration OS",
+"Case tracking",
+"Immigration document checklist",
+"Appointment preparation",
+"Translation support for immigration documents",
+"TPS information and assistance",
+"Work Permit / EAD assistance",
+"Adjustment of Status support",
+"Family Petition support",
+"Citizenship / Naturalization assistance",
+"Green Card renewal support",
+"Travel Document assistance",
+"Affidavit and supporting-document preparation",
+"Immigration news and updates",
+"E-Verify information and support"
+],
+
+fr:[
+"Accompagnement en consultation d'immigration",
+"Préparation de documents d'immigration",
+"Aide au remplissage des formulaires d'immigration",
+"Suivi de dossier USCIS",
+"Immigration OS",
+"Suivi de dossier",
+"Liste de vérification des documents d'immigration",
+"Préparation aux rendez-vous",
+"Aide à la traduction des documents d'immigration",
+"Information et assistance TPS",
+"Aide pour le permis de travail / EAD",
+"Aide pour l'ajustement de statut",
+"Aide pour la pétition familiale",
+"Aide à la citoyenneté / naturalisation",
+"Aide au renouvellement de la carte verte",
+"Aide pour les documents de voyage",
+"Préparation d'affidavits et de documents justificatifs",
+"Actualités et mises à jour sur l'immigration",
+"Informations et assistance E-Verify"
+],
+
+kr:[
+"Sipò konsiltasyon imigrasyon",
+"Preparasyon dokiman imigrasyon",
+"Èd pou ranpli fòm imigrasyon",
+"Sipò pou dosye USCIS",
+"Immigration OS",
+"Swiv dosye",
+"Lis verifikasyon dokiman imigrasyon",
+"Preparasyon pou randevou",
+"Sipò tradiksyon pou dokiman imigrasyon",
+"Enfòmasyon ak asistans TPS",
+"Asistans Pèmi Travay / EAD",
+"Sipò pou Ajisteman Estati",
+"Sipò pou Petisyon Familyal",
+"Asistans Sitwayènte / Natiralizasyon",
+"Sipò pou renouvèlman Green Card",
+"Asistans pou Dokiman Vwayaj",
+"Preparasyon Afidavi ak dokiman sipò",
+"Nouvèl ak dènye enfòmasyon sou imigrasyon",
+"Enfòmasyon ak sipò pou E-Verify"
+]
+
+}
+
+},
+
+
+{
+id:"documents",
+num:"02",
+
+title:{
+en:"Document & Administrative Services",
+fr:"Services de documents et administratifs",
+kr:"Sèvis Dokiman ak Administratif"
+},
+
+sub:{
+en:"Letters · Forms · Filing",
+fr:"Lettres · Formulaires · Classement",
+kr:"Lèt · Fòm · Klasman"
+},
+
+items:{
+
+en:[
+"Document preparation",
+"Letter preparation",
+"Official letters",
+"Verification letters",
+"Affidavits",
+"Applications",
+"Forms",
+"PDF document preparation",
+"Scanning and document organization",
+"Printing support",
+"Digital file organization",
+"Resume preparation",
+"Cover letters",
+"Professional correspondence"
+],
+
+fr:[
+"Préparation de documents",
+"Préparation de lettres",
+"Lettres officielles",
+"Lettres de vérification",
+"Affidavits",
+"Demandes / Applications",
+"Formulaires",
+"Préparation de documents PDF",
+"Numérisation et organisation de documents",
+"Aide à l'impression",
+"Organisation de fichiers numériques",
+"Préparation de CV",
+"Lettres de motivation",
+"Correspondance professionnelle"
+],
+
+kr:[
+"Preparasyon dokiman",
+"Preparasyon lèt",
+"Lèt ofisyèl",
+"Lèt verifikasyon",
+"Afidavi",
+"Aplikasyon",
+"Fòm",
+"Preparasyon dokiman PDF",
+"Eskane ak òganize dokiman",
+"Sipò enprime",
+"Òganizasyon fichye dijital",
+"Preparasyon rezime (CV)",
+"Lèt Kouvèti",
+"Korespondans pwofesyonèl"
+]
+
+}
+
+},
+
+
+{
+id:"translation",
+num:"03",
+
+title:{
+en:"Translation Services",
+fr:"Services de traduction",
+kr:"Sèvis Tradiksyon"
+},
+
+sub:{
+en:"Haitian Creole · French · English",
+fr:"Créole haïtien · Français · Anglais",
+kr:"Kreyòl Ayisyen · Fransè · Anglè"
+},
+
+items:{
+
+en:[
+"Haitian Creole translation",
+"French translation",
+"English translation",
+"Document translation",
+"Letter translation",
+"Immigration-document translation",
+"Business correspondence translation"
+],
+
+fr:[
+"Traduction créole haïtien",
+"Traduction française",
+"Traduction anglaise",
+"Traduction de documents",
+"Traduction de lettres",
+"Traduction de documents d'immigration",
+"Traduction de correspondance commerciale"
+],
+
+kr:[
+"Tradiksyon Kreyòl Ayisyen",
+"Tradiksyon Fransè",
+"Tradiksyon Anglè",
+"Tradiksyon dokiman",
+"Tradiksyon lèt",
+"Tradiksyon dokiman imigrasyon",
+"Tradiksyon korespondans biznis"
+]
+
+}
+
+},
+
+
+{
+id:"housing",
+num:"04",
+
+title:{
+en:"Housing Services",
+fr:"Services de logement",
+kr:"Sèvis Lojman"
+},
+
+sub:{
+en:"Rentals · Section 8 · Affordable Housing",
+fr:"Locations · Section 8 · Logement abordable",
+kr:"Lokasyon · Seksyon 8 · Lojman Abòdab"
+},
+
+items:{
+
+en:[
+"Housing information",
+"Apartment search assistance",
+"House rental information",
+"Section 8 resources",
+"Low-Income Housing resources",
+"Affordable Housing information",
+"Housing application assistance",
+"Rental-document preparation"
+],
+
+fr:[
+"Informations sur le logement",
+"Aide à la recherche d'appartement",
+"Informations sur la location de maison",
+"Ressources Section 8",
+"Ressources pour logement à faible revenu",
+"Informations sur le logement abordable",
+"Aide pour la demande de logement",
+"Préparation de documents de location"
+],
+
+kr:[
+"Enfòmasyon sou lojman",
+"Asistans pou chèche apatman",
+"Enfòmasyon sou lokasyon kay",
+"Resous Seksyon 8",
+"Resous Lojman pou Ti Revni",
+"Enfòmasyon sou Lojman Abòdab",
+"Asistans pou aplikasyon lojman",
+"Preparasyon dokiman lokasyon"
+]
+
+}
+
+},
+
+
+{
+id:"employment",
+num:"05",
+
+title:{
+en:"Employment Services",
+fr:"Services d'emploi",
+kr:"Sèvis Travay"
+},
+
+sub:{
+en:"Resumes · Applications · Work Authorization",
+fr:"CV · Demandes · Autorisation de travail",
+kr:"Rezime · Aplikasyon · Otorizasyon Travay"
+},
+
+items:{
+
+en:[
+"Job-search assistance",
+"Resume support",
+"Employment applications",
+"Job-resource information",
+"E-Verify resources",
+"Employment-document assistance",
+"Work authorization information"
+],
+
+fr:[
+"Aide à la recherche d'emploi",
+"Aide à la rédaction de CV",
+"Demandes d'emploi",
+"Informations sur les ressources d'emploi",
+"Ressources E-Verify",
+"Aide aux documents d'emploi",
+"Informations sur l'autorisation de travail"
+],
+
+kr:[
+"Asistans pou chèche travay",
+"Sipò pou rezime",
+"Aplikasyon pou travay",
+"Enfòmasyon sou resous travay",
+"Resous E-Verify",
+"Asistans dokiman travay",
+"Enfòmasyon sou otorizasyon travay"
+]
+
+}
+
+},
+
+
+{
+id:"business",
+num:"06",
+
+title:{
+en:"Business Services",
+fr:"Services aux entreprises",
+kr:"Sèvis Biznis"
+},
+
+sub:{
+en:"Small Business · Branding · Admin Support",
+fr:"Petites entreprises · Image de marque · Soutien admin",
+kr:"Ti Biznis · Branding · Sipò Administratif"
+},
+
+items:{
+
+en:[
+"Business document preparation",
+"Small-business support",
+"Business letters",
+"Administrative assistance",
+"Digital business services",
+"Business information and resources",
+"Branding and business presentation support"
+],
+
+fr:[
+"Préparation de documents d'entreprise",
+"Soutien aux petites entreprises",
+"Lettres d'affaires",
+"Assistance administrative",
+"Services d'entreprise numériques",
+"Informations et ressources commerciales",
+"Soutien à l'image de marque et à la présentation"
+],
+
+kr:[
+"Preparasyon dokiman biznis",
+"Sipò pou ti biznis",
+"Lèt biznis",
+"Asistans administratif",
+"Sèvis biznis dijital",
+"Enfòmasyon ak resous biznis",
+"Sipò pou branding ak prezantasyon biznis"
+]
+
+}
+
+},
+
+
+{
+id:"digital",
+num:"07",
+
+title:{
+en:"Technology & Digital Services",
+fr:"Services technologiques et numériques",
+kr:"Sèvis Teknoloji ak Dijital"
+},
+
+sub:{
+en:"Online Forms · QR Codes · Digital Accounts",
+fr:"Formulaires en ligne · Codes QR · Comptes numériques",
+kr:"Fòm sou Entènèt · Kòd QR · Kont Dijital"
+},
+
+items:{
+
+en:[
+"Website assistance",
+"Digital forms",
+"Online applications",
+"AI-assisted document preparation",
+"Digital organization",
+"QR Code support",
+"Online resource navigation",
+"Digital account assistance",
+"Basic technology assistance"
+],
+
+fr:[
+"Assistance pour site web",
+"Formulaires numériques",
+"Demandes en ligne",
+"Préparation de documents assistée par IA",
+"Organisation numérique",
+"Support pour codes QR",
+"Navigation dans les ressources en ligne",
+"Aide pour les comptes numériques",
+"Assistance technologique de base"
+],
+
+kr:[
+"Asistans pou sitwèb",
+"Fòm dijital",
+"Aplikasyon sou entènèt",
+"Preparasyon dokiman ak èd AI",
+"Òganizasyon dijital",
+"Sipò pou Kòd QR",
+"Navigasyon nan resous sou entènèt",
+"Asistans kont dijital",
+"Asistans teknoloji debaz"
+]
+
+}
+
+},
+
+
+{
+id:"media",
+num:"—",
+
+title:{
+en:"Communication & Media Services",
+fr:"Services de communication et médias",
+kr:"Sèvis Kominikasyon ak Medya"
+},
+
+sub:{
+en:"Flyers · Social Media · Presentations",
+fr:"Prospectus · Réseaux sociaux · Présentations",
+kr:"Flaye · Rezo Sosyal · Prezantasyon"
+},
+
+items:{
+
+en:[
+"Flyers",
+"Announcements",
+"Social-media content",
+"Promotional materials",
+"Community notices",
+"Professional messages",
+"Video and script preparation",
+"Digital presentations"
+],
+
+fr:[
+"Prospectus",
+"Annonces",
+"Contenu pour les réseaux sociaux",
+"Matériel promotionnel",
+"Avis communautaires",
+"Messages professionnels",
+"Préparation de vidéos et de scripts",
+"Présentations numériques"
+],
+
+kr:[
+"Flaye",
+"Anons",
+"Kontni pou rezo sosyal",
+"Materyèl pwomosyonèl",
+"Avi kominotè",
+"Mesaj pwofesyonèl",
+"Preparasyon videyo ak eskript",
+"Prezantasyon dijital"
+]
+
+}
+
+},
+
+
+{
+id:"community",
+num:"08",
+
+title:{
+en:"Community Resource Services",
+fr:"Services de ressources communautaires",
+kr:"Sèvis Resous Kominotè"
+},
+
+sub:{
+en:"Referrals · Government Navigation",
+fr:"Références · Navigation gouvernementale",
+kr:"Referans · Navigasyon Gouvènman"
+},
+
+items:{
+
+en:[
+"Community information",
+"Immigration resources",
+"Housing resources",
+"Employment resources",
+"Government-service navigation",
+"Local assistance resources",
+"Referral information"
+],
+
+fr:[
+"Informations communautaires",
+"Ressources en immigration",
+"Ressources en logement",
+"Ressources en emploi",
+"Navigation dans les services gouvernementaux",
+"Ressources d'aide locale",
+"Informations de référence"
+],
+
+kr:[
+"Enfòmasyon kominotè",
+"Resous imigrasyon",
+"Resous lojman",
+"Resous travay",
+"Navigasyon nan sèvis gouvènman",
+"Resous asistans lokal",
+"Enfòmasyon referans"
+]
+
+}
+
+},
+
+
 /* =====================================================
-   AI TOOLS
+   MYACCESS FLORIDA — ADDED
 ===================================================== */
 
-const TOOLS=[
+{
+id:"myaccess",
+num:"09",
 
-[
-"document",
-"01",
+title:{
+en:"MyACCESS Florida",
+fr:"MyACCESS Florida",
+kr:"MyACCESS Florida"
+},
 
-"AI Document Writer",
-"Rédacteur de documents IA",
-"AI Ekriven Dokiman",
+sub:{
+en:"SNAP · Medicaid · TCA · Benefits",
+fr:"SNAP · Medicaid · TCA · Prestations",
+kr:"SNAP · Medicaid · TCA · Benefis"
+},
 
-"Prepare professional documents from the information you provide.",
-"Préparez des documents professionnels à partir de vos informations.",
-"Prepare dokiman pwofesyonèl ak enfòmasyon ou bay."
+officialUrl:
+"https://myaccess.myflfamilies.com/",
+
+button:{
+
+en:"Open Official MyACCESS Florida",
+
+fr:"Ouvrir MyACCESS Florida officiel",
+
+kr:"Ouvri MyACCESS Florida Ofisyèl"
+
+},
+
+items:{
+
+en:[
+"SNAP / Food Assistance",
+"Medicaid services",
+"Temporary Cash Assistance / TCA",
+"Apply for Florida benefits",
+"Check application status",
+"Renew benefits",
+"Upload documents",
+"View notices",
+"Create a MyACCESS account",
+"Login and manage benefits"
 ],
 
-[
-"translation",
-"02",
-
-"AI Translation",
-"Traduction IA",
-"AI Tradiksyon",
-
-"Translate documents between English, French, and Haitian Creole.",
-"Traduisez entre l'anglais, le français et le créole haïtien.",
-"Tradui ant Anglè, Fransè ak Kreyòl Ayisyen."
+fr:[
+"SNAP / Aide alimentaire",
+"Services Medicaid",
+"Aide financière temporaire / TCA",
+"Demander des prestations en Floride",
+"Vérifier le statut d'une demande",
+"Renouveler les prestations",
+"Télécharger des documents",
+"Consulter les avis",
+"Créer un compte MyACCESS",
+"Connexion et gestion des prestations"
 ],
 
-[
-"forms",
-"03",
-
-"AI Form Guidance",
-"Guide de formulaires IA",
-"AI Gid pou Fòm",
-
-"Get step-by-step assistance understanding and preparing forms.",
-"Obtenez une assistance pour comprendre et préparer les formulaires.",
-"Jwenn asistans etap pa etap pou prepare fòm."
-],
-
-[
-"letters",
-"04",
-
-"AI Letter Writer",
-"Rédacteur de lettres IA",
-"AI Ekriven Lèt",
-
-"Create professional letters, requests, and correspondence.",
-"Créez des lettres professionnelles et correspondances.",
-"Kreye lèt pwofesyonèl, demann ak korespondans."
-],
-
-[
-"information",
-"05",
-
-"AI Information Assistant",
-"Assistant d'information IA",
-"AI Asistan Enfòmasyon",
-
-"Get organized answers and explanations.",
-"Obtenez des réponses organisées et des explications.",
-"Jwenn repons òganize ak eksplikasyon."
-],
-
-[
-"research",
-"06",
-
-"AI Research Assistant",
-"Assistant de recherche IA",
-"AI Asistan Rechèch",
-
-"Organize research, resources, topics, and case information.",
-"Organisez les recherches, ressources et informations.",
-"Òganize rechèch, resous ak enfòmasyon dosye."
-],
-
-[
-"multilingual",
-"07",
-
-"AI Multilingual Assistant",
-"Assistant multilingue IA",
-"AI Asistan Miltileng",
-
-"Work across English, French, and Haitian Creole.",
-"Travaillez en anglais, français et créole haïtien.",
-"Travay an Anglè, Fransè ak Kreyòl Ayisyen."
-],
-
-[
-"myaccess",
-"08",
-
-"MyACCESS Florida",
-"MyACCESS Florida",
-"MyACCESS Florida",
-
-"Access Florida SNAP, Medicaid, TCA, application status, renewals, document upload, and benefit-management services.",
-"Accédez aux services SNAP, Medicaid, TCA, au suivi des demandes, aux renouvellements et aux documents MyACCESS Florida.",
-"Aksede SNAP, Medicaid, TCA, swiv aplikasyon, renouvèlman, upload dokiman ak sèvis benefis MyACCESS Florida."
+kr:[
+"SNAP / Asistans Manje",
+"Sèvis Medicaid",
+"Asistans Lajan Tanporè / TCA",
+"Aplike pou benefis Florida",
+"Tcheke estati aplikasyon",
+"Renouvle benefis",
+"Upload dokiman",
+"Gade avi ak mesaj",
+"Kreye yon kont MyACCESS",
+"Konekte epi jere benefis"
 ]
+
+}
+
+}
 
 ];
 
-/* =====================================================
-   SETTINGS
-===================================================== */
 
-let currentLang="en";
+const NEWS_CHIPS = {
 
-let activeTool=null;
+en:[
+"Immigration news",
+"Community news",
+"CNN News module",
+"Miami Herald News module",
+"RFI News module",
+"Public-information updates"
+],
 
-const langIndex={
+fr:[
+"Actualités sur l'immigration",
+"Actualités communautaires",
+"Module CNN News",
+"Module Miami Herald News",
+"Module RFI News",
+"Mises à jour d'information publique"
+],
 
-en:[2,5],
-
-fr:[3,6],
-
-kr:[4,7]
+kr:[
+"Nouvèl imigrasyon",
+"Nouvèl kominotè",
+"Modil Nouvèl CNN",
+"Modil Nouvèl Miami Herald",
+"Modil Nouvèl RFI",
+"Dènye enfòmasyon piblik"
+]
 
 };
 
-/* =====================================================
-   RENDER TOOLS
-===================================================== */
 
-function renderTools(){
+const AI_CARDS = [
 
-const [titleIndex,descIndex]=
-langIndex[currentLang];
+{
+title:{
+en:"AI Document Writer",
+fr:"Rédacteur de documents IA",
+kr:"AI Ekriven Dokiman"
+},
 
-const grid=
-document.getElementById("aiGrid");
-
-grid.innerHTML=
-TOOLS.map(tool=>{
-
-const isMyAccess=
-tool[0]==="myaccess";
-
-const openLabel=
-currentLang==="en"
-?
-(isMyAccess
-?"OPEN MYACCESS"
-:"OPEN TOOL")
-
-:
-currentLang==="fr"
-?
-(isMyAccess
-?"OUVRIR MYACCESS"
-:"OUVRIR L'OUTIL")
-
-:
-(isMyAccess
-?"OUVRI MYACCESS"
-:"OUVRI ZOUTI");
-
-return`
-
-<div
-class="ai-card ${isMyAccess?"myaccess":""}">
-
-<div class="ai-number">
-${tool[1]}
-</div>
-
-${isMyAccess
-?
-`<span class="government-badge">
-FLORIDA OFFICIAL PORTAL
-</span>`
-:
-""
+desc:{
+en:"Draft clean, ready-to-use documents from your information.",
+fr:"Rédigez des documents clairs et prêts à l'emploi à partir de vos informations.",
+kr:"Kreye dokiman klè, pare pou itilize, apati enfòmasyon ou bay."
 }
 
+},
+
+{
+title:{
+en:"AI Translation Support",
+fr:"Assistance de traduction IA",
+kr:"AI Sipò Tradiksyon"
+},
+
+desc:{
+en:"Fast, accurate translation across Creole, French, and English.",
+fr:"Traduction rapide et précise entre créole, français et anglais.",
+kr:"Tradiksyon rapid e egzat ant Kreyòl, Fransè, ak Anglè."
+}
+
+},
+
+{
+title:{
+en:"AI Form Guidance",
+fr:"Guide de formulaires IA",
+kr:"AI Gid pou Fòm"
+},
+
+desc:{
+en:"Step-by-step help completing official forms correctly.",
+fr:"Aide étape par étape pour remplir correctement les formulaires officiels.",
+kr:"Èd etap pa etap pou ranpli fòm ofisyèl kòrèkteman."
+}
+
+},
+
+{
+title:{
+en:"AI Letter Preparation",
+fr:"Préparation de lettres IA",
+kr:"AI Preparasyon Lèt"
+},
+
+desc:{
+en:"Professional letters generated and refined in minutes.",
+fr:"Lettres professionnelles générées et peaufinées en quelques minutes.",
+kr:"Lèt pwofesyonèl kreye ak korije nan kèk minit."
+}
+
+},
+
+{
+title:{
+en:"AI Information Assistant",
+fr:"Assistant d'information IA",
+kr:"AI Asistan Enfòmasyon"
+},
+
+desc:{
+en:"Quick, reliable answers to everyday questions.",
+fr:"Réponses rapides et fiables aux questions courantes.",
+kr:"Repons rapid e fyab pou kesyon chak jou."
+}
+
+},
+
+{
+title:{
+en:"AI Research Assistance",
+fr:"Assistance de recherche IA",
+kr:"AI Sipò Rechèch"
+},
+
+desc:{
+en:"Background research to support your case or application.",
+fr:"Recherche de fond pour appuyer votre dossier ou votre demande.",
+kr:"Rechèch background pou soutni dosye oswa aplikasyon ou."
+}
+
+},
+
+{
+title:{
+en:"AI Multilingual Assistance",
+fr:"Assistance multilingue IA",
+kr:"AI Asistans Miltilenge"
+},
+
+desc:{
+en:"Support that meets you in the language you're comfortable in.",
+fr:"Un soutien dans la langue avec laquelle vous êtes à l'aise.",
+kr:"Sipò nan lang ou pi alèz avè l."
+}
+
+}
+
+];
+
+
+/* ================= RENDER ================= */
+
+let currentLang = "en";
+
+
+function renderNav(){
+
+const desktop =
+document.getElementById(
+'desktopNav'
+);
+
+const mobile =
+document.getElementById(
+'mobileNav'
+);
+
+const links = [
+
+["#immigration","immigration"],
+
+["#documents","documents"],
+
+["#translation","translation"],
+
+["#housing","housing"],
+
+["#employment","employment"],
+
+["#business","business"],
+
+["#digital","digital"],
+
+["#community","community"],
+
+["#myaccess","myaccess"]
+
+];
+
+
+desktop.innerHTML =
+links.map(
+([href,key]) =>
+`<a href="${href}">
+${UI.nav[key][currentLang]}
+</a>`
+).join("");
+
+
+const mobileLinks =
+links.concat([
+
+["#news","news"],
+
+["#ai","ai"],
+
+["#contact","contact"]
+
+]);
+
+
+mobile.innerHTML =
+mobileLinks.map(
+([href,key]) =>
+`<a href="${href}">
+${UI.nav[key][currentLang]}
+</a>`
+).join("");
+
+
+mobile.querySelectorAll(
+'a'
+).forEach(
+a =>
+a.addEventListener(
+'click',
+() =>
+mobile.classList.remove(
+'open'
+)
+)
+);
+
+}
+
+
+function renderCatmap(){
+
+document.getElementById(
+'catmap'
+).innerHTML =
+
+CATS.map(
+c =>
+
+`<a
+class="catmap-item"
+href="#${c.id}">
+
+<b>
+${c.num}
+</b>
+
+${c.title[currentLang]}
+
+</a>`
+
+).join("");
+
+}
+
+
+function renderFiles(){
+
+const container =
+document.getElementById(
+'fileContainer'
+);
+
+
+container.innerHTML =
+
+CATS.map(
+(c,i) =>
+
+`
+
+<div
+class="file ${i===0?'open':''}"
+id="${c.id}">
+
+<div
+class="file-tab"
+onclick="toggleFile(this)">
+
+<div class="file-tab-left">
+
+<div class="file-num">
+${c.num}
+</div>
+
+<div>
+
+<h2>
+${c.title[currentLang]}
+</h2>
+
+<div class="sub">
+${c.sub[currentLang]}
+</div>
+
+</div>
+
+</div>
+
+<svg
+class="chev"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2">
+
+<path
+d="M6 9l6 6 6-6">
+</path>
+
+</svg>
+
+</div>
+
+
+<div class="file-body">
+
+<div class="file-body-inner">
+
+<ul class="service-list">
+
+${c.items[currentLang]
+.map(
+t =>
+`<li>${t}</li>`
+)
+.join("")
+}
+
+</ul>
+
+
+${c.officialUrl ? `
+
+<div class="myaccess-btn-wrap">
+
+<a
+class="myaccess-btn"
+href="${c.officialUrl}"
+target="_blank"
+rel="noopener noreferrer">
+
+${c.button[currentLang]}
+
+</a>
+
+</div>
+
+` : ""}
+
+
+</div>
+
+</div>
+
+</div>
+
+`
+
+).join("");
+
+}
+
+
+function renderNews(){
+
+document.getElementById(
+'newsChips'
+).innerHTML =
+
+NEWS_CHIPS[currentLang]
+
+.map(
+t =>
+`<span class="chip">
+${t}
+</span>`
+)
+
+.join("");
+
+}
+
+
+function renderAI(){
+
+document.getElementById(
+'aiGrid'
+).innerHTML =
+
+AI_CARDS.map(
+c =>
+
+`
+
+<div class="ai-card">
+
 <h3>
-${tool[titleIndex]}
+${c.title[currentLang]}
 </h3>
 
 <p>
-${tool[descIndex]}
+${c.desc[currentLang]}
 </p>
-
-<button
-class="open-tool"
-data-tool="${tool[0]}">
-
-${openLabel}
-
-</button>
 
 </div>
 
-`;
+`
 
-}).join("");
-
-}
-
-/* =====================================================
-   APPLY LANGUAGE
-===================================================== */
-
-function applyLanguage(){
-
-const t=
-UI[currentLang];
-
-document.getElementById(
-"htmlRoot"
-).lang=
-currentLang;
-
-document.getElementById(
-"heroTag"
-).textContent=
-t.heroTag;
-
-document.getElementById(
-"heroTitle"
-).innerHTML=
-t.heroTitle;
-
-document.getElementById(
-"heroDesc"
-).textContent=
-t.heroDesc;
-
-document.getElementById(
-"exploreBtn"
-).textContent=
-t.explore;
-
-document.getElementById(
-"homeBtn"
-).textContent=
-t.home;
-
-document.getElementById(
-"backHome"
-).textContent=
-t.back;
-
-document.getElementById(
-"toolTag"
-).textContent=
-t.toolTag;
-
-document.getElementById(
-"toolTitle"
-).textContent=
-t.toolTitle;
-
-document.getElementById(
-"inputLabel"
-).textContent=
-t.inputLabel;
-
-document.getElementById(
-"languageLabel"
-).textContent=
-t.languageLabel;
-
-document.getElementById(
-"toneLabel"
-).textContent=
-t.toneLabel;
-
-document.getElementById(
-"generateBtn"
-).textContent=
-t.generate;
-
-document.getElementById(
-"clearBtn"
-).textContent=
-t.clear;
-
-document.getElementById(
-"copyBtn"
-).textContent=
-t.copy;
-
-document.getElementById(
-"userInput"
-).placeholder=
-t.placeholder;
-
-document.getElementById(
-"notice"
-).textContent=
-t.notice;
-
-document.getElementById(
-"myaccessDescription"
-).textContent=
-t.myaccessDescription;
-
-document.getElementById(
-"myaccessOfficialButton"
-).textContent=
-t.myaccessButton;
-
-if(!activeTool){
-
-document.getElementById(
-"outputBox"
-).textContent=
-t.ready;
+).join("");
 
 }
 
-document.querySelectorAll(
-".lang-btn"
-).forEach(button=>{
 
-button.classList.toggle(
-"active",
-button.dataset.lang===currentLang
-);
+function renderFooterCats(){
 
-});
+const links = [
 
-renderTools();
+["#immigration","immigration"],
 
-}
+["#documents","documents"],
 
-/* =====================================================
-   OPEN TOOL
-===================================================== */
+["#translation","translation"],
 
-document.addEventListener(
-"click",
-event=>{
+["#housing","housing"],
 
-const button=
-event.target.closest(
-".open-tool"
-);
+["#employment","employment"],
 
-if(!button)return;
+["#business","business"],
 
-activeTool=
-button.dataset.tool;
+["#digital","digital"],
 
-/* MYACCESS FLORIDA */
+["#community","community"],
 
-if(activeTool==="myaccess"){
+["#myaccess","myaccess"]
 
-document.getElementById(
-"toolPanel"
-).classList.remove(
-"active"
-);
-
-document.getElementById(
-"myaccessPanel"
-).classList.add(
-"active"
-);
-
-document.getElementById(
-"myaccessPanel"
-).scrollIntoView({
-
-behavior:"smooth",
-
-block:"start"
-
-});
-
-return;
-
-}
-
-/* REGULAR AI TOOL */
-
-document.getElementById(
-"myaccessPanel"
-).classList.remove(
-"active"
-);
-
-const tool=
-TOOLS.find(
-item=>
-item[0]===activeTool
-);
-
-document.getElementById(
-"activeToolTitle"
-).textContent=
-tool[
-langIndex[currentLang][0]
 ];
 
-document.getElementById(
-"toolPanel"
-).classList.add(
-"active"
-);
 
 document.getElementById(
-"toolPanel"
-).scrollIntoView({
+'footerCats'
+).innerHTML =
 
-behavior:"smooth",
+links.map(
+([href,key]) =>
 
-block:"start"
+`<a href="${href}">
+${UI.nav[key][currentLang]}
+</a>`
 
-});
-
-});
-
-/* =====================================================
-   CLOSE REGULAR TOOL
-===================================================== */
-
-document.getElementById(
-"closeTool"
-).onclick=()=>{
-
-document.getElementById(
-"toolPanel"
-).classList.remove(
-"active"
-);
-
-activeTool=null;
-
-};
-
-/* =====================================================
-   CLOSE MYACCESS
-===================================================== */
-
-document.getElementById(
-"closeMyAccess"
-).onclick=()=>{
-
-document.getElementById(
-"myaccessPanel"
-).classList.remove(
-"active"
-);
-
-activeTool=null;
-
-};
-
-/* =====================================================
-   LANGUAGE SWITCHER
-===================================================== */
-
-document.getElementById(
-"langToggle"
-).onclick=event=>{
-
-const button=
-event.target.closest(
-".lang-btn"
-);
-
-if(!button)return;
-
-currentLang=
-button.dataset.lang;
-
-applyLanguage();
-
-};
-
-/* =====================================================
-   GENERATE
-===================================================== */
-
-document.getElementById(
-"generateBtn"
-).onclick=()=>{
-
-const input=
-document.getElementById(
-"userInput"
-).value.trim();
-
-if(!activeTool){
-
-document.getElementById(
-"outputBox"
-).textContent=
-
-currentLang==="fr"
-?
-"Veuillez sélectionner un outil IA."
-:
-currentLang==="kr"
-?
-"Tanpri chwazi yon zouti AI."
-:
-"Please select an AI tool.";
-
-return;
+).join("");
 
 }
 
-if(!input){
+
+function applyStaticText(){
 
 document.getElementById(
-"outputBox"
-).textContent=
+'heroEyebrow'
+).textContent =
+UI.heroEyebrow[currentLang];
 
-currentLang==="fr"
-?
-"Veuillez entrer vos informations."
-:
-currentLang==="kr"
-?
-"Tanpri antre enfòmasyon ou."
-:
-"Please enter your information.";
 
-return;
+document.getElementById(
+'heroH1'
+).innerHTML =
+UI.heroH1[currentLang];
+
+
+document.getElementById(
+'heroLede'
+).textContent =
+UI.heroLede[currentLang];
+
+
+document.getElementById(
+'ctaPrimary'
+).textContent =
+UI.ctaPrimary[currentLang];
+
+
+document.getElementById(
+'ctaGhost'
+).textContent =
+UI.ctaGhost[currentLang];
+
+
+document.getElementById(
+'newsTag'
+).textContent =
+UI.newsTag[currentLang];
+
+
+document.getElementById(
+'newsTitle'
+).textContent =
+UI.newsTitle[currentLang];
+
+
+document.getElementById(
+'aiTag'
+).textContent =
+UI.aiTag[currentLang];
+
+
+document.getElementById(
+'aiTitle'
+).textContent =
+UI.aiTitle[currentLang];
+
+
+document.getElementById(
+'contactTag'
+).textContent =
+UI.contactTag[currentLang];
+
+
+document.getElementById(
+'contactTitle'
+).textContent =
+UI.contactTitle[currentLang];
+
+
+document.getElementById(
+'phoneLabel'
+).textContent =
+UI.phoneLabel[currentLang];
+
+
+document.getElementById(
+'emailLabel'
+).textContent =
+UI.emailLabel[currentLang];
+
+
+document.getElementById(
+'webLabel'
+).textContent =
+UI.webLabel[currentLang];
+
+
+document.getElementById(
+'followLabel'
+).textContent =
+UI.followLabel[currentLang];
+
+
+document.getElementById(
+'footerDesc'
+).textContent =
+UI.footerDesc[currentLang];
 
 }
 
-const tool=
-TOOLS.find(
-item=>
-item[0]===activeTool
-);
 
-document.getElementById(
-"outputBox"
-).textContent=
+function renderAll(){
 
-`MAXIMAX AI CENTER
+applyStaticText();
 
-Tool:
-${tool[langIndex[currentLang][0]]}
+renderNav();
 
-Requested language:
-${document.getElementById("outputLanguage").value}
+renderCatmap();
 
-Style:
-${document.getElementById("toneSelect").value}
+renderFiles();
 
-Information received:
+renderNews();
 
-${input}
+renderAI();
 
---------------------------------
+renderFooterCats();
 
-Your AI API connection will generate
-the final response here.`;
-
-};
-
-/* =====================================================
-   CLEAR
-===================================================== */
-
-document.getElementById(
-"clearBtn"
-).onclick=()=>{
-
-document.getElementById(
-"userInput"
-).value="";
-
-document.getElementById(
-"outputBox"
-).textContent=
-UI[currentLang].ready;
-
-};
-
-/* =====================================================
-   COPY
-===================================================== */
-
-document.getElementById(
-"copyBtn"
-).onclick=
-async()=>{
-
-const copyButton=
-document.getElementById(
-"copyBtn"
-);
-
-try{
-
-await navigator.clipboard.writeText(
-
-document.getElementById(
-"outputBox"
-).textContent
-
-);
-
-copyButton.textContent=
-
-currentLang==="fr"
-?
-"COPIÉ"
-:
-currentLang==="kr"
-?
-"KOPYE"
-:
-"COPIED";
-
-setTimeout(()=>{
-
-copyButton.textContent=
-UI[currentLang].copy;
-
-},1500);
-
-}catch(error){
-
-console.error(
-"Copy failed:",
-error
-);
-
-}
-
-};
-
-/* =====================================================
-   LOGO VIDEO
-===================================================== */
 
 document.querySelectorAll(
-
-'video[src="../../maximax-best-multi.mp4"]'
-
-).forEach(video=>{
-
-const showVideo=()=>{
-
-video.classList.add(
-"loaded"
+'.lang-btn'
+).forEach(
+b =>
+b.classList.toggle(
+'active',
+b.dataset.lang === currentLang
+)
 );
 
-};
 
-video.addEventListener(
-"loadeddata",
-showVideo
+document.getElementById(
+'htmlRoot'
+).lang =
+currentLang;
+
+}
+
+
+function toggleFile(tabEl){
+
+tabEl.parentElement
+.classList.toggle(
+'open'
 );
 
-video.addEventListener(
-"canplay",
-showVideo
+}
+
+
+document.getElementById(
+'langToggle'
+).addEventListener(
+'click',
+(e) => {
+
+const btn =
+e.target.closest(
+'.lang-btn'
 );
 
-video.addEventListener(
-"error",
-()=>{
+if(!btn) return;
 
-video.classList.remove(
-"loaded"
+currentLang =
+btn.dataset.lang;
+
+renderAll();
+
+});
+
+
+document.getElementById(
+'menuBtn'
+).addEventListener(
+'click',
+() => {
+
+document.getElementById(
+'mobileNav'
+).classList.toggle(
+'open'
 );
 
 });
 
-if(video.readyState>=2){
 
-showVideo();
+/* Logo videos are hidden by default;
+   only reveal them once they actually load successfully.
+   If maximax-best-multi.mp4 isn't sitting next to this file,
+   the orange M / MAXIMAX badge stays visible instead.
+*/
+
+document.querySelectorAll(
+'video[src="maximax-best-multi.mp4"]'
+).forEach(
+v => {
+
+v.addEventListener(
+'loadeddata',
+() =>
+v.classList.add(
+'loaded'
+)
+);
+
+v.addEventListener(
+'error',
+() =>
+v.classList.remove(
+'loaded'
+)
+);
+
+});
+
+
+/* Smooth in-page navigation */
+
+document.addEventListener(
+'click',
+(e) => {
+
+const link =
+e.target.closest(
+'a[href^="#"]'
+);
+
+if(!link) return;
+
+
+const target =
+document.querySelector(
+link.getAttribute(
+'href'
+)
+);
+
+
+if(target){
+
+e.preventDefault();
+
+
+target.scrollIntoView({
+behavior:'smooth'
+});
+
+
+if(
+!target.classList.contains(
+'open'
+)
+&&
+target.classList.contains(
+'file'
+)
+){
+
+target.classList.add(
+'open'
+);
+
+}
 
 }
 
 });
 
-/* =====================================================
-   START
-===================================================== */
 
-applyLanguage();
+renderAll();
 
 </script>
 
 </body>
-</html>
+  </html>
