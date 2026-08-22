@@ -116,7 +116,6 @@ button{
   z-index:1
 }
 
-
 .seal{
   position:relative;
   width:112px;
@@ -396,8 +395,7 @@ nav.desktop-nav a:hover{
 
 
 /* =====================================================
-   NEW SECOND LOGO SHOWCASE
-   maxima-xbest.mp4
+   SECOND LOGO SHOWCASE
 ===================================================== */
 
 .maximax-logo-showcase{
@@ -412,7 +410,6 @@ nav.desktop-nav a:hover{
   margin:0 auto;
   padding:18px;
   overflow:hidden;
-
   border:1px solid var(--orange-light);
   border-radius:20px;
 
@@ -459,9 +456,7 @@ nav.desktop-nav a:hover{
   z-index:4;
   margin:0 0 14px;
   text-align:center;
-
   color:var(--orange-light);
-
   font-family:'IBM Plex Mono',monospace;
   font-size:10px;
   font-weight:600;
@@ -472,13 +467,10 @@ nav.desktop-nav a:hover{
 .maximax-logo-video{
   position:relative;
   z-index:2;
-
   width:100%;
   max-height:430px;
   display:block;
-
   object-fit:contain;
-
   border-radius:13px;
   background:#000
 }
@@ -486,13 +478,10 @@ nav.desktop-nav a:hover{
 .maximax-logo-line{
   position:relative;
   z-index:4;
-
   width:70%;
   max-width:420px;
   height:1px;
-
   margin:15px auto 0;
-
   background:
     linear-gradient(
       90deg,
@@ -521,6 +510,175 @@ nav.desktop-nav a:hover{
     border-radius:9px
   }
 
+}
+
+
+/* =====================================================
+   NEW MAXIMAX MODULE LOGO COLLECTION
+===================================================== */
+
+.module-logo-section{
+  max-width:1180px;
+  margin:0 auto;
+  padding:10px 24px 65px
+}
+
+.module-logo-heading{
+  text-align:center;
+  margin-bottom:30px
+}
+
+.module-logo-heading span{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:var(--orange-light);
+  letter-spacing:.22em;
+  margin-bottom:10px
+}
+
+.module-logo-heading h2{
+  color:var(--orange-light);
+  font-size:clamp(1.7rem,4vw,2.7rem)
+}
+
+.module-logo-heading p{
+  max-width:650px;
+  margin:10px auto 0;
+  font-size:13px;
+  line-height:1.6;
+  opacity:.82
+}
+
+.module-logo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  align-items:stretch
+}
+
+.module-emblem{
+  position:relative;
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:50%;
+  border:3px solid #FF6A00;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #FF7A13 0%,
+      #A23A00 34%,
+      #1A0900 63%,
+      #000 100%
+    );
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,.9),
+    0 0 0 8px rgba(255,106,0,.65),
+    0 0 28px rgba(255,106,0,.35),
+    inset 0 0 35px rgba(0,0,0,.8);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:31px;
+  overflow:hidden;
+  transition:.3s
+}
+
+.module-emblem:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,.9),
+    0 0 0 8px rgba(255,163,71,.8),
+    0 0 40px rgba(255,106,0,.55),
+    inset 0 0 35px rgba(0,0,0,.8)
+}
+
+.module-emblem::before{
+  content:"MAXIMAX MULTI SERVICES";
+  position:absolute;
+  top:17px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  color:#FF9A3A;
+  font-family:'Fraunces',serif;
+  font-size:clamp(9px,1.4vw,15px);
+  font-weight:700;
+  letter-spacing:.06em;
+  white-space:nowrap
+}
+
+.module-emblem::after{
+  content:"★   ★   ★";
+  position:absolute;
+  bottom:18px;
+  left:0;
+  right:0;
+  color:#FF7A13;
+  font-size:18px;
+  letter-spacing:6px
+}
+
+.module-icon-large{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#050200;
+  color:#FF8A21;
+  border:2px solid #FF7A13;
+  box-shadow:0 0 20px rgba(255,106,0,.35);
+  font-size:28px;
+  margin-bottom:14px
+}
+
+.module-emblem h3{
+  color:#060200;
+  text-shadow:
+    1px 1px 0 #FFB56A,
+    -1px -1px 0 #FFB56A,
+    2px 2px 6px rgba(0,0,0,.5);
+  font-size:clamp(14px,2vw,22px);
+  line-height:1.08;
+  text-transform:uppercase
+}
+
+.module-emblem .module-sub{
+  margin-top:9px;
+  font-family:'IBM Plex Mono',monospace;
+  color:#FFD09D;
+  font-size:clamp(7px,1vw,10px);
+  line-height:1.4;
+  letter-spacing:.05em;
+  text-transform:uppercase
+}
+
+.module-emblem .mini-scroll{
+  margin-top:13px;
+  font-size:20px;
+  color:#FF8A21
+}
+
+@media(max-width:900px){
+  .module-logo-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:560px){
+  .module-logo-grid{
+    grid-template-columns:1fr;
+    gap:26px
+  }
+
+  .module-emblem{
+    width:min(100%,330px);
+    margin:0 auto
+  }
 }
 
 
@@ -900,8 +1058,7 @@ footer{
   gap:8px 16px;
   justify-content:center;
   font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  margin-top:12px
+  font-size:10px
 }
 
 </style>
@@ -958,6 +1115,10 @@ footer{
         Home
       </a>
 
+      <a href="#module-logos">
+        Modules
+      </a>
+
       <a href="#services">
         Services
       </a>
@@ -990,6 +1151,10 @@ footer{
 
     <a href="#hero">
       Home
+    </a>
+
+    <a href="#module-logos">
+      Modules
     </a>
 
     <a href="#services">
@@ -1099,9 +1264,7 @@ footer{
 
 
 <!-- =====================================================
-     NEW LOGO ADDED
-     maxima-xbest.mp4
-     NOTHING FROM ORIGINAL HOMEPAGE REMOVED
+     SECOND LOGO
 ===================================================== -->
 
 <section class="maximax-logo-showcase">
@@ -1135,6 +1298,385 @@ footer{
 
 
 <!-- =====================================================
+     MAXIMAX MODULE LOGOS
+===================================================== -->
+
+<section
+  class="module-logo-section"
+  id="module-logos"
+>
+
+  <div class="module-logo-heading">
+
+    <span>
+      MAXIMAX MULTI SERVICES
+    </span>
+
+    <h2>
+      SERVICES & AI MODULES
+    </h2>
+
+    <p>
+      Tout sèvis prensipal Maximax Multi Services ak zouti AI yo
+      òganize kòm yon sèl sistèm dijital.
+    </p>
+
+  </div>
+
+
+  <div class="module-logo-grid">
+
+
+    <a href="#mod1" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-stamp"></i>
+      </div>
+
+      <h3>
+        NOTARY
+        <br>
+        & TRANSLATION
+      </h3>
+
+      <div class="module-sub">
+        Documents • Certification • Translation
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod2" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+
+      <h3>
+        TAXES
+        <br>
+        & ACCOUNTING
+      </h3>
+
+      <div class="module-sub">
+        Tax Preparation • ITIN • Bookkeeping
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod3" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-passport"></i>
+      </div>
+
+      <h3>
+        IMMIGRATION
+        <br>
+        SERVICES
+      </h3>
+
+      <div class="module-sub">
+        USCIS • TPS • Asylum • Family
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod4" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-scale-balanced"></i>
+      </div>
+
+      <h3>
+        EOIR
+        <br>
+        & BIA
+      </h3>
+
+      <div class="module-sub">
+        Immigration Court • Appeals
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod5" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+      <h3>
+        INSURANCE
+      </h3>
+
+      <div class="module-sub">
+        Auto • Home • Life • Health
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod6" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-house"></i>
+      </div>
+
+      <h3>
+        REAL
+        <br>
+        ESTATE
+      </h3>
+
+      <div class="module-sub">
+        Buy • Sell • Rent • Property
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod7" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-building"></i>
+      </div>
+
+      <h3>
+        BUSINESS
+        <br>
+        FORMATION
+      </h3>
+
+      <div class="module-sub">
+        LLC • Corporation • EIN • License
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod8" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-file-signature"></i>
+      </div>
+
+      <h3>
+        APOSTILLE
+        <br>
+        & LEGALIZATION
+      </h3>
+
+      <div class="module-sub">
+        State • Federal • Embassy
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#mod9" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-plane"></i>
+      </div>
+
+      <h3>
+        TRAVEL
+        <br>
+        & DMV SERVICES
+      </h3>
+
+      <div class="module-sub">
+        Passport • Ticket • DMV • Travel
+      </div>
+
+      <div class="mini-scroll">
+        📜
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+
+      <h3>
+        MAXIMAX
+        <br>
+        AI CENTER
+      </h3>
+
+      <div class="module-sub">
+        Artificial Intelligence • Smart Assistance
+      </div>
+
+      <div class="mini-scroll">
+        🤖
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-file-pen"></i>
+      </div>
+
+      <h3>
+        FORM
+        <br>
+        HELPER
+      </h3>
+
+      <div class="module-sub">
+        Forms • Applications • Assistance
+      </div>
+
+      <div class="mini-scroll">
+        📋
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <h3>
+        CAREER
+        <br>
+        TRACKER
+      </h3>
+
+      <div class="module-sub">
+        Tracking • Status • Digital Support
+      </div>
+
+      <div class="mini-scroll">
+        🔎
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-language"></i>
+      </div>
+
+      <h3>
+        TRADIKSYON
+        <br>
+        AI
+      </h3>
+
+      <div class="module-sub">
+        Kreyòl • English • Español
+      </div>
+
+      <div class="mini-scroll">
+        🌐
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+
+      <h3>
+        CHAT
+        <br>
+        24/7
+      </h3>
+
+      <div class="module-sub">
+        Digital Assistant • Anytime
+      </div>
+
+      <div class="mini-scroll">
+        💬
+      </div>
+
+    </a>
+
+
+    <a href="#ai-center" class="module-emblem">
+
+      <div class="module-icon-large">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <h3>
+        TRY
+        <br>
+        AI CENTER
+      </h3>
+
+      <div class="module-sub">
+        Smart Tools • AI Assistance
+      </div>
+
+      <div class="mini-scroll">
+        ✨
+      </div>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
      CATEGORY MAP
 ===================================================== -->
 
@@ -1142,76 +1684,40 @@ footer{
 
   <div class="catmap-inner">
 
-    <a
-      class="catmap-item"
-      href="#mod1"
-    >
-      <b>01</b>
-      NOTARY
+    <a class="catmap-item" href="#mod1">
+      <b>01</b> NOTARY
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod2"
-    >
-      <b>02</b>
-      TAXES
+    <a class="catmap-item" href="#mod2">
+      <b>02</b> TAXES
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod3"
-    >
-      <b>03</b>
-      IMMIGRATION
+    <a class="catmap-item" href="#mod3">
+      <b>03</b> IMMIGRATION
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod4"
-    >
-      <b>04</b>
-      EOIR+BIA
+    <a class="catmap-item" href="#mod4">
+      <b>04</b> EOIR+BIA
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod5"
-    >
-      <b>05</b>
-      INSURANCE
+    <a class="catmap-item" href="#mod5">
+      <b>05</b> INSURANCE
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod6"
-    >
-      <b>06</b>
-      REAL ESTATE
+    <a class="catmap-item" href="#mod6">
+      <b>06</b> REAL ESTATE
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod7"
-    >
-      <b>07</b>
-      BUSINESS
+    <a class="catmap-item" href="#mod7">
+      <b>07</b> BUSINESS
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod8"
-    >
-      <b>08</b>
-      APOSTILLE
+    <a class="catmap-item" href="#mod8">
+      <b>08</b> APOSTILLE
     </a>
 
-    <a
-      class="catmap-item"
-      href="#mod9"
-    >
-      <b>09</b>
-      TRAVEL+DMV
+    <a class="catmap-item" href="#mod9">
+      <b>09</b> TRAVEL+DMV
     </a>
 
   </div>
@@ -1227,700 +1733,379 @@ footer{
 <main id="services">
 
 
-  <!-- MODULE 01 -->
+<!-- MODULE 01 -->
 
-  <div
-    class="file open"
-    id="mod1"
-  >
+<div class="file open" id="mod1">
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod1')"
-    >
+<div class="file-tab" onclick="toggleFile('mod1')">
 
-      <div class="file-tab-left">
+<div class="file-tab-left">
 
-        <div class="file-num">
-          01
-        </div>
+<div class="file-num">01</div>
 
-        <div>
+<div>
+<h2>Notary & Translation</h2>
+<div class="sub">Certified • Fast • All 50 States</div>
+</div>
 
-          <h2>
-            Notary & Translation
-          </h2>
+</div>
 
-          <div class="sub">
-            Certified • Fast • All 50 States
-          </div>
+<span class="chev">▼</span>
 
-        </div>
+</div>
 
-      </div>
+<div class="file-body">
 
-      <span class="chev">
-        ▼
-      </span>
+<ul class="service-list">
 
-    </div>
+<li>Notary Public - All 50 States</li>
+<li>Mobile Notary - We come to you</li>
+<li>Power of Attorney</li>
+<li>Affidavit & Legal Letters</li>
+<li>Document Apostille</li>
+<li>Travel Consent for Minors</li>
 
+</ul>
 
-    <div class="file-body">
+</div>
 
-      <ul class="service-list">
+</div>
 
-        <li>
-          Notary Public - All 50 States
-        </li>
 
-        <li>
-          Mobile Notary - We come to you
-        </li>
 
-        <li>
-          Power of Attorney
-        </li>
+<!-- MODULE 02 -->
 
-        <li>
-          Affidavit & Legal Letters
-        </li>
+<div class="file open" id="mod2">
 
-        <li>
-          Document Apostille
-        </li>
+<div class="file-tab" onclick="toggleFile('mod2')">
 
-        <li>
-          Travel Consent for Minors
-        </li>
+<div class="file-tab-left">
 
-      </ul>
+<div class="file-num">02</div>
 
-    </div>
+<div>
+<h2>Taxes & Accounting</h2>
+<div class="sub">Maximize your refund - ITIN</div>
+</div>
 
-  </div>
+</div>
 
+<span class="chev">▼</span>
 
+</div>
 
-  <!-- MODULE 02 -->
+<div class="file-body">
 
-  <div
-    class="file open"
-    id="mod2"
-  >
+<ul class="service-list">
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod2')"
-    >
+<li>Personal Taxes - Form 1040</li>
+<li>Business Taxes - LLC, S-Corp, C-Corp</li>
+<li>ITIN Application & Renewal - W7</li>
+<li>Bookkeeping & Payroll</li>
+<li>IRS Letter & Audit Help</li>
+<li>Tax Amendment - 1040X</li>
 
-      <div class="file-tab-left">
+</ul>
 
-        <div class="file-num">
-          02
-        </div>
+<div class="myaccess-btn-wrap">
 
-        <div>
+<a class="myaccess-btn" href="#contact">
+File My Taxes Now
+</a>
 
-          <h2>
-            Taxes & Accounting
-          </h2>
+</div>
 
-          <div class="sub">
-            Maximize your refund - ITIN
-          </div>
+</div>
 
-        </div>
+</div>
 
-      </div>
 
-      <span class="chev">
-        ▼
-      </span>
 
-    </div>
+<!-- MODULE 03 -->
 
+<div class="file open" id="mod3">
 
-    <div class="file-body">
+<div class="file-tab" onclick="toggleFile('mod3')">
 
-      <ul class="service-list">
+<div class="file-tab-left">
 
-        <li>
-          Personal Taxes - Form 1040
-        </li>
+<div class="file-num">03</div>
 
-        <li>
-          Business Taxes - LLC, S-Corp, C-Corp
-        </li>
+<div>
+<h2>Immigration Services</h2>
+<div class="sub">TPS • Asylum • Family Petition</div>
+</div>
 
-        <li>
-          ITIN Application & Renewal - W7
-        </li>
+</div>
 
-        <li>
-          Bookkeeping & Payroll
-        </li>
+<span class="chev">▼</span>
 
-        <li>
-          IRS Letter & Audit Help
-        </li>
+</div>
 
-        <li>
-          Tax Amendment - 1040X
-        </li>
+<div class="file-body">
 
-      </ul>
+<ul class="service-list">
 
-      <div class="myaccess-btn-wrap">
+<li>TPS Application & Renewal</li>
+<li>Asylum & Work Permit (I-765)</li>
+<li>Family Petition (I-130)</li>
+<li>Green Card & Citizenship (N-400)</li>
+<li>USCIS Form Preparation - All Forms</li>
+<li>DACA Renewal</li>
 
-        <a
-          class="myaccess-btn"
-          href="#contact"
-        >
-          File My Taxes Now
-        </a>
+</ul>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
 
 
+<!-- MODULE 04 -->
 
-  <!-- MODULE 03 -->
+<div class="file open" id="mod4">
 
-  <div
-    class="file open"
-    id="mod3"
-  >
+<div class="file-tab" onclick="toggleFile('mod4')">
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod3')"
-    >
+<div class="file-tab-left">
 
-      <div class="file-tab-left">
+<div class="file-num">04</div>
 
-        <div class="file-num">
-          03
-        </div>
+<div>
+<h2>EOIR + BIA - Menm Bouton</h2>
+<div class="sub">Immigration Court • Board of Appeals • Menm kote</div>
+</div>
 
-        <div>
+</div>
 
-          <h2>
-            Immigration Services
-          </h2>
+<span class="chev">▼</span>
 
-          <div class="sub">
-            TPS • Asylum • Family Petition
-          </div>
+</div>
 
-        </div>
+<div class="file-body">
 
-      </div>
+<ul class="service-list">
 
-      <span class="chev">
-        ▼
-      </span>
+<li>EOIR - Executive Office for Immigration Review</li>
+<li>BIA - Board of Immigration Appeals</li>
+<li>Change of Venue & Court Date Check</li>
+<li>Master Calendar & Individual Hearing Prep</li>
+<li>Appeal to BIA - Brief & Motion</li>
+<li>FOIA & Case Status - EOIR Hotline</li>
 
-    </div>
+</ul>
 
+<div class="myaccess-btn-wrap">
 
-    <div class="file-body">
+<a class="myaccess-btn" href="#contact">
+EOIR + BIA Help - Rele Kounya
+</a>
 
-      <ul class="service-list">
+</div>
 
-        <li>
-          TPS Application & Renewal
-        </li>
+</div>
 
-        <li>
-          Asylum & Work Permit (I-765)
-        </li>
+</div>
 
-        <li>
-          Family Petition (I-130)
-        </li>
 
-        <li>
-          Green Card & Citizenship (N-400)
-        </li>
 
-        <li>
-          USCIS Form Preparation - All Forms
-        </li>
+<!-- MODULE 05 -->
 
-        <li>
-          DACA Renewal
-        </li>
+<div class="file open" id="mod5">
 
-      </ul>
+<div class="file-tab" onclick="toggleFile('mod5')">
 
-    </div>
+<div class="file-tab-left">
 
-  </div>
+<div class="file-num">05</div>
 
+<div>
+<h2>Insurance</h2>
+<div class="sub">Auto • Home • Life • Health</div>
+</div>
 
+</div>
 
-  <!-- MODULE 04 -->
+<span class="chev">▼</span>
 
-  <div
-    class="file open"
-    id="mod4"
-  >
+</div>
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod4')"
-    >
+<div class="file-body">
 
-      <div class="file-tab-left">
+<ul class="service-list">
 
-        <div class="file-num">
-          04
-        </div>
+<li>Auto Insurance - Best Rates</li>
+<li>Homeowners & Renters Insurance</li>
+<li>Life Insurance</li>
+<li>Health Insurance - Marketplace</li>
+<li>Business & Commercial Insurance</li>
+<li>SR22 Insurance</li>
 
-        <div>
+</ul>
 
-          <h2>
-            EOIR + BIA - Menm Bouton
-          </h2>
+</div>
 
-          <div class="sub">
-            Immigration Court • Board of Appeals • Menm kote
-          </div>
+</div>
 
-        </div>
 
-      </div>
 
-      <span class="chev">
-        ▼
-      </span>
+<!-- MODULE 06 -->
 
-    </div>
+<div class="file open" id="mod6">
 
+<div class="file-tab" onclick="toggleFile('mod6')">
 
-    <div class="file-body">
+<div class="file-tab-left">
 
-      <ul class="service-list">
+<div class="file-num">06</div>
 
-        <li>
-          EOIR - Executive Office for Immigration Review
-        </li>
+<div>
+<h2>Real Estate</h2>
+<div class="sub">Buy • Sell • Rent • Manage</div>
+</div>
 
-        <li>
-          BIA - Board of Immigration Appeals
-        </li>
+</div>
 
-        <li>
-          Change of Venue & Court Date Check
-        </li>
+<span class="chev">▼</span>
 
-        <li>
-          Master Calendar & Individual Hearing Prep
-        </li>
+</div>
 
-        <li>
-          Appeal to BIA - Brief & Motion
-        </li>
+<div class="file-body">
 
-        <li>
-          FOIA & Case Status - EOIR Hotline
-        </li>
+<ul class="service-list">
 
-      </ul>
+<li>Buy Your First Home - First Time Buyer</li>
+<li>Sell Your House - Fast Closing</li>
+<li>Rental Assistance</li>
+<li>Property Management</li>
+<li>House Inspection Referral</li>
+<li>Mortgage Referral</li>
 
-      <div class="myaccess-btn-wrap">
+</ul>
 
-        <a
-          class="myaccess-btn"
-          href="#contact"
-        >
-          EOIR + BIA Help - Rele Kounya
-        </a>
+</div>
 
-      </div>
+</div>
 
-    </div>
 
-  </div>
 
+<!-- MODULE 07 -->
 
+<div class="file open" id="mod7">
 
-  <!-- MODULE 05 -->
+<div class="file-tab" onclick="toggleFile('mod7')">
 
-  <div
-    class="file open"
-    id="mod5"
-  >
+<div class="file-tab-left">
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod5')"
-    >
+<div class="file-num">07</div>
 
-      <div class="file-tab-left">
+<div>
+<h2>Business Formation</h2>
+<div class="sub">LLC • Corp • EIN • License</div>
+</div>
 
-        <div class="file-num">
-          05
-        </div>
+</div>
 
-        <div>
+<span class="chev">▼</span>
 
-          <h2>
-            Insurance
-          </h2>
+</div>
 
-          <div class="sub">
-            Auto • Home • Life • Health
-          </div>
+<div class="file-body">
 
-        </div>
+<ul class="service-list">
 
-      </div>
+<li>LLC & Corporation Formation</li>
+<li>EIN Number - Same Day</li>
+<li>Business License & Permit</li>
+<li>Business Plan & Logo Design</li>
+<li>Business Taxes & Bookkeeping</li>
+<li>Business Bank Account Setup</li>
 
-      <span class="chev">
-        ▼
-      </span>
+</ul>
 
-    </div>
+</div>
 
+</div>
 
-    <div class="file-body">
 
-      <ul class="service-list">
 
-        <li>
-          Auto Insurance - Best Rates
-        </li>
+<!-- MODULE 08 -->
 
-        <li>
-          Homeowners & Renters Insurance
-        </li>
+<div class="file open" id="mod8">
 
-        <li>
-          Life Insurance
-        </li>
+<div class="file-tab" onclick="toggleFile('mod8')">
 
-        <li>
-          Health Insurance - Marketplace
-        </li>
+<div class="file-tab-left">
 
-        <li>
-          Business & Commercial Insurance
-        </li>
+<div class="file-num">08</div>
 
-        <li>
-          SR22 Insurance
-        </li>
+<div>
+<h2>Apostille & Legalization</h2>
+<div class="sub">State & Federal • Fast Service</div>
+</div>
 
-      </ul>
+</div>
 
-    </div>
+<span class="chev">▼</span>
 
-  </div>
+</div>
 
+<div class="file-body">
 
+<ul class="service-list">
 
-  <!-- MODULE 06 -->
+<li>Document Apostille - All States</li>
+<li>FBI Background Check Apostille</li>
+<li>Diploma & School Records Apostille</li>
+<li>Power of Attorney for Haiti</li>
+<li>Authentication & Legalization</li>
+<li>Embassy Legalization</li>
 
-  <div
-    class="file open"
-    id="mod6"
-  >
+</ul>
 
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod6')"
-    >
+</div>
 
-      <div class="file-tab-left">
+</div>
 
-        <div class="file-num">
-          06
-        </div>
 
-        <div>
 
-          <h2>
-            Real Estate
-          </h2>
+<!-- MODULE 09 -->
 
-          <div class="sub">
-            Buy • Sell • Rent • Manage
-          </div>
+<div class="file open" id="mod9">
 
-        </div>
+<div class="file-tab" onclick="toggleFile('mod9')">
 
-      </div>
+<div class="file-tab-left">
 
-      <span class="chev">
-        ▼
-      </span>
+<div class="file-num">09</div>
 
-    </div>
+<div>
+<h2>Travel & DMV Services</h2>
+<div class="sub">Plane Ticket • Passport • DMV</div>
+</div>
 
+</div>
 
-    <div class="file-body">
+<span class="chev">▼</span>
 
-      <ul class="service-list">
+</div>
 
-        <li>
-          Buy Your First Home - First Time Buyer
-        </li>
+<div class="file-body">
 
-        <li>
-          Sell Your House - Fast Closing
-        </li>
+<ul class="service-list">
 
-        <li>
-          Rental Assistance
-        </li>
+<li>Plane Ticket - Best Price Haiti / USA / International</li>
+<li>Passport Application & Renewal</li>
+<li>DMV Services - License, Registration, Title</li>
+<li>TSA PreCheck & TWIC Card Help</li>
+<li>Hotel Booking & Car Rental</li>
+<li>Travel Insurance</li>
 
-        <li>
-          Property Management
-        </li>
+</ul>
 
-        <li>
-          House Inspection Referral
-        </li>
+</div>
 
-        <li>
-          Mortgage Referral
-        </li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- MODULE 07 -->
-
-  <div
-    class="file open"
-    id="mod7"
-  >
-
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod7')"
-    >
-
-      <div class="file-tab-left">
-
-        <div class="file-num">
-          07
-        </div>
-
-        <div>
-
-          <h2>
-            Business Formation
-          </h2>
-
-          <div class="sub">
-            LLC • Corp • EIN • License
-          </div>
-
-        </div>
-
-      </div>
-
-      <span class="chev">
-        ▼
-      </span>
-
-    </div>
-
-
-    <div class="file-body">
-
-      <ul class="service-list">
-
-        <li>
-          LLC & Corporation Formation
-        </li>
-
-        <li>
-          EIN Number - Same Day
-        </li>
-
-        <li>
-          Business License & Permit
-        </li>
-
-        <li>
-          Business Plan & Logo Design
-        </li>
-
-        <li>
-          Business Taxes & Bookkeeping
-        </li>
-
-        <li>
-          Business Bank Account Setup
-        </li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- MODULE 08 -->
-
-  <div
-    class="file open"
-    id="mod8"
-  >
-
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod8')"
-    >
-
-      <div class="file-tab-left">
-
-        <div class="file-num">
-          08
-        </div>
-
-        <div>
-
-          <h2>
-            Apostille & Legalization
-          </h2>
-
-          <div class="sub">
-            State & Federal • Fast Service
-          </div>
-
-        </div>
-
-      </div>
-
-      <span class="chev">
-        ▼
-      </span>
-
-    </div>
-
-
-    <div class="file-body">
-
-      <ul class="service-list">
-
-        <li>
-          Document Apostille - All States
-        </li>
-
-        <li>
-          FBI Background Check Apostille
-        </li>
-
-        <li>
-          Diploma & School Records Apostille
-        </li>
-
-        <li>
-          Power of Attorney for Haiti
-        </li>
-
-        <li>
-          Authentication & Legalization
-        </li>
-
-        <li>
-          Embassy Legalization
-        </li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- MODULE 09 -->
-
-  <div
-    class="file open"
-    id="mod9"
-  >
-
-    <div
-      class="file-tab"
-      onclick="toggleFile('mod9')"
-    >
-
-      <div class="file-tab-left">
-
-        <div class="file-num">
-          09
-        </div>
-
-        <div>
-
-          <h2>
-            Travel & DMV Services
-          </h2>
-
-          <div class="sub">
-            Plane Ticket • Passport • DMV
-          </div>
-
-        </div>
-
-      </div>
-
-      <span class="chev">
-        ▼
-      </span>
-
-    </div>
-
-
-    <div class="file-body">
-
-      <ul class="service-list">
-
-        <li>
-          Plane Ticket - Best Price Haiti / USA / International
-        </li>
-
-        <li>
-          Passport Application & Renewal
-        </li>
-
-        <li>
-          DMV Services - License, Registration, Title
-        </li>
-
-        <li>
-          TSA PreCheck & TWIC Card Help
-        </li>
-
-        <li>
-          Hotel Booking & Car Rental
-        </li>
-
-        <li>
-          Travel Insurance
-        </li>
-
-      </ul>
-
-    </div>
-
-  </div>
+</div>
 
 </main>
 
@@ -1931,186 +2116,165 @@ footer{
 ===================================================== -->
 
 <section
-  class="ai-center"
-  id="ai-center"
+class="ai-center"
+id="ai-center"
 >
 
-  <div class="ai-inner">
+<div class="ai-inner">
 
-    <div>
+<div>
 
-      <span class="ai-badge">
-        🤖 AI CENTER - NOUVO
-      </span>
+<span class="ai-badge">
+🤖 AI CENTER - NOUVO
+</span>
 
-      <h2>
-        Maximax AI Assistant Center
-      </h2>
+<h2>
+Maximax AI Assistant Center
+</h2>
 
-      <p>
-        AI Center nou an ap chaje kounya — li ede w ranpli fòm,
-        tcheke ka w, tradui dokiman, epi reponn kesyon sou
-        Immigration, Taxes, ak tout sèvis nou yo.
-        Disponible 24/7 an Kreyòl, English, Español.
-      </p>
-
-
-      <div class="ai-features">
-
-        <div class="ai-feat">
-          <b>
-            📋 Form Helper
-          </b>
-
-          <span>
-            Ranpli I-130, I-765, N-400 otomatik
-          </span>
-        </div>
+<p>
+AI Center nou an ap chaje kounya — li ede w ranpli fòm,
+tcheke ka w, tradui dokiman, epi reponn kesyon sou
+Immigration, Taxes, ak tout sèvis nou yo.
+Disponible 24/7 an Kreyòl, English, Español.
+</p>
 
 
-        <div class="ai-feat">
-          <b>
-            🔍 Case Tracker
-          </b>
+<div class="ai-features">
 
-          <span>
-            Tcheke TPS, Asylum, EOIR ka w
-          </span>
-        </div>
+<div class="ai-feat">
+<b>📋 Form Helper</b>
+<span>Ranpli I-130, I-765, N-400 otomatik</span>
+</div>
 
 
-        <div class="ai-feat">
-          <b>
-            🌐 Tradiksyon AI
-          </b>
-
-          <span>
-            Tradui dokiman enstantane
-          </span>
-        </div>
+<div class="ai-feat">
+<b>🔍 Case Tracker</b>
+<span>Tcheke TPS, Asylum, EOIR ka w</span>
+</div>
 
 
-        <div class="ai-feat">
-          <b>
-            💬 Chat 24/7
-          </b>
-
-          <span>
-            Reponn kesyon an Kreyòl
-          </span>
-        </div>
-
-      </div>
+<div class="ai-feat">
+<b>🌐 Tradiksyon AI</b>
+<span>Tradui dokiman enstantane</span>
+</div>
 
 
-      <div class="myaccess-btn-wrap">
+<div class="ai-feat">
+<b>💬 Chat 24/7</b>
+<span>Reponn kesyon an Kreyòl</span>
+</div>
 
-        <a
-          class="myaccess-btn"
-          href="#contact"
-        >
-          Try AI Center Now
-        </a>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <div>
+<div class="myaccess-btn-wrap">
 
-      <div
-        style="
-          border:1px solid var(--line);
-          border-radius:12px;
-          padding:20px;
-          background:rgba(0,0,0,0.6)
-        "
-      >
+<a
+class="myaccess-btn"
+href="#contact"
+>
+Try AI Center Now
+</a>
 
-        <div
-          style="
-            font-family:'IBM Plex Mono',monospace;
-            font-size:10px;
-            color:var(--orange-light);
-            margin-bottom:12px
-          "
-        >
-          AI CHAT PREVIEW
-        </div>
+</div>
+
+</div>
 
 
-        <div
-          style="
-            background:rgba(255,106,0,0.1);
-            border-radius:8px;
-            padding:12px;
-            margin-bottom:10px;
-            font-size:13px
-          "
-        >
-          👤 Ki jan pou m tcheke dat tribinal mwen?
-        </div>
+<div>
+
+<div
+style="
+border:1px solid var(--line);
+border-radius:12px;
+padding:20px;
+background:rgba(0,0,0,0.6)
+"
+>
+
+<div
+style="
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+color:var(--orange-light);
+margin-bottom:12px
+"
+>
+AI CHAT PREVIEW
+</div>
 
 
-        <div
-          style="
-            background:rgba(0,0,0,0.5);
-            border:1px solid var(--line);
-            border-radius:8px;
-            padding:12px;
-            font-size:13px
-          "
-        >
-          🤖 Ale sou EOIR hotline 1-800-898-7180
-          oswa m ka tcheke l pou ou.
-          Ki A-Number ou?
-        </div>
+<div
+style="
+background:rgba(255,106,0,0.1);
+border-radius:8px;
+padding:12px;
+margin-bottom:10px;
+font-size:13px
+"
+>
+👤 Ki jan pou m tcheke dat tribinal mwen?
+</div>
 
 
-        <div
-          style="
-            margin-top:14px;
-            display:flex;
-            gap:8px
-          "
-        >
+<div
+style="
+background:rgba(0,0,0,0.5);
+border:1px solid var(--line);
+border-radius:8px;
+padding:12px;
+font-size:13px
+"
+>
+🤖 Ale sou EOIR hotline 1-800-898-7180
+oswa m ka ede w jwenn paj ofisyèl la pou verifye dosye a.
+</div>
 
-          <input
-            type="text"
-            placeholder="Poze yon kesyon..."
-            style="
-              flex:1;
-              background:rgba(0,0,0,0.5);
-              border:1px solid var(--line);
-              border-radius:6px;
-              padding:10px;
-              color:var(--white);
-              font-size:13px
-            "
-          >
 
-          <button
-            style="
-              background:var(--orange);
-              border:none;
-              border-radius:6px;
-              padding:10px 16px;
-              color:#000;
-              font-weight:600;
-              cursor:pointer
-            "
-          >
-            Voye
-          </button>
+<div
+style="
+margin-top:14px;
+display:flex;
+gap:8px
+"
+>
 
-        </div>
+<input
+type="text"
+placeholder="Poze yon kesyon..."
+style="
+flex:1;
+background:rgba(0,0,0,0.5);
+border:1px solid var(--line);
+border-radius:6px;
+padding:10px;
+color:var(--white);
+font-size:13px
+"
+>
 
-      </div>
+<button
+style="
+background:var(--orange);
+border:none;
+border-radius:6px;
+padding:10px 16px;
+color:#000;
+font-weight:600;
+cursor:pointer
+"
+>
+Voye
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -2121,325 +2285,336 @@ footer{
 ===================================================== -->
 
 <section
-  class="band band-contact"
-  id="contact"
+class="band band-contact"
+id="contact"
 >
 
-  <div class="band-inner">
+<div class="band-inner">
 
-    <h2
-      style="
-        font-size:1.6rem;
-        margin-bottom:20px
-      "
-    >
-      Contact - 9 Rezo Sosyal
-    </h2>
+<h2
+style="
+font-size:1.6rem;
+margin-bottom:20px
+"
+>
+Contact - 9 Rezo Sosyal
+</h2>
 
 
-    <div class="contact-grid">
+<div class="contact-grid">
 
-      <div class="contact-card">
+<div class="contact-card">
 
-        <div class="label">
-          Telephone
-        </div>
+<div class="label">
+Telephone
+</div>
 
-        <div class="value">
+<div class="value">
 
-          <a href="tel:+14076405166">
-            (407) 640-5166
-          </a>
+<a href="tel:+14076405166">
+(407) 640-5166
+</a>
 
-          <br>
+<br>
 
-          <a href="tel:+15162168494">
-            (516) 216-8494
-          </a>
+<a href="tel:+15162168494">
+(516) 216-8494
+</a>
 
-          <br>
+<br>
 
-          <a href="tel:+13175381150">
-            (317) 538-1150
-          </a>
+<a href="tel:+13175381150">
+(317) 538-1150
+</a>
 
-        </div>
+</div>
 
-      </div>
+</div>
 
 
-      <div class="contact-card">
+<div class="contact-card">
 
-        <div class="label">
-          Email
-        </div>
+<div class="label">
+Email
+</div>
 
-        <div class="value">
-          maximaxmultiservices@gmail.com
-        </div>
+<div class="value">
+<a href="mailto:maximaxmultiservices@gmail.com">
+maximaxmultiservices@gmail.com
+</a>
+</div>
 
-      </div>
+</div>
 
 
-      <div class="contact-card">
+<div class="contact-card">
 
-        <div class="label">
-          Address
-        </div>
+<div class="label">
+Address
+</div>
 
-        <div class="value">
-          Pine Hills Orlando FL
-          <br>
-          Indianapolis IN
-          <br>
-          Hempstead NY 11550
-        </div>
+<div class="value">
+Pine Hills Orlando FL
+<br>
+Indianapolis IN
+<br>
+Hempstead NY 11550
+</div>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
 
 
-    <div class="social-row">
+<div class="social-row">
 
 
-      <a
-        class="social-pill"
-        href="https://wa.me/14076405166"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="https://wa.me/14076405166"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-whatsapp"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-whatsapp"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            WhatsApp
-          </span>
+<span class="social-name">
+WhatsApp
+</span>
 
-          <span class="social-action">
-            Chat now
-          </span>
+<span class="social-action">
+Chat now
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-facebook-f"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-facebook-f"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            Facebook
-          </span>
+<span class="social-name">
+Facebook
+</span>
 
-          <span class="social-action">
-            Follow
-          </span>
+<span class="social-action">
+Follow
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-instagram"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-instagram"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            Instagram
-          </span>
+<span class="social-name">
+Instagram
+</span>
 
-          <span class="social-action">
-            See work
-          </span>
+<span class="social-action">
+See work
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-tiktok"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-tiktok"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            TikTok
-          </span>
+<span class="social-name">
+TikTok
+</span>
 
-          <span class="social-action">
-            Watch
-          </span>
+<span class="social-action">
+Watch
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-x-twitter"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-x-twitter"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            X / Twitter
-          </span>
+<span class="social-name">
+X / Twitter
+</span>
 
-          <span class="social-action">
-            Follow
-          </span>
+<span class="social-action">
+Follow
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-youtube"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-youtube"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            YouTube
-          </span>
+<span class="social-name">
+YouTube
+</span>
 
-          <span class="social-action">
-            Subscribe
-          </span>
+<span class="social-action">
+Subscribe
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-linkedin-in"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-linkedin-in"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            LinkedIn
-          </span>
+<span class="social-name">
+LinkedIn
+</span>
 
-          <span class="social-action">
-            Connect
-          </span>
+<span class="social-action">
+Connect
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fab fa-spotify"></i>
-        </div>
+<div class="social-icon">
+<i class="fab fa-spotify"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            Spotify
-          </span>
+<span class="social-name">
+Spotify
+</span>
 
-          <span class="social-action">
-            Listen
-          </span>
+<span class="social-action">
+Listen
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
 
-      <a
-        class="social-pill"
-        href="#"
-        target="_blank"
-      >
+<a
+class="social-pill"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="social-icon">
-          <i class="fas fa-bold"></i>
-        </div>
+<div class="social-icon">
+<i class="fas fa-bold"></i>
+</div>
 
-        <div class="social-text">
+<div class="social-text">
 
-          <span class="social-name">
-            Truth Social
-          </span>
+<span class="social-name">
+Truth Social
+</span>
 
-          <span class="social-action">
-            Follow
-          </span>
+<span class="social-action">
+Follow
+</span>
 
-        </div>
+</div>
 
-      </a>
+</a>
 
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
@@ -2447,56 +2622,74 @@ footer{
 
 <!-- =====================================================
      FOOTER
+     PREMYE LIY LAN RETIRE
 ===================================================== -->
 
 <footer>
 
-  <div>
-    © 2025 Maximax Multi Services -
-    9 Modules + EOIR+BIA + AI Center +
-    Logo maximax-best-multi.mp4
-  </div>
+<div class="footer-cats">
 
+<span>
+NOTARY
+</span>
 
-  <div class="footer-cats">
+<span>
+TAXES
+</span>
 
-    <span>
-      NOTARY
-    </span>
+<span>
+IMMIGRATION
+</span>
 
-    <span>
-      TAXES
-    </span>
+<span>
+EOIR+BIA
+</span>
 
-    <span>
-      IMMIGRATION
-    </span>
+<span>
+INSURANCE
+</span>
 
-    <span>
-      EOIR+BIA
-    </span>
+<span>
+REAL ESTATE
+</span>
 
-    <span>
-      INSURANCE
-    </span>
+<span>
+BUSINESS
+</span>
 
-    <span>
-      REAL ESTATE
-    </span>
+<span>
+APOSTILLE
+</span>
 
-    <span>
-      BUSINESS
-    </span>
+<span>
+TRAVEL
+</span>
 
-    <span>
-      APOSTILLE
-    </span>
+<span>
+MAXIMAX AI CENTER
+</span>
 
-    <span>
-      TRAVEL
-    </span>
+<span>
+FORM HELPER
+</span>
 
-  </div>
+<span>
+CAREER TRACKER
+</span>
+
+<span>
+TRADIKSYON AI
+</span>
+
+<span>
+CHAT 24/7
+</span>
+
+<span>
+TRY AI CENTER
+</span>
+
+</div>
 
 </footer>
 
@@ -2506,10 +2699,10 @@ footer{
 
 function toggleFile(id){
 
-  document
-  .getElementById(id)
-  .classList
-  .toggle('open');
+document
+.getElementById(id)
+.classList
+.toggle('open');
 
 }
 
@@ -2517,16 +2710,35 @@ function toggleFile(id){
 document
 .getElementById('menuBtn')
 .addEventListener(
-  'click',
-  function(){
+'click',
+function(){
 
-    document
-    .getElementById('mobileNav')
-    .classList
-    .toggle('open');
+document
+.getElementById('mobileNav')
+.classList
+.toggle('open');
 
-  }
+}
 );
+
+
+document
+.querySelectorAll('#mobileNav a')
+.forEach(function(link){
+
+link.addEventListener(
+'click',
+function(){
+
+document
+.getElementById('mobileNav')
+.classList
+.remove('open');
+
+}
+);
+
+});
 
 </script>
 
