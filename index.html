@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Maximax Multi Services - 15 Modules + EOIR/BIA + AI Center</title>
+<title>Maximax Multi Services - Services & AI Center</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,143 +16,58 @@
 <style>
 
 :root{
-  --black:#000000;
-  --black2:#000000;
-  --orange:#FF6A00;
-  --orange-light:#FFA347;
-  --text:#FFC98A;
-  --line:rgba(255,163,71,0.35);
-  --panel:rgba(0,0,0,0.72)
+--black:#000000;
+--orange:#FF6A00;
+--orange-light:#FFA347;
+--text:#FFC98A;
+--line:rgba(255,163,71,.35);
+--panel:rgba(0,0,0,.72)
 }
 
 *{
-  box-sizing:border-box
+box-sizing:border-box
 }
 
 html{
-  scroll-behavior:smooth;
-  min-height:100%;
-  background:
-    linear-gradient(
-      150deg,
-      #000000 0%,
-      #000000 14%,
-      #7A2E00 46%,
-      #FF6A00 68%,
-      #000000 100%
-    );
-  background-attachment:fixed;
-  background-size:cover;
-  background-repeat:no-repeat
+scroll-behavior:smooth;
+min-height:100%;
+background:
+linear-gradient(
+150deg,
+#000 0%,
+#000 14%,
+#7A2E00 46%,
+#FF6A00 68%,
+#000 100%
+);
+background-attachment:fixed
 }
 
 body{
-  margin:0;
-  color:var(--text);
-  font-family:'Public Sans',sans-serif;
-  background:transparent!important;
-  min-height:100vh
+margin:0;
+min-height:100vh;
+background:transparent;
+color:var(--text);
+font-family:'Public Sans',sans-serif
 }
 
 h1,h2,h3{
-  font-family:'Fraunces',serif;
-  margin:0
+font-family:'Fraunces',serif;
+margin:0
 }
 
 a{
-  color:inherit;
-  text-decoration:none
+color:inherit;
+text-decoration:none
 }
 
-video,img{
-  max-width:100%;
-  display:block
+img,video{
+max-width:100%;
+display:block
 }
 
 button{
-  font-family:inherit
-}
-
-
-/* =====================================================
-LOGO
-===================================================== */
-
-.logo-mark{
-  position:relative;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  overflow:hidden;
-  border:2px solid var(--orange-light);
-  flex-shrink:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-
-.logo-mark video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:2;
-  background:#000
-}
-
-.logo-mark .fallback{
-  font-family:'Fraunces',serif;
-  font-weight:700;
-  color:var(--orange-light);
-  font-size:16px;
-  z-index:1
-}
-
-.seal{
-  position:relative;
-  width:112px;
-  height:112px;
-  border-radius:50%;
-  border:2px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  background:#000;
-  overflow:hidden
-}
-
-.seal video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  z-index:2
-}
-
-.seal .seal-fallback{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.14em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  z-index:1;
-  text-align:center
-}
-
-.seal::before{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:1px dashed var(--orange-light);
-  border-radius:50%;
-  opacity:.6;
-  pointer-events:none;
-  z-index:3
+font-family:inherit
 }
 
 
@@ -161,103 +76,113 @@ HEADER
 ===================================================== */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(7,5,2,0.94);
-  border-bottom:1px solid var(--line)
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(0,0,0,.94);
+border-bottom:1px solid var(--line)
 }
 
 .nav-wrap{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 24px;
-  gap:16px
+max-width:1180px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 24px;
+gap:16px
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.logo-mark{
+position:relative;
+width:54px;
+height:54px;
+border-radius:50%;
+overflow:hidden;
+border:2px solid var(--orange-light);
+background:#000;
+flex-shrink:0
+}
+
+.logo-mark video{
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 .brand-name{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:16px
+font-family:'Fraunces',serif;
+font-size:20px;
+font-weight:700
 }
 
 .brand-name span{
-  display:block;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.16em;
-  color:var(--orange-light);
-  margin-top:2px
+display:block;
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+letter-spacing:.2em;
+color:var(--orange-light);
+margin-top:3px
 }
 
 .desktop-nav{
-  display:flex;
-  gap:14px;
-  font-size:12px;
-  align-items:center;
-  flex-wrap:wrap
+display:flex;
+align-items:center;
+gap:15px;
+font-size:12px
 }
 
 .desktop-nav a{
-  opacity:.8;
-  padding:4px 0;
-  border-bottom:1px solid transparent;
-  transition:.2s
+opacity:.85
 }
 
 .desktop-nav a:hover{
-  opacity:1;
-  color:var(--orange-light);
-  border-color:var(--orange-light)
+color:var(--orange-light);
+opacity:1
 }
 
 .menu-btn{
-  display:none;
-  background:#000;
-  border:1px solid var(--line);
-  color:var(--orange-light);
-  width:38px;
-  height:38px;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:16px
+display:none;
+width:42px;
+height:42px;
+border:1px solid var(--line);
+background:#000;
+color:var(--orange-light);
+border-radius:7px;
+font-size:20px;
+cursor:pointer
 }
 
 .mobile-nav{
-  display:none;
-  flex-direction:column;
-  padding:0 24px 18px;
-  gap:2px
+display:none;
+flex-direction:column;
+padding:0 20px 18px
 }
 
 .mobile-nav a{
-  padding:9px 6px;
-  font-size:14px;
-  border-bottom:1px solid var(--line)
+padding:11px 4px;
+border-bottom:1px solid var(--line)
 }
 
 .mobile-nav.open{
-  display:flex
+display:flex
 }
 
 @media(max-width:900px){
 
-  .desktop-nav{
-    display:none
-  }
+.desktop-nav{
+display:none
+}
 
-  .menu-btn{
-    display:block
-  }
+.menu-btn{
+display:block
+}
 
 }
 
@@ -267,258 +192,224 @@ HERO
 ===================================================== */
 
 .hero{
-  max-width:1180px;
-  margin:0 auto;
-  padding:72px 24px 60px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:40px;
-  align-items:center
+max-width:1180px;
+margin:auto;
+padding:70px 24px 55px;
+display:grid;
+grid-template-columns:1fr auto;
+align-items:center;
+gap:45px
 }
 
 .eyebrow{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:.2em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  margin-bottom:18px;
-  display:block
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.2em;
+color:var(--orange-light);
+text-transform:uppercase
 }
 
 .hero h1{
-  font-size:clamp(2.2rem,5.2vw,3.9rem);
-  font-weight:600;
-  line-height:1.06
+font-size:clamp(2.2rem,5vw,4rem);
+line-height:1.06;
+margin-top:18px
 }
 
 .hero h1 em{
-  display:block;
-  font-style:italic;
-  color:var(--orange-light)
+color:var(--orange-light);
+font-style:italic
 }
 
-.hero p.lede{
-  margin-top:20px;
-  max-width:560px;
-  font-size:16px;
-  line-height:1.65;
-  opacity:.88
+.lede{
+max-width:610px;
+font-size:16px;
+line-height:1.7;
+opacity:.9
 }
 
-.hero .creole{
-  margin-top:10px;
-  font-style:italic;
-  color:var(--orange-light);
-  font-size:14px
+.creole{
+color:var(--orange-light);
+font-style:italic
 }
 
 .hero-cta{
-  margin-top:28px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:26px
 }
 
 .btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:13px 22px;
-  border-radius:3px;
-  display:inline-block;
-  border:1px solid transparent
+display:inline-block;
+padding:13px 20px;
+font-family:'IBM Plex Mono',monospace;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em;
+border-radius:4px
 }
 
 .btn-primary{
-  background:var(--orange);
-  color:#1A0E05
+background:var(--orange);
+color:#000
 }
 
 .btn-ghost{
-  border:1px solid var(--line);
-  color:var(--text)
+border:1px solid var(--line)
 }
 
-@media(max-width:860px){
+.hero-seal{
+width:135px
+}
 
-  .hero{
-    grid-template-columns:1fr
-  }
+.hero-seal video{
+width:135px;
+height:135px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid var(--orange-light);
+box-shadow:0 0 35px rgba(255,106,0,.35)
+}
 
-  .hero-seal{
-    display:none
-  }
+@media(max-width:800px){
+
+.hero{
+grid-template-columns:1fr
+}
+
+.hero-seal{
+display:none
+}
 
 }
 
 
 /* =====================================================
-MAIN LOGO SHOWCASE
+MAIN LOGO
 ===================================================== */
 
 .maximax-logo-showcase{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 24px 58px
+max-width:1180px;
+margin:auto;
+padding:0 24px 55px
 }
 
 .maximax-logo-stage{
-  position:relative;
-  width:min(100%,760px);
-  margin:0 auto;
-  padding:18px;
-  overflow:hidden;
-  border:1px solid var(--orange-light);
-  border-radius:20px;
-
-  background:
-    radial-gradient(
-      circle at 50% 42%,
-      rgba(255,106,0,.24),
-      rgba(0,0,0,.96) 62%,
-      #000 100%
-    );
-
-  box-shadow:
-    0 0 30px rgba(255,106,0,.20),
-    0 0 80px rgba(255,106,0,.10),
-    0 28px 70px rgba(0,0,0,.65)
-}
-
-.maximax-logo-stage::before{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:1px solid rgba(255,163,71,.22);
-  border-radius:14px;
-  pointer-events:none;
-  z-index:3
+max-width:760px;
+margin:auto;
+padding:16px;
+border:1px solid var(--orange-light);
+border-radius:20px;
+background:#000;
+box-shadow:0 0 45px rgba(255,106,0,.25)
 }
 
 .maximax-logo-title{
-  position:relative;
-  z-index:4;
-  margin:0 0 14px;
-  text-align:center;
-  color:var(--orange-light);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:.20em;
-  text-transform:uppercase
+text-align:center;
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.2em;
+color:var(--orange-light);
+padding:4px 0 15px
 }
 
 .maximax-logo-video{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-height:430px;
-  object-fit:contain;
-  border-radius:13px;
-  background:#000
-}
-
-.maximax-logo-line{
-  position:relative;
-  z-index:4;
-  width:70%;
-  max-width:420px;
-  height:1px;
-  margin:15px auto 0;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    var(--orange-light),
-    transparent
-  )
+width:100%;
+border-radius:12px
 }
 
 
 /* =====================================================
-15 OFFICIAL MAXIMAX SEAL MODULES
-NO PNG REQUIRED
+15 LOGO MODULES
 ===================================================== */
 
-.module-seals-section{
-  max-width:1240px;
-  margin:0 auto;
-  padding:15px 22px 70px
+.module-logo-section{
+max-width:1180px;
+margin:auto;
+padding:55px 24px 70px
 }
 
-.module-seals-heading{
-  text-align:center;
-  margin-bottom:35px
+.module-heading{
+text-align:center;
+margin-bottom:30px
 }
 
-.module-seals-heading .mini{
-  font-family:'IBM Plex Mono',monospace;
-  color:var(--orange-light);
-  font-size:10px;
-  letter-spacing:.22em;
-  text-transform:uppercase
+.module-heading small{
+font-family:'IBM Plex Mono',monospace;
+letter-spacing:.22em;
+color:var(--orange-light)
 }
 
-.module-seals-heading h2{
-  margin-top:10px;
-  font-size:clamp(1.9rem,4vw,3rem);
-  color:var(--orange-light)
+.module-heading h2{
+font-size:clamp(2rem,5vw,3.4rem);
+color:var(--orange-light);
+margin-top:10px
 }
 
-.module-seals-heading p{
-  max-width:700px;
-  margin:12px auto 0;
-  font-size:13px;
-  line-height:1.7
+.module-heading p{
+max-width:720px;
+margin:16px auto 0;
+line-height:1.7
 }
 
-.module-seals-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:30px
+
+/*
+IMPORTANT:
+
+Upload generated 15-logo image in same folder as index.html
+with EXACT filename:
+
+maximax-modules-grid.png
+*/
+
+.module-master{
+position:relative;
+width:100%;
+max-width:1150px;
+margin:auto;
+border:1px solid rgba(255,106,0,.5);
+border-radius:18px;
+overflow:hidden;
+background:#000;
+box-shadow:
+0 0 25px rgba(255,106,0,.25),
+0 30px 80px rgba(0,0,0,.6)
 }
 
-.service-seal{
-  display:block;
-  position:relative;
-  aspect-ratio:1 / 1;
-  transition:.25s;
-  filter:drop-shadow(0 18px 22px rgba(0,0,0,.65))
+.module-master img{
+width:100%;
+height:auto;
+display:block
 }
 
-.service-seal:hover{
-  transform:translateY(-7px) scale(1.025);
-  filter:
-    drop-shadow(0 18px 22px rgba(0,0,0,.7))
-    drop-shadow(0 0 16px rgba(255,106,0,.35))
+
+/*
+5 COLUMNS × 3 ROWS
+Invisible clickable buttons over each logo.
+*/
+
+.module-hotspots{
+position:absolute;
+inset:0;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+grid-template-rows:repeat(3,1fr);
+z-index:5
 }
 
-.service-seal svg{
-  display:block;
-  width:100%;
-  height:100%
+.module-hotspot{
+position:relative;
+display:block;
+border:1px solid transparent;
+transition:.2s
 }
 
-@media(max-width:900px){
-
-  .module-seals-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr))
-  }
-
-}
-
-@media(max-width:580px){
-
-  .module-seals-grid{
-    grid-template-columns:1fr
-  }
-
-  .service-seal{
-    width:min(100%,350px);
-    margin:0 auto
-  }
-
+.module-hotspot:hover,
+.module-hotspot:focus{
+background:rgba(255,106,0,.08);
+border-color:rgba(255,163,71,.65);
+box-shadow:inset 0 0 28px rgba(255,106,0,.18);
+outline:none
 }
 
 
@@ -527,32 +418,25 @@ CATEGORY MAP
 ===================================================== */
 
 .catmap{
-  background:rgba(0,0,0,0.35);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:22px 24px
+padding:22px 24px;
+background:rgba(0,0,0,.5);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
 }
 
 .catmap-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 18px;
-  justify-content:center
+max-width:1180px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px 18px
 }
 
 .catmap-item{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--orange-light);
-  opacity:.9
-}
-
-.catmap-item b{
-  color:#FFC98A;
-  opacity:.6;
-  margin-right:4px
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+color:var(--orange-light)
 }
 
 
@@ -561,136 +445,118 @@ SERVICES
 ===================================================== */
 
 main{
-  max-width:1180px;
-  margin:0 auto;
-  padding:40px 20px
+max-width:1180px;
+margin:auto;
+padding:45px 20px
 }
 
 .file{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:8px;
-  margin-bottom:18px;
-  overflow:hidden
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:9px;
+margin-bottom:18px;
+overflow:hidden
 }
 
 .file-tab{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 20px;
-  cursor:pointer
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:19px 20px;
+cursor:pointer
 }
 
 .file-tab-left{
-  display:flex;
-  align-items:center;
-  gap:12px
+display:flex;
+align-items:center;
+gap:13px
 }
 
 .file-num{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  border:1px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  color:var(--orange-light);
-  flex-shrink:0
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid var(--orange-light);
+display:grid;
+place-items:center;
+font-size:11px;
+color:var(--orange-light)
 }
 
 .file-tab h2{
-  font-size:1.2rem
+font-size:1.25rem
 }
 
 .file-tab .sub{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--orange-light);
-  margin-top:3px;
-  opacity:.7
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:.1em;
+color:var(--orange-light);
+margin-top:4px
 }
 
 .chev{
-  width:20px;
-  height:20px;
-  flex-shrink:0;
-  transition:transform .3s;
-  opacity:.7;
-  color:var(--orange-light)
+color:var(--orange-light);
+transition:.3s
 }
 
 .file.open .chev{
-  transform:rotate(180deg)
+transform:rotate(180deg)
 }
 
 .file-body{
-  display:none;
-  padding:0 20px 18px
+display:none;
+padding:0 20px 20px
 }
 
 .file.open .file-body{
-  display:block
+display:block
 }
 
 .service-list{
-  columns:2;
-  column-gap:24px;
-  list-style:none;
-  margin:0;
-  padding:0
+columns:2;
+column-gap:25px;
+list-style:none;
+margin:0;
+padding:0
 }
 
 .service-list li{
-  break-inside:avoid;
-  display:flex;
-  gap:8px;
-  padding:6px 0;
-  border-bottom:1px dotted var(--line);
-  font-size:13px
+break-inside:avoid;
+padding:7px 0;
+border-bottom:1px dotted var(--line);
+font-size:13px
 }
 
 .service-list li::before{
-  content:"✓";
-  color:var(--orange-light);
-  font-weight:700;
-  flex-shrink:0
+content:"✓ ";
+color:var(--orange-light);
+font-weight:700
+}
+
+.myaccess-btn-wrap{
+margin-top:20px
+}
+
+.myaccess-btn{
+display:inline-block;
+background:var(--orange);
+color:#000;
+padding:12px 20px;
+border-radius:4px;
+font-family:'IBM Plex Mono',monospace;
+font-size:11px;
+font-weight:600;
+text-transform:uppercase
 }
 
 @media(max-width:600px){
 
-  .service-list{
-    columns:1
-  }
-
+.service-list{
+columns:1
 }
 
-.myaccess-btn-wrap{
-  margin-top:22px
-}
-
-.myaccess-btn{
-  display:inline-block;
-  padding:13px 22px;
-  border-radius:4px;
-  background:var(--orange);
-  color:#160900;
-  text-decoration:none;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  font-weight:600;
-  border:1px solid var(--orange);
-  transition:.2s
-}
-
-.myaccess-btn:hover{
-  background:var(--orange-light)
 }
 
 
@@ -699,78 +565,70 @@ AI CENTER
 ===================================================== */
 
 .ai-center{
-  background:rgba(0,0,0,0.55);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:50px 24px;
-  margin:40px 0
+padding:60px 24px;
+background:rgba(0,0,0,.58);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
 }
 
 .ai-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center
+max-width:1180px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
 }
 
 .ai-badge{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  letter-spacing:.2em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  margin-bottom:12px;
-  display:inline-block;
-  border:1px solid var(--line);
-  padding:6px 12px;
-  border-radius:20px
+display:inline-block;
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.18em;
+color:var(--orange-light);
+border:1px solid var(--line);
+padding:7px 12px;
+border-radius:20px
 }
 
 .ai-center h2{
-  font-size:2rem;
-  line-height:1.1;
-  margin-bottom:14px
+font-size:2rem;
+margin:14px 0
 }
 
 .ai-center p{
-  font-size:14px;
-  line-height:1.6;
-  opacity:.85
+font-size:14px;
+line-height:1.7
 }
 
 .ai-features{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px
 }
 
 .ai-feat{
-  border:1px solid var(--line);
-  border-radius:6px;
-  padding:14px;
-  background:rgba(0,0,0,0.35)
+border:1px solid var(--line);
+border-radius:7px;
+padding:15px;
+background:rgba(0,0,0,.45)
 }
 
 .ai-feat b{
-  display:block;
-  font-size:13px;
-  margin-bottom:4px;
-  color:var(--orange-light)
+display:block;
+color:var(--orange-light);
+margin-bottom:6px
 }
 
 .ai-feat span{
-  font-size:12px;
-  opacity:.8
+font-size:12px
 }
 
 @media(max-width:800px){
 
-  .ai-inner{
-    grid-template-columns:1fr
-  }
+.ai-inner{
+grid-template-columns:1fr
+}
 
 }
 
@@ -780,44 +638,40 @@ CONTACT
 ===================================================== */
 
 .band{
-  padding:40px 24px
+padding:50px 24px
 }
 
 .band-inner{
-  max-width:1180px;
-  margin:0 auto
-}
-
-.band-contact{
-  background:rgba(0,0,0,0.5)
+max-width:1180px;
+margin:auto
 }
 
 .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-  margin:20px 0
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin:20px 0
 }
 
 .contact-card{
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:16px;
-  background:rgba(0,0,0,0.35)
+border:1px solid var(--line);
+background:rgba(0,0,0,.5);
+border-radius:8px;
+padding:16px
 }
 
 .label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--orange-light);
-  margin-bottom:6px
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:.15em;
+color:var(--orange-light);
+margin-bottom:7px
 }
 
 .value{
-  font-size:14px;
-  line-height:1.6
+line-height:1.7;
+font-size:14px
 }
 
 
@@ -826,60 +680,45 @@ SOCIAL
 ===================================================== */
 
 .social-row{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:10px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px
 }
 
 .social-pill{
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:10px 12px;
-  font-size:12px;
-  background:rgba(0,0,0,.48);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-height:50px;
-  transition:.2s
-}
-
-.social-pill:hover{
-  border-color:var(--orange-light);
-  color:var(--orange-light);
-  transform:translateY(-2px);
-  background:rgba(255,106,0,.08)
+border:1px solid var(--line);
+border-radius:10px;
+padding:11px;
+display:flex;
+align-items:center;
+gap:10px;
+background:rgba(0,0,0,.55)
 }
 
 .social-icon{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  border:1px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:16px;
-  color:var(--orange-light);
-  background:#000
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid var(--orange-light);
+display:grid;
+place-items:center;
+color:var(--orange-light)
 }
 
 .social-text{
-  display:flex;
-  flex-direction:column;
-  gap:2px
+display:flex;
+flex-direction:column
 }
 
 .social-name{
-  font-weight:700;
-  font-size:12px
+font-weight:700;
+font-size:12px
 }
 
 .social-action{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:8px;
-  color:var(--orange-light)
+font-family:'IBM Plex Mono',monospace;
+font-size:8px;
+color:var(--orange-light)
 }
 
 
@@ -888,33 +727,30 @@ FOOTER
 ===================================================== */
 
 footer{
-  background:rgba(0,0,0,0.7);
-  padding:30px 20px;
-  border-top:1px solid var(--line);
-  text-align:center;
-  font-size:11px
+background:#000;
+padding:28px 20px;
+border-top:1px solid var(--line)
 }
 
 .footer-cats{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 16px;
-  justify-content:center;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--orange-light)
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:9px 18px;
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+color:var(--orange-light)
 }
 
 </style>
 </head>
 
-
 <body>
 
 
-<!-- =====================================================
-HEADER
-===================================================== -->
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
 
 <header>
 
@@ -924,26 +760,11 @@ HEADER
 
 <div class="logo-mark">
 
-<span class="fallback">
-M
-</span>
-
-<video
-autoplay
-muted
-loop
-playsinline
-preload="auto"
-onerror="this.style.display='none'"
->
-<source
-src="./maximax-best-multi.mp4"
-type="video/mp4"
->
+<video autoplay muted loop playsinline>
+<source src="./maximax-best-multi.mp4" type="video/mp4">
 </video>
 
 </div>
-
 
 <div class="brand-name">
 
@@ -961,62 +782,55 @@ MULTI SERVICES • EST 2020
 <nav class="desktop-nav">
 
 <a href="#hero">
-Home
+HOME
 </a>
 
-<a href="#official-modules">
-Modules
+<a href="#modules">
+MODULES
 </a>
 
 <a href="#services">
-Services
+SERVICES
 </a>
 
 <a href="#ai-center">
-AI Center
+AI CENTER
 </a>
 
 <a href="#contact">
-Contact
+CONTACT
 </a>
 
 </nav>
 
 
-<button
-class="menu-btn"
-id="menuBtn"
-type="button"
->
+<button class="menu-btn" id="menuBtn">
 ☰
 </button>
 
 </div>
 
 
-<div
-class="mobile-nav"
-id="mobileNav"
->
+<div class="mobile-nav" id="mobileNav">
 
 <a href="#hero">
-Home
+HOME
 </a>
 
-<a href="#official-modules">
-Modules
+<a href="#modules">
+MODULES
 </a>
 
 <a href="#services">
-Services
+SERVICES
 </a>
 
 <a href="#ai-center">
-AI Center
+AI CENTER
 </a>
 
 <a href="#contact">
-Contact
+CONTACT
 </a>
 
 </div>
@@ -1025,14 +839,11 @@ Contact
 
 
 
-<!-- =====================================================
-HERO
-===================================================== -->
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
 
-<section
-class="hero"
-id="hero"
->
+<section class="hero" id="hero">
 
 <div>
 
@@ -1050,6 +861,7 @@ Life in the USA
 
 </h1>
 
+
 <p class="lede">
 
 Maximax Multi Services — Notary, Taxes,
@@ -1059,24 +871,21 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 </p>
 
+
 <p class="creole">
+
 Nou pale Kreyòl, English, Español.
+
 </p>
 
 
 <div class="hero-cta">
 
-<a
-href="#contact"
-class="btn btn-primary"
->
+<a href="#contact" class="btn btn-primary">
 Book Appointment
 </a>
 
-<a
-href="#official-modules"
-class="btn btn-ghost"
->
+<a href="#modules" class="btn btn-ghost">
 Explore Services
 </a>
 
@@ -1087,29 +896,13 @@ Explore Services
 
 <div class="hero-seal">
 
-<div class="seal">
+<video autoplay muted loop playsinline>
 
-<span class="seal-fallback">
-Maximax
-<br>
-Services
-</span>
-
-<video
-autoplay
-muted
-loop
-playsinline
-preload="auto"
-onerror="this.style.display='none'"
->
 <source
 src="./maximax-best-multi.mp4"
-type="video/mp4"
->
-</video>
+type="video/mp4">
 
-</div>
+</video>
 
 </div>
 
@@ -1117,9 +910,9 @@ type="video/mp4"
 
 
 
-<!-- =====================================================
-SECOND ORIGINAL LOGO
-===================================================== -->
+<!-- ================================================= -->
+<!-- SECOND LOGO -->
+<!-- ================================================= -->
 
 <section class="maximax-logo-showcase">
 
@@ -1134,16 +927,13 @@ class="maximax-logo-video"
 autoplay
 muted
 loop
-playsinline
-preload="auto"
->
+playsinline>
+
 <source
 src="./maxima-xbest.mp4"
-type="video/mp4"
->
-</video>
+type="video/mp4">
 
-<div class="maximax-logo-line"></div>
+</video>
 
 </div>
 
@@ -1151,109 +941,249 @@ type="video/mp4"
 
 
 
-<!-- =====================================================
-15 OFFICIAL MAXIMAX MODULE SEALS
-DIRECTLY INSIDE INDEX.HTML
-NO EXTRA PNG REQUIRED
-===================================================== -->
+<!-- ================================================= -->
+<!-- 15 OFFICIAL LOGO MODULES -->
+<!-- ================================================= -->
 
 <section
-class="module-seals-section"
-id="official-modules"
+class="module-logo-section"
+id="modules"
 >
 
-<div class="module-seals-heading">
+<div class="module-heading">
 
-<div class="mini">
+<small>
 MAXIMAX MULTI SERVICES
-</div>
+</small>
 
 <h2>
-15 OFFICIAL MODULES
+SERVICES & AI MODULES
 </h2>
 
 <p>
-Services professionnels • Assistance administrative • Intelligence artificielle • Support digital
+15 modules • Services professionnels • Assistance digitale • Intelligence artificielle
 </p>
 
 </div>
 
 
-<div
-class="module-seals-grid"
-id="moduleSealsGrid"
-></div>
+<div class="module-master">
+
+<img
+src="./maximax-modules-grid.png"
+alt="Maximax Multi Services 15 Modules"
+id="moduleGridImage"
+>
+
+
+<div class="module-hotspots">
+
+
+<!-- ROW 1 -->
+
+
+<a
+href="#mod1"
+class="module-hotspot"
+title="Notary & Translation"
+aria-label="Notary & Translation">
+</a>
+
+
+<a
+href="#mod2"
+class="module-hotspot"
+title="Taxes & Accounting"
+aria-label="Taxes & Accounting">
+</a>
+
+
+<a
+href="#mod3"
+class="module-hotspot"
+title="Immigration Services"
+aria-label="Immigration Services">
+</a>
+
+
+<a
+href="#mod4"
+class="module-hotspot"
+title="EOIR & BIA"
+aria-label="EOIR & BIA">
+</a>
+
+
+<a
+href="#mod5"
+class="module-hotspot"
+title="Insurance"
+aria-label="Insurance">
+</a>
+
+
+
+<!-- ROW 2 -->
+
+
+<a
+href="#mod6"
+class="module-hotspot"
+title="Real Estate"
+aria-label="Real Estate">
+</a>
+
+
+<a
+href="#mod7"
+class="module-hotspot"
+title="Business Formation"
+aria-label="Business Formation">
+</a>
+
+
+<a
+href="#mod8"
+class="module-hotspot"
+title="Apostille & Legalization"
+aria-label="Apostille & Legalization">
+</a>
+
+
+<a
+href="#mod9"
+class="module-hotspot"
+title="Travel & DMV Services"
+aria-label="Travel & DMV Services">
+</a>
+
+
+<a
+href="#ai-center"
+class="module-hotspot"
+title="Maximax AI Center"
+aria-label="Maximax AI Center">
+</a>
+
+
+
+<!-- ROW 3 -->
+
+
+<a
+href="#form-helper"
+class="module-hotspot"
+title="Form Helper"
+aria-label="Form Helper">
+</a>
+
+
+<a
+href="#career-tracker"
+class="module-hotspot"
+title="Career Tracker"
+aria-label="Career Tracker">
+</a>
+
+
+<a
+href="#translation-ai"
+class="module-hotspot"
+title="Tradiksyon AI"
+aria-label="Tradiksyon AI">
+</a>
+
+
+<a
+href="#chat247"
+class="module-hotspot"
+title="Chat 24/7"
+aria-label="Chat 24/7">
+</a>
+
+
+<a
+href="#try-ai"
+class="module-hotspot"
+title="Try AI Center"
+aria-label="Try AI Center">
+</a>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
-CATEGORY MAP
-===================================================== -->
+<!-- ================================================= -->
+<!-- CATEGORY MAP -->
+<!-- ================================================= -->
 
 <div class="catmap">
 
 <div class="catmap-inner">
 
 <a class="catmap-item" href="#mod1">
-<b>01</b> NOTARY
+01 NOTARY
 </a>
 
 <a class="catmap-item" href="#mod2">
-<b>02</b> TAXES
+02 TAXES
 </a>
 
 <a class="catmap-item" href="#mod3">
-<b>03</b> IMMIGRATION
+03 IMMIGRATION
 </a>
 
 <a class="catmap-item" href="#mod4">
-<b>04</b> EOIR+BIA
+04 EOIR+BIA
 </a>
 
 <a class="catmap-item" href="#mod5">
-<b>05</b> INSURANCE
+05 INSURANCE
 </a>
 
 <a class="catmap-item" href="#mod6">
-<b>06</b> REAL ESTATE
+06 REAL ESTATE
 </a>
 
 <a class="catmap-item" href="#mod7">
-<b>07</b> BUSINESS
+07 BUSINESS
 </a>
 
 <a class="catmap-item" href="#mod8">
-<b>08</b> APOSTILLE
+08 APOSTILLE
 </a>
 
 <a class="catmap-item" href="#mod9">
-<b>09</b> TRAVEL+DMV
+09 TRAVEL+DMV
 </a>
 
 <a class="catmap-item" href="#ai-center">
-<b>10</b> AI CENTER
+10 AI CENTER
 </a>
 
 <a class="catmap-item" href="#form-helper">
-<b>11</b> FORM HELPER
+11 FORM HELPER
 </a>
 
 <a class="catmap-item" href="#career-tracker">
-<b>12</b> CAREER TRACKER
+12 CAREER TRACKER
 </a>
 
 <a class="catmap-item" href="#translation-ai">
-<b>13</b> TRADIKSYON AI
+13 TRADIKSYON AI
 </a>
 
 <a class="catmap-item" href="#chat247">
-<b>14</b> CHAT 24/7
+14 CHAT 24/7
 </a>
 
 <a class="catmap-item" href="#try-ai">
-<b>15</b> TRY AI
+15 TRY AI
 </a>
 
 </div>
@@ -1262,19 +1192,16 @@ CATEGORY MAP
 
 
 
-<!-- =====================================================
-SERVICES
-===================================================== -->
+<!-- ================================================= -->
+<!-- SERVICES -->
+<!-- ================================================= -->
 
 <main id="services">
 
 
-<!-- MODULE 01 -->
+<!-- 01 -->
 
-<div
-class="file open"
-id="mod1"
->
+<div class="file open" id="mod1">
 
 <div
 class="file-tab"
@@ -1312,12 +1239,29 @@ Certified • Fast • All 50 States
 
 <ul class="service-list">
 
-<li>Notary Public - All 50 States</li>
-<li>Mobile Notary - We come to you</li>
-<li>Power of Attorney</li>
-<li>Affidavit & Legal Letters</li>
-<li>Document Apostille</li>
-<li>Travel Consent for Minors</li>
+<li>
+Notary Public - All 50 States
+</li>
+
+<li>
+Mobile Notary - We come to you
+</li>
+
+<li>
+Power of Attorney
+</li>
+
+<li>
+Affidavit & Legal Letters
+</li>
+
+<li>
+Certified Translation
+</li>
+
+<li>
+Travel Consent for Minors
+</li>
 
 </ul>
 
@@ -1327,12 +1271,9 @@ Certified • Fast • All 50 States
 
 
 
-<!-- MODULE 02 -->
+<!-- 02 -->
 
-<div
-class="file open"
-id="mod2"
->
+<div class="file open" id="mod2">
 
 <div
 class="file-tab"
@@ -1352,7 +1293,7 @@ Taxes & Accounting
 </h2>
 
 <div class="sub">
-Maximize your refund - ITIN
+Tax Preparation • ITIN • Accounting
 </div>
 
 </div>
@@ -1370,22 +1311,35 @@ Maximize your refund - ITIN
 
 <ul class="service-list">
 
-<li>Personal Taxes - Form 1040</li>
-<li>Business Taxes - LLC, S-Corp, C-Corp</li>
-<li>ITIN Application & Renewal - W7</li>
-<li>Bookkeeping & Payroll</li>
-<li>IRS Letter & Audit Help</li>
-<li>Tax Amendment - 1040X</li>
+<li>
+Personal Taxes - Form 1040
+</li>
+
+<li>
+Business Taxes - LLC, S-Corp, C-Corp
+</li>
+
+<li>
+ITIN Application & Renewal - W7
+</li>
+
+<li>
+Bookkeeping & Payroll
+</li>
+
+<li>
+IRS Letter Assistance
+</li>
+
+<li>
+Tax Amendment - 1040X
+</li>
 
 </ul>
 
-
 <div class="myaccess-btn-wrap">
 
-<a
-class="myaccess-btn"
-href="#contact"
->
+<a class="myaccess-btn" href="#contact">
 File My Taxes Now
 </a>
 
@@ -1397,12 +1351,9 @@ File My Taxes Now
 
 
 
-<!-- MODULE 03 -->
+<!-- 03 -->
 
-<div
-class="file open"
-id="mod3"
->
+<div class="file open" id="mod3">
 
 <div
 class="file-tab"
@@ -1440,12 +1391,29 @@ TPS • Asylum • Family Petition
 
 <ul class="service-list">
 
-<li>TPS Application & Renewal</li>
-<li>Asylum & Work Permit (I-765)</li>
-<li>Family Petition (I-130)</li>
-<li>Green Card & Citizenship (N-400)</li>
-<li>USCIS Form Preparation - All Forms</li>
-<li>DACA Renewal</li>
+<li>
+TPS Application & Renewal
+</li>
+
+<li>
+Asylum & Work Permit
+</li>
+
+<li>
+Family Petition I-130
+</li>
+
+<li>
+Green Card Assistance
+</li>
+
+<li>
+Citizenship N-400
+</li>
+
+<li>
+USCIS Form Preparation
+</li>
 
 </ul>
 
@@ -1455,12 +1423,9 @@ TPS • Asylum • Family Petition
 
 
 
-<!-- MODULE 04 -->
+<!-- 04 -->
 
-<div
-class="file open"
-id="mod4"
->
+<div class="file open" id="mod4">
 
 <div
 class="file-tab"
@@ -1476,11 +1441,11 @@ onclick="toggleFile('mod4')"
 <div>
 
 <h2>
-EOIR + BIA
+EOIR & BIA
 </h2>
 
 <div class="sub">
-Immigration Court • Board of Appeals
+Immigration Court • Board of Immigration Appeals
 </div>
 
 </div>
@@ -1498,39 +1463,41 @@ Immigration Court • Board of Appeals
 
 <ul class="service-list">
 
-<li>EOIR - Executive Office for Immigration Review</li>
-<li>BIA - Board of Immigration Appeals</li>
-<li>Change of Venue & Court Date Check</li>
-<li>Master Calendar & Individual Hearing Prep</li>
-<li>Appeal to BIA - Brief & Motion</li>
-<li>FOIA & Case Status - EOIR Hotline</li>
+<li>
+EOIR Case Information
+</li>
+
+<li>
+BIA Case Information
+</li>
+
+<li>
+Court Date Check
+</li>
+
+<li>
+Change of Venue Form Assistance
+</li>
+
+<li>
+Document Organization
+</li>
+
+<li>
+Case Status Assistance
+</li>
 
 </ul>
 
-
-<div class="myaccess-btn-wrap">
-
-<a
-class="myaccess-btn"
-href="#contact"
->
-EOIR + BIA Help
-</a>
-
-</div>
-
 </div>
 
 </div>
 
 
 
-<!-- MODULE 05 -->
+<!-- 05 -->
 
-<div
-class="file open"
-id="mod5"
->
+<div class="file open" id="mod5">
 
 <div
 class="file-tab"
@@ -1568,12 +1535,29 @@ Auto • Home • Life • Health
 
 <ul class="service-list">
 
-<li>Auto Insurance - Best Rates</li>
-<li>Homeowners & Renters Insurance</li>
-<li>Life Insurance</li>
-<li>Health Insurance - Marketplace</li>
-<li>Business & Commercial Insurance</li>
-<li>SR22 Insurance</li>
+<li>
+Auto Insurance
+</li>
+
+<li>
+Homeowners Insurance
+</li>
+
+<li>
+Renters Insurance
+</li>
+
+<li>
+Life Insurance
+</li>
+
+<li>
+Health Insurance
+</li>
+
+<li>
+Business Insurance
+</li>
 
 </ul>
 
@@ -1583,12 +1567,9 @@ Auto • Home • Life • Health
 
 
 
-<!-- MODULE 06 -->
+<!-- 06 -->
 
-<div
-class="file open"
-id="mod6"
->
+<div class="file open" id="mod6">
 
 <div
 class="file-tab"
@@ -1608,7 +1589,7 @@ Real Estate
 </h2>
 
 <div class="sub">
-Buy • Sell • Rent • Manage
+Buy • Sell • Rent
 </div>
 
 </div>
@@ -1626,12 +1607,29 @@ Buy • Sell • Rent • Manage
 
 <ul class="service-list">
 
-<li>Buy Your First Home - First Time Buyer</li>
-<li>Sell Your House - Fast Closing</li>
-<li>Rental Assistance</li>
-<li>Property Management</li>
-<li>House Inspection Referral</li>
-<li>Mortgage Referral</li>
+<li>
+First-Time Home Buyer Assistance
+</li>
+
+<li>
+Home Search Assistance
+</li>
+
+<li>
+Rental Assistance
+</li>
+
+<li>
+Property Referral
+</li>
+
+<li>
+Housing Resources
+</li>
+
+<li>
+Mortgage Referral
+</li>
 
 </ul>
 
@@ -1641,12 +1639,9 @@ Buy • Sell • Rent • Manage
 
 
 
-<!-- MODULE 07 -->
+<!-- 07 -->
 
-<div
-class="file open"
-id="mod7"
->
+<div class="file open" id="mod7">
 
 <div
 class="file-tab"
@@ -1666,7 +1661,7 @@ Business Formation
 </h2>
 
 <div class="sub">
-LLC • Corp • EIN • License
+LLC • Corporation • EIN
 </div>
 
 </div>
@@ -1684,12 +1679,29 @@ LLC • Corp • EIN • License
 
 <ul class="service-list">
 
-<li>LLC & Corporation Formation</li>
-<li>EIN Number - Same Day</li>
-<li>Business License & Permit</li>
-<li>Business Plan & Logo Design</li>
-<li>Business Taxes & Bookkeeping</li>
-<li>Business Bank Account Setup</li>
+<li>
+LLC Formation
+</li>
+
+<li>
+Corporation Formation
+</li>
+
+<li>
+EIN Assistance
+</li>
+
+<li>
+Business Registration
+</li>
+
+<li>
+Business Plan Assistance
+</li>
+
+<li>
+Administrative Support
+</li>
 
 </ul>
 
@@ -1699,12 +1711,9 @@ LLC • Corp • EIN • License
 
 
 
-<!-- MODULE 08 -->
+<!-- 08 -->
 
-<div
-class="file open"
-id="mod8"
->
+<div class="file open" id="mod8">
 
 <div
 class="file-tab"
@@ -1724,7 +1733,7 @@ Apostille & Legalization
 </h2>
 
 <div class="sub">
-State & Federal • Fast Service
+State • Federal • Embassy
 </div>
 
 </div>
@@ -1742,12 +1751,29 @@ State & Federal • Fast Service
 
 <ul class="service-list">
 
-<li>Document Apostille - All States</li>
-<li>FBI Background Check Apostille</li>
-<li>Diploma & School Records Apostille</li>
-<li>Power of Attorney for Haiti</li>
-<li>Authentication & Legalization</li>
-<li>Embassy Legalization</li>
+<li>
+Document Apostille
+</li>
+
+<li>
+Federal Document Authentication
+</li>
+
+<li>
+Diploma Apostille
+</li>
+
+<li>
+Power of Attorney
+</li>
+
+<li>
+Document Legalization
+</li>
+
+<li>
+Embassy Requirements Assistance
+</li>
 
 </ul>
 
@@ -1757,12 +1783,9 @@ State & Federal • Fast Service
 
 
 
-<!-- MODULE 09 -->
+<!-- 09 -->
 
-<div
-class="file open"
-id="mod9"
->
+<div class="file open" id="mod9">
 
 <div
 class="file-tab"
@@ -1782,7 +1805,7 @@ Travel & DMV Services
 </h2>
 
 <div class="sub">
-Plane Ticket • Passport • DMV
+Passport • Travel • DMV
 </div>
 
 </div>
@@ -1800,12 +1823,29 @@ Plane Ticket • Passport • DMV
 
 <ul class="service-list">
 
-<li>Plane Ticket - Haiti / USA / International</li>
-<li>Passport Application & Renewal</li>
-<li>DMV Services - License, Registration, Title</li>
-<li>TSA PreCheck & TWIC Card Help</li>
-<li>Hotel Booking & Car Rental</li>
-<li>Travel Insurance</li>
+<li>
+Plane Ticket Assistance
+</li>
+
+<li>
+Passport Assistance
+</li>
+
+<li>
+Passport Renewal Assistance
+</li>
+
+<li>
+DMV Information
+</li>
+
+<li>
+Vehicle Registration Assistance
+</li>
+
+<li>
+Travel Resources
+</li>
 
 </ul>
 
@@ -1813,13 +1853,14 @@ Plane Ticket • Passport • DMV
 
 </div>
 
+
 </main>
 
 
 
-<!-- =====================================================
-AI CENTER
-===================================================== -->
+<!-- ================================================= -->
+<!-- AI CENTER -->
+<!-- ================================================= -->
 
 <section
 class="ai-center"
@@ -1827,6 +1868,7 @@ id="ai-center"
 >
 
 <div class="ai-inner">
+
 
 <div>
 
@@ -1840,9 +1882,9 @@ Maximax AI Assistant Center
 
 <p>
 
-AI Center nou an ede w òganize fòm,
-jwenn enfòmasyon, tradui dokiman,
-epi reponn kestyon jeneral sou sèvis Maximax yo.
+Smart digital tools designed to help organize forms,
+track information, translate documents and answer
+general service questions 24/7.
 
 </p>
 
@@ -1860,7 +1902,7 @@ id="form-helper"
 </b>
 
 <span>
-Form organization and digital assistance
+Digital form organization and assistance
 </span>
 
 </div>
@@ -1876,7 +1918,7 @@ id="career-tracker"
 </b>
 
 <span>
-Career planning, applications and progress tracking
+Career organization, applications and progress tools
 </span>
 
 </div>
@@ -1913,6 +1955,7 @@ Digital assistance anytime
 
 </div>
 
+
 </div>
 
 
@@ -1923,9 +1966,11 @@ id="try-ai"
 
 <a
 class="myaccess-btn"
-href="#ai-chat-preview"
+href="#ai-chat"
 >
-TRY AI CENTER
+
+Try AI Center
+
 </a>
 
 </div>
@@ -1934,14 +1979,14 @@ TRY AI CENTER
 
 
 
-<div id="ai-chat-preview">
+<div id="ai-chat">
 
 <div
 style="
 border:1px solid var(--line);
 border-radius:12px;
 padding:20px;
-background:rgba(0,0,0,0.6)
+background:rgba(0,0,0,.65)
 "
 >
 
@@ -1959,35 +2004,37 @@ AI CHAT PREVIEW
 
 <div
 style="
-background:rgba(255,106,0,0.1);
-border-radius:8px;
 padding:12px;
-margin-bottom:10px;
-font-size:13px
+border-radius:8px;
+background:rgba(255,106,0,.12);
+margin-bottom:10px
 "
 >
+
 👤 How can Maximax help me?
+
 </div>
 
 
 <div
 style="
-background:rgba(0,0,0,0.5);
-border:1px solid var(--line);
-border-radius:8px;
 padding:12px;
-font-size:13px
+border-radius:8px;
+border:1px solid var(--line);
+background:#000
 "
 >
+
 🤖 Choose a service or ask a general question.
+
 </div>
 
 
 <div
 style="
-margin-top:14px;
 display:flex;
-gap:8px
+gap:8px;
+margin-top:14px
 "
 >
 
@@ -1997,12 +2044,11 @@ placeholder="Ask a question..."
 style="
 flex:1;
 min-width:0;
-background:rgba(0,0,0,0.5);
+padding:11px;
+background:#000;
 border:1px solid var(--line);
 border-radius:6px;
-padding:10px;
-color:var(--text);
-font-size:13px
+color:var(--text)
 "
 >
 
@@ -2010,15 +2056,16 @@ font-size:13px
 type="button"
 style="
 background:var(--orange);
-border:none;
+color:#000;
+border:0;
 border-radius:6px;
 padding:10px 16px;
-color:#000;
-font-weight:600;
-cursor:pointer
+font-weight:700
 "
 >
+
 SEND
+
 </button>
 
 </div>
@@ -2033,23 +2080,18 @@ SEND
 
 
 
-<!-- =====================================================
-CONTACT
-===================================================== -->
+<!-- ================================================= -->
+<!-- CONTACT -->
+<!-- ================================================= -->
 
 <section
-class="band band-contact"
+class="band"
 id="contact"
 >
 
 <div class="band-inner">
 
-<h2
-style="
-font-size:1.6rem;
-margin-bottom:20px
-"
->
+<h2>
 Contact - 9 Rezo Sosyal
 </h2>
 
@@ -2096,7 +2138,9 @@ Email
 <div class="value">
 
 <a href="mailto:maximaxmultiservices@gmail.com">
+
 maximaxmultiservices@gmail.com
+
 </a>
 
 </div>
@@ -2108,7 +2152,7 @@ maximaxmultiservices@gmail.com
 <div class="contact-card">
 
 <div class="label">
-Address
+Service Areas
 </div>
 
 <div class="value">
@@ -2137,7 +2181,7 @@ Hempstead NY 11550
 
 <a
 class="social-pill"
-href="https://wa.me/14076405166"
+href="https://wa.me/50943437488"
 target="_blank"
 rel="noopener noreferrer"
 >
@@ -2164,7 +2208,9 @@ Chat now
 
 <a
 class="social-pill"
-href="#"
+href="https://www.facebook.com/share/1By3KvYRrM/"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2189,7 +2235,9 @@ Follow
 
 <a
 class="social-pill"
-href="#"
+href="https://www.instagram.com/lebaron072/"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2203,7 +2251,7 @@ Instagram
 </span>
 
 <span class="social-action">
-See work
+Follow
 </span>
 
 </div>
@@ -2214,7 +2262,9 @@ See work
 
 <a
 class="social-pill"
-href="#"
+href="https://www.tiktok.com/@maximax1960"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2239,7 +2289,9 @@ Watch
 
 <a
 class="social-pill"
-href="#"
+href="https://x.com/w05g2m"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2264,7 +2316,9 @@ Follow
 
 <a
 class="social-pill"
-href="#"
+href="https://www.youtube.com/@BSS1815PROMAXDMP"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2289,7 +2343,9 @@ Subscribe
 
 <a
 class="social-pill"
-href="#"
+href="https://www.linkedin.com/in/maximax-multi-services-075ba2314"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2314,7 +2370,9 @@ Connect
 
 <a
 class="social-pill"
-href="#"
+href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2339,7 +2397,9 @@ Listen
 
 <a
 class="social-pill"
-href="#"
+href="https://truthsocial.com/@briyant_soley_1815"
+target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="social-icon">
@@ -2369,44 +2429,74 @@ Follow
 
 
 
-<!-- =====================================================
-FOOTER
-FIRST OLD LINE REMOVED
-===================================================== -->
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- PREVIOUS FIRST LINE REMOVED -->
+<!-- ================================================= -->
 
 <footer>
 
 <div class="footer-cats">
 
-<span>NOTARY & TRANSLATION</span>
+<span>
+NOTARY & TRANSLATION
+</span>
 
-<span>TAXES & ACCOUNTING</span>
+<span>
+TAXES & ACCOUNTING
+</span>
 
-<span>IMMIGRATION SERVICES</span>
+<span>
+IMMIGRATION
+</span>
 
-<span>EOIR & BIA</span>
+<span>
+EOIR+BIA
+</span>
 
-<span>INSURANCE</span>
+<span>
+INSURANCE
+</span>
 
-<span>REAL ESTATE</span>
+<span>
+REAL ESTATE
+</span>
 
-<span>BUSINESS FORMATION</span>
+<span>
+BUSINESS FORMATION
+</span>
 
-<span>APOSTILLE & LEGALIZATION</span>
+<span>
+APOSTILLE
+</span>
 
-<span>TRAVEL & DMV SERVICES</span>
+<span>
+TRAVEL & DMV
+</span>
 
-<span>MAXIMAX AI CENTER</span>
+<span>
+MAXIMAX AI CENTER
+</span>
 
-<span>FORM HELPER</span>
+<span>
+FORM HELPER
+</span>
 
-<span>CAREER TRACKER</span>
+<span>
+CAREER TRACKER
+</span>
 
-<span>TRADIKSYON AI</span>
+<span>
+TRADIKSYON AI
+</span>
 
-<span>CHAT 24/7</span>
+<span>
+CHAT 24/7
+</span>
 
-<span>TRY AI CENTER</span>
+<span>
+TRY AI CENTER
+</span>
 
 </div>
 
@@ -2466,524 +2556,6 @@ mobileNav.classList.remove('open');
 );
 
 });
-
-
-/* =====================================================
-15 MAXIMAX OFFICIAL SEAL MODULES
-SELF-CONTAINED SVG
-===================================================== */
-
-const maximaxModules = [
-
-{
-title1:"NOTARY &",
-title2:"TRANSLATION",
-icon:"✒",
-sub:"CERTIFIED • DOCUMENTS • TRANSLATION",
-href:"#mod1"
-},
-
-{
-title1:"TAXES &",
-title2:"ACCOUNTING",
-icon:"$",
-sub:"TAX PREPARATION • ITIN • ACCOUNTING",
-href:"#mod2"
-},
-
-{
-title1:"IMMIGRATION",
-title2:"SERVICES",
-icon:"✦",
-sub:"USCIS • TPS • ASYLUM • FAMILY",
-href:"#mod3"
-},
-
-{
-title1:"EOIR",
-title2:"& BIA",
-icon:"⚖",
-sub:"IMMIGRATION COURT • APPEALS",
-href:"#mod4"
-},
-
-{
-title1:"INSURANCE",
-title2:"",
-icon:"◆",
-sub:"AUTO • HOME • LIFE • HEALTH",
-href:"#mod5"
-},
-
-{
-title1:"REAL",
-title2:"ESTATE",
-icon:"⌂",
-sub:"BUY • SELL • RENT • PROPERTY",
-href:"#mod6"
-},
-
-{
-title1:"BUSINESS",
-title2:"FORMATION",
-icon:"▣",
-sub:"LLC • CORPORATION • EIN • LICENSE",
-href:"#mod7"
-},
-
-{
-title1:"APOSTILLE &",
-title2:"LEGALIZATION",
-icon:"✍",
-sub:"STATE • FEDERAL • EMBASSY",
-href:"#mod8"
-},
-
-{
-title1:"TRAVEL &",
-title2:"DMV SERVICES",
-icon:"✈",
-sub:"PASSPORT • TICKET • DMV • TRAVEL",
-href:"#mod9"
-},
-
-{
-title1:"MAXIMAX",
-title2:"AI CENTER",
-icon:"AI",
-sub:"SMART TOOLS • DIGITAL ASSISTANCE",
-href:"#ai-center"
-},
-
-{
-title1:"FORM",
-title2:"HELPER",
-icon:"▤",
-sub:"FORMS • APPLICATIONS • ASSISTANCE",
-href:"#form-helper"
-},
-
-{
-title1:"CAREER",
-title2:"TRACKER",
-icon:"↗",
-sub:"CAREER • APPLICATIONS • PROGRESS",
-href:"#career-tracker"
-},
-
-{
-title1:"TRADIKSYON",
-title2:"AI",
-icon:"文",
-sub:"KREYÒL • ENGLISH • FRANÇAIS • ESPAÑOL",
-href:"#translation-ai"
-},
-
-{
-title1:"CHAT",
-title2:"24/7",
-icon:"●",
-sub:"DIGITAL ASSISTANCE • ANYTIME",
-href:"#chat247"
-},
-
-{
-title1:"TRY",
-title2:"AI CENTER",
-icon:"✦",
-sub:"SMART TOOLS • AI ASSISTANCE",
-href:"#try-ai"
-}
-
-];
-
-
-function buildSeal(module,index){
-
-const uid = "seal" + index;
-
-return `
-
-<a
-href="${module.href}"
-class="service-seal"
-aria-label="${module.title1} ${module.title2}"
->
-
-<svg
-viewBox="0 0 400 400"
-role="img"
->
-
-<defs>
-
-<radialGradient id="inner-${uid}" cx="45%" cy="32%" r="75%">
-<stop offset="0%" stop-color="#ff9a3a"/>
-<stop offset="30%" stop-color="#ff6a00"/>
-<stop offset="58%" stop-color="#7c2700"/>
-<stop offset="82%" stop-color="#120500"/>
-<stop offset="100%" stop-color="#000000"/>
-</radialGradient>
-
-<linearGradient id="metal-${uid}" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#ffb36b"/>
-<stop offset="17%" stop-color="#ff6a00"/>
-<stop offset="38%" stop-color="#4d1700"/>
-<stop offset="57%" stop-color="#ff7c13"/>
-<stop offset="78%" stop-color="#2e0c00"/>
-<stop offset="100%" stop-color="#ff9a3a"/>
-</linearGradient>
-
-<linearGradient id="dark-${uid}" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="#1a0800"/>
-<stop offset="45%" stop-color="#000"/>
-<stop offset="100%" stop-color="#130600"/>
-</linearGradient>
-
-<filter id="shadow-${uid}">
-<feDropShadow
-dx="0"
-dy="5"
-stdDeviation="5"
-flood-color="#000"
-flood-opacity=".8"
-/>
-</filter>
-
-<path
-id="arc-${uid}"
-d="M 72 195 A 128 128 0 0 1 328 195"
-/>
-
-</defs>
-
-
-<!-- OUTER BLACK SHADOW -->
-
-<circle
-cx="200"
-cy="200"
-r="190"
-fill="#000"
-opacity=".95"
-/>
-
-
-<!-- ROPE / OUTER METAL RING -->
-
-<circle
-cx="200"
-cy="200"
-r="178"
-fill="none"
-stroke="url(#metal-${uid})"
-stroke-width="18"
-/>
-
-<circle
-cx="200"
-cy="200"
-r="163"
-fill="none"
-stroke="#090200"
-stroke-width="12"
-/>
-
-<circle
-cx="200"
-cy="200"
-r="154"
-fill="none"
-stroke="#ff6a00"
-stroke-width="3"
-/>
-
-
-<!-- MAIN BADGE -->
-
-<circle
-cx="200"
-cy="200"
-r="148"
-fill="url(#dark-${uid})"
-stroke="#ff7a13"
-stroke-width="3"
-/>
-
-<circle
-cx="200"
-cy="200"
-r="135"
-fill="url(#inner-${uid})"
-stroke="#190600"
-stroke-width="8"
-/>
-
-
-<!-- CURVED BRAND TEXT -->
-
-<text
-fill="#ff8c24"
-font-family="Georgia,serif"
-font-size="17"
-font-weight="700"
-letter-spacing="1.5"
->
-
-<textPath
-href="#arc-${uid}"
-startOffset="50%"
-text-anchor="middle"
->
-MAXIMAX MULTI SERVICES
-</textPath>
-
-</text>
-
-
-<!-- ICON -->
-
-<circle
-cx="200"
-cy="115"
-r="38"
-fill="#080200"
-stroke="#ff7a13"
-stroke-width="3"
-filter="url(#shadow-${uid})"
-/>
-
-<circle
-cx="200"
-cy="115"
-r="31"
-fill="none"
-stroke="#7b2900"
-stroke-width="2"
-/>
-
-<text
-x="200"
-y="127"
-text-anchor="middle"
-font-family="Arial Black,Arial,sans-serif"
-font-size="${module.icon.length > 1 ? 26 : 38}"
-font-weight="900"
-fill="#ff8320"
->
-${module.icon}
-</text>
-
-
-<!-- TITLE DARK PLATE -->
-
-<rect
-x="74"
-y="158"
-width="252"
-height="84"
-rx="16"
-fill="rgba(0,0,0,.88)"
-stroke="#ff6a00"
-stroke-width="3"
-/>
-
-<rect
-x="83"
-y="167"
-width="234"
-height="66"
-rx="11"
-fill="rgba(255,106,0,.10)"
-stroke="#5e1d00"
-stroke-width="1"
-/>
-
-
-<!-- MAIN TITLE -->
-
-<text
-x="200"
-y="${module.title2 ? 194 : 209}"
-text-anchor="middle"
-font-family="Arial Black,Arial,sans-serif"
-font-size="${module.title1.length > 14 ? 21 : 25}"
-font-weight="900"
-fill="#ff8c24"
-stroke="#100400"
-stroke-width="1"
-paint-order="stroke"
->
-${module.title1}
-</text>
-
-${module.title2 ? `
-<text
-x="200"
-y="222"
-text-anchor="middle"
-font-family="Arial Black,Arial,sans-serif"
-font-size="${module.title2.length > 14 ? 20 : 25}"
-font-weight="900"
-fill="#ff8c24"
-stroke="#100400"
-stroke-width="1"
-paint-order="stroke"
->
-${module.title2}
-</text>
-` : ""}
-
-
-<!-- SUBTITLE -->
-
-<text
-x="200"
-y="263"
-text-anchor="middle"
-font-family="Arial,sans-serif"
-font-size="8.5"
-font-weight="700"
-fill="#ffc98a"
-letter-spacing=".45"
->
-${module.sub}
-</text>
-
-
-<!-- DOCUMENT ICON -->
-
-<rect
-x="185"
-y="277"
-width="30"
-height="34"
-rx="3"
-fill="#090200"
-stroke="#ff8320"
-stroke-width="2"
-/>
-
-<line
-x1="191"
-y1="286"
-x2="209"
-y2="286"
-stroke="#ff8320"
-stroke-width="2"
-/>
-
-<line
-x1="191"
-y1="293"
-x2="209"
-y2="293"
-stroke="#ff8320"
-stroke-width="2"
-/>
-
-<line
-x1="191"
-y1="300"
-x2="204"
-y2="300"
-stroke="#ff8320"
-stroke-width="2"
-/>
-
-
-<!-- LEFT LAUREL -->
-
-<g
-fill="#ff7610"
-stroke="#301000"
-stroke-width="1"
->
-
-<ellipse cx="137" cy="287" rx="7" ry="15" transform="rotate(-55 137 287)"/>
-<ellipse cx="127" cy="299" rx="7" ry="15" transform="rotate(-48 127 299)"/>
-<ellipse cx="121" cy="313" rx="7" ry="15" transform="rotate(-38 121 313)"/>
-<ellipse cx="121" cy="328" rx="7" ry="15" transform="rotate(-25 121 328)"/>
-<ellipse cx="127" cy="342" rx="7" ry="15" transform="rotate(-10 127 342)"/>
-
-</g>
-
-
-<!-- RIGHT LAUREL -->
-
-<g
-fill="#ff7610"
-stroke="#301000"
-stroke-width="1"
->
-
-<ellipse cx="263" cy="287" rx="7" ry="15" transform="rotate(55 263 287)"/>
-<ellipse cx="273" cy="299" rx="7" ry="15" transform="rotate(48 273 299)"/>
-<ellipse cx="279" cy="313" rx="7" ry="15" transform="rotate(38 279 313)"/>
-<ellipse cx="279" cy="328" rx="7" ry="15" transform="rotate(25 279 328)"/>
-<ellipse cx="273" cy="342" rx="7" ry="15" transform="rotate(10 273 342)"/>
-
-</g>
-
-
-<!-- THREE STARS -->
-
-<text
-x="200"
-y="349"
-text-anchor="middle"
-font-family="Arial,sans-serif"
-font-size="27"
-font-weight="900"
-fill="#ff7a13"
-letter-spacing="8"
->
-★ ★ ★
-</text>
-
-
-<!-- INNER HIGHLIGHTS -->
-
-<circle
-cx="200"
-cy="200"
-r="133"
-fill="none"
-stroke="rgba(255,185,110,.32)"
-stroke-width="2"
-/>
-
-<circle
-cx="200"
-cy="200"
-r="145"
-fill="none"
-stroke="rgba(0,0,0,.65)"
-stroke-width="4"
-/>
-
-</svg>
-
-</a>
-
-`;
-
-}
-
-
-const moduleSealsGrid =
-document.getElementById("moduleSealsGrid");
-
-maximaxModules.forEach(
-function(module,index){
-
-moduleSealsGrid.insertAdjacentHTML(
-"beforeend",
-buildSeal(module,index)
-);
-
-}
-);
 
 </script>
 
