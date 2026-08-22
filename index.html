@@ -21,21 +21,13 @@
   --panel-solid:#000000;
 }
 *{box-sizing:border-box}
-html{
-  scroll-behavior:smooth; 
-  min-height:100%;
-  background: #000000;
-  background: linear-gradient(150deg, #000000 0%, #000000 14%, #7A2E00 46%, #FF6A00 68%, #000000 100%);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+html{scroll-behavior:smooth; min-height:100%;background:#000;background:linear-gradient(150deg,#000000 0%,#000000 14%,#7A2E00 46%,#FF6A00 68%,#000000 100%);background-attachment:fixed;background-size:cover;background-repeat:no-repeat;}
 body{
   margin:0;
   color:var(--white);
   font-family:'Public Sans',sans-serif;
   -webkit-font-smoothing:antialiased;
-  background: transparent !important;
+  background:transparent !important;
   min-height:100vh;
 }
 h1,h2,h3{ font-family:'Fraunces',serif; margin:0; }
@@ -56,8 +48,9 @@ button{font-family:inherit}
   width:100%; height:100%;
   object-fit:cover; z-index:2;
   display:block;
-  opacity:0;
+  opacity:1;
   transition: opacity .35s ease;
+  background:#000;
 }
 .logo-mark video.loaded{display:block; opacity:1;}
 .logo-mark .fallback{
@@ -75,8 +68,9 @@ button{font-family:inherit}
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit:cover; border-radius:50%; z-index:2;
-  display:block; opacity:0;
+  display:block; opacity:1;
   transition: opacity .35s ease;
+  background:#000;
 }
 .seal video.loaded{display:block; opacity:1;}
 .seal .seal-fallback{
@@ -93,6 +87,7 @@ button{font-family:inherit}
 header{
   position:sticky; top:0; z-index:50;
   background:rgba(7,5,2,0.92);
+  /* fix blink - no blur */
   border-bottom:1px solid var(--line);
 }
 .nav-wrap{
@@ -154,132 +149,54 @@ nav.desktop-nav a:hover{ opacity:1; border-color:var(--orange-light); }
 .btn-ghost:hover{ border-color:var(--orange-light); color:var(--orange-light); }
 @media(max-width:860px){ .hero{grid-template-columns:1fr} .hero-seal{display:none} }
 .catmap{
-  background:rgba(0,0,0,0.35); border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line); padding:30px 24px;
+  background:rgba(0,0,0,0.35); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 24px;
 }
-.catmap-inner{
-  max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap;
-  gap:10px 26px; align-items:center; justify-content:center;
-}
-.catmap-item{
-  font-family:'IBM Plex Mono',monospace; font-size:12px;
-  letter-spacing:.05em; color:var(--orange-light); opacity:.9; cursor:pointer; text-decoration:none;
-}
+.catmap-inner{ max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center; justify-content:center; }
+.catmap-item{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.05em; color:var(--orange-light); opacity:.9; cursor:pointer; text-decoration:none; }
 .catmap-item b{ color:var(--white); opacity:.55; margin-right:6px; }
 main{ max-width:1180px; margin:0 auto; padding:64px 24px; }
-.file{
-  scroll-margin-top:84px; background:var(--panel); color:var(--white);
-  border:1px solid var(--line); border-radius:6px; margin-bottom:26px;
-  position:relative; backdrop-filter:blur(6px); overflow:hidden;
-}
+.file{ scroll-margin-top:84px; background:var(--panel); color:var(--white); border:1px solid var(--line); border-radius:6px; margin-bottom:26px; position:relative; backdrop-filter:blur(6px); overflow:hidden; }
 .file-tab{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 26px; cursor:pointer; border-bottom:1px solid var(--line); }
 .file-tab-left{ display:flex; align-items:center; gap:16px; }
-.file-num{
-  font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--orange-light);
-  border:1px solid var(--orange-light); border-radius:50%; width:34px; height:34px;
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-}
+.file-num{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--orange-light); border:1px solid var(--orange-light); border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .file-tab h2{ font-size:1.35rem; font-weight:600; }
-.file-tab .sub{
-  font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--orange-light); margin-top:3px; opacity:.7;
-}
+.file-tab .sub{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--orange-light); margin-top:3px; opacity:.7; }
 .chev{ width:20px; height:20px; flex-shrink:0; transition:transform .3s ease; opacity:.7; color:var(--orange-light); }
 .file.open .chev{ transform:rotate(180deg); }
 .file-body{ max-height:0; overflow:hidden; transition:max-height .45s ease; }
 .file-body-inner{ padding:6px 26px 28px; }
-.file.open .file-body{ max-height:1600px; }
+.file.open .file-body{ max-height:2000px; }
 .service-list{ columns:2; column-gap:30px; list-style:none; margin:0; padding:0; }
-.service-list li{
-  break-inside:avoid; display:flex; gap:10px; align-items:flex-start;
-  padding:8px 0; border-bottom:1px dotted var(--line); font-size:14px; line-height:1.4;
-}
+.service-list li{ break-inside:avoid; display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px dotted var(--line); font-size:14px; line-height:1.4; }
 .service-list li::before{ content:"✓"; color:var(--orange-light); font-size:12px; margin-top:2px; font-weight:700; flex-shrink:0; }
-@media(max-width:640px){ .service-list{columns:1} }
+@media(max-width:640px){ .service-list{ columns:1; } }
 .myaccess-btn-wrap{ margin-top:22px; }
-.myaccess-btn{
-  display:inline-block; padding:13px 22px; border-radius:4px; background:var(--orange);
-  color:#160900; text-decoration:none; font-family:'IBM Plex Mono',monospace;
-  font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
-  border:1px solid var(--orange); transition:.2s;
-}
+.myaccess-btn{ display:inline-block; padding:13px 22px; border-radius:4px; background:var(--orange); color:#160900; text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; border:1px solid var(--orange); transition:.2s; }
 .myaccess-btn:hover{ background:var(--orange-light); }
 .band{ padding:56px 24px; scroll-margin-top:70px; }
 .band-inner{ max-width:1180px; margin:0 auto; }
-.band-news{ background:rgba(0,0,0,0.32); border-top:1px solid var(--line); }
-.band-ai{ background:rgba(0,0,0,0.42); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.band-crm{ background:rgba(0,0,0,0.38); border-bottom:1px solid var(--line); }
-.band-communication{ background:rgba(0,0,0,0.46); border-bottom:1px solid var(--line); }
 .band-contact{ background:rgba(0,0,0,0.5); }
 .band-head{ display:flex; align-items:center; gap:14px; margin-bottom:26px; flex-wrap:wrap; }
 .band-head h2{ font-size:1.75rem; font-weight:600; }
 .band-head .tag{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange-light); letter-spacing:.14em; text-transform:uppercase; }
-.chips{ display:flex; flex-wrap:wrap; gap:10px; }
-.chip{ border:1px solid var(--line); border-radius:20px; padding:9px 16px; font-size:13px; color:var(--white); opacity:.92; background:rgba(0,0,0,0.25); }
-.ai-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.ai-card{ border:1px solid var(--line); border-radius:6px; padding:20px; background:rgba(255,122,26,0.06); }
-.ai-card h3{ font-size:15px; color:var(--orange-light); font-weight:600; margin-bottom:8px; font-family:'Public Sans',sans-serif; }
-.ai-card p{ font-size:13px; opacity:.8; margin:0; line-height:1.5; }
-.module-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.module-card{ border:1px solid var(--line); border-radius:6px; padding:20px; background:rgba(255,122,26,0.05); }
-.module-card .module-icon{
-  width:38px; height:38px; border-radius:50%; border:1px solid var(--orange-light);
-  display:flex; align-items:center; justify-content:center; color:var(--orange-light);
-  background:#000; margin-bottom:14px;
-}
-.module-card h3{ color:var(--orange-light); font-family:'Public Sans',sans-serif; font-size:15px; margin-bottom:8px; }
-.module-card p{ margin:0; font-size:13px; line-height:1.55; opacity:.8; }
-.module-launch{
-  margin-top:28px; padding:22px; border:1px solid var(--line); border-radius:7px;
-  background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
-}
-.module-launch h3{ color:var(--orange-light); font-size:20px; margin-bottom:6px; }
-.module-launch p{ margin:0; max-width:720px; font-size:13px; line-height:1.6; opacity:.8; }
-.module-button{
-  display:inline-flex; align-items:center; justify-content:center; padding:13px 22px;
-  background:var(--orange); border:1px solid var(--orange); color:#120700; border-radius:4px;
-  text-decoration:none; font-family:'IBM Plex Mono',monospace; font-size:11px;
-  letter-spacing:.08em; font-weight:700; text-transform:uppercase; white-space:nowrap;
-}
-.module-button:hover{ background:var(--orange-light); }
 .contact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-bottom:30px; }
 .contact-card{ border:1px solid var(--line); border-radius:6px; padding:20px; background:rgba(0,0,0,0.3); }
-.contact-card .label{
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--orange-light); margin-bottom:8px;
-}
+.contact-card .label{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--orange-light); margin-bottom:8px; }
 .contact-card .value{ font-size:15px; line-height:1.6; }
 .contact-card a{ text-decoration:none; color:var(--white); }
 .contact-card a:hover{ color:var(--orange-light); }
 .social-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(175px,1fr)); gap:12px; }
-.social-pill{
-  border:1px solid var(--line); border-radius:12px; padding:12px 15px; font-size:13px;
-  background:rgba(0,0,0,.48); text-decoration:none; color:var(--white);
-  transition:.2s; display:flex; align-items:center; gap:12px; min-height:58px;
-}
+.social-pill{ border:1px solid var(--line); border-radius:12px; padding:12px 15px; font-size:13px; background:rgba(0,0,0,.48); text-decoration:none; color:var(--white); transition:.2s; display:flex; align-items:center; gap:12px; min-height:58px; }
 .social-pill:hover{ border-color:var(--orange-light); color:var(--orange-light); transform:translateY(-2px); background:rgba(255,106,0,.08); }
-.social-icon{
-  width:36px; height:36px; border-radius:50%; border:1px solid var(--orange-light);
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  font-size:18px; color:var(--orange-light); background:#000;
-}
-.social-pill:hover .social-icon{ background:var(--orange); color:#000; }
+.social-icon{ width:36px; height:36px; border-radius:50%; border:1px solid var(--orange-light); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px; color:var(--orange-light); background:#000; }
 .social-text{ display:flex; flex-direction:column; gap:2px; }
 .social-name{ font-weight:700; }
 .social-action{ font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--orange-light); letter-spacing:.07em; }
 footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px solid var(--line); }
 .footer-inner{ max-width:1180px; margin:0 auto; }
-.footer-top{
-  display:flex; justify-content:space-between; align-items:flex-start;
-  gap:30px; flex-wrap:wrap; padding-bottom:30px; border-bottom:1px solid var(--line);
-}
+.footer-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; padding-bottom:30px; border-bottom:1px solid var(--line); }
 .footer-cats{ display:flex; flex-wrap:wrap; gap:9px 22px; font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:.75; }
-.footer-cats a{text-decoration:none}
-.footer-bottom{
-  padding-top:20px; display:flex; justify-content:space-between;
-  flex-wrap:wrap; gap:10px; font-size:11.5px; opacity:.6; font-family:'IBM Plex Mono',monospace;
-}
-@media(prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } }
+.footer-bottom{ padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:11.5px; opacity:.6; font-family:'IBM Plex Mono',monospace; }
 :focus-visible{ outline:2px solid var(--orange-light); outline-offset:2px; }
 .contact-card .value a[href^="tel:"]{ white-space:nowrap; }
 </style>
@@ -292,7 +209,7 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
       <div class="logo-mark">
         <span class="fallback">M</span>
         <video autoplay muted loop playsinline preload="auto" onloadeddata="this.classList.add('loaded')" onerror="this.style.display='none'">
-          <source src="https://res.cloudinary.com/dwqkvhqwu/video/upload/v1/logo.mp4" type="video/mp4">
+          <source src="./maximax-best-multi.mp4" type="video/mp4">
         </video>
       </div>
       <div class="brand-name">Maximax <span>MULTI SERVICES • EST 2020</span></div>
@@ -332,7 +249,7 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
     <div class="seal">
       <span class="seal-fallback">Maximax<br>Services</span>
       <video autoplay muted loop playsinline preload="auto" onloadeddata="this.classList.add('loaded')" onerror="this.style.display='none'">
-        <source src="https://res.cloudinary.com/dwqkvhqwu/video/upload/v1/logo.mp4" type="video/mp4">
+        <source src="./maximax-best-multi.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -343,8 +260,8 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
     <a class="catmap-item" href="#services"><b>01</b> NOTARY</a>
     <a class="catmap-item" href="#services"><b>02</b> TAXES</a>
     <a class="catmap-item" href="#services"><b>03</b> IMMIGRATION</a>
-    <a class="catmap-item" href="#services"><b>04</b> INSURANCE</a>
-    <a class="catmap-item" href="#services"><b>05</b> REAL ESTATE</a>
+    <a class="catmap-item" href="#file4"><b>04</b> EOIR+BIA</a>
+    <a class="catmap-item" href="#services"><b>05</b> INSURANCE</a>
     <a class="catmap-item" href="#services"><b>06</b> BUSINESS</a>
   </div>
 </div>
@@ -400,6 +317,24 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
       </ul>
     </div></div>
   </div>
+
+  <div class="file open" id="file4">
+    <div class="file-tab" onclick="toggleFile('file4')">
+      <div class="file-tab-left"><div class="file-num">04</div><div><h2 id="eoir-bia">EOIR + BIA</h2><div class="sub">Immigration Court • Board of Immigration Appeals • Menm bouton</div></div></div>
+      <svg class="chev" viewBox="0 0 20 20" fill="currentColor"><path d="M5.5 7.5l4.5 4.5 4.5-4.5"/></svg>
+    </div>
+    <div class="file-body"><div class="file-body-inner">
+      <ul class="service-list">
+        <li>EOIR - Executive Office for Immigration Review</li>
+        <li>BIA - Board of Immigration Appeals</li>
+        <li>Change of Venue & Court Date Check</li>
+        <li>Master Calendar & Individual Hearing Prep</li>
+        <li>Appeal to BIA - Brief & Motion</li>
+        <li>FOIA & Case Status</li>
+      </ul>
+      <div class="myaccess-btn-wrap"><a class="myaccess-btn" href="#contact">EOIR + BIA Help</a></div>
+    </div></div>
+  </div>
 </main>
 
 <section class="band band-contact" id="contact">
@@ -410,11 +345,16 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
       <div class="contact-card"><div class="label">Email</div><div class="value"><a href="mailto:maximaxmultiservices@gmail.com">maximaxmultiservices@gmail.com</a></div></div>
       <div class="contact-card"><div class="label">Address</div><div class="value">Pine Hills, Orlando, FL<br>Indianapolis, IN<br>Hempstead, NY</div></div>
     </div>
-    <div class="social-row">
-      <a class="social-pill" href="#"><div class="social-icon"><i class="fab fa-facebook-f"></i></div><div class="social-text"><span class="social-name">Facebook</span><span class="social-action">Follow us</span></div></a>
-      <a class="social-pill" href="#"><div class="social-icon"><i class="fab fa-instagram"></i></div><div class="social-text"><span class="social-name">Instagram</span><span class="social-action">See work</span></div></a>
-      <a class="social-pill" href="#"><div class="social-icon"><i class="fab fa-tiktok"></i></div><div class="social-text"><span class="social-name">TikTok</span><span class="social-action">Watch videos</span></div></a>
-      <a class="social-pill" href="https://wa.me/14076405166"><div class="social-icon"><i class="fab fa-whatsapp"></i></div><div class="social-text"><span class="social-name">WhatsApp</span><span class="social-action">Chat now</span></div></a>
+        <div class="social-row">
+      <a class="social-pill" href="https://wa.me/14076405166" target="_blank"><div class="social-icon"><i class="fab fa-whatsapp"></i></div><div class="social-text"><span class="social-name">WhatsApp</span><span class="social-action">Chat now</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-facebook-f"></i></div><div class="social-text"><span class="social-name">Facebook</span><span class="social-action">Follow us</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-instagram"></i></div><div class="social-text"><span class="social-name">Instagram</span><span class="social-action">See work</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-tiktok"></i></div><div class="social-text"><span class="social-name">TikTok</span><span class="social-action">Watch videos</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-x-twitter"></i></div><div class="social-text"><span class="social-name">X / Twitter</span><span class="social-action">Follow</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-youtube"></i></div><div class="social-text"><span class="social-name">YouTube</span><span class="social-action">Subscribe</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-linkedin-in"></i></div><div class="social-text"><span class="social-name">LinkedIn</span><span class="social-action">Connect</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-spotify"></i></div><div class="social-text"><span class="social-name">Spotify</span><span class="social-action">Listen</span></div></a>
+      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fas fa-bold"></i></div><div class="social-text"><span class="social-name">Truth Social</span><span class="social-action">Follow</span></div></a>
     </div>
   </div>
 </section>
@@ -422,8 +362,8 @@ footer{ background:rgba(0,0,0,0.65); padding:50px 24px 28px; border-top:1px soli
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="brand"><div class="logo-mark small"><span class="fallback">M</span></div><div class="brand-name">Maximax <span>© 2025 All Rights Reserved</span></div></div>
-      <div class="footer-cats"><a>NOTARY</a><a>TAXES</a><a>IMMIGRATION</a><a>INSURANCE</a><a>REAL ESTATE</a></div>
+      <div class="brand"><div class="logo-mark small"><span class="fallback">M</span><video autoplay muted loop playsinline preload="auto" onloadeddata="this.classList.add('loaded')" onerror="this.style.display='none'"><source src="./maximax-best-multi.mp4" type="video/mp4"></video></div><div class="brand-name">Maximax <span>© 2025 All Rights Reserved</span></div></div>
+      <div class="footer-cats"><a>NOTARY</a><a>TAXES</a><a>IMMIGRATION</a><a>EOIR+BIA</a><a>INSURANCE</a><a>REAL ESTATE</a></div>
     </div>
     <div class="footer-bottom"><span>Built with care in Orlando, FL</span><span>maximaxmultiservicesnetlifyapp.netlify.app</span></div>
   </div>
