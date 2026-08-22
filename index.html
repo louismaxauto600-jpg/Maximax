@@ -4,370 +4,2531 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maximax Multi Services - 9 Modules + EOIR+BIA + AI Center</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
-:root{--black:#000000;--black2:#000000;--orange:#FF6A00;--orange-light:#FFA347;--white:#FFC98A;--line:rgba(255,163,71,0.35);--panel:rgba(0,0,0,0.72)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;min-height:100%;background:#000;background:linear-gradient(150deg,#000000 0%,#000000 14%,#7A2E00 46%,#FF6A00 68%,#000000 100%);background-attachment:fixed;background-size:cover;background-repeat:no-repeat;}
-body{margin:0;color:var(--white);font-family:'Public Sans',sans-serif;background:transparent!important;min-height:100vh}
-h1,h2,h3{font-family:'Fraunces',serif;margin:0}
-a{color:inherit;text-decoration:none}
-video,img{max-width:100%}
-button{font-family:inherit}
-.logo-mark{position:relative;width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--orange-light);flex-shrink:0;background:#000;display:flex;align-items:center;justify-content:center}
-.logo-mark video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;display:block;opacity:1;background:#000;transition:.35s}
-.logo-mark video.loaded{opacity:1}
-.logo-mark .fallback{font-family:'Fraunces',serif;font-weight:700;color:var(--orange-light);font-size:16px;z-index:1}
-.seal{position:relative;width:112px;height:112px;border-radius:50%;border:2px solid var(--orange-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#000;overflow:hidden}
-.seal video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;z-index:2;display:block;opacity:1;background:#000}
-.seal video.loaded{opacity:1}
-.seal .seal-fallback{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--orange-light);text-transform:uppercase;z-index:1;text-align:center}
-.seal::before{content:"";position:absolute;inset:8px;border:1px dashed var(--orange-light);border-radius:50%;opacity:.6;pointer-events:none;z-index:3}
-.seal.small{width:46px;height:46px;border-width:1.5px}
-header{position:sticky;top:0;z-index:50;background:rgba(7,5,2,0.92);border-bottom:1px solid var(--line)}
-.nav-wrap{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
-.brand-name span{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:var(--orange-light);margin-top:2px}
-nav.desktop-nav{display:flex;gap:14px;font-size:12px;align-items:center;flex-wrap:wrap}
-nav.desktop-nav a{opacity:.8;padding:4px 0;border-bottom:1px solid transparent;transition:.2s}
-nav.desktop-nav a:hover{opacity:1;border-color:var(--orange-light)}
-.lang-toggle{display:flex;gap:4px;border:1px solid var(--line);border-radius:20px;padding:3px}
-.lang-btn{background:none;border:none;color:var(--white);opacity:.6;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:6px 11px;border-radius:16px;cursor:pointer}
-.lang-btn.active{background:var(--orange);color:#1A0E05;opacity:1;font-weight:600}
-.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--white);width:38px;height:38px;border-radius:6px;cursor:pointer;font-size:16px}
-.mobile-nav{display:none;flex-direction:column;padding:0 24px 18px;gap:2px}
-.mobile-nav a{padding:9px 6px;font-size:14px;border-bottom:1px solid var(--line)}
-.mobile-nav.open{display:flex}
-@media(max-width:900px){nav.desktop-nav{display:none}.menu-btn{display:block}}
-.hero{max-width:1180px;margin:0 auto;padding:72px 24px 60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--orange-light);text-transform:uppercase;margin-bottom:18px;display:block}
-.hero h1{font-size:clamp(2.2rem,5.2vw,3.9rem);font-weight:600;line-height:1.06}
-.hero h1 em{font-style:italic;color:var(--orange-light)}
-.hero p.lede{margin-top:20px;max-width:560px;font-size:16px;line-height:1.65;opacity:.88}
-.hero .creole{margin-top:10px;font-style:italic;color:var(--orange-light);font-size:14px}
-.hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:13px 22px;border-radius:3px;display:inline-block;border:1px solid transparent}
-.btn-primary{background:var(--orange);color:#1A0E05}
-.btn-ghost{border:1px solid var(--line);color:var(--white)}
-@media(max-width:860px){.hero{grid-template-columns:1fr}.hero-seal{display:none}}
-.catmap{background:rgba(0,0,0,0.35);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px}
-.catmap-inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center}
-.catmap-item{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange-light);opacity:.9}
-.catmap-item b{color:#fff;opacity:.5;margin-right:4px}
-main{max-width:1180px;margin:0 auto;padding:40px 20px}
-.file{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:18px;overflow:hidden}
-.file-tab{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;cursor:pointer}
-.file-tab-left{display:flex;align-items:center;gap:12px}
-.file-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--orange-light);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--orange-light);flex-shrink:0}
-.file-tab h2{font-size:1.2rem}
-.file-tab .sub{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-light);margin-top:3px;opacity:.7}
-.chev{width:20px;height:20px;flex-shrink:0;transition:transform .3s;opacity:.7;color:var(--orange-light)}
-.file.open .chev{transform:rotate(180deg)}
-.file-body{display:none;padding:0 20px 18px}
-.file.open .file-body{display:block}
-.service-list{columns:2;column-gap:24px;list-style:none;margin:0;padding:0}
-.service-list li{break-inside:avoid;display:flex;gap:8px;padding:6px 0;border-bottom:1px dotted var(--line);font-size:13px}
-.service-list li::before{content:"✓";color:var(--orange-light);font-weight:700;flex-shrink:0}
-@media(max-width:600px){.service-list{columns:1}}
-.ai-center{background:rgba(0,0,0,0.55);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 24px;margin:40px 0}
-.ai-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-.ai-badge{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--orange-light);text-transform:uppercase;margin-bottom:12px;display:inline-block;border:1px solid var(--line);padding:6px 12px;border-radius:20px}
-.ai-center h2{font-size:2rem;line-height:1.1;margin-bottom:14px}
-.ai-center p{font-size:14px;line-height:1.6;opacity:.85}
-.ai-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.ai-feat{border:1px solid var(--line);border-radius:6px;padding:14px;background:rgba(0,0,0,0.35)}
-.ai-feat b{display:block;font-size:13px;margin-bottom:4px;color:var(--orange-light)}
-.ai-feat span{font-size:12px;opacity:.8}
-@media(max-width:800px){.ai-inner{grid-template-columns:1fr}}
-.band{padding:40px 24px}
-.band-inner{max-width:1180px;margin:0 auto}
-.band-contact{background:rgba(0,0,0,0.5)}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0}
-.contact-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:rgba(0,0,0,0.35)}
-.label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-light);margin-bottom:6px}
-.value{font-size:14px;line-height:1.6}
-.social-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-.social-pill{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px;background:rgba(0,0,0,.48);display:flex;align-items:center;gap:10px;min-height:50px;transition:.2s}
-.social-pill:hover{border-color:var(--orange-light);color:var(--orange-light);transform:translateY(-2px);background:rgba(255,106,0,.08)}
-.social-icon{width:32px;height:32px;border-radius:50%;border:1px solid var(--orange-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--orange-light);background:#000}
-.social-text{display:flex;flex-direction:column;gap:2px}.social-name{font-weight:700;font-size:12px}.social-action{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--orange-light)}
-footer{background:rgba(0,0,0,0.7);padding:30px 20px;border-top:1px solid var(--line);text-align:center;font-size:11px;opacity:.7}
-.footer-cats{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;margin-top:12px}
+
+:root{
+  --black:#000000;
+  --black2:#000000;
+  --orange:#FF6A00;
+  --orange-light:#FFA347;
+  --white:#FFC98A;
+  --line:rgba(255,163,71,0.35);
+  --panel:rgba(0,0,0,0.72)
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth;
+  min-height:100%;
+  background:#000;
+  background:
+    linear-gradient(
+      150deg,
+      #000000 0%,
+      #000000 14%,
+      #7A2E00 46%,
+      #FF6A00 68%,
+      #000000 100%
+    );
+  background-attachment:fixed;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+body{
+  margin:0;
+  color:var(--white);
+  font-family:'Public Sans',sans-serif;
+  background:transparent!important;
+  min-height:100vh
+}
+
+h1,h2,h3{
+  font-family:'Fraunces',serif;
+  margin:0
+}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+video,img{
+  max-width:100%
+}
+
+button{
+  font-family:inherit
+}
+
+
+/* =====================================================
+   EXISTING LOGO
+===================================================== */
+
+.logo-mark{
+  position:relative;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--orange-light);
+  flex-shrink:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.logo-mark video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:2;
+  display:block;
+  opacity:1;
+  background:#000;
+  transition:.35s
+}
+
+.logo-mark video.loaded{
+  opacity:1
+}
+
+.logo-mark .fallback{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  color:var(--orange-light);
+  font-size:16px;
+  z-index:1
+}
+
+
+.seal{
+  position:relative;
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  border:2px solid var(--orange-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  background:#000;
+  overflow:hidden
+}
+
+.seal video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  z-index:2;
+  display:block;
+  opacity:1;
+  background:#000
+}
+
+.seal video.loaded{
+  opacity:1
+}
+
+.seal .seal-fallback{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  color:var(--orange-light);
+  text-transform:uppercase;
+  z-index:1;
+  text-align:center
+}
+
+.seal::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px dashed var(--orange-light);
+  border-radius:50%;
+  opacity:.6;
+  pointer-events:none;
+  z-index:3
+}
+
+.seal.small{
+  width:46px;
+  height:46px;
+  border-width:1.5px
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(7,5,2,0.92);
+  border-bottom:1px solid var(--line)
+}
+
+.nav-wrap{
+  max-width:1180px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  gap:16px
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+
+.brand-name{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:16px
+}
+
+.brand-name span{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:.16em;
+  color:var(--orange-light);
+  margin-top:2px
+}
+
+nav.desktop-nav{
+  display:flex;
+  gap:14px;
+  font-size:12px;
+  align-items:center;
+  flex-wrap:wrap
+}
+
+nav.desktop-nav a{
+  opacity:.8;
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+  transition:.2s
+}
+
+nav.desktop-nav a:hover{
+  opacity:1;
+  border-color:var(--orange-light)
+}
+
+.lang-toggle{
+  display:flex;
+  gap:4px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:3px
+}
+
+.lang-btn{
+  background:none;
+  border:none;
+  color:var(--white);
+  opacity:.6;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  padding:6px 11px;
+  border-radius:16px;
+  cursor:pointer
+}
+
+.lang-btn.active{
+  background:var(--orange);
+  color:#1A0E05;
+  opacity:1;
+  font-weight:600
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  color:var(--white);
+  width:38px;
+  height:38px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px
+}
+
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  padding:0 24px 18px;
+  gap:2px
+}
+
+.mobile-nav a{
+  padding:9px 6px;
+  font-size:14px;
+  border-bottom:1px solid var(--line)
+}
+
+.mobile-nav.open{
+  display:flex
+}
+
+@media(max-width:900px){
+  nav.desktop-nav{
+    display:none
+  }
+
+  .menu-btn{
+    display:block
+  }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  max-width:1180px;
+  margin:0 auto;
+  padding:72px 24px 60px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:center
+}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.2em;
+  color:var(--orange-light);
+  text-transform:uppercase;
+  margin-bottom:18px;
+  display:block
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,5.2vw,3.9rem);
+  font-weight:600;
+  line-height:1.06
+}
+
+.hero h1 em{
+  font-style:italic;
+  color:var(--orange-light)
+}
+
+.hero p.lede{
+  margin-top:20px;
+  max-width:560px;
+  font-size:16px;
+  line-height:1.65;
+  opacity:.88
+}
+
+.hero .creole{
+  margin-top:10px;
+  font-style:italic;
+  color:var(--orange-light);
+  font-size:14px
+}
+
+.hero-cta{
+  margin-top:28px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap
+}
+
+.btn{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:13px 22px;
+  border-radius:3px;
+  display:inline-block;
+  border:1px solid transparent
+}
+
+.btn-primary{
+  background:var(--orange);
+  color:#1A0E05
+}
+
+.btn-ghost{
+  border:1px solid var(--line);
+  color:var(--white)
+}
+
+@media(max-width:860px){
+  .hero{
+    grid-template-columns:1fr
+  }
+
+  .hero-seal{
+    display:none
+  }
+}
+
+
+/* =====================================================
+   NEW SECOND LOGO SHOWCASE
+   maxima-xbest.mp4
+===================================================== */
+
+.maximax-logo-showcase{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px 58px
+}
+
+.maximax-logo-stage{
+  position:relative;
+  width:min(100%,760px);
+  margin:0 auto;
+  padding:18px;
+  overflow:hidden;
+
+  border:1px solid var(--orange-light);
+  border-radius:20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(255,106,0,.24),
+      rgba(0,0,0,.96) 62%,
+      #000 100%
+    );
+
+  box-shadow:
+    0 0 30px rgba(255,106,0,.20),
+    0 0 80px rgba(255,106,0,.10),
+    0 28px 70px rgba(0,0,0,.65)
+}
+
+.maximax-logo-stage::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid rgba(255,163,71,.22);
+  border-radius:14px;
+  pointer-events:none;
+  z-index:3
+}
+
+.maximax-logo-stage::after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:rgba(255,106,0,.08);
+  filter:blur(40px);
+  pointer-events:none
+}
+
+.maximax-logo-title{
+  position:relative;
+  z-index:4;
+  margin:0 0 14px;
+  text-align:center;
+
+  color:var(--orange-light);
+
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.20em;
+  text-transform:uppercase
+}
+
+.maximax-logo-video{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-height:430px;
+  display:block;
+
+  object-fit:contain;
+
+  border-radius:13px;
+  background:#000
+}
+
+.maximax-logo-line{
+  position:relative;
+  z-index:4;
+
+  width:70%;
+  max-width:420px;
+  height:1px;
+
+  margin:15px auto 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--orange-light),
+      transparent
+    )
+}
+
+@media(max-width:600px){
+
+  .maximax-logo-showcase{
+    padding:0 14px 42px
+  }
+
+  .maximax-logo-stage{
+    padding:12px;
+    border-radius:15px
+  }
+
+  .maximax-logo-title{
+    font-size:8px
+  }
+
+  .maximax-logo-video{
+    border-radius:9px
+  }
+
+}
+
+
+/* =====================================================
+   CATEGORY MAP
+===================================================== */
+
+.catmap{
+  background:rgba(0,0,0,0.35);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:22px 24px
+}
+
+.catmap-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  justify-content:center
+}
+
+.catmap-item{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  color:var(--orange-light);
+  opacity:.9
+}
+
+.catmap-item b{
+  color:#fff;
+  opacity:.5;
+  margin-right:4px
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:40px 20px
+}
+
+.file{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:8px;
+  margin-bottom:18px;
+  overflow:hidden
+}
+
+.file-tab{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+  cursor:pointer
+}
+
+.file-tab-left{
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+
+.file-num{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1px solid var(--orange-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  color:var(--orange-light);
+  flex-shrink:0
+}
+
+.file-tab h2{
+  font-size:1.2rem
+}
+
+.file-tab .sub{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--orange-light);
+  margin-top:3px;
+  opacity:.7
+}
+
+.chev{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  transition:transform .3s;
+  opacity:.7;
+  color:var(--orange-light)
+}
+
+.file.open .chev{
+  transform:rotate(180deg)
+}
+
+.file-body{
+  display:none;
+  padding:0 20px 18px
+}
+
+.file.open .file-body{
+  display:block
+}
+
+.service-list{
+  columns:2;
+  column-gap:24px;
+  list-style:none;
+  margin:0;
+  padding:0
+}
+
+.service-list li{
+  break-inside:avoid;
+  display:flex;
+  gap:8px;
+  padding:6px 0;
+  border-bottom:1px dotted var(--line);
+  font-size:13px
+}
+
+.service-list li::before{
+  content:"✓";
+  color:var(--orange-light);
+  font-weight:700;
+  flex-shrink:0
+}
+
+@media(max-width:600px){
+  .service-list{
+    columns:1
+  }
+}
+
+.myaccess-btn-wrap{
+  margin-top:22px
+}
+
+.myaccess-btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:4px;
+  background:var(--orange);
+  color:#160900;
+  text-decoration:none;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+  border:1px solid var(--orange);
+  transition:.2s
+}
+
+.myaccess-btn:hover{
+  background:var(--orange-light)
+}
+
+
+/* =====================================================
+   AI CENTER
+===================================================== */
+
+.ai-center{
+  background:rgba(0,0,0,0.55);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:50px 24px;
+  margin:40px 0
+}
+
+.ai-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center
+}
+
+.ai-badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  letter-spacing:.2em;
+  color:var(--orange-light);
+  text-transform:uppercase;
+  margin-bottom:12px;
+  display:inline-block;
+  border:1px solid var(--line);
+  padding:6px 12px;
+  border-radius:20px
+}
+
+.ai-center h2{
+  font-size:2rem;
+  line-height:1.1;
+  margin-bottom:14px
+}
+
+.ai-center p{
+  font-size:14px;
+  line-height:1.6;
+  opacity:.85
+}
+
+.ai-features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px
+}
+
+.ai-feat{
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:14px;
+  background:rgba(0,0,0,0.35)
+}
+
+.ai-feat b{
+  display:block;
+  font-size:13px;
+  margin-bottom:4px;
+  color:var(--orange-light)
+}
+
+.ai-feat span{
+  font-size:12px;
+  opacity:.8
+}
+
+@media(max-width:800px){
+  .ai-inner{
+    grid-template-columns:1fr
+  }
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.band{
+  padding:40px 24px
+}
+
+.band-inner{
+  max-width:1180px;
+  margin:0 auto
+}
+
+.band-contact{
+  background:rgba(0,0,0,0.5)
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+  margin:20px 0
+}
+
+.contact-card{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:16px;
+  background:rgba(0,0,0,0.35)
+}
+
+.label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--orange-light);
+  margin-bottom:6px
+}
+
+.value{
+  font-size:14px;
+  line-height:1.6
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:10px
+}
+
+.social-pill{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:12px;
+  background:rgba(0,0,0,.48);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:50px;
+  transition:.2s
+}
+
+.social-pill:hover{
+  border-color:var(--orange-light);
+  color:var(--orange-light);
+  transform:translateY(-2px);
+  background:rgba(255,106,0,.08)
+}
+
+.social-icon{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1px solid var(--orange-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-size:16px;
+  color:var(--orange-light);
+  background:#000
+}
+
+.social-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px
+}
+
+.social-name{
+  font-weight:700;
+  font-size:12px
+}
+
+.social-action{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;
+  color:var(--orange-light)
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  background:rgba(0,0,0,0.7);
+  padding:30px 20px;
+  border-top:1px solid var(--line);
+  text-align:center;
+  font-size:11px;
+  opacity:.7
+}
+
+.footer-cats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  justify-content:center;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  margin-top:12px
+}
+
 </style>
 </head>
+
+
 <body>
 
+
 <header>
+
   <div class="nav-wrap">
+
     <div class="brand">
+
       <div class="logo-mark">
-        <span class="fallback">M</span>
-        <video autoplay muted loop playsinline preload="auto" onloadeddata="this.classList.add('loaded')" onerror="this.style.display='none'">
-          <source src="./maximax-best-multi.mp4" type="video/mp4">
+
+        <span class="fallback">
+          M
+        </span>
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          onloadeddata="this.classList.add('loaded')"
+          onerror="this.style.display='none'"
+        >
+          <source
+            src="./maximax-best-multi.mp4"
+            type="video/mp4"
+          >
         </video>
+
       </div>
-      <div class="brand-name">MAXIMAX <span>MULTI SERVICES • EST 2020</span></div>
+
+      <div class="brand-name">
+        MAXIMAX
+
+        <span>
+          MULTI SERVICES • EST 2020
+        </span>
+
+      </div>
+
     </div>
+
+
     <nav class="desktop-nav">
-      <a href="#hero">Home</a>
-      <a href="#services">Services</a>
-      <a href="#ai-center">AI Center</a>
-      <a href="#contact">Contact</a>
+
+      <a href="#hero">
+        Home
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#ai-center">
+        AI Center
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
-    <button class="menu-btn" id="menuBtn">☰</button>
+
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+    >
+      ☰
+    </button>
+
   </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#hero">Home</a><a href="#services">Services</a><a href="#ai-center">AI Center</a><a href="#contact">Contact</a>
+
+
+  <div
+    class="mobile-nav"
+    id="mobileNav"
+  >
+
+    <a href="#hero">
+      Home
+    </a>
+
+    <a href="#services">
+      Services
+    </a>
+
+    <a href="#ai-center">
+      AI Center
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
   </div>
+
 </header>
 
-<section class="hero" id="hero">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+  class="hero"
+  id="hero"
+>
+
   <div>
-    <span class="eyebrow">Pine Hills, Orlando • Indianapolis • New York</span>
-    <h1>Your Trusted Partner for <em>Life in the USA</em></h1>
-    <p class="lede">Maximax Multi Services — Notary, Taxes, Immigration, EOIR+BIA, Insurance, Real Estate, Business Formation & more. Tout sèvis ou bezwen anba yon sèl do-kay.</p>
-    <p class="creole">Nou pale Kreyòl, English, Español.</p>
+
+    <span class="eyebrow">
+      Pine Hills, Orlando • Indianapolis • New York
+    </span>
+
+    <h1>
+      Your Trusted Partner for
+      <em>
+        Life in the USA
+      </em>
+    </h1>
+
+    <p class="lede">
+      Maximax Multi Services — Notary, Taxes,
+      Immigration, EOIR+BIA, Insurance,
+      Real Estate, Business Formation & more.
+      Tout sèvis ou bezwen anba yon sèl do-kay.
+    </p>
+
+    <p class="creole">
+      Nou pale Kreyòl, English, Español.
+    </p>
+
+
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Book Appointment</a>
-      <a href="#services" class="btn btn-ghost">Explore Services</a>
+
+      <a
+        href="#contact"
+        class="btn btn-primary"
+      >
+        Book Appointment
+      </a>
+
+      <a
+        href="#services"
+        class="btn btn-ghost"
+      >
+        Explore Services
+      </a>
+
     </div>
+
   </div>
+
+
   <div class="hero-seal">
+
     <div class="seal">
-      <span class="seal-fallback">Maximax<br>Services</span>
-      <video autoplay muted loop playsinline preload="auto" onloadeddata="this.classList.add('loaded')" onerror="this.style.display='none'">
-        <source src="./maximax-best-multi.mp4" type="video/mp4">
+
+      <span class="seal-fallback">
+        Maximax
+        <br>
+        Services
+      </span>
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        onloadeddata="this.classList.add('loaded')"
+        onerror="this.style.display='none'"
+      >
+        <source
+          src="./maximax-best-multi.mp4"
+          type="video/mp4"
+        >
       </video>
+
     </div>
+
   </div>
+
 </section>
 
-<div class="catmap">
-  <div class="catmap-inner">
-    <a class="catmap-item" href="#mod1"><b>01</b> NOTARY</a>
-    <a class="catmap-item" href="#mod2"><b>02</b> TAXES</a>
-    <a class="catmap-item" href="#mod3"><b>03</b> IMMIGRATION</a>
-    <a class="catmap-item" href="#mod4"><b>04</b> EOIR+BIA</a>
-    <a class="catmap-item" href="#mod5"><b>05</b> INSURANCE</a>
-    <a class="catmap-item" href="#mod6"><b>06</b> REAL ESTATE</a>
-    <a class="catmap-item" href="#mod7"><b>07</b> BUSINESS</a>
-    <a class="catmap-item" href="#mod8"><b>08</b> APOSTILLE</a>
-    <a class="catmap-item" href="#mod9"><b>09</b> TRAVEL+DMV</a>
+
+
+<!-- =====================================================
+     NEW LOGO ADDED
+     maxima-xbest.mp4
+     NOTHING FROM ORIGINAL HOMEPAGE REMOVED
+===================================================== -->
+
+<section class="maximax-logo-showcase">
+
+  <div class="maximax-logo-stage">
+
+    <div class="maximax-logo-title">
+      MAXIMAX MULTI SERVICES
+    </div>
+
+    <video
+      class="maximax-logo-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source
+        src="./maxima-xbest.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+    <div class="maximax-logo-line"></div>
+
   </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORY MAP
+===================================================== -->
+
+<div class="catmap">
+
+  <div class="catmap-inner">
+
+    <a
+      class="catmap-item"
+      href="#mod1"
+    >
+      <b>01</b>
+      NOTARY
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod2"
+    >
+      <b>02</b>
+      TAXES
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod3"
+    >
+      <b>03</b>
+      IMMIGRATION
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod4"
+    >
+      <b>04</b>
+      EOIR+BIA
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod5"
+    >
+      <b>05</b>
+      INSURANCE
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod6"
+    >
+      <b>06</b>
+      REAL ESTATE
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod7"
+    >
+      <b>07</b>
+      BUSINESS
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod8"
+    >
+      <b>08</b>
+      APOSTILLE
+    </a>
+
+    <a
+      class="catmap-item"
+      href="#mod9"
+    >
+      <b>09</b>
+      TRAVEL+DMV
+    </a>
+
+  </div>
+
 </div>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
 <main id="services">
 
-  <div class="file open" id="mod1">
-    <div class="file-tab" onclick="toggleFile('mod1')">
-      <div class="file-tab-left"><div class="file-num">01</div><div><h2>Notary & Translation</h2><div class="sub">Certified • Fast • All 50 States</div></div></div><span class="chev">▼</span>
+
+  <!-- MODULE 01 -->
+
+  <div
+    class="file open"
+    id="mod1"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod1')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          01
+        </div>
+
+        <div>
+
+          <h2>
+            Notary & Translation
+          </h2>
+
+          <div class="sub">
+            Certified • Fast • All 50 States
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Notary Public - All 50 States</li>
-        <li>Mobile Notary - We come to you</li>
-        <li>Power of Attorney</li>
-        <li>Affidavit & Legal Letters</li>
-        <li>Document Apostille</li>
-        <li>Travel Consent for Minors</li>
+
+        <li>
+          Notary Public - All 50 States
+        </li>
+
+        <li>
+          Mobile Notary - We come to you
+        </li>
+
+        <li>
+          Power of Attorney
+        </li>
+
+        <li>
+          Affidavit & Legal Letters
+        </li>
+
+        <li>
+          Document Apostille
+        </li>
+
+        <li>
+          Travel Consent for Minors
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod2">
-    <div class="file-tab" onclick="toggleFile('mod2')">
-      <div class="file-tab-left"><div class="file-num">02</div><div><h2>Taxes & Accounting</h2><div class="sub">Maximize your refund - ITIN</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 02 -->
+
+  <div
+    class="file open"
+    id="mod2"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod2')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          02
+        </div>
+
+        <div>
+
+          <h2>
+            Taxes & Accounting
+          </h2>
+
+          <div class="sub">
+            Maximize your refund - ITIN
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Personal Taxes - Form 1040</li>
-        <li>Business Taxes - LLC, S-Corp, C-Corp</li>
-        <li>ITIN Application & Renewal - W7</li>
-        <li>Bookkeeping & Payroll</li>
-        <li>IRS Letter & Audit Help</li>
-        <li>Tax Amendment - 1040X</li>
+
+        <li>
+          Personal Taxes - Form 1040
+        </li>
+
+        <li>
+          Business Taxes - LLC, S-Corp, C-Corp
+        </li>
+
+        <li>
+          ITIN Application & Renewal - W7
+        </li>
+
+        <li>
+          Bookkeeping & Payroll
+        </li>
+
+        <li>
+          IRS Letter & Audit Help
+        </li>
+
+        <li>
+          Tax Amendment - 1040X
+        </li>
+
       </ul>
-      <div class="myaccess-btn-wrap"><a class="myaccess-btn" href="#contact">File My Taxes Now</a></div>
+
+      <div class="myaccess-btn-wrap">
+
+        <a
+          class="myaccess-btn"
+          href="#contact"
+        >
+          File My Taxes Now
+        </a>
+
+      </div>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod3">
-    <div class="file-tab" onclick="toggleFile('mod3')">
-      <div class="file-tab-left"><div class="file-num">03</div><div><h2>Immigration Services</h2><div class="sub">TPS • Asylum • Family Petition</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 03 -->
+
+  <div
+    class="file open"
+    id="mod3"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod3')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          03
+        </div>
+
+        <div>
+
+          <h2>
+            Immigration Services
+          </h2>
+
+          <div class="sub">
+            TPS • Asylum • Family Petition
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>TPS Application & Renewal</li>
-        <li>Asylum & Work Permit (I-765)</li>
-        <li>Family Petition (I-130)</li>
-        <li>Green Card & Citizenship (N-400)</li>
-        <li>USCIS Form Preparation - All Forms</li>
-        <li>DACA Renewal</li>
+
+        <li>
+          TPS Application & Renewal
+        </li>
+
+        <li>
+          Asylum & Work Permit (I-765)
+        </li>
+
+        <li>
+          Family Petition (I-130)
+        </li>
+
+        <li>
+          Green Card & Citizenship (N-400)
+        </li>
+
+        <li>
+          USCIS Form Preparation - All Forms
+        </li>
+
+        <li>
+          DACA Renewal
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod4">
-    <div class="file-tab" onclick="toggleFile('mod4')">
-      <div class="file-tab-left"><div class="file-num">04</div><div><h2>EOIR + BIA - Menm Bouton</h2><div class="sub">Immigration Court • Board of Appeals • Menm kote</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 04 -->
+
+  <div
+    class="file open"
+    id="mod4"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod4')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          04
+        </div>
+
+        <div>
+
+          <h2>
+            EOIR + BIA - Menm Bouton
+          </h2>
+
+          <div class="sub">
+            Immigration Court • Board of Appeals • Menm kote
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>EOIR - Executive Office for Immigration Review</li>
-        <li>BIA - Board of Immigration Appeals</li>
-        <li>Change of Venue & Court Date Check</li>
-        <li>Master Calendar & Individual Hearing Prep</li>
-        <li>Appeal to BIA - Brief & Motion</li>
-        <li>FOIA & Case Status - EOIR Hotline</li>
+
+        <li>
+          EOIR - Executive Office for Immigration Review
+        </li>
+
+        <li>
+          BIA - Board of Immigration Appeals
+        </li>
+
+        <li>
+          Change of Venue & Court Date Check
+        </li>
+
+        <li>
+          Master Calendar & Individual Hearing Prep
+        </li>
+
+        <li>
+          Appeal to BIA - Brief & Motion
+        </li>
+
+        <li>
+          FOIA & Case Status - EOIR Hotline
+        </li>
+
       </ul>
-      <div class="myaccess-btn-wrap"><a class="myaccess-btn" href="#contact">EOIR + BIA Help - Rele Kounya</a></div>
+
+      <div class="myaccess-btn-wrap">
+
+        <a
+          class="myaccess-btn"
+          href="#contact"
+        >
+          EOIR + BIA Help - Rele Kounya
+        </a>
+
+      </div>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod5">
-    <div class="file-tab" onclick="toggleFile('mod5')">
-      <div class="file-tab-left"><div class="file-num">05</div><div><h2>Insurance</h2><div class="sub">Auto • Home • Life • Health</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 05 -->
+
+  <div
+    class="file open"
+    id="mod5"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod5')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          05
+        </div>
+
+        <div>
+
+          <h2>
+            Insurance
+          </h2>
+
+          <div class="sub">
+            Auto • Home • Life • Health
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Auto Insurance - Best Rates</li>
-        <li>Homeowners & Renters Insurance</li>
-        <li>Life Insurance</li>
-        <li>Health Insurance - Marketplace</li>
-        <li>Business & Commercial Insurance</li>
-        <li>SR22 Insurance</li>
+
+        <li>
+          Auto Insurance - Best Rates
+        </li>
+
+        <li>
+          Homeowners & Renters Insurance
+        </li>
+
+        <li>
+          Life Insurance
+        </li>
+
+        <li>
+          Health Insurance - Marketplace
+        </li>
+
+        <li>
+          Business & Commercial Insurance
+        </li>
+
+        <li>
+          SR22 Insurance
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod6">
-    <div class="file-tab" onclick="toggleFile('mod6')">
-      <div class="file-tab-left"><div class="file-num">06</div><div><h2>Real Estate</h2><div class="sub">Buy • Sell • Rent • Manage</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 06 -->
+
+  <div
+    class="file open"
+    id="mod6"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod6')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          06
+        </div>
+
+        <div>
+
+          <h2>
+            Real Estate
+          </h2>
+
+          <div class="sub">
+            Buy • Sell • Rent • Manage
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Buy Your First Home - First Time Buyer</li>
-        <li>Sell Your House - Fast Closing</li>
-        <li>Rental Assistance</li>
-        <li>Property Management</li>
-        <li>House Inspection Referral</li>
-        <li>Mortgage Referral</li>
+
+        <li>
+          Buy Your First Home - First Time Buyer
+        </li>
+
+        <li>
+          Sell Your House - Fast Closing
+        </li>
+
+        <li>
+          Rental Assistance
+        </li>
+
+        <li>
+          Property Management
+        </li>
+
+        <li>
+          House Inspection Referral
+        </li>
+
+        <li>
+          Mortgage Referral
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod7">
-    <div class="file-tab" onclick="toggleFile('mod7')">
-      <div class="file-tab-left"><div class="file-num">07</div><div><h2>Business Formation</h2><div class="sub">LLC • Corp • EIN • License</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 07 -->
+
+  <div
+    class="file open"
+    id="mod7"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod7')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          07
+        </div>
+
+        <div>
+
+          <h2>
+            Business Formation
+          </h2>
+
+          <div class="sub">
+            LLC • Corp • EIN • License
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>LLC & Corporation Formation</li>
-        <li>EIN Number - Same Day</li>
-        <li>Business License & Permit</li>
-        <li>Business Plan & Logo Design</li>
-        <li>Business Taxes & Bookkeeping</li>
-        <li>Business Bank Account Setup</li>
+
+        <li>
+          LLC & Corporation Formation
+        </li>
+
+        <li>
+          EIN Number - Same Day
+        </li>
+
+        <li>
+          Business License & Permit
+        </li>
+
+        <li>
+          Business Plan & Logo Design
+        </li>
+
+        <li>
+          Business Taxes & Bookkeeping
+        </li>
+
+        <li>
+          Business Bank Account Setup
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod8">
-    <div class="file-tab" onclick="toggleFile('mod8')">
-      <div class="file-tab-left"><div class="file-num">08</div><div><h2>Apostille & Legalization</h2><div class="sub">State & Federal • Fast Service</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 08 -->
+
+  <div
+    class="file open"
+    id="mod8"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod8')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          08
+        </div>
+
+        <div>
+
+          <h2>
+            Apostille & Legalization
+          </h2>
+
+          <div class="sub">
+            State & Federal • Fast Service
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Document Apostille - All States</li>
-        <li>FBI Background Check Apostille</li>
-        <li>Diploma & School Records Apostille</li>
-        <li>Power of Attorney for Haiti</li>
-        <li>Authentication & Legalization</li>
-        <li>Embassy Legalization</li>
+
+        <li>
+          Document Apostille - All States
+        </li>
+
+        <li>
+          FBI Background Check Apostille
+        </li>
+
+        <li>
+          Diploma & School Records Apostille
+        </li>
+
+        <li>
+          Power of Attorney for Haiti
+        </li>
+
+        <li>
+          Authentication & Legalization
+        </li>
+
+        <li>
+          Embassy Legalization
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <div class="file open" id="mod9">
-    <div class="file-tab" onclick="toggleFile('mod9')">
-      <div class="file-tab-left"><div class="file-num">09</div><div><h2>Travel & DMV Services</h2><div class="sub">Plane Ticket • Passport • DMV</div></div></div><span class="chev">▼</span>
+
+
+  <!-- MODULE 09 -->
+
+  <div
+    class="file open"
+    id="mod9"
+  >
+
+    <div
+      class="file-tab"
+      onclick="toggleFile('mod9')"
+    >
+
+      <div class="file-tab-left">
+
+        <div class="file-num">
+          09
+        </div>
+
+        <div>
+
+          <h2>
+            Travel & DMV Services
+          </h2>
+
+          <div class="sub">
+            Plane Ticket • Passport • DMV
+          </div>
+
+        </div>
+
+      </div>
+
+      <span class="chev">
+        ▼
+      </span>
+
     </div>
+
+
     <div class="file-body">
+
       <ul class="service-list">
-        <li>Plane Ticket - Best Price Haiti / USA / International</li>
-        <li>Passport Application & Renewal</li>
-        <li>DMV Services - License, Registration, Title</li>
-        <li>TSA PreCheck & TWIC Card Help</li>
-        <li>Hotel Booking & Car Rental</li>
-        <li>Travel Insurance</li>
+
+        <li>
+          Plane Ticket - Best Price Haiti / USA / International
+        </li>
+
+        <li>
+          Passport Application & Renewal
+        </li>
+
+        <li>
+          DMV Services - License, Registration, Title
+        </li>
+
+        <li>
+          TSA PreCheck & TWIC Card Help
+        </li>
+
+        <li>
+          Hotel Booking & Car Rental
+        </li>
+
+        <li>
+          Travel Insurance
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
 </main>
 
-<section class="ai-center" id="ai-center">
+
+
+<!-- =====================================================
+     AI CENTER
+===================================================== -->
+
+<section
+  class="ai-center"
+  id="ai-center"
+>
+
   <div class="ai-inner">
+
     <div>
-      <span class="ai-badge">🤖 AI CENTER - NOUVO</span>
-      <h2>Maximax AI Assistant Center</h2>
-      <p>AI Center nou an ap chaje kounya — li ede w ranpli fòm, tcheke ka w, tradui dokiman, epi reponn kesyon sou Immigration, Taxes, ak tout sèvis nou yo. Disponible 24/7 an Kreyòl, English, Español.</p>
+
+      <span class="ai-badge">
+        🤖 AI CENTER - NOUVO
+      </span>
+
+      <h2>
+        Maximax AI Assistant Center
+      </h2>
+
+      <p>
+        AI Center nou an ap chaje kounya — li ede w ranpli fòm,
+        tcheke ka w, tradui dokiman, epi reponn kesyon sou
+        Immigration, Taxes, ak tout sèvis nou yo.
+        Disponible 24/7 an Kreyòl, English, Español.
+      </p>
+
+
       <div class="ai-features">
-        <div class="ai-feat"><b>📋 Form Helper</b><span>Ranpli I-130, I-765, N-400 otomatik</span></div>
-        <div class="ai-feat"><b>🔍 Case Tracker</b><span>Tcheke TPS, Asylum, EOIR ka w</span></div>
-        <div class="ai-feat"><b>🌐 Tradiksyon AI</b><span>Tradui dokiman enstantane</span></div>
-        <div class="ai-feat"><b>💬 Chat 24/7</b><span>Reponn kesyon an Kreyòl</span></div>
-      </div>
-      <div class="myaccess-btn-wrap"><a class="myaccess-btn" href="#contact">Try AI Center Now</a></div>
-    </div>
-    <div>
-      <div style="border:1px solid var(--line);border-radius:12px;padding:20px;background:rgba(0,0,0,0.6)">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange-light);margin-bottom:12px">AI CHAT PREVIEW</div>
-        <div style="background:rgba(255,106,0,0.1);border-radius:8px;padding:12px;margin-bottom:10px;font-size:13px">👤 Ki jan pou m tcheke dat tribinal mwen?</div>
-        <div style="background:rgba(0,0,0,0.5);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13px">🤖 Ale sou EOIR hotline 1-800-898-7180 oswa m ka tcheke l pou ou. Ki A-Number ou?</div>
-        <div style="margin-top:14px;display:flex;gap:8px">
-          <input type="text" placeholder="Poze yon kesyon..." style="flex:1;background:rgba(0,0,0,0.5);border:1px solid var(--line);border-radius:6px;padding:10px;color:var(--white);font-size:13px">
-          <button style="background:var(--orange);border:none;border-radius:6px;padding:10px 16px;color:#000;font-weight:600;cursor:pointer">Voye</button>
+
+        <div class="ai-feat">
+          <b>
+            📋 Form Helper
+          </b>
+
+          <span>
+            Ranpli I-130, I-765, N-400 otomatik
+          </span>
         </div>
+
+
+        <div class="ai-feat">
+          <b>
+            🔍 Case Tracker
+          </b>
+
+          <span>
+            Tcheke TPS, Asylum, EOIR ka w
+          </span>
+        </div>
+
+
+        <div class="ai-feat">
+          <b>
+            🌐 Tradiksyon AI
+          </b>
+
+          <span>
+            Tradui dokiman enstantane
+          </span>
+        </div>
+
+
+        <div class="ai-feat">
+          <b>
+            💬 Chat 24/7
+          </b>
+
+          <span>
+            Reponn kesyon an Kreyòl
+          </span>
+        </div>
+
       </div>
+
+
+      <div class="myaccess-btn-wrap">
+
+        <a
+          class="myaccess-btn"
+          href="#contact"
+        >
+          Try AI Center Now
+        </a>
+
+      </div>
+
     </div>
+
+
+    <div>
+
+      <div
+        style="
+          border:1px solid var(--line);
+          border-radius:12px;
+          padding:20px;
+          background:rgba(0,0,0,0.6)
+        "
+      >
+
+        <div
+          style="
+            font-family:'IBM Plex Mono',monospace;
+            font-size:10px;
+            color:var(--orange-light);
+            margin-bottom:12px
+          "
+        >
+          AI CHAT PREVIEW
+        </div>
+
+
+        <div
+          style="
+            background:rgba(255,106,0,0.1);
+            border-radius:8px;
+            padding:12px;
+            margin-bottom:10px;
+            font-size:13px
+          "
+        >
+          👤 Ki jan pou m tcheke dat tribinal mwen?
+        </div>
+
+
+        <div
+          style="
+            background:rgba(0,0,0,0.5);
+            border:1px solid var(--line);
+            border-radius:8px;
+            padding:12px;
+            font-size:13px
+          "
+        >
+          🤖 Ale sou EOIR hotline 1-800-898-7180
+          oswa m ka tcheke l pou ou.
+          Ki A-Number ou?
+        </div>
+
+
+        <div
+          style="
+            margin-top:14px;
+            display:flex;
+            gap:8px
+          "
+        >
+
+          <input
+            type="text"
+            placeholder="Poze yon kesyon..."
+            style="
+              flex:1;
+              background:rgba(0,0,0,0.5);
+              border:1px solid var(--line);
+              border-radius:6px;
+              padding:10px;
+              color:var(--white);
+              font-size:13px
+            "
+          >
+
+          <button
+            style="
+              background:var(--orange);
+              border:none;
+              border-radius:6px;
+              padding:10px 16px;
+              color:#000;
+              font-weight:600;
+              cursor:pointer
+            "
+          >
+            Voye
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<section class="band band-contact" id="contact">
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+  class="band band-contact"
+  id="contact"
+>
+
   <div class="band-inner">
-    <h2 style="font-size:1.6rem;margin-bottom:20px">Contact - 9 Rezo Sosyal</h2>
+
+    <h2
+      style="
+        font-size:1.6rem;
+        margin-bottom:20px
+      "
+    >
+      Contact - 9 Rezo Sosyal
+    </h2>
+
+
     <div class="contact-grid">
-      <div class="contact-card"><div class="label">Telephone</div><div class="value"><a href="tel:+14076405166">(407) 640-5166</a><br><a href="tel:+15162168494">(516) 216-8494</a><br><a href="tel:+13175381150">(317) 538-1150</a></div></div>
-      <div class="contact-card"><div class="label">Email</div><div class="value">maximaxmultiservices@gmail.com</div></div>
-      <div class="contact-card"><div class="label">Address</div><div class="value">Pine Hills Orlando FL<br>Indianapolis IN<br>Hempstead NY 11550</div></div>
+
+      <div class="contact-card">
+
+        <div class="label">
+          Telephone
+        </div>
+
+        <div class="value">
+
+          <a href="tel:+14076405166">
+            (407) 640-5166
+          </a>
+
+          <br>
+
+          <a href="tel:+15162168494">
+            (516) 216-8494
+          </a>
+
+          <br>
+
+          <a href="tel:+13175381150">
+            (317) 538-1150
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="label">
+          Email
+        </div>
+
+        <div class="value">
+          maximaxmultiservices@gmail.com
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="label">
+          Address
+        </div>
+
+        <div class="value">
+          Pine Hills Orlando FL
+          <br>
+          Indianapolis IN
+          <br>
+          Hempstead NY 11550
+        </div>
+
+      </div>
+
     </div>
+
+
+
     <div class="social-row">
-      <a class="social-pill" href="https://wa.me/14076405166" target="_blank"><div class="social-icon"><i class="fab fa-whatsapp"></i></div><div class="social-text"><span class="social-name">WhatsApp</span><span class="social-action">Chat now</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-facebook-f"></i></div><div class="social-text"><span class="social-name">Facebook</span><span class="social-action">Follow</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-instagram"></i></div><div class="social-text"><span class="social-name">Instagram</span><span class="social-action">See work</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-tiktok"></i></div><div class="social-text"><span class="social-name">TikTok</span><span class="social-action">Watch</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-x-twitter"></i></div><div class="social-text"><span class="social-name">X / Twitter</span><span class="social-action">Follow</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-youtube"></i></div><div class="social-text"><span class="social-name">YouTube</span><span class="social-action">Subscribe</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-linkedin-in"></i></div><div class="social-text"><span class="social-name">LinkedIn</span><span class="social-action">Connect</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fab fa-spotify"></i></div><div class="social-text"><span class="social-name">Spotify</span><span class="social-action">Listen</span></div></a>
-      <a class="social-pill" href="#" target="_blank"><div class="social-icon"><i class="fas fa-bold"></i></div><div class="social-text"><span class="social-name">Truth Social</span><span class="social-action">Follow</span></div></a>
+
+
+      <a
+        class="social-pill"
+        href="https://wa.me/14076405166"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            WhatsApp
+          </span>
+
+          <span class="social-action">
+            Chat now
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            Facebook
+          </span>
+
+          <span class="social-action">
+            Follow
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            Instagram
+          </span>
+
+          <span class="social-action">
+            See work
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-tiktok"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            TikTok
+          </span>
+
+          <span class="social-action">
+            Watch
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-x-twitter"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            X / Twitter
+          </span>
+
+          <span class="social-action">
+            Follow
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-youtube"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            YouTube
+          </span>
+
+          <span class="social-action">
+            Subscribe
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            LinkedIn
+          </span>
+
+          <span class="social-action">
+            Connect
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fab fa-spotify"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            Spotify
+          </span>
+
+          <span class="social-action">
+            Listen
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="social-pill"
+        href="#"
+        target="_blank"
+      >
+
+        <div class="social-icon">
+          <i class="fas fa-bold"></i>
+        </div>
+
+        <div class="social-text">
+
+          <span class="social-name">
+            Truth Social
+          </span>
+
+          <span class="social-action">
+            Follow
+          </span>
+
+        </div>
+
+      </a>
+
+
     </div>
+
   </div>
+
 </section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
-  <div>© 2025 Maximax Multi Services - 9 Modules + EOIR+BIA + AI Center + Logo maximax-best-multi.mp4</div>
-  <div class="footer-cats"><span>NOTARY</span><span>TAXES</span><span>IMMIGRATION</span><span>EOIR+BIA</span><span>INSURANCE</span><span>REAL ESTATE</span><span>BUSINESS</span><span>APOSTILLE</span><span>TRAVEL</span></div>
+
+  <div>
+    © 2025 Maximax Multi Services -
+    9 Modules + EOIR+BIA + AI Center +
+    Logo maximax-best-multi.mp4
+  </div>
+
+
+  <div class="footer-cats">
+
+    <span>
+      NOTARY
+    </span>
+
+    <span>
+      TAXES
+    </span>
+
+    <span>
+      IMMIGRATION
+    </span>
+
+    <span>
+      EOIR+BIA
+    </span>
+
+    <span>
+      INSURANCE
+    </span>
+
+    <span>
+      REAL ESTATE
+    </span>
+
+    <span>
+      BUSINESS
+    </span>
+
+    <span>
+      APOSTILLE
+    </span>
+
+    <span>
+      TRAVEL
+    </span>
+
+  </div>
+
 </footer>
 
+
+
 <script>
-function toggleFile(id){document.getElementById(id).classList.toggle('open')}
-document.getElementById('menuBtn').addEventListener('click',()=>{document.getElementById('mobileNav').classList.toggle('open')});
+
+function toggleFile(id){
+
+  document
+  .getElementById(id)
+  .classList
+  .toggle('open');
+
+}
+
+
+document
+.getElementById('menuBtn')
+.addEventListener(
+  'click',
+  function(){
+
+    document
+    .getElementById('mobileNav')
+    .classList
+    .toggle('open');
+
+  }
+);
+
 </script>
+
 </body>
 </html>
