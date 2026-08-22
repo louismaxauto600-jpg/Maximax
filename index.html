@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maximax Multi Services - 9 Modules + EOIR+BIA + AI Center</title>
+
+<title>Maximax Multi Services - Services & AI Center</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,1755 +16,1252 @@
 <style>
 
 :root{
-  --black:#000000;
-  --black2:#000000;
-  --orange:#FF6A00;
-  --orange-light:#FFA347;
-  --white:#FFC98A;
-  --line:rgba(255,163,71,0.35);
-  --panel:rgba(0,0,0,0.72)
+--black:#000000;
+--orange:#FF6A00;
+--orange-light:#FFA347;
+--text:#FFC98A;
+--line:rgba(255,163,71,.35);
+--panel:rgba(0,0,0,.72)
 }
 
 *{
-  box-sizing:border-box
+box-sizing:border-box
 }
 
 html{
-  scroll-behavior:smooth;
-  min-height:100%;
-  background:#000;
-  background:
-    linear-gradient(
-      150deg,
-      #000000 0%,
-      #000000 14%,
-      #7A2E00 46%,
-      #FF6A00 68%,
-      #000000 100%
-    );
-  background-attachment:fixed;
-  background-size:cover;
-  background-repeat:no-repeat;
+scroll-behavior:smooth;
+min-height:100%;
+background:
+linear-gradient(
+150deg,
+#000 0%,
+#000 14%,
+#7A2E00 46%,
+#FF6A00 68%,
+#000 100%
+);
+background-attachment:fixed
 }
 
 body{
-  margin:0;
-  color:var(--white);
-  font-family:'Public Sans',sans-serif;
-  background:transparent!important;
-  min-height:100vh
+margin:0;
+min-height:100vh;
+background:transparent;
+color:var(--text);
+font-family:'Public Sans',sans-serif
 }
 
 h1,h2,h3{
-  font-family:'Fraunces',serif;
-  margin:0
+font-family:'Fraunces',serif;
+margin:0
 }
 
 a{
-  color:inherit;
-  text-decoration:none
+color:inherit;
+text-decoration:none
 }
 
-video,img{
-  max-width:100%
+img,video{
+max-width:100%;
+display:block
 }
 
 button{
-  font-family:inherit
+font-family:inherit
 }
 
 
 /* =====================================================
-   EXISTING LOGO
-===================================================== */
-
-.logo-mark{
-  position:relative;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  overflow:hidden;
-  border:2px solid var(--orange-light);
-  flex-shrink:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-
-.logo-mark video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:2;
-  display:block;
-  opacity:1;
-  background:#000;
-  transition:.35s
-}
-
-.logo-mark video.loaded{
-  opacity:1
-}
-
-.logo-mark .fallback{
-  font-family:'Fraunces',serif;
-  font-weight:700;
-  color:var(--orange-light);
-  font-size:16px;
-  z-index:1
-}
-
-.seal{
-  position:relative;
-  width:112px;
-  height:112px;
-  border-radius:50%;
-  border:2px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  background:#000;
-  overflow:hidden
-}
-
-.seal video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-  z-index:2;
-  display:block;
-  opacity:1;
-  background:#000
-}
-
-.seal video.loaded{
-  opacity:1
-}
-
-.seal .seal-fallback{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.14em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  z-index:1;
-  text-align:center
-}
-
-.seal::before{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:1px dashed var(--orange-light);
-  border-radius:50%;
-  opacity:.6;
-  pointer-events:none;
-  z-index:3
-}
-
-.seal.small{
-  width:46px;
-  height:46px;
-  border-width:1.5px
-}
-
-
-/* =====================================================
-   HEADER
+HEADER
 ===================================================== */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(7,5,2,0.92);
-  border-bottom:1px solid var(--line)
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(0,0,0,.94);
+border-bottom:1px solid var(--line)
 }
 
 .nav-wrap{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 24px;
-  gap:16px
+max-width:1180px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 24px;
+gap:16px
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.logo-mark{
+position:relative;
+width:54px;
+height:54px;
+border-radius:50%;
+overflow:hidden;
+border:2px solid var(--orange-light);
+background:#000;
+flex-shrink:0
+}
+
+.logo-mark video{
+width:100%;
+height:100%;
+object-fit:cover
 }
 
 .brand-name{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:16px
+font-family:'Fraunces',serif;
+font-size:20px;
+font-weight:700
 }
 
 .brand-name span{
-  display:block;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.16em;
-  color:var(--orange-light);
-  margin-top:2px
+display:block;
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+letter-spacing:.2em;
+color:var(--orange-light);
+margin-top:3px
 }
 
-nav.desktop-nav{
-  display:flex;
-  gap:14px;
-  font-size:12px;
-  align-items:center;
-  flex-wrap:wrap
+.desktop-nav{
+display:flex;
+align-items:center;
+gap:15px;
+font-size:12px
 }
 
-nav.desktop-nav a{
-  opacity:.8;
-  padding:4px 0;
-  border-bottom:1px solid transparent;
-  transition:.2s
+.desktop-nav a{
+opacity:.85
 }
 
-nav.desktop-nav a:hover{
-  opacity:1;
-  border-color:var(--orange-light)
-}
-
-.lang-toggle{
-  display:flex;
-  gap:4px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:3px
-}
-
-.lang-btn{
-  background:none;
-  border:none;
-  color:var(--white);
-  opacity:.6;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  padding:6px 11px;
-  border-radius:16px;
-  cursor:pointer
-}
-
-.lang-btn.active{
-  background:var(--orange);
-  color:#1A0E05;
-  opacity:1;
-  font-weight:600
+.desktop-nav a:hover{
+color:var(--orange-light);
+opacity:1
 }
 
 .menu-btn{
-  display:none;
-  background:none;
-  border:1px solid var(--line);
-  color:var(--white);
-  width:38px;
-  height:38px;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:16px
+display:none;
+width:42px;
+height:42px;
+border:1px solid var(--line);
+background:#000;
+color:var(--orange-light);
+border-radius:7px;
+font-size:20px;
+cursor:pointer
 }
 
 .mobile-nav{
-  display:none;
-  flex-direction:column;
-  padding:0 24px 18px;
-  gap:2px
+display:none;
+flex-direction:column;
+padding:0 20px 18px
 }
 
 .mobile-nav a{
-  padding:9px 6px;
-  font-size:14px;
-  border-bottom:1px solid var(--line)
+padding:11px 4px;
+border-bottom:1px solid var(--line)
 }
 
 .mobile-nav.open{
-  display:flex
+display:flex
 }
 
 @media(max-width:900px){
-  nav.desktop-nav{
-    display:none
-  }
 
-  .menu-btn{
-    display:block
-  }
+.desktop-nav{
+display:none
+}
+
+.menu-btn{
+display:block
+}
+
 }
 
 
 /* =====================================================
-   HERO
+HERO
 ===================================================== */
 
 .hero{
-  max-width:1180px;
-  margin:0 auto;
-  padding:72px 24px 60px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:40px;
-  align-items:center
+max-width:1180px;
+margin:auto;
+padding:70px 24px 55px;
+display:grid;
+grid-template-columns:1fr auto;
+align-items:center;
+gap:45px
 }
 
 .eyebrow{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:.2em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  margin-bottom:18px;
-  display:block
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.2em;
+color:var(--orange-light);
+text-transform:uppercase
 }
 
 .hero h1{
-  font-size:clamp(2.2rem,5.2vw,3.9rem);
-  font-weight:600;
-  line-height:1.06
+font-size:clamp(2.2rem,5vw,4rem);
+line-height:1.06;
+margin-top:18px
 }
 
 .hero h1 em{
-  font-style:italic;
-  color:var(--orange-light)
+color:var(--orange-light);
+font-style:italic
 }
 
-.hero p.lede{
-  margin-top:20px;
-  max-width:560px;
-  font-size:16px;
-  line-height:1.65;
-  opacity:.88
+.lede{
+max-width:610px;
+font-size:16px;
+line-height:1.7;
+opacity:.9
 }
 
-.hero .creole{
-  margin-top:10px;
-  font-style:italic;
-  color:var(--orange-light);
-  font-size:14px
+.creole{
+color:var(--orange-light);
+font-style:italic
 }
 
 .hero-cta{
-  margin-top:28px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:26px
 }
 
 .btn{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:13px 22px;
-  border-radius:3px;
-  display:inline-block;
-  border:1px solid transparent
+display:inline-block;
+padding:13px 20px;
+font-family:'IBM Plex Mono',monospace;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.08em;
+border-radius:4px
 }
 
 .btn-primary{
-  background:var(--orange);
-  color:#1A0E05
+background:var(--orange);
+color:#000
 }
 
 .btn-ghost{
-  border:1px solid var(--line);
-  color:var(--white)
+border:1px solid var(--line)
 }
 
-@media(max-width:860px){
-  .hero{
-    grid-template-columns:1fr
-  }
-
-  .hero-seal{
-    display:none
-  }
+.hero-seal{
+width:135px
 }
 
-
-/* =====================================================
-   SECOND LOGO SHOWCASE
-===================================================== */
-
-.maximax-logo-showcase{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 24px 58px
-}
-
-.maximax-logo-stage{
-  position:relative;
-  width:min(100%,760px);
-  margin:0 auto;
-  padding:18px;
-  overflow:hidden;
-  border:1px solid var(--orange-light);
-  border-radius:20px;
-
-  background:
-    radial-gradient(
-      circle at 50% 42%,
-      rgba(255,106,0,.24),
-      rgba(0,0,0,.96) 62%,
-      #000 100%
-    );
-
-  box-shadow:
-    0 0 30px rgba(255,106,0,.20),
-    0 0 80px rgba(255,106,0,.10),
-    0 28px 70px rgba(0,0,0,.65)
-}
-
-.maximax-logo-stage::before{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:1px solid rgba(255,163,71,.22);
-  border-radius:14px;
-  pointer-events:none;
-  z-index:3
-}
-
-.maximax-logo-stage::after{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:rgba(255,106,0,.08);
-  filter:blur(40px);
-  pointer-events:none
-}
-
-.maximax-logo-title{
-  position:relative;
-  z-index:4;
-  margin:0 0 14px;
-  text-align:center;
-  color:var(--orange-light);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:.20em;
-  text-transform:uppercase
-}
-
-.maximax-logo-video{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-height:430px;
-  display:block;
-  object-fit:contain;
-  border-radius:13px;
-  background:#000
-}
-
-.maximax-logo-line{
-  position:relative;
-  z-index:4;
-  width:70%;
-  max-width:420px;
-  height:1px;
-  margin:15px auto 0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--orange-light),
-      transparent
-    )
-}
-
-@media(max-width:600px){
-
-  .maximax-logo-showcase{
-    padding:0 14px 42px
-  }
-
-  .maximax-logo-stage{
-    padding:12px;
-    border-radius:15px
-  }
-
-  .maximax-logo-title{
-    font-size:8px
-  }
-
-  .maximax-logo-video{
-    border-radius:9px
-  }
-
-}
-
-
-/* =====================================================
-   NEW MAXIMAX MODULE LOGO COLLECTION
-===================================================== */
-
-.module-logo-section{
-  max-width:1180px;
-  margin:0 auto;
-  padding:10px 24px 65px
-}
-
-.module-logo-heading{
-  text-align:center;
-  margin-bottom:30px
-}
-
-.module-logo-heading span{
-  display:block;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--orange-light);
-  letter-spacing:.22em;
-  margin-bottom:10px
-}
-
-.module-logo-heading h2{
-  color:var(--orange-light);
-  font-size:clamp(1.7rem,4vw,2.7rem)
-}
-
-.module-logo-heading p{
-  max-width:650px;
-  margin:10px auto 0;
-  font-size:13px;
-  line-height:1.6;
-  opacity:.82
-}
-
-.module-logo-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-  align-items:stretch
-}
-
-.module-emblem{
-  position:relative;
-  width:100%;
-  aspect-ratio:1/1;
-  border-radius:50%;
-  border:3px solid #FF6A00;
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      #FF7A13 0%,
-      #A23A00 34%,
-      #1A0900 63%,
-      #000 100%
-    );
-  box-shadow:
-    0 0 0 6px rgba(0,0,0,.9),
-    0 0 0 8px rgba(255,106,0,.65),
-    0 0 28px rgba(255,106,0,.35),
-    inset 0 0 35px rgba(0,0,0,.8);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:31px;
-  overflow:hidden;
-  transition:.3s
-}
-
-.module-emblem:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:
-    0 0 0 6px rgba(0,0,0,.9),
-    0 0 0 8px rgba(255,163,71,.8),
-    0 0 40px rgba(255,106,0,.55),
-    inset 0 0 35px rgba(0,0,0,.8)
-}
-
-.module-emblem::before{
-  content:"MAXIMAX MULTI SERVICES";
-  position:absolute;
-  top:17px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  color:#FF9A3A;
-  font-family:'Fraunces',serif;
-  font-size:clamp(9px,1.4vw,15px);
-  font-weight:700;
-  letter-spacing:.06em;
-  white-space:nowrap
-}
-
-.module-emblem::after{
-  content:"★   ★   ★";
-  position:absolute;
-  bottom:18px;
-  left:0;
-  right:0;
-  color:#FF7A13;
-  font-size:18px;
-  letter-spacing:6px
-}
-
-.module-icon-large{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#050200;
-  color:#FF8A21;
-  border:2px solid #FF7A13;
-  box-shadow:0 0 20px rgba(255,106,0,.35);
-  font-size:28px;
-  margin-bottom:14px
-}
-
-.module-emblem h3{
-  color:#060200;
-  text-shadow:
-    1px 1px 0 #FFB56A,
-    -1px -1px 0 #FFB56A,
-    2px 2px 6px rgba(0,0,0,.5);
-  font-size:clamp(14px,2vw,22px);
-  line-height:1.08;
-  text-transform:uppercase
-}
-
-.module-emblem .module-sub{
-  margin-top:9px;
-  font-family:'IBM Plex Mono',monospace;
-  color:#FFD09D;
-  font-size:clamp(7px,1vw,10px);
-  line-height:1.4;
-  letter-spacing:.05em;
-  text-transform:uppercase
-}
-
-.module-emblem .mini-scroll{
-  margin-top:13px;
-  font-size:20px;
-  color:#FF8A21
-}
-
-@media(max-width:900px){
-  .module-logo-grid{
-    grid-template-columns:repeat(2,1fr)
-  }
-}
-
-@media(max-width:560px){
-  .module-logo-grid{
-    grid-template-columns:1fr;
-    gap:26px
-  }
-
-  .module-emblem{
-    width:min(100%,330px);
-    margin:0 auto
-  }
-}
-
-
-/* =====================================================
-   CATEGORY MAP
-===================================================== */
-
-.catmap{
-  background:rgba(0,0,0,0.35);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:22px 24px
-}
-
-.catmap-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 18px;
-  justify-content:center
-}
-
-.catmap-item{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  color:var(--orange-light);
-  opacity:.9
-}
-
-.catmap-item b{
-  color:#fff;
-  opacity:.5;
-  margin-right:4px
-}
-
-
-/* =====================================================
-   SERVICES
-===================================================== */
-
-main{
-  max-width:1180px;
-  margin:0 auto;
-  padding:40px 20px
-}
-
-.file{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:8px;
-  margin-bottom:18px;
-  overflow:hidden
-}
-
-.file-tab{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 20px;
-  cursor:pointer
-}
-
-.file-tab-left{
-  display:flex;
-  align-items:center;
-  gap:12px
-}
-
-.file-num{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  border:1px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:11px;
-  color:var(--orange-light);
-  flex-shrink:0
-}
-
-.file-tab h2{
-  font-size:1.2rem
-}
-
-.file-tab .sub{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:9px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--orange-light);
-  margin-top:3px;
-  opacity:.7
-}
-
-.chev{
-  width:20px;
-  height:20px;
-  flex-shrink:0;
-  transition:transform .3s;
-  opacity:.7;
-  color:var(--orange-light)
-}
-
-.file.open .chev{
-  transform:rotate(180deg)
-}
-
-.file-body{
-  display:none;
-  padding:0 20px 18px
-}
-
-.file.open .file-body{
-  display:block
-}
-
-.service-list{
-  columns:2;
-  column-gap:24px;
-  list-style:none;
-  margin:0;
-  padding:0
-}
-
-.service-list li{
-  break-inside:avoid;
-  display:flex;
-  gap:8px;
-  padding:6px 0;
-  border-bottom:1px dotted var(--line);
-  font-size:13px
-}
-
-.service-list li::before{
-  content:"✓";
-  color:var(--orange-light);
-  font-weight:700;
-  flex-shrink:0
-}
-
-@media(max-width:600px){
-  .service-list{
-    columns:1
-  }
-}
-
-.myaccess-btn-wrap{
-  margin-top:22px
-}
-
-.myaccess-btn{
-  display:inline-block;
-  padding:13px 22px;
-  border-radius:4px;
-  background:var(--orange);
-  color:#160900;
-  text-decoration:none;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  font-weight:600;
-  border:1px solid var(--orange);
-  transition:.2s
-}
-
-.myaccess-btn:hover{
-  background:var(--orange-light)
-}
-
-
-/* =====================================================
-   AI CENTER
-===================================================== */
-
-.ai-center{
-  background:rgba(0,0,0,0.55);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:50px 24px;
-  margin:40px 0
-}
-
-.ai-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:center
-}
-
-.ai-badge{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  letter-spacing:.2em;
-  color:var(--orange-light);
-  text-transform:uppercase;
-  margin-bottom:12px;
-  display:inline-block;
-  border:1px solid var(--line);
-  padding:6px 12px;
-  border-radius:20px
-}
-
-.ai-center h2{
-  font-size:2rem;
-  line-height:1.1;
-  margin-bottom:14px
-}
-
-.ai-center p{
-  font-size:14px;
-  line-height:1.6;
-  opacity:.85
-}
-
-.ai-features{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px
-}
-
-.ai-feat{
-  border:1px solid var(--line);
-  border-radius:6px;
-  padding:14px;
-  background:rgba(0,0,0,0.35)
-}
-
-.ai-feat b{
-  display:block;
-  font-size:13px;
-  margin-bottom:4px;
-  color:var(--orange-light)
-}
-
-.ai-feat span{
-  font-size:12px;
-  opacity:.8
+.hero-seal video{
+width:135px;
+height:135px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid var(--orange-light);
+box-shadow:0 0 35px rgba(255,106,0,.35)
 }
 
 @media(max-width:800px){
-  .ai-inner{
-    grid-template-columns:1fr
-  }
+
+.hero{
+grid-template-columns:1fr
+}
+
+.hero-seal{
+display:none
+}
+
 }
 
 
 /* =====================================================
-   CONTACT
+MAIN LOGO
+===================================================== */
+
+.maximax-logo-showcase{
+max-width:1180px;
+margin:auto;
+padding:0 24px 55px
+}
+
+.maximax-logo-stage{
+max-width:760px;
+margin:auto;
+padding:16px;
+border:1px solid var(--orange-light);
+border-radius:20px;
+background:#000;
+box-shadow:0 0 45px rgba(255,106,0,.25)
+}
+
+.maximax-logo-title{
+text-align:center;
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.2em;
+color:var(--orange-light);
+padding:4px 0 15px
+}
+
+.maximax-logo-video{
+width:100%;
+border-radius:12px
+}
+
+
+/* =====================================================
+15 LOGO MODULES
+===================================================== */
+
+.module-logo-section{
+max-width:1180px;
+margin:auto;
+padding:55px 24px 70px
+}
+
+.module-heading{
+text-align:center;
+margin-bottom:30px
+}
+
+.module-heading small{
+font-family:'IBM Plex Mono',monospace;
+letter-spacing:.22em;
+color:var(--orange-light)
+}
+
+.module-heading h2{
+font-size:clamp(2rem,5vw,3.4rem);
+color:var(--orange-light);
+margin-top:10px
+}
+
+.module-heading p{
+max-width:720px;
+margin:16px auto 0;
+line-height:1.7
+}
+
+
+/*
+IMPORTANT:
+
+Upload generated 15-logo image in same folder as index.html
+with EXACT filename:
+
+maximax-modules-grid.png
+*/
+
+.module-master{
+position:relative;
+width:100%;
+max-width:1150px;
+margin:auto;
+border:1px solid rgba(255,106,0,.5);
+border-radius:18px;
+overflow:hidden;
+background:#000;
+box-shadow:
+0 0 25px rgba(255,106,0,.25),
+0 30px 80px rgba(0,0,0,.6)
+}
+
+.module-master img{
+width:100%;
+height:auto;
+display:block
+}
+
+
+/*
+5 COLUMNS × 3 ROWS
+Invisible clickable buttons over each logo.
+*/
+
+.module-hotspots{
+position:absolute;
+inset:0;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+grid-template-rows:repeat(3,1fr);
+z-index:5
+}
+
+.module-hotspot{
+position:relative;
+display:block;
+border:1px solid transparent;
+transition:.2s
+}
+
+.module-hotspot:hover,
+.module-hotspot:focus{
+background:rgba(255,106,0,.08);
+border-color:rgba(255,163,71,.65);
+box-shadow:inset 0 0 28px rgba(255,106,0,.18);
+outline:none
+}
+
+
+/* =====================================================
+CATEGORY MAP
+===================================================== */
+
+.catmap{
+padding:22px 24px;
+background:rgba(0,0,0,.5);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
+}
+
+.catmap-inner{
+max-width:1180px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px 18px
+}
+
+.catmap-item{
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+color:var(--orange-light)
+}
+
+
+/* =====================================================
+SERVICES
+===================================================== */
+
+main{
+max-width:1180px;
+margin:auto;
+padding:45px 20px
+}
+
+.file{
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:9px;
+margin-bottom:18px;
+overflow:hidden
+}
+
+.file-tab{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:19px 20px;
+cursor:pointer
+}
+
+.file-tab-left{
+display:flex;
+align-items:center;
+gap:13px
+}
+
+.file-num{
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid var(--orange-light);
+display:grid;
+place-items:center;
+font-size:11px;
+color:var(--orange-light)
+}
+
+.file-tab h2{
+font-size:1.25rem
+}
+
+.file-tab .sub{
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:.1em;
+color:var(--orange-light);
+margin-top:4px
+}
+
+.chev{
+color:var(--orange-light);
+transition:.3s
+}
+
+.file.open .chev{
+transform:rotate(180deg)
+}
+
+.file-body{
+display:none;
+padding:0 20px 20px
+}
+
+.file.open .file-body{
+display:block
+}
+
+.service-list{
+columns:2;
+column-gap:25px;
+list-style:none;
+margin:0;
+padding:0
+}
+
+.service-list li{
+break-inside:avoid;
+padding:7px 0;
+border-bottom:1px dotted var(--line);
+font-size:13px
+}
+
+.service-list li::before{
+content:"✓ ";
+color:var(--orange-light);
+font-weight:700
+}
+
+.myaccess-btn-wrap{
+margin-top:20px
+}
+
+.myaccess-btn{
+display:inline-block;
+background:var(--orange);
+color:#000;
+padding:12px 20px;
+border-radius:4px;
+font-family:'IBM Plex Mono',monospace;
+font-size:11px;
+font-weight:600;
+text-transform:uppercase
+}
+
+@media(max-width:600px){
+
+.service-list{
+columns:1
+}
+
+}
+
+
+/* =====================================================
+AI CENTER
+===================================================== */
+
+.ai-center{
+padding:60px 24px;
+background:rgba(0,0,0,.58);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
+}
+
+.ai-inner{
+max-width:1180px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
+}
+
+.ai-badge{
+display:inline-block;
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+letter-spacing:.18em;
+color:var(--orange-light);
+border:1px solid var(--line);
+padding:7px 12px;
+border-radius:20px
+}
+
+.ai-center h2{
+font-size:2rem;
+margin:14px 0
+}
+
+.ai-center p{
+font-size:14px;
+line-height:1.7
+}
+
+.ai-features{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px
+}
+
+.ai-feat{
+border:1px solid var(--line);
+border-radius:7px;
+padding:15px;
+background:rgba(0,0,0,.45)
+}
+
+.ai-feat b{
+display:block;
+color:var(--orange-light);
+margin-bottom:6px
+}
+
+.ai-feat span{
+font-size:12px
+}
+
+@media(max-width:800px){
+
+.ai-inner{
+grid-template-columns:1fr
+}
+
+}
+
+
+/* =====================================================
+CONTACT
 ===================================================== */
 
 .band{
-  padding:40px 24px
+padding:50px 24px
 }
 
 .band-inner{
-  max-width:1180px;
-  margin:0 auto
-}
-
-.band-contact{
-  background:rgba(0,0,0,0.5)
+max-width:1180px;
+margin:auto
 }
 
 .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-  margin:20px 0
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin:20px 0
 }
 
 .contact-card{
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:16px;
-  background:rgba(0,0,0,0.35)
+border:1px solid var(--line);
+background:rgba(0,0,0,.5);
+border-radius:8px;
+padding:16px
 }
 
 .label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--orange-light);
-  margin-bottom:6px
+font-family:'IBM Plex Mono',monospace;
+font-size:10px;
+text-transform:uppercase;
+letter-spacing:.15em;
+color:var(--orange-light);
+margin-bottom:7px
 }
 
 .value{
-  font-size:14px;
-  line-height:1.6
+line-height:1.7;
+font-size:14px
 }
 
 
 /* =====================================================
-   SOCIAL
+SOCIAL
 ===================================================== */
 
 .social-row{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:10px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px
 }
 
 .social-pill{
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:10px 12px;
-  font-size:12px;
-  background:rgba(0,0,0,.48);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-height:50px;
-  transition:.2s
-}
-
-.social-pill:hover{
-  border-color:var(--orange-light);
-  color:var(--orange-light);
-  transform:translateY(-2px);
-  background:rgba(255,106,0,.08)
+border:1px solid var(--line);
+border-radius:10px;
+padding:11px;
+display:flex;
+align-items:center;
+gap:10px;
+background:rgba(0,0,0,.55)
 }
 
 .social-icon{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  border:1px solid var(--orange-light);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:16px;
-  color:var(--orange-light);
-  background:#000
+width:34px;
+height:34px;
+border-radius:50%;
+border:1px solid var(--orange-light);
+display:grid;
+place-items:center;
+color:var(--orange-light)
 }
 
 .social-text{
-  display:flex;
-  flex-direction:column;
-  gap:2px
+display:flex;
+flex-direction:column
 }
 
 .social-name{
-  font-weight:700;
-  font-size:12px
+font-weight:700;
+font-size:12px
 }
 
 .social-action{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:8px;
-  color:var(--orange-light)
+font-family:'IBM Plex Mono',monospace;
+font-size:8px;
+color:var(--orange-light)
 }
 
 
 /* =====================================================
-   FOOTER
+FOOTER
 ===================================================== */
 
 footer{
-  background:rgba(0,0,0,0.7);
-  padding:30px 20px;
-  border-top:1px solid var(--line);
-  text-align:center;
-  font-size:11px;
-  opacity:.7
+background:#000;
+padding:28px 20px;
+border-top:1px solid var(--line)
 }
 
 .footer-cats{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 16px;
-  justify-content:center;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:9px 18px;
+font-family:'IBM Plex Mono',monospace;
+font-size:9px;
+color:var(--orange-light)
 }
 
 </style>
 </head>
 
-
 <body>
 
 
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
 <header>
 
-  <div class="nav-wrap">
+<div class="nav-wrap">
 
-    <div class="brand">
+<div class="brand">
 
-      <div class="logo-mark">
+<div class="logo-mark">
 
-        <span class="fallback">
-          M
-        </span>
+<video autoplay muted loop playsinline>
+<source src="./maximax-best-multi.mp4" type="video/mp4">
+</video>
 
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          onloadeddata="this.classList.add('loaded')"
-          onerror="this.style.display='none'"
-        >
-          <source
-            src="./maximax-best-multi.mp4"
-            type="video/mp4"
-          >
-        </video>
+</div>
 
-      </div>
+<div class="brand-name">
 
-      <div class="brand-name">
-        MAXIMAX
+MAXIMAX
 
-        <span>
-          MULTI SERVICES • EST 2020
-        </span>
+<span>
+MULTI SERVICES • EST 2020
+</span>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
 
-    <nav class="desktop-nav">
+<nav class="desktop-nav">
 
-      <a href="#hero">
-        Home
-      </a>
+<a href="#hero">
+HOME
+</a>
 
-      <a href="#module-logos">
-        Modules
-      </a>
+<a href="#modules">
+MODULES
+</a>
 
-      <a href="#services">
-        Services
-      </a>
+<a href="#services">
+SERVICES
+</a>
 
-      <a href="#ai-center">
-        AI Center
-      </a>
+<a href="#ai-center">
+AI CENTER
+</a>
 
-      <a href="#contact">
-        Contact
-      </a>
+<a href="#contact">
+CONTACT
+</a>
 
-    </nav>
-
-
-    <button
-      class="menu-btn"
-      id="menuBtn"
-    >
-      ☰
-    </button>
-
-  </div>
+</nav>
 
 
-  <div
-    class="mobile-nav"
-    id="mobileNav"
-  >
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
 
-    <a href="#hero">
-      Home
-    </a>
+</div>
 
-    <a href="#module-logos">
-      Modules
-    </a>
 
-    <a href="#services">
-      Services
-    </a>
+<div class="mobile-nav" id="mobileNav">
 
-    <a href="#ai-center">
-      AI Center
-    </a>
+<a href="#hero">
+HOME
+</a>
 
-    <a href="#contact">
-      Contact
-    </a>
+<a href="#modules">
+MODULES
+</a>
 
-  </div>
+<a href="#services">
+SERVICES
+</a>
+
+<a href="#ai-center">
+AI CENTER
+</a>
+
+<a href="#contact">
+CONTACT
+</a>
+
+</div>
 
 </header>
 
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
 
-<section
-  class="hero"
-  id="hero"
->
+<section class="hero" id="hero">
 
-  <div>
+<div>
 
-    <span class="eyebrow">
-      Pine Hills, Orlando • Indianapolis • New York
-    </span>
+<span class="eyebrow">
+Pine Hills, Orlando • Indianapolis • New York
+</span>
 
-    <h1>
-      Your Trusted Partner for
-      <em>
-        Life in the USA
-      </em>
-    </h1>
+<h1>
 
-    <p class="lede">
-      Maximax Multi Services — Notary, Taxes,
-      Immigration, EOIR+BIA, Insurance,
-      Real Estate, Business Formation & more.
-      Tout sèvis ou bezwen anba yon sèl do-kay.
-    </p>
+Your Trusted Partner for
 
-    <p class="creole">
-      Nou pale Kreyòl, English, Español.
-    </p>
+<em>
+Life in the USA
+</em>
+
+</h1>
 
 
-    <div class="hero-cta">
+<p class="lede">
 
-      <a
-        href="#contact"
-        class="btn btn-primary"
-      >
-        Book Appointment
-      </a>
+Maximax Multi Services — Notary, Taxes,
+Immigration, EOIR+BIA, Insurance,
+Real Estate, Business Formation & more.
+Tout sèvis ou bezwen anba yon sèl do-kay.
 
-      <a
-        href="#services"
-        class="btn btn-ghost"
-      >
-        Explore Services
-      </a>
-
-    </div>
-
-  </div>
+</p>
 
 
-  <div class="hero-seal">
+<p class="creole">
 
-    <div class="seal">
+Nou pale Kreyòl, English, Español.
 
-      <span class="seal-fallback">
-        Maximax
-        <br>
-        Services
-      </span>
+</p>
 
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        onloadeddata="this.classList.add('loaded')"
-        onerror="this.style.display='none'"
-      >
-        <source
-          src="./maximax-best-multi.mp4"
-          type="video/mp4"
-        >
-      </video>
 
-    </div>
+<div class="hero-cta">
 
-  </div>
+<a href="#contact" class="btn btn-primary">
+Book Appointment
+</a>
+
+<a href="#modules" class="btn btn-ghost">
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-seal">
+
+<video autoplay muted loop playsinline>
+
+<source
+src="./maximax-best-multi.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     SECOND LOGO
-===================================================== -->
+<!-- ================================================= -->
+<!-- SECOND LOGO -->
+<!-- ================================================= -->
 
 <section class="maximax-logo-showcase">
 
-  <div class="maximax-logo-stage">
+<div class="maximax-logo-stage">
 
-    <div class="maximax-logo-title">
-      MAXIMAX MULTI SERVICES
-    </div>
+<div class="maximax-logo-title">
+MAXIMAX MULTI SERVICES
+</div>
 
-    <video
-      class="maximax-logo-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-    >
-      <source
-        src="./maxima-xbest.mp4"
-        type="video/mp4"
-      >
-    </video>
+<video
+class="maximax-logo-video"
+autoplay
+muted
+loop
+playsinline>
 
-    <div class="maximax-logo-line"></div>
+<source
+src="./maxima-xbest.mp4"
+type="video/mp4">
 
-  </div>
+</video>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     MAXIMAX MODULE LOGOS
-===================================================== -->
+<!-- ================================================= -->
+<!-- 15 OFFICIAL LOGO MODULES -->
+<!-- ================================================= -->
 
 <section
-  class="module-logo-section"
-  id="module-logos"
+class="module-logo-section"
+id="modules"
 >
 
-  <div class="module-logo-heading">
+<div class="module-heading">
 
-    <span>
-      MAXIMAX MULTI SERVICES
-    </span>
+<small>
+MAXIMAX MULTI SERVICES
+</small>
 
-    <h2>
-      SERVICES & AI MODULES
-    </h2>
+<h2>
+SERVICES & AI MODULES
+</h2>
 
-    <p>
-      Tout sèvis prensipal Maximax Multi Services ak zouti AI yo
-      òganize kòm yon sèl sistèm dijital.
-    </p>
+<p>
+15 modules • Services professionnels • Assistance digitale • Intelligence artificielle
+</p>
 
-  </div>
+</div>
 
 
-  <div class="module-logo-grid">
+<div class="module-master">
 
+<img
+src="./maximax-modules-grid.png"
+alt="Maximax Multi Services 15 Modules"
+id="moduleGridImage"
+>
 
-    <a href="#mod1" class="module-emblem">
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-stamp"></i>
-      </div>
+<div class="module-hotspots">
 
-      <h3>
-        NOTARY
-        <br>
-        & TRANSLATION
-      </h3>
 
-      <div class="module-sub">
-        Documents • Certification • Translation
-      </div>
+<!-- ROW 1 -->
 
-      <div class="mini-scroll">
-        📜
-      </div>
 
-    </a>
+<a
+href="#mod1"
+class="module-hotspot"
+title="Notary & Translation"
+aria-label="Notary & Translation">
+</a>
 
 
-    <a href="#mod2" class="module-emblem">
+<a
+href="#mod2"
+class="module-hotspot"
+title="Taxes & Accounting"
+aria-label="Taxes & Accounting">
+</a>
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-calculator"></i>
-      </div>
 
-      <h3>
-        TAXES
-        <br>
-        & ACCOUNTING
-      </h3>
+<a
+href="#mod3"
+class="module-hotspot"
+title="Immigration Services"
+aria-label="Immigration Services">
+</a>
 
-      <div class="module-sub">
-        Tax Preparation • ITIN • Bookkeeping
-      </div>
 
-      <div class="mini-scroll">
-        📜
-      </div>
+<a
+href="#mod4"
+class="module-hotspot"
+title="EOIR & BIA"
+aria-label="EOIR & BIA">
+</a>
 
-    </a>
 
+<a
+href="#mod5"
+class="module-hotspot"
+title="Insurance"
+aria-label="Insurance">
+</a>
 
-    <a href="#mod3" class="module-emblem">
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-passport"></i>
-      </div>
 
-      <h3>
-        IMMIGRATION
-        <br>
-        SERVICES
-      </h3>
+<!-- ROW 2 -->
 
-      <div class="module-sub">
-        USCIS • TPS • Asylum • Family
-      </div>
 
-      <div class="mini-scroll">
-        📜
-      </div>
+<a
+href="#mod6"
+class="module-hotspot"
+title="Real Estate"
+aria-label="Real Estate">
+</a>
 
-    </a>
 
+<a
+href="#mod7"
+class="module-hotspot"
+title="Business Formation"
+aria-label="Business Formation">
+</a>
 
-    <a href="#mod4" class="module-emblem">
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-scale-balanced"></i>
-      </div>
+<a
+href="#mod8"
+class="module-hotspot"
+title="Apostille & Legalization"
+aria-label="Apostille & Legalization">
+</a>
 
-      <h3>
-        EOIR
-        <br>
-        & BIA
-      </h3>
 
-      <div class="module-sub">
-        Immigration Court • Appeals
-      </div>
+<a
+href="#mod9"
+class="module-hotspot"
+title="Travel & DMV Services"
+aria-label="Travel & DMV Services">
+</a>
 
-      <div class="mini-scroll">
-        📜
-      </div>
 
-    </a>
+<a
+href="#ai-center"
+class="module-hotspot"
+title="Maximax AI Center"
+aria-label="Maximax AI Center">
+</a>
 
 
-    <a href="#mod5" class="module-emblem">
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
+<!-- ROW 3 -->
 
-      <h3>
-        INSURANCE
-      </h3>
 
-      <div class="module-sub">
-        Auto • Home • Life • Health
-      </div>
+<a
+href="#form-helper"
+class="module-hotspot"
+title="Form Helper"
+aria-label="Form Helper">
+</a>
 
-      <div class="mini-scroll">
-        📜
-      </div>
 
-    </a>
+<a
+href="#career-tracker"
+class="module-hotspot"
+title="Career Tracker"
+aria-label="Career Tracker">
+</a>
 
 
-    <a href="#mod6" class="module-emblem">
+<a
+href="#translation-ai"
+class="module-hotspot"
+title="Tradiksyon AI"
+aria-label="Tradiksyon AI">
+</a>
 
-      <div class="module-icon-large">
-        <i class="fa-solid fa-house"></i>
-      </div>
 
-      <h3>
-        REAL
-        <br>
-        ESTATE
-      </h3>
+<a
+href="#chat247"
+class="module-hotspot"
+title="Chat 24/7"
+aria-label="Chat 24/7">
+</a>
 
-      <div class="module-sub">
-        Buy • Sell • Rent • Property
-      </div>
 
-      <div class="mini-scroll">
-        📜
-      </div>
+<a
+href="#try-ai"
+class="module-hotspot"
+title="Try AI Center"
+aria-label="Try AI Center">
+</a>
 
-    </a>
 
+</div>
 
-    <a href="#mod7" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-building"></i>
-      </div>
-
-      <h3>
-        BUSINESS
-        <br>
-        FORMATION
-      </h3>
-
-      <div class="module-sub">
-        LLC • Corporation • EIN • License
-      </div>
-
-      <div class="mini-scroll">
-        📜
-      </div>
-
-    </a>
-
-
-    <a href="#mod8" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-file-signature"></i>
-      </div>
-
-      <h3>
-        APOSTILLE
-        <br>
-        & LEGALIZATION
-      </h3>
-
-      <div class="module-sub">
-        State • Federal • Embassy
-      </div>
-
-      <div class="mini-scroll">
-        📜
-      </div>
-
-    </a>
-
-
-    <a href="#mod9" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-plane"></i>
-      </div>
-
-      <h3>
-        TRAVEL
-        <br>
-        & DMV SERVICES
-      </h3>
-
-      <div class="module-sub">
-        Passport • Ticket • DMV • Travel
-      </div>
-
-      <div class="mini-scroll">
-        📜
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-brain"></i>
-      </div>
-
-      <h3>
-        MAXIMAX
-        <br>
-        AI CENTER
-      </h3>
-
-      <div class="module-sub">
-        Artificial Intelligence • Smart Assistance
-      </div>
-
-      <div class="mini-scroll">
-        🤖
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-file-pen"></i>
-      </div>
-
-      <h3>
-        FORM
-        <br>
-        HELPER
-      </h3>
-
-      <div class="module-sub">
-        Forms • Applications • Assistance
-      </div>
-
-      <div class="mini-scroll">
-        📋
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
-
-      <h3>
-        CAREER
-        <br>
-        TRACKER
-      </h3>
-
-      <div class="module-sub">
-        Tracking • Status • Digital Support
-      </div>
-
-      <div class="mini-scroll">
-        🔎
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-language"></i>
-      </div>
-
-      <h3>
-        TRADIKSYON
-        <br>
-        AI
-      </h3>
-
-      <div class="module-sub">
-        Kreyòl • English • Español
-      </div>
-
-      <div class="mini-scroll">
-        🌐
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-comments"></i>
-      </div>
-
-      <h3>
-        CHAT
-        <br>
-        24/7
-      </h3>
-
-      <div class="module-sub">
-        Digital Assistant • Anytime
-      </div>
-
-      <div class="mini-scroll">
-        💬
-      </div>
-
-    </a>
-
-
-    <a href="#ai-center" class="module-emblem">
-
-      <div class="module-icon-large">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-      </div>
-
-      <h3>
-        TRY
-        <br>
-        AI CENTER
-      </h3>
-
-      <div class="module-sub">
-        Smart Tools • AI Assistance
-      </div>
-
-      <div class="mini-scroll">
-        ✨
-      </div>
-
-    </a>
-
-
-  </div>
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
-     CATEGORY MAP
-===================================================== -->
+<!-- ================================================= -->
+<!-- CATEGORY MAP -->
+<!-- ================================================= -->
 
 <div class="catmap">
 
-  <div class="catmap-inner">
+<div class="catmap-inner">
 
-    <a class="catmap-item" href="#mod1">
-      <b>01</b> NOTARY
-    </a>
+<a class="catmap-item" href="#mod1">
+01 NOTARY
+</a>
 
-    <a class="catmap-item" href="#mod2">
-      <b>02</b> TAXES
-    </a>
+<a class="catmap-item" href="#mod2">
+02 TAXES
+</a>
 
-    <a class="catmap-item" href="#mod3">
-      <b>03</b> IMMIGRATION
-    </a>
+<a class="catmap-item" href="#mod3">
+03 IMMIGRATION
+</a>
 
-    <a class="catmap-item" href="#mod4">
-      <b>04</b> EOIR+BIA
-    </a>
+<a class="catmap-item" href="#mod4">
+04 EOIR+BIA
+</a>
 
-    <a class="catmap-item" href="#mod5">
-      <b>05</b> INSURANCE
-    </a>
+<a class="catmap-item" href="#mod5">
+05 INSURANCE
+</a>
 
-    <a class="catmap-item" href="#mod6">
-      <b>06</b> REAL ESTATE
-    </a>
+<a class="catmap-item" href="#mod6">
+06 REAL ESTATE
+</a>
 
-    <a class="catmap-item" href="#mod7">
-      <b>07</b> BUSINESS
-    </a>
+<a class="catmap-item" href="#mod7">
+07 BUSINESS
+</a>
 
-    <a class="catmap-item" href="#mod8">
-      <b>08</b> APOSTILLE
-    </a>
+<a class="catmap-item" href="#mod8">
+08 APOSTILLE
+</a>
 
-    <a class="catmap-item" href="#mod9">
-      <b>09</b> TRAVEL+DMV
-    </a>
+<a class="catmap-item" href="#mod9">
+09 TRAVEL+DMV
+</a>
 
-  </div>
+<a class="catmap-item" href="#ai-center">
+10 AI CENTER
+</a>
+
+<a class="catmap-item" href="#form-helper">
+11 FORM HELPER
+</a>
+
+<a class="catmap-item" href="#career-tracker">
+12 CAREER TRACKER
+</a>
+
+<a class="catmap-item" href="#translation-ai">
+13 TRADIKSYON AI
+</a>
+
+<a class="catmap-item" href="#chat247">
+14 CHAT 24/7
+</a>
+
+<a class="catmap-item" href="#try-ai">
+15 TRY AI
+</a>
+
+</div>
 
 </div>
 
 
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
+<!-- ================================================= -->
+<!-- SERVICES -->
+<!-- ================================================= -->
 
 <main id="services">
 
 
-<!-- MODULE 01 -->
+<!-- 01 -->
 
 <div class="file open" id="mod1">
 
-<div class="file-tab" onclick="toggleFile('mod1')">
+<div
+class="file-tab"
+onclick="toggleFile('mod1')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">01</div>
+<div class="file-num">
+01
+</div>
 
 <div>
-<h2>Notary & Translation</h2>
-<div class="sub">Certified • Fast • All 50 States</div>
+
+<h2>
+Notary & Translation
+</h2>
+
+<div class="sub">
+Certified • Fast • All 50 States
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Notary Public - All 50 States</li>
-<li>Mobile Notary - We come to you</li>
-<li>Power of Attorney</li>
-<li>Affidavit & Legal Letters</li>
-<li>Document Apostille</li>
-<li>Travel Consent for Minors</li>
+<li>
+Notary Public - All 50 States
+</li>
+
+<li>
+Mobile Notary - We come to you
+</li>
+
+<li>
+Power of Attorney
+</li>
+
+<li>
+Affidavit & Legal Letters
+</li>
+
+<li>
+Certified Translation
+</li>
+
+<li>
+Travel Consent for Minors
+</li>
 
 </ul>
 
@@ -1773,37 +1271,69 @@ footer{
 
 
 
-<!-- MODULE 02 -->
+<!-- 02 -->
 
 <div class="file open" id="mod2">
 
-<div class="file-tab" onclick="toggleFile('mod2')">
+<div
+class="file-tab"
+onclick="toggleFile('mod2')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">02</div>
+<div class="file-num">
+02
+</div>
 
 <div>
-<h2>Taxes & Accounting</h2>
-<div class="sub">Maximize your refund - ITIN</div>
+
+<h2>
+Taxes & Accounting
+</h2>
+
+<div class="sub">
+Tax Preparation • ITIN • Accounting
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Personal Taxes - Form 1040</li>
-<li>Business Taxes - LLC, S-Corp, C-Corp</li>
-<li>ITIN Application & Renewal - W7</li>
-<li>Bookkeeping & Payroll</li>
-<li>IRS Letter & Audit Help</li>
-<li>Tax Amendment - 1040X</li>
+<li>
+Personal Taxes - Form 1040
+</li>
+
+<li>
+Business Taxes - LLC, S-Corp, C-Corp
+</li>
+
+<li>
+ITIN Application & Renewal - W7
+</li>
+
+<li>
+Bookkeeping & Payroll
+</li>
+
+<li>
+IRS Letter Assistance
+</li>
+
+<li>
+Tax Amendment - 1040X
+</li>
 
 </ul>
 
@@ -1821,37 +1351,69 @@ File My Taxes Now
 
 
 
-<!-- MODULE 03 -->
+<!-- 03 -->
 
 <div class="file open" id="mod3">
 
-<div class="file-tab" onclick="toggleFile('mod3')">
+<div
+class="file-tab"
+onclick="toggleFile('mod3')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">03</div>
+<div class="file-num">
+03
+</div>
 
 <div>
-<h2>Immigration Services</h2>
-<div class="sub">TPS • Asylum • Family Petition</div>
+
+<h2>
+Immigration Services
+</h2>
+
+<div class="sub">
+TPS • Asylum • Family Petition
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>TPS Application & Renewal</li>
-<li>Asylum & Work Permit (I-765)</li>
-<li>Family Petition (I-130)</li>
-<li>Green Card & Citizenship (N-400)</li>
-<li>USCIS Form Preparation - All Forms</li>
-<li>DACA Renewal</li>
+<li>
+TPS Application & Renewal
+</li>
+
+<li>
+Asylum & Work Permit
+</li>
+
+<li>
+Family Petition I-130
+</li>
+
+<li>
+Green Card Assistance
+</li>
+
+<li>
+Citizenship N-400
+</li>
+
+<li>
+USCIS Form Preparation
+</li>
 
 </ul>
 
@@ -1861,85 +1423,141 @@ File My Taxes Now
 
 
 
-<!-- MODULE 04 -->
+<!-- 04 -->
 
 <div class="file open" id="mod4">
 
-<div class="file-tab" onclick="toggleFile('mod4')">
+<div
+class="file-tab"
+onclick="toggleFile('mod4')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">04</div>
+<div class="file-num">
+04
+</div>
 
 <div>
-<h2>EOIR + BIA - Menm Bouton</h2>
-<div class="sub">Immigration Court • Board of Appeals • Menm kote</div>
+
+<h2>
+EOIR & BIA
+</h2>
+
+<div class="sub">
+Immigration Court • Board of Immigration Appeals
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>EOIR - Executive Office for Immigration Review</li>
-<li>BIA - Board of Immigration Appeals</li>
-<li>Change of Venue & Court Date Check</li>
-<li>Master Calendar & Individual Hearing Prep</li>
-<li>Appeal to BIA - Brief & Motion</li>
-<li>FOIA & Case Status - EOIR Hotline</li>
+<li>
+EOIR Case Information
+</li>
+
+<li>
+BIA Case Information
+</li>
+
+<li>
+Court Date Check
+</li>
+
+<li>
+Change of Venue Form Assistance
+</li>
+
+<li>
+Document Organization
+</li>
+
+<li>
+Case Status Assistance
+</li>
 
 </ul>
 
-<div class="myaccess-btn-wrap">
-
-<a class="myaccess-btn" href="#contact">
-EOIR + BIA Help - Rele Kounya
-</a>
-
-</div>
-
 </div>
 
 </div>
 
 
 
-<!-- MODULE 05 -->
+<!-- 05 -->
 
 <div class="file open" id="mod5">
 
-<div class="file-tab" onclick="toggleFile('mod5')">
+<div
+class="file-tab"
+onclick="toggleFile('mod5')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">05</div>
+<div class="file-num">
+05
+</div>
 
 <div>
-<h2>Insurance</h2>
-<div class="sub">Auto • Home • Life • Health</div>
+
+<h2>
+Insurance
+</h2>
+
+<div class="sub">
+Auto • Home • Life • Health
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Auto Insurance - Best Rates</li>
-<li>Homeowners & Renters Insurance</li>
-<li>Life Insurance</li>
-<li>Health Insurance - Marketplace</li>
-<li>Business & Commercial Insurance</li>
-<li>SR22 Insurance</li>
+<li>
+Auto Insurance
+</li>
+
+<li>
+Homeowners Insurance
+</li>
+
+<li>
+Renters Insurance
+</li>
+
+<li>
+Life Insurance
+</li>
+
+<li>
+Health Insurance
+</li>
+
+<li>
+Business Insurance
+</li>
 
 </ul>
 
@@ -1949,37 +1567,69 @@ EOIR + BIA Help - Rele Kounya
 
 
 
-<!-- MODULE 06 -->
+<!-- 06 -->
 
 <div class="file open" id="mod6">
 
-<div class="file-tab" onclick="toggleFile('mod6')">
+<div
+class="file-tab"
+onclick="toggleFile('mod6')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">06</div>
+<div class="file-num">
+06
+</div>
 
 <div>
-<h2>Real Estate</h2>
-<div class="sub">Buy • Sell • Rent • Manage</div>
+
+<h2>
+Real Estate
+</h2>
+
+<div class="sub">
+Buy • Sell • Rent
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Buy Your First Home - First Time Buyer</li>
-<li>Sell Your House - Fast Closing</li>
-<li>Rental Assistance</li>
-<li>Property Management</li>
-<li>House Inspection Referral</li>
-<li>Mortgage Referral</li>
+<li>
+First-Time Home Buyer Assistance
+</li>
+
+<li>
+Home Search Assistance
+</li>
+
+<li>
+Rental Assistance
+</li>
+
+<li>
+Property Referral
+</li>
+
+<li>
+Housing Resources
+</li>
+
+<li>
+Mortgage Referral
+</li>
 
 </ul>
 
@@ -1989,37 +1639,69 @@ EOIR + BIA Help - Rele Kounya
 
 
 
-<!-- MODULE 07 -->
+<!-- 07 -->
 
 <div class="file open" id="mod7">
 
-<div class="file-tab" onclick="toggleFile('mod7')">
+<div
+class="file-tab"
+onclick="toggleFile('mod7')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">07</div>
+<div class="file-num">
+07
+</div>
 
 <div>
-<h2>Business Formation</h2>
-<div class="sub">LLC • Corp • EIN • License</div>
+
+<h2>
+Business Formation
+</h2>
+
+<div class="sub">
+LLC • Corporation • EIN
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>LLC & Corporation Formation</li>
-<li>EIN Number - Same Day</li>
-<li>Business License & Permit</li>
-<li>Business Plan & Logo Design</li>
-<li>Business Taxes & Bookkeeping</li>
-<li>Business Bank Account Setup</li>
+<li>
+LLC Formation
+</li>
+
+<li>
+Corporation Formation
+</li>
+
+<li>
+EIN Assistance
+</li>
+
+<li>
+Business Registration
+</li>
+
+<li>
+Business Plan Assistance
+</li>
+
+<li>
+Administrative Support
+</li>
 
 </ul>
 
@@ -2029,37 +1711,69 @@ EOIR + BIA Help - Rele Kounya
 
 
 
-<!-- MODULE 08 -->
+<!-- 08 -->
 
 <div class="file open" id="mod8">
 
-<div class="file-tab" onclick="toggleFile('mod8')">
+<div
+class="file-tab"
+onclick="toggleFile('mod8')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">08</div>
+<div class="file-num">
+08
+</div>
 
 <div>
-<h2>Apostille & Legalization</h2>
-<div class="sub">State & Federal • Fast Service</div>
+
+<h2>
+Apostille & Legalization
+</h2>
+
+<div class="sub">
+State • Federal • Embassy
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Document Apostille - All States</li>
-<li>FBI Background Check Apostille</li>
-<li>Diploma & School Records Apostille</li>
-<li>Power of Attorney for Haiti</li>
-<li>Authentication & Legalization</li>
-<li>Embassy Legalization</li>
+<li>
+Document Apostille
+</li>
+
+<li>
+Federal Document Authentication
+</li>
+
+<li>
+Diploma Apostille
+</li>
+
+<li>
+Power of Attorney
+</li>
+
+<li>
+Document Legalization
+</li>
+
+<li>
+Embassy Requirements Assistance
+</li>
 
 </ul>
 
@@ -2069,51 +1783,84 @@ EOIR + BIA Help - Rele Kounya
 
 
 
-<!-- MODULE 09 -->
+<!-- 09 -->
 
 <div class="file open" id="mod9">
 
-<div class="file-tab" onclick="toggleFile('mod9')">
+<div
+class="file-tab"
+onclick="toggleFile('mod9')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">09</div>
+<div class="file-num">
+09
+</div>
 
 <div>
-<h2>Travel & DMV Services</h2>
-<div class="sub">Plane Ticket • Passport • DMV</div>
+
+<h2>
+Travel & DMV Services
+</h2>
+
+<div class="sub">
+Passport • Travel • DMV
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
+
 
 <div class="file-body">
 
 <ul class="service-list">
 
-<li>Plane Ticket - Best Price Haiti / USA / International</li>
-<li>Passport Application & Renewal</li>
-<li>DMV Services - License, Registration, Title</li>
-<li>TSA PreCheck & TWIC Card Help</li>
-<li>Hotel Booking & Car Rental</li>
-<li>Travel Insurance</li>
+<li>
+Plane Ticket Assistance
+</li>
+
+<li>
+Passport Assistance
+</li>
+
+<li>
+Passport Renewal Assistance
+</li>
+
+<li>
+DMV Information
+</li>
+
+<li>
+Vehicle Registration Assistance
+</li>
+
+<li>
+Travel Resources
+</li>
 
 </ul>
 
 </div>
 
 </div>
+
 
 </main>
 
 
 
-<!-- =====================================================
-     AI CENTER
-===================================================== -->
+<!-- ================================================= -->
+<!-- AI CENTER -->
+<!-- ================================================= -->
 
 <section
 class="ai-center"
@@ -2122,10 +1869,11 @@ id="ai-center"
 
 <div class="ai-inner">
 
+
 <div>
 
 <span class="ai-badge">
-🤖 AI CENTER - NOUVO
+🤖 MAXIMAX AI CENTER
 </span>
 
 <h2>
@@ -2133,48 +1881,96 @@ Maximax AI Assistant Center
 </h2>
 
 <p>
-AI Center nou an ap chaje kounya — li ede w ranpli fòm,
-tcheke ka w, tradui dokiman, epi reponn kesyon sou
-Immigration, Taxes, ak tout sèvis nou yo.
-Disponible 24/7 an Kreyòl, English, Español.
+
+Smart digital tools designed to help organize forms,
+track information, translate documents and answer
+general service questions 24/7.
+
 </p>
 
 
 <div class="ai-features">
 
-<div class="ai-feat">
-<b>📋 Form Helper</b>
-<span>Ranpli I-130, I-765, N-400 otomatik</span>
-</div>
 
+<div
+class="ai-feat"
+id="form-helper"
+>
 
-<div class="ai-feat">
-<b>🔍 Case Tracker</b>
-<span>Tcheke TPS, Asylum, EOIR ka w</span>
-</div>
+<b>
+📋 FORM HELPER
+</b>
 
-
-<div class="ai-feat">
-<b>🌐 Tradiksyon AI</b>
-<span>Tradui dokiman enstantane</span>
-</div>
-
-
-<div class="ai-feat">
-<b>💬 Chat 24/7</b>
-<span>Reponn kesyon an Kreyòl</span>
-</div>
+<span>
+Digital form organization and assistance
+</span>
 
 </div>
 
 
-<div class="myaccess-btn-wrap">
+<div
+class="ai-feat"
+id="career-tracker"
+>
+
+<b>
+📈 CAREER TRACKER
+</b>
+
+<span>
+Career organization, applications and progress tools
+</span>
+
+</div>
+
+
+<div
+class="ai-feat"
+id="translation-ai"
+>
+
+<b>
+🌐 TRADIKSYON AI
+</b>
+
+<span>
+Kreyòl • English • Français • Español
+</span>
+
+</div>
+
+
+<div
+class="ai-feat"
+id="chat247"
+>
+
+<b>
+💬 CHAT 24/7
+</b>
+
+<span>
+Digital assistance anytime
+</span>
+
+</div>
+
+
+</div>
+
+
+<div
+class="myaccess-btn-wrap"
+id="try-ai"
+>
 
 <a
 class="myaccess-btn"
-href="#contact"
+href="#ai-chat"
 >
-Try AI Center Now
+
+Try AI Center
+
 </a>
 
 </div>
@@ -2182,14 +1978,15 @@ Try AI Center Now
 </div>
 
 
-<div>
+
+<div id="ai-chat">
 
 <div
 style="
 border:1px solid var(--line);
 border-radius:12px;
 padding:20px;
-background:rgba(0,0,0,0.6)
+background:rgba(0,0,0,.65)
 "
 >
 
@@ -2207,65 +2004,68 @@ AI CHAT PREVIEW
 
 <div
 style="
-background:rgba(255,106,0,0.1);
-border-radius:8px;
 padding:12px;
-margin-bottom:10px;
-font-size:13px
+border-radius:8px;
+background:rgba(255,106,0,.12);
+margin-bottom:10px
 "
 >
-👤 Ki jan pou m tcheke dat tribinal mwen?
+
+👤 How can Maximax help me?
+
 </div>
 
 
 <div
 style="
-background:rgba(0,0,0,0.5);
+padding:12px;
+border-radius:8px;
 border:1px solid var(--line);
-border-radius:8px;
-padding:12px;
-font-size:13px
+background:#000
 "
 >
-🤖 Ale sou EOIR hotline 1-800-898-7180
-oswa m ka ede w jwenn paj ofisyèl la pou verifye dosye a.
+
+🤖 Choose a service or ask a general question.
+
 </div>
 
 
 <div
 style="
-margin-top:14px;
 display:flex;
-gap:8px
+gap:8px;
+margin-top:14px
 "
 >
 
 <input
 type="text"
-placeholder="Poze yon kesyon..."
+placeholder="Ask a question..."
 style="
 flex:1;
-background:rgba(0,0,0,0.5);
+min-width:0;
+padding:11px;
+background:#000;
 border:1px solid var(--line);
 border-radius:6px;
-padding:10px;
-color:var(--white);
-font-size:13px
+color:var(--text)
 "
 >
 
 <button
+type="button"
 style="
 background:var(--orange);
-border:none;
+color:#000;
+border:0;
 border-radius:6px;
 padding:10px 16px;
-color:#000;
-font-weight:600;
-cursor:pointer
+font-weight:700
 "
 >
-Voye
+
+SEND
+
 </button>
 
 </div>
@@ -2280,28 +2080,24 @@ Voye
 
 
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<!-- ================================================= -->
+<!-- CONTACT -->
+<!-- ================================================= -->
 
 <section
-class="band band-contact"
+class="band"
 id="contact"
 >
 
 <div class="band-inner">
 
-<h2
-style="
-font-size:1.6rem;
-margin-bottom:20px
-"
->
+<h2>
 Contact - 9 Rezo Sosyal
 </h2>
 
 
 <div class="contact-grid">
+
 
 <div class="contact-card">
 
@@ -2332,6 +2128,7 @@ Telephone
 </div>
 
 
+
 <div class="contact-card">
 
 <div class="label">
@@ -2339,29 +2136,41 @@ Email
 </div>
 
 <div class="value">
+
 <a href="mailto:maximaxmultiservices@gmail.com">
+
 maximaxmultiservices@gmail.com
+
 </a>
+
 </div>
 
 </div>
+
 
 
 <div class="contact-card">
 
 <div class="label">
-Address
+Service Areas
 </div>
 
 <div class="value">
+
 Pine Hills Orlando FL
+
 <br>
+
 Indianapolis IN
+
 <br>
+
 Hempstead NY 11550
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -2442,7 +2251,7 @@ Instagram
 </span>
 
 <span class="social-action">
-See work
+Follow
 </span>
 
 </div>
@@ -2594,7 +2403,7 @@ rel="noopener noreferrer"
 >
 
 <div class="social-icon">
-<i class="fas fa-bold"></i>
+T
 </div>
 
 <div class="social-text">
@@ -2620,21 +2429,21 @@ Follow
 
 
 
-<!-- =====================================================
-     FOOTER
-     PREMYE LIY LAN RETIRE
-===================================================== -->
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- PREVIOUS FIRST LINE REMOVED -->
+<!-- ================================================= -->
 
 <footer>
 
 <div class="footer-cats">
 
 <span>
-NOTARY
+NOTARY & TRANSLATION
 </span>
 
 <span>
-TAXES
+TAXES & ACCOUNTING
 </span>
 
 <span>
@@ -2654,7 +2463,7 @@ REAL ESTATE
 </span>
 
 <span>
-BUSINESS
+BUSINESS FORMATION
 </span>
 
 <span>
@@ -2662,7 +2471,7 @@ APOSTILLE
 </span>
 
 <span>
-TRAVEL
+TRAVEL & DMV
 </span>
 
 <span>
@@ -2697,43 +2506,51 @@ TRY AI CENTER
 
 <script>
 
+/* =====================================================
+SERVICE ACCORDION
+===================================================== */
+
 function toggleFile(id){
 
-document
-.getElementById(id)
-.classList
-.toggle('open');
+const file =
+document.getElementById(id);
+
+if(file){
+file.classList.toggle('open');
+}
 
 }
 
 
-document
-.getElementById('menuBtn')
-.addEventListener(
+/* =====================================================
+MOBILE MENU
+===================================================== */
+
+const menuBtn =
+document.getElementById('menuBtn');
+
+const mobileNav =
+document.getElementById('mobileNav');
+
+menuBtn.addEventListener(
 'click',
 function(){
 
-document
-.getElementById('mobileNav')
-.classList
-.toggle('open');
+mobileNav.classList.toggle('open');
 
 }
 );
 
 
-document
-.querySelectorAll('#mobileNav a')
+mobileNav
+.querySelectorAll('a')
 .forEach(function(link){
 
 link.addEventListener(
 'click',
 function(){
 
-document
-.getElementById('mobileNav')
-.classList
-.remove('open');
+mobileNav.classList.remove('open');
 
 }
 );
