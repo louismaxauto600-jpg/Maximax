@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Notary & Translation | Maximax Multi Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+--orange:#ff6a00;
+--orange-light:#ffa347;
+--text:#ffc98a;
+--line:rgba(255,163,71,.38);
+--panel:rgba(0,0,0,.76)
+}
+
+*{
+box-sizing:border-box
+}
+
+html{
+scroll-behavior:smooth;
+background:
+linear-gradient(
+150deg,
+#000 0%,
+#000 12%,
+#7a2e00 45%,
+#ff6a00 68%,
+#000 100%
+);
+background-attachment:fixed
+}
+
+body{
+margin:0;
+min-height:100vh;
+color:var(--text);
+font-family:'Public Sans',sans-serif
+}
+
+a{
+color:inherit;
+text-decoration:none
+}
+
+img{
+max-width:100%;
+display:block
+}
+
+button,
+input,
+select,
+textarea{
+font:inherit
+}
+
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(0,0,0,.95);
+border-bottom:1px solid var(--line)
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:14px
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+font:700 18px 'Fraunces',serif
+}
+
+.brand img{
+width:54px;
+height:54px;
+border-radius:50%;
+object-fit:cover
+}
+
+.actions{
+display:flex;
+align-items:center;
+gap:9px
+}
+
+.back,
+.lang{
+border:1px solid var(--line);
+background:#000;
+color:var(--orange-light);
+padding:9px 10px;
+font:600 9px 'IBM Plex Mono',monospace
+}
+
+.back{
+border-radius:7px
+}
+
+.languages{
+display:flex
+}
+
+.lang{
+border-radius:0;
+border-right:0;
+cursor:pointer
+}
+
+.lang:first-child{
+border-radius:7px 0 0 7px
+}
+
+.lang:last-child{
+border-right:1px solid var(--line);
+border-radius:0 7px 7px 0
+}
+
+.lang.active{
+background:var(--orange);
+color:#000
+}
+
+
+/* HERO */
+
+.hero{
+max-width:1100px;
+margin:auto;
+padding:55px 20px;
+display:grid;
+grid-template-columns:240px 1fr;
+align-items:center;
+gap:40px
+}
+
+.hero-logo{
+width:100%;
+border-radius:50%;
+filter:drop-shadow(0 18px 28px rgba(0,0,0,.7))
+}
+
+.eyebrow{
+font:10px 'IBM Plex Mono',monospace;
+letter-spacing:.18em;
+color:var(--orange-light)
+}
+
+h1,
+h2,
+h3{
+font-family:'Fraunces',serif
+}
+
+.hero h1{
+font-size:clamp(2.2rem,6vw,4.5rem);
+line-height:1;
+margin:14px 0
+}
+
+.hero p{
+line-height:1.75;
+max-width:680px
+}
+
+.quick-actions{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:22px
+}
+
+.cta{
+display:inline-flex;
+align-items:center;
+gap:8px;
+border-radius:6px;
+padding:13px 17px;
+background:var(--orange);
+color:#000;
+font:600 10px 'IBM Plex Mono',monospace
+}
+
+.cta.secondary{
+background:#000;
+color:var(--orange-light);
+border:1px solid var(--line)
+}
+
+
+/* CONTENT */
+
+.content{
+max-width:1100px;
+margin:auto;
+padding:20px 20px 60px
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+margin-bottom:45px
+}
+
+.card,
+.form-panel{
+background:var(--panel);
+border:1px solid var(--line);
+border-radius:12px;
+padding:20px
+}
+
+.card i{
+font-size:25px;
+color:var(--orange-light);
+margin-bottom:13px
+}
+
+.card h3{
+margin:0 0 8px
+}
+
+.card p{
+font-size:13px;
+line-height:1.6;
+margin:0
+}
+
+
+/* FORM */
+
+.form-panel{
+max-width:850px;
+margin:auto;
+scroll-margin-top:100px
+}
+
+.form-panel h2{
+font-size:2rem;
+margin:0 0 8px
+}
+
+.notice{
+font-size:12px;
+line-height:1.6;
+color:var(--orange-light);
+margin-bottom:22px
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px
+}
+
+.field{
+display:flex;
+flex-direction:column;
+gap:7px
+}
+
+.field.full{
+grid-column:1/-1
+}
+
+label{
+font:600 10px 'IBM Plex Mono',monospace;
+color:var(--orange-light)
+}
+
+input,
+select,
+textarea{
+width:100%;
+background:#050505;
+color:var(--text);
+border:1px solid var(--line);
+border-radius:7px;
+padding:12px
+}
+
+textarea{
+min-height:120px;
+resize:vertical
+}
+
+input[type="file"]{
+padding:9px
+}
+
+.submit{
+border:0;
+border-radius:7px;
+background:var(--orange);
+color:#000;
+padding:14px 18px;
+font:700 11px 'IBM Plex Mono',monospace;
+cursor:pointer
+}
+
+.legal{
+font-size:11px;
+line-height:1.6;
+margin-top:14px;
+opacity:.8
+}
+
+
+/* FOOTER */
+
+footer{
+text-align:center;
+background:#000;
+border-top:1px solid var(--line);
+padding:25px 15px;
+font:9px 'IBM Plex Mono',monospace;
+color:var(--orange-light)
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center
+}
+
+.hero-logo{
+max-width:230px;
+margin:auto
+}
+
+.quick-actions{
+justify-content:center
+}
+
+.services{
+grid-template-columns:1fr 1fr
+}
+
+.brand span{
+display:none
+}
+
+.back{
+display:none
+}
+
+}
+
+@media(max-width:520px){
+
+.nav{
+padding:10px
+}
+
+.brand img{
+width:46px;
+height:46px
+}
+
+.hero{
+padding-top:35px
+}
+
+.services,
+.form-grid{
+grid-template-columns:1fr
+}
+
+.field.full{
+grid-column:auto
+}
+
+.lang{
+padding:8px 6px;
+font-size:8px
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a class="brand" href="./index.html">
+
+<img
+src="./notary-translation.png"
+alt="Maximax Notary"
+>
+
+<span>MAXIMAX MULTI SERVICES</span>
+
+</a>
+
+<div class="actions">
+
+<a class="back" href="./index.html">
+← HOME
+</a>
+
+<div class="languages">
+
+<button
+class="lang"
+type="button"
+data-lang="kre"
+>
+KRE
+</button>
+
+<button
+class="lang active"
+type="button"
+data-lang="eng"
+>
+ENG
+</button>
+
+<button
+class="lang"
+type="button"
+data-lang="esp"
+>
+ESP
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img
+class="hero-logo"
+src="./notary-translation.png"
+alt="Notary and Translation"
+>
+
+<div>
+
+<span
+class="eyebrow"
+data-translate="eyebrow"
+>
+MODULE 01 • MAXIMAX MULTI SERVICES
+</span>
+
+<h1 data-translate="title">
+Notary & Translation
+</h1>
+
+<p data-translate="intro">
+Professional notary, document preparation and
+translation assistance with fast, organized service.
+</p>
+
+<div class="quick-actions">
+
+<a
+class="cta"
+href="#request"
+data-translate="start"
+>
+START A REQUEST
+</a>
+
+<a
+class="cta secondary"
+href="https://wa.me/50943437488"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+<i class="fab fa-whatsapp"></i>
+
+<span data-translate="whatsapp">
+WHATSAPP
+</span>
+
+</a>
+
+<a
+class="cta secondary"
+href="tel:+14076405166"
+>
+
+<i class="fa-solid fa-phone"></i>
+
+<span data-translate="call">
+CALL NOW
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<main class="content">
+
+<div class="services">
+
+
+<article class="card">
+
+<i class="fa-solid fa-stamp"></i>
+
+<h3 data-translate="service1">
+Notary Public
+</h3>
+
+<p data-translate="description1">
+Acknowledgments, jurats, affidavits,
+powers of attorney and general notarization.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<i class="fa-solid fa-car"></i>
+
+<h3 data-translate="service2">
+Mobile Notary
+</h3>
+
+<p data-translate="description2">
+Appointment-based mobile notary assistance
+at an agreed location.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3 data-translate="service3">
+Translation
+</h3>
+
+<p data-translate="description3">
+Document translation assistance in Kreyòl,
+English, French and Spanish.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<i class="fa-solid fa-file-signature"></i>
+
+<h3 data-translate="service4">
+Legal Letters
+</h3>
+
+<p data-translate="description4">
+Administrative assistance organizing affidavits,
+consent letters and declarations.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<i class="fa-solid fa-child-reaching"></i>
+
+<h3 data-translate="service5">
+Minor Travel Consent
+</h3>
+
+<p data-translate="description5">
+Preparation and notarization assistance
+for parental travel authorization.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<i class="fa-solid fa-file-shield"></i>
+
+<h3 data-translate="service6">
+Document Review
+</h3>
+
+<p data-translate="description6">
+Basic completeness review before your appointment.
+Legal advice is not provided.
+</p>
+
+</article>
+
+</div>
+
+
+<!-- NETLIFY REQUEST FORM -->
+
+<section class="form-panel" id="request">
+
+<h2 data-translate="formTitle">
+Request Notary or Translation Service
+</h2>
+
+<p class="notice" data-translate="formIntro">
+Complete this secure request form.
+Maximax will contact you to confirm the service,
+appointment and price.
+</p>
+
+<form
+name="notary-translation-request"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+enctype="multipart/form-data"
+>
+
+<input
+type="hidden"
+name="form-name"
+value="notary-translation-request"
+>
+
+<p hidden>
+
+<label>
+Do not fill this out:
+<input name="bot-field">
+</label>
+
+</p>
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label
+for="fullName"
+data-translate="name"
+>
+FULL NAME *
+</label>
+
+<input
+id="fullName"
+name="full-name"
+type="text"
+required
+autocomplete="name"
+>
+
+</div>
+
+
+<div class="field">
+
+<label
+for="phone"
+data-translate="phone"
+>
+PHONE NUMBER *
+</label>
+
+<input
+id="phone"
+name="phone"
+type="tel"
+required
+autocomplete="tel"
+>
+
+</div>
+
+
+<div class="field">
+
+<label
+for="email"
+data-translate="email"
+>
+EMAIL
+</label>
+
+<input
+id="email"
+name="email"
+type="email"
+autocomplete="email"
+>
+
+</div>
+
+
+<div class="field">
+
+<label
+for="preferredLanguage"
+data-translate="language"
+>
+PREFERRED LANGUAGE
+</label>
+
+<select
+id="preferredLanguage"
+name="preferred-language"
+>
+
+<option>Kreyòl</option>
+<option>English</option>
+<option>Español</option>
+<option>Français</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label
+for="service"
+data-translate="service"
+>
+SERVICE NEEDED *
+</label>
+
+<select
+id="service"
+name="service"
+required
+>
+
+<option
+value=""
+data-translate="choose"
+>
+Choose a service
+</option>
+
+<option>Notary Public</option>
+<option>Mobile Notary</option>
+<option>Power of Attorney</option>
+<option>Affidavit / Legal Letter</option>
+<option>Certified Translation</option>
+<option>Minor Travel Consent</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label
+for="preferredDate"
+data-translate="date"
+>
+PREFERRED DATE
+</label>
+
+<input
+id="preferredDate"
+name="preferred-date"
+type="date"
+>
+
+</div>
+
+
+<div class="field full">
+
+<label
+for="document"
+data-translate="upload"
+>
+UPLOAD DOCUMENT — PDF, JPG OR PNG
+</label>
+
+<input
+id="document"
+name="document"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+>
+
+</div>
+
+
+<div class="field full">
+
+<label
+for="details"
+data-translate="details"
+>
+REQUEST DETAILS *
+</label>
+
+<textarea
+id="details"
+name="details"
+required
+></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<button
+class="submit"
+type="submit"
+data-translate="submit"
+>
+SUBMIT REQUEST
+</button>
+
+</div>
+
+</div>
+
+<p class="legal" data-translate="legal">
+Maximax Multi Services provides administrative and
+document-preparation assistance. We are not a law firm
+and do not provide legal advice. Do not upload original
+identity documents unless requested.
+</p>
+
+</form>
+
+</section>
+
+</main>
+
+
+<footer>
+MAXIMAX MULTI SERVICES • NOTARY & TRANSLATION •
+(407) 640-5166
+</footer>
+
+
+<script>
+const translations={
+
+eng:{
+eyebrow:"MODULE 01 • MAXIMAX MULTI SERVICES",
+title:"Notary & Translation",
+intro:"Professional notary, document preparation and translation assistance with fast, organized service.",
+start:"START A REQUEST",
+whatsapp:"WHATSAPP",
+call:"CALL NOW",
+service1:"Notary Public",
+description1:"Acknowledgments, jurats, affidavits, powers of attorney and general notarization.",
+service2:"Mobile Notary",
+description2:"Appointment-based mobile notary assistance at an agreed location.",
+service3:"Translation",
+description3:"Document translation assistance in Kreyòl, English, French and Spanish.",
+service4:"Legal Letters",
+description4:"Administrative assistance organizing affidavits, consent letters and declarations.",
+service5:"Minor Travel Consent",
+description5:"Preparation and notarization assistance for parental travel authorization.",
+service6:"Document Review",
+description6:"Basic completeness review before your appointment. Legal advice is not provided.",
+formTitle:"Request Notary or Translation Service",
+formIntro:"Complete this secure request form. Maximax will contact you to confirm the service, appointment and price.",
+name:"FULL NAME *",
+phone:"PHONE NUMBER *",
+email:"EMAIL",
+language:"PREFERRED LANGUAGE",
+service:"SERVICE NEEDED *",
+choose:"Choose a service",
+date:"PREFERRED DATE",
+upload:"UPLOAD DOCUMENT — PDF, JPG OR PNG",
+details:"REQUEST DETAILS *",
+submit:"SUBMIT REQUEST",
+legal:"Maximax Multi Services provides administrative and document-preparation assistance. We are not a law firm and do not provide legal advice. Do not upload original identity documents unless requested."
+},
+
+kre:{
+eyebrow:"MODIL 01 • MAXIMAX MULTI SERVICES",
+title:"Notè ak Tradiksyon",
+intro:"Sèvis notè, preparasyon dokiman ak asistans tradiksyon rapid epi byen òganize.",
+start:"KÒMANSE YON DEMANN",
+whatsapp:"WHATSAPP",
+call:"RELE KOUNYE A",
+service1:"Notè Piblik",
+description1:"Rekonesans siyati, jurat, deklarasyon sou sèman, pwokirasyon ak lòt sèvis notè.",
+service2:"Notè Mobil",
+description2:"Sèvis notè mobil sou randevou nan yon kote nou dakò ansanm.",
+service3:"Tradiksyon",
+description3:"Asistans tradiksyon dokiman an Kreyòl, Anglè, Fransè ak Panyòl.",
+service4:"Lèt Legal",
+description4:"Asistans administratif pou òganize deklarasyon, lèt konsantman ak lòt lèt.",
+service5:"Otorizasyon Vwayaj Timoun",
+description5:"Asistans pou prepare ak notarize otorizasyon paran pou vwayaj timoun.",
+service6:"Verifikasyon Dokiman",
+description6:"Verifikasyon debaz pou wè si dokiman an konplè anvan randevou. Nou pa bay konsèy legal.",
+formTitle:"Mande Sèvis Notè oswa Tradiksyon",
+formIntro:"Ranpli fòm demann sa a. Maximax ap kontakte w pou konfime sèvis la, randevou a ak pri a.",
+name:"NON KONPLÈ *",
+phone:"NIMEWO TELEFÒN *",
+email:"IMÈL",
+language:"LANG OU PREFERE",
+service:"SÈVIS OU BEZWEN *",
+choose:"Chwazi yon sèvis",
+date:"DAT OU PREFERE",
+upload:"VOYE DOKIMAN — PDF, JPG OSWA PNG",
+details:"DETAY DEMANN LAN *",
+submit:"VOYE DEMANN LAN",
+legal:"Maximax Multi Services bay asistans administratif ak preparasyon dokiman. Nou pa yon kabinè avoka epi nou pa bay konsèy legal. Pa voye dokiman idantite orijinal sof si nou mande li."
+},
+
+esp:{
+eyebrow:"MÓDULO 01 • MAXIMAX MULTI SERVICES",
+title:"Notaría y Traducción",
+intro:"Servicios profesionales de notaría, preparación de documentos y traducción, rápidos y organizados.",
+start:"INICIAR SOLICITUD",
+whatsapp:"WHATSAPP",
+call:"LLAMAR AHORA",
+service1:"Notaría Pública",
+description1:"Reconocimientos, juramentos, declaraciones, poderes y notarización general.",
+service2:"Notario Móvil",
+description2:"Servicio de notario móvil con cita previa en un lugar acordado.",
+service3:"Traducción",
+description3:"Asistencia con traducciones en Kreyòl, inglés, francés y español.",
+service4:"Cartas Legales",
+description4:"Asistencia administrativa para organizar declaraciones, consentimientos y cartas.",
+service5:"Permiso de Viaje para Menores",
+description5:"Asistencia para preparar y notarizar autorizaciones de viaje para menores.",
+service6:"Revisión de Documentos",
+description6:"Revisión básica antes de la cita. No ofrecemos asesoría legal.",
+formTitle:"Solicitar Servicio de Notaría o Traducción",
+formIntro:"Complete este formulario. Maximax le contactará para confirmar el servicio, la cita y el precio.",
+name:"NOMBRE COMPLETO *",
+phone:"NÚMERO DE TELÉFONO *",
+email:"CORREO ELECTRÓNICO",
+language:"IDIOMA PREFERIDO",
+service:"SERVICIO NECESARIO *",
+choose:"Seleccione un servicio",
+date:"FECHA PREFERIDA",
+upload:"SUBIR DOCUMENTO — PDF, JPG O PNG",
+details:"DETALLES DE LA SOLICITUD *",
+submit:"ENVIAR SOLICITUD",
+legal:"Maximax Multi Services ofrece asistencia administrativa y preparación de documentos. No somos un bufete de abogados y no ofrecemos asesoría legal. No cargue documentos de identidad originales a menos que se le solicite."
+}
+
+};
+
+
+function setLanguage(language){
+
+const text =
+translations[language] ||
+translations.eng;
+
+document.documentElement.lang =
+language === "kre"
+? "ht"
+: language === "esp"
+? "es"
+: "en";
+
+document
+.querySelectorAll("[data-translate]")
+.forEach(function(element){
+
+const translation =
+text[element.dataset.translate];
+
+if(translation){
+element.textContent=translation;
+}
+
+});
+
+document
+.querySelectorAll(".lang")
+.forEach(function(button){
+
+button.classList.toggle(
+"active",
+button.dataset.lang === language
+);
+
+});
+
+localStorage.setItem(
+"maximaxLanguage",
+language
+);
+
+}
+
+
+document
+.querySelectorAll(".lang")
+.forEach(function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+setLanguage(
+this.dataset.lang
+);
+
+}
+);
+
+});
+
+
+setLanguage(
+localStorage.getItem("maximaxLanguage") ||
+"eng"
+);
+</script>
+
+</body>
+</html>
