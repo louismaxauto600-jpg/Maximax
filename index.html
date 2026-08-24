@@ -1,5 +1,3 @@
-Wi. Men index.html konplè a ak koreksyon an deja entegre ladan l. Ranplase ansyen index.html GitHub la avèk tout kòd sa a:
-
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
 <head>
@@ -25,21 +23,12 @@ Wi. Men index.html konplè a ak koreksyon an deja entegre ladan l. Ranplase ansy
 --panel:rgba(0,0,0,.72)
 }
 
-*{
-box-sizing:border-box
-}
+*{box-sizing:border-box}
 
 html{
 scroll-behavior:smooth;
 min-height:100%;
-background:linear-gradient(
-150deg,
-#000 0%,
-#000 14%,
-#7a2e00 46%,
-#ff6a00 68%,
-#000 100%
-);
+background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);
 background-attachment:fixed
 }
 
@@ -135,6 +124,39 @@ font-size:12px
 
 .desktop-nav a:hover{
 color:var(--light)
+}
+
+.header-actions{
+display:flex;
+align-items:center;
+gap:10px
+}
+
+.language-toggle{
+display:flex;
+border:1px solid var(--line);
+border-radius:7px;
+overflow:hidden;
+background:#000
+}
+
+.lang-btn{
+border:0;
+border-right:1px solid var(--line);
+background:#000;
+color:var(--light);
+padding:9px 8px;
+font:600 9px 'IBM Plex Mono',monospace;
+cursor:pointer
+}
+
+.lang-btn:last-child{
+border-right:0
+}
+
+.lang-btn.active{
+background:var(--orange);
+color:#000
 }
 
 .menu-btn{
@@ -492,10 +514,6 @@ padding:15px;
 background:rgba(0,0,0,.5)
 }
 
-.ai-feat{
-scroll-margin-top:100px
-}
-
 .ai-feat b{
 display:block;
 color:var(--light);
@@ -616,6 +634,37 @@ display:none
 
 @media(max-width:600px){
 
+.nav-wrap{
+padding:10px 14px;
+gap:8px
+}
+
+.brand{
+gap:8px
+}
+
+.logo-mark{
+width:46px;
+height:46px
+}
+
+.brand-name{
+font-size:17px
+}
+
+.brand-name span{
+font-size:7px
+}
+
+.header-actions{
+gap:6px
+}
+
+.lang-btn{
+padding:8px 6px;
+font-size:8px
+}
+
 .service-list{
 columns:1
 }
@@ -655,12 +704,42 @@ MAXIMAX
 </div>
 
 <nav class="desktop-nav">
-<a href="#hero">HOME</a>
-<a href="#modules">MODULES</a>
-<a href="#services">SERVICES</a>
-<a href="#ai-center">AI CENTER</a>
-<a href="#contact">CONTACT</a>
+<a href="#hero" data-nav="home">HOME</a>
+<a href="#modules" data-nav="modules">MODULES</a>
+<a href="#services" data-nav="services">SERVICES</a>
+<a href="#ai-center" data-nav="ai">AI CENTER</a>
+<a href="#contact" data-nav="contact">CONTACT</a>
 </nav>
+
+<div class="header-actions">
+
+<div class="language-toggle" aria-label="Language selector">
+
+<button
+class="lang-btn"
+type="button"
+data-lang="kre"
+>
+KRE
+</button>
+
+<button
+class="lang-btn active"
+type="button"
+data-lang="eng"
+>
+ENG
+</button>
+
+<button
+class="lang-btn"
+type="button"
+data-lang="esp"
+>
+ESP
+</button>
+
+</div>
 
 <button
 class="menu-btn"
@@ -673,12 +752,14 @@ aria-label="Open menu"
 
 </div>
 
+</div>
+
 <div class="mobile-nav" id="mobileNav">
-<a href="#hero">HOME</a>
-<a href="#modules">MODULES</a>
-<a href="#services">SERVICES</a>
-<a href="#ai-center">AI CENTER</a>
-<a href="#contact">CONTACT</a>
+<a href="#hero" data-nav="home">HOME</a>
+<a href="#modules" data-nav="modules">MODULES</a>
+<a href="#services" data-nav="services">SERVICES</a>
+<a href="#ai-center" data-nav="ai">AI CENTER</a>
+<a href="#contact" data-nav="contact">CONTACT</a>
 </div>
 
 </header>
@@ -702,11 +783,11 @@ Your Trusted Partner for
 <p class="lede">
 Maximax Multi Services — Notary, Taxes, Immigration,
 EOIR+BIA, Insurance, Real Estate, Business Formation
-& more. Tout sèvis ou bezwen anba yon sèl do-kay.
+& more. All the services you need under one roof.
 </p>
 
 <p class="creole">
-Nou pale Kreyòl, English, Español.
+We speak Kreyòl, English and Español.
 </p>
 
 <div class="hero-cta">
@@ -770,71 +851,71 @@ playsinline
 <h2>15 OFFICIAL MODULES</h2>
 
 <p>
-Services professionnels • Assistance administrative •
-Intelligence artificielle • Support digital
+Professional services • Administrative assistance •
+Artificial intelligence • Digital support
 </p>
 
 </div>
 
 <div class="module-seals-grid">
 
-<a href="#mod1" class="service-seal" title="Notary & Translation">
+<a href="#mod1" class="service-seal">
 <img src="./notary-translation.png" alt="Notary & Translation">
 </a>
 
-<a href="#mod2" class="service-seal" title="Taxes & Accounting">
+<a href="#mod2" class="service-seal">
 <img src="./taxes-accounting.png" alt="Taxes & Accounting">
 </a>
 
-<a href="#mod3" class="service-seal" title="Immigration Services">
+<a href="#mod3" class="service-seal">
 <img src="./immigration-services.png" alt="Immigration Services">
 </a>
 
-<a href="#mod4" class="service-seal" title="EOIR & BIA">
+<a href="#mod4" class="service-seal">
 <img src="./eoir-bia.png" alt="EOIR & BIA">
 </a>
 
-<a href="#mod5" class="service-seal" title="Insurance">
+<a href="#mod5" class="service-seal">
 <img src="./insurance.png" alt="Insurance">
 </a>
 
-<a href="#mod6" class="service-seal" title="Real Estate">
+<a href="#mod6" class="service-seal">
 <img src="./real-estate.png" alt="Real Estate">
 </a>
 
-<a href="#mod7" class="service-seal" title="Business Formation">
+<a href="#mod7" class="service-seal">
 <img src="./business-formation.png" alt="Business Formation">
 </a>
 
-<a href="#mod8" class="service-seal" title="Apostille & Legalization">
+<a href="#mod8" class="service-seal">
 <img src="./apostille-legalization.png" alt="Apostille & Legalization">
 </a>
 
-<a href="#mod9" class="service-seal" title="Travel & DMV Services">
+<a href="#mod9" class="service-seal">
 <img src="./travel-dmv.png" alt="Travel & DMV Services">
 </a>
 
-<a href="#ai-center" class="service-seal" title="Maximax AI Center">
+<a href="#ai-center" class="service-seal">
 <img src="./maximax-ai-center.png" alt="Maximax AI Center">
 </a>
 
-<a href="#form-helper" class="service-seal" title="Form Helper">
+<a href="#form-helper" class="service-seal">
 <img src="./form-helper.png" alt="Form Helper">
 </a>
 
-<a href="#career-tracker" class="service-seal" title="Career Tracker">
+<a href="#career-tracker" class="service-seal">
 <img src="./career-tracker.png" alt="Career Tracker">
 </a>
 
-<a href="#translation-ai" class="service-seal" title="Tradiksyon AI">
+<a href="#translation-ai" class="service-seal">
 <img src="./tradiksyon-ai.png" alt="Tradiksyon AI">
 </a>
 
-<a href="#chat247" class="service-seal" title="Chat 24/7">
+<a href="#chat247" class="service-seal">
 <img src="./chat-24-7.png" alt="Chat 24/7">
 </a>
 
-<a href="#try-ai" class="service-seal" title="Try AI Center">
+<a href="#try-ai" class="service-seal">
 <img src="./try-ai-center.png" alt="Try AI Center">
 </a>
 
@@ -875,8 +956,6 @@ Intelligence artificielle • Support digital
 <main id="services">
 
 
-<!-- MODULE 01 -->
-
 <div class="file" id="mod1">
 
 <div class="file-tab" onclick="toggleFile('mod1')">
@@ -911,8 +990,6 @@ Intelligence artificielle • Support digital
 
 </div>
 
-
-<!-- MODULE 02 -->
 
 <div class="file" id="mod2">
 
@@ -953,8 +1030,6 @@ File My Taxes Now
 </div>
 
 
-<!-- MODULE 03 -->
-
 <div class="file" id="mod3">
 
 <div class="file-tab" onclick="toggleFile('mod3')">
@@ -989,8 +1064,6 @@ File My Taxes Now
 
 </div>
 
-
-<!-- MODULE 04 -->
 
 <div class="file" id="mod4">
 
@@ -1029,8 +1102,6 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
-<!-- MODULE 05 -->
-
 <div class="file" id="mod5">
 
 <div class="file-tab" onclick="toggleFile('mod5')">
@@ -1065,8 +1136,6 @@ Immigration Court • Board of Immigration Appeals
 
 </div>
 
-
-<!-- MODULE 06 -->
 
 <div class="file" id="mod6">
 
@@ -1103,8 +1172,6 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
-<!-- MODULE 07 -->
-
 <div class="file" id="mod7">
 
 <div class="file-tab" onclick="toggleFile('mod7')">
@@ -1140,8 +1207,6 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
-<!-- MODULE 08 -->
-
 <div class="file" id="mod8">
 
 <div class="file-tab" onclick="toggleFile('mod8')">
@@ -1176,8 +1241,6 @@ Immigration Court • Board of Immigration Appeals
 
 </div>
 
-
-<!-- MODULE 09 -->
 
 <div class="file" id="mod9">
 
@@ -1452,7 +1515,7 @@ Truth Social
 
 <script>
 
-/* MONTRE SÈLMAN MODIL BOUTON YO CHWAZI A */
+/* SHOW ONLY THE SELECTED SERVICE MODULE */
 
 function showOnlyFile(id){
 
@@ -1478,7 +1541,7 @@ selected
 }
 
 
-/* LOUVRI OSWA FÈMEN KONTNI MODIL LA */
+/* OPEN OR CLOSE THE SELECTED MODULE */
 
 function toggleFile(id){
 
@@ -1486,15 +1549,13 @@ const file =
 document.getElementById(id);
 
 if(file){
-
 file.classList.toggle("open");
-
 }
 
 }
 
 
-/* LÈ PAJ LA LOUVRI, PA MONTRE OKENN MODIL */
+/* KEEP ALL SERVICE MODULES HIDDEN WHEN PAGE LOADS */
 
 document
 .querySelectorAll(".file")
@@ -1508,7 +1569,7 @@ file.classList.remove(
 });
 
 
-/* 9 BOUTON SÈVIS YO AK CATEGORY MAP */
+/* SERVICE LOGOS AND CATEGORY LINKS */
 
 document
 .querySelectorAll(
@@ -1582,6 +1643,154 @@ mobileNav.classList.remove("open");
 });
 
 }
+
+
+/* LANGUAGE TRANSLATIONS */
+
+const translations={
+
+eng:{
+home:"HOME",
+modules:"MODULES",
+services:"SERVICES",
+ai:"AI CENTER",
+contact:"CONTACT",
+eyebrow:"Pine Hills, Orlando • Indianapolis • New York",
+title:'Your Trusted Partner for <em>Life in the USA</em>',
+lede:"Maximax Multi Services — Notary, Taxes, Immigration, EOIR+BIA, Insurance, Real Estate, Business Formation & more. All the services you need under one roof.",
+creole:"We speak Kreyòl, English and Español.",
+book:"Book Appointment",
+explore:"Explore Services",
+official:"15 OFFICIAL MODULES",
+description:"Professional services • Administrative assistance • Artificial intelligence • Digital support"
+},
+
+kre:{
+home:"AKÈY",
+modules:"MODIL YO",
+services:"SÈVIS YO",
+ai:"SANT AI",
+contact:"KONTAK",
+eyebrow:"Pine Hills, Orlando • Indianapolis • New York",
+title:'Patnè ou ka fè konfyans pou <em>lavi Ozetazini</em>',
+lede:"Maximax Multi Services — Notè, Taks, Imigrasyon, EOIR+BIA, Asirans, Imobilye, Kreyasyon Biznis ak plis ankò. Tout sèvis ou bezwen anba yon sèl do-kay.",
+creole:"Nou pale Kreyòl, English ak Español.",
+book:"Pran Randevou",
+explore:"Gade Sèvis Yo",
+official:"15 MODIL OFISYÈL",
+description:"Sèvis pwofesyonèl • Asistans administratif • Entèlijans atifisyèl • Sipò dijital"
+},
+
+esp:{
+home:"INICIO",
+modules:"MÓDULOS",
+services:"SERVICIOS",
+ai:"CENTRO IA",
+contact:"CONTACTO",
+eyebrow:"Pine Hills, Orlando • Indianápolis • Nueva York",
+title:'Su socio de confianza para <em>la vida en Estados Unidos</em>',
+lede:"Maximax Multi Services — Notaría, Impuestos, Inmigración, EOIR+BIA, Seguros, Bienes Raíces, Formación de Empresas y más. Todos los servicios que necesita bajo un mismo techo.",
+creole:"Hablamos Kreyòl, English y Español.",
+book:"Reservar Cita",
+explore:"Explorar Servicios",
+official:"15 MÓDULOS OFICIALES",
+description:"Servicios profesionales • Asistencia administrativa • Inteligencia artificial • Soporte digital"
+}
+
+};
+
+
+/* APPLY SELECTED LANGUAGE */
+
+function setLanguage(lang){
+
+const translation =
+translations[lang] || translations.eng;
+
+document.documentElement.lang =
+lang === "kre"
+? "ht"
+: lang === "esp"
+? "es"
+: "en";
+
+document
+.querySelectorAll("[data-nav]")
+.forEach(function(link){
+
+link.textContent =
+translation[link.dataset.nav];
+
+});
+
+document.querySelector(".eyebrow").textContent =
+translation.eyebrow;
+
+document.querySelector(".hero h1").innerHTML =
+translation.title;
+
+document.querySelector(".lede").textContent =
+translation.lede;
+
+document.querySelector(".creole").textContent =
+translation.creole;
+
+document.querySelector(".btn-primary").textContent =
+translation.book;
+
+document.querySelector(".btn-ghost").textContent =
+translation.explore;
+
+document.querySelector(".module-heading h2").textContent =
+translation.official;
+
+document.querySelector(".module-heading p").textContent =
+translation.description;
+
+document
+.querySelectorAll(".lang-btn")
+.forEach(function(button){
+
+button.classList.toggle(
+"active",
+button.dataset.lang === lang
+);
+
+});
+
+localStorage.setItem(
+"maximaxLanguage",
+lang
+);
+
+}
+
+
+/* LANGUAGE BUTTON EVENTS */
+
+document
+.querySelectorAll(".lang-btn")
+.forEach(function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+setLanguage(
+this.dataset.lang
+);
+
+}
+);
+
+});
+
+
+/* RESTORE SAVED LANGUAGE */
+
+setLanguage(
+localStorage.getItem("maximaxLanguage") || "eng"
+);
 
 </script>
 
