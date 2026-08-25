@@ -1,127 +1,403 @@
-Worked for 9s
+Worked for 24s
 
-<!-- FORM HELP CENTER — NO. 11 -->
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<section class="form-help-center" id="form-helper">
+<title>Maximax Multi Services - Services & AI Center</title>
 
-<div class="form-center-panel">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<span class="ai-badge">
-📋 MAXIMAX FORM HELP CENTER
-</span>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<h2>
-Find the Right Form and Service
-</h2>
-
-<p class="form-center-intro">
-Choose the service you need. Form Help Center will show the recommended
-form, documents to organize and the correct next step.
-</p>
-
-<div class="form-center-controls">
-
-<select id="formCenterSelect" aria-label="Choose a service">
-
-<option value="">
-Choose a service
-</option>
-
-<option value="notary">
-Notary & Translation
-</option>
-
-<option value="taxes">
-Taxes & Accounting
-</option>
-
-<option value="immigration">
-Immigration Services
-</option>
-
-<option value="eoir">
-EOIR & BIA
-</option>
-
-<option value="insurance">
-Insurance
-</option>
-
-<option value="realestate">
-Real Estate
-</option>
-
-<option value="business">
-Business Formation
-</option>
-
-<option value="apostille">
-Apostille & Legalization
-</option>
-
-<option value="travel">
-Travel & DMV
-</option>
-
-<option value="credit">
-Credit Repair
-</option>
-
-</select>
-
-<button id="formCenterFind" type="button">
-FIND MY FORM
-</button>
-
-</div>
-
-
-<div
-class="form-center-result"
-id="formCenterResult"
-aria-live="polite"
->
-
-<h3 id="formCenterTitle"></h3>
-
-<p id="formCenterDescription"></p>
-
-<h4>
-DOCUMENTS TO ORGANIZE
-</h4>
-
-<ul id="formCenterDocuments"></ul>
-
-<div class="form-center-actions">
-
-<a
-class="form-center-link primary"
-id="formCenterModuleLink"
-href="#services"
->
-OPEN MAXIMAX FORM
-</a>
-
-<a
-class="form-center-link"
-id="formCenterOfficialLink"
-href="#"
-target="_blank"
-rel="noopener noreferrer"
->
-OPEN OFFICIAL WEBSITE
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
+:root{
+--black:#000;
+--orange:#ff6a00;
+--light:#ffa347;
+--text:#ffc98a;
+--line:rgba(255,163,71,.35);
+--panel:rgba(0,0,0,.80)
+}
+
+*{box-sizing:border-box}
+
+html{
+scroll-behavior:smooth;
+min-height:100%;
+background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);
+background-attachment:fixed
+}
+
+body{
+margin:0;
+min-height:100vh;
+background:transparent;
+color:var(--text);
+font-family:'Public Sans',sans-serif
+}
+
+h1,h2,h3{font-family:'Fraunces',serif;margin:0}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(0,0,0,.95);
+border-bottom:1px solid var(--line)
+}
+
+.nav-wrap{
+max-width:1180px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+padding:12px 24px
+}
+
+.brand{display:flex;align-items:center;gap:12px}
+
+.logo-mark{
+width:54px;
+height:54px;
+overflow:hidden;
+border:2px solid var(--light);
+border-radius:50%;
+background:#000;
+flex:none
+}
+
+.logo-mark video{width:100%;height:100%;object-fit:cover}
+
+.brand-name{
+font-family:'Fraunces',serif;
+font-size:20px;
+font-weight:700
+}
+
+.brand-name span{
+display:block;
+margin-top:3px;
+font:9px 'IBM Plex Mono',monospace;
+letter-spacing:.2em;
+color:var(--light)
+}
+
+.desktop-nav{display:flex;gap:15px;font-size:12px}
+.desktop-nav a:hover{color:var(--light)}
+
+.header-actions{display:flex;align-items:center;gap:10px}
+
+.language-toggle{
+display:flex;
+overflow:hidden;
+border:1px solid var(--line);
+border-radius:7px;
+background:#000
+}
+
+.lang-btn{
+border:0;
+border-right:1px solid var(--line);
+padding:10px 9px;
+background:#000;
+color:var(--light);
+font:600 9px 'IBM Plex Mono',monospace;
+cursor:pointer
+}
+
+.lang-btn:last-child{border-right:0}
+.lang-btn.active{background:var(--orange);color:#000}
+
+.menu-btn{
+display:none;
+width:42px;
+height:42px;
+border:1px solid var(--line);
+border-radius:7px;
+background:#000;
+color:var(--light);
+font-size:20px;
+cursor:pointer
+}
+
+.mobile-nav{display:none;flex-direction:column;padding:0 20px 18px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{padding:11px 4px;border-bottom:1px solid var(--line)}
+
+.hero{
+max-width:1180px;
+margin:auto;
+padding:70px 24px 55px;
+display:grid;
+grid-template-columns:1fr auto;
+align-items:center;
+gap:45px
+}
+
+.eyebrow{
+font:10px 'IBM Plex Mono',monospace;
+letter-spacing:.2em;
+color:var(--light);
+text-transform:uppercase
+}
+
+.hero h1{
+margin-top:18px;
+font-size:clamp(2.2rem,5vw,4rem);
+line-height:1.06
+}
+
+.hero h1 em{color:var(--light)}
+
+.lede{max-width:660px;font-size:16px;line-height:1.7}
+.creole{color:var(--light);font-style:italic}
+
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+.btn{
+display:inline-block;
+padding:13px 20px;
+border-radius:4px;
+font:11px 'IBM Plex Mono',monospace;
+letter-spacing:.08em;
+text-transform:uppercase
+}
+
+.btn-primary{background:var(--orange);color:#000}
+.btn-ghost{border:1px solid var(--line)}
+
+.hero-seal video{
+width:135px;
+height:135px;
+border:3px solid var(--light);
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 35px rgba(255,106,0,.35)
+}
+
+.maximax-logo-showcase{max-width:1180px;margin:auto;padding:0 24px 55px}
+
+.maximax-logo-stage{
+max-width:760px;
+margin:auto;
+padding:16px;
+border:1px solid var(--light);
+border-radius:20px;
+background:#000;
+box-shadow:0 0 45px rgba(255,106,0,.25)
+}
+
+.maximax-logo-title{
+padding:4px 0 15px;
+text-align:center;
+font:10px 'IBM Plex Mono',monospace;
+letter-spacing:.2em;
+color:var(--light)
+}
+
+.maximax-logo-video{width:100%;border-radius:12px}
+
+.module-logo-section{max-width:1180px;margin:auto;padding:55px 24px 70px}
+.module-heading{text-align:center;margin-bottom:30px}
+.module-heading small{font:10px 'IBM Plex Mono',monospace;letter-spacing:.22em;color:var(--light)}
+
+.module-heading h2{
+margin-top:10px;
+font-size:clamp(2rem,5vw,3.4rem);
+color:var(--light)
+}
+
+.module-heading p{line-height:1.7}
+
+.module-seals-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:30px
+}
+
+.service-seal{
+display:flex;
+align-items:center;
+justify-content:center;
+width:100%;
+aspect-ratio:1/1;
+overflow:visible;
+transition:.25s ease;
+filter:drop-shadow(0 18px 24px rgba(0,0,0,.65))
+}
+
+.service-seal:hover,
+.service-seal:focus-visible{
+transform:translateY(-6px) scale(1.02);
+filter:drop-shadow(0 0 18px rgba(255,106,0,.65));
+outline:none
+}
+
+.service-seal img{
+display:block;
+width:100%;
+height:100%;
+object-fit:contain
+}
+
+.catmap{
+padding:22px 24px;
+background:rgba(0,0,0,.5);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
+}
+
+.catmap-inner{
+max-width:1180px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px 18px
+}
+
+.catmap-item{font:10px 'IBM Plex Mono',monospace;color:var(--light)}
+
+main{max-width:1180px;margin:auto;padding:45px 20px}
+
+.file{
+display:none;
+margin-bottom:18px;
+overflow:hidden;
+border:1px solid rgba(255,163,71,.45);
+border-radius:9px;
+background:rgba(0,0,0,.82);
+scroll-margin-top:105px
+}
+
+.file.active{display:block}
+
+.file-tab{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:19px 20px;
+cursor:pointer
+}
+
+.file-tab-left{display:flex;align-items:center;gap:13px}
+
+.file-num{
+width:40px;
+height:40px;
+display:grid;
+place-items:center;
+border:1px solid var(--light);
+border-radius:50%;
+font-size:11px;
+color:var(--light);
+flex:none
+}
+
+.file-tab h2{font-size:1.35rem}
+
+.sub{
+margin-top:4px;
+font:9px 'IBM Plex Mono',monospace;
+letter-spacing:.1em;
+color:var(--light)
+}
+
+.chev{color:var(--light);transition:.3s}
+.file.open .chev{transform:rotate(180deg)}
+.file-body{display:none;padding:0 20px 20px}
+.file.open .file-body{display:block}
+
+.service-list{
+columns:2;
+column-gap:30px;
+list-style:none;
+margin:0;
+padding:0
+}
+
+.service-list li{
+break-inside:avoid;
+padding:9px 0;
+border-bottom:1px dotted var(--line);
+font-size:13px
+}
+
+.service-list li::before{content:"✓ ";color:var(--light);font-weight:700}
+.service-list a::after{content:" ↗";font-size:11px;color:var(--light)}
+.service-list a:hover{color:var(--light);text-decoration:underline}
+
+.module-form{
+margin-top:22px;
+padding:22px;
+border:1px solid var(--line);
+border-radius:10px;
+background:#070300
+}
+
+.module-form h3{margin-bottom:8px;color:var(--light)}
+.module-form-note{font-size:13px;line-height:1.6;margin:0 0 18px}
+.module-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.module-field{display:flex;flex-direction:column;gap:6px}
+.module-field.full{grid-column:1/-1}
+.module-field label{font:600 9px 'IBM Plex Mono',monospace;color:var(--light)}
+
+.module-field input,
+.module-field select,
+.module-field textarea{
+width:100%;
+min-height:46px;
+padding:11px 12px;
+border:1px solid rgba(255,163,71,.55);
+border-radius:6px;
+background:#050505;
+color:var(--text);
+outline:none;
+color-scheme:dark
+}
+
+.module-field textarea{min-height:120px;resize:vertical}
+
+.module-field input:focus,
+.module-field select:focus,
+.module-field textarea:focus{
+border-color:var(--light);
+box-shadow:0 0 0 2px rgba(255,106,0,.22)
+}
+
+.module-field input[type="file"]::file-selector-button{
+border:0;
+border-radius:5px;
+padding:9px 12px;
+margin-right:10px;
+background:var(--orange);
+color:#000;
+font-weight:700
+}
+
+.module-submit{
+width:100%;
+min-height:48px;
+border:1px solid var(--light);
+border-radius:6px;
+background:var(--orange);
+color:#000;
+font:800 10px 'IBM Plex Mono',monospace;
+cursor:pointer
+}
+
+.privacy-note{font-size:10px;line-height:1.55;opacity:.8;margin:13px 0 0}
 
 .form-help-center{
 max-width:1180px;
@@ -137,20 +413,26 @@ border-radius:12px;
 background:rgba(0,0,0,.82)
 }
 
-.form-center-panel h2{
-font-size:clamp(1.8rem,4vw,2.8rem);
-color:var(--orange-light);
-margin:14px 0
+.section-badge{
+display:inline-block;
+padding:7px 12px;
+border:1px solid var(--line);
+border-radius:20px;
+font:10px 'IBM Plex Mono',monospace;
+color:var(--light)
 }
 
-.form-center-intro{
-max-width:760px;
-line-height:1.7
+.form-center-panel h2{
+margin:14px 0;
+font-size:clamp(1.8rem,4vw,2.8rem);
+color:var(--light)
 }
+
+.form-center-intro{max-width:800px;line-height:1.7}
 
 .form-center-controls{
 display:grid;
-grid-template-columns:1fr auto;
+grid-template-columns:1fr 1fr auto;
 gap:12px;
 margin-top:22px
 }
@@ -163,25 +445,17 @@ border:1px solid var(--line);
 border-radius:6px;
 background:#050505;
 color:var(--text);
-color-scheme:dark;
-outline:none
-}
-
-.form-center-controls select:focus{
-border-color:var(--orange-light);
-box-shadow:0 0 0 2px rgba(255,106,0,.22)
+color-scheme:dark
 }
 
 .form-center-controls button{
 min-height:48px;
 padding:11px 22px;
-border:1px solid var(--orange-light);
+border:1px solid var(--light);
 border-radius:6px;
 background:var(--orange);
 color:#000;
-font-family:'IBM Plex Mono',monospace;
-font-size:10px;
-font-weight:800;
+font:800 10px 'IBM Plex Mono',monospace;
 cursor:pointer
 }
 
@@ -194,35 +468,10 @@ border-radius:10px;
 background:#050505
 }
 
-.form-center-result.active{
-display:block
-}
-
-.form-center-result h3{
-margin-bottom:12px;
-font-size:1.7rem;
-color:var(--orange-light)
-}
-
-.form-center-result h4{
-margin:20px 0 8px;
-font-family:'IBM Plex Mono',monospace;
-font-size:10px;
-letter-spacing:.1em;
-color:var(--orange-light)
-}
-
-.form-center-result ul{
-margin:12px 0 18px;
-padding-left:20px;
-line-height:1.8
-}
-
-.form-center-actions{
-display:flex;
-flex-wrap:wrap;
-gap:10px
-}
+.form-center-result.active{display:block}
+.form-center-result h3{margin-bottom:12px;color:var(--light)}
+.form-center-result ul{margin:12px 0 18px;padding-left:20px;line-height:1.8}
+.form-center-actions{display:flex;flex-wrap:wrap;gap:10px}
 
 .form-center-link{
 display:inline-block;
@@ -230,391 +479,1098 @@ padding:11px 15px;
 border:1px solid var(--line);
 border-radius:6px;
 background:#000;
-color:var(--orange-light);
-font-family:'IBM Plex Mono',monospace;
-font-size:10px;
-font-weight:600
+color:var(--light);
+font:600 10px 'IBM Plex Mono',monospace
 }
 
-.form-center-link.primary{
+.form-center-link.primary{background:var(--orange);color:#000;border-color:var(--light)}
+
+.ai-center{
+padding:60px 24px;
+background:rgba(0,0,0,.58);
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+scroll-margin-top:110px
+}
+
+.ai-inner{
+max-width:1180px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
+}
+
+.ai-center h2{font-size:2rem;margin:14px 0}
+.ai-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+
+.ai-feat{
+padding:15px;
+border:1px solid var(--line);
+border-radius:8px;
+background:rgba(0,0,0,.5);
+cursor:pointer
+}
+
+.ai-feat b{display:block;color:var(--light);margin-bottom:6px}
+
+.myaccess-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 20px;
+border-radius:4px;
 background:var(--orange);
 color:#000;
-border-color:var(--orange-light)
+font:600 11px 'IBM Plex Mono',monospace
 }
 
-@media(max-width:600px){
-
-.form-center-controls{
-grid-template-columns:1fr
+.ai-chat{
+padding:20px;
+border:1px solid var(--line);
+border-radius:12px;
+background:rgba(0,0,0,.7)
 }
 
-.form-center-controls button{
-width:100%
+.ai-chat-title{font:10px 'IBM Plex Mono',monospace;color:var(--light);margin-bottom:14px}
+.ai-message{padding:12px;border-radius:8px;margin:10px 0;line-height:1.55}
+.ai-message.user{background:rgba(255,106,0,.15);border:1px solid var(--line)}
+.ai-message.bot{background:#000;border:1px solid var(--line)}
+.ai-chat-controls{display:flex;gap:8px;margin-top:14px}
+
+.ai-chat-controls input{
+flex:1;
+min-width:0;
+padding:12px;
+border:1px solid var(--line);
+border-radius:6px;
+background:#000;
+color:var(--text)
 }
 
-.form-center-actions{
-flex-direction:column
+.ai-chat-controls button{
+border:0;
+border-radius:6px;
+padding:10px 18px;
+background:var(--orange);
+color:#000;
+font-weight:700
 }
 
-.form-center-link{
-width:100%;
-text-align:center
+.band{padding:50px 24px}
+.band-inner{max-width:1180px;margin:auto}
+
+.contact-grid,
+.social-row{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin:20px 0
 }
 
+.contact-card{padding:16px;border:1px solid var(--line);border-radius:8px;background:rgba(0,0,0,.5)}
+.label{margin-bottom:7px;font:10px 'IBM Plex Mono',monospace;color:var(--light)}
+.value{font-size:14px;line-height:1.7}
+
+.social-pill{
+padding:11px;
+display:flex;
+align-items:center;
+gap:10px;
+border:1px solid var(--line);
+border-radius:10px;
+background:rgba(0,0,0,.55)
 }
 
+.social-icon{
+width:34px;
+height:34px;
+display:grid;
+place-items:center;
+border:1px solid var(--light);
+border-radius:50%;
+color:var(--light)
+}
+
+footer{padding:28px 20px;background:#000;border-top:1px solid var(--line)}
+
+.footer-cats{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:9px 18px;
+font:9px 'IBM Plex Mono',monospace;
+color:var(--light)
+}
+
+@media(max-width:900px){
+.desktop-nav{display:none}
+.menu-btn{display:block}
+.module-seals-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+
+@media(max-width:800px){
+.hero,.ai-inner{grid-template-columns:1fr}
+.hero-seal{display:none}
+}
+
+@media(max-width:650px){
+.module-logo-section{padding-left:15px;padding-right:15px}
+.module-seals-grid{gap:12px}
+.service-list{columns:1}
+.module-form-grid,.form-center-controls{grid-template-columns:1fr}
+.module-field.full{grid-column:auto}
+.ai-features{grid-template-columns:1fr}
+.ai-chat-controls{flex-direction:column}
+}
 </style>
+</head>
 
+<body>
+
+<header>
+<div class="nav-wrap">
+
+<div class="brand">
+<div class="logo-mark">
+<video autoplay muted loop playsinline>
+<source src="./maximax-best-multi.mp4" type="video/mp4">
+</video>
+</div>
+
+<div class="brand-name">
+MAXIMAX
+<span>MULTI SERVICES • EST 2020</span>
+</div>
+</div>
+
+<nav class="desktop-nav">
+<a href="#hero" data-nav="home">HOME</a>
+<a href="#modules" data-nav="modules">MODULES</a>
+<a href="#services" data-nav="services">SERVICES</a>
+<a href="#form-helper" data-nav="forms">FORM CENTER</a>
+<a href="#ai-center" data-nav="ai">AI CENTER</a>
+<a href="#contact" data-nav="contact">CONTACT</a>
+</nav>
+
+<div class="header-actions">
+
+<div class="language-toggle">
+<button class="lang-btn" type="button" data-lang="kre">KRE</button>
+<button class="lang-btn active" type="button" data-lang="eng">ENG</button>
+<button class="lang-btn" type="button" data-lang="esp">ESP</button>
+</div>
+
+<button class="menu-btn" id="menuBtn" type="button">☰</button>
+
+</div>
+</div>
+
+<div class="mobile-nav" id="mobileNav">
+<a href="#hero" data-nav="home">HOME</a>
+<a href="#modules" data-nav="modules">MODULES</a>
+<a href="#services" data-nav="services">SERVICES</a>
+<a href="#form-helper" data-nav="forms">FORM CENTER</a>
+<a href="#ai-center" data-nav="ai">AI CENTER</a>
+<a href="#contact" data-nav="contact">CONTACT</a>
+</div>
+</header>
+
+<section class="hero" id="hero">
+<div>
+
+<span class="eyebrow">
+Pine Hills, Orlando • Indianapolis • New York
+</span>
+
+<h1>
+Your Trusted Partner for <em>Life in the USA</em>
+</h1>
+
+<p class="lede">
+Maximax Multi Services — Notary, Taxes, Immigration, EOIR+BIA,
+Insurance, Real Estate, Business Formation, Apostille, Travel,
+Credit Repair and more. All the services you need under one roof.
+</p>
+
+<p class="creole">
+We speak Kreyòl, English and Español.
+</p>
+
+<div class="hero-cta">
+<a href="#contact" class="btn btn-primary">Book Appointment</a>
+<a href="#modules" class="btn btn-ghost">Explore Services</a>
+</div>
+
+</div>
+
+<div class="hero-seal">
+<video autoplay muted loop playsinline>
+<source src="./maximax-best-multi.mp4" type="video/mp4">
+</video>
+</div>
+</section>
+
+<section class="maximax-logo-showcase">
+<div class="maximax-logo-stage">
+
+<div class="maximax-logo-title">MAXIMAX MULTI SERVICES</div>
+
+<video class="maximax-logo-video" autoplay muted loop playsinline>
+<source src="./maxima-xbest.mp4" type="video/mp4">
+</video>
+
+</div>
+</section>
+
+<section class="module-logo-section" id="modules">
+
+<div class="module-heading">
+<small>MAXIMAX MULTI SERVICES</small>
+<h2>16 OFFICIAL MODULES</h2>
+<p>Professional services • Administrative assistance • Artificial intelligence • Digital support</p>
+</div>
+
+<div class="module-seals-grid">
+
+<a href="#mod1" class="service-seal"><img src="./notary-translation.png" alt="Notary and Translation"></a>
+<a href="#mod2" class="service-seal"><img src="./taxes-accounting.png" alt="Taxes and Accounting"></a>
+<a href="#mod3" class="service-seal"><img src="./immigration-services.png" alt="Immigration Services"></a>
+<a href="#mod4" class="service-seal"><img src="./eoir-bia.png" alt="EOIR and BIA"></a>
+<a href="#mod5" class="service-seal"><img src="./insurance.png" alt="Insurance"></a>
+<a href="#mod6" class="service-seal"><img src="./real-estate.png" alt="Real Estate"></a>
+<a href="#mod7" class="service-seal"><img src="./business-formation.png" alt="Business Formation"></a>
+<a href="#mod8" class="service-seal"><img src="./apostille-legalization.png" alt="Apostille and Legalization"></a>
+<a href="#mod9" class="service-seal"><img src="./travel-dmv.png" alt="Travel and DMV"></a>
+<a href="#ai-center" class="service-seal"><img src="./maximax-ai-center.png" alt="Maximax AI Center"></a>
+<a href="#form-helper" class="service-seal"><img src="./form-helper.png" alt="Form Help Center"></a>
+<a href="#career-tracker" class="service-seal"><img src="./career-tracker.png" alt="Career Tracker"></a>
+<a href="#translation-ai" class="service-seal"><img src="./tradiksyon-ai.png" alt="Tradiksyon AI"></a>
+<a href="#chat247" class="service-seal"><img src="./chat-24-7.png" alt="Chat 24/7"></a>
+<a href="#try-ai" class="service-seal"><img src="./try-ai-center.png" alt="Try AI Center"></a>
+<a href="#mod16" class="service-seal"><img src="./cerdit-repair.png" alt="Credit Repair"></a>
+
+</div>
+</section>
+
+<div class="catmap">
+<div class="catmap-inner">
+<a class="catmap-item" href="#mod1">01 NOTARY</a>
+<a class="catmap-item" href="#mod2">02 TAXES</a>
+<a class="catmap-item" href="#mod3">03 IMMIGRATION</a>
+<a class="catmap-item" href="#mod4">04 EOIR+BIA</a>
+<a class="catmap-item" href="#mod5">05 INSURANCE</a>
+<a class="catmap-item" href="#mod6">06 REAL ESTATE</a>
+<a class="catmap-item" href="#mod7">07 BUSINESS</a>
+<a class="catmap-item" href="#mod8">08 APOSTILLE</a>
+<a class="catmap-item" href="#mod9">09 TRAVEL+DMV</a>
+<a class="catmap-item" href="#ai-center">10 AI CENTER</a>
+<a class="catmap-item" href="#form-helper">11 FORM CENTER</a>
+<a class="catmap-item" href="#career-tracker">12 CAREER TRACKER</a>
+<a class="catmap-item" href="#translation-ai">13 TRADIKSYON AI</a>
+<a class="catmap-item" href="#chat247">14 CHAT 24/7</a>
+<a class="catmap-item" href="#try-ai">15 TRY AI</a>
+<a class="catmap-item" href="#mod16">16 CREDIT REPAIR</a>
+</div>
+</div>
+
+<main id="services"></main>
+
+<section class="form-help-center" id="form-helper">
+<div class="form-center-panel">
+
+<span class="section-badge">📋 MAXIMAX GOVERNMENT FORM HELP CENTER</span>
+
+<h2>Find the Right Government or Maximax Form</h2>
+
+<p class="form-center-intro">
+Choose your state and the type of form you need. Form Help Center will
+show the correct service, documents to organize and an official government
+or court website.
+</p>
+
+<div class="form-center-controls">
+
+<select id="formState">
+<option value="">Choose a state</option>
+<option value="fl">Florida</option>
+<option value="in">Indiana</option>
+<option value="ny">New York</option>
+<option value="federal">Federal / All States</option>
+</select>
+
+<select id="formType">
+<option value="">Choose a form or service</option>
+<option value="notary">Notary & Translation</option>
+<option value="taxes">Taxes & Accounting</option>
+<option value="immigration">USCIS Immigration Forms</option>
+<option value="eoir">EOIR & BIA Forms</option>
+<option value="divorce">Uncontested Divorce</option>
+<option value="custody">Custody & Visitation</option>
+<option value="support">Child Support</option>
+<option value="namechange">Name Change</option>
+<option value="smallclaims">Small Claims</option>
+<option value="housing">Housing & Eviction Forms</option>
+<option value="business">Business Formation</option>
+<option value="apostille">Apostille & Legalization</option>
+<option value="passport">Passport Forms</option>
+<option value="dmv">DMV Forms</option>
+<option value="socialsecurity">Social Security Forms</option>
+<option value="credit">Credit Repair</option>
+</select>
+
+<button id="formCenterFind" type="button">FIND MY FORM</button>
+
+</div>
+
+<div class="form-center-result" id="formCenterResult" aria-live="polite">
+
+<h3 id="formCenterTitle"></h3>
+
+<p id="formCenterDescription"></p>
+
+<h3 style="font-size:1.1rem;margin-top:20px">Documents to organize</h3>
+
+<ul id="formCenterDocuments"></ul>
+
+<div class="form-center-actions">
+<a class="form-center-link primary" id="formCenterModuleLink" href="#services">OPEN MAXIMAX FORM</a>
+<a class="form-center-link" id="formCenterOfficialLink" href="#" target="_blank" rel="noopener noreferrer">OPEN OFFICIAL WEBSITE</a>
+</div>
+
+<p class="privacy-note">
+Court and government requirements vary by state and case. Maximax provides
+administrative form assistance and does not provide legal advice or representation.
+</p>
+
+</div>
+</div>
+</section>
+
+<section class="ai-center" id="ai-center">
+<div class="ai-inner">
+
+<div>
+
+<span class="section-badge">🤖 MAXIMAX AI CENTER</span>
+
+<h2>Maximax AI Assistant Center</h2>
+
+<p>
+Smart digital tools designed to help organize forms, track information,
+translate short messages and answer general service questions.
+</p>
+
+<div class="ai-features">
+
+<div class="ai-feat" id="form-helper-card" role="button" tabindex="0">
+<b>📋 FORM HELP CENTER</b>
+<span>Find government and Maximax forms</span>
+</div>
+
+<div class="ai-feat" id="career-tracker" role="button" tabindex="0" data-question="Help me organize my career applications">
+<b>📈 CAREER TRACKER</b>
+<span>Career applications, interviews and deadlines</span>
+</div>
+
+<div class="ai-feat" id="translation-ai" role="button" tabindex="0" data-question="Help me translate a short message">
+<b>🌐 TRADIKSYON AI</b>
+<span>Kreyòl • English • Français • Español</span>
+</div>
+
+<div class="ai-feat" id="chat247" role="button" tabindex="0" data-question="Show me all Maximax services">
+<b>💬 CHAT 24/7</b>
+<span>General digital assistance</span>
+</div>
+
+</div>
+
+<a class="myaccess-btn" id="try-ai" href="#ai-chat">Try AI Center</a>
+
+</div>
+
+<div class="ai-chat" id="ai-chat">
+
+<div class="ai-chat-title">MAXIMAX AI CHAT</div>
+
+<div id="aiMessages" aria-live="polite">
+<div class="ai-message bot">
+🤖 Welcome to Maximax AI Center. Ask about Notary, Taxes, Immigration,
+EOIR & BIA, Insurance, Real Estate, Business Formation, Apostille,
+Travel, DMV, government forms or Credit Repair.
+</div>
+</div>
+
+<div class="ai-chat-controls">
+<input id="aiInput" type="text" placeholder="Ask a question..." autocomplete="off">
+<button id="aiSend" type="button">SEND</button>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="band" id="contact">
+<div class="band-inner">
+
+<h2>Contact - 9 Rezo Sosyal</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<div class="label">Telephone</div>
+<div class="value">
+<a href="tel:+14076405166">(407) 640-5166</a><br>
+<a href="tel:+15162168494">(516) 216-8494</a><br>
+<a href="tel:+13175381150">(317) 538-1150</a><br>
+<a href="tel:+50943437488">+509 43 43 7488</a>
+</div>
+</div>
+
+<div class="contact-card">
+<div class="label">Email</div>
+<div class="value">
+<a href="mailto:maximaxmultiservices@gmail.com">maximaxmultiservices@gmail.com</a>
+</div>
+</div>
+
+<div class="contact-card">
+<div class="label">Service Areas</div>
+<div class="value">
+Pine Hills Orlando FL<br>
+Indianapolis IN<br>
+Hempstead NY 11550
+</div>
+</div>
+
+</div>
+
+<div class="social-row">
+<a class="social-pill" href="https://wa.me/50943437488" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-whatsapp"></i></span>WhatsApp</a>
+<a class="social-pill" href="https://www.facebook.com/share/1By3KvYRrM/" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-facebook-f"></i></span>Facebook</a>
+<a class="social-pill" href="https://www.instagram.com/lebaron072/" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-instagram"></i></span>Instagram</a>
+<a class="social-pill" href="https://www.tiktok.com/@maximax1960" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-tiktok"></i></span>TikTok</a>
+<a class="social-pill" href="https://x.com/w05g2m" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-x-twitter"></i></span>X / Twitter</a>
+<a class="social-pill" href="https://www.youtube.com/@BSS1815PROMAXDMP" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-youtube"></i></span>YouTube</a>
+<a class="social-pill" href="https://www.linkedin.com/in/maximax-multi-services-075ba2314" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-linkedin-in"></i></span>LinkedIn</a>
+<a class="social-pill" href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici" target="_blank" rel="noopener noreferrer"><span class="social-icon"><i class="fab fa-spotify"></i></span>Spotify</a>
+<a class="social-pill" href="https://truthsocial.com/@briyant_soley_1815" target="_blank" rel="noopener noreferrer"><span class="social-icon">T</span>Truth Social</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="footer-cats">
+<span>NOTARY & TRANSLATION</span>
+<span>TAXES & ACCOUNTING</span>
+<span>IMMIGRATION</span>
+<span>EOIR+BIA</span>
+<span>INSURANCE</span>
+<span>REAL ESTATE</span>
+<span>BUSINESS FORMATION</span>
+<span>APOSTILLE</span>
+<span>TRAVEL & DMV</span>
+<span>AI CENTER</span>
+<span>FORM CENTER</span>
+<span>CAREER TRACKER</span>
+<span>TRADIKSYON AI</span>
+<span>CHAT 24/7</span>
+<span>TRY AI CENTER</span>
+<span>CREDIT REPAIR</span>
+</div>
+</footer>
 
 <script>
+const modules=[
+{
+id:"mod1",num:"01",title:"Notary & Translation",sub:"Certified • Fast • All 50 States",
+form:"notary-translation-request",submit:"SUBMIT NOTARY REQUEST",
+services:[
+["Florida Notary Public Search","https://notaries.dos.fl.gov/NotIdSearch.asp?ID=0"],
+["Indiana Notary Public","https://inbiz.in.gov/certification/notary"],
+["New York Notary Public","https://dos.ny.gov/notary-public"],
+["Power of Attorney & Court Forms","https://help.flcourts.gov/find-forms"],
+["Certified Translation Requirements","https://www.uscis.gov/forms/filing-guidance/tips-for-filing-forms-by-mail"],
+["Travel Consent for Minors","https://travel.state.gov/en/international-travel/planning/personal-needs/minors.html"]
+]},
+{
+id:"mod2",num:"02",title:"Taxes & Accounting",sub:"Tax Preparation • ITIN • Accounting",
+form:"taxes-accounting-request",submit:"SUBMIT TAX REQUEST",
+services:[
+["Personal Taxes — Form 1040","https://www.irs.gov/forms-pubs/about-form-1040"],
+["Business Taxes","https://www.irs.gov/businesses/business-taxes"],
+["ITIN Application & Renewal — W-7","https://www.irs.gov/tin/itin/how-to-apply-for-an-itin"],
+["Bookkeeping & Recordkeeping","https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping"],
+["IRS Letter Assistance","https://www.irs.gov/individuals/understanding-your-irs-notice-or-letter"],
+["Tax Amendment — Form 1040-X","https://www.irs.gov/forms-pubs/about-form-1040-x"]
+]},
+{
+id:"mod3",num:"03",title:"Immigration Services",sub:"TPS • Asylum • Family Petition",
+form:"immigration-request",submit:"SUBMIT IMMIGRATION REQUEST",
+services:[
+["TPS Application & Renewal","https://www.uscis.gov/humanitarian/temporary-protected-status"],
+["Asylum Form I-589","https://www.uscis.gov/i-589"],
+["Work Permit Form I-765","https://www.uscis.gov/i-765"],
+["Family Petition Form I-130","https://www.uscis.gov/i-130"],
+["Green Card Form I-485","https://www.uscis.gov/i-485"],
+["Citizenship Form N-400","https://www.uscis.gov/n-400"],
+["Investor Conditions Form I-829","https://www.uscis.gov/i-829"],
+["All USCIS Forms","https://www.uscis.gov/forms/all-forms"]
+]},
+{
+id:"mod4",num:"04",title:"EOIR & BIA",sub:"Immigration Court • Appeals",
+form:"eoir-bia-request",submit:"SUBMIT EOIR & BIA REQUEST",
+services:[
+["EOIR Case Information","https://www.justice.gov/eoir/eoir-case-information"],
+["BIA Case Information","https://www.justice.gov/eoir/contact-bia-icor"],
+["Court Date Check","https://acis.eoir.justice.gov/"],
+["EOIR Forms","https://www.justice.gov/eoir/eoir-forms"],
+["Respondent Access","https://respondentaccess.eoir.justice.gov/en/"],
+["Find Immigration Court","https://www.justice.gov/eoir/find-immigration-court-and-access-internet-based-hearings"]
+]},
+{
+id:"mod5",num:"05",title:"Insurance",sub:"Auto • Home • Life • Health",
+form:"insurance-request",submit:"SUBMIT INSURANCE REQUEST",
+services:[
+["Auto Insurance","https://myfloridacfo.com/division/consumers/understanding-insurance/personal-automobile-insurance-overview"],
+["Homeowners Insurance","https://myfloridacfo.com/division/consumers/understanding-insurance/homeownersinsuranceoverview"],
+["Renters Insurance","https://www.myfloridacfo.com/division/consumers/understanding-insurance/guides"],
+["Life Insurance","https://www.myfloridacfo.com/division/consumers/understanding-insurance/lifeinsuranceoverview"],
+["Health Insurance","https://www.healthcare.gov/"],
+["Business Insurance","https://www.sba.gov/business-guide/launch-your-business/get-business-insurance"]
+]},
+{
+id:"mod6",num:"06",title:"Real Estate",sub:"Buy • Sell • Rent",
+form:"real-estate-request",submit:"SUBMIT REAL ESTATE REQUEST",
+services:[
+["First-Time Home Buyer","https://www.hud.gov/helping-americans/buying-a-home"],
+["HUD Properties","https://www.hud.gov/fha/"],
+["Rental Assistance","https://www.usa.gov/emergency-pay-rent"],
+["Affordable Housing","https://www.usa.gov/subsidized-rental-housing"],
+["Public Housing","https://www.usa.gov/public-housing"],
+["Government Home Loans","https://www.usa.gov/government-home-loans"]
+]},
+{
+id:"mod7",num:"07",title:"Business Formation",sub:"LLC • Corporation • EIN",
+form:"business-request",submit:"SUBMIT BUSINESS REQUEST",
+services:[
+["Florida LLC Formation","https://dos.fl.gov/sunbiz/start-business/efile/fl-llc/"],
+["Florida Corporation","https://dos.fl.gov/sunbiz/start-business/efile/fl-profit-corporation/"],
+["IRS EIN Application","https://www.irs.gov/businesses/employer-identification-number"],
+["Florida Business Registration","https://dos.fl.gov/sunbiz/start-business/"],
+["SBA Business Plan Guide","https://www.sba.gov/business-guide/plan-your-business/write-your-business-plan"],
+["SBA Local Assistance","https://www.sba.gov/local-assistance"]
+]},
+{
+id:"mod8",num:"08",title:"Apostille & Legalization",sub:"State • Federal • Embassy",
+form:"apostille-request",submit:"SUBMIT APOSTILLE REQUEST",
+services:[
+["Florida Apostille","https://dos.fl.gov/sunbiz/other-services/apostille-notarial-certification"],
+["Indiana Apostille","https://www.in.gov/sos/business/apostilleauthentication/index.html"],
+["New York Apostille","https://dos.ny.gov/apostille-certificate-authentication"],
+["Federal Authentication","https://travel.state.gov/en/replace-certify/authenticate-documents.html"],
+["Authentication Contact","https://travel.state.gov/en/replace-certify/authenticate-documents/contact-authentications.html"]
+]},
+{
+id:"mod9",num:"09",title:"Travel & DMV Services",sub:"Passport • Travel • DMV",
+form:"travel-dmv-request",submit:"SUBMIT TRAVEL & DMV REQUEST",
+services:[
+["Apply for Passport","https://travel.state.gov/content/travel/en/passports/how-apply.html"],
+["Renew Passport","https://travel.state.gov/content/travel/en/passports/have-passport/renew.html"],
+["Urgent Passport","https://travel.state.gov/content/travel/en/passports/get-fast.html"],
+["Florida Driver License","https://www.flhsmv.gov/driver-licenses-id-cards/"],
+["Florida Tags & Titles","https://www.flhsmv.gov/motor-vehicles-tags-titles/"],
+["Indiana BMV","https://www.in.gov/bmv/"],
+["New York DMV","https://dmv.ny.gov/"]
+]},
+{
+id:"mod16",num:"16",title:"Credit Repair",sub:"Reports • Disputes • Education",
+form:"credit-repair-request",submit:"SUBMIT CREDIT REPAIR REQUEST",
+services:[
+["Free Official Credit Reports","https://www.annualcreditreport.com/"],
+["Get Credit Reports","https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-5/"],
+["Dispute Credit Error","https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/"],
+["Identity Theft Recovery","https://www.identitytheft.gov/"],
+["FTC Credit Repair Guide","https://consumer.ftc.gov/articles/credit-repair-how-help-yourself"],
+["Credit Reports & Scores","https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/"]
+]}
+];
 
-const formCenterData={
+function esc(text){
+return String(text)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;");
+}
 
-notary:{
-title:"Notary & Translation",
-description:"Use Maximax Module 01 for notary, affidavits, powers of attorney, certified translation or minor travel consent.",
-documents:[
-"Valid photo identification",
-"Unsigned document when notarization is required",
-"Clear document copy for translation"
-],
+function buildModule(module){
+const links=module.services.map(function(item){
+return `<li><a href="${item[1]}" target="_blank" rel="noopener noreferrer">${esc(item[0])}</a></li>`;
+}).join("");
+
+const options=module.services.map(function(item){
+return `<option>${esc(item[0])}</option>`;
+}).join("");
+
+return `
+<div class="file" id="${module.id}">
+<div class="file-tab" data-file="${module.id}">
+<div class="file-tab-left">
+<div class="file-num">${module.num}</div>
+<div>
+<h2>${esc(module.title)}</h2>
+<div class="sub">${esc(module.sub)}</div>
+</div>
+</div>
+<span class="chev">▼</span>
+</div>
+
+<div class="file-body">
+<ul class="service-list">${links}</ul>
+
+<form class="module-form" name="${module.form}" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+
+<input type="hidden" name="form-name" value="${module.form}">
+<p hidden><label>Do not fill: <input name="bot-field"></label></p>
+
+<h3>Request ${esc(module.title)} Assistance</h3>
+
+<p class="module-form-note">
+Complete this secure intake form. Maximax will contact you to review your request.
+</p>
+
+<div class="module-form-grid">
+
+<div class="module-field">
+<label>FULL NAME *</label>
+<input name="full-name" type="text" required>
+</div>
+
+<div class="module-field">
+<label>PHONE NUMBER *</label>
+<input name="phone" type="tel" required>
+</div>
+
+<div class="module-field">
+<label>EMAIL *</label>
+<input name="email" type="email" required>
+</div>
+
+<div class="module-field">
+<label>SERVICE NEEDED *</label>
+<select name="service" required>
+<option value="">Choose a service</option>
+${options}
+</select>
+</div>
+
+<div class="module-field">
+<label>PREFERRED CONTACT METHOD</label>
+<select name="contact-method">
+<option>Phone Call</option>
+<option>Text Message</option>
+<option>Email</option>
+<option>WhatsApp</option>
+</select>
+</div>
+
+<div class="module-field">
+<label>PREFERRED DATE</label>
+<input name="preferred-date" type="date">
+</div>
+
+<div class="module-field full">
+<label>UPLOAD DOCUMENT COPY</label>
+<input name="document" type="file" accept=".pdf,.jpg,.jpeg,.png">
+</div>
+
+<div class="module-field full">
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
+</div>
+
+<div class="module-field full">
+<button class="module-submit" type="submit">${module.submit}</button>
+</div>
+
+</div>
+
+<p class="privacy-note">
+Do not enter Social Security numbers, full account numbers, passport numbers,
+passwords or banking information. Upload copies only.
+</p>
+
+</form>
+</div>
+</div>`;
+}
+
+const services=document.getElementById("services");
+services.innerHTML=modules.map(buildModule).join("");
+
+function showModule(id){
+document.querySelectorAll(".file").forEach(function(file){
+const selected=file.id===id;
+file.classList.toggle("active",selected);
+file.classList.toggle("open",selected);
+});
+
+const file=document.getElementById(id);
+
+if(file){
+const top=file.getBoundingClientRect().top+window.pageYOffset-100;
+window.scrollTo({top:top,behavior:"smooth"});
+}
+}
+
+document.querySelectorAll("[data-file]").forEach(function(tab){
+tab.addEventListener("click",function(){
+const file=document.getElementById(this.dataset.file);
+if(file)file.classList.toggle("open");
+});
+});
+
+document.querySelectorAll('.service-seal[href^="#mod"],.catmap-item[href^="#mod"]').forEach(function(link){
+link.addEventListener("click",function(event){
+event.preventDefault();
+showModule(this.getAttribute("href").slice(1));
+});
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const mobileNav=document.getElementById("mobileNav");
+
+menuBtn.addEventListener("click",function(){
+mobileNav.classList.toggle("open");
+});
+
+mobileNav.querySelectorAll("a").forEach(function(link){
+link.addEventListener("click",function(){
+mobileNav.classList.remove("open");
+});
+});
+
+const translations={
+eng:{home:"HOME",modules:"MODULES",services:"SERVICES",forms:"FORM CENTER",ai:"AI CENTER",contact:"CONTACT",official:"16 OFFICIAL MODULES"},
+kre:{home:"AKÈY",modules:"MODIL YO",services:"SÈVIS YO",forms:"SANT FÒM",ai:"SANT AI",contact:"KONTAK",official:"16 MODIL OFISYÈL"},
+esp:{home:"INICIO",modules:"MÓDULOS",services:"SERVICIOS",forms:"CENTRO DE FORMULARIOS",ai:"CENTRO IA",contact:"CONTACTO",official:"16 MÓDULOS OFICIALES"}
+};
+
+function setLanguage(language){
+const text=translations[language]||translations.eng;
+
+document.querySelectorAll("[data-nav]").forEach(function(link){
+link.textContent=text[link.dataset.nav];
+});
+
+document.querySelector(".module-heading h2").textContent=text.official;
+
+document.querySelectorAll(".lang-btn").forEach(function(button){
+button.classList.toggle("active",button.dataset.lang===language);
+});
+
+localStorage.setItem("maximaxLanguage",language);
+}
+
+document.querySelectorAll(".lang-btn").forEach(function(button){
+button.addEventListener("click",function(){
+setLanguage(this.dataset.lang);
+});
+});
+
+setLanguage(localStorage.getItem("maximaxLanguage")||"eng");
+
+const formData={
+"fl-divorce":{
+title:"Florida Uncontested Divorce Forms",
+description:"Florida dissolution-of-marriage forms vary depending on property and dependent or minor children.",
+documents:["Marriage certificate copy","Photo identification","Information about property and debts","Children and support information when applicable"],
 module:"#mod1",
-official:"https://dos.fl.gov/sunbiz/other-services/notaries/"
+official:"https://www.flcourts.gov/Services/family-courts/domestic-relations-court-resources/family-law-forms"
 },
-
-taxes:{
-title:"Taxes & Accounting",
-description:"Use Maximax Module 02 for personal taxes, business taxes, ITIN, bookkeeping, payroll or IRS notices.",
-documents:[
-"Photo identification",
-"Tax documents for the applicable year",
-"Income and expense records"
-],
-module:"#mod2",
-official:"https://www.irs.gov/forms-instructions"
+"in-divorce":{
+title:"Indiana Divorce Forms",
+description:"Use Indiana self-service court resources for divorce forms and filing information.",
+documents:["Marriage information","Photo identification","Property and debt information","Children and support information when applicable"],
+module:"#mod1",
+official:"https://indianalegalhelp.org/court-forms/forms-divorce/"
 },
-
-immigration:{
-title:"Immigration Services",
-description:"Use Maximax Module 03 for TPS, asylum, work permit, family petition, green card or citizenship assistance.",
-documents:[
-"USCIS notices or receipt copies",
-"Identity and civil-document copies",
-"Applicable immigration-history documents"
-],
+"ny-divorce":{
+title:"New York Uncontested Divorce Forms",
+description:"New York provides uncontested divorce packets and a DIY program for eligible cases.",
+documents:["Marriage certificate","Settlement information","Property and debt information","Children and support information when applicable"],
+module:"#mod1",
+official:"https://www.nycourts.gov/divorce-resources/uncontested-divorce-information-and-forms"
+},
+"federal-immigration":{
+title:"USCIS Immigration Forms",
+description:"Official USCIS forms for immigration benefits and applications.",
+documents:["USCIS notices","Identity documents","Supporting civil and immigration records"],
 module:"#mod3",
 official:"https://www.uscis.gov/forms/all-forms"
 },
-
-eoir:{
-title:"EOIR & BIA",
-description:"Use Maximax Module 04 for immigration-court information, hearing checks, BIA information or document organization.",
-documents:[
-"Immigration court notice copies",
-"Hearing or deadline information",
-"Supporting case-document copies"
-],
+"federal-eoir":{
+title:"EOIR & BIA Forms",
+description:"Official immigration-court and Board of Immigration Appeals forms.",
+documents:["Court notices","Case information","Supporting document copies"],
 module:"#mod4",
 official:"https://www.justice.gov/eoir/eoir-forms"
 },
-
-insurance:{
-title:"Insurance",
-description:"Use Maximax Module 05 for auto, home, renters, life, health or business insurance information.",
-documents:[
-"Current insurance policy when available",
-"Basic property or vehicle information",
-"Preferred coverage and start date"
-],
-module:"#mod5",
-official:"https://www.healthcare.gov/"
+"federal-taxes":{
+title:"IRS Tax Forms",
+description:"Official IRS forms, instructions and publications.",
+documents:["Income records","Tax documents","Applicable expense records"],
+module:"#mod2",
+official:"https://www.irs.gov/forms-instructions"
 },
-
-realestate:{
-title:"Real Estate",
-description:"Use Maximax Module 06 for buying, selling, renting, housing resources or mortgage referrals.",
-documents:[
-"Photo identification",
-"Preferred location and budget",
-"Income or housing documents when requested"
-],
-module:"#mod6",
-official:"https://www.hud.gov/helping-americans"
-},
-
-business:{
-title:"Business Formation",
-description:"Use Maximax Module 07 for LLC, corporation, EIN, registration or business-plan assistance.",
-documents:[
-"Proposed business name",
-"Owner contact information",
-"Business address and activity description"
-],
-module:"#mod7",
-official:"https://www.sba.gov/business-guide/launch-your-business/register-your-business"
-},
-
-apostille:{
-title:"Apostille & Legalization",
-description:"Use Maximax Module 08 for state apostille, federal authentication or embassy legalization.",
-documents:[
-"Clear document copy",
-"Issuing state or federal agency",
-"Destination country and deadline"
-],
-module:"#mod8",
-official:"https://travel.state.gov/en/replace-certify/authenticate-documents.html"
-},
-
-travel:{
-title:"Travel & DMV",
-description:"Use Maximax Module 09 for passport, travel, driver-license, registration, tag or title assistance.",
-documents:[
-"Photo identification",
-"Applicable travel or vehicle documents",
-"Appointment or travel date"
-],
+"federal-passport":{
+title:"United States Passport Forms",
+description:"Official passport application and renewal information.",
+documents:["Citizenship evidence","Photo identification","Passport photo","Current passport when renewing"],
 module:"#mod9",
-official:"https://www.usa.gov/travel-documents"
+official:"https://travel.state.gov/content/travel/en/passports/how-apply/forms.html"
 },
-
-credit:{
-title:"Credit Repair",
-description:"Use Maximax Module 16 for credit-report review, possible error disputes, identity-theft recovery or credit education.",
-documents:[
-"Current credit-report copy",
-"Copies of supporting records",
-"List of items you believe may be inaccurate"
-],
+"federal-socialsecurity":{
+title:"Social Security Forms",
+description:"Official Social Security Administration forms and publications.",
+documents:["Identity documents","Applicable SSA notice","Supporting eligibility records"],
+module:"#form-helper",
+official:"https://www.ssa.gov/forms/"
+},
+"federal-credit":{
+title:"Credit Repair and Credit Reports",
+description:"Official credit-report, dispute and identity-theft resources.",
+documents:["Credit-report copy","Supporting records","List of possible inaccuracies"],
 module:"#mod16",
 official:"https://www.annualcreditreport.com/"
+},
+"fl-business":{
+title:"Florida Business Forms",
+description:"Florida LLC, corporation and business-registration resources.",
+documents:["Proposed business name","Owner information","Business address"],
+module:"#mod7",
+official:"https://dos.fl.gov/sunbiz/start-business/"
+},
+"fl-apostille":{
+title:"Florida Apostille Forms",
+description:"Florida apostille and notarial certification information.",
+documents:["Document copy","Issuing authority","Destination country"],
+module:"#mod8",
+official:"https://dos.fl.gov/sunbiz/other-services/apostille-notarial-certification"
+},
+"in-apostille":{
+title:"Indiana Apostille Forms",
+description:"Indiana apostille and authentication information.",
+documents:["Document copy","Issuing authority","Destination country"],
+module:"#mod8",
+official:"https://www.in.gov/sos/business/apostilleauthentication/index.html"
+},
+"ny-apostille":{
+title:"New York Apostille Forms",
+description:"New York apostille and certificate-of-authentication information.",
+documents:["Document copy","County certification when required","Destination country"],
+module:"#mod8",
+official:"https://dos.ny.gov/apostille-certificate-authentication"
+},
+"fl-dmv":{
+title:"Florida DMV Forms",
+description:"Florida driver-license, identification, registration, tag and title resources.",
+documents:["Photo identification","Proof of address","Vehicle documents when applicable"],
+module:"#mod9",
+official:"https://www.flhsmv.gov/resources/forms/"
+},
+"in-dmv":{
+title:"Indiana BMV Forms",
+description:"Indiana driver, identification and vehicle forms.",
+documents:["Photo identification","Proof of address","Vehicle documents when applicable"],
+module:"#mod9",
+official:"https://www.in.gov/bmv/resources/forms/"
+},
+"ny-dmv":{
+title:"New York DMV Forms",
+description:"New York driver-license, identification and vehicle forms.",
+documents:["Photo identification","Proof of address","Vehicle documents when applicable"],
+module:"#mod9",
+official:"https://dmv.ny.gov/forms"
 }
-
 };
 
+function getFormRecord(state,type){
+const exact=formData[state+"-"+type];
+if(exact)return exact;
 
-const formCenterSelect=
-document.getElementById("formCenterSelect");
+const federal=formData["federal-"+type];
+if(federal)return federal;
 
-const formCenterFind=
-document.getElementById("formCenterFind");
-
-const formCenterResult=
-document.getElementById("formCenterResult");
-
-const formCenterTitle=
-document.getElementById("formCenterTitle");
-
-const formCenterDescription=
-document.getElementById("formCenterDescription");
-
-const formCenterDocuments=
-document.getElementById("formCenterDocuments");
-
-const formCenterModuleLink=
-document.getElementById("formCenterModuleLink");
-
-const formCenterOfficialLink=
-document.getElementById("formCenterOfficialLink");
-
-
-function openFormHelpCenter(){
-
-document
-.querySelectorAll(".file")
-.forEach(function(file){
-
-file.classList.remove(
-"active",
-"open"
-);
-
-});
-
-const formCenter=
-document.getElementById("form-helper");
-
-if(formCenter){
-
-const top=
-formCenter
-.getBoundingClientRect()
-.top+
-window.pageYOffset-
-105;
-
-window.scrollTo({
-top:top,
-behavior:"smooth"
-});
-
+return{
+title:"Official Government Form Search",
+description:"Use the official government form directory and contact Maximax for administrative form organization.",
+documents:["Photo identification when required","Applicable notices or records","Copies of supporting documents"],
+module:"#form-helper",
+official:"https://www.usa.gov/"
+};
 }
 
-}
+const formState=document.getElementById("formState");
+const formType=document.getElementById("formType");
+const formCenterFind=document.getElementById("formCenterFind");
+const formCenterResult=document.getElementById("formCenterResult");
+const formCenterTitle=document.getElementById("formCenterTitle");
+const formCenterDescription=document.getElementById("formCenterDescription");
+const formCenterDocuments=document.getElementById("formCenterDocuments");
+const formCenterModuleLink=document.getElementById("formCenterModuleLink");
+const formCenterOfficialLink=document.getElementById("formCenterOfficialLink");
 
-
-document
-.querySelectorAll(
-'.service-seal[href="#form-helper"],.catmap-item[href="#form-helper"]'
-)
-.forEach(function(button){
-
-button.addEventListener(
-"click",
-function(event){
-
-event.preventDefault();
-
-openFormHelpCenter();
-
-}
-);
-
-});
-
-
-const formHelperCard=
-document.getElementById("form-helper-card");
-
-if(formHelperCard){
-
-formHelperCard.addEventListener(
-"click",
-openFormHelpCenter
-);
-
-formHelperCard.addEventListener(
-"keydown",
-function(event){
-
-if(
-event.key==="Enter"||
-event.key===" "
-){
-
-event.preventDefault();
-
-openFormHelpCenter();
-
-}
-
-}
-);
-
-}
-
-
-if(
-formCenterFind&&
-formCenterSelect
-){
-
-formCenterFind.addEventListener(
-"click",
-function(){
-
-const item=
-formCenterData[
-formCenterSelect.value
-];
-
-if(!item){
-
-formCenterResult
-.classList
-.remove("active");
-
+formCenterFind.addEventListener("click",function(){
+if(!formState.value||!formType.value){
+formCenterResult.classList.remove("active");
 return;
-
 }
 
-formCenterTitle.textContent=
-item.title;
+const record=getFormRecord(formState.value,formType.value);
 
-formCenterDescription.textContent=
-item.description;
+formCenterTitle.textContent=record.title;
+formCenterDescription.textContent=record.description;
+formCenterDocuments.innerHTML=record.documents.map(function(item){
+return "<li>"+item+"</li>";
+}).join("");
 
-formCenterDocuments.innerHTML=
-item.documents
-.map(function(documentName){
+formCenterModuleLink.href=record.module;
+formCenterOfficialLink.href=record.official;
+formCenterResult.classList.add("active");
+});
 
-return "<li>"+
-documentName+
-"</li>";
+formCenterModuleLink.addEventListener("click",function(event){
+const href=this.getAttribute("href");
 
-})
-.join("");
-
-formCenterModuleLink.href=
-item.module;
-
-formCenterOfficialLink.href=
-item.official;
-
-formCenterResult
-.classList
-.add("active");
-
+if(href.startsWith("#mod")){
+event.preventDefault();
+showModule(href.slice(1));
 }
-);
+});
 
+function openFormCenter(){
+document.querySelectorAll(".file").forEach(function(file){
+file.classList.remove("active","open");
+});
 
-formCenterModuleLink.addEventListener(
-"click",
-function(event){
+const center=document.getElementById("form-helper");
+const top=center.getBoundingClientRect().top+window.pageYOffset-105;
+window.scrollTo({top:top,behavior:"smooth"});
+}
 
+document.querySelectorAll('.service-seal[href="#form-helper"],.catmap-item[href="#form-helper"]').forEach(function(link){
+link.addEventListener("click",function(event){
+event.preventDefault();
+openFormCenter();
+});
+});
+
+document.getElementById("form-helper-card").addEventListener("click",openFormCenter);
+
+const aiInput=document.getElementById("aiInput");
+const aiSend=document.getElementById("aiSend");
+const aiMessages=document.getElementById("aiMessages");
+
+let lastQuestion="";
+let lastQuestionTime=0;
+
+function aiAnswer(question){
+const q=question.toLowerCase();
+
+if(q.includes("divorce"))return "Open Form Center, choose your state, then choose Uncontested Divorce.";
+if(q.includes("government")||q.includes("form"))return "Open Form Center to choose your state and government form.";
+if(q.includes("credit")||q.includes("kredi"))return "Select button 16 for Credit Repair and official credit-report resources.";
+if(q.includes("immigration")||q.includes("tps"))return "Select button 03 for Immigration Services or use Form Center for official USCIS forms.";
+if(q.includes("tax")||q.includes("itin"))return "Select button 02 for Taxes and Accounting.";
+if(q.includes("eoir")||q.includes("bia"))return "Select button 04 for EOIR and BIA.";
+if(q.includes("notary"))return "Select button 01 for Notary and Translation.";
+if(q.includes("insurance"))return "Select button 05 for Insurance.";
+if(q.includes("real estate")||q.includes("rent"))return "Select button 06 for Real Estate.";
+if(q.includes("business")||q.includes("llc"))return "Select button 07 for Business Formation.";
+if(q.includes("apostille"))return "Select button 08 for Apostille and Legalization.";
+if(q.includes("passport")||q.includes("dmv")||q.includes("travel"))return "Select button 09 for Travel and DMV.";
+
+return "Ask about a Maximax service or open Form Center to find an official government form.";
+}
+
+function sendMessage(preset){
+const question=(preset||aiInput.value).trim();
+if(!question)return;
+
+const now=Date.now();
+if(question===lastQuestion&&now-lastQuestionTime<5000)return;
+
+lastQuestion=question;
+lastQuestionTime=now;
+
+const user=document.createElement("div");
+user.className="ai-message user";
+user.textContent="👤 "+question;
+aiMessages.appendChild(user);
+
+const bot=document.createElement("div");
+bot.className="ai-message bot";
+bot.textContent="🤖 "+aiAnswer(question);
+aiMessages.appendChild(bot);
+
+aiInput.value="";
+}
+
+aiSend.addEventListener("click",function(){sendMessage()});
+
+aiInput.addEventListener("keydown",function(event){
+if(event.key==="Enter"){
+event.preventDefault();
+sendMessage();
+}
+});
+
+document.querySelectorAll("[data-question]").forEach(function(card){
+card.addEventListener("click",function(){
+sendMessage(this.dataset.question);
+});
+});
+
+document.querySelectorAll('.service-seal[href="#ai-center"],.catmap-item[href="#ai-center"]').forEach(function(link){
+link.addEventListener("click",function(event){
 event.preventDefault();
 
-const id=
-this
-.getAttribute("href")
-.slice(1);
-
-const file=
-document.getElementById(id);
-
-if(file){
-
-document
-.querySelectorAll(".file")
-.forEach(function(module){
-
-const selected=
-module.id===id;
-
-module
-.classList
-.toggle(
-"active",
-selected
-);
-
-module
-.classList
-.toggle(
-"open",
-selected
-);
-
+document.querySelectorAll(".file").forEach(function(file){
+file.classList.remove("active","open");
 });
 
-const top=
-file
-.getBoundingClientRect()
-.top+
-window.pageYOffset-
-100;
-
-window.scrollTo({
-top:top,
-behavior:"smooth"
+const center=document.getElementById("ai-center");
+const top=center.getBoundingClientRect().top+window.pageYOffset-105;
+window.scrollTo({top:top,behavior:"smooth"});
+});
 });
 
-}
+document.querySelectorAll('.service-seal[href="#career-tracker"],.catmap-item[href="#career-tracker"]').forEach(function(link){
+link.addEventListener("click",function(event){
+event.preventDefault();
+document.getElementById("ai-center").scrollIntoView({behavior:"smooth"});
+sendMessage("Help me organize my career applications");
+});
+});
 
-}
-);
+document.querySelectorAll('.service-seal[href="#translation-ai"],.catmap-item[href="#translation-ai"]').forEach(function(link){
+link.addEventListener("click",function(event){
+event.preventDefault();
+document.getElementById("ai-center").scrollIntoView({behavior:"smooth"});
+sendMessage("Help me translate a short message");
+});
+});
 
-}
-
+document.querySelectorAll('.service-seal[href="#chat247"],.catmap-item[href="#chat247"],.service-seal[href="#try-ai"],.catmap-item[href="#try-ai"]').forEach(function(link){
+link.addEventListener("click",function(event){
+event.preventDefault();
+document.getElementById("ai-center").scrollIntoView({behavior:"smooth"});
+sendMessage("Show me all Maximax services");
+});
+});
 </script>
+
+</body>
+</html>
