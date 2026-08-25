@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Maximax Multi Services - Services & AI Center</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
 :root{
 --black:#000;
 --orange:#ff6a00;
---light:#ffa347;
+--orange-light:#ffa347;
 --text:#ffc98a;
 --line:rgba(255,163,71,.35);
 --panel:rgba(0,0,0,.82)
@@ -99,7 +100,7 @@ width:54px;
 height:54px;
 border-radius:50%;
 overflow:hidden;
-border:2px solid var(--light);
+border:2px solid var(--orange-light);
 background:#000;
 flex:none
 }
@@ -120,18 +121,19 @@ font-weight:700
 display:block;
 font:9px 'IBM Plex Mono',monospace;
 letter-spacing:.2em;
-color:var(--light);
+color:var(--orange-light);
 margin-top:3px
 }
 
 .desktop-nav{
 display:flex;
+align-items:center;
 gap:15px;
 font-size:12px
 }
 
 .desktop-nav a:hover{
-color:var(--light)
+color:var(--orange-light)
 }
 
 .header-actions{
@@ -152,7 +154,7 @@ background:#000
 border:0;
 border-right:1px solid var(--line);
 background:#000;
-color:var(--light);
+color:var(--orange-light);
 padding:9px 8px;
 font:600 9px 'IBM Plex Mono',monospace;
 cursor:pointer
@@ -173,7 +175,7 @@ width:42px;
 height:42px;
 border:1px solid var(--line);
 background:#000;
-color:var(--light);
+color:var(--orange-light);
 border-radius:7px;
 font-size:20px;
 cursor:pointer
@@ -209,7 +211,7 @@ gap:45px
 .eyebrow{
 font:10px 'IBM Plex Mono',monospace;
 letter-spacing:.2em;
-color:var(--light);
+color:var(--orange-light);
 text-transform:uppercase
 }
 
@@ -220,7 +222,7 @@ margin-top:18px
 }
 
 .hero h1 em{
-color:var(--light)
+color:var(--orange-light)
 }
 
 .lede{
@@ -230,7 +232,7 @@ line-height:1.7
 }
 
 .creole{
-color:var(--light);
+color:var(--orange-light);
 font-style:italic
 }
 
@@ -242,6 +244,7 @@ margin-top:26px
 }
 
 .btn{
+display:inline-block;
 padding:13px 20px;
 font:11px 'IBM Plex Mono',monospace;
 letter-spacing:.08em;
@@ -262,7 +265,7 @@ width:135px;
 height:135px;
 border-radius:50%;
 object-fit:cover;
-border:3px solid var(--light)
+border:3px solid var(--orange-light)
 }
 
 /* MAIN LOGO */
@@ -277,7 +280,7 @@ padding:0 24px 55px
 max-width:760px;
 margin:auto;
 padding:16px;
-border:1px solid var(--light);
+border:1px solid var(--orange-light);
 border-radius:20px;
 background:#000
 }
@@ -286,7 +289,7 @@ background:#000
 text-align:center;
 font:10px 'IBM Plex Mono',monospace;
 letter-spacing:.2em;
-color:var(--light);
+color:var(--orange-light);
 padding:4px 0 15px
 }
 
@@ -295,7 +298,7 @@ width:100%;
 border-radius:12px
 }
 
-/* 15 BUTTONS */
+/* 15 MODULE BUTTONS */
 
 .module-logo-section{
 max-width:1180px;
@@ -311,12 +314,12 @@ margin-bottom:30px
 .module-heading small{
 font:10px 'IBM Plex Mono',monospace;
 letter-spacing:.22em;
-color:var(--light)
+color:var(--orange-light)
 }
 
 .module-heading h2{
 font-size:clamp(2rem,5vw,3.4rem);
-color:var(--light);
+color:var(--orange-light);
 margin-top:10px
 }
 
@@ -359,7 +362,8 @@ border-radius:50%
 .catmap{
 padding:22px 24px;
 background:rgba(0,0,0,.5);
-border-block:1px solid var(--line)
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
 }
 
 .catmap-inner{
@@ -373,7 +377,7 @@ gap:10px 18px
 
 .catmap-item{
 font:10px 'IBM Plex Mono',monospace;
-color:var(--light)
+color:var(--orange-light)
 }
 
 /* SERVICE MODULES */
@@ -386,7 +390,7 @@ padding:45px 20px
 
 .file{
 display:none !important;
-background:rgba(0,0,0,.82) !important;
+background:var(--panel) !important;
 border:1px solid rgba(255,163,71,.45) !important;
 border-radius:9px;
 margin-bottom:18px;
@@ -413,30 +417,30 @@ gap:13px
 }
 
 .file-num{
-width:34px;
-height:34px;
+width:48px;
+height:48px;
 border-radius:50%;
-border:1px solid var(--light);
+border:1px solid var(--orange-light);
 display:grid;
 place-items:center;
 font-size:11px;
-color:var(--light);
+color:var(--orange-light);
 flex:none
 }
 
 .file-tab h2{
-font-size:1.25rem
+font-size:1.5rem
 }
 
 .sub{
 font:9px 'IBM Plex Mono',monospace;
 letter-spacing:.1em;
-color:var(--light);
+color:var(--orange-light);
 margin-top:4px
 }
 
 .chev{
-color:var(--light);
+color:var(--orange-light);
 transition:.3s
 }
 
@@ -446,7 +450,7 @@ transform:rotate(180deg)
 
 .file-body{
 display:none !important;
-padding:0 20px 20px
+padding:0 28px 28px
 }
 
 .file.open .file-body{
@@ -455,56 +459,57 @@ display:block !important
 
 .service-list{
 columns:2;
-column-gap:25px;
+column-gap:34px;
 list-style:none;
-margin:0;
+margin:10px 0 0;
 padding:0
 }
 
 .service-list li{
 break-inside:avoid;
-padding:7px 0;
+padding:10px 0;
 border-bottom:1px dotted var(--line);
-font-size:13px
+font-size:14px
 }
 
 .service-list li::before{
 content:'✓ ';
-color:var(--light);
+color:var(--orange-light);
 font-weight:700
 }
 
 /* FORMS */
 
 .module-form{
-margin-top:22px;
-padding:20px;
-background:rgba(0,0,0,.72);
+margin-top:28px;
+padding:28px;
+background:rgba(0,0,0,.78);
 border:1px solid rgba(255,163,71,.35);
-border-radius:10px
+border-radius:12px
 }
 
 .module-form h3{
 margin:0 0 8px;
-color:var(--light)
+color:var(--orange-light);
+font-size:1.6rem
 }
 
 .module-form-note{
-font-size:12px;
+font-size:13px;
 line-height:1.6;
-margin:0 0 17px
+margin:0 0 22px
 }
 
 .module-form-grid{
 display:grid;
 grid-template-columns:repeat(2,minmax(0,1fr));
-gap:13px
+gap:17px
 }
 
 .module-field{
 display:flex;
 flex-direction:column;
-gap:6px
+gap:7px
 }
 
 .module-field.full{
@@ -513,7 +518,7 @@ grid-column:1/-1
 
 .module-field label{
 font:600 9px 'IBM Plex Mono',monospace;
-color:var(--light)
+color:var(--orange-light)
 }
 
 .module-form input:not([type="hidden"]),
@@ -521,21 +526,21 @@ color:var(--light)
 .module-form textarea{
 display:block !important;
 width:100% !important;
-min-height:44px !important;
-padding:11px 12px !important;
+min-height:50px !important;
+padding:12px 14px !important;
 background:#050505 !important;
 background-color:#050505 !important;
 color:#ffc98a !important;
 -webkit-text-fill-color:#ffc98a !important;
 border:1px solid rgba(255,163,71,.55) !important;
-border-radius:6px !important;
+border-radius:7px !important;
 outline:none !important;
 box-shadow:none !important;
 color-scheme:dark
 }
 
 .module-form textarea{
-min-height:100px !important;
+min-height:140px !important;
 resize:vertical
 }
 
@@ -552,7 +557,7 @@ box-shadow:0 0 0 2px rgba(255,106,0,.22) !important
 }
 
 .module-form input[type="file"]{
-padding:5px !important
+padding:6px !important
 }
 
 .module-form input[type="file"]::file-selector-button{
@@ -560,21 +565,21 @@ background:#ff6a00 !important;
 color:#000 !important;
 border:0 !important;
 border-radius:5px !important;
-padding:9px 12px !important;
+padding:10px 14px !important;
 margin-right:10px !important;
 font-weight:700 !important
 }
 
 .module-submit{
-display:inline-block !important;
-width:auto !important;
-min-height:44px !important;
+display:block !important;
+width:100% !important;
+min-height:54px !important;
 background:#ff6a00 !important;
 color:#000 !important;
 -webkit-text-fill-color:#000 !important;
 border:1px solid #ffa347 !important;
-border-radius:6px !important;
-padding:12px 18px !important;
+border-radius:7px !important;
+padding:13px 18px !important;
 font:800 10px 'IBM Plex Mono',monospace !important;
 cursor:pointer
 }
@@ -583,7 +588,7 @@ cursor:pointer
 font-size:10px;
 line-height:1.55;
 opacity:.8;
-margin:12px 0 0
+margin:16px 0 0
 }
 
 /* AI CENTER */
@@ -591,7 +596,8 @@ margin:12px 0 0
 .ai-center{
 padding:60px 24px;
 background:rgba(0,0,0,.58);
-border-block:1px solid var(--line)
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
 }
 
 .ai-inner{
@@ -603,8 +609,9 @@ gap:30px
 }
 
 .ai-badge{
+display:inline-block;
 font:10px 'IBM Plex Mono',monospace;
-color:var(--light);
+color:var(--orange-light);
 border:1px solid var(--line);
 padding:7px 12px;
 border-radius:20px
@@ -632,7 +639,7 @@ background:rgba(0,0,0,.5)
 
 .ai-feat b{
 display:block;
-color:var(--light);
+color:var(--orange-light);
 margin-bottom:6px
 }
 
@@ -667,7 +674,7 @@ margin:20px 0
 
 .label{
 font:10px 'IBM Plex Mono',monospace;
-color:var(--light);
+color:var(--orange-light);
 margin-bottom:7px
 }
 
@@ -690,10 +697,10 @@ background:rgba(0,0,0,.55)
 width:34px;
 height:34px;
 border-radius:50%;
-border:1px solid var(--light);
+border:1px solid var(--orange-light);
 display:grid;
 place-items:center;
-color:var(--light)
+color:var(--orange-light)
 }
 
 /* FOOTER */
@@ -710,7 +717,7 @@ flex-wrap:wrap;
 justify-content:center;
 gap:9px 18px;
 font:9px 'IBM Plex Mono',monospace;
-color:var(--light)
+color:var(--orange-light)
 }
 
 /* RESPONSIVE */
@@ -759,6 +766,10 @@ padding-inline:15px
 gap:12px
 }
 
+.module-form{
+padding:20px
+}
+
 .module-form-grid{
 grid-template-columns:1fr
 }
@@ -774,14 +785,17 @@ grid-column:auto
 <body>
 
 <header>
+
 <div class="nav-wrap">
 
 <div class="brand">
 
 <div class="logo-mark">
+
 <video autoplay muted loop playsinline>
 <source src="./maximax-best-multi.mp4" type="video/mp4">
 </video>
+
 </div>
 
 <div class="brand-name">
@@ -812,6 +826,7 @@ MAXIMAX
 </button>
 
 </div>
+
 </div>
 
 <div class="mobile-nav" id="mobileNav">
@@ -821,6 +836,7 @@ MAXIMAX
 <a href="#ai-center" data-nav="ai">AI CENTER</a>
 <a href="#contact" data-nav="contact">CONTACT</a>
 </div>
+
 </header>
 
 <section class="hero" id="hero">
@@ -836,8 +852,8 @@ Your Trusted Partner for <em>Life in the USA</em>
 </h1>
 
 <p class="lede">
-Maximax Multi Services — Notary, Taxes, Immigration, EOIR+BIA,
-Insurance, Real Estate, Business Formation & more.
+Maximax Multi Services — Notary, Taxes, Immigration,
+EOIR+BIA, Insurance, Real Estate, Business Formation & more.
 Tout sèvis ou bezwen anba yon sèl do-kay.
 </p>
 
@@ -853,9 +869,11 @@ Nou pale Kreyòl, English, Español.
 </div>
 
 <div class="hero-seal">
+
 <video autoplay muted loop playsinline>
 <source src="./maximax-best-multi.mp4" type="video/mp4">
 </video>
+
 </div>
 
 </section>
@@ -954,6 +972,7 @@ Intelligence artificielle • Support digital
 </a>
 
 </div>
+
 </section>
 
 <div class="catmap">
@@ -977,9 +996,12 @@ Intelligence artificielle • Support digital
 <a class="catmap-item" href="#try-ai">15 TRY AI</a>
 
 </div>
+
 </div>
 
 <main id="services">
+
+<!-- 01 NOTARY -->
 
 <div class="file" id="mod1">
 
@@ -1058,6 +1080,7 @@ the service, appointment and price.
 </div>
 
 <div class="module-field">
+
 <label>SERVICE NEEDED *</label>
 
 <select name="service" required>
@@ -1078,12 +1101,15 @@ the service, appointment and price.
 </div>
 
 <div class="module-field">
+
 <label>UPLOAD DOCUMENT</label>
+
 <input
 name="document"
 type="file"
 accept=".pdf,.jpg,.jpeg,.png"
 >
+
 </div>
 
 <div class="module-field full">
@@ -1101,14 +1127,16 @@ SUBMIT NOTARY REQUEST
 
 <p class="privacy-note">
 Do not upload original identity documents unless requested.
-Maximax provides administrative assistance and does not
-provide legal advice.
+Maximax provides administrative assistance and does not provide legal advice.
 </p>
 
 </form>
 
 </div>
+
 </div>
+
+<!-- 02 TAXES -->
 
 <div class="file" id="mod2">
 
@@ -1218,6 +1246,7 @@ Maximax will contact you before beginning any service.
 </div>
 
 <div class="module-field">
+
 <label>UPLOAD DOCUMENT</label>
 
 <input
@@ -1225,6 +1254,7 @@ name="tax-document"
 type="file"
 accept=".pdf,.jpg,.jpeg,.png"
 >
+
 </div>
 
 <div class="module-field full">
@@ -1248,7 +1278,10 @@ bank information or passwords in this form.
 </form>
 
 </div>
+
 </div>
+
+<!-- 03 IMMIGRATION -->
 
 <div class="file" id="mod3">
 
@@ -1383,13 +1416,17 @@ and does not provide legal advice or representation.
 </form>
 
 </div>
+
 </div>
+
+<!-- 04 EOIR & BIA -->
 
 <div class="file" id="mod4">
 
 <div class="file-tab" onclick="toggleFile('mod4')">
 
 <div class="file-tab-left">
+
 <div class="file-num">04</div>
 
 <div>
@@ -1398,6 +1435,7 @@ and does not provide legal advice or representation.
 Immigration Court • Board of Immigration Appeals
 </div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1415,20 +1453,126 @@ Immigration Court • Board of Immigration Appeals
 <li>Case Status Assistance</li>
 </ul>
 
+<form
+class="module-form"
+name="eoir-bia-request"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+enctype="multipart/form-data"
+>
+
+<input
+type="hidden"
+name="form-name"
+value="eoir-bia-request"
+>
+
+<p hidden>
+<label>
+Do not fill:
+<input name="bot-field">
+</label>
+</p>
+
+<h3>Request EOIR or BIA Assistance</h3>
+
+<p class="module-form-note">
+Complete this secure intake form.
+Maximax will contact you to confirm the administrative assistance requested.
+</p>
+
+<div class="module-form-grid">
+
+<div class="module-field">
+<label>FULL NAME *</label>
+<input name="full-name" type="text" required>
 </div>
+
+<div class="module-field">
+<label>PHONE NUMBER *</label>
+<input name="phone" type="tel" required>
 </div>
+
+<div class="module-field">
+<label>EMAIL *</label>
+<input name="email" type="email" required>
+</div>
+
+<div class="module-field">
+
+<label>SERVICE NEEDED *</label>
+
+<select name="service" required>
+<option value="">Choose a service</option>
+<option>EOIR Case Information</option>
+<option>BIA Case Information</option>
+<option>Immigration Court Date Check</option>
+<option>Change of Venue Form Assistance</option>
+<option>Document Organization</option>
+<option>Case Status Assistance</option>
+</select>
+
+</div>
+
+<div class="module-field">
+<label>COURT DATE OR DEADLINE</label>
+<input name="court-date" type="date">
+</div>
+
+<div class="module-field">
+
+<label>UPLOAD DOCUMENT</label>
+
+<input
+name="eoir-document"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+>
+
+</div>
+
+<div class="module-field full">
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
+</div>
+
+<div class="module-field full">
+<button class="module-submit" type="submit">
+SUBMIT EOIR &amp; BIA REQUEST
+</button>
+</div>
+
+</div>
+
+<p class="privacy-note">
+Do not enter A-Numbers, Social Security numbers,
+passport numbers or passwords in this form.
+Maximax is not a law firm and does not provide legal advice
+or court representation.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- 05 INSURANCE -->
 
 <div class="file" id="mod5">
 
 <div class="file-tab" onclick="toggleFile('mod5')">
 
 <div class="file-tab-left">
+
 <div class="file-num">05</div>
 
 <div>
 <h2>Insurance</h2>
 <div class="sub">Auto • Home • Life • Health</div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1446,20 +1590,144 @@ Immigration Court • Board of Immigration Appeals
 <li>Business Insurance</li>
 </ul>
 
+<form
+class="module-form"
+name="insurance-request"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+enctype="multipart/form-data"
+>
+
+<input
+type="hidden"
+name="form-name"
+value="insurance-request"
+>
+
+<p hidden>
+<label>
+Do not fill:
+<input name="bot-field">
+</label>
+</p>
+
+<h3>Request an Insurance Quote</h3>
+
+<p class="module-form-note">
+Complete this form.
+Maximax will contact you to confirm your insurance needs
+and discuss available options.
+</p>
+
+<div class="module-form-grid">
+
+<div class="module-field">
+<label>FULL NAME *</label>
+<input name="full-name" type="text" required>
 </div>
+
+<div class="module-field">
+<label>PHONE NUMBER *</label>
+<input name="phone" type="tel" required>
 </div>
+
+<div class="module-field">
+<label>EMAIL *</label>
+<input name="email" type="email" required>
+</div>
+
+<div class="module-field">
+
+<label>INSURANCE TYPE *</label>
+
+<select name="insurance-type" required>
+<option value="">Choose insurance type</option>
+<option>Auto Insurance</option>
+<option>Homeowners Insurance</option>
+<option>Renters Insurance</option>
+<option>Life Insurance</option>
+<option>Health Insurance</option>
+<option>Business Insurance</option>
+</select>
+
+</div>
+
+<div class="module-field">
+<label>STATE *</label>
+<input name="state" type="text" required>
+</div>
+
+<div class="module-field">
+
+<label>PREFERRED CONTACT METHOD</label>
+
+<select name="contact-method">
+<option>Phone Call</option>
+<option>Text Message</option>
+<option>Email</option>
+<option>WhatsApp</option>
+</select>
+
+</div>
+
+<div class="module-field">
+<label>COVERAGE START DATE</label>
+<input name="coverage-date" type="date">
+</div>
+
+<div class="module-field">
+
+<label>UPLOAD DOCUMENT</label>
+
+<input
+name="insurance-document"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+>
+
+</div>
+
+<div class="module-field full">
+<label>QUOTE DETAILS *</label>
+<textarea name="details" required></textarea>
+</div>
+
+<div class="module-field full">
+<button class="module-submit" type="submit">
+SUBMIT INSURANCE REQUEST
+</button>
+</div>
+
+</div>
+
+<p class="privacy-note">
+Do not enter Social Security numbers, bank information,
+driver-license numbers or passwords in this form.
+Coverage and pricing are subject to carrier eligibility and approval.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- 06 REAL ESTATE -->
 
 <div class="file" id="mod6">
 
 <div class="file-tab" onclick="toggleFile('mod6')">
 
 <div class="file-tab-left">
+
 <div class="file-num">06</div>
 
 <div>
 <h2>Real Estate</h2>
 <div class="sub">Buy • Sell • Rent</div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1477,20 +1745,171 @@ Immigration Court • Board of Immigration Appeals
 <li>Mortgage Referral</li>
 </ul>
 
+<form
+class="module-form"
+name="real-estate-request"
+method="POST"
+data-netlify="true"
+netlify-honeypot="bot-field"
+enctype="multipart/form-data"
+>
+
+<input
+type="hidden"
+name="form-name"
+value="real-estate-request"
+>
+
+<p hidden>
+<label>
+Do not fill:
+<input name="bot-field">
+</label>
+</p>
+
+<h3>Request Real Estate Assistance</h3>
+
+<p class="module-form-note">
+Tell Maximax what type of property assistance you need.
+We will contact you to review your request and next steps.
+</p>
+
+<div class="module-form-grid">
+
+<div class="module-field">
+<label>FULL NAME *</label>
+<input name="full-name" type="text" required>
 </div>
+
+<div class="module-field">
+<label>PHONE NUMBER *</label>
+<input name="phone" type="tel" required>
 </div>
+
+<div class="module-field">
+<label>EMAIL *</label>
+<input name="email" type="email" required>
+</div>
+
+<div class="module-field">
+
+<label>SERVICE NEEDED *</label>
+
+<select name="service" required>
+<option value="">Choose a service</option>
+<option>First-Time Home Buyer Assistance</option>
+<option>Buy a Home</option>
+<option>Sell a Property</option>
+<option>Rental Assistance</option>
+<option>Property Referral</option>
+<option>Housing Resources</option>
+<option>Mortgage Referral</option>
+</select>
+
+</div>
+
+<div class="module-field">
+<label>PREFERRED LOCATION *</label>
+<input
+name="preferred-location"
+type="text"
+placeholder="City and state"
+required
+>
+</div>
+
+<div class="module-field">
+
+<label>PROPERTY TYPE</label>
+
+<select name="property-type">
+<option>Single-Family Home</option>
+<option>Apartment</option>
+<option>Condo</option>
+<option>Townhouse</option>
+<option>Multi-Family Property</option>
+<option>Commercial Property</option>
+<option>Land</option>
+</select>
+
+</div>
+
+<div class="module-field">
+<label>ESTIMATED BUDGET</label>
+<input name="budget" type="text" placeholder="$">
+</div>
+
+<div class="module-field">
+<label>DESIRED MOVE DATE</label>
+<input name="move-date" type="date">
+</div>
+
+<div class="module-field">
+
+<label>BEDROOMS</label>
+
+<select name="bedrooms">
+<option>Studio</option>
+<option>1 Bedroom</option>
+<option>2 Bedrooms</option>
+<option>3 Bedrooms</option>
+<option>4+ Bedrooms</option>
+</select>
+
+</div>
+
+<div class="module-field">
+
+<label>UPLOAD DOCUMENT</label>
+
+<input
+name="real-estate-document"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+>
+
+</div>
+
+<div class="module-field full">
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
+</div>
+
+<div class="module-field full">
+<button class="module-submit" type="submit">
+SUBMIT REAL ESTATE REQUEST
+</button>
+</div>
+
+</div>
+
+<p class="privacy-note">
+Do not enter bank-account numbers, Social Security numbers
+or passwords. Property availability, financing and approval
+are not guaranteed.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- 07 BUSINESS FORMATION -->
 
 <div class="file" id="mod7">
 
 <div class="file-tab" onclick="toggleFile('mod7')">
 
 <div class="file-tab-left">
+
 <div class="file-num">07</div>
 
 <div>
 <h2>Business Formation</h2>
 <div class="sub">LLC • Corporation • EIN</div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1509,19 +1928,24 @@ Immigration Court • Board of Immigration Appeals
 </ul>
 
 </div>
+
 </div>
+
+<!-- 08 APOSTILLE -->
 
 <div class="file" id="mod8">
 
 <div class="file-tab" onclick="toggleFile('mod8')">
 
 <div class="file-tab-left">
+
 <div class="file-num">08</div>
 
 <div>
 <h2>Apostille & Legalization</h2>
 <div class="sub">State • Federal • Embassy</div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1540,19 +1964,24 @@ Immigration Court • Board of Immigration Appeals
 </ul>
 
 </div>
+
 </div>
+
+<!-- 09 TRAVEL & DMV -->
 
 <div class="file" id="mod9">
 
 <div class="file-tab" onclick="toggleFile('mod9')">
 
 <div class="file-tab-left">
+
 <div class="file-num">09</div>
 
 <div>
 <h2>Travel & DMV Services</h2>
 <div class="sub">Passport • Travel • DMV</div>
 </div>
+
 </div>
 
 <span class="chev">▼</span>
@@ -1571,6 +2000,7 @@ Immigration Court • Board of Immigration Appeals
 </ul>
 
 </div>
+
 </div>
 
 </main>
@@ -1602,9 +2032,7 @@ general service questions 24/7.
 
 <div class="ai-feat" id="career-tracker">
 <b>📈 CAREER TRACKER</b>
-<span>
-Career organization, applications and progress tools
-</span>
+<span>Career organization, applications and progress tools</span>
 </div>
 
 <div class="ai-feat" id="translation-ai">
@@ -1657,6 +2085,7 @@ color:var(--text)
 type="button"
 style="
 background:var(--orange);
+color:#000;
 border:0;
 border-radius:6px;
 padding:10px 16px;
@@ -1667,9 +2096,11 @@ SEND
 </button>
 
 </div>
+
 </div>
 
 </div>
+
 </section>
 
 <section class="band" id="contact">
@@ -1682,7 +2113,9 @@ SEND
 
 <div class="contact-card">
 
-<div class="label">Telephone</div>
+<div class="label">
+Telephone
+</div>
 
 <div class="value">
 <a href="tel:+14076405166">(407) 640-5166</a><br>
@@ -1695,19 +2128,25 @@ SEND
 
 <div class="contact-card">
 
-<div class="label">Email</div>
+<div class="label">
+Email
+</div>
 
 <div class="value">
+
 <a href="mailto:maximaxmultiservices@gmail.com">
 maximaxmultiservices@gmail.com
 </a>
+
 </div>
 
 </div>
 
 <div class="contact-card">
 
-<div class="label">Service Areas</div>
+<div class="label">
+Service Areas
+</div>
 
 <div class="value">
 Pine Hills Orlando FL<br>
@@ -1830,6 +2269,7 @@ Truth Social
 </div>
 
 </div>
+
 </section>
 
 <footer>
