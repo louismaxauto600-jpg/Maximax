@@ -1,4 +1,4 @@
-Worked for 7s
+Worked for 15s
 
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
@@ -10,9 +10,7 @@ Worked for 7s
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
@@ -22,7 +20,7 @@ Worked for 7s
 --light:#ffa347;
 --text:#ffc98a;
 --line:rgba(255,163,71,.35);
---panel:rgba(0,0,0,.72)
+--panel:rgba(0,0,0,.82)
 }
 
 *{box-sizing:border-box}
@@ -30,14 +28,7 @@ Worked for 7s
 html{
 scroll-behavior:smooth;
 min-height:100%;
-background:linear-gradient(
-150deg,
-#000 0%,
-#000 14%,
-#7a2e00 46%,
-#ff6a00 68%,
-#000 100%
-);
+background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);
 background-attachment:fixed
 }
 
@@ -64,11 +55,9 @@ max-width:100%;
 display:block
 }
 
-button,input{
+button,input,select,textarea{
 font:inherit
 }
-
-/* HEADER */
 
 header{
 position:sticky;
@@ -175,8 +164,7 @@ border:1px solid var(--line);
 background:#000;
 color:var(--light);
 border-radius:7px;
-font-size:20px;
-cursor:pointer
+font-size:20px
 }
 
 .mobile-nav{
@@ -193,8 +181,6 @@ border-bottom:1px solid var(--line)
 .mobile-nav.open{
 display:flex
 }
-
-/* HERO */
 
 .hero{
 max-width:1180px;
@@ -265,8 +251,6 @@ object-fit:cover;
 border:3px solid var(--light)
 }
 
-/* MAIN LOGO */
-
 .maximax-logo-showcase{
 max-width:1180px;
 margin:auto;
@@ -294,8 +278,6 @@ padding:4px 0 15px
 width:100%;
 border-radius:12px
 }
-
-/* MODULE BUTTONS */
 
 .module-logo-section{
 max-width:1180px;
@@ -352,8 +334,6 @@ object-fit:cover;
 border-radius:50%
 }
 
-/* CATEGORY MAP */
-
 .catmap{
 padding:22px 24px;
 background:rgba(0,0,0,.5);
@@ -374,8 +354,6 @@ font:10px 'IBM Plex Mono',monospace;
 color:var(--light)
 }
 
-/* SERVICES */
-
 main{
 max-width:1180px;
 margin:auto;
@@ -384,8 +362,8 @@ padding:45px 20px
 
 .file{
 display:none;
-background:rgba(0,0,0,.82);
-border:1px solid rgba(255,163,71,.45);
+background:var(--panel);
+border:1px solid var(--line);
 border-radius:9px;
 margin-bottom:18px;
 overflow:hidden;
@@ -460,7 +438,7 @@ padding:0
 
 .service-list li{
 break-inside:avoid;
-padding:7px 0;
+padding:9px 0;
 border-bottom:1px dotted var(--line);
 font-size:13px
 }
@@ -475,7 +453,6 @@ font-weight:700
 display:inline-flex;
 align-items:center;
 gap:6px;
-color:var(--text);
 transition:.2s
 }
 
@@ -492,14 +469,12 @@ text-decoration:underline;
 text-underline-offset:3px
 }
 
-/* FORMS */
-
 .module-form{
 margin-top:22px;
-padding:20px 28px 25px;
+padding:20px;
 border:1px solid var(--line);
-border-radius:12px;
-background:rgba(0,0,0,.76)
+border-radius:10px;
+background:rgba(0,0,0,.65)
 }
 
 .module-form h3{
@@ -542,12 +517,10 @@ width:100%;
 min-height:44px;
 padding:11px 12px;
 background:#050505;
-color:#ffc98a;
+color:var(--text);
 border:1px solid rgba(255,163,71,.55);
 border-radius:6px;
 outline:none;
-box-shadow:none;
--webkit-text-fill-color:#ffc98a;
 color-scheme:dark
 }
 
@@ -559,37 +532,29 @@ resize:vertical
 .module-field input:focus,
 .module-field select:focus,
 .module-field textarea:focus{
-border-color:#ffa347;
+border-color:var(--light);
 box-shadow:0 0 0 2px rgba(255,106,0,.22)
 }
 
-.module-field select option{
-background:#050505;
-color:#ffc98a
-}
-
 .module-field input[type="file"]::file-selector-button{
-background:#ff6a00;
+background:var(--orange);
 color:#000;
 border:0;
 padding:9px 12px;
 margin-right:10px;
-font-weight:700;
--webkit-text-fill-color:#000
+font-weight:700
 }
 
 .module-submit{
-display:block;
 width:100%;
-min-height:44px;
-background:#ff6a00;
-color:#000;
-border:1px solid #ffa347;
+min-height:46px;
+border:1px solid var(--light);
 border-radius:6px;
-padding:12px 18px;
+background:var(--orange);
+color:#000;
+padding:13px 17px;
 font:800 10px 'IBM Plex Mono',monospace;
-cursor:pointer;
--webkit-text-fill-color:#000
+cursor:pointer
 }
 
 .privacy-note{
@@ -598,8 +563,6 @@ line-height:1.55;
 opacity:.8;
 margin:12px 0 0
 }
-
-/* AI CENTER */
 
 .ai-center{
 padding:60px 24px;
@@ -645,7 +608,7 @@ background:rgba(0,0,0,.5)
 
 .ai-feat{
 cursor:pointer;
-transition:.2s ease
+transition:.2s
 }
 
 .ai-feat:hover,
@@ -715,8 +678,6 @@ font-weight:700;
 cursor:pointer
 }
 
-/* CONTACT */
-
 .band{
 padding:50px 24px
 }
@@ -765,8 +726,6 @@ place-items:center;
 color:var(--light)
 }
 
-/* FOOTER */
-
 footer{
 background:#000;
 padding:28px 20px;
@@ -785,48 +744,20 @@ color:var(--light)
 @media(max-width:900px){
 .desktop-nav{display:none}
 .menu-btn{display:block}
-
-.module-seals-grid{
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:16px
-}
+.module-seals-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 }
 
 @media(max-width:800px){
-.hero,
-.ai-inner{
-grid-template-columns:1fr
-}
-
-.hero-seal{
-display:none
-}
+.hero,.ai-inner{grid-template-columns:1fr}
+.hero-seal{display:none}
 }
 
 @media(max-width:600px){
-.service-list{
-columns:1
-}
-
-.module-logo-section{
-padding-inline:15px
-}
-
-.module-seals-grid{
-gap:12px
-}
-
-.module-form-grid{
-grid-template-columns:1fr
-}
-
-.module-field.full{
-grid-column:auto
-}
-
-.module-form{
-padding:20px 16px
-}
+.service-list{columns:1}
+.module-logo-section{padding-inline:15px}
+.module-seals-grid{gap:12px}
+.module-form-grid{grid-template-columns:1fr}
+.module-field.full{grid-column:auto}
 }
 </style>
 </head>
@@ -837,7 +768,6 @@ padding:20px 16px
 <div class="nav-wrap">
 
 <div class="brand">
-
 <div class="logo-mark">
 <video autoplay muted loop playsinline>
 <source src="./maximax-best-multi.mp4" type="video/mp4">
@@ -848,7 +778,6 @@ padding:20px 16px
 MAXIMAX
 <span>MULTI SERVICES • EST 2020</span>
 </div>
-
 </div>
 
 <nav class="desktop-nav">
@@ -860,22 +789,13 @@ MAXIMAX
 </nav>
 
 <div class="header-actions">
-
 <div class="language-toggle" aria-label="Language selector">
 <button class="lang-btn" type="button" data-lang="kre">KRE</button>
 <button class="lang-btn active" type="button" data-lang="eng">ENG</button>
 <button class="lang-btn" type="button" data-lang="esp">ESP</button>
 </div>
 
-<button
-class="menu-btn"
-id="menuBtn"
-type="button"
-aria-label="Open menu"
->
-☰
-</button>
-
+<button class="menu-btn" id="menuBtn" type="button">☰</button>
 </div>
 
 </div>
@@ -887,92 +807,56 @@ aria-label="Open menu"
 <a href="#ai-center" data-nav="ai">AI CENTER</a>
 <a href="#contact" data-nav="contact">CONTACT</a>
 </div>
-
 </header>
 
 <section class="hero" id="hero">
-
 <div>
-
-<span class="eyebrow">
-Pine Hills, Orlando • Indianapolis • New York
-</span>
+<span class="eyebrow">Pine Hills, Orlando • Indianapolis • New York</span>
 
 <h1>
-Your Trusted Partner for <em>Life in the USA</em>
+Your Trusted Partner for
+<em>Life in the USA</em>
 </h1>
 
 <p class="lede">
-Maximax Multi Services — Notary, Taxes, Immigration,
-EOIR+BIA, Insurance, Real Estate, Business Formation
-& more. All the services you need under one roof.
+Maximax Multi Services — Notary, Taxes, Immigration, EOIR+BIA,
+Insurance, Real Estate, Business Formation & more.
+Tout sèvis ou bezwen anba yon sèl do-kay.
 </p>
 
-<p class="creole">
-We speak Kreyòl, English and Español.
-</p>
+<p class="creole">Nou pale Kreyòl, English, Español.</p>
 
 <div class="hero-cta">
-<a href="#contact" class="btn btn-primary">
-Book Appointment
-</a>
-
-<a href="#modules" class="btn btn-ghost">
-Explore Services
-</a>
+<a href="#contact" class="btn btn-primary">Book Appointment</a>
+<a href="#modules" class="btn btn-ghost">Explore Services</a>
 </div>
-
 </div>
 
 <div class="hero-seal">
-
 <video autoplay muted loop playsinline>
 <source src="./maximax-best-multi.mp4" type="video/mp4">
 </video>
-
 </div>
-
 </section>
 
 <section class="maximax-logo-showcase">
-
 <div class="maximax-logo-stage">
+<div class="maximax-logo-title">MAXIMAX MULTI SERVICES</div>
 
-<div class="maximax-logo-title">
-MAXIMAX MULTI SERVICES
-</div>
-
-<video
-class="maximax-logo-video"
-autoplay
-muted
-loop
-playsinline
->
+<video class="maximax-logo-video" autoplay muted loop playsinline>
 <source src="./maxima-xbest.mp4" type="video/mp4">
 </video>
-
 </div>
-
 </section>
 
 <section class="module-logo-section" id="modules">
-
 <div class="module-heading">
-
-<small>
-MAXIMAX MULTI SERVICES
-</small>
-
-<h2>
-15 OFFICIAL MODULES
-</h2>
-
+<small>MAXIMAX MULTI SERVICES</small>
+<h2>15 OFFICIAL MODULES</h2>
 <p>
-Professional services • Administrative assistance •
-Artificial intelligence • Digital support
+Services professionnels • Assistance administrative •
+Intelligence artificielle • Support digital
 </p>
-
 </div>
 
 <div class="module-seals-grid">
@@ -1038,13 +922,10 @@ Artificial intelligence • Digital support
 </a>
 
 </div>
-
 </section>
 
 <div class="catmap">
-
 <div class="catmap-inner">
-
 <a class="catmap-item" href="#mod1">01 NOTARY</a>
 <a class="catmap-item" href="#mod2">02 TAXES</a>
 <a class="catmap-item" href="#mod3">03 IMMIGRATION</a>
@@ -1060,152 +941,46 @@ Artificial intelligence • Digital support
 <a class="catmap-item" href="#translation-ai">13 TRADIKSYON AI</a>
 <a class="catmap-item" href="#chat247">14 CHAT 24/7</a>
 <a class="catmap-item" href="#try-ai">15 TRY AI</a>
-
 </div>
-
 </div>
 
 <main id="services">
 
-<!-- ================================================= -->
-<!-- 01 NOTARY & TRANSLATION — CONNECTED -->
-<!-- ================================================= -->
-
 <div class="file" id="mod1">
-
 <div class="file-tab" onclick="toggleFile('mod1')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-01
-</div>
-
+<div class="file-num">01</div>
 <div>
-
-<h2>
-Notary & Translation
-</h2>
-
-<div class="sub">
-Certified • Florida • Indiana • New York
+<h2>Notary & Translation</h2>
+<div class="sub">Certified • Fast • All 50 States</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-<a
-href="https://notaries.dos.fl.gov/NotIdSearch.asp?ID=0"
-target="_blank"
-rel="noopener noreferrer"
->
-Florida Notary Public Search
-</a>
-</li>
-
-<li>
-<a
-href="https://inbiz.in.gov/certification/notary"
-target="_blank"
-rel="noopener noreferrer"
->
-Indiana Notary Public
-</a>
-</li>
-
-<li>
-<a
-href="https://dos.ny.gov/notary-public"
-target="_blank"
-rel="noopener noreferrer"
->
-New York Notary Public
-</a>
-</li>
-
-<li>
-<a
-href="https://help.flcourts.gov/find-forms"
-target="_blank"
-rel="noopener noreferrer"
->
-Power of Attorney & Court Forms
-</a>
-</li>
-
-<li>
-<a
-href="https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms"
-target="_blank"
-rel="noopener noreferrer"
->
-Affidavits & Legal Forms
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/forms/filing-guidance/tips-for-filing-forms-by-mail"
-target="_blank"
-rel="noopener noreferrer"
->
-Certified Translation Requirements
-</a>
-</li>
-
-<li>
-<a
-href="https://travel.state.gov/en/international-travel/planning/personal-needs/minors.html"
-target="_blank"
-rel="noopener noreferrer"
->
-Travel Consent for Minors
-</a>
-</li>
-
+<li><a href="https://notaries.dos.fl.gov/NotIdSearch.asp?ID=0" target="_blank" rel="noopener noreferrer">Florida Notary Public Search</a></li>
+<li><a href="https://inbiz.in.gov/certification/notary" target="_blank" rel="noopener noreferrer">Indiana Notary Public</a></li>
+<li><a href="https://dos.ny.gov/notary-public" target="_blank" rel="noopener noreferrer">New York Notary Public</a></li>
+<li><a href="https://help.flcourts.gov/find-forms" target="_blank" rel="noopener noreferrer">Power of Attorney & Court Forms</a></li>
+<li><a href="https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms" target="_blank" rel="noopener noreferrer">Affidavits & Legal Forms</a></li>
+<li><a href="https://www.uscis.gov/forms/filing-guidance/tips-for-filing-forms-by-mail" target="_blank" rel="noopener noreferrer">Certified Translation Requirements</a></li>
+<li><a href="https://travel.state.gov/en/international-travel/planning/personal-needs/minors.html" target="_blank" rel="noopener noreferrer">Travel Consent for Minors</a></li>
 </ul>
 
-<form
-class="module-form"
-name="notary-translation-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="notary-translation-request"
->
+<form class="module-form" name="notary-translation-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="notary-translation-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request Notary or Translation Service
-</h3>
+<h3>Request Notary or Translation Service</h3>
 
 <p class="module-form-note">
-Complete this form. Maximax will contact you to confirm
-the service, appointment and price.
+Complete this form. Maximax will contact you to confirm the service,
+appointment and price.
 </p>
 
 <div class="module-form-grid">
@@ -1226,51 +1001,16 @@ the service, appointment and price.
 </div>
 
 <div class="module-field">
-
-<label>
-SERVICE NEEDED *
-</label>
-
+<label>SERVICE NEEDED *</label>
 <select name="service" required>
-
-<option value="">
-Choose a service
-</option>
-
-<option>
-Florida Notary Public
-</option>
-
-<option>
-Indiana Notary Public
-</option>
-
-<option>
-New York Notary Public
-</option>
-
-<option>
-Mobile Notary
-</option>
-
-<option>
-Power of Attorney
-</option>
-
-<option>
-Affidavit / Legal Letter
-</option>
-
-<option>
-Certified Translation
-</option>
-
-<option>
-Minor Travel Consent
-</option>
-
+<option value="">Choose a service</option>
+<option>Notary Public</option>
+<option>Mobile Notary</option>
+<option>Power of Attorney</option>
+<option>Affidavit / Legal Letter</option>
+<option>Certified Translation</option>
+<option>Minor Travel Consent</option>
 </select>
-
 </div>
 
 <div class="module-field">
@@ -1279,354 +1019,124 @@ Minor Travel Consent
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-REQUEST DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT NOTARY REQUEST
 </button>
-
 </div>
 
 </div>
 
 <p class="privacy-note">
 Do not upload original identity documents unless requested.
-Maximax provides administrative assistance and does not
-provide legal advice.
+Maximax provides administrative assistance and does not provide legal advice.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 02 TAXES & ACCOUNTING — CONNECTED -->
-<!-- ================================================= -->
 
 <div class="file" id="mod2">
-
 <div class="file-tab" onclick="toggleFile('mod2')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-02
-</div>
-
+<div class="file-num">02</div>
 <div>
-
-<h2>
-Taxes & Accounting
-</h2>
-
-<div class="sub">
-IRS • FORM 1040 • W-7 • 1040-X • BUSINESS TAXES
+<h2>Taxes & Accounting</h2>
+<div class="sub">Tax Preparation • ITIN • Accounting</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-<a
-href="https://www.irs.gov/forms-pubs/about-form-1040"
-target="_blank"
-rel="noopener noreferrer"
->
-Personal Taxes — Form 1040
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/businesses/business-taxes"
-target="_blank"
-rel="noopener noreferrer"
->
-Business Taxes
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/tin/itin/how-to-apply-for-an-itin"
-target="_blank"
-rel="noopener noreferrer"
->
-ITIN Application & Renewal — W-7
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping"
-target="_blank"
-rel="noopener noreferrer"
->
-Bookkeeping & Recordkeeping
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes"
-target="_blank"
-rel="noopener noreferrer"
->
-Payroll & Employment Taxes
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/individuals/understanding-your-irs-notice-or-letter"
-target="_blank"
-rel="noopener noreferrer"
->
-IRS Letter Assistance
-</a>
-</li>
-
-<li>
-<a
-href="https://www.irs.gov/forms-pubs/about-form-1040-x"
-target="_blank"
-rel="noopener noreferrer"
->
-Tax Amendment — Form 1040-X
-</a>
-</li>
-
+<li><a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer">Personal Taxes — Form 1040</a></li>
+<li><a href="https://www.irs.gov/businesses/business-taxes" target="_blank" rel="noopener noreferrer">Business Taxes</a></li>
+<li><a href="https://www.irs.gov/tin/itin/how-to-apply-for-an-itin" target="_blank" rel="noopener noreferrer">ITIN Application & Renewal — W-7</a></li>
+<li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping" target="_blank" rel="noopener noreferrer">Bookkeeping & Recordkeeping</a></li>
+<li><a href="https://www.irs.gov/businesses/small-businesses-self-employed/employment-taxes" target="_blank" rel="noopener noreferrer">Payroll & Employment Taxes</a></li>
+<li><a href="https://www.irs.gov/individuals/understanding-your-irs-notice-or-letter" target="_blank" rel="noopener noreferrer">IRS Letter Assistance</a></li>
+<li><a href="https://www.irs.gov/forms-pubs/about-form-1040-x" target="_blank" rel="noopener noreferrer">Tax Amendment — Form 1040-X</a></li>
 </ul>
 
-<form
-class="module-form"
-name="taxes-accounting-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="taxes-accounting-request"
->
+<form class="module-form" name="taxes-accounting-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="taxes-accounting-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request Tax or Accounting Service
-</h3>
+<h3>Request Tax or Accounting Service</h3>
 
 <p class="module-form-note">
-Complete this secure intake form. Maximax will contact
-you before beginning any service.
+Complete this secure intake form. Maximax will contact you before
+beginning any service.
 </p>
 
 <div class="module-form-grid">
 
 <div class="module-field">
-
-<label>
-FULL NAME *
-</label>
-
-<input
-name="full-name"
-type="text"
-required
->
-
+<label>FULL NAME *</label>
+<input name="full-name" type="text" required>
 </div>
 
 <div class="module-field">
-
-<label>
-PHONE NUMBER *
-</label>
-
-<input
-name="phone"
-type="tel"
-required
->
-
+<label>PHONE NUMBER *</label>
+<input name="phone" type="tel" required>
 </div>
 
 <div class="module-field">
-
-<label>
-EMAIL *
-</label>
-
-<input
-name="email"
-type="email"
-required
->
-
+<label>EMAIL *</label>
+<input name="email" type="email" required>
 </div>
 
 <div class="module-field">
-
-<label>
-SERVICE NEEDED *
-</label>
-
+<label>SERVICE NEEDED *</label>
 <select name="service" required>
-
-<option value="">
-Choose a service
-</option>
-
-<option>
-Personal Taxes — Form 1040
-</option>
-
-<option>
-Business Taxes
-</option>
-
-<option>
-ITIN Application / Renewal — W-7
-</option>
-
-<option>
-Bookkeeping & Recordkeeping
-</option>
-
-<option>
-Payroll & Employment Taxes
-</option>
-
-<option>
-IRS Letter Assistance
-</option>
-
-<option>
-Tax Amendment — Form 1040-X
-</option>
-
+<option value="">Choose a service</option>
+<option>Personal Taxes - 1040</option>
+<option>Business Taxes</option>
+<option>ITIN / W-7</option>
+<option>Bookkeeping</option>
+<option>Payroll Support</option>
+<option>IRS Letter Assistance</option>
+<option>Tax Amendment - 1040X</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-TAX YEAR
-</label>
-
+<label>TAX YEAR</label>
 <select name="tax-year">
-
-<option>
-2026
-</option>
-
-<option>
-2025
-</option>
-
-<option>
-2024
-</option>
-
-<option>
-2023
-</option>
-
-<option>
-Prior Year
-</option>
-
+<option>2026</option>
+<option>2025</option>
+<option>2024</option>
+<option>2023</option>
+<option>Prior Year</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="tax-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="tax-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-REQUEST DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT TAX REQUEST
 </button>
-
 </div>
 
 </div>
@@ -1635,162 +1145,46 @@ SUBMIT TAX REQUEST
 Do not enter Social Security numbers, ITIN numbers,
 bank information or passwords in this form.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 03 IMMIGRATION — CONNECTED -->
-<!-- ================================================= -->
 
 <div class="file" id="mod3">
-
 <div class="file-tab" onclick="toggleFile('mod3')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-03
-</div>
-
+<div class="file-num">03</div>
 <div>
-
-<h2>
-Immigration Services
-</h2>
-
-<div class="sub">
-TPS • I-589 • I-765 • I-130 • I-485 • N-400 • I-829
+<h2>Immigration Services</h2>
+<div class="sub">TPS • Asylum • Family Petition</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-<a
-href="https://www.uscis.gov/humanitarian/temporary-protected-status"
-target="_blank"
-rel="noopener noreferrer"
->
-TPS Application & Renewal
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/i-589"
-target="_blank"
-rel="noopener noreferrer"
->
-Asylum Form I-589
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/i-765"
-target="_blank"
-rel="noopener noreferrer"
->
-Work Permit Form I-765
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/i-130"
-target="_blank"
-rel="noopener noreferrer"
->
-Family Petition Form I-130
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/i-485"
-target="_blank"
-rel="noopener noreferrer"
->
-Green Card Form I-485
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/n-400"
-target="_blank"
-rel="noopener noreferrer"
->
-Citizenship Form N-400
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/i-829"
-target="_blank"
-rel="noopener noreferrer"
->
-Investor Conditions Form I-829
-</a>
-</li>
-
-<li>
-<a
-href="https://www.uscis.gov/forms/all-forms"
-target="_blank"
-rel="noopener noreferrer"
->
-All USCIS Forms & More
-</a>
-</li>
-
+<li><a href="https://www.uscis.gov/humanitarian/temporary-protected-status" target="_blank" rel="noopener noreferrer">TPS Application & Renewal</a></li>
+<li><a href="https://www.uscis.gov/i-589" target="_blank" rel="noopener noreferrer">Asylum Form I-589</a></li>
+<li><a href="https://www.uscis.gov/i-765" target="_blank" rel="noopener noreferrer">Work Permit Form I-765</a></li>
+<li><a href="https://www.uscis.gov/i-130" target="_blank" rel="noopener noreferrer">Family Petition Form I-130</a></li>
+<li><a href="https://www.uscis.gov/i-485" target="_blank" rel="noopener noreferrer">Green Card Form I-485</a></li>
+<li><a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener noreferrer">Citizenship Form N-400</a></li>
+<li><a href="https://www.uscis.gov/i-829" target="_blank" rel="noopener noreferrer">Investor Conditions Form I-829</a></li>
+<li><a href="https://www.uscis.gov/forms/all-forms" target="_blank" rel="noopener noreferrer">All USCIS Forms & More</a></li>
 </ul>
 
-<form
-class="module-form"
-name="immigration-service-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="immigration-service-request"
->
+<form class="module-form" name="immigration-service-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="immigration-service-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request Immigration Assistance
-</h3>
+<h3>Request Immigration Assistance</h3>
 
 <p class="module-form-note">
-Complete this intake form. Maximax will contact you
-to discuss the administrative service requested.
+Complete this intake form. Maximax will contact you to discuss
+the administrative service requested.
 </p>
 
 <div class="module-form-grid">
@@ -1811,208 +1205,87 @@ to discuss the administrative service requested.
 </div>
 
 <div class="module-field">
-
-<label>
-SERVICE NEEDED *
-</label>
-
+<label>SERVICE NEEDED *</label>
 <select name="service" required>
-
-<option value="">
-Choose a service
-</option>
-
-<option>
-TPS Application / Renewal
-</option>
-
-<option>
-Asylum Form I-589
-</option>
-
-<option>
-Work Permit Form I-765
-</option>
-
-<option>
-Family Petition Form I-130
-</option>
-
-<option>
-Green Card Form I-485
-</option>
-
-<option>
-Citizenship Form N-400
-</option>
-
-<option>
-Investor Conditions Form I-829
-</option>
-
-<option>
-Other USCIS Form
-</option>
-
+<option value="">Choose a service</option>
+<option>TPS Application / Renewal</option>
+<option>Asylum Form I-589</option>
+<option>Work Permit Form I-765</option>
+<option>Family Petition Form I-130</option>
+<option>Green Card Form I-485</option>
+<option>Citizenship Form N-400</option>
+<option>Investor Conditions Form I-829</option>
+<option>Other USCIS Form</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-DEADLINE OR APPOINTMENT
-</label>
-
+<label>DEADLINE OR APPOINTMENT</label>
 <input name="deadline" type="date">
-
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="immigration-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="immigration-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-REQUEST DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT IMMIGRATION REQUEST
 </button>
-
 </div>
 
 </div>
 
 <p class="privacy-note">
-Do not enter Social Security numbers, A-Numbers,
-passport numbers or passwords. Maximax is not a law firm
-and does not provide legal advice or representation.
+Do not enter Social Security numbers, A-Numbers, passport numbers
+or passwords. Maximax is not a law firm and does not provide legal
+advice or representation.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 04 EOIR & BIA -->
-<!-- ================================================= -->
 
 <div class="file" id="mod4">
-
 <div class="file-tab" onclick="toggleFile('mod4')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-04
-</div>
-
+<div class="file-num">04</div>
 <div>
-
-<h2>
-EOIR & BIA
-</h2>
-
-<div class="sub">
-Immigration Court • Board of Immigration Appeals
+<h2>EOIR & BIA</h2>
+<div class="sub">Immigration Court • Board of Immigration Appeals</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-EOIR Case Information
-</li>
-
-<li>
-BIA Case Information
-</li>
-
-<li>
-Court Date Check
-</li>
-
-<li>
-Change of Venue Form Assistance
-</li>
-
-<li>
-Document Organization
-</li>
-
-<li>
-Case Status Assistance
-</li>
-
+<li><a href="https://www.justice.gov/eoir/eoir-case-information" target="_blank" rel="noopener noreferrer">EOIR Case Information</a></li>
+<li><a href="https://www.justice.gov/eoir/contact-bia-icor" target="_blank" rel="noopener noreferrer">BIA Case Information</a></li>
+<li><a href="https://acis.eoir.justice.gov/" target="_blank" rel="noopener noreferrer">Court Date & Hearing Check</a></li>
+<li><a href="https://www.justice.gov/eoir/learn-about-immigration-court" target="_blank" rel="noopener noreferrer">Motion to Change Venue</a></li>
+<li><a href="https://respondentaccess.eoir.justice.gov/en/" target="_blank" rel="noopener noreferrer">File & Organize Case Documents</a></li>
+<li><a href="https://www.justice.gov/eoir/check-case-status" target="_blank" rel="noopener noreferrer">Check EOIR/BIA Case Status</a></li>
+<li><a href="https://www.justice.gov/eoir/find-immigration-court-and-access-internet-based-hearings" target="_blank" rel="noopener noreferrer">Find an Immigration Court</a></li>
 </ul>
 
-<form
-class="module-form"
-name="eoir-bia-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="eoir-bia-request"
->
+<form class="module-form" name="eoir-bia-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="eoir-bia-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request EOIR or BIA Assistance
-</h3>
+<h3>Request EOIR or BIA Assistance</h3>
 
 <p class="module-form-note">
-Complete this secure intake form. Maximax will contact
-you to confirm the administrative assistance requested.
+Complete this secure intake form. Maximax will contact you
+to confirm the administrative assistance requested.
 </p>
 
 <div class="module-form-grid">
@@ -2033,200 +1306,84 @@ you to confirm the administrative assistance requested.
 </div>
 
 <div class="module-field">
-
-<label>
-SERVICE NEEDED *
-</label>
-
+<label>SERVICE NEEDED *</label>
 <select name="service" required>
-
-<option value="">
-Choose a service
-</option>
-
-<option>
-EOIR Case Information
-</option>
-
-<option>
-BIA Case Information
-</option>
-
-<option>
-Immigration Court Date Check
-</option>
-
-<option>
-Change of Venue Form Assistance
-</option>
-
-<option>
-Document Organization
-</option>
-
-<option>
-Case Status Assistance
-</option>
-
+<option value="">Choose a service</option>
+<option>EOIR Case Information</option>
+<option>BIA Case Information</option>
+<option>Immigration Court Date Check</option>
+<option>Change of Venue Form Assistance</option>
+<option>Document Organization</option>
+<option>Case Status Assistance</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-COURT DATE OR DEADLINE
-</label>
-
+<label>COURT DATE OR DEADLINE</label>
 <input name="court-date" type="date">
-
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="eoir-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="eoir-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-REQUEST DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT EOIR & BIA REQUEST
 </button>
-
 </div>
 
 </div>
 
 <p class="privacy-note">
-Do not enter A-Numbers, Social Security numbers,
-passport numbers or passwords. Maximax is not a law firm
-and does not provide legal advice or court representation.
+Do not enter A-Numbers, Social Security numbers, passport numbers
+or passwords. Maximax is not a law firm and does not provide legal
+advice or court representation.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 05 INSURANCE -->
-<!-- ================================================= -->
 
 <div class="file" id="mod5">
-
 <div class="file-tab" onclick="toggleFile('mod5')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-05
-</div>
-
+<div class="file-num">05</div>
 <div>
-
-<h2>
-Insurance
-</h2>
-
-<div class="sub">
-Auto • Home • Life • Health
+<h2>Insurance</h2>
+<div class="sub">Auto • Home • Life • Health</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-Auto Insurance
-</li>
-
-<li>
-Homeowners Insurance
-</li>
-
-<li>
-Renters Insurance
-</li>
-
-<li>
-Life Insurance
-</li>
-
-<li>
-Health Insurance
-</li>
-
-<li>
-Business Insurance
-</li>
-
+<li><a href="https://myfloridacfo.com/division/consumers/understanding-insurance/personal-automobile-insurance-overview" target="_blank" rel="noopener noreferrer">Auto Insurance</a></li>
+<li><a href="https://myfloridacfo.com/division/consumers/understanding-insurance/homeownersinsuranceoverview" target="_blank" rel="noopener noreferrer">Homeowners Insurance</a></li>
+<li><a href="https://www.myfloridacfo.com/division/consumers/understanding-insurance/guides" target="_blank" rel="noopener noreferrer">Renters Insurance</a></li>
+<li><a href="https://www.myfloridacfo.com/division/consumers/understanding-insurance/lifeinsuranceoverview" target="_blank" rel="noopener noreferrer">Life Insurance</a></li>
+<li><a href="https://www.healthcare.gov/apply-and-enroll/how-to-apply/" target="_blank" rel="noopener noreferrer">Health Insurance</a></li>
+<li><a href="https://www.sba.gov/business-guide/launch-your-business/get-business-insurance" target="_blank" rel="noopener noreferrer">Business Insurance</a></li>
 </ul>
 
-<form
-class="module-form"
-name="insurance-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="insurance-request"
->
+<form class="module-form" name="insurance-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="insurance-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request an Insurance Quote
-</h3>
+<h3>Request an Insurance Quote</h3>
 
 <p class="module-form-note">
-Complete this form. Maximax will contact you to confirm
-your insurance needs and discuss available options.
+Complete this form. Maximax will contact you to confirm your
+insurance needs and discuss available options.
 </p>
 
 <div class="module-form-grid">
@@ -2247,43 +1404,16 @@ your insurance needs and discuss available options.
 </div>
 
 <div class="module-field">
-
-<label>
-INSURANCE TYPE *
-</label>
-
+<label>INSURANCE TYPE *</label>
 <select name="insurance-type" required>
-
-<option value="">
-Choose insurance type
-</option>
-
-<option>
-Auto Insurance
-</option>
-
-<option>
-Homeowners Insurance
-</option>
-
-<option>
-Renters Insurance
-</option>
-
-<option>
-Life Insurance
-</option>
-
-<option>
-Health Insurance
-</option>
-
-<option>
-Business Insurance
-</option>
-
+<option value="">Choose insurance type</option>
+<option>Auto Insurance</option>
+<option>Homeowners Insurance</option>
+<option>Renters Insurance</option>
+<option>Life Insurance</option>
+<option>Health Insurance</option>
+<option>Business Insurance</option>
 </select>
-
 </div>
 
 <div class="module-field">
@@ -2292,184 +1422,77 @@ Business Insurance
 </div>
 
 <div class="module-field">
-
-<label>
-PREFERRED CONTACT METHOD
-</label>
-
+<label>PREFERRED CONTACT METHOD</label>
 <select name="contact-method">
-
-<option>
-Phone Call
-</option>
-
-<option>
-Text Message
-</option>
-
-<option>
-Email
-</option>
-
-<option>
-WhatsApp
-</option>
-
+<option>Phone Call</option>
+<option>Text Message</option>
+<option>Email</option>
+<option>WhatsApp</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-COVERAGE START DATE
-</label>
-
+<label>COVERAGE START DATE</label>
 <input name="coverage-date" type="date">
-
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="insurance-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="insurance-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-QUOTE DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>QUOTE DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT INSURANCE REQUEST
 </button>
-
 </div>
 
 </div>
 
 <p class="privacy-note">
 Do not enter Social Security numbers, bank information,
-driver-license numbers or passwords. Coverage and pricing
-are subject to carrier eligibility and approval.
+driver-license numbers or passwords in this form.
+Coverage and pricing are subject to carrier eligibility and approval.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 06 REAL ESTATE -->
-<!-- ================================================= -->
 
 <div class="file" id="mod6">
-
 <div class="file-tab" onclick="toggleFile('mod6')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-06
-</div>
-
+<div class="file-num">06</div>
 <div>
-
-<h2>
-Real Estate
-</h2>
-
-<div class="sub">
-Buy • Sell • Rent
+<h2>Real Estate</h2>
+<div class="sub">Buy • Sell • Rent</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-First-Time Home Buyer Assistance
-</li>
-
-<li>
-Home Search Assistance
-</li>
-
-<li>
-Rental Assistance
-</li>
-
-<li>
-Property Referral
-</li>
-
-<li>
-Housing Resources
-</li>
-
-<li>
-Mortgage Referral
-</li>
-
+<li>First-Time Home Buyer Assistance</li>
+<li>Home Search Assistance</li>
+<li>Rental Assistance</li>
+<li>Property Referral</li>
+<li>Housing Resources</li>
+<li>Mortgage Referral</li>
 </ul>
 
-<form
-class="module-form"
-name="real-estate-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="form-name"
-value="real-estate-request"
->
+<form class="module-form" name="real-estate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+<input type="hidden" name="form-name" value="real-estate-request">
 
 <p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
+<label>Do not fill: <input name="bot-field"></label>
 </p>
 
-<h3>
-Request Real Estate Assistance
-</h3>
+<h3>Request Real Estate Assistance</h3>
 
 <p class="module-form-note">
 Tell Maximax what type of property assistance you need.
@@ -2494,434 +1517,165 @@ We will contact you to review your request and next steps.
 </div>
 
 <div class="module-field">
-
-<label>
-SERVICE NEEDED *
-</label>
-
+<label>SERVICE NEEDED *</label>
 <select name="service" required>
-
-<option value="">
-Choose a service
-</option>
-
-<option>
-First-Time Home Buyer Assistance
-</option>
-
-<option>
-Buy a Home
-</option>
-
-<option>
-Sell a Property
-</option>
-
-<option>
-Rental Assistance
-</option>
-
-<option>
-Property Referral
-</option>
-
-<option>
-Housing Resources
-</option>
-
-<option>
-Mortgage Referral
-</option>
-
+<option value="">Choose a service</option>
+<option>First-Time Home Buyer Assistance</option>
+<option>Buy a Home</option>
+<option>Sell a Property</option>
+<option>Rental Assistance</option>
+<option>Property Referral</option>
+<option>Housing Resources</option>
+<option>Mortgage Referral</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-PREFERRED LOCATION *
-</label>
-
-<input
-name="preferred-location"
-type="text"
-placeholder="City and state"
-required
->
-
+<label>PREFERRED LOCATION *</label>
+<input name="preferred-location" type="text" placeholder="City and state" required>
 </div>
 
 <div class="module-field">
-
-<label>
-PROPERTY TYPE
-</label>
-
+<label>PROPERTY TYPE</label>
 <select name="property-type">
-
-<option>
-Single-Family Home
-</option>
-
-<option>
-Apartment
-</option>
-
-<option>
-Condo
-</option>
-
-<option>
-Townhouse
-</option>
-
-<option>
-Multi-Family Property
-</option>
-
-<option>
-Commercial Property
-</option>
-
-<option>
-Land
-</option>
-
+<option>Single-Family Home</option>
+<option>Apartment</option>
+<option>Condo</option>
+<option>Townhouse</option>
+<option>Multi-Family Property</option>
+<option>Commercial Property</option>
+<option>Land</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-ESTIMATED BUDGET
-</label>
-
-<input
-name="budget"
-type="text"
-placeholder="$"
->
-
+<label>ESTIMATED BUDGET</label>
+<input name="budget" type="text" placeholder="$">
 </div>
 
 <div class="module-field">
-
-<label>
-DESIRED MOVE DATE
-</label>
-
-<input
-name="move-date"
-type="date"
->
-
+<label>DESIRED MOVE DATE</label>
+<input name="move-date" type="date">
 </div>
 
 <div class="module-field">
-
-<label>
-BEDROOMS
-</label>
-
+<label>BEDROOMS</label>
 <select name="bedrooms">
-
-<option>
-Studio
-</option>
-
-<option>
-1 Bedroom
-</option>
-
-<option>
-2 Bedrooms
-</option>
-
-<option>
-3 Bedrooms
-</option>
-
-<option>
-4+ Bedrooms
-</option>
-
+<option>Studio</option>
+<option>1 Bedroom</option>
+<option>2 Bedrooms</option>
+<option>3 Bedrooms</option>
+<option>4+ Bedrooms</option>
 </select>
-
 </div>
 
 <div class="module-field">
-
-<label>
-UPLOAD DOCUMENT
-</label>
-
-<input
-name="real-estate-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-
+<label>UPLOAD DOCUMENT</label>
+<input name="real-estate-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
 </div>
 
 <div class="module-field full">
-
-<label>
-REQUEST DETAILS *
-</label>
-
-<textarea
-name="details"
-required
-></textarea>
-
+<label>REQUEST DETAILS *</label>
+<textarea name="details" required></textarea>
 </div>
 
 <div class="module-field full">
-
-<button
-class="module-submit"
-type="submit"
->
+<button class="module-submit" type="submit">
 SUBMIT REAL ESTATE REQUEST
 </button>
-
 </div>
 
 </div>
 
 <p class="privacy-note">
-Do not enter bank-account numbers, Social Security
-numbers or passwords. Property availability, financing
-and approval are not guaranteed.
+Do not enter bank-account numbers, Social Security numbers or passwords.
+Property availability, financing and approval are not guaranteed.
 </p>
-
 </form>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 07 BUSINESS FORMATION -->
-<!-- ================================================= -->
 
 <div class="file" id="mod7">
-
 <div class="file-tab" onclick="toggleFile('mod7')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-07
-</div>
-
+<div class="file-num">07</div>
 <div>
-
-<h2>
-Business Formation
-</h2>
-
-<div class="sub">
-LLC • Corporation • EIN
+<h2>Business Formation</h2>
+<div class="sub">LLC • Corporation • EIN</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-LLC Formation
-</li>
-
-<li>
-Corporation Formation
-</li>
-
-<li>
-EIN Assistance
-</li>
-
-<li>
-Business Registration
-</li>
-
-<li>
-Business Plan Assistance
-</li>
-
-<li>
-Administrative Support
-</li>
-
+<li>LLC Formation</li>
+<li>Corporation Formation</li>
+<li>EIN Assistance</li>
+<li>Business Registration</li>
+<li>Business Plan Assistance</li>
+<li>Administrative Support</li>
 </ul>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 08 APOSTILLE -->
-<!-- ================================================= -->
 
 <div class="file" id="mod8">
-
 <div class="file-tab" onclick="toggleFile('mod8')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-08
-</div>
-
+<div class="file-num">08</div>
 <div>
-
-<h2>
-Apostille & Legalization
-</h2>
-
-<div class="sub">
-State • Federal • Embassy
+<h2>Apostille & Legalization</h2>
+<div class="sub">State • Federal • Embassy</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-Document Apostille
-</li>
-
-<li>
-Federal Document Authentication
-</li>
-
-<li>
-Diploma Apostille
-</li>
-
-<li>
-Power of Attorney
-</li>
-
-<li>
-Document Legalization
-</li>
-
-<li>
-Embassy Requirements Assistance
-</li>
-
+<li>Document Apostille</li>
+<li>Federal Document Authentication</li>
+<li>Diploma Apostille</li>
+<li>Power of Attorney</li>
+<li>Document Legalization</li>
+<li>Embassy Requirements Assistance</li>
 </ul>
-
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- 09 TRAVEL & DMV -->
-<!-- ================================================= -->
 
 <div class="file" id="mod9">
-
 <div class="file-tab" onclick="toggleFile('mod9')">
-
 <div class="file-tab-left">
-
-<div class="file-num">
-09
-</div>
-
+<div class="file-num">09</div>
 <div>
-
-<h2>
-Travel & DMV Services
-</h2>
-
-<div class="sub">
-Passport • Travel • DMV
+<h2>Travel & DMV Services</h2>
+<div class="sub">Passport • Travel • DMV</div>
 </div>
-
 </div>
-
-</div>
-
-<span class="chev">
-▼
-</span>
-
+<span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-Plane Ticket Assistance
-</li>
-
-<li>
-Passport Assistance
-</li>
-
-<li>
-Passport Renewal Assistance
-</li>
-
-<li>
-DMV Information
-</li>
-
-<li>
-Vehicle Registration Assistance
-</li>
-
-<li>
-Travel Resources
-</li>
-
+<li>Plane Ticket Assistance</li>
+<li>Passport Assistance</li>
+<li>Passport Renewal Assistance</li>
+<li>DMV Information</li>
+<li>Vehicle Registration Assistance</li>
+<li>Travel Resources</li>
 </ul>
-
 </div>
-
 </div>
 
 </main>
 
 <section class="ai-center" id="ai-center">
-
 <div class="ai-inner">
 
 <div>
+<span class="ai-badge">🤖 MAXIMAX AI CENTER</span>
 
-<span class="ai-badge">
-🤖 MAXIMAX AI CENTER
-</span>
-
-<h2>
-Maximax AI Assistant Center
-</h2>
+<h2>Maximax AI Assistant Center</h2>
 
 <p>
 Smart digital tools designed to help organize forms,
@@ -2931,502 +1685,223 @@ general service questions 24/7.
 
 <div class="ai-features">
 
-<div
-class="ai-feat"
-id="form-helper"
-role="button"
-tabindex="0"
-data-ai-question="Help me organize a form"
->
-
-<b>
-📋 FORM HELPER
-</b>
-
-<span>
-Digital form organization and assistance
-</span>
-
+<div class="ai-feat" id="form-helper" role="button" tabindex="0" data-ai-question="Help me organize a form">
+<b>📋 FORM HELPER</b>
+<span>Digital form organization and assistance</span>
 </div>
 
-<div
-class="ai-feat"
-id="career-tracker"
-role="button"
-tabindex="0"
-data-ai-question="Help me with career tracking"
->
-
-<b>
-📈 CAREER TRACKER
-</b>
-
-<span>
-Career organization, applications and progress tools
-</span>
-
+<div class="ai-feat" id="career-tracker" role="button" tabindex="0" data-ai-question="Help me with career tracking">
+<b>📈 CAREER TRACKER</b>
+<span>Career organization, applications and progress tools</span>
 </div>
 
-<div
-class="ai-feat"
-id="translation-ai"
-role="button"
-tabindex="0"
-data-ai-question="Help me translate a document"
->
-
-<b>
-🌐 TRADIKSYON AI
-</b>
-
-<span>
-Kreyòl • English • Français • Español
-</span>
-
+<div class="ai-feat" id="translation-ai" role="button" tabindex="0" data-ai-question="Help me translate a document">
+<b>🌐 TRADIKSYON AI</b>
+<span>Kreyòl • English • Français • Español</span>
 </div>
 
-<div
-class="ai-feat"
-id="chat247"
-role="button"
-tabindex="0"
-data-ai-question="Show me all Maximax services"
->
-
-<b>
-💬 CHAT 24/7
-</b>
-
-<span>
-Digital assistance anytime
-</span>
-
+<div class="ai-feat" id="chat247" role="button" tabindex="0" data-ai-question="Show me all Maximax services">
+<b>💬 CHAT 24/7</b>
+<span>Digital assistance anytime</span>
 </div>
 
 </div>
 
-<a
-class="myaccess-btn"
-id="try-ai"
-href="#ai-chat"
->
+<a class="myaccess-btn" id="try-ai" href="#ai-chat">
 Try AI Center
 </a>
-
 </div>
 
 <div id="ai-chat" class="contact-card">
-
-<div class="label">
-MAXIMAX AI CHAT
-</div>
+<div class="label">MAXIMAX AI CHAT</div>
 
 <div id="aiMessages" aria-live="polite">
-
 <div class="ai-message bot">
-🤖 Welcome to Maximax AI Center. Ask about Notary,
-Taxes, Immigration, EOIR & BIA, Insurance, Real Estate,
+🤖 Welcome to Maximax AI Center. Ask about Notary, Taxes,
+Immigration, EOIR & BIA, Insurance, Real Estate,
 Business Formation, Apostille or Travel & DMV.
 </div>
-
 </div>
 
 <div class="ai-chat-controls">
-
-<input
-id="aiInput"
-type="text"
-placeholder="Ask a question..."
-autocomplete="off"
->
-
-<button
-id="aiSend"
-type="button"
->
-SEND
-</button>
-
+<input id="aiInput" type="text" placeholder="Ask a question..." autocomplete="off">
+<button id="aiSend" type="button">SEND</button>
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 <section class="band" id="contact">
-
 <div class="band-inner">
 
-<h2>
-Contact - 9 Rezo Sosyal
-</h2>
+<h2>Contact - 9 Rezo Sosyal</h2>
 
 <div class="contact-grid">
 
 <div class="contact-card">
-
-<div class="label">
-Telephone
-</div>
-
+<div class="label">Telephone</div>
 <div class="value">
-
-<a href="tel:+14076405166">
-(407) 640-5166
-</a>
-
-<br>
-
-<a href="tel:+15162168494">
-(516) 216-8494
-</a>
-
-<br>
-
-<a href="tel:+13175381150">
-(317) 538-1150
-</a>
-
-<br>
-
-<a href="tel:+50943437488">
-+509 43 43 7488
-</a>
-
+<a href="tel:+14076405166">(407) 640-5166</a><br>
+<a href="tel:+15162168494">(516) 216-8494</a><br>
+<a href="tel:+13175381150">(317) 538-1150</a><br>
+<a href="tel:+50943437488">+509 43 43 7488</a>
 </div>
-
 </div>
 
 <div class="contact-card">
-
-<div class="label">
-Email
-</div>
-
+<div class="label">Email</div>
 <div class="value">
-
 <a href="mailto:maximaxmultiservices@gmail.com">
 maximaxmultiservices@gmail.com
 </a>
-
 </div>
-
 </div>
 
 <div class="contact-card">
-
-<div class="label">
-Service Areas
-</div>
-
+<div class="label">Service Areas</div>
 <div class="value">
-Pine Hills Orlando FL
-<br>
-Indianapolis IN
-<br>
+Pine Hills Orlando FL<br>
+Indianapolis IN<br>
 Hempstead NY 11550
 </div>
-
 </div>
 
 </div>
 
 <div class="social-row">
 
-<a
-class="social-pill"
-href="https://wa.me/50943437488"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-whatsapp"></i>
-</span>
-
+<a class="social-pill" href="https://wa.me/50943437488" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-whatsapp"></i></span>
 WhatsApp
-
 </a>
 
-<a
-class="social-pill"
-href="https://www.facebook.com/share/1By3KvYRrM/"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-facebook-f"></i>
-</span>
-
+<a class="social-pill" href="https://www.facebook.com/share/1By3KvYRrM/" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-facebook-f"></i></span>
 Facebook
-
 </a>
 
-<a
-class="social-pill"
-href="https://www.instagram.com/lebaron072/"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-instagram"></i>
-</span>
-
+<a class="social-pill" href="https://www.instagram.com/lebaron072/" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-instagram"></i></span>
 Instagram
-
 </a>
 
-<a
-class="social-pill"
-href="https://www.tiktok.com/@maximax1960"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-tiktok"></i>
-</span>
-
+<a class="social-pill" href="https://www.tiktok.com/@maximax1960" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-tiktok"></i></span>
 TikTok
-
 </a>
 
-<a
-class="social-pill"
-href="https://x.com/w05g2m"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-x-twitter"></i>
-</span>
-
+<a class="social-pill" href="https://x.com/w05g2m" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-x-twitter"></i></span>
 X / Twitter
-
 </a>
 
-<a
-class="social-pill"
-href="https://www.youtube.com/@BSS1815PROMAXDMP"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-youtube"></i>
-</span>
-
+<a class="social-pill" href="https://www.youtube.com/@BSS1815PROMAXDMP" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-youtube"></i></span>
 YouTube
-
 </a>
 
-<a
-class="social-pill"
-href="https://www.linkedin.com/in/maximax-multi-services-075ba2314"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-linkedin-in"></i>
-</span>
-
+<a class="social-pill" href="https://www.linkedin.com/in/maximax-multi-services-075ba2314" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-linkedin-in"></i></span>
 LinkedIn
-
 </a>
 
-<a
-class="social-pill"
-href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-<i class="fab fa-spotify"></i>
-</span>
-
+<a class="social-pill" href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici" target="_blank" rel="noopener noreferrer">
+<span class="social-icon"><i class="fab fa-spotify"></i></span>
 Spotify
-
 </a>
 
-<a
-class="social-pill"
-href="https://truthsocial.com/@briyant_soley_1815"
-target="_blank"
-rel="noopener noreferrer"
->
-
-<span class="social-icon">
-T
-</span>
-
+<a class="social-pill" href="https://truthsocial.com/@briyant_soley_1815" target="_blank" rel="noopener noreferrer">
+<span class="social-icon">T</span>
 Truth Social
-
 </a>
 
 </div>
-
 </div>
-
 </section>
 
 <footer>
-
 <div class="footer-cats">
-
-<span>
-NOTARY & TRANSLATION
-</span>
-
-<span>
-TAXES & ACCOUNTING
-</span>
-
-<span>
-IMMIGRATION
-</span>
-
-<span>
-EOIR+BIA
-</span>
-
-<span>
-INSURANCE
-</span>
-
-<span>
-REAL ESTATE
-</span>
-
-<span>
-BUSINESS FORMATION
-</span>
-
-<span>
-APOSTILLE
-</span>
-
-<span>
-TRAVEL & DMV
-</span>
-
-<span>
-MAXIMAX AI CENTER
-</span>
-
-<span>
-FORM HELPER
-</span>
-
-<span>
-CAREER TRACKER
-</span>
-
-<span>
-TRADIKSYON AI
-</span>
-
-<span>
-CHAT 24/7
-</span>
-
-<span>
-TRY AI CENTER
-</span>
-
+<span>NOTARY & TRANSLATION</span>
+<span>TAXES & ACCOUNTING</span>
+<span>IMMIGRATION</span>
+<span>EOIR+BIA</span>
+<span>INSURANCE</span>
+<span>REAL ESTATE</span>
+<span>BUSINESS FORMATION</span>
+<span>APOSTILLE</span>
+<span>TRAVEL & DMV</span>
+<span>MAXIMAX AI CENTER</span>
+<span>FORM HELPER</span>
+<span>CAREER TRACKER</span>
+<span>TRADIKSYON AI</span>
+<span>CHAT 24/7</span>
+<span>TRY AI CENTER</span>
 </div>
-
 </footer>
 
 <script>
 function showOnlyFile(id){
-
 document.querySelectorAll('.file').forEach(function(file){
-
-const selected=file.id===id;
-
-file.classList.toggle('active',selected);
-file.classList.toggle('open',selected);
-
-});
-
+const selected=file.id===id
+file.classList.toggle('active',selected)
+file.classList.toggle('open',selected)
+})
 }
 
 function toggleFile(id){
-
-const file=document.getElementById(id);
+const file=document.getElementById(id)
 
 if(file){
-file.classList.toggle('open');
+file.classList.toggle('open')
 }
-
 }
 
 document.querySelectorAll('.file').forEach(function(file){
-
-file.classList.remove('active','open');
-
-});
+file.classList.remove('active','open')
+})
 
 document
-.querySelectorAll(
-'.service-seal[href^="#mod"],.catmap-item[href^="#mod"]'
-)
+.querySelectorAll('.service-seal[href^="#mod"],.catmap-item[href^="#mod"]')
 .forEach(function(button){
 
 button.addEventListener('click',function(event){
+event.preventDefault()
 
-event.preventDefault();
-
-const id=this.getAttribute('href').slice(1);
-const file=document.getElementById(id);
+const id=this.getAttribute('href').slice(1)
+const file=document.getElementById(id)
 
 if(file){
-
-showOnlyFile(id);
-
+showOnlyFile(id)
 file.scrollIntoView({
 behavior:'smooth',
 block:'start'
-});
-
+})
 }
+})
 
-});
+})
 
-});
+const menuBtn=document.getElementById('menuBtn')
+const mobileNav=document.getElementById('mobileNav')
 
-const menuBtn=document.getElementById('menuBtn');
-const mobileNav=document.getElementById('mobileNav');
-
-if(menuBtn && mobileNav){
+if(menuBtn&&mobileNav){
 
 menuBtn.addEventListener('click',function(){
-
-mobileNav.classList.toggle('open');
-
-});
+mobileNav.classList.toggle('open')
+})
 
 mobileNav.querySelectorAll('a').forEach(function(link){
 
 link.addEventListener('click',function(){
+mobileNav.classList.remove('open')
+})
 
-mobileNav.classList.remove('open');
-
-});
-
-});
+})
 
 }
 
 const translations={
-
 eng:{
 home:'HOME',
 modules:'MODULES',
@@ -3474,241 +1949,203 @@ explore:'Explorar Servicios',
 official:'15 MÓDULOS OFICIALES',
 description:'Servicios profesionales • Asistencia administrativa • Inteligencia artificial • Soporte digital'
 }
-
-};
+}
 
 function setLanguage(lang){
-
-const text=translations[lang] || translations.eng;
+const translation=translations[lang]||translations.eng
 
 document.documentElement.lang=
 lang==='kre'
-? 'ht'
-: lang==='esp'
-? 'es'
-: 'en';
+?'ht'
+:lang==='esp'
+?'es'
+:'en'
 
 document.querySelectorAll('[data-nav]').forEach(function(link){
+link.textContent=translation[link.dataset.nav]
+})
 
-link.textContent=text[link.dataset.nav];
-
-});
-
-document.querySelector('.eyebrow').textContent=text.eyebrow;
-document.querySelector('.hero h1').innerHTML=text.title;
-document.querySelector('.lede').textContent=text.lede;
-document.querySelector('.creole').textContent=text.creole;
-document.querySelector('.btn-primary').textContent=text.book;
-document.querySelector('.btn-ghost').textContent=text.explore;
-document.querySelector('.module-heading h2').textContent=text.official;
-document.querySelector('.module-heading p').textContent=text.description;
+document.querySelector('.eyebrow').textContent=translation.eyebrow
+document.querySelector('.hero h1').innerHTML=translation.title
+document.querySelector('.lede').textContent=translation.lede
+document.querySelector('.creole').textContent=translation.creole
+document.querySelector('.btn-primary').textContent=translation.book
+document.querySelector('.btn-ghost').textContent=translation.explore
+document.querySelector('.module-heading h2').textContent=translation.official
+document.querySelector('.module-heading p').textContent=translation.description
 
 document.querySelectorAll('.lang-btn').forEach(function(button){
-
 button.classList.toggle(
 'active',
 button.dataset.lang===lang
-);
+)
+})
 
-});
-
-localStorage.setItem('maximaxLanguage',lang);
-
+localStorage.setItem('maximaxLanguage',lang)
 }
 
 document.querySelectorAll('.lang-btn').forEach(function(button){
 
 button.addEventListener('click',function(){
+setLanguage(this.dataset.lang)
+})
 
-setLanguage(this.dataset.lang);
-
-});
-
-});
+})
 
 setLanguage(
-localStorage.getItem('maximaxLanguage') || 'eng'
-);
+localStorage.getItem('maximaxLanguage')||'eng'
+)
 
-const aiInput=document.getElementById('aiInput');
-const aiSend=document.getElementById('aiSend');
-const aiMessages=document.getElementById('aiMessages');
+const aiInput=document.getElementById('aiInput')
+const aiSend=document.getElementById('aiSend')
+const aiMessages=document.getElementById('aiMessages')
 
 function getAIResponse(question){
-
-const q=question.toLowerCase();
+const q=question.toLowerCase()
 
 if(
-q.includes('notary') ||
-q.includes('notè') ||
-q.includes('translation') ||
+q.includes('notary')||
+q.includes('notè')||
+q.includes('translation')||
 q.includes('tradiksyon')
 ){
-return 'For Notary or Translation, select button 01. The Florida, Indiana, New York, court-form, translation and minor-travel resources include direct links to official websites.';
+return 'For Notary or Translation, select button 01. You can choose the service, enter your contact information and upload a document.'
 }
 
 if(
-q.includes('tax') ||
-q.includes('taks') ||
-q.includes('itin') ||
-q.includes('account') ||
-q.includes('1040') ||
-q.includes('w-7') ||
-q.includes('payroll')
+q.includes('tax')||
+q.includes('taks')||
+q.includes('itin')||
+q.includes('account')
 ){
-return 'For Taxes and Accounting, select button 02. Form 1040, business taxes, ITIN W-7, recordkeeping, payroll, IRS notices and Form 1040-X include direct links to the official IRS website.';
+return 'For Taxes and Accounting, select button 02. Maximax assists with personal taxes, business taxes, ITIN, bookkeeping, payroll and IRS letters.'
 }
 
 if(
-q.includes('immigration') ||
-q.includes('imigrasyon') ||
-q.includes('tps') ||
-q.includes('asylum') ||
-q.includes('green card') ||
-q.includes('i-130') ||
-q.includes('i-485') ||
-q.includes('i-589') ||
-q.includes('i-765') ||
-q.includes('i-829') ||
-q.includes('n-400')
+q.includes('immigration')||
+q.includes('imigrasyon')||
+q.includes('tps')||
+q.includes('asylum')||
+q.includes('green card')
 ){
-return 'For Immigration Services, select button 03. TPS, I-589, I-765, I-130, I-485, I-829 and N-400 include direct links to the official USCIS website.';
+return 'For Immigration Services, select button 03. You can request TPS, asylum form preparation, work permit, family petition, green card or citizenship assistance.'
 }
 
 if(
-q.includes('eoir') ||
-q.includes('bia') ||
+q.includes('eoir')||
+q.includes('bia')||
 q.includes('court')
 ){
-return 'For EOIR or BIA administrative assistance, select button 04. Do not send A-Numbers or sensitive identification information through the form.';
+return 'For EOIR or BIA administrative assistance, select button 04. Do not send A-Numbers or sensitive identification information through the form.'
 }
 
 if(
-q.includes('insurance') ||
+q.includes('insurance')||
 q.includes('asirans')
 ){
-return 'For Insurance, select button 05 to request information about auto, home, renters, life, health or business coverage.';
+return 'For Insurance, select button 05 to request information about auto, home, renters, life, health or business coverage.'
 }
 
 if(
-q.includes('real estate') ||
-q.includes('house') ||
-q.includes('home') ||
-q.includes('rent') ||
+q.includes('real estate')||
+q.includes('house')||
+q.includes('home')||
+q.includes('rent')||
 q.includes('imobilye')
 ){
-return 'For Real Estate, select button 06. You can request buyer, seller, rental, housing-resource or mortgage-referral assistance.';
+return 'For Real Estate, select button 06. You can request buyer, seller, rental, housing-resource or mortgage-referral assistance.'
 }
 
 if(
-q.includes('business') ||
-q.includes('llc') ||
+q.includes('business')||
+q.includes('llc')||
 q.includes('ein')
 ){
-return 'Business Formation is button 07. Maximax can assist with LLC, corporation, EIN and business registration preparation.';
+return 'Business Formation is button 07. Maximax can assist with LLC, corporation, EIN and business registration preparation.'
 }
 
 if(
-q.includes('apostille') ||
+q.includes('apostille')||
 q.includes('legalization')
 ){
-return 'Apostille and Legalization is button 08 for state, federal and embassy document assistance.';
+return 'Apostille and Legalization is button 08 for state, federal and embassy document assistance.'
 }
 
 if(
-q.includes('travel') ||
-q.includes('passport') ||
+q.includes('travel')||
+q.includes('passport')||
 q.includes('dmv')
 ){
-return 'Travel and DMV Services is button 09 for tickets, passports, DMV information and vehicle-registration assistance.';
+return 'Travel and DMV Services is button 09 for tickets, passports, DMV information and vehicle-registration assistance.'
 }
 
 if(q.includes('career')){
-
-return 'Career Tracker can help organize applications, deadlines, interviews and progress. Tell me what job or career goal you are tracking.';
-
+return 'Career Tracker can help organize applications, deadlines, interviews and progress. Tell me what job or career goal you are tracking.'
 }
 
 if(q.includes('form')){
-
-return 'Form Helper can help identify the correct Maximax service and organize the information you need. Tell me the name or purpose of the form.';
-
+return 'Form Helper can help identify the correct Maximax service and organize the information you need. Tell me the name or purpose of the form.'
 }
 
-return 'I can help you choose a Maximax service. Ask about Notary, Taxes, Immigration, EOIR & BIA, Insurance, Real Estate, Business Formation, Apostille, Travel or DMV.';
-
+return 'I can help you choose a Maximax service. Ask about Notary, Taxes, Immigration, EOIR & BIA, Insurance, Real Estate, Business Formation, Apostille, Travel or DMV.'
 }
 
 function sendAIMessage(preset){
-
-const question=(preset || aiInput.value).trim();
+const question=(preset||aiInput.value).trim()
 
 if(!question){
-return;
+return
 }
 
-const user=document.createElement('div');
+const userMessage=document.createElement('div')
+userMessage.className='ai-message user'
+userMessage.textContent='👤 '+question
+aiMessages.appendChild(userMessage)
 
-user.className='ai-message user';
-user.textContent='👤 '+question;
+const botMessage=document.createElement('div')
+botMessage.className='ai-message bot'
+botMessage.textContent='🤖 '+getAIResponse(question)
+aiMessages.appendChild(botMessage)
 
-aiMessages.appendChild(user);
-
-const bot=document.createElement('div');
-
-bot.className='ai-message bot';
-bot.textContent='🤖 '+getAIResponse(question);
-
-aiMessages.appendChild(bot);
-
-aiInput.value='';
+aiInput.value=''
 
 document.getElementById('ai-chat').scrollIntoView({
 behavior:'smooth',
 block:'center'
-});
-
+})
 }
 
-if(aiSend && aiInput && aiMessages){
+if(aiSend&&aiInput&&aiMessages){
 
 aiSend.addEventListener('click',function(){
-
-sendAIMessage();
-
-});
+sendAIMessage()
+})
 
 aiInput.addEventListener('keydown',function(event){
 
 if(event.key==='Enter'){
-
-event.preventDefault();
-sendAIMessage();
-
+event.preventDefault()
+sendAIMessage()
 }
 
-});
+})
 
 document.querySelectorAll('[data-ai-question]').forEach(function(card){
 
 card.addEventListener('click',function(){
-
-sendAIMessage(this.dataset.aiQuestion);
-
-});
+sendAIMessage(this.dataset.aiQuestion)
+})
 
 card.addEventListener('keydown',function(event){
 
-if(event.key==='Enter' || event.key===' '){
-
-event.preventDefault();
-sendAIMessage(this.dataset.aiQuestion);
-
+if(event.key==='Enter'||event.key===' '){
+event.preventDefault()
+sendAIMessage(this.dataset.aiQuestion)
 }
 
-});
+})
 
-});
+})
 
 }
 </script>
