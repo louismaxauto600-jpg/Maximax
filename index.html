@@ -23,12 +23,22 @@
 --panel:rgba(0,0,0,.72)
 }
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box
+}
 
 html{
 scroll-behavior:smooth;
 min-height:100%;
-background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);
+background:
+linear-gradient(
+150deg,
+#000 0%,
+#000 14%,
+#7a2e00 46%,
+#ff6a00 68%,
+#000 100%
+);
 background-attachment:fixed
 }
 
@@ -258,7 +268,7 @@ border:3px solid var(--light)
 }
 
 
-/* MAIN LOGO */
+/* MAIN VIDEO LOGO */
 
 .maximax-logo-showcase{
 max-width:1180px;
@@ -691,51 +701,54 @@ gap:12px
 <div class="brand">
 
 <div class="logo-mark">
+
 <video autoplay muted loop playsinline>
 <source src="./maximax-best-multi.mp4" type="video/mp4">
 </video>
+
 </div>
 
 <div class="brand-name">
+
 MAXIMAX
-<span>MULTI SERVICES • EST 2020</span>
+
+<span>
+MULTI SERVICES • EST 2020
+</span>
+
 </div>
 
 </div>
+
 
 <nav class="desktop-nav">
+
 <a href="#hero" data-nav="home">HOME</a>
+
 <a href="#modules" data-nav="modules">MODULES</a>
+
 <a href="#services" data-nav="services">SERVICES</a>
+
 <a href="#ai-center" data-nav="ai">AI CENTER</a>
+
 <a href="#contact" data-nav="contact">CONTACT</a>
+
 </nav>
+
 
 <div class="header-actions">
 
-<div class="language-toggle" aria-label="Language selector">
+<div class="language-toggle">
 
-<button
-class="lang-btn"
-type="button"
-data-lang="kre"
->
+<button class="lang-btn" type="button" data-lang="kre">
 KRE
 </button>
 
-<button
-class="lang-btn active"
-type="button"
-data-lang="eng"
->
+<button class="lang-btn active" type="button" data-lang="eng">
 ENG
 </button>
 
-<button
-class="lang-btn"
-type="button"
-data-lang="esp"
->
+<button class="lang-btn" type="button" data-lang="esp">
 ESP
 </button>
 
@@ -745,7 +758,6 @@ ESP
 class="menu-btn"
 id="menuBtn"
 type="button"
-aria-label="Open menu"
 >
 ☰
 </button>
@@ -754,12 +766,19 @@ aria-label="Open menu"
 
 </div>
 
+
 <div class="mobile-nav" id="mobileNav">
+
 <a href="#hero" data-nav="home">HOME</a>
+
 <a href="#modules" data-nav="modules">MODULES</a>
+
 <a href="#services" data-nav="services">SERVICES</a>
+
 <a href="#ai-center" data-nav="ai">AI CENTER</a>
+
 <a href="#contact" data-nav="contact">CONTACT</a>
+
 </div>
 
 </header>
@@ -781,9 +800,10 @@ Your Trusted Partner for
 </h1>
 
 <p class="lede">
-Maximax Multi Services — Notary, Taxes, Immigration,
-EOIR+BIA, Insurance, Real Estate, Business Formation
-& more. All the services you need under one roof.
+Maximax Multi Services — Notary, Taxes,
+Immigration, EOIR+BIA, Insurance,
+Real Estate, Business Formation & more.
+All the services you need under one roof.
 </p>
 
 <p class="creole">
@@ -804,10 +824,16 @@ Explore Services
 
 </div>
 
+
 <div class="hero-seal">
 
 <video autoplay muted loop playsinline>
-<source src="./maximax-best-multi.mp4" type="video/mp4">
+
+<source
+src="./maximax-best-multi.mp4"
+type="video/mp4"
+>
+
 </video>
 
 </div>
@@ -832,7 +858,12 @@ muted
 loop
 playsinline
 >
-<source src="./maxima-xbest.mp4" type="video/mp4">
+
+<source
+src="./maxima-xbest.mp4"
+type="video/mp4"
+>
+
 </video>
 
 </div>
@@ -840,15 +871,19 @@ playsinline
 </section>
 
 
-<!-- 15 OFFICIAL BUTTONS -->
+<!-- 15 OFFICIAL MODULE BUTTONS -->
 
 <section class="module-logo-section" id="modules">
 
 <div class="module-heading">
 
-<small>MAXIMAX MULTI SERVICES</small>
+<small>
+MAXIMAX MULTI SERVICES
+</small>
 
-<h2>15 OFFICIAL MODULES</h2>
+<h2>
+15 OFFICIAL MODULES
+</h2>
 
 <p>
 Professional services • Administrative assistance •
@@ -857,66 +892,247 @@ Artificial intelligence • Digital support
 
 </div>
 
+
 <div class="module-seals-grid">
 
-<a href="#mod1" class="service-seal">
-<img src="./notary-translation.png" alt="Notary & Translation">
+
+<!-- 01 — NOTARY & TRANSLATION -->
+
+<a
+href="/notary-translation.html"
+class="service-seal"
+title="Notary & Translation"
+>
+
+<img
+src="./notary-translation.png"
+alt="Notary & Translation"
+>
+
 </a>
 
-<a href="#mod2" class="service-seal">
-<img src="./taxes-accounting.png" alt="Taxes & Accounting">
+
+<!-- 02 — TAXES & ACCOUNTING -->
+
+<a
+href="/taxes-accounting.html"
+class="service-seal"
+title="Taxes & Accounting"
+>
+
+<img
+src="./taxes-accounting.png"
+alt="Taxes & Accounting"
+>
+
 </a>
 
-<a href="#mod3" class="service-seal">
-<img src="./immigration-services.png" alt="Immigration Services">
+
+<!-- 03 — IMMIGRATION SERVICES -->
+
+<a
+href="/immigration-services.html"
+class="service-seal"
+title="Immigration Services"
+>
+
+<img
+src="./immigration-services.png"
+alt="Immigration Services"
+>
+
 </a>
 
-<a href="#mod4" class="service-seal">
-<img src="./eoir-bia.png" alt="EOIR & BIA">
+
+<!-- 04 — EOIR & BIA -->
+
+<a
+href="#mod4"
+class="service-seal"
+title="EOIR & BIA"
+>
+
+<img
+src="./eoir-bia.png"
+alt="EOIR & BIA"
+>
+
 </a>
 
-<a href="#mod5" class="service-seal">
-<img src="./insurance.png" alt="Insurance">
+
+<!-- 05 — INSURANCE -->
+
+<a
+href="#mod5"
+class="service-seal"
+title="Insurance"
+>
+
+<img
+src="./insurance.png"
+alt="Insurance"
+>
+
 </a>
 
-<a href="#mod6" class="service-seal">
-<img src="./real-estate.png" alt="Real Estate">
+
+<!-- 06 — REAL ESTATE -->
+
+<a
+href="#mod6"
+class="service-seal"
+title="Real Estate"
+>
+
+<img
+src="./real-estate.png"
+alt="Real Estate"
+>
+
 </a>
 
-<a href="#mod7" class="service-seal">
-<img src="./business-formation.png" alt="Business Formation">
+
+<!-- 07 — BUSINESS FORMATION -->
+
+<a
+href="#mod7"
+class="service-seal"
+title="Business Formation"
+>
+
+<img
+src="./business-formation.png"
+alt="Business Formation"
+>
+
 </a>
 
-<a href="#mod8" class="service-seal">
-<img src="./apostille-legalization.png" alt="Apostille & Legalization">
+
+<!-- 08 — APOSTILLE & LEGALIZATION -->
+
+<a
+href="#mod8"
+class="service-seal"
+title="Apostille & Legalization"
+>
+
+<img
+src="./apostille-legalization.png"
+alt="Apostille & Legalization"
+>
+
 </a>
 
-<a href="#mod9" class="service-seal">
-<img src="./travel-dmv.png" alt="Travel & DMV Services">
+
+<!-- 09 — TRAVEL & DMV -->
+
+<a
+href="#mod9"
+class="service-seal"
+title="Travel & DMV"
+>
+
+<img
+src="./travel-dmv.png"
+alt="Travel & DMV"
+>
+
 </a>
 
-<a href="#ai-center" class="service-seal">
-<img src="./maximax-ai-center.png" alt="Maximax AI Center">
+
+<!-- 10 — MAXIMAX AI CENTER -->
+
+<a
+href="#ai-center"
+class="service-seal"
+title="Maximax AI Center"
+>
+
+<img
+src="./maximax-ai-center.png"
+alt="Maximax AI Center"
+>
+
 </a>
 
-<a href="#form-helper" class="service-seal">
-<img src="./form-helper.png" alt="Form Helper">
+
+<!-- 11 — FORM HELPER -->
+
+<a
+href="#form-helper"
+class="service-seal"
+title="Form Helper"
+>
+
+<img
+src="./form-helper.png"
+alt="Form Helper"
+>
+
 </a>
 
-<a href="#career-tracker" class="service-seal">
-<img src="./career-tracker.png" alt="Career Tracker">
+
+<!-- 12 — CAREER TRACKER -->
+
+<a
+href="#career-tracker"
+class="service-seal"
+title="Career Tracker"
+>
+
+<img
+src="./career-tracker.png"
+alt="Career Tracker"
+>
+
 </a>
 
-<a href="#translation-ai" class="service-seal">
-<img src="./tradiksyon-ai.png" alt="Tradiksyon AI">
+
+<!-- 13 — TRADIKSYON AI -->
+
+<a
+href="#translation-ai"
+class="service-seal"
+title="Tradiksyon AI"
+>
+
+<img
+src="./tradiksyon-ai.png"
+alt="Tradiksyon AI"
+>
+
 </a>
 
-<a href="#chat247" class="service-seal">
-<img src="./chat-24-7.png" alt="Chat 24/7">
+
+<!-- 14 — CHAT 24/7 -->
+
+<a
+href="#chat247"
+class="service-seal"
+title="Chat 24/7"
+>
+
+<img
+src="./chat-24-7.png"
+alt="Chat 24/7"
+>
+
 </a>
 
-<a href="#try-ai" class="service-seal">
-<img src="./try-ai-center.png" alt="Try AI Center">
+
+<!-- 15 — TRY AI CENTER -->
+
+<a
+href="#try-ai"
+class="service-seal"
+title="Try AI Center"
+>
+
+<img
+src="./try-ai-center.png"
+alt="Try AI Center"
+>
+
 </a>
 
 </div>
@@ -930,21 +1146,65 @@ Artificial intelligence • Digital support
 
 <div class="catmap-inner">
 
-<a class="catmap-item" href="#mod1">01 NOTARY</a>
-<a class="catmap-item" href="#mod2">02 TAXES</a>
-<a class="catmap-item" href="#mod3">03 IMMIGRATION</a>
-<a class="catmap-item" href="#mod4">04 EOIR+BIA</a>
-<a class="catmap-item" href="#mod5">05 INSURANCE</a>
-<a class="catmap-item" href="#mod6">06 REAL ESTATE</a>
-<a class="catmap-item" href="#mod7">07 BUSINESS</a>
-<a class="catmap-item" href="#mod8">08 APOSTILLE</a>
-<a class="catmap-item" href="#mod9">09 TRAVEL+DMV</a>
-<a class="catmap-item" href="#ai-center">10 AI CENTER</a>
-<a class="catmap-item" href="#form-helper">11 FORM HELPER</a>
-<a class="catmap-item" href="#career-tracker">12 CAREER TRACKER</a>
-<a class="catmap-item" href="#translation-ai">13 TRADIKSYON AI</a>
-<a class="catmap-item" href="#chat247">14 CHAT 24/7</a>
-<a class="catmap-item" href="#try-ai">15 TRY AI</a>
+<a class="catmap-item" href="/notary-translation.html">
+01 NOTARY
+</a>
+
+<a class="catmap-item" href="/taxes-accounting.html">
+02 TAXES
+</a>
+
+<a class="catmap-item" href="/immigration-services.html">
+03 IMMIGRATION
+</a>
+
+<a class="catmap-item" href="#mod4">
+04 EOIR+BIA
+</a>
+
+<a class="catmap-item" href="#mod5">
+05 INSURANCE
+</a>
+
+<a class="catmap-item" href="#mod6">
+06 REAL ESTATE
+</a>
+
+<a class="catmap-item" href="#mod7">
+07 BUSINESS
+</a>
+
+<a class="catmap-item" href="#mod8">
+08 APOSTILLE
+</a>
+
+<a class="catmap-item" href="#mod9">
+09 TRAVEL+DMV
+</a>
+
+<a class="catmap-item" href="#ai-center">
+10 AI CENTER
+</a>
+
+<a class="catmap-item" href="#form-helper">
+11 FORM HELPER
+</a>
+
+<a class="catmap-item" href="#career-tracker">
+12 CAREER TRACKER
+</a>
+
+<a class="catmap-item" href="#translation-ai">
+13 TRADIKSYON AI
+</a>
+
+<a class="catmap-item" href="#chat247">
+14 CHAT 24/7
+</a>
+
+<a class="catmap-item" href="#try-ai">
+15 TRY AI
+</a>
 
 </div>
 
@@ -956,145 +1216,52 @@ Artificial intelligence • Digital support
 <main id="services">
 
 
-<div class="file" id="mod1">
-
-<div class="file-tab" onclick="toggleFile('mod1')">
-
-<div class="file-tab-left">
-
-<div class="file-num">01</div>
-
-<div>
-<h2>Notary & Translation</h2>
-<div class="sub">Certified • Fast • All 50 States</div>
-</div>
-
-</div>
-
-<span class="chev">▼</span>
-
-</div>
-
-<div class="file-body">
-
-<ul class="service-list">
-<li>Notary Public - All 50 States</li>
-<li>Mobile Notary - We come to you</li>
-<li>Power of Attorney</li>
-<li>Affidavit & Legal Letters</li>
-<li>Certified Translation</li>
-<li>Travel Consent for Minors</li>
-</ul>
-
-</div>
-
-</div>
-
-
-<div class="file" id="mod2">
-
-<div class="file-tab" onclick="toggleFile('mod2')">
-
-<div class="file-tab-left">
-
-<div class="file-num">02</div>
-
-<div>
-<h2>Taxes & Accounting</h2>
-<div class="sub">Tax Preparation • ITIN • Accounting</div>
-</div>
-
-</div>
-
-<span class="chev">▼</span>
-
-</div>
-
-<div class="file-body">
-
-<ul class="service-list">
-<li>Personal Taxes - Form 1040</li>
-<li>Business Taxes - LLC, S-Corp, C-Corp</li>
-<li>ITIN Application & Renewal - W7</li>
-<li>Bookkeeping & Payroll</li>
-<li>IRS Letter Assistance</li>
-<li>Tax Amendment - 1040X</li>
-</ul>
-
-<a class="myaccess-btn" href="#contact">
-File My Taxes Now
-</a>
-
-</div>
-
-</div>
-
-
-<div class="file" id="mod3">
-
-<div class="file-tab" onclick="toggleFile('mod3')">
-
-<div class="file-tab-left">
-
-<div class="file-num">03</div>
-
-<div>
-<h2>Immigration Services</h2>
-<div class="sub">TPS • Asylum • Family Petition</div>
-</div>
-
-</div>
-
-<span class="chev">▼</span>
-
-</div>
-
-<div class="file-body">
-
-<ul class="service-list">
-<li>TPS Application & Renewal</li>
-<li>Asylum & Work Permit</li>
-<li>Family Petition I-130</li>
-<li>Green Card Assistance</li>
-<li>Citizenship N-400</li>
-<li>USCIS Form Preparation</li>
-</ul>
-
-</div>
-
-</div>
-
+<!-- MODULE 04 -->
 
 <div class="file" id="mod4">
 
-<div class="file-tab" onclick="toggleFile('mod4')">
+<div
+class="file-tab"
+onclick="toggleFile('mod4')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">04</div>
+<div class="file-num">
+04
+</div>
 
 <div>
-<h2>EOIR & BIA</h2>
+
+<h2>
+EOIR & BIA
+</h2>
+
 <div class="sub">
 Immigration Court • Board of Immigration Appeals
 </div>
-</div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>EOIR Case Information</li>
 <li>BIA Case Information</li>
 <li>Court Date Check</li>
 <li>Change of Venue Form Assistance</li>
 <li>Document Organization</li>
 <li>Case Status Assistance</li>
+
 </ul>
 
 </div>
@@ -1102,34 +1269,52 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
+<!-- MODULE 05 -->
+
 <div class="file" id="mod5">
 
-<div class="file-tab" onclick="toggleFile('mod5')">
+<div
+class="file-tab"
+onclick="toggleFile('mod5')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">05</div>
+<div class="file-num">
+05
+</div>
 
 <div>
-<h2>Insurance</h2>
-<div class="sub">Auto • Home • Life • Health</div>
+
+<h2>
+Insurance
+</h2>
+
+<div class="sub">
+Auto • Home • Life • Health
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>Auto Insurance</li>
 <li>Homeowners Insurance</li>
 <li>Renters Insurance</li>
 <li>Life Insurance</li>
 <li>Health Insurance</li>
 <li>Business Insurance</li>
+
 </ul>
 
 </div>
@@ -1137,34 +1322,52 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
+<!-- MODULE 06 -->
+
 <div class="file" id="mod6">
 
-<div class="file-tab" onclick="toggleFile('mod6')">
+<div
+class="file-tab"
+onclick="toggleFile('mod6')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">06</div>
+<div class="file-num">
+06
+</div>
 
 <div>
-<h2>Real Estate</h2>
-<div class="sub">Buy • Sell • Rent</div>
+
+<h2>
+Real Estate
+</h2>
+
+<div class="sub">
+Buy • Sell • Rent
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>First-Time Home Buyer Assistance</li>
 <li>Home Search Assistance</li>
 <li>Rental Assistance</li>
 <li>Property Referral</li>
 <li>Housing Resources</li>
 <li>Mortgage Referral</li>
+
 </ul>
 
 </div>
@@ -1172,34 +1375,52 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
+<!-- MODULE 07 -->
+
 <div class="file" id="mod7">
 
-<div class="file-tab" onclick="toggleFile('mod7')">
+<div
+class="file-tab"
+onclick="toggleFile('mod7')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">07</div>
+<div class="file-num">
+07
+</div>
 
 <div>
-<h2>Business Formation</h2>
-<div class="sub">LLC • Corporation • EIN</div>
+
+<h2>
+Business Formation
+</h2>
+
+<div class="sub">
+LLC • Corporation • EIN
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>LLC Formation</li>
 <li>Corporation Formation</li>
 <li>EIN Assistance</li>
 <li>Business Registration</li>
 <li>Business Plan Assistance</li>
 <li>Administrative Support</li>
+
 </ul>
 
 </div>
@@ -1207,34 +1428,52 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
+<!-- MODULE 08 -->
+
 <div class="file" id="mod8">
 
-<div class="file-tab" onclick="toggleFile('mod8')">
+<div
+class="file-tab"
+onclick="toggleFile('mod8')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">08</div>
+<div class="file-num">
+08
+</div>
 
 <div>
-<h2>Apostille & Legalization</h2>
-<div class="sub">State • Federal • Embassy</div>
+
+<h2>
+Apostille & Legalization
+</h2>
+
+<div class="sub">
+State • Federal • Embassy
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>Document Apostille</li>
 <li>Federal Document Authentication</li>
 <li>Diploma Apostille</li>
 <li>Power of Attorney</li>
 <li>Document Legalization</li>
 <li>Embassy Requirements Assistance</li>
+
 </ul>
 
 </div>
@@ -1242,34 +1481,52 @@ Immigration Court • Board of Immigration Appeals
 </div>
 
 
+<!-- MODULE 09 -->
+
 <div class="file" id="mod9">
 
-<div class="file-tab" onclick="toggleFile('mod9')">
+<div
+class="file-tab"
+onclick="toggleFile('mod9')"
+>
 
 <div class="file-tab-left">
 
-<div class="file-num">09</div>
+<div class="file-num">
+09
+</div>
 
 <div>
-<h2>Travel & DMV Services</h2>
-<div class="sub">Passport • Travel • DMV</div>
+
+<h2>
+Travel & DMV Services
+</h2>
+
+<div class="sub">
+Passport • Travel • DMV
 </div>
 
 </div>
 
-<span class="chev">▼</span>
+</div>
+
+<span class="chev">
+▼
+</span>
 
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
+
 <li>Plane Ticket Assistance</li>
 <li>Passport Assistance</li>
 <li>Passport Renewal Assistance</li>
 <li>DMV Information</li>
 <li>Vehicle Registration Assistance</li>
 <li>Travel Resources</li>
+
 </ul>
 
 </div>
@@ -1291,7 +1548,9 @@ Immigration Court • Board of Immigration Appeals
 🤖 MAXIMAX AI CENTER
 </span>
 
-<h2>Maximax AI Assistant Center</h2>
+<h2>
+Maximax AI Assistant Center
+</h2>
 
 <p>
 Smart digital tools designed to help organize forms,
@@ -1299,43 +1558,87 @@ track information, translate documents and answer
 general service questions 24/7.
 </p>
 
+
 <div class="ai-features">
 
 <div class="ai-feat" id="form-helper">
-<b>📋 FORM HELPER</b>
-<span>Digital form organization and assistance</span>
+
+<b>
+📋 FORM HELPER
+</b>
+
+<span>
+Digital form organization and assistance
+</span>
+
 </div>
+
 
 <div class="ai-feat" id="career-tracker">
-<b>📈 CAREER TRACKER</b>
-<span>Career organization, applications and progress tools</span>
+
+<b>
+📈 CAREER TRACKER
+</b>
+
+<span>
+Career organization, applications and progress tools
+</span>
+
 </div>
+
 
 <div class="ai-feat" id="translation-ai">
-<b>🌐 TRADIKSYON AI</b>
-<span>Kreyòl • English • Français • Español</span>
+
+<b>
+🌐 TRADIKSYON AI
+</b>
+
+<span>
+Kreyòl • English • Français • Español
+</span>
+
 </div>
+
 
 <div class="ai-feat" id="chat247">
-<b>💬 CHAT 24/7</b>
-<span>Digital assistance anytime</span>
-</div>
+
+<b>
+💬 CHAT 24/7
+</b>
+
+<span>
+Digital assistance anytime
+</span>
 
 </div>
 
-<a class="myaccess-btn" id="try-ai" href="#ai-chat">
+</div>
+
+
+<a
+class="myaccess-btn"
+id="try-ai"
+href="#ai-chat"
+>
 Try AI Center
 </a>
 
 </div>
 
+
 <div id="ai-chat" class="contact-card">
 
-<div class="label">AI CHAT PREVIEW</div>
+<div class="label">
+AI CHAT PREVIEW
+</div>
 
-<p>👤 How can Maximax help me?</p>
+<p>
+👤 How can Maximax help me?
+</p>
 
-<p>🤖 Choose a service or ask a general question.</p>
+<p>
+🤖 Choose a service or ask a general question.
+</p>
 
 <div style="display:flex;gap:8px">
 
@@ -1381,101 +1684,205 @@ SEND
 
 <div class="band-inner">
 
-<h2>Contact - 9 Rezo Sosyal</h2>
+<h2>
+Contact - 9 Rezo Sosyal
+</h2>
+
 
 <div class="contact-grid">
 
 <div class="contact-card">
 
-<div class="label">Telephone</div>
+<div class="label">
+Telephone
+</div>
 
 <div class="value">
-<a href="tel:+14076405166">(407) 640-5166</a>
+
+<a href="tel:+14076405166">
+(407) 640-5166
+</a>
+
 <br>
-<a href="tel:+15162168494">(516) 216-8494</a>
+
+<a href="tel:+15162168494">
+(516) 216-8494
+</a>
+
 <br>
-<a href="tel:+13175381150">(317) 538-1150</a>
+
+<a href="tel:+13175381150">
+(317) 538-1150
+</a>
+
 <br>
-<a href="tel:+50943437488">+509 43 43 7488</a>
+
+<a href="tel:+50943437488">
++509 43 43 7488
+</a>
+
 </div>
 
 </div>
+
 
 <div class="contact-card">
 
-<div class="label">Email</div>
+<div class="label">
+Email
+</div>
 
 <div class="value">
+
 <a href="mailto:maximaxmultiservices@gmail.com">
 maximaxmultiservices@gmail.com
 </a>
+
 </div>
 
 </div>
+
 
 <div class="contact-card">
 
-<div class="label">Service Areas</div>
+<div class="label">
+Service Areas
+</div>
 
 <div class="value">
+
 Pine Hills Orlando FL
+
 <br>
+
 Indianapolis IN
+
 <br>
+
 Hempstead NY 11550
-</div>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- SOCIAL NETWORKS -->
 
 <div class="social-row">
 
-<a class="social-pill" href="https://wa.me/50943437488" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-whatsapp"></i></span>
+<a
+class="social-pill"
+href="https://wa.me/50943437488"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-whatsapp"></i>
+</span>
 WhatsApp
 </a>
 
-<a class="social-pill" href="https://www.facebook.com/share/1By3KvYRrM/" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+
+<a
+class="social-pill"
+href="https://www.facebook.com/share/1By3KvYRrM/"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-facebook-f"></i>
+</span>
 Facebook
 </a>
 
-<a class="social-pill" href="https://www.instagram.com/lebaron072/" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-instagram"></i></span>
+
+<a
+class="social-pill"
+href="https://www.instagram.com/lebaron072/"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-instagram"></i>
+</span>
 Instagram
 </a>
 
-<a class="social-pill" href="https://www.tiktok.com/@maximax1960" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-tiktok"></i></span>
+
+<a
+class="social-pill"
+href="https://www.tiktok.com/@maximax1960"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-tiktok"></i>
+</span>
 TikTok
 </a>
 
-<a class="social-pill" href="https://x.com/w05g2m" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-x-twitter"></i></span>
+
+<a
+class="social-pill"
+href="https://x.com/w05g2m"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-x-twitter"></i>
+</span>
 X / Twitter
 </a>
 
-<a class="social-pill" href="https://www.youtube.com/@BSS1815PROMAXDMP" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-youtube"></i></span>
+
+<a
+class="social-pill"
+href="https://www.youtube.com/@BSS1815PROMAXDMP"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-youtube"></i>
+</span>
 YouTube
 </a>
 
-<a class="social-pill" href="https://www.linkedin.com/in/maximax-multi-services-075ba2314" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-linkedin-in"></i></span>
+
+<a
+class="social-pill"
+href="https://www.linkedin.com/in/maximax-multi-services-075ba2314"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-linkedin-in"></i>
+</span>
 LinkedIn
 </a>
 
-<a class="social-pill" href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici" target="_blank" rel="noopener noreferrer">
-<span class="social-icon"><i class="fab fa-spotify"></i></span>
+
+<a
+class="social-pill"
+href="https://open.spotify.com/user/31tjmtdar45qgcpjpiwps5rqrici"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+<i class="fab fa-spotify"></i>
+</span>
 Spotify
 </a>
 
-<a class="social-pill" href="https://truthsocial.com/@briyant_soley_1815" target="_blank" rel="noopener noreferrer">
-<span class="social-icon">T</span>
+
+<a
+class="social-pill"
+href="https://truthsocial.com/@briyant_soley_1815"
+target="_blank"
+rel="noopener noreferrer"
+>
+<span class="social-icon">
+T
+</span>
 Truth Social
 </a>
 
@@ -1515,7 +1922,7 @@ Truth Social
 
 <script>
 
-/* SHOW ONLY THE SELECTED SERVICE MODULE */
+/* SHOW ONLY ONE INLINE MODULE */
 
 function showOnlyFile(id){
 
@@ -1541,7 +1948,7 @@ selected
 }
 
 
-/* OPEN OR CLOSE THE SELECTED MODULE */
+/* OPEN OR CLOSE INLINE MODULE */
 
 function toggleFile(id){
 
@@ -1555,7 +1962,7 @@ file.classList.toggle("open");
 }
 
 
-/* KEEP ALL SERVICE MODULES HIDDEN WHEN PAGE LOADS */
+/* KEEP INLINE MODULES HIDDEN ON PAGE LOAD */
 
 document
 .querySelectorAll(".file")
@@ -1569,7 +1976,7 @@ file.classList.remove(
 });
 
 
-/* SERVICE LOGOS AND CATEGORY LINKS */
+/* ONLY BUTTONS 04–09 USE INLINE MODULES */
 
 document
 .querySelectorAll(
@@ -1702,15 +2109,16 @@ description:"Servicios profesionales • Asistencia administrativa • Inteligen
 
 /* APPLY SELECTED LANGUAGE */
 
-function setLanguage(lang){
+function setLanguage(language){
 
-const translation =
-translations[lang] || translations.eng;
+const text =
+translations[language] ||
+translations.eng;
 
 document.documentElement.lang =
-lang === "kre"
+language === "kre"
 ? "ht"
-: lang === "esp"
+: language === "esp"
 ? "es"
 : "en";
 
@@ -1719,33 +2127,33 @@ document
 .forEach(function(link){
 
 link.textContent =
-translation[link.dataset.nav];
+text[link.dataset.nav];
 
 });
 
 document.querySelector(".eyebrow").textContent =
-translation.eyebrow;
+text.eyebrow;
 
 document.querySelector(".hero h1").innerHTML =
-translation.title;
+text.title;
 
 document.querySelector(".lede").textContent =
-translation.lede;
+text.lede;
 
 document.querySelector(".creole").textContent =
-translation.creole;
+text.creole;
 
 document.querySelector(".btn-primary").textContent =
-translation.book;
+text.book;
 
 document.querySelector(".btn-ghost").textContent =
-translation.explore;
+text.explore;
 
 document.querySelector(".module-heading h2").textContent =
-translation.official;
+text.official;
 
 document.querySelector(".module-heading p").textContent =
-translation.description;
+text.description;
 
 document
 .querySelectorAll(".lang-btn")
@@ -1753,14 +2161,14 @@ document
 
 button.classList.toggle(
 "active",
-button.dataset.lang === lang
+button.dataset.lang === language
 );
 
 });
 
 localStorage.setItem(
 "maximaxLanguage",
-lang
+language
 );
 
 }
@@ -1789,7 +2197,8 @@ this.dataset.lang
 /* RESTORE SAVED LANGUAGE */
 
 setLanguage(
-localStorage.getItem("maximaxLanguage") || "eng"
+localStorage.getItem("maximaxLanguage") ||
+"eng"
 );
 
 </script>
