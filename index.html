@@ -1,4 +1,4 @@
-Worked for 1m 25s
+Worked for 22s
 
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
@@ -286,7 +286,7 @@ width:100%;
 border-radius:12px
 }
 
-/* MODULE BUTTONS */
+/* 15 BUTTONS */
 
 .module-logo-section{
 max-width:1180px;
@@ -365,7 +365,7 @@ font:10px 'IBM Plex Mono',monospace;
 color:var(--light)
 }
 
-/* SERVICE MODULES */
+/* MODULES */
 
 main{
 max-width:1180px;
@@ -467,8 +467,7 @@ font-weight:700
 display:inline-flex;
 align-items:center;
 gap:6px;
-color:var(--text);
-transition:.2s
+color:var(--text)
 }
 
 .service-list a::after{
@@ -477,14 +476,13 @@ font-size:11px;
 color:var(--light)
 }
 
-.service-list a:hover,
-.service-list a:focus-visible{
+.service-list a:hover{
 color:var(--light);
 text-decoration:underline;
 text-underline-offset:3px
 }
 
-/* FORMS */
+/* FORM */
 
 .module-form{
 margin-top:30px;
@@ -495,9 +493,9 @@ background:rgba(0,0,0,.65)
 }
 
 .module-form h3{
-margin:0 0 8px;
 color:var(--light);
-font-size:1.6rem
+font-size:1.6rem;
+margin-bottom:8px
 }
 
 .module-form-note{
@@ -530,7 +528,6 @@ color:var(--light)
 .module-field input,
 .module-field select,
 .module-field textarea{
-display:block;
 width:100%;
 min-height:48px;
 padding:11px 12px;
@@ -552,11 +549,6 @@ resize:vertical
 .module-field textarea:focus{
 border-color:var(--light);
 box-shadow:0 0 0 2px rgba(255,106,0,.22)
-}
-
-.module-field select option{
-background:#050505;
-color:var(--text)
 }
 
 .module-field input[type="file"]::file-selector-button{
@@ -587,7 +579,7 @@ opacity:.8;
 margin:14px 0 0
 }
 
-/* AI CENTER */
+/* AI */
 
 .ai-center{
 padding:60px 24px;
@@ -623,8 +615,7 @@ gap:12px;
 margin-top:20px
 }
 
-.ai-feat,
-.contact-card{
+.ai-feat,.contact-card{
 border:1px solid var(--line);
 border-radius:8px;
 padding:15px;
@@ -632,13 +623,7 @@ background:rgba(0,0,0,.5)
 }
 
 .ai-feat{
-cursor:pointer;
-transition:.2s
-}
-
-.ai-feat:hover{
-transform:translateY(-3px);
-border-color:var(--light)
+cursor:pointer
 }
 
 .ai-feat b{
@@ -696,8 +681,7 @@ color:#000;
 border:0;
 border-radius:6px;
 padding:10px 16px;
-font-weight:700;
-cursor:pointer
+font-weight:700
 }
 
 /* CONTACT */
@@ -711,8 +695,7 @@ max-width:1180px;
 margin:auto
 }
 
-.contact-grid,
-.social-row{
+.contact-grid,.social-row{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:14px;
@@ -814,7 +797,7 @@ MAXIMAX
 </nav>
 
 <div class="header-actions">
-<div class="language-toggle" aria-label="Language selector">
+<div class="language-toggle">
 <button class="lang-btn" type="button" data-lang="kre">KRE</button>
 <button class="lang-btn active" type="button" data-lang="eng">ENG</button>
 <button class="lang-btn" type="button" data-lang="esp">ESP</button>
@@ -874,7 +857,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="module-heading">
 <small>MAXIMAX MULTI SERVICES</small>
 <h2>15 OFFICIAL MODULES</h2>
-<p>Services professionnels • Assistance administrative • Intelligence artificielle • Support digital</p>
+<p>Professional services • Administrative assistance • Artificial intelligence • Digital support</p>
 </div>
 
 <div class="module-seals-grid">
@@ -922,10 +905,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="file-tab" onclick="toggleFile('mod1')">
 <div class="file-tab-left">
 <div class="file-num">01</div>
-<div>
-<h2>Notary & Translation</h2>
-<div class="sub">Certified • Fast • All 50 States</div>
-</div>
+<div><h2>Notary & Translation</h2><div class="sub">Certified • Fast • All 50 States</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -946,10 +926,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="file-tab" onclick="toggleFile('mod2')">
 <div class="file-tab-left">
 <div class="file-num">02</div>
-<div>
-<h2>Taxes & Accounting</h2>
-<div class="sub">Tax Preparation • ITIN • Accounting</div>
-</div>
+<div><h2>Taxes & Accounting</h2><div class="sub">Tax Preparation • ITIN • Accounting</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -970,10 +947,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="file-tab" onclick="toggleFile('mod3')">
 <div class="file-tab-left">
 <div class="file-num">03</div>
-<div>
-<h2>Immigration Services</h2>
-<div class="sub">TPS • Asylum • Family Petition</div>
-</div>
+<div><h2>Immigration Services</h2><div class="sub">TPS • Asylum • Family Petition</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -996,10 +970,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="file-tab" onclick="toggleFile('mod4')">
 <div class="file-tab-left">
 <div class="file-num">04</div>
-<div>
-<h2>EOIR & BIA</h2>
-<div class="sub">Immigration Court • Board of Immigration Appeals</div>
-</div>
+<div><h2>EOIR & BIA</h2><div class="sub">Immigration Court • Board of Immigration Appeals</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -1009,9 +980,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <li><a href="https://www.justice.gov/eoir/eoir-case-information" target="_blank" rel="noopener noreferrer">EOIR Case Information</a></li>
 <li><a href="https://www.justice.gov/eoir/contact-bia-icor" target="_blank" rel="noopener noreferrer">BIA Case Information</a></li>
 <li><a href="https://acis.eoir.justice.gov/" target="_blank" rel="noopener noreferrer">Court Date & Hearing Check</a></li>
-<li><a href="https://www.justice.gov/eoir/learn-about-immigration-court" target="_blank" rel="noopener noreferrer">Change of Venue Information</a></li>
-<li><a href="https://respondentaccess.eoir.justice.gov/en/" target="_blank" rel="noopener noreferrer">File & Organize Case Documents</a></li>
+<li><a href="https://respondentaccess.eoir.justice.gov/en/" target="_blank" rel="noopener noreferrer">File & Organize Documents</a></li>
 <li><a href="https://www.justice.gov/eoir/check-case-status" target="_blank" rel="noopener noreferrer">Check EOIR/BIA Case Status</a></li>
+<li><a href="https://www.justice.gov/eoir/find-immigration-court-and-access-internet-based-hearings" target="_blank" rel="noopener noreferrer">Find Immigration Court</a></li>
 </ul>
 </div>
 </div>
@@ -1020,10 +991,7 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <div class="file-tab" onclick="toggleFile('mod5')">
 <div class="file-tab-left">
 <div class="file-num">05</div>
-<div>
-<h2>Insurance</h2>
-<div class="sub">Auto • Home • Life • Health</div>
-</div>
+<div><h2>Insurance</h2><div class="sub">Auto • Home • Life • Health</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -1040,42 +1008,66 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 </div>
 </div>
 
-<!-- NO. 06 — REAL ESTATE COMPLETE -->
-
 <div class="file" id="mod6">
 <div class="file-tab" onclick="toggleFile('mod6')">
 <div class="file-tab-left">
 <div class="file-num">06</div>
+<div><h2>Real Estate</h2><div class="sub">Buy • Sell • Rent</div></div>
+</div>
+<span class="chev">▼</span>
+</div>
+
+<div class="file-body">
+<ul class="service-list">
+<li><a href="https://www.hud.gov/helping-americans/buying-a-home" target="_blank" rel="noopener noreferrer">First-Time Home Buyer Assistance</a></li>
+<li><a href="https://www.hud.gov/fha/" target="_blank" rel="noopener noreferrer">Home Search & HUD Properties</a></li>
+<li><a href="https://www.usa.gov/emergency-pay-rent" target="_blank" rel="noopener noreferrer">Rental Assistance</a></li>
+<li><a href="https://www.usa.gov/subsidized-rental-housing" target="_blank" rel="noopener noreferrer">Affordable Housing Search</a></li>
+<li><a href="https://www.usa.gov/public-housing" target="_blank" rel="noopener noreferrer">Public Housing Resources</a></li>
+<li><a href="https://www.hud.gov/hud-partners/single-family-lender-list" target="_blank" rel="noopener noreferrer">FHA Mortgage Lender Search</a></li>
+<li><a href="https://www.usa.gov/government-home-loans" target="_blank" rel="noopener noreferrer">Government-Backed Home Loans</a></li>
+</ul>
+</div>
+</div>
+
+<!-- NO. 07 — BUSINESS FORMATION COMPLETE -->
+
+<div class="file" id="mod7">
+<div class="file-tab" onclick="toggleFile('mod7')">
+<div class="file-tab-left">
+<div class="file-num">07</div>
+
 <div>
-<h2>Real Estate</h2>
-<div class="sub">Buy • Sell • Rent</div>
+<h2>Business Formation</h2>
+<div class="sub">LLC • Corporation • EIN</div>
 </div>
 </div>
+
 <span class="chev">▼</span>
 </div>
 
 <div class="file-body">
 
 <ul class="service-list">
-<li><a href="https://www.hud.gov/helping-americans/buying-a-home" target="_blank" rel="noopener noreferrer">First-Time Home Buyer Assistance</a></li>
-<li><a href="https://www.hud.gov/fha/" target="_blank" rel="noopener noreferrer">Home Search & HUD Properties</a></li>
-<li><a href="https://www.usa.gov/emergency-pay-rent" target="_blank" rel="noopener noreferrer">Rental Assistance</a></li>
-<li><a href="https://www.usa.gov/subsidized-rental-housing" target="_blank" rel="noopener noreferrer">Affordable Property & Housing Search</a></li>
-<li><a href="https://www.usa.gov/public-housing" target="_blank" rel="noopener noreferrer">Public Housing Resources</a></li>
-<li><a href="https://www.hud.gov/hud-partners/single-family-lender-list" target="_blank" rel="noopener noreferrer">FHA Mortgage Lender Search</a></li>
-<li><a href="https://www.usa.gov/government-home-loans" target="_blank" rel="noopener noreferrer">Government-Backed Home Loans</a></li>
+<li><a href="https://dos.fl.gov/sunbiz/start-business/efile/fl-llc/" target="_blank" rel="noopener noreferrer">Florida LLC Formation</a></li>
+<li><a href="https://dos.fl.gov/sunbiz/start-business/efile/fl-profit-corporation/" target="_blank" rel="noopener noreferrer">Florida Corporation Formation</a></li>
+<li><a href="https://www.irs.gov/businesses/employer-identification-number" target="_blank" rel="noopener noreferrer">IRS EIN Application</a></li>
+<li><a href="https://dos.fl.gov/sunbiz/start-business/" target="_blank" rel="noopener noreferrer">Florida Business Registration</a></li>
+<li><a href="https://www.sba.gov/business-guide/plan-your-business/write-your-business-plan" target="_blank" rel="noopener noreferrer">SBA Business Plan Guide</a></li>
+<li><a href="https://www.sba.gov/local-assistance" target="_blank" rel="noopener noreferrer">SBA Local Business Assistance</a></li>
+<li><a href="https://www.irs.gov/businesses/small-businesses-self-employed" target="_blank" rel="noopener noreferrer">IRS Small Business Resources</a></li>
 </ul>
 
 <form
 class="module-form"
-name="real-estate-request"
+name="business-formation-request"
 method="POST"
 data-netlify="true"
 netlify-honeypot="bot-field"
 enctype="multipart/form-data"
 >
 
-<input type="hidden" name="form-name" value="real-estate-request">
+<input type="hidden" name="form-name" value="business-formation-request">
 
 <p hidden>
 <label>
@@ -1084,11 +1076,12 @@ Do not fill:
 </label>
 </p>
 
-<h3>Request Real Estate Assistance</h3>
+<h3>Request Business Formation Assistance</h3>
 
 <p class="module-form-note">
-Tell Maximax what type of property assistance you need.
-We will contact you to review your request and next steps.
+Complete this form to request assistance with an LLC,
+corporation, EIN, business registration or business planning.
+Maximax will contact you before beginning any service.
 </p>
 
 <div class="module-form-grid">
@@ -1112,59 +1105,61 @@ We will contact you to review your request and next steps.
 <label>SERVICE NEEDED *</label>
 <select name="service" required>
 <option value="">Choose a service</option>
-<option>First-Time Home Buyer Assistance</option>
-<option>Buy a Home</option>
-<option>Sell a Property</option>
-<option>Rental Assistance</option>
-<option>Affordable Housing Search</option>
-<option>Public Housing Resources</option>
-<option>FHA Mortgage Lender Search</option>
-<option>Government-Backed Home Loan</option>
+<option>LLC Formation</option>
+<option>Corporation Formation</option>
+<option>EIN Application</option>
+<option>Business Registration</option>
+<option>Business Plan Assistance</option>
+<option>Administrative Support</option>
 </select>
 </div>
 
 <div class="module-field">
-<label>PREFERRED LOCATION *</label>
-<input name="preferred-location" type="text" placeholder="City and state" required>
+<label>BUSINESS NAME</label>
+<input name="business-name" type="text">
 </div>
 
 <div class="module-field">
-<label>PROPERTY TYPE</label>
-<select name="property-type">
-<option>Single-Family Home</option>
-<option>Apartment</option>
-<option>Condo</option>
-<option>Townhouse</option>
-<option>Multi-Family Property</option>
-<option>Commercial Property</option>
-<option>Land</option>
+<label>STATE OF REGISTRATION *</label>
+<input name="registration-state" type="text" required>
+</div>
+
+<div class="module-field">
+<label>BUSINESS TYPE</label>
+<select name="business-type">
+<option value="">Choose business type</option>
+<option>LLC</option>
+<option>Sole Proprietorship</option>
+<option>Partnership</option>
+<option>S Corporation</option>
+<option>C Corporation</option>
+<option>Nonprofit Corporation</option>
+<option>Not Sure</option>
 </select>
 </div>
 
 <div class="module-field">
-<label>ESTIMATED BUDGET</label>
-<input name="budget" type="text" placeholder="$">
+<label>NUMBER OF OWNERS</label>
+<input name="number-of-owners" type="number" min="1">
 </div>
 
 <div class="module-field">
-<label>DESIRED MOVE DATE</label>
-<input name="move-date" type="date">
-</div>
-
-<div class="module-field">
-<label>BEDROOMS</label>
-<select name="bedrooms">
-<option>Studio</option>
-<option>1 Bedroom</option>
-<option>2 Bedrooms</option>
-<option>3 Bedrooms</option>
-<option>4+ Bedrooms</option>
-</select>
+<label>DESIRED START DATE</label>
+<input name="start-date" type="date">
 </div>
 
 <div class="module-field">
 <label>UPLOAD DOCUMENT</label>
-<input name="real-estate-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
+<input name="business-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
+</div>
+
+<div class="module-field full">
+<label>BUSINESS ACTIVITY *</label>
+<textarea
+name="business-activity"
+placeholder="Describe the products or services the business will provide."
+required
+></textarea>
 </div>
 
 <div class="module-field full">
@@ -1174,42 +1169,19 @@ We will contact you to review your request and next steps.
 
 <div class="module-field full">
 <button class="module-submit" type="submit">
-SUBMIT REAL ESTATE REQUEST
+SUBMIT BUSINESS FORMATION REQUEST
 </button>
 </div>
 
 </div>
 
 <p class="privacy-note">
-Do not enter bank-account numbers, Social Security numbers or passwords.
-Property availability, financing and approval are not guaranteed.
+Do not enter Social Security numbers, bank-account information,
+credit-card numbers or passwords in this form.
+Government filing fees are separate from Maximax service fees.
 </p>
 
 </form>
-</div>
-</div>
-
-<div class="file" id="mod7">
-<div class="file-tab" onclick="toggleFile('mod7')">
-<div class="file-tab-left">
-<div class="file-num">07</div>
-<div>
-<h2>Business Formation</h2>
-<div class="sub">LLC • Corporation • EIN</div>
-</div>
-</div>
-<span class="chev">▼</span>
-</div>
-
-<div class="file-body">
-<ul class="service-list">
-<li>LLC Formation</li>
-<li>Corporation Formation</li>
-<li>EIN Assistance</li>
-<li>Business Registration</li>
-<li>Business Plan Assistance</li>
-<li>Administrative Support</li>
-</ul>
 </div>
 </div>
 
@@ -1217,10 +1189,7 @@ Property availability, financing and approval are not guaranteed.
 <div class="file-tab" onclick="toggleFile('mod8')">
 <div class="file-tab-left">
 <div class="file-num">08</div>
-<div>
-<h2>Apostille & Legalization</h2>
-<div class="sub">State • Federal • Embassy</div>
-</div>
+<div><h2>Apostille & Legalization</h2><div class="sub">State • Federal • Embassy</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -1241,10 +1210,7 @@ Property availability, financing and approval are not guaranteed.
 <div class="file-tab" onclick="toggleFile('mod9')">
 <div class="file-tab-left">
 <div class="file-num">09</div>
-<div>
-<h2>Travel & DMV Services</h2>
-<div class="sub">Passport • Travel • DMV</div>
-</div>
+<div><h2>Travel & DMV Services</h2><div class="sub">Passport • Travel • DMV</div></div>
 </div>
 <span class="chev">▼</span>
 </div>
@@ -1268,7 +1234,6 @@ Property availability, financing and approval are not guaranteed.
 
 <div>
 <span class="ai-badge">🤖 MAXIMAX AI CENTER</span>
-
 <h2>Maximax AI Assistant Center</h2>
 
 <p>
@@ -1305,7 +1270,7 @@ general service questions 24/7.
 <div id="ai-chat" class="contact-card">
 <div class="label">MAXIMAX AI CHAT</div>
 
-<div id="aiMessages" aria-live="polite">
+<div id="aiMessages">
 <div class="ai-message bot">
 🤖 Welcome to Maximax AI Center. Ask about Notary, Taxes,
 Immigration, EOIR & BIA, Insurance, Real Estate,
@@ -1328,7 +1293,6 @@ Business Formation, Apostille or Travel & DMV.
 <h2>Contact - 9 Rezo Sosyal</h2>
 
 <div class="contact-grid">
-
 <div class="contact-card">
 <div class="label">Telephone</div>
 <div class="value">
@@ -1356,7 +1320,6 @@ Indianapolis IN<br>
 Hempstead NY 11550
 </div>
 </div>
-
 </div>
 
 <div class="social-row">
@@ -1405,6 +1368,7 @@ file.classList.toggle("open",selected);
 
 function toggleFile(id){
 const file=document.getElementById(id);
+
 if(file){
 file.classList.toggle("open");
 }
@@ -1426,6 +1390,7 @@ const file=document.getElementById(id);
 
 if(file){
 showOnlyFile(id);
+
 file.scrollIntoView({
 behavior:"smooth",
 block:"start"
@@ -1500,29 +1465,26 @@ description:"Servicios profesionales • Asistencia administrativa • Inteligen
 };
 
 function setLanguage(lang){
-const translation=translations[lang]||translations.eng;
+const t=translations[lang]||translations.eng;
 
 document.documentElement.lang=
 lang==="kre"?"ht":lang==="esp"?"es":"en";
 
 document.querySelectorAll("[data-nav]").forEach(function(link){
-link.textContent=translation[link.dataset.nav];
+link.textContent=t[link.dataset.nav];
 });
 
-document.querySelector(".eyebrow").textContent=translation.eyebrow;
-document.querySelector(".hero h1").innerHTML=translation.title;
-document.querySelector(".lede").textContent=translation.lede;
-document.querySelector(".creole").textContent=translation.creole;
-document.querySelector(".btn-primary").textContent=translation.book;
-document.querySelector(".btn-ghost").textContent=translation.explore;
-document.querySelector(".module-heading h2").textContent=translation.official;
-document.querySelector(".module-heading p").textContent=translation.description;
+document.querySelector(".eyebrow").textContent=t.eyebrow;
+document.querySelector(".hero h1").innerHTML=t.title;
+document.querySelector(".lede").textContent=t.lede;
+document.querySelector(".creole").textContent=t.creole;
+document.querySelector(".btn-primary").textContent=t.book;
+document.querySelector(".btn-ghost").textContent=t.explore;
+document.querySelector(".module-heading h2").textContent=t.official;
+document.querySelector(".module-heading p").textContent=t.description;
 
 document.querySelectorAll(".lang-btn").forEach(function(button){
-button.classList.toggle(
-"active",
-button.dataset.lang===lang
-);
+button.classList.toggle("active",button.dataset.lang===lang);
 });
 
 localStorage.setItem("maximaxLanguage",lang);
@@ -1534,9 +1496,7 @@ setLanguage(this.dataset.lang);
 });
 });
 
-setLanguage(
-localStorage.getItem("maximaxLanguage")||"eng"
-);
+setLanguage(localStorage.getItem("maximaxLanguage")||"eng");
 
 const aiInput=document.getElementById("aiInput");
 const aiSend=document.getElementById("aiSend");
@@ -1561,10 +1521,10 @@ if(q.includes("insurance")||q.includes("asirans"))
 return "For Insurance, select button 05.";
 
 if(q.includes("real estate")||q.includes("house")||q.includes("home")||q.includes("rent")||q.includes("imobilye"))
-return "For Real Estate, select button 06. You can access homebuyer, rental, public housing, HUD property and mortgage resources.";
+return "For Real Estate, select button 06.";
 
-if(q.includes("business")||q.includes("llc")||q.includes("ein"))
-return "Business Formation is button 07.";
+if(q.includes("business")||q.includes("llc")||q.includes("ein")||q.includes("corporation"))
+return "Business Formation is button 07. You can request LLC formation, corporation formation, EIN assistance, business registration or business plan assistance.";
 
 if(q.includes("apostille")||q.includes("legalization"))
 return "Apostille and Legalization is button 08.";
