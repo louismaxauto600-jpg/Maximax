@@ -1,4 +1,4 @@
-Worked for 22s
+Worked for 49s
 
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
@@ -14,739 +14,141 @@ Worked for 22s
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-:root{
---black:#000;
---orange:#ff6a00;
---light:#ffa347;
---text:#ffc98a;
---line:rgba(255,163,71,.35);
---panel:rgba(0,0,0,.82)
-}
-
+:root{--black:#000;--orange:#ff6a00;--light:#ffa347;--text:#ffc98a;--line:rgba(255,163,71,.35);--panel:rgba(0,0,0,.82)}
 *{box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
-min-height:100%;
-background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);
-background-attachment:fixed
-}
-
-body{
-margin:0;
-min-height:100vh;
-background:transparent;
-color:var(--text);
-font-family:'Public Sans',sans-serif
-}
-
-h1,h2,h3{
-font-family:'Fraunces',serif;
-margin:0
-}
-
-a{
-color:inherit;
-text-decoration:none
-}
-
-img,video{
-max-width:100%;
-display:block
-}
-
-button,input,select,textarea{
-font:inherit
-}
+html{scroll-behavior:smooth;min-height:100%;background:linear-gradient(150deg,#000 0%,#000 14%,#7a2e00 46%,#ff6a00 68%,#000 100%);background-attachment:fixed}
+body{margin:0;min-height:100vh;background:transparent;color:var(--text);font-family:'Public Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;margin:0}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+button,input,select,textarea{font:inherit}
 
 /* HEADER */
 
-header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(0,0,0,.96);
-border-bottom:1px solid var(--line)
-}
-
-.nav-wrap{
-max-width:1180px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:12px 24px;
-gap:16px
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px
-}
-
-.logo-mark{
-width:54px;
-height:54px;
-border-radius:50%;
-overflow:hidden;
-border:2px solid var(--light);
-background:#000;
-flex:none
-}
-
-.logo-mark video{
-width:100%;
-height:100%;
-object-fit:cover
-}
-
-.brand-name{
-font-family:'Fraunces',serif;
-font-size:20px;
-font-weight:700
-}
-
-.brand-name span{
-display:block;
-font:9px 'IBM Plex Mono',monospace;
-letter-spacing:.2em;
-color:var(--light);
-margin-top:3px
-}
-
-.desktop-nav{
-display:flex;
-gap:15px;
-font-size:12px
-}
-
-.desktop-nav a:hover{
-color:var(--light)
-}
-
-.header-actions{
-display:flex;
-align-items:center;
-gap:10px
-}
-
-.language-toggle{
-display:flex;
-border:1px solid var(--line);
-border-radius:7px;
-overflow:hidden;
-background:#000
-}
-
-.lang-btn{
-border:0;
-border-right:1px solid var(--line);
-background:#000;
-color:var(--light);
-padding:9px 8px;
-font:600 9px 'IBM Plex Mono',monospace;
-cursor:pointer
-}
-
-.lang-btn:last-child{
-border-right:0
-}
-
-.lang-btn.active{
-background:var(--orange);
-color:#000
-}
-
-.menu-btn{
-display:none;
-width:42px;
-height:42px;
-border:1px solid var(--line);
-background:#000;
-color:var(--light);
-border-radius:7px;
-font-size:20px;
-cursor:pointer
-}
-
-.mobile-nav{
-display:none;
-flex-direction:column;
-padding:0 20px 18px
-}
-
-.mobile-nav a{
-padding:11px 4px;
-border-bottom:1px solid var(--line)
-}
-
-.mobile-nav.open{
-display:flex
-}
+header{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.96);border-bottom:1px solid var(--line)}
+.nav-wrap{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-mark{width:54px;height:54px;border-radius:50%;overflow:hidden;border:2px solid var(--light);background:#000;flex:none}
+.logo-mark video{width:100%;height:100%;object-fit:cover}
+.brand-name{font-family:'Fraunces',serif;font-size:20px;font-weight:700}
+.brand-name span{display:block;font:9px 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--light);margin-top:3px}
+.desktop-nav{display:flex;gap:15px;font-size:12px}
+.desktop-nav a:hover{color:var(--light)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.language-toggle{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:#000}
+.lang-btn{border:0;border-right:1px solid var(--line);background:#000;color:var(--light);padding:9px 8px;font:600 9px 'IBM Plex Mono',monospace;cursor:pointer}
+.lang-btn:last-child{border-right:0}
+.lang-btn.active{background:var(--orange);color:#000}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line);background:#000;color:var(--light);border-radius:7px;font-size:20px;cursor:pointer}
+.mobile-nav{display:none;flex-direction:column;padding:0 20px 18px}
+.mobile-nav a{padding:11px 4px;border-bottom:1px solid var(--line)}
+.mobile-nav.open{display:flex}
 
 /* HERO */
 
-.hero{
-max-width:1180px;
-margin:auto;
-padding:70px 24px 55px;
-display:grid;
-grid-template-columns:1fr auto;
-align-items:center;
-gap:45px
-}
-
-.eyebrow{
-font:10px 'IBM Plex Mono',monospace;
-letter-spacing:.2em;
-color:var(--light);
-text-transform:uppercase
-}
-
-.hero h1{
-font-size:clamp(2.2rem,5vw,4rem);
-line-height:1.06;
-margin-top:18px
-}
-
-.hero h1 em{
-color:var(--light)
-}
-
-.lede{
-max-width:650px;
-font-size:16px;
-line-height:1.7
-}
-
-.creole{
-color:var(--light);
-font-style:italic
-}
-
-.hero-cta{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:26px
-}
-
-.btn{
-padding:13px 20px;
-font:11px 'IBM Plex Mono',monospace;
-letter-spacing:.08em;
-border-radius:4px
-}
-
-.btn-primary{
-background:var(--orange);
-color:#000
-}
-
-.btn-ghost{
-border:1px solid var(--line)
-}
-
-.hero-seal video{
-width:135px;
-height:135px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid var(--light)
-}
+.hero{max-width:1180px;margin:auto;padding:70px 24px 55px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:45px}
+.eyebrow{font:10px 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--light);text-transform:uppercase}
+.hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.06;margin-top:18px}
+.hero h1 em{color:var(--light)}
+.lede{max-width:650px;font-size:16px;line-height:1.7}
+.creole{color:var(--light);font-style:italic}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{padding:13px 20px;font:11px 'IBM Plex Mono',monospace;letter-spacing:.08em;border-radius:4px}
+.btn-primary{background:var(--orange);color:#000}
+.btn-ghost{border:1px solid var(--line)}
+.hero-seal video{width:135px;height:135px;border-radius:50%;object-fit:cover;border:3px solid var(--light)}
 
 /* MAIN LOGO */
 
-.maximax-logo-showcase{
-max-width:1180px;
-margin:auto;
-padding:0 24px 55px
-}
+.maximax-logo-showcase{max-width:1180px;margin:auto;padding:0 24px 55px}
+.maximax-logo-stage{max-width:760px;margin:auto;padding:16px;border:1px solid var(--light);border-radius:20px;background:#000}
+.maximax-logo-title{text-align:center;font:10px 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--light);padding:4px 0 15px}
+.maximax-logo-video{width:100%;border-radius:12px}
 
-.maximax-logo-stage{
-max-width:760px;
-margin:auto;
-padding:16px;
-border:1px solid var(--light);
-border-radius:20px;
-background:#000
-}
+/* BUTTONS */
 
-.maximax-logo-title{
-text-align:center;
-font:10px 'IBM Plex Mono',monospace;
-letter-spacing:.2em;
-color:var(--light);
-padding:4px 0 15px
-}
-
-.maximax-logo-video{
-width:100%;
-border-radius:12px
-}
-
-/* 15 BUTTONS */
-
-.module-logo-section{
-max-width:1180px;
-margin:auto;
-padding:55px 24px 70px
-}
-
-.module-heading{
-text-align:center;
-margin-bottom:30px
-}
-
-.module-heading small{
-font:10px 'IBM Plex Mono',monospace;
-letter-spacing:.22em;
-color:var(--light)
-}
-
-.module-heading h2{
-font-size:clamp(2rem,5vw,3.4rem);
-color:var(--light);
-margin-top:10px
-}
-
-.module-heading p{
-line-height:1.7
-}
-
-.module-seals-grid{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:30px
-}
-
-.service-seal{
-display:block;
-width:100%;
-aspect-ratio:1/1;
-border-radius:50%;
-overflow:hidden;
-transition:.25s;
-filter:drop-shadow(0 18px 24px rgba(0,0,0,.65))
-}
-
-.service-seal:hover{
-transform:translateY(-6px) scale(1.02);
-filter:drop-shadow(0 0 18px rgba(255,106,0,.65))
-}
-
-.service-seal img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:50%
-}
+.module-logo-section{max-width:1180px;margin:auto;padding:55px 24px 70px}
+.module-heading{text-align:center;margin-bottom:30px}
+.module-heading small{font:10px 'IBM Plex Mono',monospace;letter-spacing:.22em;color:var(--light)}
+.module-heading h2{font-size:clamp(2rem,5vw,3.4rem);color:var(--light);margin-top:10px}
+.module-heading p{line-height:1.7}
+.module-seals-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.service-seal{display:block;width:100%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;transition:.25s;filter:drop-shadow(0 18px 24px rgba(0,0,0,.65))}
+.service-seal:hover{transform:translateY(-6px) scale(1.02);filter:drop-shadow(0 0 18px rgba(255,106,0,.65))}
+.service-seal img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 
 /* CATEGORY MAP */
 
-.catmap{
-padding:22px 24px;
-background:rgba(0,0,0,.5);
-border-block:1px solid var(--line)
-}
-
-.catmap-inner{
-max-width:1180px;
-margin:auto;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px 18px
-}
-
-.catmap-item{
-font:10px 'IBM Plex Mono',monospace;
-color:var(--light)
-}
+.catmap{padding:22px 24px;background:rgba(0,0,0,.5);border-block:1px solid var(--line)}
+.catmap-inner{max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px}
+.catmap-item{font:10px 'IBM Plex Mono',monospace;color:var(--light)}
 
 /* MODULES */
 
-main{
-max-width:1180px;
-margin:auto;
-padding:45px 20px
-}
+main{max-width:1180px;margin:auto;padding:45px 20px}
+.file{display:none;background:var(--panel);border:1px solid rgba(255,163,71,.45);border-radius:9px;margin-bottom:18px;overflow:hidden;scroll-margin-top:100px}
+.file.active{display:block}
+.file-tab{display:flex;align-items:center;justify-content:space-between;padding:19px 20px;cursor:pointer}
+.file-tab-left{display:flex;align-items:center;gap:13px}
+.file-num{width:42px;height:42px;border-radius:50%;border:1px solid var(--light);display:grid;place-items:center;font-size:11px;color:var(--light);flex:none}
+.file-tab h2{font-size:1.5rem}
+.sub{font:9px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:var(--light);margin-top:4px}
+.chev{color:var(--light);transition:.3s}
+.file.open .chev{transform:rotate(180deg)}
+.file-body{display:none;padding:0 28px 28px}
+.file.open .file-body{display:block}
+.service-list{columns:2;column-gap:35px;list-style:none;margin:0;padding:0}
+.service-list li{break-inside:avoid;padding:10px 0;border-bottom:1px dotted var(--line);font-size:14px}
+.service-list li::before{content:'✓ ';color:var(--light);font-weight:700}
+.service-list a{display:inline-flex;align-items:center;gap:6px;color:var(--text)}
+.service-list a::after{content:'↗';font-size:11px;color:var(--light)}
+.service-list a:hover{color:var(--light);text-decoration:underline;text-underline-offset:3px}
 
-.file{
-display:none;
-background:var(--panel);
-border:1px solid rgba(255,163,71,.45);
-border-radius:9px;
-margin-bottom:18px;
-overflow:hidden;
-scroll-margin-top:100px
-}
+/* FORMS */
 
-.file.active{
-display:block
-}
-
-.file-tab{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:19px 20px;
-cursor:pointer
-}
-
-.file-tab-left{
-display:flex;
-align-items:center;
-gap:13px
-}
-
-.file-num{
-width:42px;
-height:42px;
-border-radius:50%;
-border:1px solid var(--light);
-display:grid;
-place-items:center;
-font-size:11px;
-color:var(--light);
-flex:none
-}
-
-.file-tab h2{
-font-size:1.5rem
-}
-
-.sub{
-font:9px 'IBM Plex Mono',monospace;
-letter-spacing:.1em;
-color:var(--light);
-margin-top:4px
-}
-
-.chev{
-color:var(--light);
-transition:.3s
-}
-
-.file.open .chev{
-transform:rotate(180deg)
-}
-
-.file-body{
-display:none;
-padding:0 28px 28px
-}
-
-.file.open .file-body{
-display:block
-}
-
-.service-list{
-columns:2;
-column-gap:35px;
-list-style:none;
-margin:0;
-padding:0
-}
-
-.service-list li{
-break-inside:avoid;
-padding:10px 0;
-border-bottom:1px dotted var(--line);
-font-size:14px
-}
-
-.service-list li::before{
-content:'✓ ';
-color:var(--light);
-font-weight:700
-}
-
-.service-list a{
-display:inline-flex;
-align-items:center;
-gap:6px;
-color:var(--text)
-}
-
-.service-list a::after{
-content:'↗';
-font-size:11px;
-color:var(--light)
-}
-
-.service-list a:hover{
-color:var(--light);
-text-decoration:underline;
-text-underline-offset:3px
-}
-
-/* FORM */
-
-.module-form{
-margin-top:30px;
-padding:28px;
-border:1px solid var(--line);
-border-radius:10px;
-background:rgba(0,0,0,.65)
-}
-
-.module-form h3{
-color:var(--light);
-font-size:1.6rem;
-margin-bottom:8px
-}
-
-.module-form-note{
-font-size:13px;
-line-height:1.6;
-margin:0 0 20px
-}
-
-.module-form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px
-}
-
-.module-field{
-display:flex;
-flex-direction:column;
-gap:7px
-}
-
-.module-field.full{
-grid-column:1/-1
-}
-
-.module-field label{
-font:600 9px 'IBM Plex Mono',monospace;
-color:var(--light)
-}
-
-.module-field input,
-.module-field select,
-.module-field textarea{
-width:100%;
-min-height:48px;
-padding:11px 12px;
-background:#050505;
-color:var(--text);
-border:1px solid rgba(255,163,71,.55);
-border-radius:6px;
-outline:none;
-color-scheme:dark
-}
-
-.module-field textarea{
-min-height:120px;
-resize:vertical
-}
-
-.module-field input:focus,
-.module-field select:focus,
-.module-field textarea:focus{
-border-color:var(--light);
-box-shadow:0 0 0 2px rgba(255,106,0,.22)
-}
-
-.module-field input[type="file"]::file-selector-button{
-background:var(--orange);
-color:#000;
-border:0;
-padding:9px 12px;
-margin-right:10px;
-font-weight:700
-}
-
-.module-submit{
-width:100%;
-min-height:48px;
-border:1px solid var(--light);
-border-radius:6px;
-background:var(--orange);
-color:#000;
-padding:13px 17px;
-font:800 10px 'IBM Plex Mono',monospace;
-cursor:pointer
-}
-
-.privacy-note{
-font-size:10px;
-line-height:1.55;
-opacity:.8;
-margin:14px 0 0
-}
+.module-form{margin-top:30px;padding:28px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.65)}
+.module-form h3{color:var(--light);font-size:1.6rem;margin-bottom:8px}
+.module-form-note{font-size:13px;line-height:1.6;margin:0 0 20px}
+.module-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.module-field{display:flex;flex-direction:column;gap:7px}
+.module-field.full{grid-column:1/-1}
+.module-field label{font:600 9px 'IBM Plex Mono',monospace;color:var(--light)}
+.module-field input,.module-field select,.module-field textarea{width:100%;min-height:48px;padding:11px 12px;background:#050505;color:var(--text);border:1px solid rgba(255,163,71,.55);border-radius:6px;outline:none;color-scheme:dark}
+.module-field textarea{min-height:120px;resize:vertical}
+.module-field input:focus,.module-field select:focus,.module-field textarea:focus{border-color:var(--light);box-shadow:0 0 0 2px rgba(255,106,0,.22)}
+.module-field input[type="file"]::file-selector-button{background:var(--orange);color:#000;border:0;padding:9px 12px;margin-right:10px;font-weight:700}
+.module-submit{width:100%;min-height:48px;border:1px solid var(--light);border-radius:6px;background:var(--orange);color:#000;padding:13px 17px;font:800 10px 'IBM Plex Mono',monospace;cursor:pointer}
+.privacy-note{font-size:10px;line-height:1.55;opacity:.8;margin:14px 0 0}
 
 /* AI */
 
-.ai-center{
-padding:60px 24px;
-background:rgba(0,0,0,.58);
-border-block:1px solid var(--line)
-}
-
-.ai-inner{
-max-width:1180px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px
-}
-
-.ai-badge{
-font:10px 'IBM Plex Mono',monospace;
-color:var(--light);
-border:1px solid var(--line);
-padding:7px 12px;
-border-radius:20px
-}
-
-.ai-center h2{
-font-size:2rem;
-margin:14px 0
-}
-
-.ai-features{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:20px
-}
-
-.ai-feat,.contact-card{
-border:1px solid var(--line);
-border-radius:8px;
-padding:15px;
-background:rgba(0,0,0,.5)
-}
-
-.ai-feat{
-cursor:pointer
-}
-
-.ai-feat b{
-display:block;
-color:var(--light);
-margin-bottom:6px
-}
-
-.myaccess-btn{
-display:inline-block;
-background:var(--orange);
-color:#000;
-padding:12px 20px;
-border-radius:4px;
-font:600 11px 'IBM Plex Mono',monospace;
-margin-top:20px
-}
-
-.ai-message{
-padding:12px;
-border-radius:8px;
-margin:10px 0;
-line-height:1.55
-}
-
-.ai-message.user{
-background:rgba(255,106,0,.15);
-border:1px solid rgba(255,163,71,.3)
-}
-
-.ai-message.bot{
-background:#000;
-border:1px solid var(--line)
-}
-
-.ai-chat-controls{
-display:flex;
-gap:8px;
-margin-top:14px
-}
-
-.ai-chat-controls input{
-flex:1;
-min-width:0;
-padding:11px;
-background:#000;
-border:1px solid var(--line);
-border-radius:6px;
-color:var(--text)
-}
-
-.ai-chat-controls button{
-background:var(--orange);
-color:#000;
-border:0;
-border-radius:6px;
-padding:10px 16px;
-font-weight:700
-}
+.ai-center{padding:60px 24px;background:rgba(0,0,0,.58);border-block:1px solid var(--line)}
+.ai-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.ai-badge{font:10px 'IBM Plex Mono',monospace;color:var(--light);border:1px solid var(--line);padding:7px 12px;border-radius:20px}
+.ai-center h2{font-size:2rem;margin:14px 0}
+.ai-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.ai-feat,.contact-card{border:1px solid var(--line);border-radius:8px;padding:15px;background:rgba(0,0,0,.5)}
+.ai-feat{cursor:pointer}
+.ai-feat b{display:block;color:var(--light);margin-bottom:6px}
+.myaccess-btn{display:inline-block;background:var(--orange);color:#000;padding:12px 20px;border-radius:4px;font:600 11px 'IBM Plex Mono',monospace;margin-top:20px}
+.ai-message{padding:12px;border-radius:8px;margin:10px 0;line-height:1.55}
+.ai-message.user{background:rgba(255,106,0,.15);border:1px solid rgba(255,163,71,.3)}
+.ai-message.bot{background:#000;border:1px solid var(--line)}
+.ai-chat-controls{display:flex;gap:8px;margin-top:14px}
+.ai-chat-controls input{flex:1;min-width:0;padding:11px;background:#000;border:1px solid var(--line);border-radius:6px;color:var(--text)}
+.ai-chat-controls button{background:var(--orange);color:#000;border:0;border-radius:6px;padding:10px 16px;font-weight:700}
 
 /* CONTACT */
 
-.band{
-padding:50px 24px
-}
-
-.band-inner{
-max-width:1180px;
-margin:auto
-}
-
-.contact-grid,.social-row{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:14px;
-margin:20px 0
-}
-
-.label{
-font:10px 'IBM Plex Mono',monospace;
-color:var(--light);
-margin-bottom:7px
-}
-
-.value{
-line-height:1.7;
-font-size:14px
-}
-
-.social-pill{
-border:1px solid var(--line);
-border-radius:10px;
-padding:11px;
-display:flex;
-align-items:center;
-gap:10px;
-background:rgba(0,0,0,.55)
-}
-
-.social-icon{
-width:34px;
-height:34px;
-border-radius:50%;
-border:1px solid var(--light);
-display:grid;
-place-items:center;
-color:var(--light)
-}
-
-footer{
-background:#000;
-padding:28px 20px;
-border-top:1px solid var(--line)
-}
-
-.footer-cats{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:9px 18px;
-font:9px 'IBM Plex Mono',monospace;
-color:var(--light)
-}
+.band{padding:50px 24px}
+.band-inner{max-width:1180px;margin:auto}
+.contact-grid,.social-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0}
+.label{font:10px 'IBM Plex Mono',monospace;color:var(--light);margin-bottom:7px}
+.value{line-height:1.7;font-size:14px}
+.social-pill{border:1px solid var(--line);border-radius:10px;padding:11px;display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.55)}
+.social-icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--light);display:grid;place-items:center;color:var(--light)}
+footer{background:#000;padding:28px 20px;border-top:1px solid var(--line)}
+.footer-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 18px;font:9px 'IBM Plex Mono',monospace;color:var(--light)}
 
 @media(max-width:900px){
 .desktop-nav{display:none}
@@ -819,7 +221,6 @@ MAXIMAX
 <section class="hero" id="hero">
 <div>
 <span class="eyebrow">Pine Hills, Orlando • Indianapolis • New York</span>
-
 <h1>Your Trusted Partner for <em>Life in the USA</em></h1>
 
 <p class="lede">
@@ -846,7 +247,6 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <section class="maximax-logo-showcase">
 <div class="maximax-logo-stage">
 <div class="maximax-logo-title">MAXIMAX MULTI SERVICES</div>
-
 <video class="maximax-logo-video" autoplay muted loop playsinline>
 <source src="./maxima-xbest.mp4" type="video/mp4">
 </video>
@@ -903,13 +303,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod1">
 <div class="file-tab" onclick="toggleFile('mod1')">
-<div class="file-tab-left">
-<div class="file-num">01</div>
-<div><h2>Notary & Translation</h2><div class="sub">Certified • Fast • All 50 States</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">01</div><div><h2>Notary & Translation</h2><div class="sub">Certified • Fast • All 50 States</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://notaries.dos.fl.gov/NotIdSearch.asp?ID=0" target="_blank" rel="noopener noreferrer">Florida Notary Public Search</a></li>
@@ -924,13 +320,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod2">
 <div class="file-tab" onclick="toggleFile('mod2')">
-<div class="file-tab-left">
-<div class="file-num">02</div>
-<div><h2>Taxes & Accounting</h2><div class="sub">Tax Preparation • ITIN • Accounting</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">02</div><div><h2>Taxes & Accounting</h2><div class="sub">Tax Preparation • ITIN • Accounting</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://www.irs.gov/forms-pubs/about-form-1040" target="_blank" rel="noopener noreferrer">Personal Taxes — Form 1040</a></li>
@@ -945,13 +337,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod3">
 <div class="file-tab" onclick="toggleFile('mod3')">
-<div class="file-tab-left">
-<div class="file-num">03</div>
-<div><h2>Immigration Services</h2><div class="sub">TPS • Asylum • Family Petition</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">03</div><div><h2>Immigration Services</h2><div class="sub">TPS • Asylum • Family Petition</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://www.uscis.gov/humanitarian/temporary-protected-status" target="_blank" rel="noopener noreferrer">TPS Application & Renewal</a></li>
@@ -968,13 +356,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod4">
 <div class="file-tab" onclick="toggleFile('mod4')">
-<div class="file-tab-left">
-<div class="file-num">04</div>
-<div><h2>EOIR & BIA</h2><div class="sub">Immigration Court • Board of Immigration Appeals</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">04</div><div><h2>EOIR & BIA</h2><div class="sub">Immigration Court • Board of Immigration Appeals</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://www.justice.gov/eoir/eoir-case-information" target="_blank" rel="noopener noreferrer">EOIR Case Information</a></li>
@@ -989,13 +373,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod5">
 <div class="file-tab" onclick="toggleFile('mod5')">
-<div class="file-tab-left">
-<div class="file-num">05</div>
-<div><h2>Insurance</h2><div class="sub">Auto • Home • Life • Health</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">05</div><div><h2>Insurance</h2><div class="sub">Auto • Home • Life • Health</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://myfloridacfo.com/division/consumers/understanding-insurance/personal-automobile-insurance-overview" target="_blank" rel="noopener noreferrer">Auto Insurance</a></li>
@@ -1010,13 +390,9 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 
 <div class="file" id="mod6">
 <div class="file-tab" onclick="toggleFile('mod6')">
-<div class="file-tab-left">
-<div class="file-num">06</div>
-<div><h2>Real Estate</h2><div class="sub">Buy • Sell • Rent</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">06</div><div><h2>Real Estate</h2><div class="sub">Buy • Sell • Rent</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li><a href="https://www.hud.gov/helping-americans/buying-a-home" target="_blank" rel="noopener noreferrer">First-Time Home Buyer Assistance</a></li>
@@ -1030,24 +406,12 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 </div>
 </div>
 
-<!-- NO. 07 — BUSINESS FORMATION COMPLETE -->
-
 <div class="file" id="mod7">
 <div class="file-tab" onclick="toggleFile('mod7')">
-<div class="file-tab-left">
-<div class="file-num">07</div>
-
-<div>
-<h2>Business Formation</h2>
-<div class="sub">LLC • Corporation • EIN</div>
-</div>
-</div>
-
+<div class="file-tab-left"><div class="file-num">07</div><div><h2>Business Formation</h2><div class="sub">LLC • Corporation • EIN</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
-
 <ul class="service-list">
 <li><a href="https://dos.fl.gov/sunbiz/start-business/efile/fl-llc/" target="_blank" rel="noopener noreferrer">Florida LLC Formation</a></li>
 <li><a href="https://dos.fl.gov/sunbiz/start-business/efile/fl-profit-corporation/" target="_blank" rel="noopener noreferrer">Florida Corporation Formation</a></li>
@@ -1057,17 +421,84 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 <li><a href="https://www.sba.gov/local-assistance" target="_blank" rel="noopener noreferrer">SBA Local Business Assistance</a></li>
 <li><a href="https://www.irs.gov/businesses/small-businesses-self-employed" target="_blank" rel="noopener noreferrer">IRS Small Business Resources</a></li>
 </ul>
+</div>
+</div>
+
+<!-- NO. 08 — APOSTILLE & LEGALIZATION COMPLETE -->
+
+<div class="file" id="mod8">
+<div class="file-tab" onclick="toggleFile('mod8')">
+
+<div class="file-tab-left">
+<div class="file-num">08</div>
+
+<div>
+<h2>Apostille & Legalization</h2>
+<div class="sub">State • Federal • Embassy</div>
+</div>
+</div>
+
+<span class="chev">▼</span>
+</div>
+
+<div class="file-body">
+
+<ul class="service-list">
+
+<li>
+<a href="https://dos.fl.gov/sunbiz/other-services/apostille-notarial-certification" target="_blank" rel="noopener noreferrer">
+Florida Apostille & Authentication
+</a>
+</li>
+
+<li>
+<a href="https://www.in.gov/sos/business/apostilleauthentication/index.html" target="_blank" rel="noopener noreferrer">
+Indiana Apostille & Authentication
+</a>
+</li>
+
+<li>
+<a href="https://dos.ny.gov/apostille-certificate-authentication" target="_blank" rel="noopener noreferrer">
+New York Apostille & Authentication
+</a>
+</li>
+
+<li>
+<a href="https://travel.state.gov/en/replace-certify/authenticate-documents.html" target="_blank" rel="noopener noreferrer">
+Federal Document Authentication
+</a>
+</li>
+
+<li>
+<a href="https://travel.state.gov/en/replace-certify/authenticate-documents.html" target="_blank" rel="noopener noreferrer">
+Diploma & Educational Document Apostille
+</a>
+</li>
+
+<li>
+<a href="https://dos.fl.gov/sunbiz/other-services/apostille-notarial-certification/faq/" target="_blank" rel="noopener noreferrer">
+Power of Attorney Legalization
+</a>
+</li>
+
+<li>
+<a href="https://travel.state.gov/en/replace-certify/authenticate-documents/contact-authentications.html" target="_blank" rel="noopener noreferrer">
+U.S. Authentication Office Contact
+</a>
+</li>
+
+</ul>
 
 <form
 class="module-form"
-name="business-formation-request"
+name="apostille-legalization-request"
 method="POST"
 data-netlify="true"
 netlify-honeypot="bot-field"
 enctype="multipart/form-data"
 >
 
-<input type="hidden" name="form-name" value="business-formation-request">
+<input type="hidden" name="form-name" value="apostille-legalization-request">
 
 <p hidden>
 <label>
@@ -1076,12 +507,12 @@ Do not fill:
 </label>
 </p>
 
-<h3>Request Business Formation Assistance</h3>
+<h3>Request Apostille or Legalization Service</h3>
 
 <p class="module-form-note">
-Complete this form to request assistance with an LLC,
-corporation, EIN, business registration or business planning.
-Maximax will contact you before beginning any service.
+Tell Maximax which document must be authenticated,
+apostilled or legalized. We will contact you to review
+the issuing authority, destination country and next steps.
 </p>
 
 <div class="module-form-grid">
@@ -1103,118 +534,128 @@ Maximax will contact you before beginning any service.
 
 <div class="module-field">
 <label>SERVICE NEEDED *</label>
+
 <select name="service" required>
 <option value="">Choose a service</option>
-<option>LLC Formation</option>
-<option>Corporation Formation</option>
-<option>EIN Application</option>
-<option>Business Registration</option>
-<option>Business Plan Assistance</option>
-<option>Administrative Support</option>
+<option>Florida Apostille</option>
+<option>Indiana Apostille</option>
+<option>New York Apostille</option>
+<option>Federal Document Authentication</option>
+<option>Diploma or Educational Document Apostille</option>
+<option>Power of Attorney Legalization</option>
+<option>Embassy or Consular Legalization</option>
 </select>
 </div>
 
 <div class="module-field">
-<label>BUSINESS NAME</label>
-<input name="business-name" type="text">
+<label>DOCUMENT TYPE *</label>
+<input
+name="document-type"
+type="text"
+placeholder="Birth certificate, diploma, power of attorney..."
+required
+>
 </div>
 
 <div class="module-field">
-<label>STATE OF REGISTRATION *</label>
-<input name="registration-state" type="text" required>
+<label>ISSUING STATE OR AGENCY *</label>
+<input
+name="issuing-authority"
+type="text"
+placeholder="Florida, New York, federal agency..."
+required
+>
 </div>
 
 <div class="module-field">
-<label>BUSINESS TYPE</label>
-<select name="business-type">
-<option value="">Choose business type</option>
-<option>LLC</option>
-<option>Sole Proprietorship</option>
-<option>Partnership</option>
-<option>S Corporation</option>
-<option>C Corporation</option>
-<option>Nonprofit Corporation</option>
-<option>Not Sure</option>
+<label>DESTINATION COUNTRY *</label>
+<input
+name="destination-country"
+type="text"
+required
+>
+</div>
+
+<div class="module-field">
+<label>NUMBER OF DOCUMENTS</label>
+<input
+name="number-of-documents"
+type="number"
+min="1"
+value="1"
+>
+</div>
+
+<div class="module-field">
+<label>DEADLINE</label>
+<input name="deadline" type="date">
+</div>
+
+<div class="module-field">
+<label>RETURN DELIVERY METHOD</label>
+
+<select name="delivery-method">
+<option>Email or digital copy</option>
+<option>Office pickup</option>
+<option>Regular mail</option>
+<option>Express delivery</option>
+<option>International delivery</option>
 </select>
 </div>
 
 <div class="module-field">
-<label>NUMBER OF OWNERS</label>
-<input name="number-of-owners" type="number" min="1">
+<label>UPLOAD DOCUMENT COPY</label>
+
+<input
+name="apostille-document"
+type="file"
+accept=".pdf,.jpg,.jpeg,.png"
+>
 </div>
 
 <div class="module-field">
-<label>DESIRED START DATE</label>
-<input name="start-date" type="date">
-</div>
+<label>PREFERRED CONTACT METHOD</label>
 
-<div class="module-field">
-<label>UPLOAD DOCUMENT</label>
-<input name="business-document" type="file" accept=".pdf,.jpg,.jpeg,.png">
+<select name="contact-method">
+<option>Phone Call</option>
+<option>Text Message</option>
+<option>Email</option>
+<option>WhatsApp</option>
+</select>
 </div>
 
 <div class="module-field full">
-<label>BUSINESS ACTIVITY *</label>
+<label>REQUEST DETAILS *</label>
 <textarea
-name="business-activity"
-placeholder="Describe the products or services the business will provide."
+name="details"
+placeholder="Explain where the document was issued and where it will be used."
 required
 ></textarea>
 </div>
 
 <div class="module-field full">
-<label>REQUEST DETAILS *</label>
-<textarea name="details" required></textarea>
-</div>
-
-<div class="module-field full">
 <button class="module-submit" type="submit">
-SUBMIT BUSINESS FORMATION REQUEST
+SUBMIT APOSTILLE REQUEST
 </button>
 </div>
 
 </div>
 
 <p class="privacy-note">
-Do not enter Social Security numbers, bank-account information,
-credit-card numbers or passwords in this form.
-Government filing fees are separate from Maximax service fees.
+Upload copies only unless Maximax specifically requests an original
+document. Do not enter Social Security numbers, bank information,
+credit-card information or passwords in this form.
 </p>
 
 </form>
 </div>
 </div>
 
-<div class="file" id="mod8">
-<div class="file-tab" onclick="toggleFile('mod8')">
-<div class="file-tab-left">
-<div class="file-num">08</div>
-<div><h2>Apostille & Legalization</h2><div class="sub">State • Federal • Embassy</div></div>
-</div>
-<span class="chev">▼</span>
-</div>
-
-<div class="file-body">
-<ul class="service-list">
-<li>Document Apostille</li>
-<li>Federal Document Authentication</li>
-<li>Diploma Apostille</li>
-<li>Power of Attorney</li>
-<li>Document Legalization</li>
-<li>Embassy Requirements Assistance</li>
-</ul>
-</div>
-</div>
-
 <div class="file" id="mod9">
 <div class="file-tab" onclick="toggleFile('mod9')">
-<div class="file-tab-left">
-<div class="file-num">09</div>
-<div><h2>Travel & DMV Services</h2><div class="sub">Passport • Travel • DMV</div></div>
-</div>
+<div class="file-tab-left"><div class="file-num">09</div><div><h2>Travel & DMV Services</h2><div class="sub">Passport • Travel • DMV</div></div></div>
 <span class="chev">▼</span>
 </div>
-
 <div class="file-body">
 <ul class="service-list">
 <li>Plane Ticket Assistance</li>
@@ -1523,11 +964,11 @@ return "For Insurance, select button 05.";
 if(q.includes("real estate")||q.includes("house")||q.includes("home")||q.includes("rent")||q.includes("imobilye"))
 return "For Real Estate, select button 06.";
 
-if(q.includes("business")||q.includes("llc")||q.includes("ein")||q.includes("corporation"))
-return "Business Formation is button 07. You can request LLC formation, corporation formation, EIN assistance, business registration or business plan assistance.";
+if(q.includes("business")||q.includes("llc")||q.includes("ein"))
+return "Business Formation is button 07.";
 
-if(q.includes("apostille")||q.includes("legalization"))
-return "Apostille and Legalization is button 08.";
+if(q.includes("apostille")||q.includes("authentication")||q.includes("legalization"))
+return "Apostille and Legalization is button 08. You can request a state apostille, federal document authentication, diploma apostille, power-of-attorney legalization or embassy legalization.";
 
 if(q.includes("travel")||q.includes("passport")||q.includes("dmv"))
 return "Travel and DMV Services is button 09.";
