@@ -1,4 +1,4 @@
-Worked for 42s
+Worked for 36s
 
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
@@ -365,7 +365,7 @@ font:10px 'IBM Plex Mono',monospace;
 color:var(--light)
 }
 
-/* SERVICE MODULES */
+/* MODULES */
 
 main{
 max-width:1180px;
@@ -482,109 +482,13 @@ text-decoration:underline;
 text-underline-offset:3px
 }
 
-/* MODULE FORMS */
-
-.module-form{
-margin-top:30px;
-padding:28px;
-border:1px solid var(--line);
-border-radius:10px;
-background:rgba(0,0,0,.65)
-}
-
-.module-form h3{
-color:var(--light);
-font-size:1.6rem;
-margin-bottom:8px
-}
-
-.module-form-note{
-font-size:13px;
-line-height:1.6;
-margin:0 0 20px
-}
-
-.module-form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px
-}
-
-.module-field{
-display:flex;
-flex-direction:column;
-gap:7px
-}
-
-.module-field.full{
-grid-column:1/-1
-}
-
-.module-field label{
-font:600 9px 'IBM Plex Mono',monospace;
-color:var(--light)
-}
-
-.module-field input,
-.module-field select,
-.module-field textarea{
-width:100%;
-min-height:48px;
-padding:11px 12px;
-background:#050505;
-color:var(--text);
-border:1px solid rgba(255,163,71,.55);
-border-radius:6px;
-outline:none;
-color-scheme:dark
-}
-
-.module-field textarea{
-min-height:120px;
-resize:vertical
-}
-
-.module-field input:focus,
-.module-field select:focus,
-.module-field textarea:focus{
-border-color:var(--light);
-box-shadow:0 0 0 2px rgba(255,106,0,.22)
-}
-
-.module-field input[type="file"]::file-selector-button{
-background:var(--orange);
-color:#000;
-border:0;
-padding:9px 12px;
-margin-right:10px;
-font-weight:700
-}
-
-.module-submit{
-width:100%;
-min-height:48px;
-border:1px solid var(--light);
-border-radius:6px;
-background:var(--orange);
-color:#000;
-padding:13px 17px;
-font:800 10px 'IBM Plex Mono',monospace;
-cursor:pointer
-}
-
-.privacy-note{
-font-size:10px;
-line-height:1.55;
-opacity:.8;
-margin:14px 0 0
-}
-
 /* AI CENTER */
 
 .ai-center{
 padding:60px 24px;
-background:rgba(0,0,0,.58);
-border-block:1px solid var(--line)
+background:rgba(0,0,0,.68);
+border-block:1px solid var(--line);
+scroll-margin-top:95px
 }
 
 .ai-inner{
@@ -596,16 +500,23 @@ gap:30px
 }
 
 .ai-badge{
+display:inline-block;
 font:10px 'IBM Plex Mono',monospace;
+letter-spacing:.12em;
 color:var(--light);
 border:1px solid var(--line);
-padding:7px 12px;
+padding:8px 13px;
 border-radius:20px
 }
 
 .ai-center h2{
-font-size:2rem;
-margin:14px 0
+font-size:2.2rem;
+margin:16px 0
+}
+
+.ai-description{
+font-size:14px;
+line-height:1.7
 }
 
 .ai-features{
@@ -615,21 +526,32 @@ gap:12px;
 margin-top:20px
 }
 
-.ai-feat,.contact-card{
+.ai-feat{
 border:1px solid var(--line);
 border-radius:8px;
-padding:15px;
-background:rgba(0,0,0,.5)
+padding:17px;
+background:rgba(0,0,0,.58);
+cursor:pointer;
+transition:.2s
 }
 
-.ai-feat{
-cursor:pointer
+.ai-feat:hover,
+.ai-feat:focus-visible{
+transform:translateY(-3px);
+border-color:var(--light);
+box-shadow:0 0 18px rgba(255,106,0,.25);
+outline:none
 }
 
 .ai-feat b{
 display:block;
 color:var(--light);
-margin-bottom:6px
+margin-bottom:7px
+}
+
+.ai-feat span{
+font-size:12px;
+line-height:1.5
 }
 
 .myaccess-btn{
@@ -638,20 +560,42 @@ background:var(--orange);
 color:#000;
 padding:12px 20px;
 border-radius:4px;
-font:600 11px 'IBM Plex Mono',monospace;
-margin-top:20px
+font:700 11px 'IBM Plex Mono',monospace;
+margin-top:20px;
+cursor:pointer
+}
+
+.ai-chat{
+border:1px solid var(--line);
+border-radius:12px;
+padding:20px;
+background:rgba(0,0,0,.7)
+}
+
+.ai-chat-title{
+font:10px 'IBM Plex Mono',monospace;
+letter-spacing:.12em;
+color:var(--light);
+margin-bottom:12px
+}
+
+.ai-messages{
+max-height:430px;
+overflow-y:auto;
+padding-right:4px
 }
 
 .ai-message{
 padding:12px;
 border-radius:8px;
 margin:10px 0;
-line-height:1.55
+line-height:1.55;
+font-size:13px
 }
 
 .ai-message.user{
-background:rgba(255,106,0,.15);
-border:1px solid rgba(255,163,71,.3)
+background:rgba(255,106,0,.17);
+border:1px solid rgba(255,163,71,.35)
 }
 
 .ai-message.bot{
@@ -668,11 +612,17 @@ margin-top:14px
 .ai-chat-controls input{
 flex:1;
 min-width:0;
-padding:11px;
+padding:12px;
 background:#000;
 border:1px solid var(--line);
 border-radius:6px;
-color:var(--text)
+color:var(--text);
+outline:none
+}
+
+.ai-chat-controls input:focus{
+border-color:var(--light);
+box-shadow:0 0 0 2px rgba(255,106,0,.2)
 }
 
 .ai-chat-controls button{
@@ -680,9 +630,31 @@ background:var(--orange);
 color:#000;
 border:0;
 border-radius:6px;
-padding:10px 16px;
-font-weight:700;
+padding:10px 17px;
+font-weight:800;
 cursor:pointer
+}
+
+.ai-quick-actions{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:12px
+}
+
+.ai-quick-btn{
+border:1px solid var(--line);
+background:#000;
+color:var(--light);
+border-radius:20px;
+padding:8px 11px;
+font:600 9px 'IBM Plex Mono',monospace;
+cursor:pointer
+}
+
+.ai-quick-btn:hover{
+background:var(--orange);
+color:#000
 }
 
 /* CONTACT */
@@ -701,6 +673,13 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:14px;
 margin:20px 0
+}
+
+.contact-card{
+border:1px solid var(--line);
+border-radius:8px;
+padding:15px;
+background:rgba(0,0,0,.5)
 }
 
 .label{
@@ -764,9 +743,9 @@ color:var(--light)
 .service-list{columns:1}
 .module-logo-section{padding-inline:15px}
 .module-seals-grid{gap:12px}
-.module-form{padding:18px}
-.module-form-grid{grid-template-columns:1fr}
-.module-field.full{grid-column:auto}
+.ai-features{grid-template-columns:1fr}
+.ai-chat-controls{flex-direction:column}
+.ai-chat-controls button{min-height:44px}
 }
 </style>
 </head>
@@ -820,6 +799,7 @@ MAXIMAX
 <section class="hero" id="hero">
 <div>
 <span class="eyebrow">Pine Hills, Orlando • Indianapolis • New York</span>
+
 <h1>Your Trusted Partner for <em>Life in the USA</em></h1>
 
 <p class="lede">
@@ -1050,306 +1030,204 @@ Tout sèvis ou bezwen anba yon sèl do-kay.
 </div>
 </div>
 
-<!-- NO. 09 — TRAVEL & DMV COMPLETE -->
-
 <div class="file" id="mod9">
-
 <div class="file-tab" onclick="toggleFile('mod9')">
-
-<div class="file-tab-left">
-<div class="file-num">09</div>
-
-<div>
-<h2>Travel & DMV Services</h2>
-<div class="sub">Passport • Travel • DMV</div>
-</div>
-</div>
-
+<div class="file-tab-left"><div class="file-num">09</div><div><h2>Travel & DMV Services</h2><div class="sub">Passport • Travel • DMV</div></div></div>
 <span class="chev">▼</span>
 </div>
 
 <div class="file-body">
-
 <ul class="service-list">
-
-<li>
-<a href="https://travel.state.gov/content/travel/en/passports/how-apply.html" target="_blank" rel="noopener noreferrer">
-Apply for a U.S. Passport
-</a>
-</li>
-
-<li>
-<a href="https://travel.state.gov/content/travel/en/passports/have-passport/renew.html" target="_blank" rel="noopener noreferrer">
-Renew a U.S. Passport
-</a>
-</li>
-
-<li>
-<a href="https://travel.state.gov/content/travel/en/passports/get-fast.html" target="_blank" rel="noopener noreferrer">
-Urgent Passport Service
-</a>
-</li>
-
-<li>
-<a href="https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html" target="_blank" rel="noopener noreferrer">
-Passport Acceptance Facility
-</a>
-</li>
-
-<li>
-<a href="https://www.usa.gov/travel" target="_blank" rel="noopener noreferrer">
-Official U.S. Travel Resources
-</a>
-</li>
-
-<li>
-<a href="https://www.flhsmv.gov/driver-licenses-id-cards/" target="_blank" rel="noopener noreferrer">
-Florida Driver License & ID
-</a>
-</li>
-
-<li>
-<a href="https://www.flhsmv.gov/motor-vehicles-tags-titles/" target="_blank" rel="noopener noreferrer">
-Florida Vehicle Registration, Tags & Titles
-</a>
-</li>
-
-<li>
-<a href="https://www.in.gov/bmv/" target="_blank" rel="noopener noreferrer">
-Indiana BMV Services
-</a>
-</li>
-
-<li>
-<a href="https://dmv.ny.gov/" target="_blank" rel="noopener noreferrer">
-New York DMV Services
-</a>
-</li>
-
+<li><a href="https://travel.state.gov/content/travel/en/passports/how-apply.html" target="_blank" rel="noopener noreferrer">Apply for a U.S. Passport</a></li>
+<li><a href="https://travel.state.gov/content/travel/en/passports/have-passport/renew.html" target="_blank" rel="noopener noreferrer">Renew a U.S. Passport</a></li>
+<li><a href="https://travel.state.gov/content/travel/en/passports/get-fast.html" target="_blank" rel="noopener noreferrer">Urgent Passport Service</a></li>
+<li><a href="https://www.usa.gov/travel" target="_blank" rel="noopener noreferrer">Official U.S. Travel Resources</a></li>
+<li><a href="https://www.flhsmv.gov/driver-licenses-id-cards/" target="_blank" rel="noopener noreferrer">Florida Driver License & ID</a></li>
+<li><a href="https://www.flhsmv.gov/motor-vehicles-tags-titles/" target="_blank" rel="noopener noreferrer">Florida Vehicle Registration, Tags & Titles</a></li>
+<li><a href="https://www.in.gov/bmv/" target="_blank" rel="noopener noreferrer">Indiana BMV Services</a></li>
+<li><a href="https://dmv.ny.gov/" target="_blank" rel="noopener noreferrer">New York DMV Services</a></li>
 </ul>
-
-<form
-class="module-form"
-name="travel-dmv-request"
-method="POST"
-data-netlify="true"
-netlify-honeypot="bot-field"
-enctype="multipart/form-data"
->
-
-<input type="hidden" name="form-name" value="travel-dmv-request">
-
-<p hidden>
-<label>
-Do not fill:
-<input name="bot-field">
-</label>
-</p>
-
-<h3>Request Travel or DMV Assistance</h3>
-
-<p class="module-form-note">
-Tell Maximax whether you need passport, travel,
-driver-license, vehicle-registration, tag or title assistance.
-We will contact you to review your request and next steps.
-</p>
-
-<div class="module-form-grid">
-
-<div class="module-field">
-<label>FULL NAME *</label>
-<input name="full-name" type="text" required>
-</div>
-
-<div class="module-field">
-<label>PHONE NUMBER *</label>
-<input name="phone" type="tel" required>
-</div>
-
-<div class="module-field">
-<label>EMAIL *</label>
-<input name="email" type="email" required>
-</div>
-
-<div class="module-field">
-<label>SERVICE NEEDED *</label>
-
-<select name="service" required>
-<option value="">Choose a service</option>
-<option>Plane Ticket Assistance</option>
-<option>New Passport Assistance</option>
-<option>Passport Renewal Assistance</option>
-<option>Urgent Passport Assistance</option>
-<option>Passport Acceptance Facility Search</option>
-<option>Florida Driver License or ID</option>
-<option>Florida Vehicle Registration, Tag or Title</option>
-<option>Indiana BMV Assistance</option>
-<option>New York DMV Assistance</option>
-<option>Other Travel Resource</option>
-</select>
-</div>
-
-<div class="module-field">
-<label>STATE OR DESTINATION *</label>
-<input
-name="state-or-destination"
-type="text"
-placeholder="State or travel destination"
-required
->
-</div>
-
-<div class="module-field">
-<label>TRAVEL OR APPOINTMENT DATE</label>
-<input name="travel-date" type="date">
-</div>
-
-<div class="module-field">
-<label>NUMBER OF TRAVELERS</label>
-<input name="number-of-travelers" type="number" min="1" value="1">
-</div>
-
-<div class="module-field">
-<label>PASSPORT STATUS</label>
-
-<select name="passport-status">
-<option>Not applicable</option>
-<option>First passport</option>
-<option>Passport renewal</option>
-<option>Passport expired</option>
-<option>Passport lost or stolen</option>
-<option>Urgent passport needed</option>
-</select>
-</div>
-
-<div class="module-field">
-<label>VEHICLE SERVICE</label>
-
-<select name="vehicle-service">
-<option>Not applicable</option>
-<option>Vehicle registration</option>
-<option>Registration renewal</option>
-<option>License plate or tag</option>
-<option>Vehicle title</option>
-<option>Driver license</option>
-<option>State identification card</option>
-</select>
-</div>
-
-<div class="module-field">
-<label>PREFERRED CONTACT METHOD</label>
-
-<select name="contact-method">
-<option>Phone Call</option>
-<option>Text Message</option>
-<option>Email</option>
-<option>WhatsApp</option>
-</select>
-</div>
-
-<div class="module-field">
-<label>UPLOAD DOCUMENT COPY</label>
-
-<input
-name="travel-dmv-document"
-type="file"
-accept=".pdf,.jpg,.jpeg,.png"
->
-</div>
-
-<div class="module-field">
-<label>PREFERRED APPOINTMENT DATE</label>
-<input name="preferred-appointment" type="date">
-</div>
-
-<div class="module-field full">
-<label>REQUEST DETAILS *</label>
-
-<textarea
-name="details"
-placeholder="Explain the passport, travel or DMV assistance you need."
-required
-></textarea>
-</div>
-
-<div class="module-field full">
-<button class="module-submit" type="submit">
-SUBMIT TRAVEL & DMV REQUEST
-</button>
-</div>
-
-</div>
-
-<p class="privacy-note">
-Upload copies only. Do not enter passport numbers,
-driver-license numbers, Social Security numbers,
-bank information, credit-card information or passwords in this form.
-</p>
-
-</form>
 </div>
 </div>
 
 </main>
 
+<!-- NO. 10 — MAXIMAX AI CENTER COMPLETE -->
+
 <section class="ai-center" id="ai-center">
+
 <div class="ai-inner">
 
 <div>
-<span class="ai-badge">🤖 MAXIMAX AI CENTER</span>
-<h2>Maximax AI Assistant Center</h2>
 
-<p>
-Smart digital tools designed to help organize forms,
-track information, translate documents and answer
-general service questions 24/7.
+<span class="ai-badge">
+🤖 MAXIMAX AI CENTER
+</span>
+
+<h2>
+Maximax AI Assistant Center
+</h2>
+
+<p class="ai-description">
+Use the Maximax AI Assistant to identify the correct service,
+organize the information needed for a form, receive general
+service guidance, translate short text and prepare questions
+before contacting Maximax Multi Services.
 </p>
 
 <div class="ai-features">
 
-<div class="ai-feat" id="form-helper" data-ai-question="Help me organize a form">
+<div
+class="ai-feat"
+id="form-helper"
+role="button"
+tabindex="0"
+data-ai-question="Help me organize a form"
+>
 <b>📋 FORM HELPER</b>
-<span>Digital form organization and assistance</span>
+<span>
+Identify the correct form and organize the information
+or documents you may need.
+</span>
 </div>
 
-<div class="ai-feat" id="career-tracker" data-ai-question="Help me with career tracking">
+<div
+class="ai-feat"
+id="career-tracker"
+role="button"
+tabindex="0"
+data-ai-question="Help me organize my career applications and deadlines"
+>
 <b>📈 CAREER TRACKER</b>
-<span>Career organization, applications and progress tools</span>
+<span>
+Organize job applications, interviews, deadlines
+and career progress.
+</span>
 </div>
 
-<div class="ai-feat" id="translation-ai" data-ai-question="Help me translate a document">
+<div
+class="ai-feat"
+id="translation-ai"
+role="button"
+tabindex="0"
+data-ai-question="Help me translate a short message"
+>
 <b>🌐 TRADIKSYON AI</b>
-<span>Kreyòl • English • Français • Español</span>
+<span>
+General translation assistance in Kreyòl,
+English, Français and Español.
+</span>
 </div>
 
-<div class="ai-feat" id="chat247" data-ai-question="Show me all Maximax services">
+<div
+class="ai-feat"
+id="chat247"
+role="button"
+tabindex="0"
+data-ai-question="Show me all Maximax services"
+>
 <b>💬 CHAT 24/7</b>
-<span>Digital assistance anytime</span>
+<span>
+Ask general questions about Maximax services anytime.
+</span>
 </div>
 
 </div>
 
-<a class="myaccess-btn" id="try-ai" href="#ai-chat">Try AI Center</a>
+<a class="myaccess-btn" id="try-ai" href="#ai-chat">
+Try AI Center
+</a>
+
 </div>
 
-<div id="ai-chat" class="contact-card">
-<div class="label">MAXIMAX AI CHAT</div>
+<div class="ai-chat" id="ai-chat">
 
-<div id="aiMessages" aria-live="polite">
+<div class="ai-chat-title">
+MAXIMAX AI CHAT
+</div>
+
+<div class="ai-messages" id="aiMessages" aria-live="polite">
+
 <div class="ai-message bot">
-🤖 Welcome to Maximax AI Center. Ask about Notary, Taxes,
-Immigration, EOIR & BIA, Insurance, Real Estate,
+🤖 Welcome to Maximax AI Center. Ask about Notary,
+Taxes, Immigration, EOIR & BIA, Insurance, Real Estate,
 Business Formation, Apostille or Travel & DMV.
 </div>
+
+</div>
+
+<div class="ai-quick-actions">
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Which Maximax service do I need?"
+>
+CHOOSE A SERVICE
+</button>
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Help me organize a form"
+>
+FORM HELP
+</button>
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Show me the immigration services"
+>
+IMMIGRATION
+</button>
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Show me the tax and accounting services"
+>
+TAXES
+</button>
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Show me the real estate services"
+>
+REAL ESTATE
+</button>
+
+<button
+class="ai-quick-btn"
+type="button"
+data-ai-question="Show me the business formation services"
+>
+BUSINESS
+</button>
+
 </div>
 
 <div class="ai-chat-controls">
-<input id="aiInput" type="text" placeholder="Ask a question..." autocomplete="off">
-<button id="aiSend" type="button">SEND</button>
-</div>
+
+<input
+id="aiInput"
+type="text"
+placeholder="Ask a question..."
+autocomplete="off"
+aria-label="Ask Maximax AI a question"
+>
+
+<button id="aiSend" type="button">
+SEND
+</button>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 <section class="band" id="contact">
@@ -1425,9 +1303,16 @@ Hempstead NY 11550
 </footer>
 
 <script>
+function closeAllServiceFiles(){
+document.querySelectorAll(".file").forEach(function(file){
+file.classList.remove("active","open");
+});
+}
+
 function showOnlyFile(id){
 document.querySelectorAll(".file").forEach(function(file){
 const selected=file.id===id;
+
 file.classList.toggle("active",selected);
 file.classList.toggle("open",selected);
 });
@@ -1441,9 +1326,7 @@ file.classList.toggle("open");
 }
 }
 
-document.querySelectorAll(".file").forEach(function(file){
-file.classList.remove("active","open");
-});
+closeAllServiceFiles();
 
 document
 .querySelectorAll('.service-seal[href^="#mod"],.catmap-item[href^="#mod"]')
@@ -1466,6 +1349,172 @@ block:"start"
 });
 });
 
+/* BUTTON 10 AI CENTER ROUTING */
+
+document
+.querySelectorAll('.service-seal[href="#ai-center"],.catmap-item[href="#ai-center"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+closeAllServiceFiles();
+
+const aiCenter=document.getElementById("ai-center");
+
+if(aiCenter){
+aiCenter.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+}
+
+window.setTimeout(function(){
+const input=document.getElementById("aiInput");
+
+if(input){
+input.focus();
+}
+},650);
+});
+});
+
+/* AI SUBMODULE BUTTON ROUTING */
+
+function openAIFeature(featureId,question){
+closeAllServiceFiles();
+
+const aiCenter=document.getElementById("ai-center");
+
+if(aiCenter){
+aiCenter.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+}
+
+window.setTimeout(function(){
+sendAIMessage(question);
+
+const input=document.getElementById("aiInput");
+
+if(input){
+input.focus();
+}
+},500);
+}
+
+document
+.querySelectorAll('.service-seal[href="#form-helper"],.catmap-item[href="#form-helper"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+openAIFeature(
+"form-helper",
+"Help me organize a form"
+);
+});
+});
+
+document
+.querySelectorAll('.service-seal[href="#career-tracker"],.catmap-item[href="#career-tracker"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+openAIFeature(
+"career-tracker",
+"Help me organize my career applications and deadlines"
+);
+});
+});
+
+document
+.querySelectorAll('.service-seal[href="#translation-ai"],.catmap-item[href="#translation-ai"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+openAIFeature(
+"translation-ai",
+"Help me translate a short message"
+);
+});
+});
+
+document
+.querySelectorAll('.service-seal[href="#chat247"],.catmap-item[href="#chat247"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+openAIFeature(
+"chat247",
+"Show me all Maximax services"
+);
+});
+});
+
+document
+.querySelectorAll('.service-seal[href="#try-ai"],.catmap-item[href="#try-ai"]')
+.forEach(function(button){
+
+button.addEventListener("click",function(event){
+event.preventDefault();
+
+closeAllServiceFiles();
+
+const aiChat=document.getElementById("ai-chat");
+
+if(aiChat){
+aiChat.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+}
+
+window.setTimeout(function(){
+const input=document.getElementById("aiInput");
+
+if(input){
+input.focus();
+}
+},500);
+});
+});
+
+const tryAIButton=document.getElementById("try-ai");
+
+if(tryAIButton){
+tryAIButton.addEventListener("click",function(event){
+event.preventDefault();
+
+const aiChat=document.getElementById("ai-chat");
+
+if(aiChat){
+aiChat.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+}
+
+window.setTimeout(function(){
+const input=document.getElementById("aiInput");
+
+if(input){
+input.focus();
+}
+},500);
+});
+}
+
+/* MOBILE MENU */
+
 const menuBtn=document.getElementById("menuBtn");
 const mobileNav=document.getElementById("mobileNav");
 
@@ -1480,6 +1529,8 @@ mobileNav.classList.remove("open");
 });
 });
 }
+
+/* LANGUAGE TOGGLE */
 
 const translations={
 eng:{
@@ -1551,7 +1602,10 @@ document.querySelector(".module-heading h2").textContent=t.official;
 document.querySelector(".module-heading p").textContent=t.description;
 
 document.querySelectorAll(".lang-btn").forEach(function(button){
-button.classList.toggle("active",button.dataset.lang===lang);
+button.classList.toggle(
+"active",
+button.dataset.lang===lang
+);
 });
 
 localStorage.setItem("maximaxLanguage",lang);
@@ -1563,7 +1617,11 @@ setLanguage(this.dataset.lang);
 });
 });
 
-setLanguage(localStorage.getItem("maximaxLanguage")||"eng");
+setLanguage(
+localStorage.getItem("maximaxLanguage")||"eng"
+);
+
+/* MAXIMAX AI */
 
 const aiInput=document.getElementById("aiInput");
 const aiSend=document.getElementById("aiSend");
@@ -1572,57 +1630,147 @@ const aiMessages=document.getElementById("aiMessages");
 function getAIResponse(question){
 const q=question.toLowerCase();
 
-if(q.includes("notary")||q.includes("notè")||q.includes("translation"))
-return "For Notary or Translation, select button 01.";
+if(
+q.includes("which")||
+q.includes("choose")||
+q.includes("service do i need")||
+q.includes("ki sèvis")
+){
+return "Tell me what you need help with. You can ask about documents, taxes, immigration, court information, insurance, housing, business formation, apostille, passports, travel or DMV.";
+}
 
-if(q.includes("tax")||q.includes("taks")||q.includes("itin"))
-return "For Taxes and Accounting, select button 02.";
+if(
+q.includes("notary")||
+q.includes("notè")||
+q.includes("translation")||
+q.includes("tradiksyon")
+){
+return "Select button 01 for Notary and Translation. It includes notary resources, power-of-attorney forms, certified translation requirements and minor travel-consent information.";
+}
 
-if(q.includes("immigration")||q.includes("imigrasyon")||q.includes("tps"))
-return "For Immigration Services, select button 03.";
+if(
+q.includes("tax")||
+q.includes("taks")||
+q.includes("itin")||
+q.includes("accounting")||
+q.includes("irs")
+){
+return "Select button 02 for Taxes and Accounting. It includes Form 1040, business taxes, ITIN Form W-7, bookkeeping, IRS letters and Form 1040-X.";
+}
 
-if(q.includes("eoir")||q.includes("bia")||q.includes("court"))
-return "For EOIR or BIA assistance, select button 04.";
+if(
+q.includes("immigration")||
+q.includes("imigrasyon")||
+q.includes("tps")||
+q.includes("asylum")||
+q.includes("green card")||
+q.includes("citizenship")
+){
+return "Select button 03 for Immigration Services. It includes TPS, Form I-589, Form I-765, Form I-130, Form I-485, Form N-400, Form I-829 and all USCIS forms.";
+}
 
-if(q.includes("insurance")||q.includes("asirans"))
-return "For Insurance, select button 05.";
+if(
+q.includes("eoir")||
+q.includes("bia")||
+q.includes("court")||
+q.includes("hearing")
+){
+return "Select button 04 for EOIR and BIA. It includes case information, hearing checks, Respondent Access, case-status information and immigration-court locations.";
+}
 
-if(q.includes("real estate")||q.includes("house")||q.includes("home")||q.includes("rent")||q.includes("imobilye"))
-return "For Real Estate, select button 06.";
+if(
+q.includes("insurance")||
+q.includes("asirans")
+){
+return "Select button 05 for Insurance. It includes auto, homeowners, renters, life, health and business-insurance resources.";
+}
 
-if(q.includes("business")||q.includes("llc")||q.includes("ein"))
-return "Business Formation is button 07.";
+if(
+q.includes("real estate")||
+q.includes("house")||
+q.includes("housing")||
+q.includes("home")||
+q.includes("rent")||
+q.includes("imobilye")
+){
+return "Select button 06 for Real Estate. It includes first-time homebuyer information, HUD properties, rental assistance, public housing and government-backed home-loan resources.";
+}
 
-if(q.includes("apostille")||q.includes("authentication")||q.includes("legalization"))
-return "Apostille and Legalization is button 08.";
+if(
+q.includes("business")||
+q.includes("llc")||
+q.includes("ein")||
+q.includes("corporation")
+){
+return "Select button 07 for Business Formation. It includes Florida LLC and corporation filing, EIN applications, business registration, business plans and SBA resources.";
+}
 
-if(q.includes("travel")||q.includes("passport")||q.includes("dmv")||q.includes("vehicle"))
-return "Travel and DMV Services is button 09. You can request passport, travel, driver-license, vehicle-registration, tag or title assistance.";
+if(
+q.includes("apostille")||
+q.includes("authentication")||
+q.includes("legalization")
+){
+return "Select button 08 for Apostille and Legalization. It includes Florida, Indiana, New York and federal document-authentication resources.";
+}
 
-return "Ask about Notary, Taxes, Immigration, EOIR & BIA, Insurance, Real Estate, Business Formation, Apostille, Travel or DMV.";
+if(
+q.includes("travel")||
+q.includes("passport")||
+q.includes("dmv")||
+q.includes("vehicle")||
+q.includes("driver license")
+){
+return "Select button 09 for Travel and DMV. It includes passports, urgent passport service, Florida driver licenses, vehicle registration, Indiana BMV and New York DMV.";
+}
+
+if(
+q.includes("career")||
+q.includes("job")||
+q.includes("application")||
+q.includes("interview")
+){
+return "Career Tracker can help organize job applications, deadlines, interviews and follow-up dates. Write the job title, employer and next deadline.";
+}
+
+if(
+q.includes("form")||
+q.includes("application")
+){
+return "Form Helper can help organize the information and documents needed for a form. Tell me the form name or explain what you are applying for.";
+}
+
+if(
+q.includes("translate")||
+q.includes("tradui")
+){
+return "Paste a short message and specify the destination language: Kreyòl, English, Français or Español. Do not paste sensitive personal information.";
+}
+
+return "I can help you choose a Maximax service. Ask about Notary, Taxes, Immigration, EOIR and BIA, Insurance, Real Estate, Business Formation, Apostille, Travel, DMV, forms, translation or career tracking.";
 }
 
 function sendAIMessage(preset){
-const question=(preset||aiInput.value).trim();
+const question=(preset||(aiInput?aiInput.value:"")).trim();
 
-if(!question)return;
+if(!question||!aiMessages){
+return;
+}
 
-const user=document.createElement("div");
-user.className="ai-message user";
-user.textContent="👤 "+question;
-aiMessages.appendChild(user);
+const userMessage=document.createElement("div");
+userMessage.className="ai-message user";
+userMessage.textContent="👤 "+question;
+aiMessages.appendChild(userMessage);
 
-const bot=document.createElement("div");
-bot.className="ai-message bot";
-bot.textContent="🤖 "+getAIResponse(question);
-aiMessages.appendChild(bot);
+const botMessage=document.createElement("div");
+botMessage.className="ai-message bot";
+botMessage.textContent="🤖 "+getAIResponse(question);
+aiMessages.appendChild(botMessage);
 
+if(aiInput){
 aiInput.value="";
+}
 
-document.getElementById("ai-chat").scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
+aiMessages.scrollTop=aiMessages.scrollHeight;
 }
 
 if(aiSend&&aiInput&&aiMessages){
@@ -1636,13 +1784,20 @@ event.preventDefault();
 sendAIMessage();
 }
 });
+}
 
-document.querySelectorAll("[data-ai-question]").forEach(function(card){
-card.addEventListener("click",function(){
+document.querySelectorAll("[data-ai-question]").forEach(function(item){
+item.addEventListener("click",function(){
 sendAIMessage(this.dataset.aiQuestion);
 });
-});
+
+item.addEventListener("keydown",function(event){
+if(event.key==="Enter"||event.key===" "){
+event.preventDefault();
+sendAIMessage(this.dataset.aiQuestion);
 }
+});
+});
 </script>
 
 </body>
